@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ILDR2 | unknown
+# CDS: 1596 bp (532 codons)
+
+[IDENTITY]
+gene = ILDR2
+organism = unknown
+transcript = ENST00000526687.1
+cds_length = 1596
+codons = 532
+protein_length = 531
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.982
+resistance = 0.018
+dominant = LOGIC
+dominant_pct = 0.3083
+FLOW = 0.2187
+OBSERVE = 0.1754
+LOGIC = 0.3083
+CHOOSE = 0.2976
+state = flowing
+
+[CONNECT]
+depth = 0.9461
+type = ionic_interaction
+hydrophobic_ratio = 0.4727
+charge_positive = 0.1695
+charge_negative = 0.1356
+charge_neutral = 0.6949
+
+[DISSOLVE]
+rigidity = 0.8972
+potential = crystallized
+wobble_entropy = 0.1028
+complementary_disruption = 0.0539
+
+[ENCODE]
+type = engineered
+loss = 0.0781
+gc_content = 0.6059
+wobble_gc = 0.7575
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4041
+wobble_FLOW = 0.1071
+wobble_OBSERVE = 0.1353
+wobble_LOGIC = 0.3534
+wobble_CHOOSE = 0.4041
+entropy = 0.1028
+
+[OBSERVE]
+distance = 0.0107
+level = strong
+complementary_balance = 0.9461
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1353
+intensity = 0.1353
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1353
+  COMPOSE(FLOW,LOGIC): 0.0846
+  COMPOSE(LOGIC,LOGIC): 0.0714
+  COMPOSE(OBSERVE,CHOOSE): 0.0695
+  COMPOSE(LOGIC,CHOOSE): 0.0695
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3252
+modifier_dominant = FLOW
+modifier_pct = 0.3083
+primary_FLOW = 0.2406
+primary_OBSERVE = 0.1842
+primary_LOGIC = 0.3252
+primary_CHOOSE = 0.2500
+modifier_FLOW = 0.3083
+modifier_OBSERVE = 0.2068
+modifier_LOGIC = 0.2462
+modifier_CHOOSE = 0.2387
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0290
+aa_top5 = [
+  Ser: 0.1205  # hydroxyl
+  Arg: 0.0998  # basic
+  Leu: 0.0810  # aliphatic
+  Gly: 0.0716  # simple
+  Asp: 0.0697  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 531
+stop_codon = TGA
+loss = 0.0290
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.strong.dominant.crystallized.ionic_interaction

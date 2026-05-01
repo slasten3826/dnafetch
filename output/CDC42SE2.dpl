@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CDC42SE2 | unknown
+# CDS: 135 bp (45 codons)
+
+[IDENTITY]
+gene = CDC42SE2
+organism = unknown
+transcript = ENST00000502582.1
+cds_length = 135
+codons = 45
+protein_length = 44
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.968
+resistance = 0.032
+dominant = OBSERVE
+dominant_pct = 0.3481
+FLOW = 0.2889
+OBSERVE = 0.3481
+LOGIC = 0.1556
+CHOOSE = 0.2074
+state = flowing
+
+[CONNECT]
+depth = 0.8889
+type = balanced_interface
+hydrophobic_ratio = 0.4773
+charge_positive = 0.0455
+charge_negative = 0.1364
+charge_neutral = 0.8182
+
+[DISSOLVE]
+rigidity = 0.9370
+potential = crystallized
+wobble_entropy = 0.0630
+complementary_disruption = 0.1111
+
+[ENCODE]
+type = natural
+loss = 0.5938
+gc_content = 0.3630
+wobble_gc = 0.3333
+codon_diversity = 0.4062
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.4222
+wobble_FLOW = 0.2444
+wobble_OBSERVE = 0.4222
+wobble_LOGIC = 0.2000
+wobble_CHOOSE = 0.1333
+entropy = 0.0630
+
+[OBSERVE]
+distance = 0.0593
+level = standard
+complementary_balance = 0.8889
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1778
+intensity = 0.1778
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1778
+  COMPOSE(OBSERVE,CHOOSE): 0.1556
+  COMPOSE(LOGIC,FLOW): 0.1333
+  COMPOSE(CHOOSE,FLOW): 0.1333
+  COMPOSE(OBSERVE,LOGIC): 0.0667
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3333
+modifier_dominant = FLOW
+modifier_pct = 0.3556
+primary_FLOW = 0.2667
+primary_OBSERVE = 0.3333
+primary_LOGIC = 0.1556
+primary_CHOOSE = 0.2444
+modifier_FLOW = 0.3556
+modifier_OBSERVE = 0.2889
+modifier_LOGIC = 0.1111
+modifier_CHOOSE = 0.2444
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0458
+aa_top5 = [
+  Ser: 0.1591  # hydroxyl
+  Ile: 0.1591  # aliphatic
+  Gln: 0.1136  # amide
+  Glu: 0.0909  # acidic
+  Leu: 0.0682  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 44
+stop_codon = TAA
+loss = 0.0458
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.dominant.crystallized.balanced_interface

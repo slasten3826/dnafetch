@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000288716 | unknown
+# CDS: 84 bp (28 codons)
+
+[IDENTITY]
+gene = ENSG00000288716
+organism = unknown
+transcript = ENST00000684204.1
+cds_length = 84
+codons = 28
+protein_length = 27
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.871
+resistance = 0.129
+dominant = LOGIC
+dominant_pct = 0.5119
+FLOW = 0.2262
+OBSERVE = 0.1071
+LOGIC = 0.5119
+CHOOSE = 0.1548
+state = flowing
+
+[CONNECT]
+depth = 0.5238
+type = ionic_interaction
+hydrophobic_ratio = 0.4074
+charge_positive = 0.3704
+charge_negative = 0.0370
+charge_neutral = 0.5926
+
+[DISSOLVE]
+rigidity = 0.7893
+potential = moderate
+wobble_entropy = 0.2107
+complementary_disruption = 0.4762
+
+[ENCODE]
+type = engineered
+loss = 0.7656
+gc_content = 0.6667
+wobble_gc = 0.8214
+codon_diversity = 0.2344
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5714
+wobble_FLOW = 0.1071
+wobble_OBSERVE = 0.0714
+wobble_LOGIC = 0.5714
+wobble_CHOOSE = 0.2500
+entropy = 0.2107
+
+[OBSERVE]
+distance = 0.2857
+level = basic
+complementary_balance = 0.5238
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.4643
+intensity = 0.4643
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.4643
+  COMPOSE(LOGIC,LOGIC): 0.2143
+  COMPOSE(OBSERVE,CHOOSE): 0.0714
+  COMPOSE(FLOW,OBSERVE): 0.0357
+  COMPOSE(CHOOSE,CHOOSE): 0.0357
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = LOGIC
+modifier_pct = 0.6786
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.1429
+primary_LOGIC = 0.2857
+primary_CHOOSE = 0.0714
+modifier_FLOW = 0.0714
+modifier_OBSERVE = 0.1071
+modifier_LOGIC = 0.6786
+modifier_CHOOSE = 0.1429
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0953
+aa_top5 = [
+  Arg: 0.3704  # basic
+  Gly: 0.2222  # simple
+  Ser: 0.1852  # hydroxyl
+  Leu: 0.0741  # aliphatic
+  Met: 0.0370  # sulfur
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 27
+stop_codon = TAG
+loss = 0.0953
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.moderate.ionic_interaction

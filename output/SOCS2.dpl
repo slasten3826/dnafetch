@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SOCS2 | unknown
+# CDS: 96 bp (32 codons)
+
+[IDENTITY]
+gene = SOCS2
+organism = unknown
+transcript = ENST00000549510.1
+cds_length = 96
+codons = 32
+protein_length = 31
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.958
+resistance = 0.042
+dominant = OBSERVE
+dominant_pct = 0.3958
+FLOW = 0.2396
+OBSERVE = 0.3958
+LOGIC = 0.1979
+CHOOSE = 0.1667
+state = flowing
+
+[CONNECT]
+depth = 0.8125
+type = membrane_embedded
+hydrophobic_ratio = 0.6452
+charge_positive = 0.1613
+charge_negative = 0.0323
+charge_neutral = 0.8065
+
+[DISSOLVE]
+rigidity = 0.9413
+potential = crystallized
+wobble_entropy = 0.0587
+complementary_disruption = 0.1875
+
+[ENCODE]
+type = natural
+loss = 0.6406
+gc_content = 0.3646
+wobble_gc = 0.3438
+codon_diversity = 0.3594
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.4062
+wobble_FLOW = 0.2500
+wobble_OBSERVE = 0.4062
+wobble_LOGIC = 0.2188
+wobble_CHOOSE = 0.1250
+entropy = 0.0587
+
+[OBSERVE]
+distance = 0.1562
+level = basic
+complementary_balance = 0.8125
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.2188
+intensity = 0.2188
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.2188
+  COMPOSE(FLOW,OBSERVE): 0.1562
+  COMPOSE(CHOOSE,FLOW): 0.1250
+  COMPOSE(OBSERVE,LOGIC): 0.0625
+  COMPOSE(OBSERVE,CHOOSE): 0.0625
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3750
+modifier_dominant = OBSERVE
+modifier_pct = 0.4062
+primary_FLOW = 0.2500
+primary_OBSERVE = 0.3750
+primary_LOGIC = 0.1562
+primary_CHOOSE = 0.2188
+modifier_FLOW = 0.2188
+modifier_OBSERVE = 0.4062
+modifier_LOGIC = 0.2188
+modifier_CHOOSE = 0.1562
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0374
+aa_top5 = [
+  Phe: 0.1290  # aromatic
+  Met: 0.0968  # sulfur
+  Ser: 0.0968  # hydroxyl
+  Leu: 0.0968  # aliphatic
+  Cys: 0.0645  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 31
+stop_codon = TAG
+loss = 0.0374
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.basic.dominant.crystallized.membrane_embedded

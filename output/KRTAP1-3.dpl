@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KRTAP1-3 | unknown
+# CDS: 504 bp (168 codons)
+
+[IDENTITY]
+gene = KRTAP1-3
+organism = unknown
+transcript = ENST00000344363.7
+cds_length = 504
+codons = 168
+protein_length = 167
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.970
+resistance = 0.030
+dominant = CHOOSE
+dominant_pct = 0.3452
+FLOW = 0.1627
+OBSERVE = 0.2024
+LOGIC = 0.2897
+CHOOSE = 0.3452
+state = flowing
+
+[CONNECT]
+depth = 0.9048
+type = membrane_embedded
+hydrophobic_ratio = 0.5808
+charge_positive = 0.0479
+charge_negative = 0.0419
+charge_neutral = 0.9102
+
+[DISSOLVE]
+rigidity = 0.8084
+potential = low
+wobble_entropy = 0.1916
+complementary_disruption = 0.0952
+
+[ENCODE]
+type = optimized
+loss = 0.4219
+gc_content = 0.6349
+wobble_gc = 0.7500
+codon_diversity = 0.5781
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5893
+wobble_FLOW = 0.1012
+wobble_OBSERVE = 0.1488
+wobble_LOGIC = 0.1607
+wobble_CHOOSE = 0.5893
+entropy = 0.1916
+
+[OBSERVE]
+distance = 0.0556
+level = standard
+complementary_balance = 0.9048
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.2619
+intensity = 0.2619
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.2619
+  COMPOSE(FLOW,LOGIC): 0.1250
+  COMPOSE(LOGIC,LOGIC): 0.1012
+  COMPOSE(FLOW,CHOOSE): 0.0952
+  COMPOSE(CHOOSE,CHOOSE): 0.0833
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3690
+modifier_dominant = LOGIC
+modifier_pct = 0.5179
+primary_FLOW = 0.2440
+primary_OBSERVE = 0.3690
+primary_LOGIC = 0.1905
+primary_CHOOSE = 0.1964
+modifier_FLOW = 0.1429
+modifier_OBSERVE = 0.0893
+modifier_LOGIC = 0.5179
+modifier_CHOOSE = 0.2500
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0641
+aa_top5 = [
+  Cys: 0.2575  # sulfur
+  Ser: 0.1737  # hydroxyl
+  Gly: 0.1018  # simple
+  Thr: 0.0958  # hydroxyl
+  Pro: 0.0838  # cyclic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 167
+stop_codon = TAA
+loss = 0.0641
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.low.membrane_embedded

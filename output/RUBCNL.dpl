@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RUBCNL | unknown
+# CDS: 534 bp (178 codons)
+
+[IDENTITY]
+gene = RUBCNL
+organism = unknown
+transcript = ENST00000439642.1
+cds_length = 534
+codons = 178
+protein_length = 178
+stop_codon = none
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = CHOOSE
+dominant_pct = 0.3015
+FLOW = 0.2172
+OBSERVE = 0.2360
+LOGIC = 0.2453
+CHOOSE = 0.3015
+state = flowing
+
+[CONNECT]
+depth = 0.9251
+type = balanced_interface
+hydrophobic_ratio = 0.4607
+charge_positive = 0.0899
+charge_negative = 0.1236
+charge_neutral = 0.7865
+
+[DISSOLVE]
+rigidity = 0.9830
+potential = crystallized
+wobble_entropy = 0.0170
+complementary_disruption = 0.0749
+
+[ENCODE]
+type = moderate
+loss = 0.1719
+gc_content = 0.5468
+wobble_gc = 0.5393
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2978
+wobble_FLOW = 0.1629
+wobble_OBSERVE = 0.2978
+wobble_LOGIC = 0.2584
+wobble_CHOOSE = 0.2809
+entropy = 0.0170
+
+[OBSERVE]
+distance = 0.0562
+level = standard
+complementary_balance = 0.9251
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1292
+intensity = 0.1292
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1292
+  COMPOSE(LOGIC,FLOW): 0.1236
+  COMPOSE(CHOOSE,FLOW): 0.1011
+  COMPOSE(CHOOSE,CHOOSE): 0.1011
+  COMPOSE(FLOW,CHOOSE): 0.0730
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3090
+modifier_dominant = CHOOSE
+modifier_pct = 0.3652
+primary_FLOW = 0.2247
+primary_OBSERVE = 0.2079
+primary_LOGIC = 0.3090
+primary_CHOOSE = 0.2584
+modifier_FLOW = 0.2640
+modifier_OBSERVE = 0.2022
+modifier_LOGIC = 0.1685
+modifier_CHOOSE = 0.3652
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0392
+aa_top5 = [
+  Ser: 0.1798  # hydroxyl
+  Pro: 0.1011  # cyclic
+  Thr: 0.0730  # hydroxyl
+  Asp: 0.0730  # acidic
+  Leu: 0.0674  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 178
+stop_codon = none
+loss = 0.0392
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.standard.dominant.crystallized.balanced_interface

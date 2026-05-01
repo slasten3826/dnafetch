@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ACSM3 | unknown
+# CDS: 318 bp (106 codons)
+
+[IDENTITY]
+gene = ACSM3
+organism = unknown
+transcript = ENST00000569141.1
+cds_length = 318
+codons = 106
+protein_length = 106
+stop_codon = none
+
+[FLOW]
+engagement = 0.976
+resistance = 0.024
+dominant = FLOW
+dominant_pct = 0.3459
+FLOW = 0.3459
+OBSERVE = 0.2736
+LOGIC = 0.1887
+CHOOSE = 0.1918
+state = flowing
+
+[CONNECT]
+depth = 0.9245
+type = membrane_embedded
+hydrophobic_ratio = 0.5566
+charge_positive = 0.1698
+charge_negative = 0.1038
+charge_neutral = 0.7264
+
+[DISSOLVE]
+rigidity = 0.9144
+potential = crystallized
+wobble_entropy = 0.0856
+complementary_disruption = 0.0755
+
+[ENCODE]
+type = AT_rich
+loss = 0.3906
+gc_content = 0.3805
+wobble_gc = 0.2642
+codon_diversity = 0.6094
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3962
+wobble_FLOW = 0.3396
+wobble_OBSERVE = 0.3962
+wobble_LOGIC = 0.1415
+wobble_CHOOSE = 0.1226
+entropy = 0.0856
+
+[OBSERVE]
+distance = 0.0723
+level = standard
+complementary_balance = 0.9245
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1604
+intensity = 0.1604
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1604
+  COMPOSE(LOGIC,OBSERVE): 0.1132
+  COMPOSE(CHOOSE,CHOOSE): 0.1038
+  COMPOSE(LOGIC,FLOW): 0.1038
+  COMPOSE(FLOW,OBSERVE): 0.0943
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3208
+modifier_dominant = FLOW
+modifier_pct = 0.3868
+primary_FLOW = 0.3113
+primary_OBSERVE = 0.1132
+primary_LOGIC = 0.3208
+primary_CHOOSE = 0.2547
+modifier_FLOW = 0.3868
+modifier_OBSERVE = 0.3113
+modifier_LOGIC = 0.1038
+modifier_CHOOSE = 0.1981
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0332
+aa_top5 = [
+  Lys: 0.1226  # basic
+  Val: 0.1132  # aliphatic
+  Pro: 0.1038  # cyclic
+  Ile: 0.0755  # aliphatic
+  Gly: 0.0755  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 106
+stop_codon = none
+loss = 0.0332
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NEXN | unknown
+# CDS: 1707 bp (569 codons)
+
+[IDENTITY]
+gene = NEXN
+organism = unknown
+transcript = ENST00000342754.5
+cds_length = 1707
+codons = 569
+protein_length = 568
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.925
+resistance = 0.075
+dominant = FLOW
+dominant_pct = 0.4405
+FLOW = 0.4405
+OBSERVE = 0.1804
+LOGIC = 0.2478
+CHOOSE = 0.1312
+state = flowing
+
+[CONNECT]
+depth = 0.6233
+type = ionic_interaction
+hydrophobic_ratio = 0.3504
+charge_positive = 0.2165
+charge_negative = 0.2658
+charge_neutral = 0.5176
+
+[DISSOLVE]
+rigidity = 0.8781
+potential = low
+wobble_entropy = 0.1219
+complementary_disruption = 0.3767
+
+[ENCODE]
+type = AT_rich
+loss = 0.0469
+gc_content = 0.3790
+wobble_gc = 0.2847
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4921
+wobble_FLOW = 0.4921
+wobble_OBSERVE = 0.2232
+wobble_LOGIC = 0.1968
+wobble_CHOOSE = 0.0879
+entropy = 0.1219
+
+[OBSERVE]
+distance = 0.1927
+level = basic
+complementary_balance = 0.6233
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2654
+intensity = 0.2654
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2654
+  COMPOSE(FLOW,FLOW): 0.1424
+  COMPOSE(FLOW,LOGIC): 0.0826
+  COMPOSE(FLOW,OBSERVE): 0.0756
+  COMPOSE(CHOOSE,FLOW): 0.0580
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3849
+modifier_dominant = FLOW
+modifier_pct = 0.4886
+primary_FLOW = 0.3409
+primary_OBSERVE = 0.1195
+primary_LOGIC = 0.3849
+primary_CHOOSE = 0.1547
+modifier_FLOW = 0.4886
+modifier_OBSERVE = 0.1986
+modifier_LOGIC = 0.1617
+modifier_CHOOSE = 0.1511
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0473
+aa_top5 = [
+  Glu: 0.2201  # acidic
+  Lys: 0.1144  # basic
+  Arg: 0.0968  # basic
+  Leu: 0.0616  # aliphatic
+  Ala: 0.0546  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 568
+stop_codon = TAG
+loss = 0.0473
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PRR36 | unknown
+# CDS: 4041 bp (1347 codons)
+
+[IDENTITY]
+gene = PRR36
+organism = unknown
+transcript = ENST00000618550.5
+cds_length = 4041
+codons = 1347
+protein_length = 1346
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.925
+resistance = 0.075
+dominant = CHOOSE
+dominant_pct = 0.4472
+FLOW = 0.1381
+OBSERVE = 0.1829
+LOGIC = 0.2319
+CHOOSE = 0.4472
+state = flowing
+
+[CONNECT]
+depth = 0.7399
+type = membrane_embedded
+hydrophobic_ratio = 0.6360
+charge_positive = 0.0639
+charge_negative = 0.0371
+charge_neutral = 0.8990
+
+[DISSOLVE]
+rigidity = 0.9742
+potential = crystallized
+wobble_entropy = 0.0258
+complementary_disruption = 0.2601
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.6790
+wobble_gc = 0.6080
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3237
+wobble_FLOW = 0.1500
+wobble_OBSERVE = 0.2420
+wobble_LOGIC = 0.2843
+wobble_CHOOSE = 0.3237
+entropy = 0.0258
+
+[OBSERVE]
+distance = 0.2153
+level = basic
+complementary_balance = 0.7399
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.2524
+intensity = 0.2524
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.2524
+  COMPOSE(LOGIC,CHOOSE): 0.1463
+  COMPOSE(OBSERVE,CHOOSE): 0.1091
+  COMPOSE(CHOOSE,OBSERVE): 0.0987
+  COMPOSE(FLOW,CHOOSE): 0.0735
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4365
+modifier_dominant = CHOOSE
+modifier_pct = 0.5813
+primary_FLOW = 0.1507
+primary_OBSERVE = 0.1396
+primary_LOGIC = 0.2732
+primary_CHOOSE = 0.4365
+modifier_FLOW = 0.1136
+modifier_OBSERVE = 0.1670
+modifier_LOGIC = 0.1381
+modifier_CHOOSE = 0.5813
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0639
+aa_top5 = [
+  Pro: 0.2526  # cyclic
+  Ala: 0.1464  # simple
+  Ser: 0.1374  # hydroxyl
+  Leu: 0.1122  # aliphatic
+  Thr: 0.0736  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 1346
+stop_codon = TGA
+loss = 0.0639
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.crystallized.membrane_embedded

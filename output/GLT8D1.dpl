@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GLT8D1 | unknown
+# CDS: 108 bp (36 codons)
+
+[IDENTITY]
+gene = GLT8D1
+organism = unknown
+transcript = ENST00000464705.1
+cds_length = 108
+codons = 36
+protein_length = 35
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.935
+resistance = 0.065
+dominant = FLOW
+dominant_pct = 0.3889
+FLOW = 0.3889
+OBSERVE = 0.3056
+LOGIC = 0.1852
+CHOOSE = 0.1204
+state = flowing
+
+[CONNECT]
+depth = 0.8519
+type = ionic_interaction
+hydrophobic_ratio = 0.5143
+charge_positive = 0.1714
+charge_negative = 0.0857
+charge_neutral = 0.7429
+
+[DISSOLVE]
+rigidity = 0.8432
+potential = low
+wobble_entropy = 0.1568
+complementary_disruption = 0.1481
+
+[ENCODE]
+type = AT_rich
+loss = 0.6406
+gc_content = 0.3056
+wobble_gc = 0.2500
+codon_diversity = 0.3594
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3889
+wobble_FLOW = 0.3889
+wobble_OBSERVE = 0.3611
+wobble_LOGIC = 0.2222
+wobble_CHOOSE = 0.0278
+entropy = 0.1568
+
+[OBSERVE]
+distance = 0.0833
+level = mild
+complementary_balance = 0.8519
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1667
+  COMPOSE(OBSERVE,FLOW): 0.1111
+  COMPOSE(FLOW,CHOOSE): 0.1111
+  COMPOSE(FLOW,FLOW): 0.1111
+  COMPOSE(FLOW,LOGIC): 0.0833
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4722
+modifier_dominant = FLOW
+modifier_pct = 0.3056
+primary_FLOW = 0.4722
+primary_OBSERVE = 0.2500
+primary_LOGIC = 0.1389
+primary_CHOOSE = 0.1389
+modifier_FLOW = 0.3056
+modifier_OBSERVE = 0.3056
+modifier_LOGIC = 0.1944
+modifier_CHOOSE = 0.1944
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0382
+aa_top5 = [
+  Leu: 0.1143  # aliphatic
+  Thr: 0.1143  # hydroxyl
+  Met: 0.0857  # sulfur
+  Tyr: 0.0857  # aromatic
+  Arg: 0.0857  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 35
+stop_codon = TAA
+loss = 0.0382
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.low.ionic_interaction

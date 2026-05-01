@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ACAA2 | unknown
+# CDS: 129 bp (43 codons)
+
+[IDENTITY]
+gene = ACAA2
+organism = unknown
+transcript = ENST00000586100.1
+cds_length = 129
+codons = 43
+protein_length = 42
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = OBSERVE
+dominant_pct = 0.3256
+FLOW = 0.2093
+OBSERVE = 0.3256
+LOGIC = 0.2636
+CHOOSE = 0.2016
+state = flowing
+
+[CONNECT]
+depth = 0.8217
+type = membrane_embedded
+hydrophobic_ratio = 0.6667
+charge_positive = 0.0952
+charge_negative = 0.0238
+charge_neutral = 0.8810
+
+[DISSOLVE]
+rigidity = 0.9901
+potential = crystallized
+wobble_entropy = 0.0099
+complementary_disruption = 0.1783
+
+[ENCODE]
+type = moderate
+loss = 0.5469
+gc_content = 0.4651
+wobble_gc = 0.5116
+codon_diversity = 0.4531
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3023
+wobble_FLOW = 0.2791
+wobble_OBSERVE = 0.2093
+wobble_LOGIC = 0.3023
+wobble_CHOOSE = 0.2093
+entropy = 0.0099
+
+[OBSERVE]
+distance = 0.0620
+level = standard
+complementary_balance = 0.8217
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,OBSERVE)
+top_compose_pct = 0.1395
+intensity = 0.1395
+compose_top5 = [
+  COMPOSE(LOGIC,OBSERVE): 0.1395
+  COMPOSE(FLOW,OBSERVE): 0.1163
+  COMPOSE(OBSERVE,LOGIC): 0.1163
+  COMPOSE(OBSERVE,CHOOSE): 0.0930
+  COMPOSE(FLOW,LOGIC): 0.0930
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3256
+modifier_dominant = OBSERVE
+modifier_pct = 0.4419
+primary_FLOW = 0.2093
+primary_OBSERVE = 0.3256
+primary_LOGIC = 0.2093
+primary_CHOOSE = 0.2558
+modifier_FLOW = 0.1395
+modifier_OBSERVE = 0.4419
+modifier_LOGIC = 0.2791
+modifier_CHOOSE = 0.1395
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0493
+aa_top5 = [
+  Leu: 0.1667  # aliphatic
+  Val: 0.1429  # aliphatic
+  Ser: 0.1190  # hydroxyl
+  Arg: 0.0952  # basic
+  Gln: 0.0952  # amide
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 42
+stop_codon = TGA
+loss = 0.0493
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.standard.dominant.crystallized.membrane_embedded

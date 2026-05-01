@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TRPV5 | unknown
+# CDS: 1146 bp (382 codons)
+
+[IDENTITY]
+gene = TRPV5
+organism = unknown
+transcript = ENST00000442623.1
+cds_length = 1146
+codons = 382
+protein_length = 381
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = CHOOSE
+dominant_pct = 0.2958
+FLOW = 0.2199
+OBSERVE = 0.2216
+LOGIC = 0.2627
+CHOOSE = 0.2958
+state = flowing
+
+[CONNECT]
+depth = 0.9651
+type = membrane_embedded
+hydrophobic_ratio = 0.5617
+charge_positive = 0.1391
+charge_negative = 0.0997
+charge_neutral = 0.7612
+
+[DISSOLVE]
+rigidity = 0.9465
+potential = crystallized
+wobble_entropy = 0.0535
+complementary_disruption = 0.0349
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.5585
+wobble_gc = 0.6832
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3560
+wobble_FLOW = 0.1309
+wobble_OBSERVE = 0.1859
+wobble_LOGIC = 0.3272
+wobble_CHOOSE = 0.3560
+entropy = 0.0535
+
+[OBSERVE]
+distance = 0.0332
+level = deep
+complementary_balance = 0.9651
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1492
+intensity = 0.1492
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1492
+  COMPOSE(LOGIC,FLOW): 0.0995
+  COMPOSE(CHOOSE,FLOW): 0.0969
+  COMPOSE(FLOW,FLOW): 0.0733
+  COMPOSE(LOGIC,CHOOSE): 0.0733
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3272
+modifier_dominant = OBSERVE
+modifier_pct = 0.3246
+primary_FLOW = 0.2304
+primary_OBSERVE = 0.1545
+primary_LOGIC = 0.2880
+primary_CHOOSE = 0.3272
+modifier_FLOW = 0.2984
+modifier_OBSERVE = 0.3246
+modifier_LOGIC = 0.1728
+modifier_CHOOSE = 0.2042
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0302
+aa_top5 = [
+  Leu: 0.1627  # aliphatic
+  Ala: 0.0735  # simple
+  Arg: 0.0656  # basic
+  Gln: 0.0604  # amide
+  Gly: 0.0577  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 381
+stop_codon = TGA
+loss = 0.0302
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.membrane_embedded

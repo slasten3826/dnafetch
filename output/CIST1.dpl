@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CIST1 | unknown
+# CDS: 705 bp (235 codons)
+
+[IDENTITY]
+gene = CIST1
+organism = unknown
+transcript = ENST00000643046.2
+cds_length = 705
+codons = 235
+protein_length = 234
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.983
+resistance = 0.017
+dominant = CHOOSE
+dominant_pct = 0.3447
+FLOW = 0.2057
+OBSERVE = 0.2213
+LOGIC = 0.2284
+CHOOSE = 0.3447
+state = flowing
+
+[CONNECT]
+depth = 0.8681
+type = balanced_interface
+hydrophobic_ratio = 0.4829
+charge_positive = 0.0855
+charge_negative = 0.0897
+charge_neutral = 0.8248
+
+[DISSOLVE]
+rigidity = 0.9470
+potential = crystallized
+wobble_entropy = 0.0530
+complementary_disruption = 0.1319
+
+[ENCODE]
+type = optimized
+loss = 0.1406
+gc_content = 0.5730
+wobble_gc = 0.6723
+codon_diversity = 0.8594
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3830
+wobble_FLOW = 0.1319
+wobble_OBSERVE = 0.1957
+wobble_LOGIC = 0.2894
+wobble_CHOOSE = 0.3830
+entropy = 0.0530
+
+[OBSERVE]
+distance = 0.1163
+level = mild
+complementary_balance = 0.8681
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1277
+intensity = 0.1277
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1277
+  COMPOSE(CHOOSE,CHOOSE): 0.1234
+  COMPOSE(FLOW,CHOOSE): 0.0936
+  COMPOSE(LOGIC,FLOW): 0.0894
+  COMPOSE(FLOW,LOGIC): 0.0851
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2766
+modifier_dominant = CHOOSE
+modifier_pct = 0.3787
+primary_FLOW = 0.2766
+primary_OBSERVE = 0.2128
+primary_LOGIC = 0.2383
+primary_CHOOSE = 0.2723
+modifier_FLOW = 0.2085
+modifier_OBSERVE = 0.2553
+modifier_LOGIC = 0.1574
+modifier_CHOOSE = 0.3787
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0467
+aa_top5 = [
+  Ser: 0.1966  # hydroxyl
+  Pro: 0.1239  # cyclic
+  Leu: 0.1068  # aliphatic
+  Thr: 0.0940  # hydroxyl
+  Val: 0.0726  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 234
+stop_codon = TGA
+loss = 0.0467
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.balanced_interface

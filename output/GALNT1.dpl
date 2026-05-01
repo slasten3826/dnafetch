@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GALNT1 | unknown
+# CDS: 1500 bp (500 codons)
+
+[IDENTITY]
+gene = GALNT1
+organism = unknown
+transcript = ENST00000590654.1
+cds_length = 1500
+codons = 500
+protein_length = 499
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.985
+resistance = 0.015
+dominant = FLOW
+dominant_pct = 0.3187
+FLOW = 0.3187
+OBSERVE = 0.2653
+LOGIC = 0.2353
+CHOOSE = 0.1807
+state = flowing
+
+[CONNECT]
+depth = 0.8920
+type = ionic_interaction
+hydrophobic_ratio = 0.5210
+charge_positive = 0.1563
+charge_negative = 0.1222
+charge_neutral = 0.7214
+
+[DISSOLVE]
+rigidity = 0.9789
+potential = crystallized
+wobble_entropy = 0.0211
+complementary_disruption = 0.1080
+
+[ENCODE]
+type = natural
+loss = 0.0625
+gc_content = 0.4160
+wobble_gc = 0.3820
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3220
+wobble_FLOW = 0.2960
+wobble_OBSERVE = 0.3220
+wobble_LOGIC = 0.2020
+wobble_CHOOSE = 0.1800
+entropy = 0.0211
+
+[OBSERVE]
+distance = 0.0533
+level = standard
+complementary_balance = 0.8920
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1220
+intensity = 0.1220
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1220
+  COMPOSE(FLOW,FLOW): 0.1140
+  COMPOSE(FLOW,OBSERVE): 0.0960
+  COMPOSE(LOGIC,OBSERVE): 0.0780
+  COMPOSE(LOGIC,LOGIC): 0.0660
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3300
+modifier_dominant = FLOW
+modifier_pct = 0.3300
+primary_FLOW = 0.3300
+primary_OBSERVE = 0.1780
+primary_LOGIC = 0.3000
+primary_CHOOSE = 0.1920
+modifier_FLOW = 0.3300
+modifier_OBSERVE = 0.2960
+modifier_LOGIC = 0.2040
+modifier_CHOOSE = 0.1700
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0175
+aa_top5 = [
+  Leu: 0.0802  # aliphatic
+  Val: 0.0782  # aliphatic
+  Arg: 0.0681  # basic
+  Gly: 0.0661  # simple
+  Ile: 0.0641  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 499
+stop_codon = TGA
+loss = 0.0175
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IGHV3-11 | unknown
+# CDS: 351 bp (117 codons)
+
+[IDENTITY]
+gene = IGHV3-11
+organism = unknown
+transcript = ENST00000390601.3
+cds_length = 351
+codons = 117
+protein_length = 117
+stop_codon = none
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = LOGIC
+dominant_pct = 0.3020
+FLOW = 0.2308
+OBSERVE = 0.2450
+LOGIC = 0.3020
+CHOOSE = 0.2222
+state = flowing
+
+[CONNECT]
+depth = 0.9060
+type = membrane_embedded
+hydrophobic_ratio = 0.5812
+charge_positive = 0.0940
+charge_negative = 0.0684
+charge_neutral = 0.8376
+
+[DISSOLVE]
+rigidity = 0.9685
+potential = crystallized
+wobble_entropy = 0.0315
+complementary_disruption = 0.0940
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.5242
+wobble_gc = 0.6325
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3162
+wobble_FLOW = 0.1453
+wobble_OBSERVE = 0.2222
+wobble_LOGIC = 0.3162
+wobble_CHOOSE = 0.3162
+entropy = 0.0315
+
+[OBSERVE]
+distance = 0.0570
+level = standard
+complementary_balance = 0.9060
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1111
+intensity = 0.1111
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1111
+  COMPOSE(LOGIC,LOGIC): 0.0940
+  COMPOSE(CHOOSE,OBSERVE): 0.0769
+  COMPOSE(LOGIC,OBSERVE): 0.0769
+  COMPOSE(LOGIC,CHOOSE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3162
+modifier_dominant = OBSERVE
+modifier_pct = 0.2735
+primary_FLOW = 0.2906
+primary_OBSERVE = 0.2393
+primary_LOGIC = 0.3162
+primary_CHOOSE = 0.1538
+modifier_FLOW = 0.2564
+modifier_OBSERVE = 0.2735
+modifier_LOGIC = 0.2735
+modifier_CHOOSE = 0.1966
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0321
+aa_top5 = [
+  Ser: 0.1453  # hydroxyl
+  Gly: 0.0940  # simple
+  Leu: 0.0855  # aliphatic
+  Val: 0.0769  # aliphatic
+  Ala: 0.0769  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 117
+stop_codon = none
+loss = 0.0321
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.strong.crystallized.membrane_embedded

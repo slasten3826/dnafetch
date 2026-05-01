@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PIM3 | unknown
+# CDS: 981 bp (327 codons)
+
+[IDENTITY]
+gene = PIM3
+organism = unknown
+transcript = ENST00000360612.5
+cds_length = 981
+codons = 327
+protein_length = 326
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.945
+resistance = 0.055
+dominant = LOGIC
+dominant_pct = 0.3639
+FLOW = 0.1407
+OBSERVE = 0.1692
+LOGIC = 0.3639
+CHOOSE = 0.3262
+state = flowing
+
+[CONNECT]
+depth = 0.9337
+type = membrane_embedded
+hydrophobic_ratio = 0.5951
+charge_positive = 0.1411
+charge_negative = 0.1350
+charge_neutral = 0.7239
+
+[DISSOLVE]
+rigidity = 0.7045
+potential = low
+wobble_entropy = 0.2955
+complementary_disruption = 0.0663
+
+[ENCODE]
+type = engineered
+loss = 0.2656
+gc_content = 0.6901
+wobble_gc = 0.9144
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4740
+wobble_FLOW = 0.0245
+wobble_OBSERVE = 0.0612
+wobble_LOGIC = 0.4404
+wobble_CHOOSE = 0.4740
+entropy = 0.2955
+
+[OBSERVE]
+distance = 0.0377
+level = deep
+complementary_balance = 0.9337
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1346
+intensity = 0.1346
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1346
+  COMPOSE(CHOOSE,OBSERVE): 0.1284
+  COMPOSE(LOGIC,LOGIC): 0.0979
+  COMPOSE(LOGIC,OBSERVE): 0.0887
+  COMPOSE(LOGIC,CHOOSE): 0.0734
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3945
+modifier_dominant = OBSERVE
+modifier_pct = 0.3028
+primary_FLOW = 0.1529
+primary_OBSERVE = 0.1437
+primary_LOGIC = 0.3945
+primary_CHOOSE = 0.3089
+modifier_FLOW = 0.2446
+modifier_OBSERVE = 0.3028
+modifier_LOGIC = 0.2569
+modifier_CHOOSE = 0.1957
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0327
+aa_top5 = [
+  Leu: 0.1319  # aliphatic
+  Gly: 0.0982  # simple
+  Val: 0.0890  # aliphatic
+  Arg: 0.0798  # basic
+  Ala: 0.0736  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 326
+stop_codon = TGA
+loss = 0.0327
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.deep.dominant.low.membrane_embedded

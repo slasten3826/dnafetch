@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SOX9 | unknown
+# CDS: 1530 bp (510 codons)
+
+[IDENTITY]
+gene = SOX9
+organism = unknown
+transcript = ENST00000245479.3
+cds_length = 1530
+codons = 510
+protein_length = 509
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.934
+resistance = 0.066
+dominant = CHOOSE
+dominant_pct = 0.3908
+FLOW = 0.2163
+OBSERVE = 0.1059
+LOGIC = 0.2869
+CHOOSE = 0.3908
+state = flowing
+
+[CONNECT]
+depth = 0.7856
+type = balanced_interface
+hydrophobic_ratio = 0.4774
+charge_positive = 0.1316
+charge_negative = 0.1041
+charge_neutral = 0.7642
+
+[DISSOLVE]
+rigidity = 0.6896
+potential = low
+wobble_entropy = 0.3104
+complementary_disruption = 0.2144
+
+[ENCODE]
+type = engineered
+loss = 0.2344
+gc_content = 0.6778
+wobble_gc = 0.9235
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4980
+wobble_FLOW = 0.0510
+wobble_OBSERVE = 0.0255
+wobble_LOGIC = 0.4255
+wobble_CHOOSE = 0.4980
+entropy = 0.3104
+
+[OBSERVE]
+distance = 0.1039
+level = mild
+complementary_balance = 0.7856
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1373
+intensity = 0.1373
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1373
+  COMPOSE(CHOOSE,FLOW): 0.1294
+  COMPOSE(LOGIC,FLOW): 0.1039
+  COMPOSE(FLOW,FLOW): 0.0804
+  COMPOSE(LOGIC,CHOOSE): 0.0706
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3451
+modifier_dominant = FLOW
+modifier_pct = 0.3510
+primary_FLOW = 0.2471
+primary_OBSERVE = 0.1333
+primary_LOGIC = 0.2745
+primary_CHOOSE = 0.3451
+modifier_FLOW = 0.3510
+modifier_OBSERVE = 0.1588
+modifier_LOGIC = 0.1608
+modifier_CHOOSE = 0.3294
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0311
+aa_top5 = [
+  Pro: 0.1375  # cyclic
+  Ser: 0.1002  # hydroxyl
+  Gln: 0.0884  # amide
+  Ala: 0.0707  # simple
+  Thr: 0.0668  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 509
+stop_codon = TGA
+loss = 0.0311
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.low.balanced_interface

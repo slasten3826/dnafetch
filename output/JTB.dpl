@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: JTB | unknown
+# CDS: 351 bp (117 codons)
+
+[IDENTITY]
+gene = JTB
+organism = unknown
+transcript = ENST00000428469.1
+cds_length = 351
+codons = 117
+protein_length = 117
+stop_codon = none
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2678
+FLOW = 0.2507
+OBSERVE = 0.2678
+LOGIC = 0.2621
+CHOOSE = 0.2194
+state = flowing
+
+[CONNECT]
+depth = 0.9402
+type = balanced_interface
+hydrophobic_ratio = 0.5470
+charge_positive = 0.1453
+charge_negative = 0.1026
+charge_neutral = 0.7521
+
+[DISSOLVE]
+rigidity = 0.9984
+potential = crystallized
+wobble_entropy = 0.0016
+complementary_disruption = 0.0598
+
+[ENCODE]
+type = moderate
+loss = 0.2500
+gc_content = 0.4815
+wobble_gc = 0.5214
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2650
+wobble_FLOW = 0.2564
+wobble_OBSERVE = 0.2222
+wobble_LOGIC = 0.2650
+wobble_CHOOSE = 0.2564
+entropy = 0.0016
+
+[OBSERVE]
+distance = 0.0057
+level = strong
+complementary_balance = 0.9402
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1026
+intensity = 0.1026
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1026
+  COMPOSE(OBSERVE,OBSERVE): 0.1026
+  COMPOSE(LOGIC,FLOW): 0.1026
+  COMPOSE(FLOW,FLOW): 0.0940
+  COMPOSE(LOGIC,CHOOSE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.2906
+modifier_dominant = OBSERVE
+modifier_pct = 0.2906
+primary_FLOW = 0.2479
+primary_OBSERVE = 0.2906
+primary_LOGIC = 0.2906
+primary_CHOOSE = 0.1709
+modifier_FLOW = 0.2479
+modifier_OBSERVE = 0.2906
+modifier_LOGIC = 0.2308
+modifier_CHOOSE = 0.2308
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0286
+aa_top5 = [
+  Ser: 0.1026  # hydroxyl
+  Glu: 0.0940  # acidic
+  Leu: 0.0855  # aliphatic
+  Ala: 0.0769  # simple
+  Val: 0.0769  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 117
+stop_codon = none
+loss = 0.0286
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.strong.strong.crystallized.balanced_interface

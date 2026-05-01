@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ITGB1BP1 | unknown
+# CDS: 45 bp (15 codons)
+
+[IDENTITY]
+gene = ITGB1BP1
+organism = unknown
+transcript = ENST00000497105.1
+cds_length = 45
+codons = 15
+protein_length = 14
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.938
+resistance = 0.062
+dominant = FLOW
+dominant_pct = 0.4000
+FLOW = 0.4000
+OBSERVE = 0.1778
+LOGIC = 0.2889
+CHOOSE = 0.1333
+state = flowing
+
+[CONNECT]
+depth = 0.6222
+type = balanced_interface
+hydrophobic_ratio = 0.3571
+charge_positive = 0.1429
+charge_negative = 0.0000
+charge_neutral = 0.8571
+
+[DISSOLVE]
+rigidity = 0.6998
+potential = moderate
+wobble_entropy = 0.3002
+complementary_disruption = 0.3778
+
+[ENCODE]
+type = moderate
+loss = 0.8125
+gc_content = 0.4222
+wobble_gc = 0.5333
+codon_diversity = 0.1875
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5333
+wobble_FLOW = 0.3333
+wobble_OBSERVE = 0.1333
+wobble_LOGIC = 0.5333
+wobble_CHOOSE = 0.0000
+entropy = 0.3002
+
+[OBSERVE]
+distance = 0.1111
+level = mild
+complementary_balance = 0.6222
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,OBSERVE)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(LOGIC,OBSERVE): 0.2000
+  COMPOSE(FLOW,FLOW): 0.2000
+  COMPOSE(CHOOSE,FLOW): 0.2000
+  COMPOSE(FLOW,CHOOSE): 0.1333
+  COMPOSE(FLOW,OBSERVE): 0.0667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4000
+modifier_dominant = FLOW
+modifier_pct = 0.4667
+primary_FLOW = 0.4000
+primary_OBSERVE = 0.1333
+primary_LOGIC = 0.2667
+primary_CHOOSE = 0.2000
+modifier_FLOW = 0.4667
+modifier_OBSERVE = 0.2667
+modifier_LOGIC = 0.0667
+modifier_CHOOSE = 0.2000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0718
+aa_top5 = [
+  Val: 0.2143  # aliphatic
+  Gln: 0.2143  # amide
+  Lys: 0.1429  # basic
+  Thr: 0.1429  # hydroxyl
+  Met: 0.0714  # sulfur
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 14
+stop_codon = TAG
+loss = 0.0718
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.mild.dominant.moderate.balanced_interface

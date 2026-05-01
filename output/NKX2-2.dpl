@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NKX2-2 | unknown
+# CDS: 822 bp (274 codons)
+
+[IDENTITY]
+gene = NKX2-2
+organism = unknown
+transcript = ENST00000377142.5
+cds_length = 822
+codons = 274
+protein_length = 273
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.952
+resistance = 0.048
+dominant = CHOOSE
+dominant_pct = 0.3504
+FLOW = 0.2032
+OBSERVE = 0.1290
+LOGIC = 0.3175
+CHOOSE = 0.3504
+state = flowing
+
+[CONNECT]
+depth = 0.8929
+type = balanced_interface
+hydrophobic_ratio = 0.4982
+charge_positive = 0.1429
+charge_negative = 0.1172
+charge_neutral = 0.7399
+
+[DISSOLVE]
+rigidity = 0.7755
+potential = low
+wobble_entropy = 0.2245
+complementary_disruption = 0.1071
+
+[ENCODE]
+type = engineered
+loss = 0.2188
+gc_content = 0.6679
+wobble_gc = 0.8723
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4416
+wobble_FLOW = 0.0657
+wobble_OBSERVE = 0.0620
+wobble_LOGIC = 0.4416
+wobble_CHOOSE = 0.4307
+entropy = 0.2245
+
+[OBSERVE]
+distance = 0.0328
+level = deep
+complementary_balance = 0.8929
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1168
+intensity = 0.1168
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1168
+  COMPOSE(LOGIC,CHOOSE): 0.1058
+  COMPOSE(CHOOSE,CHOOSE): 0.0912
+  COMPOSE(CHOOSE,FLOW): 0.0912
+  COMPOSE(FLOW,FLOW): 0.0876
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3285
+modifier_dominant = FLOW
+modifier_pct = 0.3321
+primary_FLOW = 0.2117
+primary_OBSERVE = 0.1460
+primary_LOGIC = 0.3285
+primary_CHOOSE = 0.3139
+modifier_FLOW = 0.3321
+modifier_OBSERVE = 0.1788
+modifier_LOGIC = 0.1825
+modifier_CHOOSE = 0.3066
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0288
+aa_top5 = [
+  Ala: 0.1062  # simple
+  Pro: 0.0916  # cyclic
+  Ser: 0.0879  # hydroxyl
+  Leu: 0.0842  # aliphatic
+  Gln: 0.0696  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 273
+stop_codon = TGA
+loss = 0.0288
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.strong.low.balanced_interface

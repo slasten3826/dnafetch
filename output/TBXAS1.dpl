@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TBXAS1 | unknown
+# CDS: 390 bp (130 codons)
+
+[IDENTITY]
+gene = TBXAS1
+organism = unknown
+transcript = ENST00000414041.2
+cds_length = 390
+codons = 130
+protein_length = 130
+stop_codon = none
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = OBSERVE
+dominant_pct = 0.2949
+FLOW = 0.2256
+OBSERVE = 0.2949
+LOGIC = 0.2436
+CHOOSE = 0.2359
+state = flowing
+
+[CONNECT]
+depth = 0.9231
+type = membrane_embedded
+hydrophobic_ratio = 0.5769
+charge_positive = 0.1231
+charge_negative = 0.0615
+charge_neutral = 0.8154
+
+[DISSOLVE]
+rigidity = 0.9825
+potential = crystallized
+wobble_entropy = 0.0175
+complementary_disruption = 0.0769
+
+[ENCODE]
+type = moderate
+loss = 0.2188
+gc_content = 0.4795
+wobble_gc = 0.5615
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3000
+wobble_FLOW = 0.1615
+wobble_OBSERVE = 0.2769
+wobble_LOGIC = 0.3000
+wobble_CHOOSE = 0.2615
+entropy = 0.0175
+
+[OBSERVE]
+distance = 0.0513
+level = standard
+complementary_balance = 0.9231
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1077
+intensity = 0.1077
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1077
+  COMPOSE(LOGIC,OBSERVE): 0.0846
+  COMPOSE(CHOOSE,OBSERVE): 0.0846
+  COMPOSE(FLOW,FLOW): 0.0846
+  COMPOSE(FLOW,OBSERVE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2692
+modifier_dominant = OBSERVE
+modifier_pct = 0.3538
+primary_FLOW = 0.2692
+primary_OBSERVE = 0.2538
+primary_LOGIC = 0.2385
+primary_CHOOSE = 0.2385
+modifier_FLOW = 0.2462
+modifier_OBSERVE = 0.3538
+modifier_LOGIC = 0.1923
+modifier_CHOOSE = 0.2077
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0288
+aa_top5 = [
+  Ser: 0.1231  # hydroxyl
+  Leu: 0.1077  # aliphatic
+  Val: 0.0846  # aliphatic
+  Phe: 0.0846  # aromatic
+  Pro: 0.0615  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 130
+stop_codon = none
+loss = 0.0288
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.standard.strong.crystallized.membrane_embedded

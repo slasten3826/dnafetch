@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZFPM2 | unknown
+# CDS: 3060 bp (1020 codons)
+
+[IDENTITY]
+gene = ZFPM2
+organism = unknown
+transcript = ENST00000517361.1
+cds_length = 3060
+codons = 1020
+protein_length = 1019
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = FLOW
+dominant_pct = 0.2954
+FLOW = 0.2954
+OBSERVE = 0.2376
+LOGIC = 0.2137
+CHOOSE = 0.2533
+state = flowing
+
+[CONNECT]
+depth = 0.9026
+type = balanced_interface
+hydrophobic_ratio = 0.4691
+charge_positive = 0.1394
+charge_negative = 0.1040
+charge_neutral = 0.7566
+
+[DISSOLVE]
+rigidity = 0.9947
+potential = crystallized
+wobble_entropy = 0.0053
+complementary_disruption = 0.0974
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4670
+wobble_gc = 0.4824
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2971
+wobble_FLOW = 0.2206
+wobble_OBSERVE = 0.2971
+wobble_LOGIC = 0.2255
+wobble_CHOOSE = 0.2569
+entropy = 0.0053
+
+[OBSERVE]
+distance = 0.0422
+level = deep
+complementary_balance = 0.9026
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1304
+intensity = 0.1304
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1304
+  COMPOSE(LOGIC,FLOW): 0.1039
+  COMPOSE(CHOOSE,FLOW): 0.0941
+  COMPOSE(CHOOSE,CHOOSE): 0.0755
+  COMPOSE(OBSERVE,CHOOSE): 0.0647
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3127
+modifier_dominant = FLOW
+modifier_pct = 0.3529
+primary_FLOW = 0.3127
+primary_OBSERVE = 0.1902
+primary_LOGIC = 0.2510
+primary_CHOOSE = 0.2461
+modifier_FLOW = 0.3529
+modifier_OBSERVE = 0.2255
+modifier_LOGIC = 0.1647
+modifier_CHOOSE = 0.2569
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0231
+aa_top5 = [
+  Ser: 0.1079  # hydroxyl
+  Leu: 0.0854  # aliphatic
+  Pro: 0.0756  # cyclic
+  Lys: 0.0677  # basic
+  Asn: 0.0628  # amide
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 1019
+stop_codon = TGA
+loss = 0.0231
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.dominant.crystallized.balanced_interface

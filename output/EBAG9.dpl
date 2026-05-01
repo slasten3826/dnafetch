@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EBAG9 | unknown
+# CDS: 351 bp (117 codons)
+
+[IDENTITY]
+gene = EBAG9
+organism = unknown
+transcript = ENST00000699340.1
+cds_length = 351
+codons = 117
+protein_length = 116
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.953
+resistance = 0.047
+dominant = FLOW
+dominant_pct = 0.4074
+FLOW = 0.4074
+OBSERVE = 0.1937
+LOGIC = 0.2336
+CHOOSE = 0.1652
+state = flowing
+
+[CONNECT]
+depth = 0.7179
+type = ionic_interaction
+hydrophobic_ratio = 0.3966
+charge_positive = 0.1897
+charge_negative = 0.1724
+charge_neutral = 0.6379
+
+[DISSOLVE]
+rigidity = 0.9119
+potential = low
+wobble_entropy = 0.0881
+complementary_disruption = 0.2821
+
+[ENCODE]
+type = natural
+loss = 0.3438
+gc_content = 0.3989
+wobble_gc = 0.3162
+codon_diversity = 0.6562
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4359
+wobble_FLOW = 0.4359
+wobble_OBSERVE = 0.2479
+wobble_LOGIC = 0.2222
+wobble_CHOOSE = 0.0940
+entropy = 0.0881
+
+[OBSERVE]
+distance = 0.1738
+level = basic
+complementary_balance = 0.7179
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1709
+intensity = 0.1709
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1709
+  COMPOSE(FLOW,FLOW): 0.1453
+  COMPOSE(CHOOSE,FLOW): 0.1026
+  COMPOSE(LOGIC,CHOOSE): 0.0855
+  COMPOSE(FLOW,OBSERVE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3590
+modifier_dominant = FLOW
+modifier_pct = 0.4274
+primary_FLOW = 0.3590
+primary_OBSERVE = 0.1282
+primary_LOGIC = 0.3248
+primary_CHOOSE = 0.1880
+modifier_FLOW = 0.4274
+modifier_OBSERVE = 0.2051
+modifier_LOGIC = 0.1538
+modifier_CHOOSE = 0.2137
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0339
+aa_top5 = [
+  Glu: 0.1207  # acidic
+  Lys: 0.1121  # basic
+  Gln: 0.0948  # amide
+  Ala: 0.0862  # simple
+  Leu: 0.0776  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 116
+stop_codon = TAA
+loss = 0.0339
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

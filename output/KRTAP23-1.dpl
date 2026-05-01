@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KRTAP23-1 | unknown
+# CDS: 198 bp (66 codons)
+
+[IDENTITY]
+gene = KRTAP23-1
+organism = unknown
+transcript = ENST00000334160.6
+cds_length = 198
+codons = 66
+protein_length = 65
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = CHOOSE
+dominant_pct = 0.3384
+FLOW = 0.1768
+OBSERVE = 0.2576
+LOGIC = 0.2273
+CHOOSE = 0.3384
+state = flowing
+
+[CONNECT]
+depth = 0.8081
+type = membrane_embedded
+hydrophobic_ratio = 0.6000
+charge_positive = 0.0462
+charge_negative = 0.0462
+charge_neutral = 0.9077
+
+[DISSOLVE]
+rigidity = 0.8745
+potential = low
+wobble_entropy = 0.1255
+complementary_disruption = 0.1919
+
+[ENCODE]
+type = optimized
+loss = 0.4531
+gc_content = 0.5657
+wobble_gc = 0.7273
+codon_diversity = 0.5469
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5152
+wobble_FLOW = 0.1212
+wobble_OBSERVE = 0.1515
+wobble_LOGIC = 0.2121
+wobble_CHOOSE = 0.5152
+entropy = 0.1255
+
+[OBSERVE]
+distance = 0.0808
+level = mild
+complementary_balance = 0.8081
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1667
+  COMPOSE(LOGIC,LOGIC): 0.1364
+  COMPOSE(OBSERVE,FLOW): 0.1061
+  COMPOSE(CHOOSE,OBSERVE): 0.1061
+  COMPOSE(OBSERVE,LOGIC): 0.0758
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4091
+modifier_dominant = FLOW
+modifier_pct = 0.2727
+primary_FLOW = 0.1364
+primary_OBSERVE = 0.4091
+primary_LOGIC = 0.2121
+primary_CHOOSE = 0.2424
+modifier_FLOW = 0.2727
+modifier_OBSERVE = 0.2121
+modifier_LOGIC = 0.2576
+modifier_CHOOSE = 0.2576
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0528
+aa_top5 = [
+  Ser: 0.2000  # hydroxyl
+  Gly: 0.1385  # simple
+  Leu: 0.1385  # aliphatic
+  Tyr: 0.0923  # aromatic
+  Cys: 0.0769  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 65
+stop_codon = TAG
+loss = 0.0528
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.low.membrane_embedded

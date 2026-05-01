@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EFCAB13 | unknown
+# CDS: 507 bp (169 codons)
+
+[IDENTITY]
+gene = EFCAB13
+organism = unknown
+transcript = ENST00000523842.1
+cds_length = 507
+codons = 169
+protein_length = 168
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.959
+resistance = 0.041
+dominant = FLOW
+dominant_pct = 0.3511
+FLOW = 0.3511
+OBSERVE = 0.2978
+LOGIC = 0.2150
+CHOOSE = 0.1361
+state = flowing
+
+[CONNECT]
+depth = 0.8679
+type = ionic_interaction
+hydrophobic_ratio = 0.4583
+charge_positive = 0.1429
+charge_negative = 0.1964
+charge_neutral = 0.6607
+
+[DISSOLVE]
+rigidity = 0.9458
+potential = crystallized
+wobble_entropy = 0.0542
+complementary_disruption = 0.1321
+
+[ENCODE]
+type = natural
+loss = 0.2500
+gc_content = 0.3511
+wobble_gc = 0.3432
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3905
+wobble_FLOW = 0.2663
+wobble_OBSERVE = 0.3905
+wobble_LOGIC = 0.2189
+wobble_CHOOSE = 0.1243
+entropy = 0.0542
+
+[OBSERVE]
+distance = 0.0533
+level = standard
+complementary_balance = 0.8679
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1953
+intensity = 0.1953
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1953
+  COMPOSE(FLOW,FLOW): 0.1893
+  COMPOSE(OBSERVE,OBSERVE): 0.1124
+  COMPOSE(FLOW,OBSERVE): 0.0828
+  COMPOSE(CHOOSE,OBSERVE): 0.0651
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3728
+modifier_dominant = FLOW
+modifier_pct = 0.4142
+primary_FLOW = 0.3728
+primary_OBSERVE = 0.1834
+primary_LOGIC = 0.3254
+primary_CHOOSE = 0.1183
+modifier_FLOW = 0.4142
+modifier_OBSERVE = 0.3195
+modifier_LOGIC = 0.1006
+modifier_CHOOSE = 0.1657
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0363
+aa_top5 = [
+  Lys: 0.1250  # basic
+  Leu: 0.1190  # aliphatic
+  Glu: 0.1012  # acidic
+  Asp: 0.0952  # acidic
+  Asn: 0.0655  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 168
+stop_codon = TGA
+loss = 0.0363
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.ionic_interaction

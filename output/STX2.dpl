@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: STX2 | unknown
+# CDS: 300 bp (100 codons)
+
+[IDENTITY]
+gene = STX2
+organism = unknown
+transcript = ENST00000344271.5
+cds_length = 300
+codons = 100
+protein_length = 99
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.972
+resistance = 0.028
+dominant = FLOW
+dominant_pct = 0.3733
+FLOW = 0.3733
+OBSERVE = 0.1933
+LOGIC = 0.2067
+CHOOSE = 0.2267
+state = flowing
+
+[CONNECT]
+depth = 0.8000
+type = ionic_interaction
+hydrophobic_ratio = 0.4343
+charge_positive = 0.2121
+charge_negative = 0.1515
+charge_neutral = 0.6364
+
+[DISSOLVE]
+rigidity = 0.9870
+potential = crystallized
+wobble_entropy = 0.0130
+complementary_disruption = 0.2000
+
+[ENCODE]
+type = natural
+loss = 0.2969
+gc_content = 0.4333
+wobble_gc = 0.4400
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3300
+wobble_FLOW = 0.3300
+wobble_OBSERVE = 0.2300
+wobble_LOGIC = 0.2000
+wobble_CHOOSE = 0.2400
+entropy = 0.0130
+
+[OBSERVE]
+distance = 0.1467
+level = basic
+complementary_balance = 0.8000
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1700
+intensity = 0.1700
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1700
+  COMPOSE(LOGIC,FLOW): 0.1500
+  COMPOSE(FLOW,OBSERVE): 0.0900
+  COMPOSE(FLOW,LOGIC): 0.0800
+  COMPOSE(CHOOSE,CHOOSE): 0.0800
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3900
+modifier_dominant = FLOW
+modifier_pct = 0.4000
+primary_FLOW = 0.3900
+primary_OBSERVE = 0.1000
+primary_LOGIC = 0.2800
+primary_CHOOSE = 0.2300
+modifier_FLOW = 0.4000
+modifier_OBSERVE = 0.2500
+modifier_LOGIC = 0.1400
+modifier_CHOOSE = 0.2100
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0319
+aa_top5 = [
+  Lys: 0.1212  # basic
+  Glu: 0.1111  # acidic
+  Ile: 0.0808  # aliphatic
+  Pro: 0.0808  # cyclic
+  Leu: 0.0707  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 99
+stop_codon = TGA
+loss = 0.0319
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.crystallized.ionic_interaction

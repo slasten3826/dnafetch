@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000249141 | unknown
+# CDS: 501 bp (167 codons)
+
+[IDENTITY]
+gene = ENSG00000249141
+organism = unknown
+transcript = ENST00000507747.1
+cds_length = 501
+codons = 167
+protein_length = 166
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = FLOW
+dominant_pct = 0.2994
+FLOW = 0.2994
+OBSERVE = 0.2196
+LOGIC = 0.2575
+CHOOSE = 0.2236
+state = flowing
+
+[CONNECT]
+depth = 0.8862
+type = ionic_interaction
+hydrophobic_ratio = 0.4940
+charge_positive = 0.1506
+charge_negative = 0.1687
+charge_neutral = 0.6807
+
+[DISSOLVE]
+rigidity = 0.9954
+potential = crystallized
+wobble_entropy = 0.0046
+complementary_disruption = 0.1138
+
+[ENCODE]
+type = moderate
+loss = 0.1562
+gc_content = 0.4810
+wobble_gc = 0.5509
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2814
+wobble_FLOW = 0.2395
+wobble_OBSERVE = 0.2096
+wobble_LOGIC = 0.2814
+wobble_CHOOSE = 0.2695
+entropy = 0.0046
+
+[OBSERVE]
+distance = 0.0419
+level = deep
+complementary_balance = 0.8862
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1677
+intensity = 0.1677
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1677
+  COMPOSE(FLOW,FLOW): 0.1018
+  COMPOSE(OBSERVE,LOGIC): 0.0778
+  COMPOSE(CHOOSE,FLOW): 0.0719
+  COMPOSE(CHOOSE,CHOOSE): 0.0659
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2934
+modifier_dominant = FLOW
+modifier_pct = 0.3772
+primary_FLOW = 0.2814
+primary_OBSERVE = 0.2096
+primary_LOGIC = 0.2934
+primary_CHOOSE = 0.2156
+modifier_FLOW = 0.3772
+modifier_OBSERVE = 0.2395
+modifier_LOGIC = 0.1976
+modifier_CHOOSE = 0.1856
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0218
+aa_top5 = [
+  Glu: 0.1024  # acidic
+  Leu: 0.1024  # aliphatic
+  Pro: 0.0663  # cyclic
+  Asp: 0.0663  # acidic
+  Thr: 0.0542  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 166
+stop_codon = TGA
+loss = 0.0218
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.deep.dominant.crystallized.ionic_interaction

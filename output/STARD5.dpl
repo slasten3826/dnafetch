@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: STARD5 | unknown
+# CDS: 333 bp (111 codons)
+
+[IDENTITY]
+gene = STARD5
+organism = unknown
+transcript = ENST00000560156.1
+cds_length = 333
+codons = 111
+protein_length = 110
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.985
+resistance = 0.015
+dominant = LOGIC
+dominant_pct = 0.3333
+FLOW = 0.2132
+OBSERVE = 0.2012
+LOGIC = 0.3333
+CHOOSE = 0.2523
+state = flowing
+
+[CONNECT]
+depth = 0.9069
+type = membrane_embedded
+hydrophobic_ratio = 0.6182
+charge_positive = 0.1727
+charge_negative = 0.0818
+charge_neutral = 0.7455
+
+[DISSOLVE]
+rigidity = 0.9531
+potential = crystallized
+wobble_entropy = 0.0469
+complementary_disruption = 0.0931
+
+[ENCODE]
+type = optimized
+loss = 0.2344
+gc_content = 0.5856
+wobble_gc = 0.6577
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3964
+wobble_FLOW = 0.1622
+wobble_OBSERVE = 0.1802
+wobble_LOGIC = 0.3964
+wobble_CHOOSE = 0.2613
+entropy = 0.0469
+
+[OBSERVE]
+distance = 0.0811
+level = mild
+complementary_balance = 0.9069
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1081
+intensity = 0.1081
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1081
+  COMPOSE(LOGIC,LOGIC): 0.1081
+  COMPOSE(CHOOSE,CHOOSE): 0.0901
+  COMPOSE(LOGIC,FLOW): 0.0811
+  COMPOSE(LOGIC,CHOOSE): 0.0811
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3333
+modifier_dominant = OBSERVE
+modifier_pct = 0.2793
+primary_FLOW = 0.2703
+primary_OBSERVE = 0.1441
+primary_LOGIC = 0.3333
+primary_CHOOSE = 0.2523
+modifier_FLOW = 0.2072
+modifier_OBSERVE = 0.2793
+modifier_LOGIC = 0.2703
+modifier_CHOOSE = 0.2432
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0308
+aa_top5 = [
+  Gly: 0.1091  # simple
+  Arg: 0.1000  # basic
+  Pro: 0.0909  # cyclic
+  Ala: 0.0818  # simple
+  Leu: 0.0727  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 110
+stop_codon = TAG
+loss = 0.0308
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.strong.crystallized.membrane_embedded

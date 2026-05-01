@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ANKRD65 | unknown
+# CDS: 525 bp (175 codons)
+
+[IDENTITY]
+gene = ANKRD65
+organism = unknown
+transcript = ENST00000442470.1
+cds_length = 525
+codons = 175
+protein_length = 174
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.945
+resistance = 0.055
+dominant = LOGIC
+dominant_pct = 0.3886
+FLOW = 0.1752
+OBSERVE = 0.1429
+LOGIC = 0.3886
+CHOOSE = 0.2933
+state = flowing
+
+[CONNECT]
+depth = 0.8724
+type = membrane_embedded
+hydrophobic_ratio = 0.5862
+charge_positive = 0.1034
+charge_negative = 0.1149
+charge_neutral = 0.7816
+
+[DISSOLVE]
+rigidity = 0.8265
+potential = low
+wobble_entropy = 0.1735
+complementary_disruption = 0.1276
+
+[ENCODE]
+type = engineered
+loss = 0.3438
+gc_content = 0.6819
+wobble_gc = 0.8114
+codon_diversity = 0.6562
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4971
+wobble_FLOW = 0.1257
+wobble_OBSERVE = 0.0629
+wobble_LOGIC = 0.4971
+wobble_CHOOSE = 0.3143
+entropy = 0.1735
+
+[OBSERVE]
+distance = 0.0952
+level = mild
+complementary_balance = 0.8724
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1200
+intensity = 0.1200
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1200
+  COMPOSE(LOGIC,FLOW): 0.1143
+  COMPOSE(LOGIC,LOGIC): 0.1086
+  COMPOSE(CHOOSE,CHOOSE): 0.1029
+  COMPOSE(FLOW,LOGIC): 0.0857
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3314
+modifier_dominant = LOGIC
+modifier_pct = 0.3371
+primary_FLOW = 0.2114
+primary_OBSERVE = 0.1886
+primary_LOGIC = 0.3314
+primary_CHOOSE = 0.2686
+modifier_FLOW = 0.1886
+modifier_OBSERVE = 0.1771
+modifier_LOGIC = 0.3371
+modifier_CHOOSE = 0.2971
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0372
+aa_top5 = [
+  Gly: 0.1092  # simple
+  Pro: 0.1034  # cyclic
+  Glu: 0.0977  # acidic
+  Leu: 0.0977  # aliphatic
+  Arg: 0.0862  # basic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 174
+stop_codon = TGA
+loss = 0.0372
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.strong.low.membrane_embedded

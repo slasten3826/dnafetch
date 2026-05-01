@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CCR10 | unknown
+# CDS: 105 bp (35 codons)
+
+[IDENTITY]
+gene = CCR10
+organism = unknown
+transcript = ENST00000591568.1
+cds_length = 105
+codons = 35
+protein_length = 34
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.894
+resistance = 0.106
+dominant = CHOOSE
+dominant_pct = 0.4667
+FLOW = 0.1048
+OBSERVE = 0.1619
+LOGIC = 0.2667
+CHOOSE = 0.4667
+state = flowing
+
+[CONNECT]
+depth = 0.7429
+type = membrane_embedded
+hydrophobic_ratio = 0.6471
+charge_positive = 0.0588
+charge_negative = 0.0294
+charge_neutral = 0.9118
+
+[DISSOLVE]
+rigidity = 0.8216
+potential = low
+wobble_entropy = 0.1784
+complementary_disruption = 0.2571
+
+[ENCODE]
+type = engineered
+loss = 0.7031
+gc_content = 0.7333
+wobble_gc = 0.8286
+codon_diversity = 0.2969
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4857
+wobble_FLOW = 0.0857
+wobble_OBSERVE = 0.0857
+wobble_LOGIC = 0.3429
+wobble_CHOOSE = 0.4857
+entropy = 0.1784
+
+[OBSERVE]
+distance = 0.2000
+level = basic
+complementary_balance = 0.7429
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.2571
+intensity = 0.2571
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.2571
+  COMPOSE(CHOOSE,CHOOSE): 0.2571
+  COMPOSE(LOGIC,CHOOSE): 0.0857
+  COMPOSE(OBSERVE,CHOOSE): 0.0857
+  COMPOSE(FLOW,CHOOSE): 0.0857
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4000
+modifier_dominant = CHOOSE
+modifier_pct = 0.5143
+primary_FLOW = 0.1429
+primary_OBSERVE = 0.3429
+primary_LOGIC = 0.1143
+primary_CHOOSE = 0.4000
+modifier_FLOW = 0.0857
+modifier_OBSERVE = 0.0571
+modifier_LOGIC = 0.3429
+modifier_CHOOSE = 0.5143
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0684
+aa_top5 = [
+  Pro: 0.2647  # cyclic
+  Trp: 0.1765  # aromatic
+  Ser: 0.1176  # hydroxyl
+  Ala: 0.0882  # simple
+  Thr: 0.0882  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 34
+stop_codon = TGA
+loss = 0.0684
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.low.membrane_embedded

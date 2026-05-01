@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IGKV3-11 | unknown
+# CDS: 345 bp (115 codons)
+
+[IDENTITY]
+gene = IGKV3-11
+organism = unknown
+transcript = ENST00000483158.1
+cds_length = 345
+codons = 115
+protein_length = 115
+stop_codon = none
+
+[FLOW]
+engagement = 0.991
+resistance = 0.009
+dominant = CHOOSE
+dominant_pct = 0.3188
+FLOW = 0.2203
+OBSERVE = 0.2261
+LOGIC = 0.2348
+CHOOSE = 0.3188
+state = flowing
+
+[CONNECT]
+depth = 0.9101
+type = membrane_embedded
+hydrophobic_ratio = 0.5652
+charge_positive = 0.0609
+charge_negative = 0.0783
+charge_neutral = 0.8609
+
+[DISSOLVE]
+rigidity = 0.9659
+potential = crystallized
+wobble_entropy = 0.0341
+complementary_disruption = 0.0899
+
+[ENCODE]
+type = moderate
+loss = 0.2969
+gc_content = 0.5536
+wobble_gc = 0.5913
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3826
+wobble_FLOW = 0.1739
+wobble_OBSERVE = 0.2348
+wobble_LOGIC = 0.2087
+wobble_CHOOSE = 0.3826
+entropy = 0.0341
+
+[OBSERVE]
+distance = 0.0841
+level = mild
+complementary_balance = 0.9101
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1217
+intensity = 0.1217
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1217
+  COMPOSE(CHOOSE,OBSERVE): 0.1130
+  COMPOSE(LOGIC,CHOOSE): 0.0957
+  COMPOSE(LOGIC,FLOW): 0.0783
+  COMPOSE(CHOOSE,CHOOSE): 0.0783
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2696
+modifier_dominant = CHOOSE
+modifier_pct = 0.3043
+primary_FLOW = 0.2696
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.2609
+primary_CHOOSE = 0.2696
+modifier_FLOW = 0.2174
+modifier_OBSERVE = 0.2435
+modifier_LOGIC = 0.2348
+modifier_CHOOSE = 0.3043
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0378
+aa_top5 = [
+  Leu: 0.1391  # aliphatic
+  Ser: 0.1304  # hydroxyl
+  Ala: 0.0957  # simple
+  Pro: 0.0783  # cyclic
+  Thr: 0.0783  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 115
+stop_codon = none
+loss = 0.0378
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.membrane_embedded

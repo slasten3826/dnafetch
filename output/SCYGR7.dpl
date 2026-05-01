@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SCYGR7 | unknown
+# CDS: 291 bp (97 codons)
+
+[IDENTITY]
+gene = SCYGR7
+organism = unknown
+transcript = ENST00000641700.1
+cds_length = 291
+codons = 97
+protein_length = 96
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.922
+resistance = 0.078
+dominant = LOGIC
+dominant_pct = 0.4158
+FLOW = 0.0962
+OBSERVE = 0.2337
+LOGIC = 0.4158
+CHOOSE = 0.2543
+state = flowing
+
+[CONNECT]
+depth = 0.7010
+type = membrane_embedded
+hydrophobic_ratio = 0.7708
+charge_positive = 0.0833
+charge_negative = 0.0000
+charge_neutral = 0.9167
+
+[DISSOLVE]
+rigidity = 0.7795
+potential = low
+wobble_entropy = 0.2205
+complementary_disruption = 0.2990
+
+[ENCODE]
+type = optimized
+loss = 0.5938
+gc_content = 0.6701
+wobble_gc = 0.7113
+codon_diversity = 0.4062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5773
+wobble_FLOW = 0.0515
+wobble_OBSERVE = 0.2371
+wobble_LOGIC = 0.1340
+wobble_CHOOSE = 0.5773
+entropy = 0.2205
+
+[OBSERVE]
+distance = 0.1615
+level = basic
+complementary_balance = 0.7010
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.3814
+intensity = 0.3814
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.3814
+  COMPOSE(LOGIC,LOGIC): 0.3093
+  COMPOSE(FLOW,LOGIC): 0.0515
+  COMPOSE(FLOW,CHOOSE): 0.0412
+  COMPOSE(CHOOSE,LOGIC): 0.0412
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4227
+modifier_dominant = LOGIC
+modifier_pct = 0.7835
+primary_FLOW = 0.1443
+primary_OBSERVE = 0.4227
+primary_LOGIC = 0.3299
+primary_CHOOSE = 0.1031
+modifier_FLOW = 0.0928
+modifier_OBSERVE = 0.0412
+modifier_LOGIC = 0.7835
+modifier_CHOOSE = 0.0825
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1021
+aa_top5 = [
+  Cys: 0.3854  # sulfur
+  Gly: 0.3125  # simple
+  Ser: 0.0625  # hydroxyl
+  Arg: 0.0521  # basic
+  Thr: 0.0417  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 96
+stop_codon = TAG
+loss = 0.1021
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.basic.dominant.low.membrane_embedded

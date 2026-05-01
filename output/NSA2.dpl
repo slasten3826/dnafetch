@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NSA2 | unknown
+# CDS: 258 bp (86 codons)
+
+[IDENTITY]
+gene = NSA2
+organism = unknown
+transcript = ENST00000515524.1
+cds_length = 258
+codons = 86
+protein_length = 85
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.942
+resistance = 0.058
+dominant = FLOW
+dominant_pct = 0.4147
+FLOW = 0.4147
+OBSERVE = 0.1977
+LOGIC = 0.2481
+CHOOSE = 0.1395
+state = flowing
+
+[CONNECT]
+depth = 0.6744
+type = ionic_interaction
+hydrophobic_ratio = 0.5176
+charge_positive = 0.2941
+charge_negative = 0.0941
+charge_neutral = 0.6118
+
+[DISSOLVE]
+rigidity = 0.8982
+potential = low
+wobble_entropy = 0.1018
+complementary_disruption = 0.3256
+
+[ENCODE]
+type = natural
+loss = 0.4375
+gc_content = 0.3876
+wobble_gc = 0.3605
+codon_diversity = 0.5625
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4535
+wobble_FLOW = 0.4535
+wobble_OBSERVE = 0.1860
+wobble_LOGIC = 0.2674
+wobble_CHOOSE = 0.0930
+entropy = 0.1018
+
+[OBSERVE]
+distance = 0.1667
+level = basic
+complementary_balance = 0.6744
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1977
+intensity = 0.1977
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1977
+  COMPOSE(FLOW,OBSERVE): 0.1163
+  COMPOSE(LOGIC,FLOW): 0.0930
+  COMPOSE(LOGIC,OBSERVE): 0.0930
+  COMPOSE(FLOW,LOGIC): 0.0814
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4535
+modifier_dominant = FLOW
+modifier_pct = 0.3372
+primary_FLOW = 0.4535
+primary_OBSERVE = 0.1163
+primary_LOGIC = 0.2791
+primary_CHOOSE = 0.1512
+modifier_FLOW = 0.3372
+modifier_OBSERVE = 0.2907
+modifier_LOGIC = 0.1977
+modifier_CHOOSE = 0.1744
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0437
+aa_top5 = [
+  Lys: 0.1882  # basic
+  Arg: 0.1059  # basic
+  Val: 0.0941  # aliphatic
+  Pro: 0.0824  # cyclic
+  Met: 0.0706  # sulfur
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 85
+stop_codon = TAA
+loss = 0.0437
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

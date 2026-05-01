@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SENP3-EIF4A1 | unknown
+# CDS: 1446 bp (482 codons)
+
+[IDENTITY]
+gene = SENP3-EIF4A1
+organism = unknown
+transcript = ENST00000614237.1
+cds_length = 1446
+codons = 482
+protein_length = 481
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = CHOOSE
+dominant_pct = 0.2780
+FLOW = 0.2296
+OBSERVE = 0.2165
+LOGIC = 0.2759
+CHOOSE = 0.2780
+state = flowing
+
+[CONNECT]
+depth = 0.9848
+type = ionic_interaction
+hydrophobic_ratio = 0.5343
+charge_positive = 0.1518
+charge_negative = 0.0998
+charge_neutral = 0.7484
+
+[DISSOLVE]
+rigidity = 0.9598
+potential = crystallized
+wobble_entropy = 0.0402
+complementary_disruption = 0.0152
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.5539
+wobble_gc = 0.6556
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3444
+wobble_FLOW = 0.1411
+wobble_OBSERVE = 0.2033
+wobble_LOGIC = 0.3444
+wobble_CHOOSE = 0.3112
+entropy = 0.0402
+
+[OBSERVE]
+distance = 0.0021
+level = intense
+complementary_balance = 0.9848
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.0996
+intensity = 0.0996
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.0996
+  COMPOSE(CHOOSE,OBSERVE): 0.0934
+  COMPOSE(CHOOSE,FLOW): 0.0913
+  COMPOSE(FLOW,FLOW): 0.0892
+  COMPOSE(LOGIC,LOGIC): 0.0768
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3091
+modifier_dominant = FLOW
+modifier_pct = 0.3071
+primary_FLOW = 0.2407
+primary_OBSERVE = 0.1722
+primary_LOGIC = 0.2780
+primary_CHOOSE = 0.3091
+modifier_FLOW = 0.3071
+modifier_OBSERVE = 0.2739
+modifier_LOGIC = 0.2054
+modifier_CHOOSE = 0.2137
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0224
+aa_top5 = [
+  Leu: 0.1102  # aliphatic
+  Gly: 0.0769  # simple
+  Pro: 0.0769  # cyclic
+  Ser: 0.0748  # hydroxyl
+  Arg: 0.0665  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 481
+stop_codon = TGA
+loss = 0.0224
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.intense.strong.crystallized.ionic_interaction

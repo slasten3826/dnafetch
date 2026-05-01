@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ANK2 | unknown
+# CDS: 21 bp (7 codons)
+
+[IDENTITY]
+gene = ANK2
+organism = unknown
+transcript = ENST00000514167.1
+cds_length = 21
+codons = 7
+protein_length = 6
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.930
+resistance = 0.070
+dominant = FLOW
+dominant_pct = 0.3810
+FLOW = 0.3810
+OBSERVE = 0.3333
+LOGIC = 0.1429
+CHOOSE = 0.1429
+state = flowing
+
+[CONNECT]
+depth = 0.9524
+type = membrane_embedded
+hydrophobic_ratio = 0.8333
+charge_positive = 0.1667
+charge_negative = 0.0000
+charge_neutral = 0.8333
+
+[DISSOLVE]
+rigidity = 0.7783
+potential = low
+wobble_entropy = 0.2217
+complementary_disruption = 0.0476
+
+[ENCODE]
+type = AT_rich
+loss = 0.8906
+gc_content = 0.2857
+wobble_gc = 0.2857
+codon_diversity = 0.1094
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4286
+wobble_FLOW = 0.4286
+wobble_OBSERVE = 0.2857
+wobble_LOGIC = 0.2857
+wobble_CHOOSE = 0.0000
+entropy = 0.2217
+
+[OBSERVE]
+distance = 0.0476
+level = deep
+complementary_balance = 0.9524
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.2857
+intensity = 0.2857
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.2857
+  COMPOSE(LOGIC,CHOOSE): 0.1429
+  COMPOSE(CHOOSE,CHOOSE): 0.1429
+  COMPOSE(FLOW,FLOW): 0.1429
+  COMPOSE(OBSERVE,OBSERVE): 0.1429
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4286
+modifier_dominant = OBSERVE
+modifier_pct = 0.4286
+primary_FLOW = 0.4286
+primary_OBSERVE = 0.2857
+primary_LOGIC = 0.1429
+primary_CHOOSE = 0.1429
+modifier_FLOW = 0.2857
+modifier_OBSERVE = 0.4286
+modifier_LOGIC = 0.0000
+modifier_CHOOSE = 0.2857
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0764
+aa_top5 = [
+  Met: 0.1667  # sulfur
+  Ala: 0.1667  # simple
+  Ile: 0.1667  # aliphatic
+  Pro: 0.1667  # cyclic
+  Lys: 0.1667  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 6
+stop_codon = TAA
+loss = 0.0764
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.deep.dominant.low.membrane_embedded

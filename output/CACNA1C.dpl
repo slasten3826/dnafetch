@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CACNA1C | unknown
+# CDS: 1185 bp (395 codons)
+
+[IDENTITY]
+gene = CACNA1C
+organism = unknown
+transcript = ENST00000465278.3
+cds_length = 1185
+codons = 395
+protein_length = 394
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = CHOOSE
+dominant_pct = 0.2903
+FLOW = 0.2245
+OBSERVE = 0.2371
+LOGIC = 0.2481
+CHOOSE = 0.2903
+state = flowing
+
+[CONNECT]
+depth = 0.9451
+type = membrane_embedded
+hydrophobic_ratio = 0.5736
+charge_positive = 0.0990
+charge_negative = 0.1193
+charge_neutral = 0.7817
+
+[DISSOLVE]
+rigidity = 0.9089
+potential = crystallized
+wobble_entropy = 0.0911
+complementary_disruption = 0.0549
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.5384
+wobble_gc = 0.7316
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4228
+wobble_FLOW = 0.1063
+wobble_OBSERVE = 0.1620
+wobble_LOGIC = 0.3089
+wobble_CHOOSE = 0.4228
+entropy = 0.0911
+
+[OBSERVE]
+distance = 0.0422
+level = deep
+complementary_balance = 0.9451
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1190
+intensity = 0.1190
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1190
+  COMPOSE(CHOOSE,OBSERVE): 0.1063
+  COMPOSE(FLOW,OBSERVE): 0.1038
+  COMPOSE(FLOW,FLOW): 0.0937
+  COMPOSE(OBSERVE,OBSERVE): 0.0835
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2911
+modifier_dominant = OBSERVE
+modifier_pct = 0.3519
+primary_FLOW = 0.2911
+primary_OBSERVE = 0.1975
+primary_LOGIC = 0.2861
+primary_CHOOSE = 0.2253
+modifier_FLOW = 0.2759
+modifier_OBSERVE = 0.3519
+modifier_LOGIC = 0.1494
+modifier_CHOOSE = 0.2228
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0267
+aa_top5 = [
+  Leu: 0.1193  # aliphatic
+  Ser: 0.0838  # hydroxyl
+  Glu: 0.0812  # acidic
+  Ile: 0.0761  # aliphatic
+  Phe: 0.0711  # aromatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 394
+stop_codon = TAG
+loss = 0.0267
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.membrane_embedded

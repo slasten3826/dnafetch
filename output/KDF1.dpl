@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KDF1 | unknown
+# CDS: 1197 bp (399 codons)
+
+[IDENTITY]
+gene = KDF1
+organism = unknown
+transcript = ENST00000320567.6
+cds_length = 1197
+codons = 399
+protein_length = 398
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.976
+resistance = 0.024
+dominant = CHOOSE
+dominant_pct = 0.3392
+FLOW = 0.1997
+OBSERVE = 0.1788
+LOGIC = 0.2824
+CHOOSE = 0.3392
+state = flowing
+
+[CONNECT]
+depth = 0.9223
+type = balanced_interface
+hydrophobic_ratio = 0.5075
+charge_positive = 0.1432
+charge_negative = 0.1307
+charge_neutral = 0.7261
+
+[DISSOLVE]
+rigidity = 0.9401
+potential = crystallized
+wobble_entropy = 0.0599
+complementary_disruption = 0.0777
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.6216
+wobble_gc = 0.6817
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3935
+wobble_FLOW = 0.1253
+wobble_OBSERVE = 0.1930
+wobble_LOGIC = 0.2882
+wobble_CHOOSE = 0.3935
+entropy = 0.0599
+
+[OBSERVE]
+distance = 0.0568
+level = standard
+complementary_balance = 0.9223
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1303
+intensity = 0.1303
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1303
+  COMPOSE(CHOOSE,CHOOSE): 0.1153
+  COMPOSE(CHOOSE,LOGIC): 0.0752
+  COMPOSE(LOGIC,CHOOSE): 0.0752
+  COMPOSE(LOGIC,LOGIC): 0.0652
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3083
+modifier_dominant = CHOOSE
+modifier_pct = 0.3158
+primary_FLOW = 0.2206
+primary_OBSERVE = 0.1704
+primary_LOGIC = 0.3008
+primary_CHOOSE = 0.3083
+modifier_FLOW = 0.2531
+modifier_OBSERVE = 0.1729
+modifier_LOGIC = 0.2581
+modifier_CHOOSE = 0.3158
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0313
+aa_top5 = [
+  Ser: 0.1181  # hydroxyl
+  Pro: 0.1156  # cyclic
+  Arg: 0.0829  # basic
+  Ala: 0.0754  # simple
+  Leu: 0.0678  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 398
+stop_codon = TAA
+loss = 0.0313
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.balanced_interface

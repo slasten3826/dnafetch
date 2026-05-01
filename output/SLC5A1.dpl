@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLC5A1 | unknown
+# CDS: 1614 bp (538 codons)
+
+[IDENTITY]
+gene = SLC5A1
+organism = unknown
+transcript = ENST00000543737.2
+cds_length = 1614
+codons = 538
+protein_length = 537
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = CHOOSE
+dominant_pct = 0.2596
+FLOW = 0.2342
+OBSERVE = 0.2577
+LOGIC = 0.2485
+CHOOSE = 0.2596
+state = flowing
+
+[CONNECT]
+depth = 0.9653
+type = membrane_embedded
+hydrophobic_ratio = 0.6462
+charge_positive = 0.0968
+charge_negative = 0.0819
+charge_neutral = 0.8212
+
+[DISSOLVE]
+rigidity = 0.9562
+potential = crystallized
+wobble_entropy = 0.0438
+complementary_disruption = 0.0347
+
+[ENCODE]
+type = optimized
+loss = 0.0469
+gc_content = 0.5081
+wobble_gc = 0.6636
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3680
+wobble_FLOW = 0.1487
+wobble_OBSERVE = 0.1877
+wobble_LOGIC = 0.2955
+wobble_CHOOSE = 0.3680
+entropy = 0.0438
+
+[OBSERVE]
+distance = 0.0019
+level = intense
+complementary_balance = 0.9653
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1468
+intensity = 0.1468
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1468
+  COMPOSE(CHOOSE,OBSERVE): 0.0948
+  COMPOSE(LOGIC,FLOW): 0.0818
+  COMPOSE(OBSERVE,OBSERVE): 0.0781
+  COMPOSE(FLOW,FLOW): 0.0725
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3197
+modifier_dominant = OBSERVE
+modifier_pct = 0.3792
+primary_FLOW = 0.3197
+primary_OBSERVE = 0.2063
+primary_LOGIC = 0.2788
+primary_CHOOSE = 0.1952
+modifier_FLOW = 0.2342
+modifier_OBSERVE = 0.3792
+modifier_LOGIC = 0.1710
+modifier_CHOOSE = 0.2156
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0267
+aa_top5 = [
+  Leu: 0.1192  # aliphatic
+  Ile: 0.1043  # aliphatic
+  Gly: 0.0708  # simple
+  Ala: 0.0670  # simple
+  Thr: 0.0652  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 537
+stop_codon = TGA
+loss = 0.0267
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.intense.dominant.crystallized.membrane_embedded

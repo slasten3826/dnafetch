@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SBK1 | unknown
+# CDS: 1275 bp (425 codons)
+
+[IDENTITY]
+gene = SBK1
+organism = unknown
+transcript = ENST00000341901.5
+cds_length = 1275
+codons = 425
+protein_length = 424
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.945
+resistance = 0.055
+dominant = CHOOSE
+dominant_pct = 0.3529
+FLOW = 0.1506
+OBSERVE = 0.1569
+LOGIC = 0.3396
+CHOOSE = 0.3529
+state = flowing
+
+[CONNECT]
+depth = 0.9804
+type = membrane_embedded
+hydrophobic_ratio = 0.6061
+charge_positive = 0.1462
+charge_negative = 0.1061
+charge_neutral = 0.7476
+
+[DISSOLVE]
+rigidity = 0.7593
+potential = low
+wobble_entropy = 0.2407
+complementary_disruption = 0.0196
+
+[ENCODE]
+type = engineered
+loss = 0.2500
+gc_content = 0.6925
+wobble_gc = 0.8824
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4706
+wobble_FLOW = 0.0518
+wobble_OBSERVE = 0.0659
+wobble_LOGIC = 0.4118
+wobble_CHOOSE = 0.4706
+entropy = 0.2407
+
+[OBSERVE]
+distance = 0.0133
+level = strong
+complementary_balance = 0.9804
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1082
+intensity = 0.1082
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1082
+  COMPOSE(LOGIC,FLOW): 0.1059
+  COMPOSE(LOGIC,OBSERVE): 0.1012
+  COMPOSE(CHOOSE,OBSERVE): 0.0918
+  COMPOSE(LOGIC,LOGIC): 0.0894
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3741
+modifier_dominant = OBSERVE
+modifier_pct = 0.2824
+primary_FLOW = 0.1788
+primary_OBSERVE = 0.1224
+primary_LOGIC = 0.3741
+primary_CHOOSE = 0.3247
+modifier_FLOW = 0.2212
+modifier_OBSERVE = 0.2824
+modifier_LOGIC = 0.2329
+modifier_CHOOSE = 0.2635
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0324
+aa_top5 = [
+  Pro: 0.1085  # cyclic
+  Val: 0.1014  # aliphatic
+  Leu: 0.0967  # aliphatic
+  Gly: 0.0896  # simple
+  Arg: 0.0849  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 424
+stop_codon = TGA
+loss = 0.0324
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.low.membrane_embedded

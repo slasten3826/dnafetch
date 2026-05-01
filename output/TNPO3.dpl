@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TNPO3 | unknown
+# CDS: 2874 bp (958 codons)
+
+[IDENTITY]
+gene = TNPO3
+organism = unknown
+transcript = ENST00000471166.1
+cds_length = 2874
+codons = 958
+protein_length = 957
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = OBSERVE
+dominant_pct = 0.2724
+FLOW = 0.2554
+OBSERVE = 0.2724
+LOGIC = 0.2432
+CHOOSE = 0.2289
+state = flowing
+
+[CONNECT]
+depth = 0.9687
+type = membrane_embedded
+hydrophobic_ratio = 0.5538
+charge_positive = 0.1202
+charge_negative = 0.1212
+charge_neutral = 0.7586
+
+[DISSOLVE]
+rigidity = 0.9969
+potential = crystallized
+wobble_entropy = 0.0031
+complementary_disruption = 0.0313
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4722
+wobble_gc = 0.4843
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2839
+wobble_FLOW = 0.2317
+wobble_OBSERVE = 0.2839
+wobble_LOGIC = 0.2589
+wobble_CHOOSE = 0.2255
+entropy = 0.0031
+
+[OBSERVE]
+distance = 0.0170
+level = strong
+complementary_balance = 0.9687
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1211
+intensity = 0.1211
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1211
+  COMPOSE(OBSERVE,OBSERVE): 0.0919
+  COMPOSE(CHOOSE,OBSERVE): 0.0898
+  COMPOSE(CHOOSE,FLOW): 0.0856
+  COMPOSE(LOGIC,OBSERVE): 0.0814
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3111
+modifier_dominant = OBSERVE
+modifier_pct = 0.3330
+primary_FLOW = 0.2307
+primary_OBSERVE = 0.2004
+primary_LOGIC = 0.3111
+primary_CHOOSE = 0.2578
+modifier_FLOW = 0.3038
+modifier_OBSERVE = 0.3330
+modifier_LOGIC = 0.1597
+modifier_CHOOSE = 0.2035
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0267
+aa_top5 = [
+  Leu: 0.1411  # aliphatic
+  Val: 0.0815  # aliphatic
+  Glu: 0.0731  # acidic
+  Ala: 0.0658  # simple
+  Ser: 0.0596  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 957
+stop_codon = TAG
+loss = 0.0267
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.strong.dominant.crystallized.membrane_embedded

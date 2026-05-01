@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: UHMK1 | unknown
+# CDS: 1260 bp (420 codons)
+
+[IDENTITY]
+gene = UHMK1
+organism = unknown
+transcript = ENST00000489294.2
+cds_length = 1260
+codons = 420
+protein_length = 419
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2659
+FLOW = 0.2476
+OBSERVE = 0.2659
+LOGIC = 0.2651
+CHOOSE = 0.2214
+state = flowing
+
+[CONNECT]
+depth = 0.9381
+type = membrane_embedded
+hydrophobic_ratio = 0.5871
+charge_positive = 0.1193
+charge_negative = 0.1169
+charge_neutral = 0.7637
+
+[DISSOLVE]
+rigidity = 0.9924
+potential = crystallized
+wobble_entropy = 0.0076
+complementary_disruption = 0.0619
+
+[ENCODE]
+type = moderate
+loss = 0.0469
+gc_content = 0.4865
+wobble_gc = 0.4714
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3071
+wobble_FLOW = 0.2214
+wobble_OBSERVE = 0.3071
+wobble_LOGIC = 0.2571
+wobble_CHOOSE = 0.2143
+entropy = 0.0076
+
+[OBSERVE]
+distance = 0.0008
+level = intense
+complementary_balance = 0.9381
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1167
+intensity = 0.1167
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1167
+  COMPOSE(LOGIC,CHOOSE): 0.0929
+  COMPOSE(CHOOSE,OBSERVE): 0.0857
+  COMPOSE(OBSERVE,OBSERVE): 0.0786
+  COMPOSE(FLOW,FLOW): 0.0738
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3452
+modifier_dominant = FLOW
+modifier_pct = 0.3000
+primary_FLOW = 0.2214
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.3452
+primary_CHOOSE = 0.2333
+modifier_FLOW = 0.3000
+modifier_OBSERVE = 0.2905
+modifier_LOGIC = 0.1929
+modifier_CHOOSE = 0.2167
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0253
+aa_top5 = [
+  Leu: 0.1193  # aliphatic
+  Ala: 0.0931  # simple
+  Ser: 0.0764  # hydroxyl
+  Gly: 0.0692  # simple
+  Glu: 0.0692  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 419
+stop_codon = TAA
+loss = 0.0253
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.intense.strong.crystallized.membrane_embedded

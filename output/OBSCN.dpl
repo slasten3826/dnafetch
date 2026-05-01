@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: OBSCN | unknown
+# CDS: 1008 bp (336 codons)
+
+[IDENTITY]
+gene = OBSCN
+organism = unknown
+transcript = ENST00000665495.1
+cds_length = 1008
+codons = 336
+protein_length = 335
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.960
+resistance = 0.040
+dominant = CHOOSE
+dominant_pct = 0.3433
+FLOW = 0.1905
+OBSERVE = 0.1488
+LOGIC = 0.3175
+CHOOSE = 0.3433
+state = flowing
+
+[CONNECT]
+depth = 0.9325
+type = membrane_embedded
+hydrophobic_ratio = 0.5582
+charge_positive = 0.1493
+charge_negative = 0.0925
+charge_neutral = 0.7582
+
+[DISSOLVE]
+rigidity = 0.7698
+potential = low
+wobble_entropy = 0.2302
+complementary_disruption = 0.0675
+
+[ENCODE]
+type = engineered
+loss = 0.2344
+gc_content = 0.6607
+wobble_gc = 0.8720
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4524
+wobble_FLOW = 0.0863
+wobble_OBSERVE = 0.0417
+wobble_LOGIC = 0.4196
+wobble_CHOOSE = 0.4524
+entropy = 0.2302
+
+[OBSERVE]
+distance = 0.0258
+level = deep
+complementary_balance = 0.9325
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1310
+intensity = 0.1310
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1310
+  COMPOSE(LOGIC,CHOOSE): 0.0952
+  COMPOSE(LOGIC,FLOW): 0.0923
+  COMPOSE(CHOOSE,FLOW): 0.0863
+  COMPOSE(FLOW,LOGIC): 0.0685
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3423
+modifier_dominant = FLOW
+modifier_pct = 0.2738
+primary_FLOW = 0.2113
+primary_OBSERVE = 0.1458
+primary_LOGIC = 0.3006
+primary_CHOOSE = 0.3423
+modifier_FLOW = 0.2738
+modifier_OBSERVE = 0.2589
+modifier_LOGIC = 0.2321
+modifier_CHOOSE = 0.2351
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0309
+aa_top5 = [
+  Leu: 0.1373  # aliphatic
+  Ala: 0.0955  # simple
+  Ser: 0.0866  # hydroxyl
+  Arg: 0.0776  # basic
+  Glu: 0.0687  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 335
+stop_codon = TGA
+loss = 0.0309
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.membrane_embedded

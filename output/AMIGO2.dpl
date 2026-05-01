@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: AMIGO2 | unknown
+# CDS: 1569 bp (523 codons)
+
+[IDENTITY]
+gene = AMIGO2
+organism = unknown
+transcript = ENST00000429635.1
+cds_length = 1569
+codons = 523
+protein_length = 522
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2792
+FLOW = 0.2511
+OBSERVE = 0.2792
+LOGIC = 0.2371
+CHOOSE = 0.2326
+state = flowing
+
+[CONNECT]
+depth = 0.9675
+type = balanced_interface
+hydrophobic_ratio = 0.5479
+charge_positive = 0.1284
+charge_negative = 0.0824
+charge_neutral = 0.7893
+
+[DISSOLVE]
+rigidity = 0.9873
+potential = crystallized
+wobble_entropy = 0.0127
+complementary_disruption = 0.0325
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4697
+wobble_gc = 0.5239
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3002
+wobble_FLOW = 0.1759
+wobble_OBSERVE = 0.3002
+wobble_LOGIC = 0.2600
+wobble_CHOOSE = 0.2639
+entropy = 0.0127
+
+[OBSERVE]
+distance = 0.0280
+level = deep
+complementary_balance = 0.9675
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1128
+intensity = 0.1128
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1128
+  COMPOSE(CHOOSE,OBSERVE): 0.0975
+  COMPOSE(LOGIC,FLOW): 0.0822
+  COMPOSE(OBSERVE,OBSERVE): 0.0803
+  COMPOSE(LOGIC,OBSERVE): 0.0765
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3021
+modifier_dominant = OBSERVE
+modifier_pct = 0.3231
+primary_FLOW = 0.3021
+primary_OBSERVE = 0.2141
+primary_LOGIC = 0.2715
+primary_CHOOSE = 0.2122
+modifier_FLOW = 0.2753
+modifier_OBSERVE = 0.3231
+modifier_LOGIC = 0.1797
+modifier_CHOOSE = 0.2218
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0266
+aa_top5 = [
+  Leu: 0.1264  # aliphatic
+  Ser: 0.0996  # hydroxyl
+  Val: 0.0766  # aliphatic
+  Asn: 0.0632  # amide
+  Ala: 0.0575  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 522
+stop_codon = TAA
+loss = 0.0266
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.strong.crystallized.balanced_interface

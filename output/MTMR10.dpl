@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MTMR10 | unknown
+# CDS: 171 bp (57 codons)
+
+[IDENTITY]
+gene = MTMR10
+organism = unknown
+transcript = ENST00000564787.1
+cds_length = 171
+codons = 57
+protein_length = 56
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.967
+resistance = 0.033
+dominant = LOGIC
+dominant_pct = 0.3509
+FLOW = 0.2865
+OBSERVE = 0.2105
+LOGIC = 0.3509
+CHOOSE = 0.1520
+state = flowing
+
+[CONNECT]
+depth = 0.7251
+type = ionic_interaction
+hydrophobic_ratio = 0.5000
+charge_positive = 0.1429
+charge_negative = 0.2143
+charge_neutral = 0.6429
+
+[DISSOLVE]
+rigidity = 0.8733
+potential = low
+wobble_entropy = 0.1267
+complementary_disruption = 0.2749
+
+[ENCODE]
+type = moderate
+loss = 0.4688
+gc_content = 0.5029
+wobble_gc = 0.5263
+codon_diversity = 0.5312
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4561
+wobble_FLOW = 0.2982
+wobble_OBSERVE = 0.1754
+wobble_LOGIC = 0.4561
+wobble_CHOOSE = 0.0702
+entropy = 0.1267
+
+[OBSERVE]
+distance = 0.0643
+level = standard
+complementary_balance = 0.7251
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2105
+intensity = 0.2105
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2105
+  COMPOSE(LOGIC,OBSERVE): 0.1053
+  COMPOSE(CHOOSE,OBSERVE): 0.0877
+  COMPOSE(FLOW,OBSERVE): 0.0702
+  COMPOSE(OBSERVE,OBSERVE): 0.0702
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4386
+modifier_dominant = OBSERVE
+modifier_pct = 0.3333
+primary_FLOW = 0.2456
+primary_OBSERVE = 0.1228
+primary_LOGIC = 0.4386
+primary_CHOOSE = 0.1930
+modifier_FLOW = 0.3158
+modifier_OBSERVE = 0.3333
+modifier_LOGIC = 0.1579
+modifier_CHOOSE = 0.1930
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0513
+aa_top5 = [
+  Glu: 0.2143  # acidic
+  Leu: 0.1250  # aliphatic
+  Val: 0.1071  # aliphatic
+  Arg: 0.0714  # basic
+  Thr: 0.0714  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 56
+stop_codon = TGA
+loss = 0.0513
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.dominant.low.ionic_interaction

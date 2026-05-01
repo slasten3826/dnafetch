@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KRTAP2-1 | unknown
+# CDS: 387 bp (129 codons)
+
+[IDENTITY]
+gene = KRTAP2-1
+organism = unknown
+transcript = ENST00000391419.3
+cds_length = 387
+codons = 129
+protein_length = 128
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.898
+resistance = 0.102
+dominant = CHOOSE
+dominant_pct = 0.4470
+FLOW = 0.0930
+OBSERVE = 0.1783
+LOGIC = 0.2817
+CHOOSE = 0.4470
+state = flowing
+
+[CONNECT]
+depth = 0.7494
+type = membrane_embedded
+hydrophobic_ratio = 0.6172
+charge_positive = 0.0859
+charge_negative = 0.0312
+charge_neutral = 0.8828
+
+[DISSOLVE]
+rigidity = 0.5594
+potential = moderate
+wobble_entropy = 0.4406
+complementary_disruption = 0.2506
+
+[ENCODE]
+type = engineered
+loss = 0.5312
+gc_content = 0.7287
+wobble_gc = 0.9457
+codon_diversity = 0.4688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.7132
+wobble_FLOW = 0.0233
+wobble_OBSERVE = 0.0310
+wobble_LOGIC = 0.2326
+wobble_CHOOSE = 0.7132
+entropy = 0.4406
+
+[OBSERVE]
+distance = 0.1654
+level = basic
+complementary_balance = 0.7494
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.2868
+intensity = 0.2868
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.2868
+  COMPOSE(CHOOSE,CHOOSE): 0.1395
+  COMPOSE(FLOW,CHOOSE): 0.1163
+  COMPOSE(OBSERVE,CHOOSE): 0.0853
+  COMPOSE(CHOOSE,LOGIC): 0.0698
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3876
+modifier_dominant = LOGIC
+modifier_pct = 0.4419
+primary_FLOW = 0.1705
+primary_OBSERVE = 0.3876
+primary_LOGIC = 0.1705
+primary_CHOOSE = 0.2713
+modifier_FLOW = 0.0853
+modifier_OBSERVE = 0.1163
+modifier_LOGIC = 0.4419
+modifier_CHOOSE = 0.3566
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0662
+aa_top5 = [
+  Cys: 0.2734  # sulfur
+  Pro: 0.1406  # cyclic
+  Thr: 0.1172  # hydroxyl
+  Ser: 0.1016  # hydroxyl
+  Arg: 0.0859  # basic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 128
+stop_codon = TGA
+loss = 0.0662
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.moderate.membrane_embedded

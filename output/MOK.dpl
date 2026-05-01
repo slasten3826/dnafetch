@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MOK | unknown
+# CDS: 135 bp (45 codons)
+
+[IDENTITY]
+gene = MOK
+organism = unknown
+transcript = ENST00000520238.1
+cds_length = 135
+codons = 45
+protein_length = 44
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.937
+resistance = 0.063
+dominant = FLOW
+dominant_pct = 0.4074
+FLOW = 0.4074
+OBSERVE = 0.2148
+LOGIC = 0.2593
+CHOOSE = 0.1185
+state = flowing
+
+[CONNECT]
+depth = 0.6667
+type = ionic_interaction
+hydrophobic_ratio = 0.5000
+charge_positive = 0.2045
+charge_negative = 0.0909
+charge_neutral = 0.7045
+
+[DISSOLVE]
+rigidity = 0.9544
+potential = low
+wobble_entropy = 0.0456
+complementary_disruption = 0.3333
+
+[ENCODE]
+type = natural
+loss = 0.5469
+gc_content = 0.3778
+wobble_gc = 0.4000
+codon_diversity = 0.4531
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3778
+wobble_FLOW = 0.3778
+wobble_OBSERVE = 0.2222
+wobble_LOGIC = 0.2667
+wobble_CHOOSE = 0.1333
+entropy = 0.0456
+
+[OBSERVE]
+distance = 0.1481
+level = basic
+complementary_balance = 0.6667
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2000
+  COMPOSE(FLOW,OBSERVE): 0.1333
+  COMPOSE(LOGIC,LOGIC): 0.1111
+  COMPOSE(LOGIC,FLOW): 0.0889
+  COMPOSE(OBSERVE,FLOW): 0.0667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4222
+modifier_dominant = FLOW
+modifier_pct = 0.4222
+primary_FLOW = 0.4222
+primary_OBSERVE = 0.1778
+primary_LOGIC = 0.2667
+primary_CHOOSE = 0.1333
+modifier_FLOW = 0.4222
+modifier_OBSERVE = 0.2444
+modifier_LOGIC = 0.2444
+modifier_CHOOSE = 0.0889
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0356
+aa_top5 = [
+  Lys: 0.1364  # basic
+  Gly: 0.1136  # simple
+  Met: 0.0909  # sulfur
+  Asn: 0.0682  # amide
+  Tyr: 0.0682  # aromatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 44
+stop_codon = TGA
+loss = 0.0356
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

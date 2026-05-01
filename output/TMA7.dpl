@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMA7 | unknown
+# CDS: 195 bp (65 codons)
+
+[IDENTITY]
+gene = TMA7
+organism = unknown
+transcript = ENST00000438607.2
+cds_length = 195
+codons = 65
+protein_length = 64
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.920
+resistance = 0.080
+dominant = FLOW
+dominant_pct = 0.3846
+FLOW = 0.3846
+OBSERVE = 0.0974
+LOGIC = 0.3282
+CHOOSE = 0.1897
+state = flowing
+
+[CONNECT]
+depth = 0.5744
+type = ionic_interaction
+hydrophobic_ratio = 0.3906
+charge_positive = 0.3281
+charge_negative = 0.1562
+charge_neutral = 0.5156
+
+[DISSOLVE]
+rigidity = 0.8897
+potential = low
+wobble_entropy = 0.1103
+complementary_disruption = 0.4256
+
+[ENCODE]
+type = optimized
+loss = 0.5469
+gc_content = 0.5179
+wobble_gc = 0.6769
+codon_diversity = 0.4531
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4769
+wobble_FLOW = 0.2308
+wobble_OBSERVE = 0.0923
+wobble_LOGIC = 0.4769
+wobble_CHOOSE = 0.2000
+entropy = 0.1103
+
+[OBSERVE]
+distance = 0.0564
+level = standard
+complementary_balance = 0.5744
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.3077
+intensity = 0.3077
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.3077
+  COMPOSE(LOGIC,FLOW): 0.1538
+  COMPOSE(LOGIC,LOGIC): 0.1231
+  COMPOSE(LOGIC,CHOOSE): 0.0923
+  COMPOSE(CHOOSE,FLOW): 0.0769
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3692
+modifier_dominant = FLOW
+modifier_pct = 0.5538
+primary_FLOW = 0.3692
+primary_OBSERVE = 0.0769
+primary_LOGIC = 0.3692
+primary_CHOOSE = 0.1846
+modifier_FLOW = 0.5538
+modifier_OBSERVE = 0.1231
+modifier_LOGIC = 0.1385
+modifier_CHOOSE = 0.1846
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0720
+aa_top5 = [
+  Lys: 0.3125  # basic
+  Gly: 0.1250  # simple
+  Glu: 0.1250  # acidic
+  Ala: 0.0938  # simple
+  Gln: 0.0781  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 64
+stop_codon = TAA
+loss = 0.0720
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.standard.dominant.low.ionic_interaction

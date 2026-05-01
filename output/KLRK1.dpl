@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KLRK1 | unknown
+# CDS: 243 bp (81 codons)
+
+[IDENTITY]
+gene = KLRK1
+organism = unknown
+transcript = ENST00000396451.4
+cds_length = 243
+codons = 81
+protein_length = 80
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = FLOW
+dominant_pct = 0.3004
+FLOW = 0.3004
+OBSERVE = 0.3004
+LOGIC = 0.2387
+CHOOSE = 0.1605
+state = flowing
+
+[CONNECT]
+depth = 0.9218
+type = ionic_interaction
+hydrophobic_ratio = 0.5500
+charge_positive = 0.1875
+charge_negative = 0.0625
+charge_neutral = 0.7500
+
+[DISSOLVE]
+rigidity = 0.9833
+potential = crystallized
+wobble_entropy = 0.0167
+complementary_disruption = 0.0782
+
+[ENCODE]
+type = natural
+loss = 0.3281
+gc_content = 0.3992
+wobble_gc = 0.3951
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3086
+wobble_FLOW = 0.2963
+wobble_OBSERVE = 0.3086
+wobble_LOGIC = 0.2099
+wobble_CHOOSE = 0.1852
+entropy = 0.0167
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.9218
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1235
+intensity = 0.1235
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1235
+  COMPOSE(OBSERVE,OBSERVE): 0.1111
+  COMPOSE(FLOW,FLOW): 0.1111
+  COMPOSE(OBSERVE,LOGIC): 0.0988
+  COMPOSE(FLOW,LOGIC): 0.0988
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3580
+modifier_dominant = OBSERVE
+modifier_pct = 0.3210
+primary_FLOW = 0.3580
+primary_OBSERVE = 0.2716
+primary_LOGIC = 0.2099
+primary_CHOOSE = 0.1605
+modifier_FLOW = 0.2469
+modifier_OBSERVE = 0.3210
+modifier_LOGIC = 0.2963
+modifier_CHOOSE = 0.1358
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0259
+aa_top5 = [
+  Arg: 0.1000  # basic
+  Ser: 0.1000  # hydroxyl
+  Phe: 0.1000  # aromatic
+  Ile: 0.0750  # aliphatic
+  Lys: 0.0625  # basic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 80
+stop_codon = TAA
+loss = 0.0259
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.intense.dominant.crystallized.ionic_interaction

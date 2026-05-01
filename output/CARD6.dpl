@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CARD6 | unknown
+# CDS: 3114 bp (1038 codons)
+
+[IDENTITY]
+gene = CARD6
+organism = unknown
+transcript = ENST00000254691.10
+cds_length = 3114
+codons = 1038
+protein_length = 1037
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = FLOW
+dominant_pct = 0.2942
+FLOW = 0.2942
+OBSERVE = 0.2498
+LOGIC = 0.2347
+CHOOSE = 0.2213
+state = flowing
+
+[CONNECT]
+depth = 0.9422
+type = balanced_interface
+hydrophobic_ratio = 0.4754
+charge_positive = 0.1398
+charge_negative = 0.1311
+charge_neutral = 0.7290
+
+[DISSOLVE]
+rigidity = 0.9892
+potential = crystallized
+wobble_entropy = 0.0108
+complementary_disruption = 0.0578
+
+[ENCODE]
+type = natural
+loss = 0.0469
+gc_content = 0.4560
+wobble_gc = 0.4306
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2958
+wobble_FLOW = 0.2736
+wobble_OBSERVE = 0.2958
+wobble_LOGIC = 0.2476
+wobble_CHOOSE = 0.1830
+entropy = 0.0108
+
+[OBSERVE]
+distance = 0.0443
+level = deep
+complementary_balance = 0.9422
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1310
+intensity = 0.1310
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1310
+  COMPOSE(FLOW,FLOW): 0.0954
+  COMPOSE(CHOOSE,FLOW): 0.0934
+  COMPOSE(OBSERVE,OBSERVE): 0.0819
+  COMPOSE(OBSERVE,CHOOSE): 0.0751
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2900
+modifier_dominant = FLOW
+modifier_pct = 0.3372
+primary_FLOW = 0.2717
+primary_OBSERVE = 0.2071
+primary_LOGIC = 0.2900
+primary_CHOOSE = 0.2312
+modifier_FLOW = 0.3372
+modifier_OBSERVE = 0.2466
+modifier_LOGIC = 0.1667
+modifier_CHOOSE = 0.2495
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0251
+aa_top5 = [
+  Ser: 0.1032  # hydroxyl
+  Leu: 0.0926  # aliphatic
+  Glu: 0.0858  # acidic
+  Gln: 0.0704  # amide
+  Pro: 0.0675  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 1037
+stop_codon = TAA
+loss = 0.0251
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.dominant.crystallized.balanced_interface

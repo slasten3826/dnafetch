@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CLDN17 | unknown
+# CDS: 675 bp (225 codons)
+
+[IDENTITY]
+gene = CLDN17
+organism = unknown
+transcript = ENST00000286808.5
+cds_length = 675
+codons = 225
+protein_length = 224
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2652
+FLOW = 0.2163
+OBSERVE = 0.2652
+LOGIC = 0.2637
+CHOOSE = 0.2548
+state = flowing
+
+[CONNECT]
+depth = 0.9422
+type = membrane_embedded
+hydrophobic_ratio = 0.6830
+charge_positive = 0.1071
+charge_negative = 0.0312
+charge_neutral = 0.8616
+
+[DISSOLVE]
+rigidity = 0.9860
+potential = crystallized
+wobble_entropy = 0.0140
+complementary_disruption = 0.0578
+
+[ENCODE]
+type = moderate
+loss = 0.1406
+gc_content = 0.5185
+wobble_gc = 0.5778
+codon_diversity = 0.8594
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3200
+wobble_FLOW = 0.1822
+wobble_OBSERVE = 0.2400
+wobble_LOGIC = 0.2578
+wobble_CHOOSE = 0.3200
+entropy = 0.0140
+
+[OBSERVE]
+distance = 0.0015
+level = intense
+complementary_balance = 0.9422
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1156
+intensity = 0.1156
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1156
+  COMPOSE(FLOW,OBSERVE): 0.0978
+  COMPOSE(LOGIC,CHOOSE): 0.0933
+  COMPOSE(LOGIC,LOGIC): 0.0933
+  COMPOSE(OBSERVE,OBSERVE): 0.0711
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2889
+modifier_dominant = OBSERVE
+modifier_pct = 0.3556
+primary_FLOW = 0.2844
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.2889
+primary_CHOOSE = 0.2267
+modifier_FLOW = 0.1822
+modifier_OBSERVE = 0.3556
+modifier_LOGIC = 0.2444
+modifier_CHOOSE = 0.2178
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0311
+aa_top5 = [
+  Leu: 0.1384  # aliphatic
+  Ala: 0.0938  # simple
+  Gly: 0.0938  # simple
+  Ile: 0.0714  # aliphatic
+  Val: 0.0714  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 224
+stop_codon = TAA
+loss = 0.0311
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.intense.strong.crystallized.membrane_embedded

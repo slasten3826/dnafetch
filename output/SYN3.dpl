@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SYN3 | unknown
+# CDS: 339 bp (113 codons)
+
+[IDENTITY]
+gene = SYN3
+organism = unknown
+transcript = ENST00000412575.1
+cds_length = 339
+codons = 113
+protein_length = 113
+stop_codon = none
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = CHOOSE
+dominant_pct = 0.3510
+FLOW = 0.2035
+OBSERVE = 0.2153
+LOGIC = 0.2301
+CHOOSE = 0.3510
+state = flowing
+
+[CONNECT]
+depth = 0.8673
+type = balanced_interface
+hydrophobic_ratio = 0.5044
+charge_positive = 0.1327
+charge_negative = 0.0708
+charge_neutral = 0.7965
+
+[DISSOLVE]
+rigidity = 0.9314
+potential = crystallized
+wobble_entropy = 0.0686
+complementary_disruption = 0.1327
+
+[ENCODE]
+type = optimized
+loss = 0.2656
+gc_content = 0.5811
+wobble_gc = 0.6814
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3982
+wobble_FLOW = 0.1062
+wobble_OBSERVE = 0.2124
+wobble_LOGIC = 0.2832
+wobble_CHOOSE = 0.3982
+entropy = 0.0686
+
+[OBSERVE]
+distance = 0.1209
+level = basic
+complementary_balance = 0.8673
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1150
+intensity = 0.1150
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1150
+  COMPOSE(CHOOSE,CHOOSE): 0.1150
+  COMPOSE(FLOW,LOGIC): 0.0973
+  COMPOSE(FLOW,OBSERVE): 0.0796
+  COMPOSE(CHOOSE,OBSERVE): 0.0796
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3009
+modifier_dominant = CHOOSE
+modifier_pct = 0.3540
+primary_FLOW = 0.2832
+primary_OBSERVE = 0.1947
+primary_LOGIC = 0.2212
+primary_CHOOSE = 0.3009
+modifier_FLOW = 0.2212
+modifier_OBSERVE = 0.2389
+modifier_LOGIC = 0.1858
+modifier_CHOOSE = 0.3540
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0400
+aa_top5 = [
+  Ser: 0.1770  # hydroxyl
+  Pro: 0.1150  # cyclic
+  Leu: 0.0885  # aliphatic
+  Ala: 0.0796  # simple
+  Arg: 0.0708  # basic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 113
+stop_codon = none
+loss = 0.0400
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.strong.crystallized.balanced_interface

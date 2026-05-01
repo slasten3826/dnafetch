@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SERPINI1 | unknown
+# CDS: 165 bp (55 codons)
+
+[IDENTITY]
+gene = SERPINI1
+organism = unknown
+transcript = ENST00000466865.1
+cds_length = 165
+codons = 55
+protein_length = 54
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.979
+resistance = 0.021
+dominant = FLOW
+dominant_pct = 0.3091
+FLOW = 0.3091
+OBSERVE = 0.3091
+LOGIC = 0.2000
+CHOOSE = 0.1818
+state = flowing
+
+[CONNECT]
+depth = 0.9818
+type = membrane_embedded
+hydrophobic_ratio = 0.5926
+charge_positive = 0.1481
+charge_negative = 0.0926
+charge_neutral = 0.7593
+
+[DISSOLVE]
+rigidity = 0.9516
+potential = crystallized
+wobble_entropy = 0.0484
+complementary_disruption = 0.0182
+
+[ENCODE]
+type = natural
+loss = 0.5156
+gc_content = 0.3818
+wobble_gc = 0.3273
+codon_diversity = 0.4844
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3818
+wobble_FLOW = 0.2909
+wobble_OBSERVE = 0.3818
+wobble_LOGIC = 0.1636
+wobble_CHOOSE = 0.1636
+entropy = 0.0484
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.9818
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1818
+intensity = 0.1818
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1818
+  COMPOSE(FLOW,LOGIC): 0.1091
+  COMPOSE(LOGIC,FLOW): 0.0909
+  COMPOSE(OBSERVE,OBSERVE): 0.0909
+  COMPOSE(LOGIC,OBSERVE): 0.0727
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4000
+modifier_dominant = OBSERVE
+modifier_pct = 0.4182
+primary_FLOW = 0.4000
+primary_OBSERVE = 0.1273
+primary_LOGIC = 0.2545
+primary_CHOOSE = 0.2182
+modifier_FLOW = 0.2364
+modifier_OBSERVE = 0.4182
+modifier_LOGIC = 0.1818
+modifier_CHOOSE = 0.1636
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0310
+aa_top5 = [
+  Met: 0.0926  # sulfur
+  Ile: 0.0926  # aliphatic
+  Arg: 0.0926  # basic
+  Phe: 0.0926  # aromatic
+  Val: 0.0741  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 54
+stop_codon = TAA
+loss = 0.0310
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.intense.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CAPS2 | unknown
+# CDS: 405 bp (135 codons)
+
+[IDENTITY]
+gene = CAPS2
+organism = unknown
+transcript = ENST00000436898.6
+cds_length = 405
+codons = 135
+protein_length = 135
+stop_codon = none
+
+[FLOW]
+engagement = 0.951
+resistance = 0.049
+dominant = FLOW
+dominant_pct = 0.4173
+FLOW = 0.4173
+OBSERVE = 0.1951
+LOGIC = 0.2099
+CHOOSE = 0.1778
+state = flowing
+
+[CONNECT]
+depth = 0.7457
+type = ionic_interaction
+hydrophobic_ratio = 0.3852
+charge_positive = 0.1852
+charge_negative = 0.1704
+charge_neutral = 0.6444
+
+[DISSOLVE]
+rigidity = 0.9569
+potential = crystallized
+wobble_entropy = 0.0431
+complementary_disruption = 0.2543
+
+[ENCODE]
+type = natural
+loss = 0.2969
+gc_content = 0.3877
+wobble_gc = 0.3556
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3778
+wobble_FLOW = 0.3778
+wobble_OBSERVE = 0.2667
+wobble_LOGIC = 0.2148
+wobble_CHOOSE = 0.1407
+entropy = 0.0431
+
+[OBSERVE]
+distance = 0.2074
+level = basic
+complementary_balance = 0.7457
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1852
+intensity = 0.1852
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1852
+  COMPOSE(LOGIC,FLOW): 0.1704
+  COMPOSE(CHOOSE,FLOW): 0.1111
+  COMPOSE(LOGIC,CHOOSE): 0.0815
+  COMPOSE(FLOW,OBSERVE): 0.0741
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3778
+modifier_dominant = FLOW
+modifier_pct = 0.4963
+primary_FLOW = 0.3778
+primary_OBSERVE = 0.1333
+primary_LOGIC = 0.3111
+primary_CHOOSE = 0.1778
+modifier_FLOW = 0.4963
+modifier_OBSERVE = 0.1852
+modifier_LOGIC = 0.1037
+modifier_CHOOSE = 0.2148
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0322
+aa_top5 = [
+  Lys: 0.1259  # basic
+  Gln: 0.0963  # amide
+  Asp: 0.0889  # acidic
+  Glu: 0.0815  # acidic
+  Ala: 0.0815  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 135
+stop_codon = none
+loss = 0.0322
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.crystallized.ionic_interaction

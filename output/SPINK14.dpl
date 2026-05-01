@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SPINK14 | unknown
+# CDS: 144 bp (48 codons)
+
+[IDENTITY]
+gene = SPINK14
+organism = unknown
+transcript = ENST00000562793.5
+cds_length = 144
+codons = 48
+protein_length = 47
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.978
+resistance = 0.022
+dominant = OBSERVE
+dominant_pct = 0.3542
+FLOW = 0.2431
+OBSERVE = 0.3542
+LOGIC = 0.1875
+CHOOSE = 0.2153
+state = flowing
+
+[CONNECT]
+depth = 0.8611
+type = membrane_embedded
+hydrophobic_ratio = 0.6383
+charge_positive = 0.1489
+charge_negative = 0.0213
+charge_neutral = 0.8298
+
+[DISSOLVE]
+rigidity = 0.9783
+potential = crystallized
+wobble_entropy = 0.0217
+complementary_disruption = 0.1389
+
+[ENCODE]
+type = natural
+loss = 0.5156
+gc_content = 0.4028
+wobble_gc = 0.3958
+codon_diversity = 0.4844
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3333
+wobble_FLOW = 0.3333
+wobble_OBSERVE = 0.2708
+wobble_LOGIC = 0.2292
+wobble_CHOOSE = 0.1667
+entropy = 0.0217
+
+[OBSERVE]
+distance = 0.1111
+level = mild
+complementary_balance = 0.8611
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1667
+  COMPOSE(OBSERVE,CHOOSE): 0.1458
+  COMPOSE(FLOW,OBSERVE): 0.1250
+  COMPOSE(CHOOSE,CHOOSE): 0.1042
+  COMPOSE(FLOW,FLOW): 0.0833
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3958
+modifier_dominant = OBSERVE
+modifier_pct = 0.3958
+primary_FLOW = 0.2292
+primary_OBSERVE = 0.3958
+primary_LOGIC = 0.1667
+primary_CHOOSE = 0.2083
+modifier_FLOW = 0.1667
+modifier_OBSERVE = 0.3958
+modifier_LOGIC = 0.1667
+modifier_CHOOSE = 0.2708
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0437
+aa_top5 = [
+  Ser: 0.1489  # hydroxyl
+  Leu: 0.1277  # aliphatic
+  Pro: 0.1064  # cyclic
+  Ile: 0.1064  # aliphatic
+  Val: 0.0851  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 47
+stop_codon = TGA
+loss = 0.0437
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.mild.dominant.crystallized.membrane_embedded

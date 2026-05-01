@@ -1,0 +1,101 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ATG16L2 | unknown
+# CDS: 9 bp (3 codons)
+
+[IDENTITY]
+gene = ATG16L2
+organism = unknown
+transcript = ENST00000541554.1
+cds_length = 9
+codons = 3
+protein_length = 2
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.765
+resistance = 0.235
+dominant = LOGIC
+dominant_pct = 0.4444
+FLOW = 0.3333
+OBSERVE = 0.2222
+LOGIC = 0.4444
+CHOOSE = 0.0000
+state = flowing
+
+[CONNECT]
+depth = 0.4444
+type = membrane_embedded
+hydrophobic_ratio = 1.0000
+charge_positive = 0.0000
+charge_negative = 0.0000
+charge_neutral = 1.0000
+
+[DISSOLVE]
+rigidity = 0.4591
+potential = high
+wobble_entropy = 0.5409
+complementary_disruption = 0.5556
+
+[ENCODE]
+type = natural
+loss = 0.9531
+gc_content = 0.4444
+wobble_gc = 0.3333
+codon_diversity = 0.0469
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.6667
+wobble_FLOW = 0.6667
+wobble_OBSERVE = 0.0000
+wobble_LOGIC = 0.3333
+wobble_CHOOSE = 0.0000
+entropy = 0.5409
+
+[OBSERVE]
+distance = 0.1111
+level = mild
+complementary_balance = 0.4444
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.3333
+intensity = 0.3333
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.3333
+  COMPOSE(LOGIC,LOGIC): 0.3333
+  COMPOSE(OBSERVE,LOGIC): 0.3333
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3333
+modifier_dominant = LOGIC
+modifier_pct = 0.6667
+primary_FLOW = 0.3333
+primary_OBSERVE = 0.3333
+primary_LOGIC = 0.3333
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.0000
+modifier_OBSERVE = 0.3333
+modifier_LOGIC = 0.6667
+modifier_CHOOSE = 0.0000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1500
+aa_top5 = [
+  Met: 0.5000  # sulfur
+  Gly: 0.5000  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 2
+stop_codon = TGA
+loss = 0.1500
+
+[SIGNATURE]
+fingerprint = LOGIC.FLOW.mild.dominant.high.membrane_embedded

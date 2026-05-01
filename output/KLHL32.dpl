@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KLHL32 | unknown
+# CDS: 408 bp (136 codons)
+
+[IDENTITY]
+gene = KLHL32
+organism = unknown
+transcript = ENST00000447886.1
+cds_length = 408
+codons = 136
+protein_length = 136
+stop_codon = none
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = CHOOSE
+dominant_pct = 0.2770
+FLOW = 0.2525
+OBSERVE = 0.2206
+LOGIC = 0.2500
+CHOOSE = 0.2770
+state = flowing
+
+[CONNECT]
+depth = 0.9412
+type = ionic_interaction
+hydrophobic_ratio = 0.5441
+charge_positive = 0.1544
+charge_negative = 0.1029
+charge_neutral = 0.7426
+
+[DISSOLVE]
+rigidity = 0.9746
+potential = crystallized
+wobble_entropy = 0.0254
+complementary_disruption = 0.0588
+
+[ENCODE]
+type = optimized
+loss = 0.1719
+gc_content = 0.5270
+wobble_gc = 0.6103
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3309
+wobble_FLOW = 0.1544
+wobble_OBSERVE = 0.2353
+wobble_LOGIC = 0.2794
+wobble_CHOOSE = 0.3309
+entropy = 0.0254
+
+[OBSERVE]
+distance = 0.0245
+level = deep
+complementary_balance = 0.9412
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1103
+intensity = 0.1103
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1103
+  COMPOSE(CHOOSE,OBSERVE): 0.1029
+  COMPOSE(LOGIC,FLOW): 0.1029
+  COMPOSE(LOGIC,CHOOSE): 0.0882
+  COMPOSE(LOGIC,OBSERVE): 0.0809
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3015
+modifier_dominant = FLOW
+modifier_pct = 0.3382
+primary_FLOW = 0.2647
+primary_OBSERVE = 0.1397
+primary_LOGIC = 0.3015
+primary_CHOOSE = 0.2941
+modifier_FLOW = 0.3382
+modifier_OBSERVE = 0.2868
+modifier_LOGIC = 0.1691
+modifier_CHOOSE = 0.2059
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0230
+aa_top5 = [
+  Leu: 0.1103  # aliphatic
+  Ala: 0.0882  # simple
+  Val: 0.0809  # aliphatic
+  Arg: 0.0662  # basic
+  Glu: 0.0662  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 136
+stop_codon = none
+loss = 0.0230
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.ionic_interaction

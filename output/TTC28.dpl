@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TTC28 | unknown
+# CDS: 228 bp (76 codons)
+
+[IDENTITY]
+gene = TTC28
+organism = unknown
+transcript = ENST00000442232.1
+cds_length = 228
+codons = 76
+protein_length = 75
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = LOGIC
+dominant_pct = 0.2675
+FLOW = 0.2500
+OBSERVE = 0.2281
+LOGIC = 0.2675
+CHOOSE = 0.2544
+state = flowing
+
+[CONNECT]
+depth = 0.9649
+type = balanced_interface
+hydrophobic_ratio = 0.5067
+charge_positive = 0.1200
+charge_negative = 0.1067
+charge_neutral = 0.7733
+
+[DISSOLVE]
+rigidity = 0.9538
+potential = crystallized
+wobble_entropy = 0.0462
+complementary_disruption = 0.0351
+
+[ENCODE]
+type = optimized
+loss = 0.3750
+gc_content = 0.5219
+wobble_gc = 0.6316
+codon_diversity = 0.6250
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3553
+wobble_FLOW = 0.1184
+wobble_OBSERVE = 0.2500
+wobble_LOGIC = 0.3553
+wobble_CHOOSE = 0.2763
+entropy = 0.0462
+
+[OBSERVE]
+distance = 0.0132
+level = strong
+complementary_balance = 0.9649
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1184
+intensity = 0.1184
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1184
+  COMPOSE(LOGIC,FLOW): 0.1053
+  COMPOSE(CHOOSE,FLOW): 0.0921
+  COMPOSE(LOGIC,OBSERVE): 0.0921
+  COMPOSE(LOGIC,CHOOSE): 0.0921
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3158
+modifier_dominant = FLOW
+modifier_pct = 0.3421
+primary_FLOW = 0.2895
+primary_OBSERVE = 0.1447
+primary_LOGIC = 0.3158
+primary_CHOOSE = 0.2500
+modifier_FLOW = 0.3421
+modifier_OBSERVE = 0.2895
+modifier_LOGIC = 0.1316
+modifier_CHOOSE = 0.2368
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0282
+aa_top5 = [
+  Asn: 0.0933  # amide
+  Val: 0.0933  # aliphatic
+  Ala: 0.0933  # simple
+  Leu: 0.0800  # aliphatic
+  Thr: 0.0800  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 75
+stop_codon = TAG
+loss = 0.0282
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.strong.strong.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: JAGN1 | unknown
+# CDS: 552 bp (184 codons)
+
+[IDENTITY]
+gene = JAGN1
+organism = unknown
+transcript = ENST00000647897.1
+cds_length = 552
+codons = 184
+protein_length = 183
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = CHOOSE
+dominant_pct = 0.2808
+FLOW = 0.2065
+OBSERVE = 0.2591
+LOGIC = 0.2536
+CHOOSE = 0.2808
+state = flowing
+
+[CONNECT]
+depth = 0.9203
+type = membrane_embedded
+hydrophobic_ratio = 0.6284
+charge_positive = 0.1421
+charge_negative = 0.0492
+charge_neutral = 0.8087
+
+[DISSOLVE]
+rigidity = 0.9166
+potential = crystallized
+wobble_entropy = 0.0834
+complementary_disruption = 0.0797
+
+[ENCODE]
+type = optimized
+loss = 0.1562
+gc_content = 0.5344
+wobble_gc = 0.7228
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3750
+wobble_FLOW = 0.0978
+wobble_OBSERVE = 0.1793
+wobble_LOGIC = 0.3478
+wobble_CHOOSE = 0.3750
+entropy = 0.0834
+
+[OBSERVE]
+distance = 0.0217
+level = deep
+complementary_balance = 0.9203
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1141
+intensity = 0.1141
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1141
+  COMPOSE(FLOW,OBSERVE): 0.1033
+  COMPOSE(CHOOSE,FLOW): 0.0924
+  COMPOSE(OBSERVE,OBSERVE): 0.0815
+  COMPOSE(LOGIC,CHOOSE): 0.0761
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2826
+modifier_dominant = OBSERVE
+modifier_pct = 0.3696
+primary_FLOW = 0.2446
+primary_OBSERVE = 0.2283
+primary_LOGIC = 0.2446
+primary_CHOOSE = 0.2826
+modifier_FLOW = 0.2772
+modifier_OBSERVE = 0.3696
+modifier_LOGIC = 0.1685
+modifier_CHOOSE = 0.1848
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0330
+aa_top5 = [
+  Leu: 0.1530  # aliphatic
+  Ser: 0.0984  # hydroxyl
+  Ala: 0.0765  # simple
+  Val: 0.0710  # aliphatic
+  Tyr: 0.0710  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 183
+stop_codon = TGA
+loss = 0.0330
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.membrane_embedded

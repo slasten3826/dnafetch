@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DEFB131A | unknown
+# CDS: 213 bp (71 codons)
+
+[IDENTITY]
+gene = DEFB131A
+organism = unknown
+transcript = ENST00000334879.2
+cds_length = 213
+codons = 71
+protein_length = 70
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.983
+resistance = 0.017
+dominant = OBSERVE
+dominant_pct = 0.3239
+FLOW = 0.2770
+OBSERVE = 0.3239
+LOGIC = 0.2160
+CHOOSE = 0.1831
+state = flowing
+
+[CONNECT]
+depth = 0.9202
+type = membrane_embedded
+hydrophobic_ratio = 0.6000
+charge_positive = 0.1571
+charge_negative = 0.1143
+charge_neutral = 0.7286
+
+[DISSOLVE]
+rigidity = 0.9779
+potential = crystallized
+wobble_entropy = 0.0221
+complementary_disruption = 0.0798
+
+[ENCODE]
+type = natural
+loss = 0.4219
+gc_content = 0.3991
+wobble_gc = 0.4366
+codon_diversity = 0.5781
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3380
+wobble_FLOW = 0.2254
+wobble_OBSERVE = 0.3380
+wobble_LOGIC = 0.1690
+wobble_CHOOSE = 0.2676
+entropy = 0.0221
+
+[OBSERVE]
+distance = 0.0469
+level = deep
+complementary_balance = 0.9202
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1127
+intensity = 0.1127
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1127
+  COMPOSE(OBSERVE,OBSERVE): 0.1127
+  COMPOSE(LOGIC,FLOW): 0.1127
+  COMPOSE(OBSERVE,LOGIC): 0.1127
+  COMPOSE(FLOW,FLOW): 0.0986
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3099
+modifier_dominant = OBSERVE
+modifier_pct = 0.3239
+primary_FLOW = 0.3099
+primary_OBSERVE = 0.3099
+primary_LOGIC = 0.2535
+primary_CHOOSE = 0.1268
+modifier_FLOW = 0.2958
+modifier_OBSERVE = 0.3239
+modifier_LOGIC = 0.2254
+modifier_CHOOSE = 0.1549
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0237
+aa_top5 = [
+  Phe: 0.0857  # aromatic
+  Ile: 0.0857  # aliphatic
+  Cys: 0.0857  # sulfur
+  Leu: 0.0714  # aliphatic
+  Ser: 0.0714  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 70
+stop_codon = TGA
+loss = 0.0237
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.strong.crystallized.membrane_embedded

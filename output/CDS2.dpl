@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CDS2 | unknown
+# CDS: 1338 bp (446 codons)
+
+[IDENTITY]
+gene = CDS2
+organism = unknown
+transcript = ENST00000460006.6
+cds_length = 1338
+codons = 446
+protein_length = 445
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2818
+FLOW = 0.2302
+OBSERVE = 0.2818
+LOGIC = 0.2377
+CHOOSE = 0.2504
+state = flowing
+
+[CONNECT]
+depth = 0.9357
+type = membrane_embedded
+hydrophobic_ratio = 0.6135
+charge_positive = 0.1079
+charge_negative = 0.0854
+charge_neutral = 0.8067
+
+[DISSOLVE]
+rigidity = 0.9661
+potential = crystallized
+wobble_entropy = 0.0339
+complementary_disruption = 0.0643
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.4880
+wobble_gc = 0.6323
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3453
+wobble_FLOW = 0.1435
+wobble_OBSERVE = 0.2242
+wobble_LOGIC = 0.2870
+wobble_CHOOSE = 0.3453
+entropy = 0.0339
+
+[OBSERVE]
+distance = 0.0314
+level = deep
+complementary_balance = 0.9357
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1166
+intensity = 0.1166
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1166
+  COMPOSE(OBSERVE,OBSERVE): 0.1076
+  COMPOSE(LOGIC,FLOW): 0.0852
+  COMPOSE(CHOOSE,OBSERVE): 0.0807
+  COMPOSE(LOGIC,OBSERVE): 0.0717
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2892
+modifier_dominant = OBSERVE
+modifier_pct = 0.3767
+primary_FLOW = 0.2892
+primary_OBSERVE = 0.2444
+primary_LOGIC = 0.2578
+primary_CHOOSE = 0.2085
+modifier_FLOW = 0.2578
+modifier_OBSERVE = 0.3767
+modifier_LOGIC = 0.1682
+modifier_CHOOSE = 0.1973
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0220
+aa_top5 = [
+  Leu: 0.0944  # aliphatic
+  Phe: 0.0944  # aromatic
+  Ile: 0.0831  # aliphatic
+  Val: 0.0719  # aliphatic
+  Ser: 0.0697  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 445
+stop_codon = TAG
+loss = 0.0220
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.deep.strong.crystallized.membrane_embedded

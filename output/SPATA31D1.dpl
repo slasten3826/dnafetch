@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SPATA31D1 | unknown
+# CDS: 4731 bp (1577 codons)
+
+[IDENTITY]
+gene = SPATA31D1
+organism = unknown
+transcript = ENST00000344803.3
+cds_length = 4731
+codons = 1577
+protein_length = 1576
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = FLOW
+dominant_pct = 0.2727
+FLOW = 0.2727
+OBSERVE = 0.2454
+LOGIC = 0.2148
+CHOOSE = 0.2672
+state = flowing
+
+[CONNECT]
+depth = 0.9203
+type = ionic_interaction
+hydrophobic_ratio = 0.4676
+charge_positive = 0.1542
+charge_negative = 0.0971
+charge_neutral = 0.7487
+
+[DISSOLVE]
+rigidity = 0.9985
+potential = crystallized
+wobble_entropy = 0.0015
+complementary_disruption = 0.0797
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4819
+wobble_gc = 0.4851
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2758
+wobble_FLOW = 0.2391
+wobble_OBSERVE = 0.2758
+wobble_LOGIC = 0.2340
+wobble_CHOOSE = 0.2511
+entropy = 0.0015
+
+[OBSERVE]
+distance = 0.0055
+level = strong
+complementary_balance = 0.9203
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.0996
+intensity = 0.0996
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.0996
+  COMPOSE(LOGIC,FLOW): 0.0970
+  COMPOSE(FLOW,FLOW): 0.0938
+  COMPOSE(OBSERVE,CHOOSE): 0.0932
+  COMPOSE(CHOOSE,CHOOSE): 0.0888
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2796
+modifier_dominant = FLOW
+modifier_pct = 0.2993
+primary_FLOW = 0.2796
+primary_OBSERVE = 0.2061
+primary_LOGIC = 0.2372
+primary_CHOOSE = 0.2771
+modifier_FLOW = 0.2993
+modifier_OBSERVE = 0.2543
+modifier_LOGIC = 0.1731
+modifier_CHOOSE = 0.2733
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0295
+aa_top5 = [
+  Ser: 0.1307  # hydroxyl
+  Leu: 0.1022  # aliphatic
+  Pro: 0.0888  # cyclic
+  Lys: 0.0603  # basic
+  Gln: 0.0603  # amide
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 1576
+stop_codon = TAA
+loss = 0.0295
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.strong.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: C3AR1 | unknown
+# CDS: 438 bp (146 codons)
+
+[IDENTITY]
+gene = C3AR1
+organism = unknown
+transcript = ENST00000546241.1
+cds_length = 438
+codons = 146
+protein_length = 146
+stop_codon = none
+
+[FLOW]
+engagement = 0.985
+resistance = 0.015
+dominant = CHOOSE
+dominant_pct = 0.2968
+FLOW = 0.1758
+OBSERVE = 0.2945
+LOGIC = 0.2329
+CHOOSE = 0.2968
+state = flowing
+
+[CONNECT]
+depth = 0.8174
+type = membrane_embedded
+hydrophobic_ratio = 0.6849
+charge_positive = 0.0685
+charge_negative = 0.0342
+charge_neutral = 0.8973
+
+[DISSOLVE]
+rigidity = 0.9444
+potential = crystallized
+wobble_entropy = 0.0556
+complementary_disruption = 0.1826
+
+[ENCODE]
+type = optimized
+loss = 0.2656
+gc_content = 0.5297
+wobble_gc = 0.6644
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3767
+wobble_FLOW = 0.1164
+wobble_OBSERVE = 0.2192
+wobble_LOGIC = 0.2877
+wobble_CHOOSE = 0.3767
+entropy = 0.0556
+
+[OBSERVE]
+distance = 0.0023
+level = intense
+complementary_balance = 0.8174
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1575
+intensity = 0.1575
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1575
+  COMPOSE(FLOW,OBSERVE): 0.1027
+  COMPOSE(OBSERVE,OBSERVE): 0.0890
+  COMPOSE(OBSERVE,LOGIC): 0.0890
+  COMPOSE(FLOW,FLOW): 0.0685
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2877
+modifier_dominant = OBSERVE
+modifier_pct = 0.4178
+primary_FLOW = 0.2466
+primary_OBSERVE = 0.2466
+primary_LOGIC = 0.2192
+primary_CHOOSE = 0.2877
+modifier_FLOW = 0.1644
+modifier_OBSERVE = 0.4178
+modifier_LOGIC = 0.1918
+modifier_CHOOSE = 0.2260
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0381
+aa_top5 = [
+  Leu: 0.1918  # aliphatic
+  Ser: 0.0822  # hydroxyl
+  Val: 0.0685  # aliphatic
+  Ile: 0.0685  # aliphatic
+  Ala: 0.0616  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 146
+stop_codon = none
+loss = 0.0381
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.intense.dominant.crystallized.membrane_embedded

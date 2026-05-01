@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PPIG | unknown
+# CDS: 810 bp (270 codons)
+
+[IDENTITY]
+gene = PPIG
+organism = unknown
+transcript = ENST00000482772.5
+cds_length = 810
+codons = 270
+protein_length = 270
+stop_codon = none
+
+[FLOW]
+engagement = 0.927
+resistance = 0.073
+dominant = FLOW
+dominant_pct = 0.4407
+FLOW = 0.4407
+OBSERVE = 0.1728
+LOGIC = 0.2457
+CHOOSE = 0.1407
+state = flowing
+
+[CONNECT]
+depth = 0.6272
+type = ionic_interaction
+hydrophobic_ratio = 0.2444
+charge_positive = 0.3407
+charge_negative = 0.1704
+charge_neutral = 0.4889
+
+[DISSOLVE]
+rigidity = 0.9170
+potential = low
+wobble_entropy = 0.0830
+complementary_disruption = 0.3728
+
+[ENCODE]
+type = AT_rich
+loss = 0.2188
+gc_content = 0.3864
+wobble_gc = 0.3000
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4000
+wobble_FLOW = 0.4000
+wobble_OBSERVE = 0.3000
+wobble_LOGIC = 0.2111
+wobble_CHOOSE = 0.0889
+entropy = 0.0830
+
+[OBSERVE]
+distance = 0.1951
+level = basic
+complementary_balance = 0.6272
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2074
+intensity = 0.2074
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2074
+  COMPOSE(FLOW,LOGIC): 0.2037
+  COMPOSE(LOGIC,FLOW): 0.1704
+  COMPOSE(OBSERVE,CHOOSE): 0.0704
+  COMPOSE(CHOOSE,FLOW): 0.0593
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4741
+modifier_dominant = FLOW
+modifier_pct = 0.4481
+primary_FLOW = 0.4741
+primary_OBSERVE = 0.1111
+primary_LOGIC = 0.2556
+primary_CHOOSE = 0.1593
+modifier_FLOW = 0.4481
+modifier_OBSERVE = 0.1074
+modifier_LOGIC = 0.2704
+modifier_CHOOSE = 0.1741
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0495
+aa_top5 = [
+  Arg: 0.1704  # basic
+  Lys: 0.1481  # basic
+  Ser: 0.1296  # hydroxyl
+  Glu: 0.1259  # acidic
+  Asn: 0.0593  # amide
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 270
+stop_codon = none
+loss = 0.0495
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TCEAL9 | unknown
+# CDS: 315 bp (105 codons)
+
+[IDENTITY]
+gene = TCEAL9
+organism = unknown
+transcript = ENST00000646896.1
+cds_length = 315
+codons = 105
+protein_length = 104
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.937
+resistance = 0.063
+dominant = FLOW
+dominant_pct = 0.4190
+FLOW = 0.4190
+OBSERVE = 0.1873
+LOGIC = 0.2571
+CHOOSE = 0.1365
+state = flowing
+
+[CONNECT]
+depth = 0.6476
+type = ionic_interaction
+hydrophobic_ratio = 0.3654
+charge_positive = 0.2404
+charge_negative = 0.2596
+charge_neutral = 0.5000
+
+[DISSOLVE]
+rigidity = 0.9390
+potential = low
+wobble_entropy = 0.0610
+complementary_disruption = 0.3524
+
+[ENCODE]
+type = natural
+loss = 0.3281
+gc_content = 0.3937
+wobble_gc = 0.4000
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3714
+wobble_FLOW = 0.3714
+wobble_OBSERVE = 0.2286
+wobble_LOGIC = 0.2952
+wobble_CHOOSE = 0.1048
+entropy = 0.0610
+
+[OBSERVE]
+distance = 0.1619
+level = basic
+complementary_balance = 0.6476
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2571
+intensity = 0.2571
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2571
+  COMPOSE(FLOW,FLOW): 0.1714
+  COMPOSE(FLOW,OBSERVE): 0.0952
+  COMPOSE(FLOW,LOGIC): 0.0857
+  COMPOSE(CHOOSE,FLOW): 0.0667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3619
+modifier_dominant = FLOW
+modifier_pct = 0.5238
+primary_FLOW = 0.3619
+primary_OBSERVE = 0.1143
+primary_LOGIC = 0.3333
+primary_CHOOSE = 0.1905
+modifier_FLOW = 0.5238
+modifier_OBSERVE = 0.2190
+modifier_LOGIC = 0.1429
+modifier_CHOOSE = 0.1143
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0472
+aa_top5 = [
+  Glu: 0.2212  # acidic
+  Lys: 0.1154  # basic
+  Arg: 0.0865  # basic
+  Pro: 0.0673  # cyclic
+  Asn: 0.0577  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 104
+stop_codon = TAG
+loss = 0.0472
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

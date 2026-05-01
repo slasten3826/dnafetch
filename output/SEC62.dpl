@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SEC62 | unknown
+# CDS: 438 bp (146 codons)
+
+[IDENTITY]
+gene = SEC62
+organism = unknown
+transcript = ENST00000469515.6
+cds_length = 438
+codons = 146
+protein_length = 146
+stop_codon = none
+
+[FLOW]
+engagement = 0.940
+resistance = 0.060
+dominant = FLOW
+dominant_pct = 0.4155
+FLOW = 0.4155
+OBSERVE = 0.2260
+LOGIC = 0.2283
+CHOOSE = 0.1301
+state = flowing
+
+[CONNECT]
+depth = 0.7123
+type = ionic_interaction
+hydrophobic_ratio = 0.4795
+charge_positive = 0.2397
+charge_negative = 0.1849
+charge_neutral = 0.5753
+
+[DISSOLVE]
+rigidity = 0.9369
+potential = low
+wobble_entropy = 0.0631
+complementary_disruption = 0.2877
+
+[ENCODE]
+type = natural
+loss = 0.2969
+gc_content = 0.3584
+wobble_gc = 0.3082
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3904
+wobble_FLOW = 0.3904
+wobble_OBSERVE = 0.3014
+wobble_LOGIC = 0.1849
+wobble_CHOOSE = 0.1233
+entropy = 0.0631
+
+[OBSERVE]
+distance = 0.1872
+level = basic
+complementary_balance = 0.7123
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2329
+intensity = 0.2329
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2329
+  COMPOSE(LOGIC,FLOW): 0.1849
+  COMPOSE(LOGIC,OBSERVE): 0.0822
+  COMPOSE(FLOW,OBSERVE): 0.0753
+  COMPOSE(LOGIC,LOGIC): 0.0616
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3836
+modifier_dominant = FLOW
+modifier_pct = 0.4726
+primary_FLOW = 0.3836
+primary_OBSERVE = 0.1096
+primary_LOGIC = 0.3836
+primary_CHOOSE = 0.1233
+modifier_FLOW = 0.4726
+modifier_OBSERVE = 0.2671
+modifier_LOGIC = 0.1164
+modifier_CHOOSE = 0.1438
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0478
+aa_top5 = [
+  Lys: 0.2192  # basic
+  Glu: 0.1164  # acidic
+  Val: 0.0822  # aliphatic
+  Asp: 0.0685  # acidic
+  Leu: 0.0685  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 146
+stop_codon = none
+loss = 0.0478
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

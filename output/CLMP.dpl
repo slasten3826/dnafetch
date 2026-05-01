@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CLMP | unknown
+# CDS: 1122 bp (374 codons)
+
+[IDENTITY]
+gene = CLMP
+organism = unknown
+transcript = ENST00000715744.1
+cds_length = 1122
+codons = 374
+protein_length = 373
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = FLOW
+dominant_pct = 0.2736
+FLOW = 0.2736
+OBSERVE = 0.2103
+LOGIC = 0.2602
+CHOOSE = 0.2558
+state = flowing
+
+[CONNECT]
+depth = 0.9323
+type = balanced_interface
+hydrophobic_ratio = 0.4879
+charge_positive = 0.1448
+charge_negative = 0.1180
+charge_neutral = 0.7373
+
+[DISSOLVE]
+rigidity = 0.9965
+potential = crystallized
+wobble_entropy = 0.0035
+complementary_disruption = 0.0677
+
+[ENCODE]
+type = moderate
+loss = 0.0781
+gc_content = 0.5160
+wobble_gc = 0.5348
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2781
+wobble_FLOW = 0.2540
+wobble_OBSERVE = 0.2112
+wobble_LOGIC = 0.2567
+wobble_CHOOSE = 0.2781
+entropy = 0.0035
+
+[OBSERVE]
+distance = 0.0134
+level = strong
+complementary_balance = 0.9323
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1176
+intensity = 0.1176
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1176
+  COMPOSE(FLOW,FLOW): 0.0882
+  COMPOSE(CHOOSE,OBSERVE): 0.0802
+  COMPOSE(LOGIC,OBSERVE): 0.0775
+  COMPOSE(OBSERVE,CHOOSE): 0.0722
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3235
+modifier_dominant = FLOW
+modifier_pct = 0.3048
+primary_FLOW = 0.2620
+primary_OBSERVE = 0.1765
+primary_LOGIC = 0.3235
+primary_CHOOSE = 0.2380
+modifier_FLOW = 0.3048
+modifier_OBSERVE = 0.2433
+modifier_LOGIC = 0.2005
+modifier_CHOOSE = 0.2513
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0299
+aa_top5 = [
+  Ser: 0.1099  # hydroxyl
+  Leu: 0.1072  # aliphatic
+  Glu: 0.0885  # acidic
+  Val: 0.0777  # aliphatic
+  Gly: 0.0670  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 373
+stop_codon = TGA
+loss = 0.0299
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.strong.strong.crystallized.balanced_interface

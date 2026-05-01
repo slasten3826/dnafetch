@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000258653 | unknown
+# CDS: 1197 bp (399 codons)
+
+[IDENTITY]
+gene = ENSG00000258653
+organism = unknown
+transcript = ENST00000556551.2
+cds_length = 1197
+codons = 399
+protein_length = 398
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = FLOW
+dominant_pct = 0.2749
+FLOW = 0.2749
+OBSERVE = 0.2456
+LOGIC = 0.2523
+CHOOSE = 0.2272
+state = flowing
+
+[CONNECT]
+depth = 0.9457
+type = ionic_interaction
+hydrophobic_ratio = 0.4548
+charge_positive = 0.1508
+charge_negative = 0.1181
+charge_neutral = 0.7312
+
+[DISSOLVE]
+rigidity = 0.9912
+potential = crystallized
+wobble_entropy = 0.0088
+complementary_disruption = 0.0543
+
+[ENCODE]
+type = moderate
+loss = 0.0781
+gc_content = 0.4795
+wobble_gc = 0.4637
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3133
+wobble_FLOW = 0.2231
+wobble_OBSERVE = 0.3133
+wobble_LOGIC = 0.2531
+wobble_CHOOSE = 0.2105
+entropy = 0.0088
+
+[OBSERVE]
+distance = 0.0226
+level = deep
+complementary_balance = 0.9457
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1178
+intensity = 0.1178
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1178
+  COMPOSE(FLOW,FLOW): 0.1078
+  COMPOSE(CHOOSE,FLOW): 0.0952
+  COMPOSE(CHOOSE,OBSERVE): 0.0802
+  COMPOSE(OBSERVE,CHOOSE): 0.0752
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3033
+modifier_dominant = FLOW
+modifier_pct = 0.3333
+primary_FLOW = 0.2682
+primary_OBSERVE = 0.1830
+primary_LOGIC = 0.3033
+primary_CHOOSE = 0.2456
+modifier_FLOW = 0.3333
+modifier_OBSERVE = 0.2406
+modifier_LOGIC = 0.2005
+modifier_CHOOSE = 0.2256
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0284
+aa_top5 = [
+  Ser: 0.1256  # hydroxyl
+  Leu: 0.1030  # aliphatic
+  Glu: 0.0754  # acidic
+  Gly: 0.0729  # simple
+  Val: 0.0603  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 398
+stop_codon = TAG
+loss = 0.0284
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.strong.crystallized.ionic_interaction

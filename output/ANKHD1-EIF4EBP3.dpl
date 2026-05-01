@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ANKHD1-EIF4EBP3 | unknown
+# CDS: 1827 bp (609 codons)
+
+[IDENTITY]
+gene = ANKHD1-EIF4EBP3
+organism = unknown
+transcript = ENST00000437495.1
+cds_length = 1827
+codons = 609
+protein_length = 608
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = CHOOSE
+dominant_pct = 0.2983
+FLOW = 0.2512
+OBSERVE = 0.2447
+LOGIC = 0.2058
+CHOOSE = 0.2983
+state = flowing
+
+[CONNECT]
+depth = 0.9009
+type = balanced_interface
+hydrophobic_ratio = 0.5214
+charge_positive = 0.0888
+charge_negative = 0.0609
+charge_neutral = 0.8503
+
+[DISSOLVE]
+rigidity = 0.9779
+potential = crystallized
+wobble_entropy = 0.0221
+complementary_disruption = 0.0991
+
+[ENCODE]
+type = natural
+loss = 0.0625
+gc_content = 0.5041
+wobble_gc = 0.3859
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3350
+wobble_FLOW = 0.2791
+wobble_OBSERVE = 0.3350
+wobble_LOGIC = 0.1741
+wobble_CHOOSE = 0.2118
+entropy = 0.0221
+
+[OBSERVE]
+distance = 0.0471
+level = deep
+complementary_balance = 0.9009
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1396
+intensity = 0.1396
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1396
+  COMPOSE(OBSERVE,CHOOSE): 0.1166
+  COMPOSE(CHOOSE,FLOW): 0.0936
+  COMPOSE(LOGIC,CHOOSE): 0.0772
+  COMPOSE(LOGIC,LOGIC): 0.0755
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2906
+modifier_dominant = CHOOSE
+modifier_pct = 0.3924
+primary_FLOW = 0.2496
+primary_OBSERVE = 0.1905
+primary_LOGIC = 0.2693
+primary_CHOOSE = 0.2906
+modifier_FLOW = 0.2250
+modifier_OBSERVE = 0.2085
+modifier_LOGIC = 0.1741
+modifier_CHOOSE = 0.3924
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0393
+aa_top5 = [
+  Ser: 0.1595  # hydroxyl
+  Pro: 0.1398  # cyclic
+  Ala: 0.0773  # simple
+  Gly: 0.0757  # simple
+  Gln: 0.0609  # amide
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 608
+stop_codon = TGA
+loss = 0.0393
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.deep.dominant.crystallized.balanced_interface

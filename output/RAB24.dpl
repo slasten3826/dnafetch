@@ -1,0 +1,103 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RAB24 | unknown
+# CDS: 12 bp (4 codons)
+
+[IDENTITY]
+gene = RAB24
+organism = unknown
+transcript = ENST00000504395.1
+cds_length = 12
+codons = 4
+protein_length = 3
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.892
+resistance = 0.108
+dominant = LOGIC
+dominant_pct = 0.4167
+FLOW = 0.3333
+OBSERVE = 0.1667
+LOGIC = 0.4167
+CHOOSE = 0.0833
+state = flowing
+
+[CONNECT]
+depth = 0.5000
+type = ionic_interaction
+hydrophobic_ratio = 0.3333
+charge_positive = 0.0000
+charge_negative = 0.3333
+charge_neutral = 0.6667
+
+[DISSOLVE]
+rigidity = 0.0000
+potential = high
+wobble_entropy = 1.0000
+complementary_disruption = 0.5000
+
+[ENCODE]
+type = engineered
+loss = 0.9375
+gc_content = 0.5000
+wobble_gc = 1.0000
+codon_diversity = 0.0625
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 1.0000
+wobble_FLOW = 0.0000
+wobble_OBSERVE = 0.0000
+wobble_LOGIC = 1.0000
+wobble_CHOOSE = 0.0000
+entropy = 1.0000
+
+[OBSERVE]
+distance = 0.0833
+level = mild
+complementary_balance = 0.5000
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.2500
+intensity = 0.2500
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.2500
+  COMPOSE(FLOW,CHOOSE): 0.2500
+  COMPOSE(LOGIC,FLOW): 0.2500
+  COMPOSE(OBSERVE,FLOW): 0.2500
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = FLOW
+modifier_pct = 0.5000
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.2500
+primary_LOGIC = 0.2500
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.5000
+modifier_OBSERVE = 0.2500
+modifier_LOGIC = 0.0000
+modifier_CHOOSE = 0.2500
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1190
+aa_top5 = [
+  Met: 0.3333  # sulfur
+  Thr: 0.3333  # hydroxyl
+  Glu: 0.3333  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 3
+stop_codon = TAG
+loss = 0.1190
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.dominant.high.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: C1GALT1C1 | unknown
+# CDS: 957 bp (319 codons)
+
+[IDENTITY]
+gene = C1GALT1C1
+organism = unknown
+transcript = ENST00000371313.2
+cds_length = 957
+codons = 319
+protein_length = 318
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = FLOW
+dominant_pct = 0.3166
+FLOW = 0.3166
+OBSERVE = 0.2905
+LOGIC = 0.2205
+CHOOSE = 0.1724
+state = flowing
+
+[CONNECT]
+depth = 0.9258
+type = ionic_interaction
+hydrophobic_ratio = 0.5472
+charge_positive = 0.1509
+charge_negative = 0.1226
+charge_neutral = 0.7264
+
+[DISSOLVE]
+rigidity = 0.9739
+potential = crystallized
+wobble_entropy = 0.0261
+complementary_disruption = 0.0742
+
+[ENCODE]
+type = natural
+loss = 0.1094
+gc_content = 0.3929
+wobble_gc = 0.3762
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3511
+wobble_FLOW = 0.2727
+wobble_OBSERVE = 0.3511
+wobble_LOGIC = 0.1944
+wobble_CHOOSE = 0.1818
+entropy = 0.0261
+
+[OBSERVE]
+distance = 0.0261
+level = deep
+complementary_balance = 0.9258
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1317
+intensity = 0.1317
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1317
+  COMPOSE(LOGIC,FLOW): 0.1223
+  COMPOSE(FLOW,OBSERVE): 0.1097
+  COMPOSE(OBSERVE,OBSERVE): 0.0846
+  COMPOSE(LOGIC,LOGIC): 0.0627
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3229
+modifier_dominant = FLOW
+modifier_pct = 0.3542
+primary_FLOW = 0.3229
+primary_OBSERVE = 0.2038
+primary_LOGIC = 0.3041
+primary_CHOOSE = 0.1693
+modifier_FLOW = 0.3542
+modifier_OBSERVE = 0.3166
+modifier_LOGIC = 0.1630
+modifier_CHOOSE = 0.1661
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0190
+aa_top5 = [
+  Leu: 0.0881  # aliphatic
+  Lys: 0.0786  # basic
+  Ser: 0.0692  # hydroxyl
+  Glu: 0.0660  # acidic
+  Gly: 0.0629  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 318
+stop_codon = TGA
+loss = 0.0190
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.dominant.crystallized.ionic_interaction

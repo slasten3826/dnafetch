@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: BTN3A2 | unknown
+# CDS: 111 bp (37 codons)
+
+[IDENTITY]
+gene = BTN3A2
+organism = unknown
+transcript = ENST00000527639.2
+cds_length = 111
+codons = 37
+protein_length = 36
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.955
+resistance = 0.045
+dominant = FLOW
+dominant_pct = 0.3784
+FLOW = 0.3784
+OBSERVE = 0.1712
+LOGIC = 0.2883
+CHOOSE = 0.1622
+state = flowing
+
+[CONNECT]
+depth = 0.6667
+type = ionic_interaction
+hydrophobic_ratio = 0.4167
+charge_positive = 0.2222
+charge_negative = 0.1944
+charge_neutral = 0.5833
+
+[DISSOLVE]
+rigidity = 0.9381
+potential = low
+wobble_entropy = 0.0619
+complementary_disruption = 0.3333
+
+[ENCODE]
+type = moderate
+loss = 0.5938
+gc_content = 0.4505
+wobble_gc = 0.5135
+codon_diversity = 0.4062
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3514
+wobble_FLOW = 0.3514
+wobble_OBSERVE = 0.1351
+wobble_LOGIC = 0.3514
+wobble_CHOOSE = 0.1622
+entropy = 0.0619
+
+[OBSERVE]
+distance = 0.0901
+level = mild
+complementary_balance = 0.6667
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1892
+intensity = 0.1892
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1892
+  COMPOSE(FLOW,OBSERVE): 0.1081
+  COMPOSE(FLOW,FLOW): 0.1081
+  COMPOSE(FLOW,LOGIC): 0.1081
+  COMPOSE(CHOOSE,OBSERVE): 0.1081
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3784
+modifier_dominant = FLOW
+modifier_pct = 0.4054
+primary_FLOW = 0.3784
+primary_OBSERVE = 0.1351
+primary_LOGIC = 0.2703
+primary_CHOOSE = 0.2162
+modifier_FLOW = 0.4054
+modifier_OBSERVE = 0.2432
+modifier_LOGIC = 0.2432
+modifier_CHOOSE = 0.1081
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0524
+aa_top5 = [
+  Glu: 0.1944  # acidic
+  Leu: 0.1389  # aliphatic
+  Lys: 0.1111  # basic
+  Arg: 0.1111  # basic
+  Met: 0.0556  # sulfur
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 36
+stop_codon = TGA
+loss = 0.0524
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.low.ionic_interaction

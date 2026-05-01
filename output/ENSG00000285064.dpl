@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000285064 | unknown
+# CDS: 387 bp (129 codons)
+
+[IDENTITY]
+gene = ENSG00000285064
+organism = unknown
+transcript = ENST00000453407.7
+cds_length = 387
+codons = 129
+protein_length = 129
+stop_codon = none
+
+[FLOW]
+engagement = 0.991
+resistance = 0.009
+dominant = CHOOSE
+dominant_pct = 0.3023
+FLOW = 0.2274
+OBSERVE = 0.2016
+LOGIC = 0.2687
+CHOOSE = 0.3023
+state = flowing
+
+[CONNECT]
+depth = 0.9406
+type = balanced_interface
+hydrophobic_ratio = 0.5194
+charge_positive = 0.1318
+charge_negative = 0.1395
+charge_neutral = 0.7287
+
+[DISSOLVE]
+rigidity = 0.9610
+potential = crystallized
+wobble_entropy = 0.0390
+complementary_disruption = 0.0594
+
+[ENCODE]
+type = optimized
+loss = 0.2500
+gc_content = 0.5711
+wobble_gc = 0.6434
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3566
+wobble_FLOW = 0.1395
+wobble_OBSERVE = 0.2171
+wobble_LOGIC = 0.2868
+wobble_CHOOSE = 0.3566
+entropy = 0.0390
+
+[OBSERVE]
+distance = 0.0336
+level = deep
+complementary_balance = 0.9406
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1395
+intensity = 0.1395
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1395
+  COMPOSE(LOGIC,CHOOSE): 0.1240
+  COMPOSE(FLOW,FLOW): 0.0930
+  COMPOSE(CHOOSE,OBSERVE): 0.0853
+  COMPOSE(CHOOSE,CHOOSE): 0.0775
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3488
+modifier_dominant = FLOW
+modifier_pct = 0.3256
+primary_FLOW = 0.2171
+primary_OBSERVE = 0.1705
+primary_LOGIC = 0.3488
+primary_CHOOSE = 0.2636
+modifier_FLOW = 0.3256
+modifier_OBSERVE = 0.2171
+modifier_LOGIC = 0.1705
+modifier_CHOOSE = 0.2868
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0329
+aa_top5 = [
+  Ala: 0.1240  # simple
+  Ser: 0.1163  # hydroxyl
+  Leu: 0.0930  # aliphatic
+  Glu: 0.0930  # acidic
+  Pro: 0.0775  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 129
+stop_codon = none
+loss = 0.0329
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.balanced_interface

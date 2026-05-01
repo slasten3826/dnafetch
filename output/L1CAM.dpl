@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: L1CAM | unknown
+# CDS: 105 bp (35 codons)
+
+[IDENTITY]
+gene = L1CAM
+organism = unknown
+transcript = ENST00000458029.1
+cds_length = 105
+codons = 35
+protein_length = 34
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.941
+resistance = 0.059
+dominant = LOGIC
+dominant_pct = 0.4000
+FLOW = 0.2857
+OBSERVE = 0.1429
+LOGIC = 0.4000
+CHOOSE = 0.1714
+state = flowing
+
+[CONNECT]
+depth = 0.6286
+type = membrane_embedded
+hydrophobic_ratio = 0.5882
+charge_positive = 0.1471
+charge_negative = 0.0882
+charge_neutral = 0.7647
+
+[DISSOLVE]
+rigidity = 0.9069
+potential = low
+wobble_entropy = 0.0931
+complementary_disruption = 0.3714
+
+[ENCODE]
+type = moderate
+loss = 0.6562
+gc_content = 0.5714
+wobble_gc = 0.5714
+codon_diversity = 0.3438
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4571
+wobble_FLOW = 0.2571
+wobble_OBSERVE = 0.1714
+wobble_LOGIC = 0.4571
+wobble_CHOOSE = 0.1143
+entropy = 0.0931
+
+[OBSERVE]
+distance = 0.1143
+level = mild
+complementary_balance = 0.6286
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.2000
+  COMPOSE(FLOW,OBSERVE): 0.1143
+  COMPOSE(CHOOSE,FLOW): 0.1143
+  COMPOSE(LOGIC,CHOOSE): 0.1143
+  COMPOSE(FLOW,CHOOSE): 0.0857
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4286
+modifier_dominant = LOGIC
+modifier_pct = 0.3143
+primary_FLOW = 0.3143
+primary_OBSERVE = 0.0857
+primary_LOGIC = 0.4286
+primary_CHOOSE = 0.1714
+modifier_FLOW = 0.2857
+modifier_OBSERVE = 0.1714
+modifier_LOGIC = 0.3143
+modifier_CHOOSE = 0.2286
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0519
+aa_top5 = [
+  Gly: 0.2059  # simple
+  Met: 0.1176  # sulfur
+  Ala: 0.1176  # simple
+  Gln: 0.0882  # amide
+  Thr: 0.0882  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 34
+stop_codon = TAG
+loss = 0.0519
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.dominant.low.membrane_embedded

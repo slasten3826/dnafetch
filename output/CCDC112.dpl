@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CCDC112 | unknown
+# CDS: 1341 bp (447 codons)
+
+[IDENTITY]
+gene = CCDC112
+organism = unknown
+transcript = ENST00000395557.4
+cds_length = 1341
+codons = 447
+protein_length = 446
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.929
+resistance = 0.071
+dominant = FLOW
+dominant_pct = 0.4482
+FLOW = 0.4482
+OBSERVE = 0.1946
+LOGIC = 0.2110
+CHOOSE = 0.1462
+state = flowing
+
+[CONNECT]
+depth = 0.6816
+type = ionic_interaction
+hydrophobic_ratio = 0.3498
+charge_positive = 0.2601
+charge_negative = 0.1816
+charge_neutral = 0.5583
+
+[DISSOLVE]
+rigidity = 0.9038
+potential = low
+wobble_entropy = 0.0962
+complementary_disruption = 0.3184
+
+[ENCODE]
+type = natural
+loss = 0.1562
+gc_content = 0.3572
+wobble_gc = 0.3065
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4497
+wobble_FLOW = 0.4497
+wobble_OBSERVE = 0.2438
+wobble_LOGIC = 0.2148
+wobble_CHOOSE = 0.0917
+entropy = 0.0962
+
+[OBSERVE]
+distance = 0.2371
+level = basic
+complementary_balance = 0.6816
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1991
+intensity = 0.1991
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1991
+  COMPOSE(LOGIC,FLOW): 0.1812
+  COMPOSE(CHOOSE,FLOW): 0.1163
+  COMPOSE(FLOW,LOGIC): 0.0783
+  COMPOSE(OBSERVE,OBSERVE): 0.0671
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3848
+modifier_dominant = FLOW
+modifier_pct = 0.5101
+primary_FLOW = 0.3848
+primary_OBSERVE = 0.1230
+primary_LOGIC = 0.2864
+primary_CHOOSE = 0.2058
+modifier_FLOW = 0.5101
+modifier_OBSERVE = 0.2170
+modifier_LOGIC = 0.1320
+modifier_CHOOSE = 0.1409
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0395
+aa_top5 = [
+  Lys: 0.1614  # basic
+  Glu: 0.1413  # acidic
+  Gln: 0.0830  # amide
+  Leu: 0.0830  # aliphatic
+  Arg: 0.0650  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 446
+stop_codon = TGA
+loss = 0.0395
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

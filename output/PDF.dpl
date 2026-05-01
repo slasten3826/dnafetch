@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PDF | unknown
+# CDS: 732 bp (244 codons)
+
+[IDENTITY]
+gene = PDF
+organism = unknown
+transcript = ENST00000288022.2
+cds_length = 732
+codons = 244
+protein_length = 243
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.933
+resistance = 0.067
+dominant = LOGIC
+dominant_pct = 0.3825
+FLOW = 0.1298
+OBSERVE = 0.1626
+LOGIC = 0.3825
+CHOOSE = 0.3251
+state = flowing
+
+[CONNECT]
+depth = 0.9098
+type = membrane_embedded
+hydrophobic_ratio = 0.6379
+charge_positive = 0.1317
+charge_negative = 0.0823
+charge_neutral = 0.7860
+
+[DISSOLVE]
+rigidity = 0.7731
+potential = low
+wobble_entropy = 0.2269
+complementary_disruption = 0.0902
+
+[ENCODE]
+type = engineered
+loss = 0.2031
+gc_content = 0.7077
+wobble_gc = 0.8689
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5000
+wobble_FLOW = 0.0656
+wobble_OBSERVE = 0.0656
+wobble_LOGIC = 0.5000
+wobble_CHOOSE = 0.3689
+entropy = 0.2269
+
+[OBSERVE]
+distance = 0.0574
+level = standard
+complementary_balance = 0.9098
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1148
+intensity = 0.1148
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1148
+  COMPOSE(LOGIC,OBSERVE): 0.1066
+  COMPOSE(LOGIC,CHOOSE): 0.0984
+  COMPOSE(CHOOSE,LOGIC): 0.0984
+  COMPOSE(CHOOSE,CHOOSE): 0.0902
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3811
+modifier_dominant = OBSERVE
+modifier_pct = 0.2951
+primary_FLOW = 0.1270
+primary_OBSERVE = 0.1270
+primary_LOGIC = 0.3648
+primary_CHOOSE = 0.3811
+modifier_FLOW = 0.1967
+modifier_OBSERVE = 0.2951
+modifier_LOGIC = 0.2828
+modifier_CHOOSE = 0.2254
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0355
+aa_top5 = [
+  Leu: 0.1152  # aliphatic
+  Arg: 0.1070  # basic
+  Val: 0.1070  # aliphatic
+  Ala: 0.0988  # simple
+  Pro: 0.0905  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 243
+stop_codon = TAA
+loss = 0.0355
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.strong.low.membrane_embedded

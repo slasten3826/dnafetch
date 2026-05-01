@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: THOP1 | unknown
+# CDS: 507 bp (169 codons)
+
+[IDENTITY]
+gene = THOP1
+organism = unknown
+transcript = ENST00000587468.1
+cds_length = 507
+codons = 169
+protein_length = 169
+stop_codon = none
+
+[FLOW]
+engagement = 0.968
+resistance = 0.032
+dominant = LOGIC
+dominant_pct = 0.3333
+FLOW = 0.1972
+OBSERVE = 0.1598
+LOGIC = 0.3333
+CHOOSE = 0.3097
+state = flowing
+
+[CONNECT]
+depth = 0.9389
+type = membrane_embedded
+hydrophobic_ratio = 0.5503
+charge_positive = 0.1183
+charge_negative = 0.1302
+charge_neutral = 0.7515
+
+[DISSOLVE]
+rigidity = 0.7698
+potential = low
+wobble_entropy = 0.2302
+complementary_disruption = 0.0611
+
+[ENCODE]
+type = engineered
+loss = 0.3438
+gc_content = 0.6430
+wobble_gc = 0.8757
+codon_diversity = 0.6562
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4438
+wobble_FLOW = 0.0533
+wobble_OBSERVE = 0.0710
+wobble_LOGIC = 0.4438
+wobble_CHOOSE = 0.4320
+entropy = 0.2302
+
+[OBSERVE]
+distance = 0.0237
+level = deep
+complementary_balance = 0.9389
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1302
+intensity = 0.1302
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1302
+  COMPOSE(CHOOSE,OBSERVE): 0.1006
+  COMPOSE(CHOOSE,FLOW): 0.0828
+  COMPOSE(LOGIC,CHOOSE): 0.0828
+  COMPOSE(LOGIC,LOGIC): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3491
+modifier_dominant = FLOW
+modifier_pct = 0.3136
+primary_FLOW = 0.2249
+primary_OBSERVE = 0.1420
+primary_LOGIC = 0.3491
+primary_CHOOSE = 0.2840
+modifier_FLOW = 0.3136
+modifier_OBSERVE = 0.2663
+modifier_LOGIC = 0.2071
+modifier_CHOOSE = 0.2130
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0234
+aa_top5 = [
+  Leu: 0.1006  # aliphatic
+  Glu: 0.0828  # acidic
+  Ala: 0.0828  # simple
+  Gly: 0.0769  # simple
+  Ser: 0.0651  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 169
+stop_codon = none
+loss = 0.0234
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.low.membrane_embedded

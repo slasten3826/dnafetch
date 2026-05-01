@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: OR6K2 | unknown
+# CDS: 975 bp (325 codons)
+
+[IDENTITY]
+gene = OR6K2
+organism = unknown
+transcript = ENST00000359610.3
+cds_length = 975
+codons = 325
+protein_length = 324
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.982
+resistance = 0.018
+dominant = OBSERVE
+dominant_pct = 0.3354
+FLOW = 0.2123
+OBSERVE = 0.3354
+LOGIC = 0.1897
+CHOOSE = 0.2626
+state = flowing
+
+[CONNECT]
+depth = 0.8041
+type = membrane_embedded
+hydrophobic_ratio = 0.6512
+charge_positive = 0.0926
+charge_negative = 0.0494
+charge_neutral = 0.8580
+
+[DISSOLVE]
+rigidity = 0.9591
+potential = crystallized
+wobble_entropy = 0.0409
+complementary_disruption = 0.1959
+
+[ENCODE]
+type = moderate
+loss = 0.0781
+gc_content = 0.4523
+wobble_gc = 0.5262
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3323
+wobble_FLOW = 0.1446
+wobble_OBSERVE = 0.3292
+wobble_LOGIC = 0.1938
+wobble_CHOOSE = 0.3323
+entropy = 0.0409
+
+[OBSERVE]
+distance = 0.0728
+level = standard
+complementary_balance = 0.8041
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1415
+intensity = 0.1415
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1415
+  COMPOSE(OBSERVE,OBSERVE): 0.1077
+  COMPOSE(CHOOSE,OBSERVE): 0.0892
+  COMPOSE(LOGIC,OBSERVE): 0.0800
+  COMPOSE(FLOW,CHOOSE): 0.0738
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3046
+modifier_dominant = OBSERVE
+modifier_pct = 0.4185
+primary_FLOW = 0.3046
+primary_OBSERVE = 0.2585
+primary_LOGIC = 0.2277
+primary_CHOOSE = 0.2092
+modifier_FLOW = 0.1877
+modifier_OBSERVE = 0.4185
+modifier_LOGIC = 0.1477
+modifier_CHOOSE = 0.2462
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0306
+aa_top5 = [
+  Ile: 0.1111  # aliphatic
+  Leu: 0.1049  # aliphatic
+  Ser: 0.0926  # hydroxyl
+  Phe: 0.0926  # aromatic
+  Val: 0.0802  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 324
+stop_codon = TAG
+loss = 0.0306
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.standard.dominant.crystallized.membrane_embedded

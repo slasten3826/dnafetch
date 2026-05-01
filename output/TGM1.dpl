@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TGM1 | unknown
+# CDS: 96 bp (32 codons)
+
+[IDENTITY]
+gene = TGM1
+organism = unknown
+transcript = ENST00000561067.1
+cds_length = 96
+codons = 32
+protein_length = 31
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.923
+resistance = 0.077
+dominant = LOGIC
+dominant_pct = 0.3854
+FLOW = 0.3125
+OBSERVE = 0.0938
+LOGIC = 0.3854
+CHOOSE = 0.2083
+state = flowing
+
+[CONNECT]
+depth = 0.6042
+type = ionic_interaction
+hydrophobic_ratio = 0.4839
+charge_positive = 0.2581
+charge_negative = 0.1613
+charge_neutral = 0.5806
+
+[DISSOLVE]
+rigidity = 0.9352
+potential = low
+wobble_entropy = 0.0648
+complementary_disruption = 0.3958
+
+[ENCODE]
+type = moderate
+loss = 0.6719
+gc_content = 0.5938
+wobble_gc = 0.5938
+codon_diversity = 0.3281
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4062
+wobble_FLOW = 0.2812
+wobble_OBSERVE = 0.1250
+wobble_LOGIC = 0.4062
+wobble_CHOOSE = 0.1875
+entropy = 0.0648
+
+[OBSERVE]
+distance = 0.0729
+level = standard
+complementary_balance = 0.6042
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1562
+intensity = 0.1562
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1562
+  COMPOSE(LOGIC,FLOW): 0.1562
+  COMPOSE(FLOW,LOGIC): 0.1250
+  COMPOSE(FLOW,FLOW): 0.1250
+  COMPOSE(LOGIC,CHOOSE): 0.0938
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4375
+modifier_dominant = FLOW
+modifier_pct = 0.3125
+primary_FLOW = 0.3438
+primary_OBSERVE = 0.0312
+primary_LOGIC = 0.4375
+primary_CHOOSE = 0.1875
+modifier_FLOW = 0.3125
+modifier_OBSERVE = 0.1250
+modifier_LOGIC = 0.3125
+modifier_CHOOSE = 0.2500
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0515
+aa_top5 = [
+  Gly: 0.1613  # simple
+  Arg: 0.1290  # basic
+  Lys: 0.1290  # basic
+  Ala: 0.0968  # simple
+  Glu: 0.0968  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 31
+stop_codon = TGA
+loss = 0.0515
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.dominant.low.ionic_interaction

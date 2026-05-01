@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: USP9Y | unknown
+# CDS: 495 bp (165 codons)
+
+[IDENTITY]
+gene = USP9Y
+organism = unknown
+transcript = ENST00000453031.1
+cds_length = 495
+codons = 165
+protein_length = 164
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = FLOW
+dominant_pct = 0.3455
+FLOW = 0.3455
+OBSERVE = 0.2202
+LOGIC = 0.2101
+CHOOSE = 0.2242
+state = flowing
+
+[CONNECT]
+depth = 0.8606
+type = balanced_interface
+hydrophobic_ratio = 0.4634
+charge_positive = 0.1098
+charge_negative = 0.1463
+charge_neutral = 0.7439
+
+[DISSOLVE]
+rigidity = 0.9299
+potential = crystallized
+wobble_entropy = 0.0701
+complementary_disruption = 0.1394
+
+[ENCODE]
+type = AT_rich
+loss = 0.2344
+gc_content = 0.4343
+wobble_gc = 0.2848
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3758
+wobble_FLOW = 0.3758
+wobble_OBSERVE = 0.3394
+wobble_LOGIC = 0.1515
+wobble_CHOOSE = 0.1333
+entropy = 0.0701
+
+[OBSERVE]
+distance = 0.1212
+level = basic
+complementary_balance = 0.8606
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1455
+intensity = 0.1455
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1455
+  COMPOSE(CHOOSE,FLOW): 0.1273
+  COMPOSE(CHOOSE,CHOOSE): 0.1030
+  COMPOSE(FLOW,FLOW): 0.1030
+  COMPOSE(LOGIC,CHOOSE): 0.0727
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3091
+modifier_dominant = FLOW
+modifier_pct = 0.4303
+primary_FLOW = 0.2303
+primary_OBSERVE = 0.1879
+primary_LOGIC = 0.3091
+primary_CHOOSE = 0.2727
+modifier_FLOW = 0.4303
+modifier_OBSERVE = 0.1333
+modifier_LOGIC = 0.1697
+modifier_CHOOSE = 0.2667
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0277
+aa_top5 = [
+  Pro: 0.1037  # cyclic
+  Glu: 0.0976  # acidic
+  Gln: 0.0854  # amide
+  Ser: 0.0793  # hydroxyl
+  Ala: 0.0732  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 164
+stop_codon = TGA
+loss = 0.0277
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.crystallized.balanced_interface

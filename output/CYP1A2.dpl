@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CYP1A2 | unknown
+# CDS: 1551 bp (517 codons)
+
+[IDENTITY]
+gene = CYP1A2
+organism = unknown
+transcript = ENST00000343932.5
+cds_length = 1551
+codons = 517
+protein_length = 516
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.987
+resistance = 0.013
+dominant = CHOOSE
+dominant_pct = 0.3179
+FLOW = 0.2044
+OBSERVE = 0.2044
+LOGIC = 0.2734
+CHOOSE = 0.3179
+state = flowing
+
+[CONNECT]
+depth = 0.9555
+type = membrane_embedded
+hydrophobic_ratio = 0.5504
+charge_positive = 0.1395
+charge_negative = 0.0950
+charge_neutral = 0.7655
+
+[DISSOLVE]
+rigidity = 0.8560
+potential = crystallized
+wobble_entropy = 0.1440
+complementary_disruption = 0.0445
+
+[ENCODE]
+type = engineered
+loss = 0.0625
+gc_content = 0.5912
+wobble_gc = 0.7988
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4391
+wobble_FLOW = 0.0793
+wobble_OBSERVE = 0.1219
+wobble_LOGIC = 0.3598
+wobble_CHOOSE = 0.4391
+entropy = 0.1440
+
+[OBSERVE]
+distance = 0.0445
+level = deep
+complementary_balance = 0.9555
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1025
+intensity = 0.1025
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1025
+  COMPOSE(LOGIC,FLOW): 0.0948
+  COMPOSE(FLOW,FLOW): 0.0851
+  COMPOSE(OBSERVE,OBSERVE): 0.0793
+  COMPOSE(CHOOSE,FLOW): 0.0716
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2863
+modifier_dominant = OBSERVE
+modifier_pct = 0.3153
+primary_FLOW = 0.2631
+primary_OBSERVE = 0.1760
+primary_LOGIC = 0.2747
+primary_CHOOSE = 0.2863
+modifier_FLOW = 0.2708
+modifier_OBSERVE = 0.3153
+modifier_LOGIC = 0.1857
+modifier_CHOOSE = 0.2282
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0241
+aa_top5 = [
+  Leu: 0.1182  # aliphatic
+  Ser: 0.0775  # hydroxyl
+  Pro: 0.0678  # cyclic
+  Val: 0.0640  # aliphatic
+  Phe: 0.0640  # aromatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 516
+stop_codon = TGA
+loss = 0.0241
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.membrane_embedded

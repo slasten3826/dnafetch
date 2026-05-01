@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CD300LD | unknown
+# CDS: 585 bp (195 codons)
+
+[IDENTITY]
+gene = CD300LD
+organism = unknown
+transcript = ENST00000375352.1
+cds_length = 585
+codons = 195
+protein_length = 194
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = FLOW
+dominant_pct = 0.2667
+FLOW = 0.2667
+OBSERVE = 0.2205
+LOGIC = 0.2479
+CHOOSE = 0.2650
+state = flowing
+
+[CONNECT]
+depth = 0.9368
+type = balanced_interface
+hydrophobic_ratio = 0.5206
+charge_positive = 0.1082
+charge_negative = 0.0722
+charge_neutral = 0.8196
+
+[DISSOLVE]
+rigidity = 0.9917
+potential = crystallized
+wobble_entropy = 0.0083
+complementary_disruption = 0.0632
+
+[ENCODE]
+type = moderate
+loss = 0.1875
+gc_content = 0.5128
+wobble_gc = 0.5744
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2974
+wobble_FLOW = 0.2103
+wobble_OBSERVE = 0.2154
+wobble_LOGIC = 0.2769
+wobble_CHOOSE = 0.2974
+entropy = 0.0083
+
+[OBSERVE]
+distance = 0.0017
+level = intense
+complementary_balance = 0.9368
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1128
+intensity = 0.1128
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1128
+  COMPOSE(FLOW,CHOOSE): 0.1128
+  COMPOSE(FLOW,FLOW): 0.1026
+  COMPOSE(LOGIC,FLOW): 0.0718
+  COMPOSE(LOGIC,LOGIC): 0.0667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3333
+modifier_dominant = CHOOSE
+modifier_pct = 0.2718
+primary_FLOW = 0.3333
+primary_OBSERVE = 0.1795
+primary_LOGIC = 0.2615
+primary_CHOOSE = 0.2256
+modifier_FLOW = 0.2564
+modifier_OBSERVE = 0.2667
+modifier_LOGIC = 0.2051
+modifier_CHOOSE = 0.2718
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0293
+aa_top5 = [
+  Leu: 0.1237  # aliphatic
+  Thr: 0.1134  # hydroxyl
+  Ser: 0.0876  # hydroxyl
+  Gly: 0.0670  # simple
+  Val: 0.0670  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 194
+stop_codon = TGA
+loss = 0.0293
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.intense.strong.crystallized.balanced_interface

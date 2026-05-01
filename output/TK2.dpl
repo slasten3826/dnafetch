@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TK2 | unknown
+# CDS: 105 bp (35 codons)
+
+[IDENTITY]
+gene = TK2
+organism = unknown
+transcript = ENST00000678746.1
+cds_length = 105
+codons = 35
+protein_length = 34
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.975
+resistance = 0.025
+dominant = CHOOSE
+dominant_pct = 0.3333
+FLOW = 0.1524
+OBSERVE = 0.2667
+LOGIC = 0.2476
+CHOOSE = 0.3333
+state = flowing
+
+[CONNECT]
+depth = 0.8000
+type = balanced_interface
+hydrophobic_ratio = 0.5294
+charge_positive = 0.0588
+charge_negative = 0.0882
+charge_neutral = 0.8529
+
+[DISSOLVE]
+rigidity = 0.9457
+potential = crystallized
+wobble_entropy = 0.0543
+complementary_disruption = 0.2000
+
+[ENCODE]
+type = moderate
+loss = 0.5781
+gc_content = 0.5810
+wobble_gc = 0.6000
+codon_diversity = 0.4219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3714
+wobble_FLOW = 0.1143
+wobble_OBSERVE = 0.2857
+wobble_LOGIC = 0.2286
+wobble_CHOOSE = 0.3714
+entropy = 0.0543
+
+[OBSERVE]
+distance = 0.0667
+level = standard
+complementary_balance = 0.8000
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.2000
+  COMPOSE(CHOOSE,OBSERVE): 0.1143
+  COMPOSE(OBSERVE,LOGIC): 0.1143
+  COMPOSE(LOGIC,FLOW): 0.0857
+  COMPOSE(CHOOSE,CHOOSE): 0.0857
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3143
+modifier_dominant = CHOOSE
+modifier_pct = 0.3714
+primary_FLOW = 0.1714
+primary_OBSERVE = 0.3143
+primary_LOGIC = 0.2571
+primary_CHOOSE = 0.2571
+modifier_FLOW = 0.1714
+modifier_OBSERVE = 0.2000
+modifier_LOGIC = 0.2571
+modifier_CHOOSE = 0.3714
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0596
+aa_top5 = [
+  Ser: 0.2647  # hydroxyl
+  Leu: 0.1176  # aliphatic
+  Pro: 0.0882  # cyclic
+  Cys: 0.0882  # sulfur
+  Ala: 0.0882  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 34
+stop_codon = TGA
+loss = 0.0596
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.balanced_interface

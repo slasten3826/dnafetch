@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SMUG1 | unknown
+# CDS: 204 bp (68 codons)
+
+[IDENTITY]
+gene = SMUG1
+organism = unknown
+transcript = ENST00000503306.5
+cds_length = 204
+codons = 68
+protein_length = 67
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = OBSERVE
+dominant_pct = 0.2892
+FLOW = 0.2157
+OBSERVE = 0.2892
+LOGIC = 0.2353
+CHOOSE = 0.2598
+state = flowing
+
+[CONNECT]
+depth = 0.9020
+type = balanced_interface
+hydrophobic_ratio = 0.5075
+charge_positive = 0.1194
+charge_negative = 0.0299
+charge_neutral = 0.8507
+
+[DISSOLVE]
+rigidity = 0.9714
+potential = crystallized
+wobble_entropy = 0.0286
+complementary_disruption = 0.0980
+
+[ENCODE]
+type = moderate
+loss = 0.4219
+gc_content = 0.4951
+wobble_gc = 0.5000
+codon_diversity = 0.5781
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3382
+wobble_FLOW = 0.1618
+wobble_OBSERVE = 0.3382
+wobble_LOGIC = 0.2059
+wobble_CHOOSE = 0.2941
+entropy = 0.0286
+
+[OBSERVE]
+distance = 0.0294
+level = deep
+complementary_balance = 0.9020
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1471
+intensity = 0.1471
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1471
+  COMPOSE(FLOW,LOGIC): 0.1324
+  COMPOSE(CHOOSE,FLOW): 0.1176
+  COMPOSE(LOGIC,CHOOSE): 0.1176
+  COMPOSE(OBSERVE,LOGIC): 0.0882
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3382
+modifier_dominant = CHOOSE
+modifier_pct = 0.3088
+primary_FLOW = 0.2647
+primary_OBSERVE = 0.3382
+primary_LOGIC = 0.2206
+primary_CHOOSE = 0.1765
+modifier_FLOW = 0.2206
+modifier_OBSERVE = 0.1912
+modifier_LOGIC = 0.2794
+modifier_CHOOSE = 0.3088
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0505
+aa_top5 = [
+  Ser: 0.2388  # hydroxyl
+  Ala: 0.1194  # simple
+  Leu: 0.0746  # aliphatic
+  Gln: 0.0597  # amide
+  Cys: 0.0597  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 67
+stop_codon = TAG
+loss = 0.0505
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.dominant.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FOXRED2 | unknown
+# CDS: 99 bp (33 codons)
+
+[IDENTITY]
+gene = FOXRED2
+organism = unknown
+transcript = ENST00000423980.1
+cds_length = 99
+codons = 33
+protein_length = 32
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.957
+resistance = 0.043
+dominant = LOGIC
+dominant_pct = 0.3939
+FLOW = 0.1818
+OBSERVE = 0.1717
+LOGIC = 0.3939
+CHOOSE = 0.2525
+state = flowing
+
+[CONNECT]
+depth = 0.8485
+type = membrane_embedded
+hydrophobic_ratio = 0.5625
+charge_positive = 0.0312
+charge_negative = 0.1562
+charge_neutral = 0.8125
+
+[DISSOLVE]
+rigidity = 0.8220
+potential = low
+wobble_entropy = 0.1780
+complementary_disruption = 0.1515
+
+[ENCODE]
+type = engineered
+loss = 0.6406
+gc_content = 0.6465
+wobble_gc = 0.8182
+codon_diversity = 0.3594
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5152
+wobble_FLOW = 0.0909
+wobble_OBSERVE = 0.0909
+wobble_LOGIC = 0.5152
+wobble_CHOOSE = 0.3030
+entropy = 0.1780
+
+[OBSERVE]
+distance = 0.1414
+level = basic
+complementary_balance = 0.8485
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1515
+intensity = 0.1515
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1515
+  COMPOSE(LOGIC,LOGIC): 0.1515
+  COMPOSE(FLOW,OBSERVE): 0.0909
+  COMPOSE(CHOOSE,CHOOSE): 0.0909
+  COMPOSE(OBSERVE,CHOOSE): 0.0909
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3636
+modifier_dominant = LOGIC
+modifier_pct = 0.3030
+primary_FLOW = 0.2121
+primary_OBSERVE = 0.2121
+primary_LOGIC = 0.3636
+primary_CHOOSE = 0.2121
+modifier_FLOW = 0.2424
+modifier_OBSERVE = 0.2121
+modifier_LOGIC = 0.3030
+modifier_CHOOSE = 0.2424
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0478
+aa_top5 = [
+  Gly: 0.1562  # simple
+  Ser: 0.1562  # hydroxyl
+  Glu: 0.1250  # acidic
+  Pro: 0.0938  # cyclic
+  Met: 0.0625  # sulfur
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 32
+stop_codon = TGA
+loss = 0.0478
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.low.membrane_embedded

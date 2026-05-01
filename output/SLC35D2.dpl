@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLC35D2 | unknown
+# CDS: 492 bp (164 codons)
+
+[IDENTITY]
+gene = SLC35D2
+organism = unknown
+transcript = ENST00000375257.2
+cds_length = 492
+codons = 164
+protein_length = 163
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = CHOOSE
+dominant_pct = 0.2886
+FLOW = 0.2236
+OBSERVE = 0.2561
+LOGIC = 0.2317
+CHOOSE = 0.2886
+state = flowing
+
+[CONNECT]
+depth = 0.9106
+type = membrane_embedded
+hydrophobic_ratio = 0.6933
+charge_positive = 0.0920
+charge_negative = 0.0368
+charge_neutral = 0.8712
+
+[DISSOLVE]
+rigidity = 0.9724
+potential = crystallized
+wobble_entropy = 0.0276
+complementary_disruption = 0.0894
+
+[ENCODE]
+type = optimized
+loss = 0.2344
+gc_content = 0.5203
+wobble_gc = 0.6280
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3537
+wobble_FLOW = 0.1829
+wobble_OBSERVE = 0.1890
+wobble_LOGIC = 0.2744
+wobble_CHOOSE = 0.3537
+entropy = 0.0276
+
+[OBSERVE]
+distance = 0.0325
+level = deep
+complementary_balance = 0.9106
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1463
+intensity = 0.1463
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1463
+  COMPOSE(FLOW,OBSERVE): 0.1280
+  COMPOSE(LOGIC,CHOOSE): 0.0915
+  COMPOSE(LOGIC,LOGIC): 0.0915
+  COMPOSE(OBSERVE,OBSERVE): 0.0854
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3049
+modifier_dominant = OBSERVE
+modifier_pct = 0.4085
+primary_FLOW = 0.3049
+primary_OBSERVE = 0.1707
+primary_LOGIC = 0.2683
+primary_CHOOSE = 0.2561
+modifier_FLOW = 0.1829
+modifier_OBSERVE = 0.4085
+modifier_LOGIC = 0.1524
+modifier_CHOOSE = 0.2561
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0401
+aa_top5 = [
+  Leu: 0.1656  # aliphatic
+  Ile: 0.1043  # aliphatic
+  Ala: 0.0920  # simple
+  Gly: 0.0920  # simple
+  Ser: 0.0736  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 163
+stop_codon = TAA
+loss = 0.0401
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.membrane_embedded

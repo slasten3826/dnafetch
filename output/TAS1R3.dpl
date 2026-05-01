@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TAS1R3 | unknown
+# CDS: 2559 bp (853 codons)
+
+[IDENTITY]
+gene = TAS1R3
+organism = unknown
+transcript = ENST00000339381.6
+cds_length = 2559
+codons = 853
+protein_length = 852
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.958
+resistance = 0.042
+dominant = CHOOSE
+dominant_pct = 0.3369
+FLOW = 0.1485
+OBSERVE = 0.1860
+LOGIC = 0.3286
+CHOOSE = 0.3369
+state = flowing
+
+[CONNECT]
+depth = 0.9543
+type = membrane_embedded
+hydrophobic_ratio = 0.6279
+charge_positive = 0.1009
+charge_negative = 0.0775
+charge_neutral = 0.8216
+
+[DISSOLVE]
+rigidity = 0.7604
+potential = low
+wobble_entropy = 0.2396
+complementary_disruption = 0.0457
+
+[ENCODE]
+type = engineered
+loss = 0.1094
+gc_content = 0.6655
+wobble_gc = 0.8804
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4631
+wobble_FLOW = 0.0445
+wobble_OBSERVE = 0.0750
+wobble_LOGIC = 0.4174
+wobble_CHOOSE = 0.4631
+entropy = 0.2396
+
+[OBSERVE]
+distance = 0.0082
+level = strong
+complementary_balance = 0.9543
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1454
+intensity = 0.1454
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1454
+  COMPOSE(LOGIC,CHOOSE): 0.0926
+  COMPOSE(LOGIC,LOGIC): 0.0809
+  COMPOSE(LOGIC,OBSERVE): 0.0785
+  COMPOSE(CHOOSE,FLOW): 0.0785
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3294
+modifier_dominant = OBSERVE
+modifier_pct = 0.3142
+primary_FLOW = 0.1770
+primary_OBSERVE = 0.1688
+primary_LOGIC = 0.3294
+primary_CHOOSE = 0.3247
+modifier_FLOW = 0.2239
+modifier_OBSERVE = 0.3142
+modifier_LOGIC = 0.2392
+modifier_CHOOSE = 0.2227
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0318
+aa_top5 = [
+  Leu: 0.1491  # aliphatic
+  Ala: 0.0927  # simple
+  Gly: 0.0810  # simple
+  Val: 0.0786  # aliphatic
+  Ser: 0.0739  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 852
+stop_codon = TGA
+loss = 0.0318
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.dominant.low.membrane_embedded

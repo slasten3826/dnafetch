@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNF624 | unknown
+# CDS: 330 bp (110 codons)
+
+[IDENTITY]
+gene = ZNF624
+organism = unknown
+transcript = ENST00000423860.2
+cds_length = 330
+codons = 110
+protein_length = 110
+stop_codon = none
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = FLOW
+dominant_pct = 0.2879
+FLOW = 0.2879
+OBSERVE = 0.2424
+LOGIC = 0.2727
+CHOOSE = 0.1970
+state = flowing
+
+[CONNECT]
+depth = 0.8788
+type = ionic_interaction
+hydrophobic_ratio = 0.4727
+charge_positive = 0.1273
+charge_negative = 0.1818
+charge_neutral = 0.6909
+
+[DISSOLVE]
+rigidity = 0.9735
+potential = crystallized
+wobble_entropy = 0.0265
+complementary_disruption = 0.1212
+
+[ENCODE]
+type = moderate
+loss = 0.3125
+gc_content = 0.4697
+wobble_gc = 0.5182
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3545
+wobble_FLOW = 0.2455
+wobble_OBSERVE = 0.2364
+wobble_LOGIC = 0.3545
+wobble_CHOOSE = 0.1636
+entropy = 0.0265
+
+[OBSERVE]
+distance = 0.0152
+level = strong
+complementary_balance = 0.8788
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1818
+intensity = 0.1818
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1818
+  COMPOSE(FLOW,FLOW): 0.0909
+  COMPOSE(OBSERVE,OBSERVE): 0.0818
+  COMPOSE(CHOOSE,OBSERVE): 0.0818
+  COMPOSE(LOGIC,OBSERVE): 0.0818
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3545
+modifier_dominant = FLOW
+modifier_pct = 0.3545
+primary_FLOW = 0.2636
+primary_OBSERVE = 0.1727
+primary_LOGIC = 0.3545
+primary_CHOOSE = 0.2091
+modifier_FLOW = 0.3545
+modifier_OBSERVE = 0.3182
+modifier_LOGIC = 0.1091
+modifier_CHOOSE = 0.2182
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0312
+aa_top5 = [
+  Leu: 0.1273  # aliphatic
+  Glu: 0.1091  # acidic
+  Ser: 0.0818  # hydroxyl
+  Val: 0.0818  # aliphatic
+  Asp: 0.0727  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 110
+stop_codon = none
+loss = 0.0312
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.strong.dominant.crystallized.ionic_interaction

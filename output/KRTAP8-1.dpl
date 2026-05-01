@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KRTAP8-1 | unknown
+# CDS: 333 bp (111 codons)
+
+[IDENTITY]
+gene = KRTAP8-1
+organism = unknown
+transcript = ENST00000329621.6
+cds_length = 333
+codons = 111
+protein_length = 110
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = CHOOSE
+dominant_pct = 0.3123
+FLOW = 0.1982
+OBSERVE = 0.2523
+LOGIC = 0.2372
+CHOOSE = 0.3123
+state = flowing
+
+[CONNECT]
+depth = 0.8709
+type = membrane_embedded
+hydrophobic_ratio = 0.5727
+charge_positive = 0.1364
+charge_negative = 0.0455
+charge_neutral = 0.8182
+
+[DISSOLVE]
+rigidity = 0.9706
+potential = crystallized
+wobble_entropy = 0.0294
+complementary_disruption = 0.1291
+
+[ENCODE]
+type = moderate
+loss = 0.2656
+gc_content = 0.5495
+wobble_gc = 0.5495
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3153
+wobble_FLOW = 0.1441
+wobble_OBSERVE = 0.3063
+wobble_LOGIC = 0.3153
+wobble_CHOOSE = 0.2342
+entropy = 0.0294
+
+[OBSERVE]
+distance = 0.0601
+level = standard
+complementary_balance = 0.8709
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1441
+intensity = 0.1441
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1441
+  COMPOSE(CHOOSE,CHOOSE): 0.0991
+  COMPOSE(CHOOSE,FLOW): 0.0991
+  COMPOSE(OBSERVE,CHOOSE): 0.0901
+  COMPOSE(FLOW,CHOOSE): 0.0811
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2883
+modifier_dominant = CHOOSE
+modifier_pct = 0.4144
+primary_FLOW = 0.2432
+primary_OBSERVE = 0.2252
+primary_LOGIC = 0.2432
+primary_CHOOSE = 0.2883
+modifier_FLOW = 0.2072
+modifier_OBSERVE = 0.2252
+modifier_LOGIC = 0.1532
+modifier_CHOOSE = 0.4144
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0364
+aa_top5 = [
+  Ala: 0.1455  # simple
+  Leu: 0.1000  # aliphatic
+  Pro: 0.1000  # cyclic
+  Ser: 0.1000  # hydroxyl
+  Thr: 0.0818  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 110
+stop_codon = TGA
+loss = 0.0364
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: B3GALNT1 | unknown
+# CDS: 450 bp (150 codons)
+
+[IDENTITY]
+gene = B3GALNT1
+organism = unknown
+transcript = ENST00000460353.2
+cds_length = 450
+codons = 150
+protein_length = 150
+stop_codon = none
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = OBSERVE
+dominant_pct = 0.3022
+FLOW = 0.1978
+OBSERVE = 0.3022
+LOGIC = 0.2244
+CHOOSE = 0.2756
+state = flowing
+
+[CONNECT]
+depth = 0.8444
+type = membrane_embedded
+hydrophobic_ratio = 0.5667
+charge_positive = 0.1067
+charge_negative = 0.0333
+charge_neutral = 0.8600
+
+[DISSOLVE]
+rigidity = 0.9910
+potential = crystallized
+wobble_entropy = 0.0090
+complementary_disruption = 0.1556
+
+[ENCODE]
+type = moderate
+loss = 0.2031
+gc_content = 0.5000
+wobble_gc = 0.5600
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2867
+wobble_FLOW = 0.1867
+wobble_OBSERVE = 0.2533
+wobble_LOGIC = 0.2867
+wobble_CHOOSE = 0.2733
+entropy = 0.0090
+
+[OBSERVE]
+distance = 0.0267
+level = deep
+complementary_balance = 0.8444
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1667
+  COMPOSE(OBSERVE,CHOOSE): 0.1067
+  COMPOSE(OBSERVE,OBSERVE): 0.1067
+  COMPOSE(FLOW,LOGIC): 0.0933
+  COMPOSE(OBSERVE,LOGIC): 0.0800
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3000
+modifier_dominant = OBSERVE
+modifier_pct = 0.3533
+primary_FLOW = 0.2600
+primary_OBSERVE = 0.3000
+primary_LOGIC = 0.1600
+primary_CHOOSE = 0.2800
+modifier_FLOW = 0.1467
+modifier_OBSERVE = 0.3533
+modifier_LOGIC = 0.2267
+modifier_CHOOSE = 0.2733
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0478
+aa_top5 = [
+  Leu: 0.1933  # aliphatic
+  Ser: 0.1667  # hydroxyl
+  Phe: 0.0800  # aromatic
+  Thr: 0.0667  # hydroxyl
+  Ala: 0.0600  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 150
+stop_codon = none
+loss = 0.0478
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.deep.dominant.crystallized.membrane_embedded

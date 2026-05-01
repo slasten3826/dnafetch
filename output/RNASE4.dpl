@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RNASE4 | unknown
+# CDS: 444 bp (148 codons)
+
+[IDENTITY]
+gene = RNASE4
+organism = unknown
+transcript = ENST00000555597.1
+cds_length = 444
+codons = 148
+protein_length = 147
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = LOGIC
+dominant_pct = 0.2770
+FLOW = 0.2455
+OBSERVE = 0.2230
+LOGIC = 0.2770
+CHOOSE = 0.2545
+state = flowing
+
+[CONNECT]
+depth = 0.9550
+type = ionic_interaction
+hydrophobic_ratio = 0.5170
+charge_positive = 0.1769
+charge_negative = 0.0748
+charge_neutral = 0.7483
+
+[DISSOLVE]
+rigidity = 0.9464
+potential = crystallized
+wobble_entropy = 0.0536
+complementary_disruption = 0.0450
+
+[ENCODE]
+type = optimized
+loss = 0.1562
+gc_content = 0.5315
+wobble_gc = 0.6689
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3446
+wobble_FLOW = 0.1149
+wobble_OBSERVE = 0.2162
+wobble_LOGIC = 0.3243
+wobble_CHOOSE = 0.3446
+entropy = 0.0536
+
+[OBSERVE]
+distance = 0.0225
+level = deep
+complementary_balance = 0.9550
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1014
+intensity = 0.1014
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1014
+  COMPOSE(FLOW,OBSERVE): 0.0878
+  COMPOSE(FLOW,FLOW): 0.0878
+  COMPOSE(CHOOSE,OBSERVE): 0.0743
+  COMPOSE(FLOW,LOGIC): 0.0743
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3176
+modifier_dominant = FLOW
+modifier_pct = 0.3041
+primary_FLOW = 0.3176
+primary_OBSERVE = 0.1757
+primary_LOGIC = 0.2432
+primary_CHOOSE = 0.2635
+modifier_FLOW = 0.3041
+modifier_OBSERVE = 0.2770
+modifier_LOGIC = 0.2635
+modifier_CHOOSE = 0.1554
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0221
+aa_top5 = [
+  Leu: 0.1020  # aliphatic
+  Arg: 0.0952  # basic
+  Gly: 0.0748  # simple
+  Thr: 0.0680  # hydroxyl
+  Val: 0.0612  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 147
+stop_codon = TAG
+loss = 0.0221
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.deep.strong.crystallized.ionic_interaction

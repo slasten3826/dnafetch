@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FMO5 | unknown
+# CDS: 435 bp (145 codons)
+
+[IDENTITY]
+gene = FMO5
+organism = unknown
+transcript = ENST00000533848.2
+cds_length = 435
+codons = 145
+protein_length = 145
+stop_codon = none
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = FLOW
+dominant_pct = 0.2966
+FLOW = 0.2966
+OBSERVE = 0.2598
+LOGIC = 0.2644
+CHOOSE = 0.1793
+state = flowing
+
+[CONNECT]
+depth = 0.8782
+type = balanced_interface
+hydrophobic_ratio = 0.5379
+charge_positive = 0.1379
+charge_negative = 0.1448
+charge_neutral = 0.7172
+
+[DISSOLVE]
+rigidity = 0.9955
+potential = crystallized
+wobble_entropy = 0.0045
+complementary_disruption = 0.1218
+
+[ENCODE]
+type = moderate
+loss = 0.2812
+gc_content = 0.4437
+wobble_gc = 0.5103
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2828
+wobble_FLOW = 0.2069
+wobble_OBSERVE = 0.2828
+wobble_LOGIC = 0.2621
+wobble_CHOOSE = 0.2483
+entropy = 0.0045
+
+[OBSERVE]
+distance = 0.0322
+level = deep
+complementary_balance = 0.8782
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1448
+intensity = 0.1448
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1448
+  COMPOSE(FLOW,FLOW): 0.1172
+  COMPOSE(FLOW,OBSERVE): 0.1103
+  COMPOSE(LOGIC,OBSERVE): 0.0828
+  COMPOSE(LOGIC,LOGIC): 0.0759
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3379
+modifier_dominant = FLOW
+modifier_pct = 0.3448
+primary_FLOW = 0.3379
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.3379
+primary_CHOOSE = 0.1241
+modifier_FLOW = 0.3448
+modifier_OBSERVE = 0.2966
+modifier_LOGIC = 0.1931
+modifier_CHOOSE = 0.1655
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0221
+aa_top5 = [
+  Glu: 0.0966  # acidic
+  Lys: 0.0828  # basic
+  Val: 0.0828  # aliphatic
+  Gly: 0.0759  # simple
+  Ser: 0.0690  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 145
+stop_codon = none
+loss = 0.0221
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.dominant.crystallized.balanced_interface

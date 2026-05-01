@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ARHGEF3 | unknown
+# CDS: 213 bp (71 codons)
+
+[IDENTITY]
+gene = ARHGEF3
+organism = unknown
+transcript = ENST00000486829.1
+cds_length = 213
+codons = 71
+protein_length = 70
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = OBSERVE
+dominant_pct = 0.2864
+FLOW = 0.2770
+OBSERVE = 0.2864
+LOGIC = 0.1925
+CHOOSE = 0.2441
+state = flowing
+
+[CONNECT]
+depth = 0.9390
+type = ionic_interaction
+hydrophobic_ratio = 0.5286
+charge_positive = 0.1857
+charge_negative = 0.0571
+charge_neutral = 0.7571
+
+[DISSOLVE]
+rigidity = 0.9857
+potential = crystallized
+wobble_entropy = 0.0143
+complementary_disruption = 0.0610
+
+[ENCODE]
+type = natural
+loss = 0.3750
+gc_content = 0.4366
+wobble_gc = 0.4085
+codon_diversity = 0.6250
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3239
+wobble_FLOW = 0.2676
+wobble_OBSERVE = 0.3239
+wobble_LOGIC = 0.1972
+wobble_CHOOSE = 0.2113
+entropy = 0.0143
+
+[OBSERVE]
+distance = 0.0094
+level = strong
+complementary_balance = 0.9390
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1549
+intensity = 0.1549
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1549
+  COMPOSE(FLOW,LOGIC): 0.0986
+  COMPOSE(FLOW,FLOW): 0.0986
+  COMPOSE(FLOW,OBSERVE): 0.0704
+  COMPOSE(OBSERVE,OBSERVE): 0.0704
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3239
+modifier_dominant = OBSERVE
+modifier_pct = 0.3521
+primary_FLOW = 0.3239
+primary_OBSERVE = 0.1831
+primary_LOGIC = 0.1831
+primary_CHOOSE = 0.3099
+modifier_FLOW = 0.2394
+modifier_OBSERVE = 0.3521
+modifier_LOGIC = 0.1972
+modifier_CHOOSE = 0.2113
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0405
+aa_top5 = [
+  Leu: 0.1857  # aliphatic
+  Ser: 0.1000  # hydroxyl
+  Arg: 0.0857  # basic
+  Pro: 0.0714  # cyclic
+  Ile: 0.0571  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 70
+stop_codon = TAG
+loss = 0.0405
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.strong.dominant.crystallized.ionic_interaction

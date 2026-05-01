@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: POLE3 | unknown
+# CDS: 444 bp (148 codons)
+
+[IDENTITY]
+gene = POLE3
+organism = unknown
+transcript = ENST00000374171.5
+cds_length = 444
+codons = 148
+protein_length = 147
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.961
+resistance = 0.039
+dominant = FLOW
+dominant_pct = 0.3401
+FLOW = 0.3401
+OBSERVE = 0.1329
+LOGIC = 0.3018
+CHOOSE = 0.2252
+state = flowing
+
+[CONNECT]
+depth = 0.7162
+type = ionic_interaction
+hydrophobic_ratio = 0.3673
+charge_positive = 0.1769
+charge_negative = 0.2585
+charge_neutral = 0.5646
+
+[DISSOLVE]
+rigidity = 0.9373
+potential = low
+wobble_entropy = 0.0627
+complementary_disruption = 0.2838
+
+[ENCODE]
+type = optimized
+loss = 0.2656
+gc_content = 0.5270
+wobble_gc = 0.6757
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3514
+wobble_FLOW = 0.2230
+wobble_OBSERVE = 0.1014
+wobble_LOGIC = 0.3514
+wobble_CHOOSE = 0.3243
+entropy = 0.0627
+
+[OBSERVE]
+distance = 0.0383
+level = deep
+complementary_balance = 0.7162
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2568
+intensity = 0.2568
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2568
+  COMPOSE(FLOW,FLOW): 0.1689
+  COMPOSE(LOGIC,CHOOSE): 0.1014
+  COMPOSE(FLOW,OBSERVE): 0.0608
+  COMPOSE(FLOW,LOGIC): 0.0608
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4257
+modifier_dominant = FLOW
+modifier_pct = 0.4730
+primary_FLOW = 0.3243
+primary_OBSERVE = 0.1014
+primary_LOGIC = 0.4257
+primary_CHOOSE = 0.1486
+modifier_FLOW = 0.4730
+modifier_OBSERVE = 0.1959
+modifier_LOGIC = 0.1284
+modifier_CHOOSE = 0.2027
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0422
+aa_top5 = [
+  Glu: 0.1769  # acidic
+  Lys: 0.1088  # basic
+  Ala: 0.1020  # simple
+  Asp: 0.0816  # acidic
+  Arg: 0.0680  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 147
+stop_codon = TGA
+loss = 0.0422
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.deep.dominant.low.ionic_interaction

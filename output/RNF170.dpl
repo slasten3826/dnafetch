@@ -1,0 +1,104 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RNF170 | unknown
+# CDS: 18 bp (6 codons)
+
+[IDENTITY]
+gene = RNF170
+organism = unknown
+transcript = ENST00000524954.1
+cds_length = 18
+codons = 6
+protein_length = 5
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.886
+resistance = 0.114
+dominant = OBSERVE
+dominant_pct = 0.3889
+FLOW = 0.3333
+OBSERVE = 0.3889
+LOGIC = 0.2222
+CHOOSE = 0.0556
+state = flowing
+
+[CONNECT]
+depth = 0.7778
+type = membrane_embedded
+hydrophobic_ratio = 0.8000
+charge_positive = 0.0000
+charge_negative = 0.0000
+charge_neutral = 1.0000
+
+[DISSOLVE]
+rigidity = 0.6258
+potential = moderate
+wobble_entropy = 0.3742
+complementary_disruption = 0.2222
+
+[ENCODE]
+type = optimized
+loss = 0.9219
+gc_content = 0.2778
+wobble_gc = 0.6667
+codon_diversity = 0.0781
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.6667
+wobble_FLOW = 0.1667
+wobble_OBSERVE = 0.1667
+wobble_LOGIC = 0.6667
+wobble_CHOOSE = 0.0000
+entropy = 0.3742
+
+[OBSERVE]
+distance = 0.0556
+level = standard
+complementary_balance = 0.7778
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.5000
+intensity = 0.5000
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.5000
+  COMPOSE(CHOOSE,FLOW): 0.1667
+  COMPOSE(OBSERVE,OBSERVE): 0.1667
+  COMPOSE(OBSERVE,FLOW): 0.1667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = OBSERVE
+modifier_pct = 0.6667
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.3333
+primary_LOGIC = 0.0000
+primary_CHOOSE = 0.1667
+modifier_FLOW = 0.3333
+modifier_OBSERVE = 0.6667
+modifier_LOGIC = 0.0000
+modifier_CHOOSE = 0.0000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1072
+aa_top5 = [
+  Met: 0.4000  # sulfur
+  Ile: 0.2000  # aliphatic
+  Gln: 0.2000  # amide
+  Leu: 0.2000  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 5
+stop_codon = TAG
+loss = 0.1072
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.standard.dominant.moderate.membrane_embedded

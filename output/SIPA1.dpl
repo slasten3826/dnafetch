@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SIPA1 | unknown
+# CDS: 3129 bp (1043 codons)
+
+[IDENTITY]
+gene = SIPA1
+organism = unknown
+transcript = ENST00000394224.3
+cds_length = 3129
+codons = 1043
+protein_length = 1042
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.955
+resistance = 0.045
+dominant = CHOOSE
+dominant_pct = 0.3484
+FLOW = 0.1748
+OBSERVE = 0.1515
+LOGIC = 0.3253
+CHOOSE = 0.3484
+state = flowing
+
+[CONNECT]
+depth = 0.9537
+type = balanced_interface
+hydrophobic_ratio = 0.5432
+charge_positive = 0.1276
+charge_negative = 0.1142
+charge_neutral = 0.7582
+
+[DISSOLVE]
+rigidity = 0.8632
+potential = crystallized
+wobble_entropy = 0.1368
+complementary_disruption = 0.0463
+
+[ENCODE]
+type = engineered
+loss = 0.0781
+gc_content = 0.6737
+wobble_gc = 0.7977
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3998
+wobble_FLOW = 0.0978
+wobble_OBSERVE = 0.1045
+wobble_LOGIC = 0.3998
+wobble_CHOOSE = 0.3979
+entropy = 0.1368
+
+[OBSERVE]
+distance = 0.0230
+level = deep
+complementary_balance = 0.9537
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1141
+intensity = 0.1141
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1141
+  COMPOSE(CHOOSE,OBSERVE): 0.1122
+  COMPOSE(LOGIC,CHOOSE): 0.1026
+  COMPOSE(CHOOSE,CHOOSE): 0.0911
+  COMPOSE(LOGIC,LOGIC): 0.0863
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3538
+modifier_dominant = CHOOSE
+modifier_pct = 0.3068
+primary_FLOW = 0.1841
+primary_OBSERVE = 0.1218
+primary_LOGIC = 0.3538
+primary_CHOOSE = 0.3404
+modifier_FLOW = 0.2426
+modifier_OBSERVE = 0.2282
+modifier_LOGIC = 0.2224
+modifier_CHOOSE = 0.3068
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0337
+aa_top5 = [
+  Leu: 0.1152  # aliphatic
+  Ala: 0.1027  # simple
+  Pro: 0.0912  # cyclic
+  Gly: 0.0864  # simple
+  Ser: 0.0864  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1042
+stop_codon = TGA
+loss = 0.0337
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.strong.crystallized.balanced_interface

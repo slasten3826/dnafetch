@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SOX14 | unknown
+# CDS: 723 bp (241 codons)
+
+[IDENTITY]
+gene = SOX14
+organism = unknown
+transcript = ENST00000306087.3
+cds_length = 723
+codons = 241
+protein_length = 240
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.960
+resistance = 0.040
+dominant = CHOOSE
+dominant_pct = 0.3804
+FLOW = 0.2075
+OBSERVE = 0.1521
+LOGIC = 0.2600
+CHOOSE = 0.3804
+state = flowing
+
+[CONNECT]
+depth = 0.8243
+type = membrane_embedded
+hydrophobic_ratio = 0.5542
+charge_positive = 0.1667
+charge_negative = 0.0750
+charge_neutral = 0.7583
+
+[DISSOLVE]
+rigidity = 0.7986
+potential = low
+wobble_entropy = 0.2014
+complementary_disruption = 0.1757
+
+[ENCODE]
+type = engineered
+loss = 0.2031
+gc_content = 0.6404
+wobble_gc = 0.8465
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5021
+wobble_FLOW = 0.0747
+wobble_OBSERVE = 0.0788
+wobble_LOGIC = 0.3444
+wobble_CHOOSE = 0.5021
+entropy = 0.2014
+
+[OBSERVE]
+distance = 0.1203
+level = basic
+complementary_balance = 0.8243
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1120
+intensity = 0.1120
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1120
+  COMPOSE(LOGIC,CHOOSE): 0.1079
+  COMPOSE(FLOW,FLOW): 0.1037
+  COMPOSE(LOGIC,FLOW): 0.0747
+  COMPOSE(CHOOSE,OBSERVE): 0.0747
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3071
+modifier_dominant = CHOOSE
+modifier_pct = 0.3320
+primary_FLOW = 0.2490
+primary_OBSERVE = 0.1743
+primary_LOGIC = 0.2697
+primary_CHOOSE = 0.3071
+modifier_FLOW = 0.2988
+modifier_OBSERVE = 0.2033
+modifier_LOGIC = 0.1660
+modifier_CHOOSE = 0.3320
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0292
+aa_top5 = [
+  Pro: 0.1125  # cyclic
+  Ala: 0.1083  # simple
+  Ser: 0.0917  # hydroxyl
+  Leu: 0.0875  # aliphatic
+  Lys: 0.0750  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 240
+stop_codon = TAA
+loss = 0.0292
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.strong.low.membrane_embedded

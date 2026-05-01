@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: VAMP5 | unknown
+# CDS: 351 bp (117 codons)
+
+[IDENTITY]
+gene = VAMP5
+organism = unknown
+transcript = ENST00000306384.5
+cds_length = 351
+codons = 117
+protein_length = 116
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = LOGIC
+dominant_pct = 0.3162
+FLOW = 0.2308
+OBSERVE = 0.2023
+LOGIC = 0.3162
+CHOOSE = 0.2507
+state = flowing
+
+[CONNECT]
+depth = 0.9060
+type = balanced_interface
+hydrophobic_ratio = 0.5345
+charge_positive = 0.1034
+charge_negative = 0.0948
+charge_neutral = 0.8017
+
+[DISSOLVE]
+rigidity = 0.9153
+potential = crystallized
+wobble_entropy = 0.0847
+complementary_disruption = 0.0940
+
+[ENCODE]
+type = optimized
+loss = 0.3438
+gc_content = 0.5670
+wobble_gc = 0.7265
+codon_diversity = 0.6562
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4103
+wobble_FLOW = 0.1111
+wobble_OBSERVE = 0.1624
+wobble_LOGIC = 0.4103
+wobble_CHOOSE = 0.3162
+entropy = 0.0847
+
+[OBSERVE]
+distance = 0.0655
+level = standard
+complementary_balance = 0.9060
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1111
+intensity = 0.1111
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1111
+  COMPOSE(FLOW,FLOW): 0.1026
+  COMPOSE(FLOW,OBSERVE): 0.0940
+  COMPOSE(LOGIC,FLOW): 0.0940
+  COMPOSE(LOGIC,OBSERVE): 0.0940
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3162
+modifier_dominant = OBSERVE
+modifier_pct = 0.3333
+primary_FLOW = 0.2906
+primary_OBSERVE = 0.1111
+primary_LOGIC = 0.3162
+primary_CHOOSE = 0.2821
+modifier_FLOW = 0.2906
+modifier_OBSERVE = 0.3333
+modifier_LOGIC = 0.2222
+modifier_CHOOSE = 0.1538
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0307
+aa_top5 = [
+  Leu: 0.1207  # aliphatic
+  Val: 0.0948  # aliphatic
+  Gln: 0.0862  # amide
+  Ser: 0.0776  # hydroxyl
+  Gly: 0.0690  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 116
+stop_codon = TGA
+loss = 0.0307
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.strong.crystallized.balanced_interface

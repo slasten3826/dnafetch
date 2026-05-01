@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EPHX3 | unknown
+# CDS: 375 bp (125 codons)
+
+[IDENTITY]
+gene = EPHX3
+organism = unknown
+transcript = ENST00000594042.1
+cds_length = 375
+codons = 125
+protein_length = 125
+stop_codon = none
+
+[FLOW]
+engagement = 0.938
+resistance = 0.062
+dominant = LOGIC
+dominant_pct = 0.3413
+FLOW = 0.1067
+OBSERVE = 0.2107
+LOGIC = 0.3413
+CHOOSE = 0.3413
+state = flowing
+
+[CONNECT]
+depth = 0.8960
+type = membrane_embedded
+hydrophobic_ratio = 0.6400
+charge_positive = 0.1600
+charge_negative = 0.0400
+charge_neutral = 0.8000
+
+[DISSOLVE]
+rigidity = 0.7539
+potential = low
+wobble_entropy = 0.2461
+complementary_disruption = 0.1040
+
+[ENCODE]
+type = engineered
+loss = 0.4062
+gc_content = 0.6827
+wobble_gc = 0.8800
+codon_diversity = 0.5938
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4640
+wobble_FLOW = 0.0320
+wobble_OBSERVE = 0.0880
+wobble_LOGIC = 0.4640
+wobble_CHOOSE = 0.4160
+entropy = 0.2461
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.8960
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1680
+intensity = 0.1680
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1680
+  COMPOSE(CHOOSE,LOGIC): 0.1040
+  COMPOSE(LOGIC,CHOOSE): 0.0880
+  COMPOSE(LOGIC,LOGIC): 0.0800
+  COMPOSE(LOGIC,OBSERVE): 0.0640
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3840
+modifier_dominant = OBSERVE
+modifier_pct = 0.3280
+primary_FLOW = 0.1280
+primary_OBSERVE = 0.2160
+primary_LOGIC = 0.2720
+primary_CHOOSE = 0.3840
+modifier_FLOW = 0.1600
+modifier_OBSERVE = 0.3280
+modifier_LOGIC = 0.2880
+modifier_CHOOSE = 0.2240
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0405
+aa_top5 = [
+  Leu: 0.1680  # aliphatic
+  Ser: 0.1040  # hydroxyl
+  Arg: 0.1040  # basic
+  Ala: 0.0880  # simple
+  Gly: 0.0800  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 125
+stop_codon = none
+loss = 0.0405
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.intense.dominant.low.membrane_embedded

@@ -1,0 +1,103 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ODAD1 | unknown
+# CDS: 12 bp (4 codons)
+
+[IDENTITY]
+gene = ODAD1
+organism = unknown
+transcript = ENST00000497803.2
+cds_length = 12
+codons = 4
+protein_length = 3
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.892
+resistance = 0.108
+dominant = FLOW
+dominant_pct = 0.4167
+FLOW = 0.4167
+OBSERVE = 0.3333
+LOGIC = 0.0833
+CHOOSE = 0.1667
+state = flowing
+
+[CONNECT]
+depth = 0.8333
+type = membrane_embedded
+hydrophobic_ratio = 0.6667
+charge_positive = 0.0000
+charge_negative = 0.0000
+charge_neutral = 1.0000
+
+[DISSOLVE]
+rigidity = 0.7500
+potential = low
+wobble_entropy = 0.2500
+complementary_disruption = 0.1667
+
+[ENCODE]
+type = AT_rich
+loss = 0.9375
+gc_content = 0.2500
+wobble_gc = 0.2500
+codon_diversity = 0.0625
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.5000
+wobble_FLOW = 0.2500
+wobble_OBSERVE = 0.5000
+wobble_LOGIC = 0.2500
+wobble_CHOOSE = 0.0000
+entropy = 0.2500
+
+[OBSERVE]
+distance = 0.0833
+level = mild
+complementary_balance = 0.8333
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.2500
+intensity = 0.2500
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.2500
+  COMPOSE(FLOW,FLOW): 0.2500
+  COMPOSE(CHOOSE,CHOOSE): 0.2500
+  COMPOSE(OBSERVE,FLOW): 0.2500
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = FLOW
+modifier_pct = 0.5000
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.2500
+primary_LOGIC = 0.0000
+primary_CHOOSE = 0.2500
+modifier_FLOW = 0.5000
+modifier_OBSERVE = 0.2500
+modifier_LOGIC = 0.0000
+modifier_CHOOSE = 0.2500
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1190
+aa_top5 = [
+  Met: 0.3333  # sulfur
+  Asn: 0.3333  # amide
+  Pro: 0.3333  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 3
+stop_codon = TAA
+loss = 0.1190
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.mild.dominant.low.membrane_embedded

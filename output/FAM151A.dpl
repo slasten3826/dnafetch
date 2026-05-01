@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM151A | unknown
+# CDS: 1197 bp (399 codons)
+
+[IDENTITY]
+gene = FAM151A
+organism = unknown
+transcript = ENST00000371304.2
+cds_length = 1197
+codons = 399
+protein_length = 398
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.988
+resistance = 0.012
+dominant = CHOOSE
+dominant_pct = 0.3024
+FLOW = 0.2214
+OBSERVE = 0.1921
+LOGIC = 0.2840
+CHOOSE = 0.3024
+state = flowing
+
+[CONNECT]
+depth = 0.9524
+type = membrane_embedded
+hydrophobic_ratio = 0.5729
+charge_positive = 0.1131
+charge_negative = 0.0930
+charge_neutral = 0.7940
+
+[DISSOLVE]
+rigidity = 0.9107
+potential = crystallized
+wobble_entropy = 0.0893
+complementary_disruption = 0.0476
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.5865
+wobble_gc = 0.7419
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3960
+wobble_FLOW = 0.1328
+wobble_OBSERVE = 0.1253
+wobble_LOGIC = 0.3459
+wobble_CHOOSE = 0.3960
+entropy = 0.0893
+
+[OBSERVE]
+distance = 0.0184
+level = strong
+complementary_balance = 0.9524
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1028
+intensity = 0.1028
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1028
+  COMPOSE(LOGIC,CHOOSE): 0.0977
+  COMPOSE(LOGIC,FLOW): 0.0927
+  COMPOSE(LOGIC,OBSERVE): 0.0877
+  COMPOSE(FLOW,OBSERVE): 0.0727
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3333
+modifier_dominant = OBSERVE
+modifier_pct = 0.2982
+primary_FLOW = 0.2632
+primary_OBSERVE = 0.1529
+primary_LOGIC = 0.3333
+primary_CHOOSE = 0.2506
+modifier_FLOW = 0.2682
+modifier_OBSERVE = 0.2982
+modifier_LOGIC = 0.1729
+modifier_CHOOSE = 0.2607
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0265
+aa_top5 = [
+  Leu: 0.1181  # aliphatic
+  Ala: 0.0980  # simple
+  Val: 0.0879  # aliphatic
+  Ser: 0.0704  # hydroxyl
+  Thr: 0.0678  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 398
+stop_codon = TGA
+loss = 0.0265
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.membrane_embedded

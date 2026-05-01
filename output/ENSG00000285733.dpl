@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000285733 | unknown
+# CDS: 618 bp (206 codons)
+
+[IDENTITY]
+gene = ENSG00000285733
+organism = unknown
+transcript = ENST00000649579.1
+cds_length = 618
+codons = 206
+protein_length = 205
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = CHOOSE
+dominant_pct = 0.2832
+FLOW = 0.2249
+OBSERVE = 0.2168
+LOGIC = 0.2751
+CHOOSE = 0.2832
+state = flowing
+
+[CONNECT]
+depth = 0.9838
+type = ionic_interaction
+hydrophobic_ratio = 0.5415
+charge_positive = 0.1512
+charge_negative = 0.0780
+charge_neutral = 0.7707
+
+[DISSOLVE]
+rigidity = 0.9832
+potential = crystallized
+wobble_entropy = 0.0168
+complementary_disruption = 0.0162
+
+[ENCODE]
+type = moderate
+loss = 0.0781
+gc_content = 0.5583
+wobble_gc = 0.5922
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3350
+wobble_FLOW = 0.1893
+wobble_OBSERVE = 0.2184
+wobble_LOGIC = 0.2573
+wobble_CHOOSE = 0.3350
+entropy = 0.0168
+
+[OBSERVE]
+distance = 0.0081
+level = strong
+complementary_balance = 0.9838
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.0971
+intensity = 0.0971
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.0971
+  COMPOSE(CHOOSE,FLOW): 0.0971
+  COMPOSE(LOGIC,LOGIC): 0.0874
+  COMPOSE(LOGIC,FLOW): 0.0777
+  COMPOSE(FLOW,LOGIC): 0.0728
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3155
+modifier_dominant = CHOOSE
+modifier_pct = 0.2670
+primary_FLOW = 0.2282
+primary_OBSERVE = 0.2087
+primary_LOGIC = 0.3155
+primary_CHOOSE = 0.2476
+modifier_FLOW = 0.2573
+modifier_OBSERVE = 0.2233
+modifier_LOGIC = 0.2524
+modifier_CHOOSE = 0.2670
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0241
+aa_top5 = [
+  Ala: 0.0976  # simple
+  Ser: 0.0927  # hydroxyl
+  Gly: 0.0878  # simple
+  Arg: 0.0780  # basic
+  Leu: 0.0683  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 205
+stop_codon = TGA
+loss = 0.0241
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.ionic_interaction

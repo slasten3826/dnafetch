@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLC6A11 | unknown
+# CDS: 1899 bp (633 codons)
+
+[IDENTITY]
+gene = SLC6A11
+organism = unknown
+transcript = ENST00000254488.7
+cds_length = 1899
+codons = 633
+protein_length = 632
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = LOGIC
+dominant_pct = 0.2928
+FLOW = 0.1969
+OBSERVE = 0.2433
+LOGIC = 0.2928
+CHOOSE = 0.2670
+state = flowing
+
+[CONNECT]
+depth = 0.9279
+type = membrane_embedded
+hydrophobic_ratio = 0.6725
+charge_positive = 0.0870
+charge_negative = 0.0759
+charge_neutral = 0.8370
+
+[DISSOLVE]
+rigidity = 0.8878
+potential = crystallized
+wobble_entropy = 0.1122
+complementary_disruption = 0.0721
+
+[ENCODE]
+type = engineered
+loss = 0.0781
+gc_content = 0.5598
+wobble_gc = 0.7583
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4044
+wobble_FLOW = 0.0806
+wobble_OBSERVE = 0.1611
+wobble_LOGIC = 0.3539
+wobble_CHOOSE = 0.4044
+entropy = 0.1122
+
+[OBSERVE]
+distance = 0.0258
+level = deep
+complementary_balance = 0.9279
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1090
+intensity = 0.1090
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1090
+  COMPOSE(CHOOSE,OBSERVE): 0.0885
+  COMPOSE(LOGIC,LOGIC): 0.0869
+  COMPOSE(FLOW,FLOW): 0.0790
+  COMPOSE(LOGIC,CHOOSE): 0.0758
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3049
+modifier_dominant = OBSERVE
+modifier_pct = 0.3397
+primary_FLOW = 0.2749
+primary_OBSERVE = 0.2291
+primary_LOGIC = 0.3049
+primary_CHOOSE = 0.1912
+modifier_FLOW = 0.2354
+modifier_OBSERVE = 0.3397
+modifier_LOGIC = 0.2196
+modifier_CHOOSE = 0.2054
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0231
+aa_top5 = [
+  Leu: 0.1044  # aliphatic
+  Gly: 0.0870  # simple
+  Ile: 0.0775  # aliphatic
+  Ala: 0.0759  # simple
+  Val: 0.0665  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 632
+stop_codon = TGA
+loss = 0.0231
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.deep.strong.crystallized.membrane_embedded

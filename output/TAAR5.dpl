@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TAAR5 | unknown
+# CDS: 1014 bp (338 codons)
+
+[IDENTITY]
+gene = TAAR5
+organism = unknown
+transcript = ENST00000258034.4
+cds_length = 1014
+codons = 338
+protein_length = 337
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = CHOOSE
+dominant_pct = 0.2929
+FLOW = 0.1953
+OBSERVE = 0.2761
+LOGIC = 0.2357
+CHOOSE = 0.2929
+state = flowing
+
+[CONNECT]
+depth = 0.8619
+type = membrane_embedded
+hydrophobic_ratio = 0.6736
+charge_positive = 0.0920
+charge_negative = 0.0534
+charge_neutral = 0.8546
+
+[DISSOLVE]
+rigidity = 0.9330
+potential = crystallized
+wobble_entropy = 0.0670
+complementary_disruption = 0.1381
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.5286
+wobble_gc = 0.6923
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4112
+wobble_FLOW = 0.1272
+wobble_OBSERVE = 0.1805
+wobble_LOGIC = 0.2811
+wobble_CHOOSE = 0.4112
+entropy = 0.0670
+
+[OBSERVE]
+distance = 0.0168
+level = strong
+complementary_balance = 0.8619
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1243
+intensity = 0.1243
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1243
+  COMPOSE(OBSERVE,OBSERVE): 0.1095
+  COMPOSE(FLOW,OBSERVE): 0.0858
+  COMPOSE(LOGIC,CHOOSE): 0.0828
+  COMPOSE(LOGIC,OBSERVE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2544
+modifier_dominant = OBSERVE
+modifier_pct = 0.3964
+primary_FLOW = 0.2515
+primary_OBSERVE = 0.2515
+primary_LOGIC = 0.2544
+primary_CHOOSE = 0.2426
+modifier_FLOW = 0.2071
+modifier_OBSERVE = 0.3964
+modifier_LOGIC = 0.1716
+modifier_CHOOSE = 0.2249
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0307
+aa_top5 = [
+  Leu: 0.1484  # aliphatic
+  Phe: 0.0861  # aromatic
+  Ala: 0.0831  # simple
+  Val: 0.0772  # aliphatic
+  Ile: 0.0682  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 337
+stop_codon = TGA
+loss = 0.0307
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.dominant.crystallized.membrane_embedded

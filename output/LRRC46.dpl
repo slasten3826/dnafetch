@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: LRRC46 | unknown
+# CDS: 825 bp (275 codons)
+
+[IDENTITY]
+gene = LRRC46
+organism = unknown
+transcript = ENST00000584580.1
+cds_length = 825
+codons = 275
+protein_length = 274
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = CHOOSE
+dominant_pct = 0.3139
+FLOW = 0.2267
+OBSERVE = 0.1855
+LOGIC = 0.2739
+CHOOSE = 0.3139
+state = flowing
+
+[CONNECT]
+depth = 0.9188
+type = balanced_interface
+hydrophobic_ratio = 0.5109
+charge_positive = 0.1168
+charge_negative = 0.1314
+charge_neutral = 0.7518
+
+[DISSOLVE]
+rigidity = 0.9349
+potential = crystallized
+wobble_entropy = 0.0651
+complementary_disruption = 0.0812
+
+[ENCODE]
+type = optimized
+loss = 0.1094
+gc_content = 0.5879
+wobble_gc = 0.7091
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3564
+wobble_FLOW = 0.1491
+wobble_OBSERVE = 0.1418
+wobble_LOGIC = 0.3527
+wobble_CHOOSE = 0.3564
+entropy = 0.0651
+
+[OBSERVE]
+distance = 0.0400
+level = deep
+complementary_balance = 0.9188
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1309
+intensity = 0.1309
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1309
+  COMPOSE(LOGIC,FLOW): 0.1309
+  COMPOSE(CHOOSE,CHOOSE): 0.0836
+  COMPOSE(CHOOSE,FLOW): 0.0800
+  COMPOSE(FLOW,FLOW): 0.0727
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3200
+modifier_dominant = FLOW
+modifier_pct = 0.2873
+primary_FLOW = 0.2436
+primary_OBSERVE = 0.1491
+primary_LOGIC = 0.2873
+primary_CHOOSE = 0.3200
+modifier_FLOW = 0.2873
+modifier_OBSERVE = 0.2655
+modifier_LOGIC = 0.1818
+modifier_CHOOSE = 0.2655
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0335
+aa_top5 = [
+  Leu: 0.1460  # aliphatic
+  Ser: 0.0949  # hydroxyl
+  Glu: 0.0912  # acidic
+  Pro: 0.0839  # cyclic
+  Ala: 0.0693  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 274
+stop_codon = TGA
+loss = 0.0335
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.balanced_interface

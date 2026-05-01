@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ERVV-1 | unknown
+# CDS: 1434 bp (478 codons)
+
+[IDENTITY]
+gene = ERVV-1
+organism = unknown
+transcript = ENST00000602168.2
+cds_length = 1434
+codons = 478
+protein_length = 477
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = FLOW
+dominant_pct = 0.2706
+FLOW = 0.2706
+OBSERVE = 0.2601
+LOGIC = 0.2008
+CHOOSE = 0.2685
+state = flowing
+
+[CONNECT]
+depth = 0.9219
+type = membrane_embedded
+hydrophobic_ratio = 0.5765
+charge_positive = 0.1090
+charge_negative = 0.0587
+charge_neutral = 0.8323
+
+[DISSOLVE]
+rigidity = 0.9881
+potential = crystallized
+wobble_entropy = 0.0119
+complementary_disruption = 0.0781
+
+[ENCODE]
+type = moderate
+loss = 0.0469
+gc_content = 0.4693
+wobble_gc = 0.4665
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2887
+wobble_FLOW = 0.2510
+wobble_OBSERVE = 0.2824
+wobble_LOGIC = 0.1778
+wobble_CHOOSE = 0.2887
+entropy = 0.0119
+
+[OBSERVE]
+distance = 0.0021
+level = intense
+complementary_balance = 0.9219
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1130
+intensity = 0.1130
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1130
+  COMPOSE(CHOOSE,OBSERVE): 0.0837
+  COMPOSE(CHOOSE,CHOOSE): 0.0816
+  COMPOSE(FLOW,OBSERVE): 0.0732
+  COMPOSE(OBSERVE,CHOOSE): 0.0732
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2887
+modifier_dominant = CHOOSE
+modifier_pct = 0.2762
+primary_FLOW = 0.2887
+primary_OBSERVE = 0.2364
+primary_LOGIC = 0.2343
+primary_CHOOSE = 0.2406
+modifier_FLOW = 0.2720
+modifier_OBSERVE = 0.2615
+modifier_LOGIC = 0.1904
+modifier_CHOOSE = 0.2762
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0244
+aa_top5 = [
+  Leu: 0.1090  # aliphatic
+  Ser: 0.0985  # hydroxyl
+  Pro: 0.0818  # cyclic
+  Gly: 0.0671  # simple
+  Ala: 0.0650  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 477
+stop_codon = TAA
+loss = 0.0244
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.intense.strong.crystallized.membrane_embedded

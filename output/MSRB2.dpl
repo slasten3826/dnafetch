@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MSRB2 | unknown
+# CDS: 222 bp (74 codons)
+
+[IDENTITY]
+gene = MSRB2
+organism = unknown
+transcript = ENST00000472663.1
+cds_length = 222
+codons = 74
+protein_length = 73
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2703
+FLOW = 0.2477
+OBSERVE = 0.2703
+LOGIC = 0.2568
+CHOOSE = 0.2252
+state = flowing
+
+[CONNECT]
+depth = 0.9459
+type = ionic_interaction
+hydrophobic_ratio = 0.5479
+charge_positive = 0.1644
+charge_negative = 0.0685
+charge_neutral = 0.7671
+
+[DISSOLVE]
+rigidity = 0.9966
+potential = crystallized
+wobble_entropy = 0.0034
+complementary_disruption = 0.0541
+
+[ENCODE]
+type = moderate
+loss = 0.3594
+gc_content = 0.4820
+wobble_gc = 0.4730
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2838
+wobble_FLOW = 0.2432
+wobble_OBSERVE = 0.2838
+wobble_LOGIC = 0.2162
+wobble_CHOOSE = 0.2568
+entropy = 0.0034
+
+[OBSERVE]
+distance = 0.0135
+level = strong
+complementary_balance = 0.9459
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1351
+intensity = 0.1351
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1351
+  COMPOSE(CHOOSE,OBSERVE): 0.1081
+  COMPOSE(OBSERVE,OBSERVE): 0.0811
+  COMPOSE(LOGIC,LOGIC): 0.0811
+  COMPOSE(FLOW,OBSERVE): 0.0676
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3108
+modifier_dominant = OBSERVE
+modifier_pct = 0.3108
+primary_FLOW = 0.3108
+primary_OBSERVE = 0.2162
+primary_LOGIC = 0.2568
+primary_CHOOSE = 0.2162
+modifier_FLOW = 0.1892
+modifier_OBSERVE = 0.3108
+modifier_LOGIC = 0.2973
+modifier_CHOOSE = 0.2027
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0366
+aa_top5 = [
+  Ser: 0.1370  # hydroxyl
+  Leu: 0.1370  # aliphatic
+  Arg: 0.0959  # basic
+  Gly: 0.0822  # simple
+  Val: 0.0548  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 73
+stop_codon = TGA
+loss = 0.0366
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.strong.dominant.crystallized.ionic_interaction

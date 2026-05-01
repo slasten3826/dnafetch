@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000288349 | unknown
+# CDS: 3501 bp (1167 codons)
+
+[IDENTITY]
+gene = ENSG00000288349
+organism = unknown
+transcript = ENST00000672116.2
+cds_length = 3501
+codons = 1167
+protein_length = 1166
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.977
+resistance = 0.023
+dominant = CHOOSE
+dominant_pct = 0.3530
+FLOW = 0.2208
+OBSERVE = 0.1779
+LOGIC = 0.2482
+CHOOSE = 0.3530
+state = flowing
+
+[CONNECT]
+depth = 0.8523
+type = balanced_interface
+hydrophobic_ratio = 0.4786
+charge_positive = 0.1484
+charge_negative = 0.0720
+charge_neutral = 0.7796
+
+[DISSOLVE]
+rigidity = 0.9755
+potential = crystallized
+wobble_entropy = 0.0245
+complementary_disruption = 0.1477
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.6013
+wobble_gc = 0.6007
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3590
+wobble_FLOW = 0.2194
+wobble_OBSERVE = 0.1799
+wobble_LOGIC = 0.2416
+wobble_CHOOSE = 0.3590
+entropy = 0.0245
+
+[OBSERVE]
+distance = 0.1048
+level = mild
+complementary_balance = 0.8523
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1362
+intensity = 0.1362
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1362
+  COMPOSE(LOGIC,CHOOSE): 0.1243
+  COMPOSE(CHOOSE,CHOOSE): 0.1037
+  COMPOSE(FLOW,LOGIC): 0.0831
+  COMPOSE(CHOOSE,FLOW): 0.0746
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3016
+modifier_dominant = CHOOSE
+modifier_pct = 0.4327
+primary_FLOW = 0.2314
+primary_OBSERVE = 0.1997
+primary_LOGIC = 0.3016
+primary_CHOOSE = 0.2674
+modifier_FLOW = 0.2117
+modifier_OBSERVE = 0.1542
+modifier_LOGIC = 0.2014
+modifier_CHOOSE = 0.4327
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0418
+aa_top5 = [
+  Ser: 0.1630  # hydroxyl
+  Ala: 0.1244  # simple
+  Pro: 0.1038  # cyclic
+  Arg: 0.0875  # basic
+  Leu: 0.0746  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 1166
+stop_codon = TAA
+loss = 0.0418
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.balanced_interface

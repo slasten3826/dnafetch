@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KPNA3 | unknown
+# CDS: 195 bp (65 codons)
+
+[IDENTITY]
+gene = KPNA3
+organism = unknown
+transcript = ENST00000436760.1
+cds_length = 195
+codons = 65
+protein_length = 64
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.960
+resistance = 0.040
+dominant = FLOW
+dominant_pct = 0.3692
+FLOW = 0.3692
+OBSERVE = 0.2564
+LOGIC = 0.2359
+CHOOSE = 0.1385
+state = flowing
+
+[CONNECT]
+depth = 0.7897
+type = ionic_interaction
+hydrophobic_ratio = 0.5312
+charge_positive = 0.0469
+charge_negative = 0.2812
+charge_neutral = 0.6719
+
+[DISSOLVE]
+rigidity = 0.8823
+potential = low
+wobble_entropy = 0.1177
+complementary_disruption = 0.2103
+
+[ENCODE]
+type = AT_rich
+loss = 0.4688
+gc_content = 0.3744
+wobble_gc = 0.2308
+codon_diversity = 0.5312
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4308
+wobble_FLOW = 0.4308
+wobble_OBSERVE = 0.3385
+wobble_LOGIC = 0.0923
+wobble_CHOOSE = 0.1385
+entropy = 0.1177
+
+[OBSERVE]
+distance = 0.1128
+level = mild
+complementary_balance = 0.7897
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2769
+intensity = 0.2769
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2769
+  COMPOSE(FLOW,OBSERVE): 0.1538
+  COMPOSE(LOGIC,LOGIC): 0.0923
+  COMPOSE(LOGIC,CHOOSE): 0.0769
+  COMPOSE(OBSERVE,OBSERVE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4615
+modifier_dominant = FLOW
+modifier_pct = 0.4308
+primary_FLOW = 0.2462
+primary_OBSERVE = 0.1692
+primary_LOGIC = 0.4615
+primary_CHOOSE = 0.1231
+modifier_FLOW = 0.4308
+modifier_OBSERVE = 0.2615
+modifier_LOGIC = 0.1538
+modifier_CHOOSE = 0.1538
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0457
+aa_top5 = [
+  Glu: 0.1719  # acidic
+  Ile: 0.1406  # aliphatic
+  Asp: 0.1094  # acidic
+  Gly: 0.0938  # simple
+  Ala: 0.0781  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 64
+stop_codon = TGA
+loss = 0.0457
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.low.ionic_interaction

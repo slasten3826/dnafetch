@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IGFL2 | unknown
+# CDS: 36 bp (12 codons)
+
+[IDENTITY]
+gene = IGFL2
+organism = unknown
+transcript = ENST00000601052.1
+cds_length = 36
+codons = 12
+protein_length = 11
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.848
+resistance = 0.152
+dominant = FLOW
+dominant_pct = 0.5000
+FLOW = 0.5000
+OBSERVE = 0.2222
+LOGIC = 0.2222
+CHOOSE = 0.0556
+state = flowing
+
+[CONNECT]
+depth = 0.5556
+type = ionic_interaction
+hydrophobic_ratio = 0.2727
+charge_positive = 0.1818
+charge_negative = 0.1818
+charge_neutral = 0.6364
+
+[DISSOLVE]
+rigidity = 0.8648
+potential = low
+wobble_entropy = 0.1352
+complementary_disruption = 0.4444
+
+[ENCODE]
+type = AT_rich
+loss = 0.8281
+gc_content = 0.2778
+wobble_gc = 0.2500
+codon_diversity = 0.1719
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.5000
+wobble_FLOW = 0.5000
+wobble_OBSERVE = 0.2500
+wobble_LOGIC = 0.1667
+wobble_CHOOSE = 0.0833
+entropy = 0.1352
+
+[OBSERVE]
+distance = 0.2778
+level = basic
+complementary_balance = 0.5556
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2500
+intensity = 0.2500
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2500
+  COMPOSE(LOGIC,FLOW): 0.1667
+  COMPOSE(FLOW,LOGIC): 0.1667
+  COMPOSE(FLOW,OBSERVE): 0.0833
+  COMPOSE(OBSERVE,OBSERVE): 0.0833
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = FLOW
+modifier_pct = 0.5000
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.2500
+primary_LOGIC = 0.2500
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.5000
+modifier_OBSERVE = 0.1667
+modifier_LOGIC = 0.2500
+modifier_CHOOSE = 0.0833
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0608
+aa_top5 = [
+  Asn: 0.1818  # amide
+  Ser: 0.1818  # hydroxyl
+  Met: 0.0909  # sulfur
+  Glu: 0.0909  # acidic
+  Asp: 0.0909  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 11
+stop_codon = TAA
+loss = 0.0608
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

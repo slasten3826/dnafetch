@@ -1,0 +1,105 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MXD4 | unknown
+# CDS: 15 bp (5 codons)
+
+[IDENTITY]
+gene = MXD4
+organism = unknown
+transcript = ENST00000513380.1
+cds_length = 15
+codons = 5
+protein_length = 4
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.903
+resistance = 0.097
+dominant = FLOW
+dominant_pct = 0.4000
+FLOW = 0.4000
+OBSERVE = 0.2667
+LOGIC = 0.2667
+CHOOSE = 0.0667
+state = flowing
+
+[CONNECT]
+depth = 0.6667
+type = membrane_embedded
+hydrophobic_ratio = 0.7500
+charge_positive = 0.2500
+charge_negative = 0.0000
+charge_neutral = 0.7500
+
+[DISSOLVE]
+rigidity = 0.6855
+potential = moderate
+wobble_entropy = 0.3145
+complementary_disruption = 0.3333
+
+[ENCODE]
+type = AT_rich
+loss = 0.9219
+gc_content = 0.3333
+wobble_gc = 0.2000
+codon_diversity = 0.0781
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.6000
+wobble_FLOW = 0.6000
+wobble_OBSERVE = 0.2000
+wobble_LOGIC = 0.2000
+wobble_CHOOSE = 0.0000
+entropy = 0.3145
+
+[OBSERVE]
+distance = 0.1333
+level = basic
+complementary_balance = 0.6667
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.2000
+  COMPOSE(FLOW,LOGIC): 0.2000
+  COMPOSE(CHOOSE,OBSERVE): 0.2000
+  COMPOSE(LOGIC,LOGIC): 0.2000
+  COMPOSE(OBSERVE,FLOW): 0.2000
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4000
+modifier_dominant = OBSERVE
+modifier_pct = 0.4000
+primary_FLOW = 0.4000
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.2000
+primary_CHOOSE = 0.2000
+modifier_FLOW = 0.2000
+modifier_OBSERVE = 0.4000
+modifier_LOGIC = 0.4000
+modifier_CHOOSE = 0.0000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1000
+aa_top5 = [
+  Met: 0.2500  # sulfur
+  Arg: 0.2500  # basic
+  Leu: 0.2500  # aliphatic
+  Gly: 0.2500  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 4
+stop_codon = TAA
+loss = 0.1000
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.moderate.membrane_embedded

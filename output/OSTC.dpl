@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: OSTC | unknown
+# CDS: 516 bp (172 codons)
+
+[IDENTITY]
+gene = OSTC
+organism = unknown
+transcript = ENST00000512478.2
+cds_length = 516
+codons = 172
+protein_length = 171
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = OBSERVE
+dominant_pct = 0.3004
+FLOW = 0.2287
+OBSERVE = 0.3004
+LOGIC = 0.2403
+CHOOSE = 0.2306
+state = flowing
+
+[CONNECT]
+depth = 0.9186
+type = membrane_embedded
+hydrophobic_ratio = 0.7018
+charge_positive = 0.1111
+charge_negative = 0.0526
+charge_neutral = 0.8363
+
+[DISSOLVE]
+rigidity = 0.9982
+potential = crystallized
+wobble_entropy = 0.0018
+complementary_disruption = 0.0814
+
+[ENCODE]
+type = moderate
+loss = 0.0938
+gc_content = 0.4709
+wobble_gc = 0.5233
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2674
+wobble_FLOW = 0.2209
+wobble_OBSERVE = 0.2558
+wobble_LOGIC = 0.2674
+wobble_CHOOSE = 0.2558
+entropy = 0.0018
+
+[OBSERVE]
+distance = 0.0601
+level = standard
+complementary_balance = 0.9186
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1163
+intensity = 0.1163
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1163
+  COMPOSE(OBSERVE,OBSERVE): 0.1105
+  COMPOSE(CHOOSE,OBSERVE): 0.1105
+  COMPOSE(LOGIC,OBSERVE): 0.0872
+  COMPOSE(CHOOSE,CHOOSE): 0.0756
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2733
+modifier_dominant = OBSERVE
+modifier_pct = 0.4244
+primary_FLOW = 0.2733
+primary_OBSERVE = 0.2209
+primary_LOGIC = 0.2674
+primary_CHOOSE = 0.2384
+modifier_FLOW = 0.1919
+modifier_OBSERVE = 0.4244
+modifier_LOGIC = 0.1860
+modifier_CHOOSE = 0.1977
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0325
+aa_top5 = [
+  Leu: 0.1520  # aliphatic
+  Val: 0.0877  # aliphatic
+  Pro: 0.0760  # cyclic
+  Phe: 0.0702  # aromatic
+  Gly: 0.0702  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 171
+stop_codon = TGA
+loss = 0.0325
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.standard.strong.crystallized.membrane_embedded

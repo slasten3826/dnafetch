@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLC16A8 | unknown
+# CDS: 1515 bp (505 codons)
+
+[IDENTITY]
+gene = SLC16A8
+organism = unknown
+transcript = ENST00000681075.2
+cds_length = 1515
+codons = 505
+protein_length = 504
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.929
+resistance = 0.071
+dominant = LOGIC
+dominant_pct = 0.3545
+FLOW = 0.1102
+OBSERVE = 0.1822
+LOGIC = 0.3545
+CHOOSE = 0.3531
+state = flowing
+
+[CONNECT]
+depth = 0.9267
+type = membrane_embedded
+hydrophobic_ratio = 0.7202
+charge_positive = 0.0833
+charge_negative = 0.0873
+charge_neutral = 0.8294
+
+[DISSOLVE]
+rigidity = 0.7719
+potential = low
+wobble_entropy = 0.2281
+complementary_disruption = 0.0733
+
+[ENCODE]
+type = engineered
+loss = 0.1250
+gc_content = 0.7076
+wobble_gc = 0.8693
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4891
+wobble_FLOW = 0.0495
+wobble_OBSERVE = 0.0812
+wobble_LOGIC = 0.3802
+wobble_CHOOSE = 0.4891
+entropy = 0.2281
+
+[OBSERVE]
+distance = 0.0013
+level = intense
+complementary_balance = 0.9267
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1525
+intensity = 0.1525
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1525
+  COMPOSE(CHOOSE,OBSERVE): 0.1386
+  COMPOSE(LOGIC,LOGIC): 0.1208
+  COMPOSE(LOGIC,FLOW): 0.0871
+  COMPOSE(LOGIC,OBSERVE): 0.0812
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4416
+modifier_dominant = OBSERVE
+modifier_pct = 0.3208
+primary_FLOW = 0.1307
+primary_OBSERVE = 0.1446
+primary_LOGIC = 0.4416
+primary_CHOOSE = 0.2832
+modifier_FLOW = 0.1505
+modifier_OBSERVE = 0.3208
+modifier_LOGIC = 0.2416
+modifier_CHOOSE = 0.2871
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0438
+aa_top5 = [
+  Ala: 0.1528  # simple
+  Leu: 0.1448  # aliphatic
+  Gly: 0.1210  # simple
+  Val: 0.0813  # aliphatic
+  Pro: 0.0714  # cyclic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 504
+stop_codon = TAA
+loss = 0.0438
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.intense.dominant.low.membrane_embedded

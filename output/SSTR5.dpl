@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SSTR5 | unknown
+# CDS: 717 bp (239 codons)
+
+[IDENTITY]
+gene = SSTR5
+organism = unknown
+transcript = ENST00000711616.1
+cds_length = 717
+codons = 239
+protein_length = 238
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.944
+resistance = 0.056
+dominant = CHOOSE
+dominant_pct = 0.3473
+FLOW = 0.1172
+OBSERVE = 0.2050
+LOGIC = 0.3305
+CHOOSE = 0.3473
+state = flowing
+
+[CONNECT]
+depth = 0.8954
+type = membrane_embedded
+hydrophobic_ratio = 0.7395
+charge_positive = 0.0672
+charge_negative = 0.0336
+charge_neutral = 0.8992
+
+[DISSOLVE]
+rigidity = 0.7267
+potential = low
+wobble_entropy = 0.2733
+complementary_disruption = 0.1046
+
+[ENCODE]
+type = engineered
+loss = 0.2812
+gc_content = 0.6778
+wobble_gc = 0.9038
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4603
+wobble_FLOW = 0.0377
+wobble_OBSERVE = 0.0586
+wobble_LOGIC = 0.4435
+wobble_CHOOSE = 0.4603
+entropy = 0.2733
+
+[OBSERVE]
+distance = 0.0167
+level = strong
+complementary_balance = 0.8954
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1590
+intensity = 0.1590
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1590
+  COMPOSE(LOGIC,OBSERVE): 0.1213
+  COMPOSE(LOGIC,CHOOSE): 0.1172
+  COMPOSE(CHOOSE,CHOOSE): 0.0795
+  COMPOSE(LOGIC,LOGIC): 0.0711
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3431
+modifier_dominant = OBSERVE
+modifier_pct = 0.3808
+primary_FLOW = 0.1799
+primary_OBSERVE = 0.1757
+primary_LOGIC = 0.3431
+primary_CHOOSE = 0.3013
+modifier_FLOW = 0.1339
+modifier_OBSERVE = 0.3808
+modifier_LOGIC = 0.2050
+modifier_CHOOSE = 0.2803
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0403
+aa_top5 = [
+  Leu: 0.1597  # aliphatic
+  Val: 0.1218  # aliphatic
+  Ala: 0.1176  # simple
+  Pro: 0.0798  # cyclic
+  Gly: 0.0714  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 238
+stop_codon = TGA
+loss = 0.0403
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.dominant.low.membrane_embedded

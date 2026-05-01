@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NEDD1 | unknown
+# CDS: 1716 bp (572 codons)
+
+[IDENTITY]
+gene = NEDD1
+organism = unknown
+transcript = ENST00000457368.2
+cds_length = 1716
+codons = 572
+protein_length = 571
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = FLOW
+dominant_pct = 0.3316
+FLOW = 0.3316
+OBSERVE = 0.2762
+LOGIC = 0.2051
+CHOOSE = 0.1871
+state = flowing
+
+[CONNECT]
+depth = 0.9266
+type = balanced_interface
+hydrophobic_ratio = 0.4623
+charge_positive = 0.1331
+charge_negative = 0.1033
+charge_neutral = 0.7636
+
+[DISSOLVE]
+rigidity = 0.9504
+potential = crystallized
+wobble_entropy = 0.0496
+complementary_disruption = 0.0734
+
+[ENCODE]
+type = natural
+loss = 0.0469
+gc_content = 0.3922
+wobble_gc = 0.3182
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3601
+wobble_FLOW = 0.3217
+wobble_OBSERVE = 0.3601
+wobble_LOGIC = 0.1626
+wobble_CHOOSE = 0.1556
+entropy = 0.0496
+
+[OBSERVE]
+distance = 0.0554
+level = standard
+complementary_balance = 0.9266
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1416
+intensity = 0.1416
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1416
+  COMPOSE(LOGIC,FLOW): 0.1031
+  COMPOSE(OBSERVE,CHOOSE): 0.0839
+  COMPOSE(OBSERVE,OBSERVE): 0.0822
+  COMPOSE(FLOW,OBSERVE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3479
+modifier_dominant = FLOW
+modifier_pct = 0.3252
+primary_FLOW = 0.3479
+primary_OBSERVE = 0.2045
+primary_LOGIC = 0.2885
+primary_CHOOSE = 0.1591
+modifier_FLOW = 0.3252
+modifier_OBSERVE = 0.2640
+modifier_LOGIC = 0.1643
+modifier_CHOOSE = 0.2465
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0276
+aa_top5 = [
+  Ser: 0.1278  # hydroxyl
+  Leu: 0.0823  # aliphatic
+  Lys: 0.0718  # basic
+  Val: 0.0701  # aliphatic
+  Asn: 0.0701  # amide
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 571
+stop_codon = TGA
+loss = 0.0276
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.balanced_interface

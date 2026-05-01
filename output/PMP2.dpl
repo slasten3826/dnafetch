@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PMP2 | unknown
+# CDS: 183 bp (61 codons)
+
+[IDENTITY]
+gene = PMP2
+organism = unknown
+transcript = ENST00000519260.1
+cds_length = 183
+codons = 61
+protein_length = 60
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.969
+resistance = 0.031
+dominant = FLOW
+dominant_pct = 0.3607
+FLOW = 0.3607
+OBSERVE = 0.1967
+LOGIC = 0.2732
+CHOOSE = 0.1694
+state = flowing
+
+[CONNECT]
+depth = 0.7322
+type = ionic_interaction
+hydrophobic_ratio = 0.4000
+charge_positive = 0.1667
+charge_negative = 0.1833
+charge_neutral = 0.6500
+
+[DISSOLVE]
+rigidity = 0.9989
+potential = crystallized
+wobble_entropy = 0.0011
+complementary_disruption = 0.2678
+
+[ENCODE]
+type = moderate
+loss = 0.4688
+gc_content = 0.4426
+wobble_gc = 0.4754
+codon_diversity = 0.5312
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2623
+wobble_FLOW = 0.2623
+wobble_OBSERVE = 0.2623
+wobble_LOGIC = 0.2459
+wobble_CHOOSE = 0.2295
+entropy = 0.0011
+
+[OBSERVE]
+distance = 0.0874
+level = mild
+complementary_balance = 0.7322
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1803
+intensity = 0.1803
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1803
+  COMPOSE(FLOW,FLOW): 0.1639
+  COMPOSE(FLOW,LOGIC): 0.1148
+  COMPOSE(FLOW,OBSERVE): 0.0820
+  COMPOSE(LOGIC,LOGIC): 0.0656
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3934
+modifier_dominant = FLOW
+modifier_pct = 0.4262
+primary_FLOW = 0.3934
+primary_OBSERVE = 0.1475
+primary_LOGIC = 0.3279
+primary_CHOOSE = 0.1311
+modifier_FLOW = 0.4262
+modifier_OBSERVE = 0.1803
+modifier_LOGIC = 0.2459
+modifier_CHOOSE = 0.1475
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0342
+aa_top5 = [
+  Glu: 0.1333  # acidic
+  Ser: 0.1167  # hydroxyl
+  Asn: 0.0833  # amide
+  Lys: 0.0833  # basic
+  Met: 0.0667  # sulfur
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 60
+stop_codon = TAA
+loss = 0.0342
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.crystallized.ionic_interaction

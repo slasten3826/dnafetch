@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MMD2 | unknown
+# CDS: 741 bp (247 codons)
+
+[IDENTITY]
+gene = MMD2
+organism = unknown
+transcript = ENST00000401401.8
+cds_length = 741
+codons = 247
+protein_length = 246
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = CHOOSE
+dominant_pct = 0.3185
+FLOW = 0.1822
+OBSERVE = 0.2470
+LOGIC = 0.2524
+CHOOSE = 0.3185
+state = flowing
+
+[CONNECT]
+depth = 0.8691
+type = membrane_embedded
+hydrophobic_ratio = 0.6626
+charge_positive = 0.1341
+charge_negative = 0.0610
+charge_neutral = 0.8049
+
+[DISSOLVE]
+rigidity = 0.8115
+potential = low
+wobble_entropy = 0.1885
+complementary_disruption = 0.1309
+
+[ENCODE]
+type = engineered
+loss = 0.1875
+gc_content = 0.5709
+wobble_gc = 0.8178
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5182
+wobble_FLOW = 0.0567
+wobble_OBSERVE = 0.1255
+wobble_LOGIC = 0.2996
+wobble_CHOOSE = 0.5182
+entropy = 0.1885
+
+[OBSERVE]
+distance = 0.0661
+level = standard
+complementary_balance = 0.8691
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1012
+intensity = 0.1012
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1012
+  COMPOSE(CHOOSE,OBSERVE): 0.1012
+  COMPOSE(OBSERVE,OBSERVE): 0.0850
+  COMPOSE(LOGIC,CHOOSE): 0.0769
+  COMPOSE(LOGIC,OBSERVE): 0.0729
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2672
+modifier_dominant = OBSERVE
+modifier_pct = 0.3603
+primary_FLOW = 0.2470
+primary_OBSERVE = 0.2551
+primary_LOGIC = 0.2672
+primary_CHOOSE = 0.2308
+modifier_FLOW = 0.2429
+modifier_OBSERVE = 0.3603
+modifier_LOGIC = 0.1903
+modifier_CHOOSE = 0.2065
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0224
+aa_top5 = [
+  Leu: 0.1016  # aliphatic
+  Phe: 0.0854  # aromatic
+  Ala: 0.0772  # simple
+  Val: 0.0732  # aliphatic
+  Tyr: 0.0610  # aromatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 246
+stop_codon = TGA
+loss = 0.0224
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.low.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NKX1-1 | unknown
+# CDS: 1347 bp (449 codons)
+
+[IDENTITY]
+gene = NKX1-1
+organism = unknown
+transcript = ENST00000422806.2
+cds_length = 1347
+codons = 449
+protein_length = 448
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.893
+resistance = 0.107
+dominant = CHOOSE
+dominant_pct = 0.3912
+FLOW = 0.1396
+OBSERVE = 0.0980
+LOGIC = 0.3712
+CHOOSE = 0.3912
+state = flowing
+
+[CONNECT]
+depth = 0.9384
+type = membrane_embedded
+hydrophobic_ratio = 0.6429
+charge_positive = 0.0938
+charge_negative = 0.0982
+charge_neutral = 0.8080
+
+[DISSOLVE]
+rigidity = 0.7847
+potential = low
+wobble_entropy = 0.2153
+complementary_disruption = 0.0616
+
+[ENCODE]
+type = engineered
+loss = 0.2812
+gc_content = 0.7624
+wobble_gc = 0.8641
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4655
+wobble_FLOW = 0.0713
+wobble_OBSERVE = 0.0646
+wobble_LOGIC = 0.3987
+wobble_CHOOSE = 0.4655
+entropy = 0.2153
+
+[OBSERVE]
+distance = 0.0200
+level = deep
+complementary_balance = 0.9384
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1826
+intensity = 0.1826
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1826
+  COMPOSE(LOGIC,LOGIC): 0.1470
+  COMPOSE(CHOOSE,CHOOSE): 0.1448
+  COMPOSE(LOGIC,FLOW): 0.0980
+  COMPOSE(CHOOSE,OBSERVE): 0.0646
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4588
+modifier_dominant = CHOOSE
+modifier_pct = 0.4143
+primary_FLOW = 0.1514
+primary_OBSERVE = 0.0958
+primary_LOGIC = 0.4588
+primary_CHOOSE = 0.2940
+modifier_FLOW = 0.1960
+modifier_OBSERVE = 0.1336
+modifier_LOGIC = 0.2561
+modifier_CHOOSE = 0.4143
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0499
+aa_top5 = [
+  Ala: 0.1830  # simple
+  Gly: 0.1473  # simple
+  Pro: 0.1451  # cyclic
+  Ser: 0.0692  # hydroxyl
+  Leu: 0.0647  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 448
+stop_codon = TGA
+loss = 0.0499
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CCDC169-SOHLH2 | unknown
+# CDS: 1509 bp (503 codons)
+
+[IDENTITY]
+gene = CCDC169-SOHLH2
+organism = unknown
+transcript = ENST00000511166.1
+cds_length = 1509
+codons = 503
+protein_length = 502
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = FLOW
+dominant_pct = 0.3148
+FLOW = 0.3148
+OBSERVE = 0.2578
+LOGIC = 0.2114
+CHOOSE = 0.2160
+state = flowing
+
+[CONNECT]
+depth = 0.9384
+type = balanced_interface
+hydrophobic_ratio = 0.4880
+charge_positive = 0.1335
+charge_negative = 0.1135
+charge_neutral = 0.7530
+
+[DISSOLVE]
+rigidity = 0.9886
+potential = crystallized
+wobble_entropy = 0.0114
+complementary_disruption = 0.0616
+
+[ENCODE]
+type = natural
+loss = 0.0469
+gc_content = 0.4274
+wobble_gc = 0.4175
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3002
+wobble_FLOW = 0.2823
+wobble_OBSERVE = 0.3002
+wobble_LOGIC = 0.2286
+wobble_CHOOSE = 0.1889
+entropy = 0.0114
+
+[OBSERVE]
+distance = 0.0570
+level = standard
+complementary_balance = 0.9384
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1252
+intensity = 0.1252
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1252
+  COMPOSE(LOGIC,FLOW): 0.1133
+  COMPOSE(CHOOSE,OBSERVE): 0.0795
+  COMPOSE(FLOW,CHOOSE): 0.0736
+  COMPOSE(FLOW,OBSERVE): 0.0696
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3181
+modifier_dominant = FLOW
+modifier_pct = 0.3439
+primary_FLOW = 0.3181
+primary_OBSERVE = 0.2028
+primary_LOGIC = 0.2744
+primary_CHOOSE = 0.2048
+modifier_FLOW = 0.3439
+modifier_OBSERVE = 0.2704
+modifier_LOGIC = 0.1312
+modifier_CHOOSE = 0.2545
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0276
+aa_top5 = [
+  Leu: 0.1215  # aliphatic
+  Ser: 0.0936  # hydroxyl
+  Glu: 0.0817  # acidic
+  Lys: 0.0757  # basic
+  Thr: 0.0737  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 502
+stop_codon = TAA
+loss = 0.0276
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.balanced_interface

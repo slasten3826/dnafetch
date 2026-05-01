@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MYO3A | unknown
+# CDS: 90 bp (30 codons)
+
+[IDENTITY]
+gene = MYO3A
+organism = unknown
+transcript = ENST00000478093.2
+cds_length = 90
+codons = 30
+protein_length = 29
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = OBSERVE
+dominant_pct = 0.3222
+FLOW = 0.2444
+OBSERVE = 0.3222
+LOGIC = 0.2222
+CHOOSE = 0.2111
+state = flowing
+
+[CONNECT]
+depth = 0.9111
+type = membrane_embedded
+hydrophobic_ratio = 0.6207
+charge_positive = 0.0690
+charge_negative = 0.0345
+charge_neutral = 0.8966
+
+[DISSOLVE]
+rigidity = 0.9723
+potential = crystallized
+wobble_entropy = 0.0277
+complementary_disruption = 0.0889
+
+[ENCODE]
+type = optimized
+loss = 0.6250
+gc_content = 0.4333
+wobble_gc = 0.6333
+codon_diversity = 0.3750
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3333
+wobble_FLOW = 0.2000
+wobble_OBSERVE = 0.1667
+wobble_LOGIC = 0.3000
+wobble_CHOOSE = 0.3333
+entropy = 0.0277
+
+[OBSERVE]
+distance = 0.0778
+level = standard
+complementary_balance = 0.9111
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1667
+  COMPOSE(OBSERVE,OBSERVE): 0.1333
+  COMPOSE(OBSERVE,LOGIC): 0.1333
+  COMPOSE(OBSERVE,CHOOSE): 0.1000
+  COMPOSE(CHOOSE,OBSERVE): 0.0667
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4000
+modifier_dominant = OBSERVE
+modifier_pct = 0.4000
+primary_FLOW = 0.3667
+primary_OBSERVE = 0.4000
+primary_LOGIC = 0.1333
+primary_CHOOSE = 0.1000
+modifier_FLOW = 0.1667
+modifier_OBSERVE = 0.4000
+modifier_LOGIC = 0.2333
+modifier_CHOOSE = 0.2000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0481
+aa_top5 = [
+  Ser: 0.1724  # hydroxyl
+  Leu: 0.1379  # aliphatic
+  Met: 0.1034  # sulfur
+  Cys: 0.1034  # sulfur
+  Ile: 0.0690  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 29
+stop_codon = TAG
+loss = 0.0481
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.standard.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: VPS13A | unknown
+# CDS: 33 bp (11 codons)
+
+[IDENTITY]
+gene = VPS13A
+organism = unknown
+transcript = ENST00000467124.1
+cds_length = 33
+codons = 11
+protein_length = 10
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.968
+resistance = 0.032
+dominant = OBSERVE
+dominant_pct = 0.3636
+FLOW = 0.2727
+OBSERVE = 0.3636
+LOGIC = 0.1818
+CHOOSE = 0.1818
+state = flowing
+
+[CONNECT]
+depth = 0.9091
+type = membrane_embedded
+hydrophobic_ratio = 0.6000
+charge_positive = 0.0000
+charge_negative = 0.0000
+charge_neutral = 1.0000
+
+[DISSOLVE]
+rigidity = 0.9681
+potential = crystallized
+wobble_entropy = 0.0319
+complementary_disruption = 0.0909
+
+[ENCODE]
+type = natural
+loss = 0.8281
+gc_content = 0.3636
+wobble_gc = 0.3636
+codon_diversity = 0.1719
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3636
+wobble_FLOW = 0.2727
+wobble_OBSERVE = 0.3636
+wobble_LOGIC = 0.1818
+wobble_CHOOSE = 0.1818
+entropy = 0.0319
+
+[OBSERVE]
+distance = 0.0909
+level = mild
+complementary_balance = 0.9091
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1818
+intensity = 0.1818
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1818
+  COMPOSE(OBSERVE,CHOOSE): 0.1818
+  COMPOSE(OBSERVE,FLOW): 0.1818
+  COMPOSE(FLOW,LOGIC): 0.0909
+  COMPOSE(FLOW,CHOOSE): 0.0909
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4545
+modifier_dominant = OBSERVE
+modifier_pct = 0.2727
+primary_FLOW = 0.3636
+primary_OBSERVE = 0.4545
+primary_LOGIC = 0.0909
+primary_CHOOSE = 0.0909
+modifier_FLOW = 0.1818
+modifier_OBSERVE = 0.2727
+modifier_LOGIC = 0.2727
+modifier_CHOOSE = 0.2727
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0742
+aa_top5 = [
+  Ser: 0.3000  # hydroxyl
+  Met: 0.1000  # sulfur
+  Ile: 0.1000  # aliphatic
+  Thr: 0.1000  # hydroxyl
+  Leu: 0.1000  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 10
+stop_codon = TAA
+loss = 0.0742
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.mild.dominant.crystallized.membrane_embedded

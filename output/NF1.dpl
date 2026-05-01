@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NF1 | unknown
+# CDS: 201 bp (67 codons)
+
+[IDENTITY]
+gene = NF1
+organism = unknown
+transcript = ENST00000422121.2
+cds_length = 201
+codons = 67
+protein_length = 66
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.985
+resistance = 0.015
+dominant = LOGIC
+dominant_pct = 0.3134
+FLOW = 0.2786
+OBSERVE = 0.1791
+LOGIC = 0.3134
+CHOOSE = 0.2289
+state = flowing
+
+[CONNECT]
+depth = 0.8159
+type = ionic_interaction
+hydrophobic_ratio = 0.4848
+charge_positive = 0.2121
+charge_negative = 0.1061
+charge_neutral = 0.6818
+
+[DISSOLVE]
+rigidity = 0.9803
+potential = crystallized
+wobble_entropy = 0.0197
+complementary_disruption = 0.1841
+
+[ENCODE]
+type = moderate
+loss = 0.3906
+gc_content = 0.5423
+wobble_gc = 0.5821
+codon_diversity = 0.6094
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3433
+wobble_FLOW = 0.2388
+wobble_OBSERVE = 0.1791
+wobble_LOGIC = 0.3433
+wobble_CHOOSE = 0.2388
+entropy = 0.0197
+
+[OBSERVE]
+distance = 0.0348
+level = deep
+complementary_balance = 0.8159
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1194
+intensity = 0.1194
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1194
+  COMPOSE(LOGIC,FLOW): 0.1045
+  COMPOSE(LOGIC,LOGIC): 0.1045
+  COMPOSE(FLOW,FLOW): 0.0896
+  COMPOSE(CHOOSE,FLOW): 0.0896
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3134
+modifier_dominant = LOGIC
+modifier_pct = 0.2985
+primary_FLOW = 0.3134
+primary_OBSERVE = 0.1642
+primary_LOGIC = 0.2985
+primary_CHOOSE = 0.2239
+modifier_FLOW = 0.2836
+modifier_OBSERVE = 0.1940
+modifier_LOGIC = 0.2985
+modifier_CHOOSE = 0.2239
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0329
+aa_top5 = [
+  Leu: 0.1061  # aliphatic
+  Gly: 0.1061  # simple
+  Arg: 0.0909  # basic
+  Glu: 0.0909  # acidic
+  Pro: 0.0758  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 66
+stop_codon = TGA
+loss = 0.0329
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.strong.crystallized.ionic_interaction

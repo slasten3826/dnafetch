@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HMOX2 | unknown
+# CDS: 267 bp (89 codons)
+
+[IDENTITY]
+gene = HMOX2
+organism = unknown
+transcript = ENST00000570622.1
+cds_length = 267
+codons = 89
+protein_length = 88
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = LOGIC
+dominant_pct = 0.2959
+FLOW = 0.2772
+OBSERVE = 0.1910
+LOGIC = 0.2959
+CHOOSE = 0.2360
+state = flowing
+
+[CONNECT]
+depth = 0.8539
+type = ionic_interaction
+hydrophobic_ratio = 0.4886
+charge_positive = 0.1705
+charge_negative = 0.1705
+charge_neutral = 0.6591
+
+[DISSOLVE]
+rigidity = 0.9604
+potential = crystallized
+wobble_entropy = 0.0396
+complementary_disruption = 0.1461
+
+[ENCODE]
+type = optimized
+loss = 0.3281
+gc_content = 0.5318
+wobble_gc = 0.6629
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3371
+wobble_FLOW = 0.1573
+wobble_OBSERVE = 0.1798
+wobble_LOGIC = 0.3258
+wobble_CHOOSE = 0.3371
+entropy = 0.0396
+
+[OBSERVE]
+distance = 0.0187
+level = strong
+complementary_balance = 0.8539
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1685
+intensity = 0.1685
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1685
+  COMPOSE(FLOW,FLOW): 0.1236
+  COMPOSE(LOGIC,CHOOSE): 0.0787
+  COMPOSE(FLOW,LOGIC): 0.0787
+  COMPOSE(FLOW,OBSERVE): 0.0674
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3483
+modifier_dominant = FLOW
+modifier_pct = 0.3708
+primary_FLOW = 0.3034
+primary_OBSERVE = 0.1685
+primary_LOGIC = 0.3483
+primary_CHOOSE = 0.1798
+modifier_FLOW = 0.3708
+modifier_OBSERVE = 0.2247
+modifier_LOGIC = 0.2135
+modifier_CHOOSE = 0.1910
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0237
+aa_top5 = [
+  Glu: 0.1023  # acidic
+  Ala: 0.0795  # simple
+  Leu: 0.0795  # aliphatic
+  Arg: 0.0795  # basic
+  Asp: 0.0682  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 88
+stop_codon = TGA
+loss = 0.0237
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.strong.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CYP17A1 | unknown
+# CDS: 1530 bp (510 codons)
+
+[IDENTITY]
+gene = CYP17A1
+organism = unknown
+transcript = ENST00000639393.1
+cds_length = 1530
+codons = 510
+protein_length = 509
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = CHOOSE
+dominant_pct = 0.2765
+FLOW = 0.2497
+OBSERVE = 0.2222
+LOGIC = 0.2516
+CHOOSE = 0.2765
+state = flowing
+
+[CONNECT]
+depth = 0.9477
+type = balanced_interface
+hydrophobic_ratio = 0.5403
+charge_positive = 0.1454
+charge_negative = 0.1061
+charge_neutral = 0.7485
+
+[DISSOLVE]
+rigidity = 0.9379
+potential = crystallized
+wobble_entropy = 0.0621
+complementary_disruption = 0.0523
+
+[ENCODE]
+type = optimized
+loss = 0.0469
+gc_content = 0.5281
+wobble_gc = 0.6922
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3706
+wobble_FLOW = 0.1176
+wobble_OBSERVE = 0.1902
+wobble_LOGIC = 0.3216
+wobble_CHOOSE = 0.3706
+entropy = 0.0621
+
+[OBSERVE]
+distance = 0.0248
+level = deep
+complementary_balance = 0.9477
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1275
+intensity = 0.1275
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1275
+  COMPOSE(CHOOSE,OBSERVE): 0.1078
+  COMPOSE(LOGIC,FLOW): 0.1059
+  COMPOSE(FLOW,OBSERVE): 0.0941
+  COMPOSE(CHOOSE,FLOW): 0.0686
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3098
+modifier_dominant = OBSERVE
+modifier_pct = 0.3255
+primary_FLOW = 0.3098
+primary_OBSERVE = 0.1510
+primary_LOGIC = 0.2804
+primary_CHOOSE = 0.2588
+modifier_FLOW = 0.3216
+modifier_OBSERVE = 0.3255
+modifier_LOGIC = 0.1529
+modifier_CHOOSE = 0.2000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0247
+aa_top5 = [
+  Leu: 0.1257  # aliphatic
+  Lys: 0.0727  # basic
+  Ile: 0.0707  # aliphatic
+  Ser: 0.0648  # hydroxyl
+  Val: 0.0589  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 509
+stop_codon = TAA
+loss = 0.0247
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.balanced_interface

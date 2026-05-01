@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SYT4 | unknown
+# CDS: 429 bp (143 codons)
+
+[IDENTITY]
+gene = SYT4
+organism = unknown
+transcript = ENST00000593720.1
+cds_length = 429
+codons = 143
+protein_length = 143
+stop_codon = none
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = OBSERVE
+dominant_pct = 0.2937
+FLOW = 0.2914
+OBSERVE = 0.2937
+LOGIC = 0.2098
+CHOOSE = 0.2051
+state = flowing
+
+[CONNECT]
+depth = 0.9930
+type = ionic_interaction
+hydrophobic_ratio = 0.5035
+charge_positive = 0.1608
+charge_negative = 0.0909
+charge_neutral = 0.7483
+
+[DISSOLVE]
+rigidity = 0.9868
+potential = crystallized
+wobble_entropy = 0.0132
+complementary_disruption = 0.0070
+
+[ENCODE]
+type = natural
+loss = 0.2188
+gc_content = 0.4149
+wobble_gc = 0.4126
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2937
+wobble_FLOW = 0.2937
+wobble_OBSERVE = 0.2937
+wobble_LOGIC = 0.2308
+wobble_CHOOSE = 0.1818
+entropy = 0.0132
+
+[OBSERVE]
+distance = 0.0023
+level = intense
+complementary_balance = 0.9930
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1119
+intensity = 0.1119
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1119
+  COMPOSE(OBSERVE,CHOOSE): 0.1049
+  COMPOSE(FLOW,OBSERVE): 0.0979
+  COMPOSE(LOGIC,FLOW): 0.0909
+  COMPOSE(FLOW,FLOW): 0.0839
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3147
+modifier_dominant = OBSERVE
+modifier_pct = 0.3217
+primary_FLOW = 0.3147
+primary_OBSERVE = 0.2657
+primary_LOGIC = 0.2378
+primary_CHOOSE = 0.1818
+modifier_FLOW = 0.2657
+modifier_OBSERVE = 0.3217
+modifier_LOGIC = 0.1608
+modifier_CHOOSE = 0.2517
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0287
+aa_top5 = [
+  Leu: 0.1259  # aliphatic
+  Ser: 0.1119  # hydroxyl
+  Arg: 0.0699  # basic
+  Thr: 0.0699  # hydroxyl
+  Ile: 0.0699  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 143
+stop_codon = none
+loss = 0.0287
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.intense.strong.crystallized.ionic_interaction

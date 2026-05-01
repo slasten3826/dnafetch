@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: AKT2 | unknown
+# CDS: 84 bp (28 codons)
+
+[IDENTITY]
+gene = AKT2
+organism = unknown
+transcript = ENST00000427375.1
+cds_length = 84
+codons = 28
+protein_length = 27
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = LOGIC
+dominant_pct = 0.2857
+FLOW = 0.2619
+OBSERVE = 0.2143
+LOGIC = 0.2857
+CHOOSE = 0.2381
+state = flowing
+
+[CONNECT]
+depth = 0.9048
+type = ionic_interaction
+hydrophobic_ratio = 0.4444
+charge_positive = 0.1852
+charge_negative = 0.0000
+charge_neutral = 0.8148
+
+[DISSOLVE]
+rigidity = 0.9963
+potential = crystallized
+wobble_entropy = 0.0037
+complementary_disruption = 0.0952
+
+[ENCODE]
+type = moderate
+loss = 0.6719
+gc_content = 0.5238
+wobble_gc = 0.5000
+codon_diversity = 0.3281
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2857
+wobble_FLOW = 0.2857
+wobble_OBSERVE = 0.2143
+wobble_LOGIC = 0.2500
+wobble_CHOOSE = 0.2500
+entropy = 0.0037
+
+[OBSERVE]
+distance = 0.0238
+level = deep
+complementary_balance = 0.9048
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1786
+intensity = 0.1786
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1786
+  COMPOSE(LOGIC,LOGIC): 0.1429
+  COMPOSE(FLOW,LOGIC): 0.1071
+  COMPOSE(OBSERVE,LOGIC): 0.1071
+  COMPOSE(FLOW,FLOW): 0.1071
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3571
+modifier_dominant = LOGIC
+modifier_pct = 0.3571
+primary_FLOW = 0.3571
+primary_OBSERVE = 0.2857
+primary_LOGIC = 0.2500
+primary_CHOOSE = 0.1071
+modifier_FLOW = 0.1429
+modifier_OBSERVE = 0.1429
+modifier_LOGIC = 0.3571
+modifier_CHOOSE = 0.3571
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0565
+aa_top5 = [
+  Ser: 0.2222  # hydroxyl
+  Gly: 0.1481  # simple
+  Thr: 0.1111  # hydroxyl
+  Arg: 0.0741  # basic
+  Cys: 0.0741  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 27
+stop_codon = TGA
+loss = 0.0565
+
+[SIGNATURE]
+fingerprint = LOGIC.FLOW.deep.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IL7R | unknown
+# CDS: 192 bp (64 codons)
+
+[IDENTITY]
+gene = IL7R
+organism = unknown
+transcript = ENST00000505093.1
+cds_length = 192
+codons = 64
+protein_length = 63
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.976
+resistance = 0.024
+dominant = FLOW
+dominant_pct = 0.3438
+FLOW = 0.3438
+OBSERVE = 0.2760
+LOGIC = 0.1823
+CHOOSE = 0.1979
+state = flowing
+
+[CONNECT]
+depth = 0.9167
+type = balanced_interface
+hydrophobic_ratio = 0.5397
+charge_positive = 0.1429
+charge_negative = 0.0794
+charge_neutral = 0.7778
+
+[DISSOLVE]
+rigidity = 0.9626
+potential = crystallized
+wobble_entropy = 0.0374
+complementary_disruption = 0.0833
+
+[ENCODE]
+type = natural
+loss = 0.4219
+gc_content = 0.3802
+wobble_gc = 0.4062
+codon_diversity = 0.5781
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3281
+wobble_FLOW = 0.3281
+wobble_OBSERVE = 0.2656
+wobble_LOGIC = 0.1250
+wobble_CHOOSE = 0.2812
+entropy = 0.0374
+
+[OBSERVE]
+distance = 0.0677
+level = standard
+complementary_balance = 0.9167
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1406
+intensity = 0.1406
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1406
+  COMPOSE(FLOW,OBSERVE): 0.1250
+  COMPOSE(FLOW,FLOW): 0.1094
+  COMPOSE(OBSERVE,FLOW): 0.0938
+  COMPOSE(LOGIC,FLOW): 0.0781
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3906
+modifier_dominant = FLOW
+modifier_pct = 0.3125
+primary_FLOW = 0.3906
+primary_OBSERVE = 0.2812
+primary_LOGIC = 0.1719
+primary_CHOOSE = 0.1562
+modifier_FLOW = 0.3125
+modifier_OBSERVE = 0.2812
+modifier_LOGIC = 0.2500
+modifier_CHOOSE = 0.1562
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0363
+aa_top5 = [
+  Ser: 0.1429  # hydroxyl
+  Ile: 0.1111  # aliphatic
+  Tyr: 0.0794  # aromatic
+  Arg: 0.0794  # basic
+  Pro: 0.0794  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 63
+stop_codon = TAA
+loss = 0.0363
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.standard.dominant.crystallized.balanced_interface

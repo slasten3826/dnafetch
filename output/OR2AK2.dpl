@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: OR2AK2 | unknown
+# CDS: 1008 bp (336 codons)
+
+[IDENTITY]
+gene = OR2AK2
+organism = unknown
+transcript = ENST00000366480.5
+cds_length = 1008
+codons = 336
+protein_length = 335
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.988
+resistance = 0.012
+dominant = OBSERVE
+dominant_pct = 0.3244
+FLOW = 0.2312
+OBSERVE = 0.3244
+LOGIC = 0.1984
+CHOOSE = 0.2460
+state = flowing
+
+[CONNECT]
+depth = 0.8591
+type = membrane_embedded
+hydrophobic_ratio = 0.6448
+charge_positive = 0.0985
+charge_negative = 0.0388
+charge_neutral = 0.8627
+
+[DISSOLVE]
+rigidity = 0.9870
+potential = crystallized
+wobble_entropy = 0.0130
+complementary_disruption = 0.1409
+
+[ENCODE]
+type = moderate
+loss = 0.0625
+gc_content = 0.4444
+wobble_gc = 0.4851
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3125
+wobble_FLOW = 0.2024
+wobble_OBSERVE = 0.3125
+wobble_LOGIC = 0.2054
+wobble_CHOOSE = 0.2798
+entropy = 0.0130
+
+[OBSERVE]
+distance = 0.0784
+level = standard
+complementary_balance = 0.8591
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1250
+intensity = 0.1250
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1250
+  COMPOSE(FLOW,OBSERVE): 0.1071
+  COMPOSE(OBSERVE,OBSERVE): 0.0952
+  COMPOSE(LOGIC,OBSERVE): 0.0774
+  COMPOSE(FLOW,CHOOSE): 0.0685
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2887
+modifier_dominant = OBSERVE
+modifier_pct = 0.4048
+primary_FLOW = 0.2887
+primary_OBSERVE = 0.2560
+primary_LOGIC = 0.2262
+primary_CHOOSE = 0.2292
+modifier_FLOW = 0.2024
+modifier_OBSERVE = 0.4048
+modifier_LOGIC = 0.1637
+modifier_CHOOSE = 0.2292
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0325
+aa_top5 = [
+  Leu: 0.1522  # aliphatic
+  Ser: 0.0925  # hydroxyl
+  Val: 0.0776  # aliphatic
+  Ile: 0.0746  # aliphatic
+  Phe: 0.0687  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 335
+stop_codon = TGA
+loss = 0.0325
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.dominant.crystallized.membrane_embedded

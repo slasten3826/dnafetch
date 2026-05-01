@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KDM8 | unknown
+# CDS: 135 bp (45 codons)
+
+[IDENTITY]
+gene = KDM8
+organism = unknown
+transcript = ENST00000567735.1
+cds_length = 135
+codons = 45
+protein_length = 44
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.957
+resistance = 0.043
+dominant = LOGIC
+dominant_pct = 0.3778
+FLOW = 0.2815
+OBSERVE = 0.1556
+LOGIC = 0.3778
+CHOOSE = 0.1852
+state = flowing
+
+[CONNECT]
+depth = 0.6815
+type = membrane_embedded
+hydrophobic_ratio = 0.5682
+charge_positive = 0.1136
+charge_negative = 0.1136
+charge_neutral = 0.7727
+
+[DISSOLVE]
+rigidity = 0.9280
+potential = low
+wobble_entropy = 0.0720
+complementary_disruption = 0.3185
+
+[ENCODE]
+type = moderate
+loss = 0.5625
+gc_content = 0.5630
+wobble_gc = 0.5333
+codon_diversity = 0.4375
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3556
+wobble_FLOW = 0.3556
+wobble_OBSERVE = 0.1111
+wobble_LOGIC = 0.3556
+wobble_CHOOSE = 0.1778
+entropy = 0.0720
+
+[OBSERVE]
+distance = 0.0963
+level = mild
+complementary_balance = 0.6815
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1778
+intensity = 0.1778
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1778
+  COMPOSE(LOGIC,FLOW): 0.1111
+  COMPOSE(LOGIC,CHOOSE): 0.0889
+  COMPOSE(CHOOSE,FLOW): 0.0889
+  COMPOSE(OBSERVE,LOGIC): 0.0889
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4222
+modifier_dominant = LOGIC
+modifier_pct = 0.3556
+primary_FLOW = 0.2444
+primary_OBSERVE = 0.1556
+primary_LOGIC = 0.4222
+primary_CHOOSE = 0.1778
+modifier_FLOW = 0.2444
+modifier_OBSERVE = 0.2000
+modifier_LOGIC = 0.3556
+modifier_CHOOSE = 0.2000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0423
+aa_top5 = [
+  Gly: 0.1818  # simple
+  Glu: 0.1136  # acidic
+  Ala: 0.0909  # simple
+  Met: 0.0682  # sulfur
+  Ser: 0.0682  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 44
+stop_codon = TGA
+loss = 0.0423
+
+[SIGNATURE]
+fingerprint = LOGIC.FLOW.mild.dominant.low.membrane_embedded

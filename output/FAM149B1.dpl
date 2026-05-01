@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM149B1 | unknown
+# CDS: 561 bp (187 codons)
+
+[IDENTITY]
+gene = FAM149B1
+organism = unknown
+transcript = ENST00000475829.5
+cds_length = 561
+codons = 187
+protein_length = 186
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = FLOW
+dominant_pct = 0.2727
+FLOW = 0.2727
+OBSERVE = 0.2567
+LOGIC = 0.2371
+CHOOSE = 0.2335
+state = flowing
+
+[CONNECT]
+depth = 0.9804
+type = balanced_interface
+hydrophobic_ratio = 0.4785
+charge_positive = 0.1398
+charge_negative = 0.1075
+charge_neutral = 0.7527
+
+[DISSOLVE]
+rigidity = 0.9837
+potential = crystallized
+wobble_entropy = 0.0163
+complementary_disruption = 0.0196
+
+[ENCODE]
+type = natural
+loss = 0.1562
+gc_content = 0.4706
+wobble_gc = 0.4171
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3155
+wobble_FLOW = 0.2674
+wobble_OBSERVE = 0.3155
+wobble_LOGIC = 0.2460
+wobble_CHOOSE = 0.1711
+entropy = 0.0163
+
+[OBSERVE]
+distance = 0.0160
+level = strong
+complementary_balance = 0.9804
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1070
+intensity = 0.1070
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1070
+  COMPOSE(FLOW,LOGIC): 0.1070
+  COMPOSE(CHOOSE,OBSERVE): 0.0963
+  COMPOSE(LOGIC,OBSERVE): 0.0909
+  COMPOSE(CHOOSE,CHOOSE): 0.0802
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2888
+modifier_dominant = OBSERVE
+modifier_pct = 0.2781
+primary_FLOW = 0.2888
+primary_OBSERVE = 0.1765
+primary_LOGIC = 0.2567
+primary_CHOOSE = 0.2781
+modifier_FLOW = 0.2620
+modifier_OBSERVE = 0.2781
+modifier_LOGIC = 0.2086
+modifier_CHOOSE = 0.2513
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0344
+aa_top5 = [
+  Ser: 0.1398  # hydroxyl
+  Leu: 0.1183  # aliphatic
+  Val: 0.0914  # aliphatic
+  Arg: 0.0806  # basic
+  Pro: 0.0806  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 186
+stop_codon = TAG
+loss = 0.0344
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.strong.crystallized.balanced_interface

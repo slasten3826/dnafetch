@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PLAAT3 | unknown
+# CDS: 39 bp (13 codons)
+
+[IDENTITY]
+gene = PLAAT3
+organism = unknown
+transcript = ENST00000540943.1
+cds_length = 39
+codons = 13
+protein_length = 12
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.918
+resistance = 0.082
+dominant = LOGIC
+dominant_pct = 0.4359
+FLOW = 0.2308
+OBSERVE = 0.2308
+LOGIC = 0.4359
+CHOOSE = 0.1026
+state = flowing
+
+[CONNECT]
+depth = 0.6667
+type = membrane_embedded
+hydrophobic_ratio = 0.6667
+charge_positive = 0.0833
+charge_negative = 0.0833
+charge_neutral = 0.8333
+
+[DISSOLVE]
+rigidity = 0.9131
+potential = low
+wobble_entropy = 0.0869
+complementary_disruption = 0.3333
+
+[ENCODE]
+type = moderate
+loss = 0.8125
+gc_content = 0.5385
+wobble_gc = 0.4615
+codon_diversity = 0.1875
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3846
+wobble_FLOW = 0.3077
+wobble_OBSERVE = 0.2308
+wobble_LOGIC = 0.3846
+wobble_CHOOSE = 0.0769
+entropy = 0.0869
+
+[OBSERVE]
+distance = 0.2051
+level = basic
+complementary_balance = 0.6667
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.3077
+intensity = 0.3077
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.3077
+  COMPOSE(FLOW,OBSERVE): 0.1538
+  COMPOSE(LOGIC,CHOOSE): 0.0769
+  COMPOSE(OBSERVE,CHOOSE): 0.0769
+  COMPOSE(FLOW,CHOOSE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4615
+modifier_dominant = LOGIC
+modifier_pct = 0.4615
+primary_FLOW = 0.3077
+primary_OBSERVE = 0.2308
+primary_LOGIC = 0.4615
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.0769
+modifier_OBSERVE = 0.2308
+modifier_LOGIC = 0.4615
+modifier_CHOOSE = 0.2308
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0764
+aa_top5 = [
+  Gly: 0.3333  # simple
+  Met: 0.0833  # sulfur
+  Ala: 0.0833  # simple
+  Ser: 0.0833  # hydroxyl
+  Thr: 0.0833  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 12
+stop_codon = TGA
+loss = 0.0764
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.low.membrane_embedded

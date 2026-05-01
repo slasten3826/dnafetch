@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GRIN3A | unknown
+# CDS: 3348 bp (1116 codons)
+
+[IDENTITY]
+gene = GRIN3A
+organism = unknown
+transcript = ENST00000361820.6
+cds_length = 3348
+codons = 1116
+protein_length = 1115
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = CHOOSE
+dominant_pct = 0.2625
+FLOW = 0.2488
+OBSERVE = 0.2324
+LOGIC = 0.2563
+CHOOSE = 0.2625
+state = flowing
+
+[CONNECT]
+depth = 0.9773
+type = balanced_interface
+hydrophobic_ratio = 0.5462
+charge_positive = 0.1283
+charge_negative = 0.0969
+charge_neutral = 0.7749
+
+[DISSOLVE]
+rigidity = 0.9824
+potential = crystallized
+wobble_entropy = 0.0176
+complementary_disruption = 0.0227
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.5188
+wobble_gc = 0.6066
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3163
+wobble_FLOW = 0.1837
+wobble_OBSERVE = 0.2097
+wobble_LOGIC = 0.2903
+wobble_CHOOSE = 0.3163
+entropy = 0.0176
+
+[OBSERVE]
+distance = 0.0063
+level = strong
+complementary_balance = 0.9773
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.0968
+intensity = 0.0968
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.0968
+  COMPOSE(CHOOSE,OBSERVE): 0.0896
+  COMPOSE(FLOW,OBSERVE): 0.0806
+  COMPOSE(FLOW,FLOW): 0.0780
+  COMPOSE(OBSERVE,OBSERVE): 0.0744
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2921
+modifier_dominant = OBSERVE
+modifier_pct = 0.3056
+primary_FLOW = 0.2921
+primary_OBSERVE = 0.1819
+primary_LOGIC = 0.2760
+primary_CHOOSE = 0.2500
+modifier_FLOW = 0.2706
+modifier_OBSERVE = 0.3056
+modifier_LOGIC = 0.2025
+modifier_CHOOSE = 0.2213
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0228
+aa_top5 = [
+  Leu: 0.1175  # aliphatic
+  Ser: 0.0870  # hydroxyl
+  Gly: 0.0628  # simple
+  Val: 0.0610  # aliphatic
+  Thr: 0.0610  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1115
+stop_codon = TAG
+loss = 0.0228
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.balanced_interface

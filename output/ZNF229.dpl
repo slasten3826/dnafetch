@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNF229 | unknown
+# CDS: 111 bp (37 codons)
+
+[IDENTITY]
+gene = ZNF229
+organism = unknown
+transcript = ENST00000592308.1
+cds_length = 111
+codons = 37
+protein_length = 36
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = OBSERVE
+dominant_pct = 0.2793
+FLOW = 0.2613
+OBSERVE = 0.2793
+LOGIC = 0.2162
+CHOOSE = 0.2432
+state = flowing
+
+[CONNECT]
+depth = 0.9550
+type = membrane_embedded
+hydrophobic_ratio = 0.5833
+charge_positive = 0.0556
+charge_negative = 0.1111
+charge_neutral = 0.8333
+
+[DISSOLVE]
+rigidity = 0.9929
+potential = crystallized
+wobble_entropy = 0.0071
+complementary_disruption = 0.0450
+
+[ENCODE]
+type = natural
+loss = 0.5625
+gc_content = 0.4595
+wobble_gc = 0.4324
+codon_diversity = 0.4375
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2973
+wobble_FLOW = 0.2973
+wobble_OBSERVE = 0.2703
+wobble_LOGIC = 0.2162
+wobble_CHOOSE = 0.2162
+entropy = 0.0071
+
+[OBSERVE]
+distance = 0.0180
+level = strong
+complementary_balance = 0.9550
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1351
+intensity = 0.1351
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1351
+  COMPOSE(CHOOSE,OBSERVE): 0.1351
+  COMPOSE(LOGIC,FLOW): 0.1081
+  COMPOSE(FLOW,OBSERVE): 0.0811
+  COMPOSE(OBSERVE,CHOOSE): 0.0811
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.2703
+modifier_dominant = OBSERVE
+modifier_pct = 0.2973
+primary_FLOW = 0.2432
+primary_OBSERVE = 0.2703
+primary_LOGIC = 0.2162
+primary_CHOOSE = 0.2703
+modifier_FLOW = 0.2432
+modifier_OBSERVE = 0.2973
+modifier_LOGIC = 0.2162
+modifier_CHOOSE = 0.2432
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0379
+aa_top5 = [
+  Leu: 0.1667  # aliphatic
+  Ser: 0.1111  # hydroxyl
+  Pro: 0.0833  # cyclic
+  Glu: 0.0833  # acidic
+  Trp: 0.0556  # aromatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 36
+stop_codon = TGA
+loss = 0.0379
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.strong.dominant.crystallized.membrane_embedded

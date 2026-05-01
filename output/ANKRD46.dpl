@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ANKRD46 | unknown
+# CDS: 156 bp (52 codons)
+
+[IDENTITY]
+gene = ANKRD46
+organism = unknown
+transcript = ENST00000521345.1
+cds_length = 156
+codons = 52
+protein_length = 51
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2692
+FLOW = 0.2436
+OBSERVE = 0.2692
+LOGIC = 0.2628
+CHOOSE = 0.2244
+state = flowing
+
+[CONNECT]
+depth = 0.9359
+type = membrane_embedded
+hydrophobic_ratio = 0.7059
+charge_positive = 0.0588
+charge_negative = 0.0392
+charge_neutral = 0.9020
+
+[DISSOLVE]
+rigidity = 0.9780
+potential = crystallized
+wobble_entropy = 0.0220
+complementary_disruption = 0.0641
+
+[ENCODE]
+type = moderate
+loss = 0.4531
+gc_content = 0.4872
+wobble_gc = 0.5769
+codon_diversity = 0.5469
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3462
+wobble_FLOW = 0.2500
+wobble_OBSERVE = 0.1731
+wobble_LOGIC = 0.3462
+wobble_CHOOSE = 0.2308
+entropy = 0.0220
+
+[OBSERVE]
+distance = 0.0064
+level = strong
+complementary_balance = 0.9359
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1346
+intensity = 0.1346
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1346
+  COMPOSE(OBSERVE,OBSERVE): 0.1346
+  COMPOSE(FLOW,CHOOSE): 0.0962
+  COMPOSE(CHOOSE,OBSERVE): 0.0769
+  COMPOSE(OBSERVE,LOGIC): 0.0769
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3077
+modifier_dominant = OBSERVE
+modifier_pct = 0.4038
+primary_FLOW = 0.3077
+primary_OBSERVE = 0.2308
+primary_LOGIC = 0.2500
+primary_CHOOSE = 0.2115
+modifier_FLOW = 0.1731
+modifier_OBSERVE = 0.4038
+modifier_LOGIC = 0.1923
+modifier_CHOOSE = 0.2308
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0390
+aa_top5 = [
+  Leu: 0.1569  # aliphatic
+  Thr: 0.0980  # hydroxyl
+  Ile: 0.0784  # aliphatic
+  Gly: 0.0784  # simple
+  Ala: 0.0784  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 51
+stop_codon = TAG
+loss = 0.0390
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.strong.dominant.crystallized.membrane_embedded

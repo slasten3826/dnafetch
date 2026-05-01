@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TUBA1B | unknown
+# CDS: 210 bp (70 codons)
+
+[IDENTITY]
+gene = TUBA1B
+organism = unknown
+transcript = ENST00000552984.1
+cds_length = 210
+codons = 70
+protein_length = 69
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.987
+resistance = 0.013
+dominant = LOGIC
+dominant_pct = 0.3190
+FLOW = 0.2048
+OBSERVE = 0.2048
+LOGIC = 0.3190
+CHOOSE = 0.2714
+state = flowing
+
+[CONNECT]
+depth = 0.9524
+type = membrane_embedded
+hydrophobic_ratio = 0.5652
+charge_positive = 0.0870
+charge_negative = 0.0290
+charge_neutral = 0.8841
+
+[DISSOLVE]
+rigidity = 0.9487
+potential = crystallized
+wobble_entropy = 0.0513
+complementary_disruption = 0.0476
+
+[ENCODE]
+type = optimized
+loss = 0.5000
+gc_content = 0.5905
+wobble_gc = 0.6143
+codon_diversity = 0.5000
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4143
+wobble_FLOW = 0.2286
+wobble_OBSERVE = 0.1571
+wobble_LOGIC = 0.4143
+wobble_CHOOSE = 0.2000
+entropy = 0.0513
+
+[OBSERVE]
+distance = 0.0476
+level = deep
+complementary_balance = 0.9524
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1429
+intensity = 0.1429
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1429
+  COMPOSE(LOGIC,CHOOSE): 0.1286
+  COMPOSE(OBSERVE,CHOOSE): 0.1143
+  COMPOSE(CHOOSE,CHOOSE): 0.1000
+  COMPOSE(FLOW,CHOOSE): 0.1000
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3143
+modifier_dominant = CHOOSE
+modifier_pct = 0.4429
+primary_FLOW = 0.3143
+primary_OBSERVE = 0.2429
+primary_LOGIC = 0.2714
+primary_CHOOSE = 0.1714
+modifier_FLOW = 0.0714
+modifier_OBSERVE = 0.2143
+modifier_LOGIC = 0.2714
+modifier_CHOOSE = 0.4429
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0521
+aa_top5 = [
+  Ser: 0.1884  # hydroxyl
+  Ala: 0.1304  # simple
+  Pro: 0.1014  # cyclic
+  Thr: 0.1014  # hydroxyl
+  Leu: 0.1014  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 69
+stop_codon = TAG
+loss = 0.0521
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.crystallized.membrane_embedded

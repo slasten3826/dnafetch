@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TBX21 | unknown
+# CDS: 1608 bp (536 codons)
+
+[IDENTITY]
+gene = TBX21
+organism = unknown
+transcript = ENST00000177694.2
+cds_length = 1608
+codons = 536
+protein_length = 535
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.975
+resistance = 0.025
+dominant = CHOOSE
+dominant_pct = 0.3302
+FLOW = 0.1934
+OBSERVE = 0.1772
+LOGIC = 0.2991
+CHOOSE = 0.3302
+state = flowing
+
+[CONNECT]
+depth = 0.9527
+type = membrane_embedded
+hydrophobic_ratio = 0.5963
+charge_positive = 0.1065
+charge_negative = 0.1028
+charge_neutral = 0.7907
+
+[DISSOLVE]
+rigidity = 0.9073
+potential = crystallized
+wobble_entropy = 0.0927
+complementary_disruption = 0.0473
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.6294
+wobble_gc = 0.7407
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3974
+wobble_FLOW = 0.1026
+wobble_OBSERVE = 0.1567
+wobble_LOGIC = 0.3433
+wobble_CHOOSE = 0.3974
+entropy = 0.0927
+
+[OBSERVE]
+distance = 0.0311
+level = deep
+complementary_balance = 0.9527
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1306
+intensity = 0.1306
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1306
+  COMPOSE(LOGIC,LOGIC): 0.1082
+  COMPOSE(LOGIC,FLOW): 0.1026
+  COMPOSE(LOGIC,CHOOSE): 0.0840
+  COMPOSE(CHOOSE,FLOW): 0.0728
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3433
+modifier_dominant = CHOOSE
+modifier_pct = 0.2966
+primary_FLOW = 0.1866
+primary_OBSERVE = 0.1735
+primary_LOGIC = 0.3433
+primary_CHOOSE = 0.2966
+modifier_FLOW = 0.2910
+modifier_OBSERVE = 0.2015
+modifier_LOGIC = 0.2108
+modifier_CHOOSE = 0.2966
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0297
+aa_top5 = [
+  Pro: 0.1308  # cyclic
+  Gly: 0.1084  # simple
+  Ala: 0.0841  # simple
+  Ser: 0.0729  # hydroxyl
+  Glu: 0.0598  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 535
+stop_codon = TGA
+loss = 0.0297
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.membrane_embedded

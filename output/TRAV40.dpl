@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TRAV40 | unknown
+# CDS: 315 bp (105 codons)
+
+[IDENTITY]
+gene = TRAV40
+organism = unknown
+transcript = ENST00000390467.3
+cds_length = 315
+codons = 105
+protein_length = 105
+stop_codon = none
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = FLOW
+dominant_pct = 0.3016
+FLOW = 0.3016
+OBSERVE = 0.2381
+LOGIC = 0.2127
+CHOOSE = 0.2476
+state = flowing
+
+[CONNECT]
+depth = 0.9016
+type = balanced_interface
+hydrophobic_ratio = 0.5333
+charge_positive = 0.0667
+charge_negative = 0.0667
+charge_neutral = 0.8667
+
+[DISSOLVE]
+rigidity = 0.9826
+potential = crystallized
+wobble_entropy = 0.0174
+complementary_disruption = 0.0984
+
+[ENCODE]
+type = moderate
+loss = 0.3125
+gc_content = 0.4603
+wobble_gc = 0.5619
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3333
+wobble_FLOW = 0.2571
+wobble_OBSERVE = 0.1810
+wobble_LOGIC = 0.2286
+wobble_CHOOSE = 0.3333
+entropy = 0.0174
+
+[OBSERVE]
+distance = 0.0540
+level = standard
+complementary_balance = 0.9016
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1238
+intensity = 0.1238
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1238
+  COMPOSE(OBSERVE,CHOOSE): 0.0952
+  COMPOSE(FLOW,OBSERVE): 0.0857
+  COMPOSE(CHOOSE,OBSERVE): 0.0857
+  COMPOSE(LOGIC,LOGIC): 0.0857
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3429
+modifier_dominant = FLOW
+modifier_pct = 0.3048
+primary_FLOW = 0.3429
+primary_OBSERVE = 0.2381
+primary_LOGIC = 0.2476
+primary_CHOOSE = 0.1714
+modifier_FLOW = 0.3048
+modifier_OBSERVE = 0.2952
+modifier_LOGIC = 0.1619
+modifier_CHOOSE = 0.2381
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0328
+aa_top5 = [
+  Ser: 0.1333  # hydroxyl
+  Leu: 0.0952  # aliphatic
+  Gly: 0.0857  # simple
+  Thr: 0.0857  # hydroxyl
+  Val: 0.0762  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 105
+stop_codon = none
+loss = 0.0328
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.standard.dominant.crystallized.balanced_interface

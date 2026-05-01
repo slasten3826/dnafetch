@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CNTFR | unknown
+# CDS: 768 bp (256 codons)
+
+[IDENTITY]
+gene = CNTFR
+organism = unknown
+transcript = ENST00000417345.2
+cds_length = 768
+codons = 256
+protein_length = 256
+stop_codon = none
+
+[FLOW]
+engagement = 0.979
+resistance = 0.021
+dominant = CHOOSE
+dominant_pct = 0.3477
+FLOW = 0.1875
+OBSERVE = 0.2083
+LOGIC = 0.2565
+CHOOSE = 0.3477
+state = flowing
+
+[CONNECT]
+depth = 0.8880
+type = membrane_embedded
+hydrophobic_ratio = 0.5859
+charge_positive = 0.1406
+charge_negative = 0.0742
+charge_neutral = 0.7852
+
+[DISSOLVE]
+rigidity = 0.8958
+potential = crystallized
+wobble_entropy = 0.1042
+complementary_disruption = 0.1120
+
+[ENCODE]
+type = optimized
+loss = 0.1562
+gc_content = 0.6042
+wobble_gc = 0.7305
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4336
+wobble_FLOW = 0.0820
+wobble_OBSERVE = 0.1875
+wobble_LOGIC = 0.2969
+wobble_CHOOSE = 0.4336
+entropy = 0.1042
+
+[OBSERVE]
+distance = 0.0911
+level = mild
+complementary_balance = 0.8880
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.0977
+intensity = 0.0977
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.0977
+  COMPOSE(CHOOSE,OBSERVE): 0.0977
+  COMPOSE(LOGIC,OBSERVE): 0.0859
+  COMPOSE(CHOOSE,FLOW): 0.0859
+  COMPOSE(LOGIC,CHOOSE): 0.0820
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3320
+modifier_dominant = CHOOSE
+modifier_pct = 0.2773
+primary_FLOW = 0.2109
+primary_OBSERVE = 0.1719
+primary_LOGIC = 0.2852
+primary_CHOOSE = 0.3320
+modifier_FLOW = 0.2695
+modifier_OBSERVE = 0.2656
+modifier_LOGIC = 0.1875
+modifier_CHOOSE = 0.2773
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0242
+aa_top5 = [
+  Leu: 0.1016  # aliphatic
+  Pro: 0.0977  # cyclic
+  Val: 0.0859  # aliphatic
+  Ala: 0.0820  # simple
+  Ser: 0.0625  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 256
+stop_codon = none
+loss = 0.0242
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.strong.crystallized.membrane_embedded

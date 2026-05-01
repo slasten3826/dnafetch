@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM133A | unknown
+# CDS: 747 bp (249 codons)
+
+[IDENTITY]
+gene = FAM133A
+organism = unknown
+transcript = ENST00000683942.1
+cds_length = 747
+codons = 249
+protein_length = 248
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.915
+resistance = 0.085
+dominant = FLOW
+dominant_pct = 0.4645
+FLOW = 0.4645
+OBSERVE = 0.1700
+LOGIC = 0.2249
+CHOOSE = 0.1406
+state = flowing
+
+[CONNECT]
+depth = 0.6212
+type = ionic_interaction
+hydrophobic_ratio = 0.2137
+charge_positive = 0.3427
+charge_negative = 0.1653
+charge_neutral = 0.4919
+
+[DISSOLVE]
+rigidity = 0.9062
+potential = low
+wobble_entropy = 0.0938
+complementary_disruption = 0.3788
+
+[ENCODE]
+type = natural
+loss = 0.2188
+gc_content = 0.3655
+wobble_gc = 0.3373
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4458
+wobble_FLOW = 0.4458
+wobble_OBSERVE = 0.2169
+wobble_LOGIC = 0.2450
+wobble_CHOOSE = 0.0924
+entropy = 0.0938
+
+[OBSERVE]
+distance = 0.2396
+level = basic
+complementary_balance = 0.6212
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2771
+intensity = 0.2771
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2771
+  COMPOSE(LOGIC,FLOW): 0.1647
+  COMPOSE(OBSERVE,CHOOSE): 0.1365
+  COMPOSE(FLOW,LOGIC): 0.1084
+  COMPOSE(CHOOSE,FLOW): 0.0482
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4337
+modifier_dominant = FLOW
+modifier_pct = 0.5141
+primary_FLOW = 0.4337
+primary_OBSERVE = 0.2048
+primary_LOGIC = 0.2490
+primary_CHOOSE = 0.1124
+modifier_FLOW = 0.5141
+modifier_OBSERVE = 0.0884
+modifier_LOGIC = 0.1807
+modifier_CHOOSE = 0.2169
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0623
+aa_top5 = [
+  Lys: 0.2460  # basic
+  Ser: 0.1895  # hydroxyl
+  Glu: 0.1210  # acidic
+  Arg: 0.0806  # basic
+  Asp: 0.0444  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 248
+stop_codon = TAA
+loss = 0.0623
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

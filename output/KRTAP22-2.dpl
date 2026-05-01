@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KRTAP22-2 | unknown
+# CDS: 138 bp (46 codons)
+
+[IDENTITY]
+gene = KRTAP22-2
+organism = unknown
+transcript = ENST00000382830.2
+cds_length = 138
+codons = 46
+protein_length = 45
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = OBSERVE
+dominant_pct = 0.3116
+FLOW = 0.2536
+OBSERVE = 0.3116
+LOGIC = 0.2174
+CHOOSE = 0.2174
+state = flowing
+
+[CONNECT]
+depth = 0.9420
+type = membrane_embedded
+hydrophobic_ratio = 0.6667
+charge_positive = 0.1111
+charge_negative = 0.0444
+charge_neutral = 0.8444
+
+[DISSOLVE]
+rigidity = 0.9219
+potential = crystallized
+wobble_entropy = 0.0781
+complementary_disruption = 0.0580
+
+[ENCODE]
+type = moderate
+loss = 0.5781
+gc_content = 0.4348
+wobble_gc = 0.5000
+codon_diversity = 0.4219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3913
+wobble_FLOW = 0.1739
+wobble_OBSERVE = 0.3261
+wobble_LOGIC = 0.1087
+wobble_CHOOSE = 0.3913
+entropy = 0.0781
+
+[OBSERVE]
+distance = 0.0580
+level = standard
+complementary_balance = 0.9420
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,FLOW)
+top_compose_pct = 0.1957
+intensity = 0.1957
+compose_top5 = [
+  COMPOSE(OBSERVE,FLOW): 0.1957
+  COMPOSE(LOGIC,LOGIC): 0.1304
+  COMPOSE(OBSERVE,LOGIC): 0.1087
+  COMPOSE(FLOW,FLOW): 0.1087
+  COMPOSE(FLOW,LOGIC): 0.0870
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4565
+modifier_dominant = FLOW
+modifier_pct = 0.3696
+primary_FLOW = 0.2174
+primary_OBSERVE = 0.4565
+primary_LOGIC = 0.2174
+primary_CHOOSE = 0.1087
+modifier_FLOW = 0.3696
+modifier_OBSERVE = 0.1522
+modifier_LOGIC = 0.3261
+modifier_CHOOSE = 0.1522
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0506
+aa_top5 = [
+  Tyr: 0.2000  # aromatic
+  Gly: 0.1333  # simple
+  Ser: 0.1111  # hydroxyl
+  Cys: 0.0889  # sulfur
+  Asn: 0.0667  # amide
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 45
+stop_codon = TGA
+loss = 0.0506
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.standard.dominant.crystallized.membrane_embedded

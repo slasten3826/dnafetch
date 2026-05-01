@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: LRRTM2 | unknown
+# CDS: 1149 bp (383 codons)
+
+[IDENTITY]
+gene = LRRTM2
+organism = unknown
+transcript = ENST00000518785.1
+cds_length = 1149
+codons = 383
+protein_length = 382
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = FLOW
+dominant_pct = 0.2863
+FLOW = 0.2863
+OBSERVE = 0.2576
+LOGIC = 0.2097
+CHOOSE = 0.2463
+state = flowing
+
+[CONNECT]
+depth = 0.9347
+type = balanced_interface
+hydrophobic_ratio = 0.5079
+charge_positive = 0.1361
+charge_negative = 0.0942
+charge_neutral = 0.7696
+
+[DISSOLVE]
+rigidity = 0.9977
+potential = crystallized
+wobble_entropy = 0.0023
+complementary_disruption = 0.0653
+
+[ENCODE]
+type = moderate
+loss = 0.0625
+gc_content = 0.4560
+wobble_gc = 0.4987
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2768
+wobble_FLOW = 0.2559
+wobble_OBSERVE = 0.2454
+wobble_LOGIC = 0.2219
+wobble_CHOOSE = 0.2768
+entropy = 0.0023
+
+[OBSERVE]
+distance = 0.0287
+level = deep
+complementary_balance = 0.9347
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.0940
+intensity = 0.0940
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.0940
+  COMPOSE(CHOOSE,OBSERVE): 0.0914
+  COMPOSE(OBSERVE,OBSERVE): 0.0914
+  COMPOSE(FLOW,OBSERVE): 0.0888
+  COMPOSE(FLOW,FLOW): 0.0888
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3159
+modifier_dominant = OBSERVE
+modifier_pct = 0.3029
+primary_FLOW = 0.3159
+primary_OBSERVE = 0.2245
+primary_LOGIC = 0.2089
+primary_CHOOSE = 0.2507
+modifier_FLOW = 0.2872
+modifier_OBSERVE = 0.3029
+modifier_LOGIC = 0.1984
+modifier_CHOOSE = 0.2115
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0258
+aa_top5 = [
+  Leu: 0.1335  # aliphatic
+  Ser: 0.0838  # hydroxyl
+  Thr: 0.0838  # hydroxyl
+  Ile: 0.0628  # aliphatic
+  Glu: 0.0602  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 382
+stop_codon = TAA
+loss = 0.0258
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.deep.strong.crystallized.balanced_interface

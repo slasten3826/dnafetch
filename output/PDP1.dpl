@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PDP1 | unknown
+# CDS: 441 bp (147 codons)
+
+[IDENTITY]
+gene = PDP1
+organism = unknown
+transcript = ENST00000521144.1
+cds_length = 441
+codons = 147
+protein_length = 147
+stop_codon = none
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = FLOW
+dominant_pct = 0.2834
+FLOW = 0.2834
+OBSERVE = 0.2494
+LOGIC = 0.2041
+CHOOSE = 0.2630
+state = flowing
+
+[CONNECT]
+depth = 0.9070
+type = membrane_embedded
+hydrophobic_ratio = 0.5510
+charge_positive = 0.1429
+charge_negative = 0.0612
+charge_neutral = 0.7959
+
+[DISSOLVE]
+rigidity = 0.9868
+potential = crystallized
+wobble_entropy = 0.0132
+complementary_disruption = 0.0930
+
+[ENCODE]
+type = natural
+loss = 0.2031
+gc_content = 0.4671
+wobble_gc = 0.4422
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3061
+wobble_FLOW = 0.2517
+wobble_OBSERVE = 0.3061
+wobble_LOGIC = 0.1769
+wobble_CHOOSE = 0.2653
+entropy = 0.0132
+
+[OBSERVE]
+distance = 0.0204
+level = deep
+complementary_balance = 0.9070
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.0952
+intensity = 0.0952
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.0952
+  COMPOSE(CHOOSE,CHOOSE): 0.0884
+  COMPOSE(CHOOSE,FLOW): 0.0884
+  COMPOSE(FLOW,FLOW): 0.0884
+  COMPOSE(LOGIC,CHOOSE): 0.0748
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2993
+modifier_dominant = FLOW
+modifier_pct = 0.2993
+primary_FLOW = 0.2993
+primary_OBSERVE = 0.2245
+primary_LOGIC = 0.2109
+primary_CHOOSE = 0.2653
+modifier_FLOW = 0.2993
+modifier_OBSERVE = 0.2177
+modifier_LOGIC = 0.2245
+modifier_CHOOSE = 0.2585
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0213
+aa_top5 = [
+  Pro: 0.0884  # cyclic
+  Leu: 0.0816  # aliphatic
+  Ser: 0.0816  # hydroxyl
+  Ala: 0.0748  # simple
+  Arg: 0.0680  # basic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 147
+stop_codon = none
+loss = 0.0213
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.strong.crystallized.membrane_embedded

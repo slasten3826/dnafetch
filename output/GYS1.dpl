@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GYS1 | unknown
+# CDS: 123 bp (41 codons)
+
+[IDENTITY]
+gene = GYS1
+organism = unknown
+transcript = ENST00000594220.1
+cds_length = 123
+codons = 41
+protein_length = 40
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = CHOOSE
+dominant_pct = 0.3496
+FLOW = 0.1951
+OBSERVE = 0.2195
+LOGIC = 0.2358
+CHOOSE = 0.3496
+state = flowing
+
+[CONNECT]
+depth = 0.8618
+type = balanced_interface
+hydrophobic_ratio = 0.4750
+charge_positive = 0.0750
+charge_negative = 0.0000
+charge_neutral = 0.9250
+
+[DISSOLVE]
+rigidity = 0.9330
+potential = crystallized
+wobble_entropy = 0.0670
+complementary_disruption = 0.1382
+
+[ENCODE]
+type = moderate
+loss = 0.5938
+gc_content = 0.5854
+wobble_gc = 0.5366
+codon_diversity = 0.4062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4146
+wobble_FLOW = 0.1951
+wobble_OBSERVE = 0.2683
+wobble_LOGIC = 0.1220
+wobble_CHOOSE = 0.4146
+entropy = 0.0670
+
+[OBSERVE]
+distance = 0.1138
+level = mild
+complementary_balance = 0.8618
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1707
+intensity = 0.1707
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1707
+  COMPOSE(FLOW,LOGIC): 0.1463
+  COMPOSE(FLOW,CHOOSE): 0.1220
+  COMPOSE(CHOOSE,CHOOSE): 0.0976
+  COMPOSE(LOGIC,CHOOSE): 0.0976
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3415
+modifier_dominant = CHOOSE
+modifier_pct = 0.4878
+primary_FLOW = 0.3415
+primary_OBSERVE = 0.2439
+primary_LOGIC = 0.2683
+primary_CHOOSE = 0.1463
+modifier_FLOW = 0.0488
+modifier_OBSERVE = 0.1463
+modifier_LOGIC = 0.3171
+modifier_CHOOSE = 0.4878
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0707
+aa_top5 = [
+  Ser: 0.3000  # hydroxyl
+  Thr: 0.1250  # hydroxyl
+  Pro: 0.1000  # cyclic
+  Ala: 0.1000  # simple
+  Gly: 0.1000  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 40
+stop_codon = TAG
+loss = 0.0707
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.balanced_interface

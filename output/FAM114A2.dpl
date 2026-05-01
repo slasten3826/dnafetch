@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM114A2 | unknown
+# CDS: 138 bp (46 codons)
+
+[IDENTITY]
+gene = FAM114A2
+organism = unknown
+transcript = ENST00000524246.1
+cds_length = 138
+codons = 46
+protein_length = 45
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = CHOOSE
+dominant_pct = 0.2826
+FLOW = 0.2681
+OBSERVE = 0.2391
+LOGIC = 0.2101
+CHOOSE = 0.2826
+state = flowing
+
+[CONNECT]
+depth = 0.8986
+type = membrane_embedded
+hydrophobic_ratio = 0.6222
+charge_positive = 0.1556
+charge_negative = 0.0222
+charge_neutral = 0.8222
+
+[DISSOLVE]
+rigidity = 0.9709
+potential = crystallized
+wobble_entropy = 0.0291
+complementary_disruption = 0.1014
+
+[ENCODE]
+type = moderate
+loss = 0.4688
+gc_content = 0.4928
+wobble_gc = 0.4565
+codon_diversity = 0.5312
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3696
+wobble_FLOW = 0.3696
+wobble_OBSERVE = 0.1739
+wobble_LOGIC = 0.2391
+wobble_CHOOSE = 0.2174
+entropy = 0.0291
+
+[OBSERVE]
+distance = 0.0145
+level = strong
+complementary_balance = 0.8986
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1304
+intensity = 0.1304
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1304
+  COMPOSE(CHOOSE,FLOW): 0.1304
+  COMPOSE(FLOW,OBSERVE): 0.1087
+  COMPOSE(LOGIC,OBSERVE): 0.0870
+  COMPOSE(OBSERVE,OBSERVE): 0.0652
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3043
+modifier_dominant = OBSERVE
+modifier_pct = 0.3261
+primary_FLOW = 0.2174
+primary_OBSERVE = 0.2174
+primary_LOGIC = 0.2609
+primary_CHOOSE = 0.3043
+modifier_FLOW = 0.2174
+modifier_OBSERVE = 0.3261
+modifier_LOGIC = 0.1304
+modifier_CHOOSE = 0.3261
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0336
+aa_top5 = [
+  Ala: 0.1333  # simple
+  His: 0.0889  # aromatic
+  Leu: 0.0889  # aliphatic
+  Val: 0.0889  # aliphatic
+  Ile: 0.0889  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 45
+stop_codon = TGA
+loss = 0.0336
+
+[SIGNATURE]
+fingerprint = CHOOSE.FLOW.strong.dominant.crystallized.membrane_embedded

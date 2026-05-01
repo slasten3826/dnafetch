@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HP1BP3 | unknown
+# CDS: 27 bp (9 codons)
+
+[IDENTITY]
+gene = HP1BP3
+organism = unknown
+transcript = ENST00000443615.1
+cds_length = 27
+codons = 9
+protein_length = 8
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.798
+resistance = 0.202
+dominant = LOGIC
+dominant_pct = 0.5185
+FLOW = 0.2963
+OBSERVE = 0.1481
+LOGIC = 0.5185
+CHOOSE = 0.0370
+state = flowing
+
+[CONNECT]
+depth = 0.3704
+type = membrane_embedded
+hydrophobic_ratio = 0.6250
+charge_positive = 0.2500
+charge_negative = 0.1250
+charge_neutral = 0.6250
+
+[DISSOLVE]
+rigidity = 0.4591
+potential = high
+wobble_entropy = 0.5409
+complementary_disruption = 0.6296
+
+[ENCODE]
+type = optimized
+loss = 0.8750
+gc_content = 0.5556
+wobble_gc = 0.6667
+codon_diversity = 0.1250
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.6667
+wobble_FLOW = 0.3333
+wobble_OBSERVE = 0.0000
+wobble_LOGIC = 0.6667
+wobble_CHOOSE = 0.0000
+entropy = 0.5409
+
+[OBSERVE]
+distance = 0.2222
+level = basic
+complementary_balance = 0.3704
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,OBSERVE)
+top_compose_pct = 0.2222
+intensity = 0.2222
+compose_top5 = [
+  COMPOSE(LOGIC,OBSERVE): 0.2222
+  COMPOSE(FLOW,LOGIC): 0.2222
+  COMPOSE(FLOW,OBSERVE): 0.1111
+  COMPOSE(LOGIC,FLOW): 0.1111
+  COMPOSE(LOGIC,CHOOSE): 0.1111
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.5556
+modifier_dominant = OBSERVE
+modifier_pct = 0.3333
+primary_FLOW = 0.3333
+primary_OBSERVE = 0.1111
+primary_LOGIC = 0.5556
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.2222
+modifier_OBSERVE = 0.3333
+modifier_LOGIC = 0.3333
+modifier_CHOOSE = 0.1111
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0829
+aa_top5 = [
+  Val: 0.2500  # aliphatic
+  Arg: 0.2500  # basic
+  Met: 0.1250  # sulfur
+  Glu: 0.1250  # acidic
+  Ala: 0.1250  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 8
+stop_codon = TAG
+loss = 0.0829
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.high.membrane_embedded

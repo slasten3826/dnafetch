@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM178B | unknown
+# CDS: 2040 bp (680 codons)
+
+[IDENTITY]
+gene = FAM178B
+organism = unknown
+transcript = ENST00000490605.3
+cds_length = 2040
+codons = 680
+protein_length = 679
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.979
+resistance = 0.021
+dominant = CHOOSE
+dominant_pct = 0.3260
+FLOW = 0.1936
+OBSERVE = 0.1882
+LOGIC = 0.2922
+CHOOSE = 0.3260
+state = flowing
+
+[CONNECT]
+depth = 0.9608
+type = membrane_embedded
+hydrophobic_ratio = 0.5714
+charge_positive = 0.1134
+charge_negative = 0.1134
+charge_neutral = 0.7732
+
+[DISSOLVE]
+rigidity = 0.8883
+potential = crystallized
+wobble_entropy = 0.1117
+complementary_disruption = 0.0392
+
+[ENCODE]
+type = engineered
+loss = 0.0312
+gc_content = 0.6181
+wobble_gc = 0.7691
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4088
+wobble_FLOW = 0.1074
+wobble_OBSERVE = 0.1235
+wobble_LOGIC = 0.4088
+wobble_CHOOSE = 0.3603
+entropy = 0.1117
+
+[OBSERVE]
+distance = 0.0338
+level = deep
+complementary_balance = 0.9608
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1603
+intensity = 0.1603
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1603
+  COMPOSE(LOGIC,FLOW): 0.1132
+  COMPOSE(CHOOSE,FLOW): 0.1118
+  COMPOSE(CHOOSE,CHOOSE): 0.0926
+  COMPOSE(LOGIC,CHOOSE): 0.0618
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3941
+modifier_dominant = OBSERVE
+modifier_pct = 0.2926
+primary_FLOW = 0.1853
+primary_OBSERVE = 0.1485
+primary_LOGIC = 0.2721
+primary_CHOOSE = 0.3941
+modifier_FLOW = 0.2882
+modifier_OBSERVE = 0.2926
+modifier_LOGIC = 0.1956
+modifier_CHOOSE = 0.2235
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0368
+aa_top5 = [
+  Leu: 0.1797  # aliphatic
+  Pro: 0.0928  # cyclic
+  Gln: 0.0795  # amide
+  Ser: 0.0692  # hydroxyl
+  Glu: 0.0692  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 679
+stop_codon = TAA
+loss = 0.0368
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.dominant.crystallized.membrane_embedded

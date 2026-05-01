@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RABL6 | unknown
+# CDS: 432 bp (144 codons)
+
+[IDENTITY]
+gene = RABL6
+organism = unknown
+transcript = ENST00000436380.5
+cds_length = 432
+codons = 144
+protein_length = 143
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = CHOOSE
+dominant_pct = 0.2824
+FLOW = 0.2199
+OBSERVE = 0.2338
+LOGIC = 0.2639
+CHOOSE = 0.2824
+state = flowing
+
+[CONNECT]
+depth = 0.9676
+type = balanced_interface
+hydrophobic_ratio = 0.5455
+charge_positive = 0.1189
+charge_negative = 0.1259
+charge_neutral = 0.7552
+
+[DISSOLVE]
+rigidity = 0.8801
+potential = crystallized
+wobble_entropy = 0.1199
+complementary_disruption = 0.0324
+
+[ENCODE]
+type = engineered
+loss = 0.2031
+gc_content = 0.5463
+wobble_gc = 0.7639
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4236
+wobble_FLOW = 0.0764
+wobble_OBSERVE = 0.1597
+wobble_LOGIC = 0.3403
+wobble_CHOOSE = 0.4236
+entropy = 0.1199
+
+[OBSERVE]
+distance = 0.0185
+level = strong
+complementary_balance = 0.9676
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1250
+intensity = 0.1250
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1250
+  COMPOSE(FLOW,FLOW): 0.0972
+  COMPOSE(LOGIC,OBSERVE): 0.0903
+  COMPOSE(FLOW,OBSERVE): 0.0764
+  COMPOSE(CHOOSE,OBSERVE): 0.0764
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2917
+modifier_dominant = FLOW
+modifier_pct = 0.3403
+primary_FLOW = 0.2431
+primary_OBSERVE = 0.2222
+primary_LOGIC = 0.2917
+primary_CHOOSE = 0.2431
+modifier_FLOW = 0.3403
+modifier_OBSERVE = 0.3194
+modifier_LOGIC = 0.1597
+modifier_CHOOSE = 0.1806
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0204
+aa_top5 = [
+  Val: 0.0909  # aliphatic
+  Ser: 0.0839  # hydroxyl
+  Leu: 0.0839  # aliphatic
+  Asp: 0.0699  # acidic
+  Phe: 0.0699  # aromatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 143
+stop_codon = TAG
+loss = 0.0204
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.dominant.crystallized.balanced_interface

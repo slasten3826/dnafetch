@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NOS1AP | unknown
+# CDS: 636 bp (212 codons)
+
+[IDENTITY]
+gene = NOS1AP
+organism = unknown
+transcript = ENST00000493151.1
+cds_length = 636
+codons = 212
+protein_length = 211
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.971
+resistance = 0.029
+dominant = CHOOSE
+dominant_pct = 0.3223
+FLOW = 0.1667
+OBSERVE = 0.1950
+LOGIC = 0.3160
+CHOOSE = 0.3223
+state = flowing
+
+[CONNECT]
+depth = 0.9654
+type = ionic_interaction
+hydrophobic_ratio = 0.5403
+charge_positive = 0.1043
+charge_negative = 0.1564
+charge_neutral = 0.7393
+
+[DISSOLVE]
+rigidity = 0.8349
+potential = crystallized
+wobble_entropy = 0.1651
+complementary_disruption = 0.0346
+
+[ENCODE]
+type = engineered
+loss = 0.2344
+gc_content = 0.6384
+wobble_gc = 0.8113
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4481
+wobble_FLOW = 0.0566
+wobble_OBSERVE = 0.1321
+wobble_LOGIC = 0.4481
+wobble_CHOOSE = 0.3632
+entropy = 0.1651
+
+[OBSERVE]
+distance = 0.0063
+level = strong
+complementary_balance = 0.9654
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1557
+intensity = 0.1557
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1557
+  COMPOSE(CHOOSE,OBSERVE): 0.1415
+  COMPOSE(LOGIC,CHOOSE): 0.0943
+  COMPOSE(CHOOSE,FLOW): 0.0896
+  COMPOSE(OBSERVE,CHOOSE): 0.0755
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3538
+modifier_dominant = FLOW
+modifier_pct = 0.3066
+primary_FLOW = 0.1368
+primary_OBSERVE = 0.1698
+primary_LOGIC = 0.3538
+primary_CHOOSE = 0.3396
+modifier_FLOW = 0.3066
+modifier_OBSERVE = 0.2830
+modifier_LOGIC = 0.1462
+modifier_CHOOSE = 0.2642
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0403
+aa_top5 = [
+  Leu: 0.1754  # aliphatic
+  Ala: 0.0948  # simple
+  Glu: 0.0948  # acidic
+  Ser: 0.0900  # hydroxyl
+  Pro: 0.0711  # cyclic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 211
+stop_codon = TAG
+loss = 0.0403
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.dominant.crystallized.ionic_interaction

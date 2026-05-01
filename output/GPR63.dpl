@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GPR63 | unknown
+# CDS: 1260 bp (420 codons)
+
+[IDENTITY]
+gene = GPR63
+organism = unknown
+transcript = ENST00000229955.4
+cds_length = 1260
+codons = 420
+protein_length = 419
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = OBSERVE
+dominant_pct = 0.3159
+FLOW = 0.2278
+OBSERVE = 0.3159
+LOGIC = 0.2032
+CHOOSE = 0.2532
+state = flowing
+
+[CONNECT]
+depth = 0.8619
+type = membrane_embedded
+hydrophobic_ratio = 0.6587
+charge_positive = 0.0955
+charge_negative = 0.0334
+charge_neutral = 0.8711
+
+[DISSOLVE]
+rigidity = 0.9845
+potential = crystallized
+wobble_entropy = 0.0155
+complementary_disruption = 0.1381
+
+[ENCODE]
+type = moderate
+loss = 0.0469
+gc_content = 0.4563
+wobble_gc = 0.5286
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3000
+wobble_FLOW = 0.1714
+wobble_OBSERVE = 0.3000
+wobble_LOGIC = 0.2405
+wobble_CHOOSE = 0.2881
+entropy = 0.0155
+
+[OBSERVE]
+distance = 0.0627
+level = standard
+complementary_balance = 0.8619
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1238
+intensity = 0.1238
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1238
+  COMPOSE(FLOW,OBSERVE): 0.1167
+  COMPOSE(CHOOSE,OBSERVE): 0.0952
+  COMPOSE(LOGIC,CHOOSE): 0.0786
+  COMPOSE(LOGIC,OBSERVE): 0.0714
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3167
+modifier_dominant = OBSERVE
+modifier_pct = 0.4071
+primary_FLOW = 0.3167
+primary_OBSERVE = 0.2405
+primary_LOGIC = 0.2167
+primary_CHOOSE = 0.2262
+modifier_FLOW = 0.1952
+modifier_OBSERVE = 0.4071
+modifier_LOGIC = 0.1524
+modifier_CHOOSE = 0.2452
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0298
+aa_top5 = [
+  Leu: 0.1289  # aliphatic
+  Phe: 0.0907  # aromatic
+  Ile: 0.0811  # aliphatic
+  Ala: 0.0788  # simple
+  Ser: 0.0740  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 419
+stop_codon = TGA
+loss = 0.0298
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PTGDR2 | unknown
+# CDS: 1188 bp (396 codons)
+
+[IDENTITY]
+gene = PTGDR2
+organism = unknown
+transcript = ENST00000332539.5
+cds_length = 1188
+codons = 396
+protein_length = 395
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.942
+resistance = 0.058
+dominant = CHOOSE
+dominant_pct = 0.3695
+FLOW = 0.1279
+OBSERVE = 0.1835
+LOGIC = 0.3190
+CHOOSE = 0.3695
+state = flowing
+
+[CONNECT]
+depth = 0.8939
+type = membrane_embedded
+hydrophobic_ratio = 0.6203
+charge_positive = 0.1316
+charge_negative = 0.0456
+charge_neutral = 0.8228
+
+[DISSOLVE]
+rigidity = 0.6852
+potential = low
+wobble_entropy = 0.3148
+complementary_disruption = 0.1061
+
+[ENCODE]
+type = engineered
+loss = 0.2031
+gc_content = 0.6886
+wobble_gc = 0.9268
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5101
+wobble_FLOW = 0.0328
+wobble_OBSERVE = 0.0404
+wobble_LOGIC = 0.4167
+wobble_CHOOSE = 0.5101
+entropy = 0.3148
+
+[OBSERVE]
+distance = 0.0505
+level = standard
+complementary_balance = 0.8939
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1515
+intensity = 0.1515
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1515
+  COMPOSE(LOGIC,CHOOSE): 0.1086
+  COMPOSE(LOGIC,OBSERVE): 0.0909
+  COMPOSE(CHOOSE,LOGIC): 0.0884
+  COMPOSE(OBSERVE,OBSERVE): 0.0581
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3434
+modifier_dominant = OBSERVE
+modifier_pct = 0.3409
+primary_FLOW = 0.1894
+primary_OBSERVE = 0.1692
+primary_LOGIC = 0.2980
+primary_CHOOSE = 0.3434
+modifier_FLOW = 0.1616
+modifier_OBSERVE = 0.3409
+modifier_LOGIC = 0.2424
+modifier_CHOOSE = 0.2551
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0392
+aa_top5 = [
+  Leu: 0.1620  # aliphatic
+  Ala: 0.1089  # simple
+  Ser: 0.1013  # hydroxyl
+  Val: 0.0911  # aliphatic
+  Arg: 0.0886  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 395
+stop_codon = TAG
+loss = 0.0392
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.low.membrane_embedded

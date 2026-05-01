@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MYOD1 | unknown
+# CDS: 963 bp (321 codons)
+
+[IDENTITY]
+gene = MYOD1
+organism = unknown
+transcript = ENST00000250003.4
+cds_length = 963
+codons = 321
+protein_length = 320
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.935
+resistance = 0.065
+dominant = CHOOSE
+dominant_pct = 0.3884
+FLOW = 0.1734
+OBSERVE = 0.1267
+LOGIC = 0.3115
+CHOOSE = 0.3884
+state = flowing
+
+[CONNECT]
+depth = 0.8764
+type = balanced_interface
+hydrophobic_ratio = 0.5406
+charge_positive = 0.1375
+charge_negative = 0.1375
+charge_neutral = 0.7250
+
+[DISSOLVE]
+rigidity = 0.7713
+potential = low
+wobble_entropy = 0.2287
+complementary_disruption = 0.1236
+
+[ENCODE]
+type = engineered
+loss = 0.1719
+gc_content = 0.6999
+wobble_gc = 0.8660
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5202
+wobble_FLOW = 0.0685
+wobble_OBSERVE = 0.0654
+wobble_LOGIC = 0.3458
+wobble_CHOOSE = 0.5202
+entropy = 0.2287
+
+[OBSERVE]
+distance = 0.0768
+level = standard
+complementary_balance = 0.8764
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1371
+intensity = 0.1371
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1371
+  COMPOSE(LOGIC,CHOOSE): 0.1277
+  COMPOSE(CHOOSE,CHOOSE): 0.1153
+  COMPOSE(CHOOSE,OBSERVE): 0.0779
+  COMPOSE(CHOOSE,LOGIC): 0.0779
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3583
+modifier_dominant = CHOOSE
+modifier_pct = 0.3240
+primary_FLOW = 0.1776
+primary_OBSERVE = 0.1433
+primary_LOGIC = 0.3583
+primary_CHOOSE = 0.3209
+modifier_FLOW = 0.2741
+modifier_OBSERVE = 0.1713
+modifier_LOGIC = 0.2305
+modifier_CHOOSE = 0.3240
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0348
+aa_top5 = [
+  Ala: 0.1281  # simple
+  Pro: 0.1156  # cyclic
+  Ser: 0.0969  # hydroxyl
+  Arg: 0.0844  # basic
+  Leu: 0.0813  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 320
+stop_codon = TGA
+loss = 0.0348
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.low.balanced_interface

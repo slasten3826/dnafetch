@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MT-ND5 | unknown
+# CDS: 201 bp (67 codons)
+
+[IDENTITY]
+gene = MT-ND5
+organism = unknown
+transcript = ENST00000361567.2
+cds_length = 201
+codons = 67
+protein_length = 66
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.956
+resistance = 0.044
+dominant = FLOW
+dominant_pct = 0.3433
+FLOW = 0.3433
+OBSERVE = 0.2139
+LOGIC = 0.1294
+CHOOSE = 0.3134
+state = flowing
+
+[CONNECT]
+depth = 0.6866
+type = balanced_interface
+hydrophobic_ratio = 0.5455
+charge_positive = 0.0909
+charge_negative = 0.0606
+charge_neutral = 0.8485
+
+[DISSOLVE]
+rigidity = 0.7927
+potential = low
+wobble_entropy = 0.2073
+complementary_disruption = 0.3134
+
+[ENCODE]
+type = moderate
+loss = 0.4688
+gc_content = 0.4428
+wobble_gc = 0.4925
+codon_diversity = 0.5312
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4627
+wobble_FLOW = 0.3731
+wobble_OBSERVE = 0.1343
+wobble_LOGIC = 0.0299
+wobble_CHOOSE = 0.4627
+entropy = 0.2073
+
+[OBSERVE]
+distance = 0.0299
+level = deep
+complementary_balance = 0.6866
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1642
+intensity = 0.1642
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1642
+  COMPOSE(FLOW,FLOW): 0.1194
+  COMPOSE(CHOOSE,OBSERVE): 0.1045
+  COMPOSE(FLOW,CHOOSE): 0.1045
+  COMPOSE(OBSERVE,CHOOSE): 0.0896
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4030
+modifier_dominant = OBSERVE
+modifier_pct = 0.3134
+primary_FLOW = 0.4030
+primary_OBSERVE = 0.1940
+primary_LOGIC = 0.2090
+primary_CHOOSE = 0.1940
+modifier_FLOW = 0.2537
+modifier_OBSERVE = 0.3134
+modifier_LOGIC = 0.1493
+modifier_CHOOSE = 0.2836
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0426
+aa_top5 = [
+  Ile: 0.1515  # aliphatic
+  Leu: 0.1212  # aliphatic
+  Ser: 0.1061  # hydroxyl
+  Thr: 0.1061  # hydroxyl
+  Gly: 0.0909  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 66
+stop_codon = TGA
+loss = 0.0426
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.deep.dominant.low.balanced_interface

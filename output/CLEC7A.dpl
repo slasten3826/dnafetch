@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CLEC7A | unknown
+# CDS: 411 bp (137 codons)
+
+[IDENTITY]
+gene = CLEC7A
+organism = unknown
+transcript = ENST00000525605.1
+cds_length = 411
+codons = 137
+protein_length = 136
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.974
+resistance = 0.026
+dominant = OBSERVE
+dominant_pct = 0.3431
+FLOW = 0.2652
+OBSERVE = 0.3431
+LOGIC = 0.2336
+CHOOSE = 0.1582
+state = flowing
+
+[CONNECT]
+depth = 0.8467
+type = membrane_embedded
+hydrophobic_ratio = 0.6397
+charge_positive = 0.1029
+charge_negative = 0.0882
+charge_neutral = 0.8088
+
+[DISSOLVE]
+rigidity = 0.9687
+potential = crystallized
+wobble_entropy = 0.0313
+complementary_disruption = 0.1533
+
+[ENCODE]
+type = natural
+loss = 0.1875
+gc_content = 0.3917
+wobble_gc = 0.3869
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3723
+wobble_FLOW = 0.2409
+wobble_OBSERVE = 0.3723
+wobble_LOGIC = 0.2190
+wobble_CHOOSE = 0.1679
+entropy = 0.0313
+
+[OBSERVE]
+distance = 0.0779
+level = standard
+complementary_balance = 0.8467
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1387
+intensity = 0.1387
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1387
+  COMPOSE(FLOW,OBSERVE): 0.0949
+  COMPOSE(LOGIC,FLOW): 0.0876
+  COMPOSE(OBSERVE,FLOW): 0.0730
+  COMPOSE(FLOW,FLOW): 0.0730
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3066
+modifier_dominant = OBSERVE
+modifier_pct = 0.3504
+primary_FLOW = 0.2628
+primary_OBSERVE = 0.3066
+primary_LOGIC = 0.2920
+primary_CHOOSE = 0.1387
+modifier_FLOW = 0.2920
+modifier_OBSERVE = 0.3504
+modifier_LOGIC = 0.1898
+modifier_CHOOSE = 0.1679
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0251
+aa_top5 = [
+  Leu: 0.1250  # aliphatic
+  Ile: 0.0809  # aliphatic
+  Gly: 0.0735  # simple
+  Val: 0.0735  # aliphatic
+  Tyr: 0.0662  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 136
+stop_codon = TAA
+loss = 0.0251
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.dominant.crystallized.membrane_embedded

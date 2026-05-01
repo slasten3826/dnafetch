@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000284684 | unknown
+# CDS: 138 bp (46 codons)
+
+[IDENTITY]
+gene = ENSG00000284684
+organism = unknown
+transcript = ENST00000636216.1
+cds_length = 138
+codons = 46
+protein_length = 45
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.967
+resistance = 0.033
+dominant = OBSERVE
+dominant_pct = 0.3768
+FLOW = 0.1739
+OBSERVE = 0.3768
+LOGIC = 0.2464
+CHOOSE = 0.2029
+state = flowing
+
+[CONNECT]
+depth = 0.7536
+type = membrane_embedded
+hydrophobic_ratio = 0.7556
+charge_positive = 0.0444
+charge_negative = 0.1111
+charge_neutral = 0.8444
+
+[DISSOLVE]
+rigidity = 0.9657
+potential = crystallized
+wobble_entropy = 0.0343
+complementary_disruption = 0.2464
+
+[ENCODE]
+type = moderate
+loss = 0.5938
+gc_content = 0.4493
+wobble_gc = 0.5870
+codon_diversity = 0.4062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3261
+wobble_FLOW = 0.1304
+wobble_OBSERVE = 0.2826
+wobble_LOGIC = 0.2609
+wobble_CHOOSE = 0.3261
+entropy = 0.0343
+
+[OBSERVE]
+distance = 0.1304
+level = basic
+complementary_balance = 0.7536
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1739
+intensity = 0.1739
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1739
+  COMPOSE(CHOOSE,OBSERVE): 0.1304
+  COMPOSE(OBSERVE,OBSERVE): 0.1304
+  COMPOSE(LOGIC,FLOW): 0.1087
+  COMPOSE(FLOW,OBSERVE): 0.0870
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4348
+modifier_dominant = OBSERVE
+modifier_pct = 0.4130
+primary_FLOW = 0.1304
+primary_OBSERVE = 0.4348
+primary_LOGIC = 0.2609
+primary_CHOOSE = 0.1739
+modifier_FLOW = 0.2609
+modifier_OBSERVE = 0.4130
+modifier_LOGIC = 0.2174
+modifier_CHOOSE = 0.1087
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0427
+aa_top5 = [
+  Leu: 0.1333  # aliphatic
+  Phe: 0.1333  # aromatic
+  Cys: 0.1333  # sulfur
+  Glu: 0.0889  # acidic
+  Tyr: 0.0889  # aromatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 45
+stop_codon = TGA
+loss = 0.0427
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.basic.dominant.crystallized.membrane_embedded

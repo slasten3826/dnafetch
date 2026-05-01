@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000262526 | unknown
+# CDS: 258 bp (86 codons)
+
+[IDENTITY]
+gene = ENSG00000262526
+organism = unknown
+transcript = ENST00000570760.2
+cds_length = 258
+codons = 86
+protein_length = 85
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = CHOOSE
+dominant_pct = 0.3023
+FLOW = 0.2287
+OBSERVE = 0.2674
+LOGIC = 0.2016
+CHOOSE = 0.3023
+state = flowing
+
+[CONNECT]
+depth = 0.8605
+type = membrane_embedded
+hydrophobic_ratio = 0.5647
+charge_positive = 0.0941
+charge_negative = 0.0588
+charge_neutral = 0.8471
+
+[DISSOLVE]
+rigidity = 0.9990
+potential = crystallized
+wobble_entropy = 0.0010
+complementary_disruption = 0.1395
+
+[ENCODE]
+type = moderate
+loss = 0.3750
+gc_content = 0.5039
+wobble_gc = 0.5000
+codon_diversity = 0.6250
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2674
+wobble_FLOW = 0.2326
+wobble_OBSERVE = 0.2674
+wobble_LOGIC = 0.2558
+wobble_CHOOSE = 0.2442
+entropy = 0.0010
+
+[OBSERVE]
+distance = 0.0349
+level = deep
+complementary_balance = 0.8605
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1279
+intensity = 0.1279
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1279
+  COMPOSE(FLOW,CHOOSE): 0.1279
+  COMPOSE(OBSERVE,OBSERVE): 0.0930
+  COMPOSE(CHOOSE,OBSERVE): 0.0930
+  COMPOSE(OBSERVE,CHOOSE): 0.0814
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2791
+modifier_dominant = CHOOSE
+modifier_pct = 0.3837
+primary_FLOW = 0.2791
+primary_OBSERVE = 0.2442
+primary_LOGIC = 0.1977
+primary_CHOOSE = 0.2791
+modifier_FLOW = 0.1744
+modifier_OBSERVE = 0.2907
+modifier_LOGIC = 0.1512
+modifier_CHOOSE = 0.3837
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0394
+aa_top5 = [
+  Pro: 0.1294  # cyclic
+  Leu: 0.1294  # aliphatic
+  Thr: 0.1294  # hydroxyl
+  Ser: 0.0941  # hydroxyl
+  Phe: 0.0588  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 85
+stop_codon = TAA
+loss = 0.0394
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.deep.dominant.crystallized.membrane_embedded

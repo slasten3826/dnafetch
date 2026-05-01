@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PYCR1 | unknown
+# CDS: 81 bp (27 codons)
+
+[IDENTITY]
+gene = PYCR1
+organism = unknown
+transcript = ENST00000585244.1
+cds_length = 81
+codons = 27
+protein_length = 26
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.876
+resistance = 0.124
+dominant = LOGIC
+dominant_pct = 0.4938
+FLOW = 0.1235
+OBSERVE = 0.1235
+LOGIC = 0.4938
+CHOOSE = 0.2593
+state = flowing
+
+[CONNECT]
+depth = 0.7654
+type = membrane_embedded
+hydrophobic_ratio = 0.6538
+charge_positive = 0.1154
+charge_negative = 0.0769
+charge_neutral = 0.8077
+
+[DISSOLVE]
+rigidity = 0.8405
+potential = low
+wobble_entropy = 0.1595
+complementary_disruption = 0.2346
+
+[ENCODE]
+type = engineered
+loss = 0.7188
+gc_content = 0.7531
+wobble_gc = 0.8148
+codon_diversity = 0.2812
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4444
+wobble_FLOW = 0.0741
+wobble_OBSERVE = 0.1111
+wobble_LOGIC = 0.4444
+wobble_CHOOSE = 0.3704
+entropy = 0.1595
+
+[OBSERVE]
+distance = 0.2346
+level = basic
+complementary_balance = 0.7654
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.3333
+intensity = 0.3333
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.3333
+  COMPOSE(LOGIC,OBSERVE): 0.1481
+  COMPOSE(CHOOSE,LOGIC): 0.1111
+  COMPOSE(LOGIC,FLOW): 0.0741
+  COMPOSE(CHOOSE,CHOOSE): 0.0741
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.5556
+modifier_dominant = LOGIC
+modifier_pct = 0.4815
+primary_FLOW = 0.1481
+primary_OBSERVE = 0.0370
+primary_LOGIC = 0.5556
+primary_CHOOSE = 0.2593
+modifier_FLOW = 0.1481
+modifier_OBSERVE = 0.2222
+modifier_LOGIC = 0.4815
+modifier_CHOOSE = 0.1481
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0808
+aa_top5 = [
+  Gly: 0.3462  # simple
+  Val: 0.1538  # aliphatic
+  Arg: 0.1154  # basic
+  Asp: 0.0769  # acidic
+  Pro: 0.0769  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 26
+stop_codon = TAG
+loss = 0.0808
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.low.membrane_embedded

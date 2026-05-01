@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FGF3 | unknown
+# CDS: 720 bp (240 codons)
+
+[IDENTITY]
+gene = FGF3
+organism = unknown
+transcript = ENST00000334134.4
+cds_length = 720
+codons = 240
+protein_length = 239
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.956
+resistance = 0.044
+dominant = LOGIC
+dominant_pct = 0.3486
+FLOW = 0.1722
+OBSERVE = 0.1569
+LOGIC = 0.3486
+CHOOSE = 0.3222
+state = flowing
+
+[CONNECT]
+depth = 0.9583
+type = ionic_interaction
+hydrophobic_ratio = 0.5356
+charge_positive = 0.2050
+charge_negative = 0.0753
+charge_neutral = 0.7197
+
+[DISSOLVE]
+rigidity = 0.8131
+potential = crystallized
+wobble_entropy = 0.1869
+complementary_disruption = 0.0417
+
+[ENCODE]
+type = engineered
+loss = 0.1875
+gc_content = 0.6708
+wobble_gc = 0.8375
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4333
+wobble_FLOW = 0.0542
+wobble_OBSERVE = 0.1083
+wobble_LOGIC = 0.4333
+wobble_CHOOSE = 0.4042
+entropy = 0.1869
+
+[OBSERVE]
+distance = 0.0264
+level = deep
+complementary_balance = 0.9583
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1083
+intensity = 0.1083
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1083
+  COMPOSE(LOGIC,LOGIC): 0.1042
+  COMPOSE(CHOOSE,LOGIC): 0.1042
+  COMPOSE(CHOOSE,FLOW): 0.0792
+  COMPOSE(FLOW,LOGIC): 0.0750
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3542
+modifier_dominant = LOGIC
+modifier_pct = 0.3042
+primary_FLOW = 0.2000
+primary_OBSERVE = 0.1375
+primary_LOGIC = 0.3083
+primary_CHOOSE = 0.3542
+modifier_FLOW = 0.2625
+modifier_OBSERVE = 0.2250
+modifier_LOGIC = 0.3042
+modifier_CHOOSE = 0.2083
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0359
+aa_top5 = [
+  Arg: 0.1339  # basic
+  Leu: 0.1172  # aliphatic
+  Gly: 0.1046  # simple
+  Ser: 0.0879  # hydroxyl
+  Ala: 0.0753  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 239
+stop_codon = TAG
+loss = 0.0359
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.strong.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CGB2 | unknown
+# CDS: 387 bp (129 codons)
+
+[IDENTITY]
+gene = CGB2
+organism = unknown
+transcript = ENST00000474913.1
+cds_length = 387
+codons = 129
+protein_length = 129
+stop_codon = none
+
+[FLOW]
+engagement = 0.951
+resistance = 0.049
+dominant = CHOOSE
+dominant_pct = 0.3824
+FLOW = 0.1473
+OBSERVE = 0.1809
+LOGIC = 0.2894
+CHOOSE = 0.3824
+state = flowing
+
+[CONNECT]
+depth = 0.8734
+type = membrane_embedded
+hydrophobic_ratio = 0.5969
+charge_positive = 0.1240
+charge_negative = 0.0698
+charge_neutral = 0.8062
+
+[DISSOLVE]
+rigidity = 0.7789
+potential = low
+wobble_entropy = 0.2211
+complementary_disruption = 0.1266
+
+[ENCODE]
+type = engineered
+loss = 0.3594
+gc_content = 0.6718
+wobble_gc = 0.8372
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5504
+wobble_FLOW = 0.0465
+wobble_OBSERVE = 0.1163
+wobble_LOGIC = 0.2868
+wobble_CHOOSE = 0.5504
+entropy = 0.2211
+
+[OBSERVE]
+distance = 0.0930
+level = mild
+complementary_balance = 0.8734
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1008
+intensity = 0.1008
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1008
+  COMPOSE(CHOOSE,CHOOSE): 0.1008
+  COMPOSE(LOGIC,OBSERVE): 0.0930
+  COMPOSE(CHOOSE,LOGIC): 0.0853
+  COMPOSE(FLOW,CHOOSE): 0.0775
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3101
+modifier_dominant = CHOOSE
+modifier_pct = 0.3101
+primary_FLOW = 0.2016
+primary_OBSERVE = 0.2016
+primary_LOGIC = 0.3101
+primary_CHOOSE = 0.2868
+modifier_FLOW = 0.1938
+modifier_OBSERVE = 0.2248
+modifier_LOGIC = 0.2713
+modifier_CHOOSE = 0.3101
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0307
+aa_top5 = [
+  Pro: 0.1008  # cyclic
+  Cys: 0.0930  # sulfur
+  Val: 0.0930  # aliphatic
+  Arg: 0.0853  # basic
+  Thr: 0.0775  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 129
+stop_codon = none
+loss = 0.0307
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.strong.low.membrane_embedded

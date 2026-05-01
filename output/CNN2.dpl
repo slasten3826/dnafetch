@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CNN2 | unknown
+# CDS: 573 bp (191 codons)
+
+[IDENTITY]
+gene = CNN2
+organism = unknown
+transcript = ENST00000566695.5
+cds_length = 573
+codons = 191
+protein_length = 191
+stop_codon = none
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = CHOOSE
+dominant_pct = 0.3019
+FLOW = 0.2461
+OBSERVE = 0.1606
+LOGIC = 0.2914
+CHOOSE = 0.3019
+state = flowing
+
+[CONNECT]
+depth = 0.9040
+type = balanced_interface
+hydrophobic_ratio = 0.4974
+charge_positive = 0.1309
+charge_negative = 0.0785
+charge_neutral = 0.7906
+
+[DISSOLVE]
+rigidity = 0.7658
+potential = low
+wobble_entropy = 0.2342
+complementary_disruption = 0.0960
+
+[ENCODE]
+type = engineered
+loss = 0.2500
+gc_content = 0.5934
+wobble_gc = 0.8691
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4555
+wobble_FLOW = 0.0314
+wobble_OBSERVE = 0.0995
+wobble_LOGIC = 0.4136
+wobble_CHOOSE = 0.4555
+entropy = 0.2342
+
+[OBSERVE]
+distance = 0.0105
+level = strong
+complementary_balance = 0.9040
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1414
+intensity = 0.1414
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1414
+  COMPOSE(FLOW,OBSERVE): 0.1047
+  COMPOSE(CHOOSE,FLOW): 0.0995
+  COMPOSE(LOGIC,LOGIC): 0.0942
+  COMPOSE(CHOOSE,OBSERVE): 0.0785
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3560
+modifier_dominant = FLOW
+modifier_pct = 0.3508
+primary_FLOW = 0.3560
+primary_OBSERVE = 0.1309
+primary_LOGIC = 0.2775
+primary_CHOOSE = 0.2356
+modifier_FLOW = 0.3508
+modifier_OBSERVE = 0.2513
+modifier_LOGIC = 0.1832
+modifier_CHOOSE = 0.2147
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0244
+aa_top5 = [
+  Gly: 0.0942  # simple
+  Ser: 0.0838  # hydroxyl
+  Leu: 0.0785  # aliphatic
+  Lys: 0.0733  # basic
+  Gln: 0.0733  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 191
+stop_codon = none
+loss = 0.0244
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.dominant.low.balanced_interface

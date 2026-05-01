@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENY2 | unknown
+# CDS: 183 bp (61 codons)
+
+[IDENTITY]
+gene = ENY2
+organism = unknown
+transcript = ENST00000523335.1
+cds_length = 183
+codons = 61
+protein_length = 60
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = FLOW
+dominant_pct = 0.3388
+FLOW = 0.3388
+OBSERVE = 0.2787
+LOGIC = 0.1366
+CHOOSE = 0.2459
+state = flowing
+
+[CONNECT]
+depth = 0.8306
+type = membrane_embedded
+hydrophobic_ratio = 0.5667
+charge_positive = 0.1833
+charge_negative = 0.0500
+charge_neutral = 0.7667
+
+[DISSOLVE]
+rigidity = 0.9763
+potential = crystallized
+wobble_entropy = 0.0237
+complementary_disruption = 0.1694
+
+[ENCODE]
+type = natural
+loss = 0.4531
+gc_content = 0.3825
+wobble_gc = 0.4098
+codon_diversity = 0.5469
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3443
+wobble_FLOW = 0.3443
+wobble_OBSERVE = 0.2459
+wobble_LOGIC = 0.1639
+wobble_CHOOSE = 0.2459
+entropy = 0.0237
+
+[OBSERVE]
+distance = 0.0601
+level = standard
+complementary_balance = 0.8306
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1311
+intensity = 0.1311
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1311
+  COMPOSE(CHOOSE,FLOW): 0.1148
+  COMPOSE(FLOW,FLOW): 0.1148
+  COMPOSE(OBSERVE,OBSERVE): 0.1148
+  COMPOSE(CHOOSE,OBSERVE): 0.0820
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3443
+modifier_dominant = FLOW
+modifier_pct = 0.3279
+primary_FLOW = 0.3443
+primary_OBSERVE = 0.2623
+primary_LOGIC = 0.1148
+primary_CHOOSE = 0.2787
+modifier_FLOW = 0.3279
+modifier_OBSERVE = 0.3279
+modifier_LOGIC = 0.1311
+modifier_CHOOSE = 0.2131
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0361
+aa_top5 = [
+  Leu: 0.1667  # aliphatic
+  Ile: 0.0833  # aliphatic
+  Pro: 0.0833  # cyclic
+  Arg: 0.0667  # basic
+  His: 0.0667  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 60
+stop_codon = TGA
+loss = 0.0361
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.standard.dominant.crystallized.membrane_embedded

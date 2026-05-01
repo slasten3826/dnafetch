@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PDK2 | unknown
+# CDS: 480 bp (160 codons)
+
+[IDENTITY]
+gene = PDK2
+organism = unknown
+transcript = ENST00000510219.2
+cds_length = 480
+codons = 160
+protein_length = 160
+stop_codon = none
+
+[FLOW]
+engagement = 0.977
+resistance = 0.023
+dominant = CHOOSE
+dominant_pct = 0.3542
+FLOW = 0.2521
+OBSERVE = 0.1896
+LOGIC = 0.2042
+CHOOSE = 0.3542
+state = flowing
+
+[CONNECT]
+depth = 0.7875
+type = balanced_interface
+hydrophobic_ratio = 0.5062
+charge_positive = 0.1375
+charge_negative = 0.1375
+charge_neutral = 0.7250
+
+[DISSOLVE]
+rigidity = 0.7527
+potential = low
+wobble_entropy = 0.2473
+complementary_disruption = 0.2125
+
+[ENCODE]
+type = engineered
+loss = 0.3594
+gc_content = 0.5583
+wobble_gc = 0.8375
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.6000
+wobble_FLOW = 0.0500
+wobble_OBSERVE = 0.1125
+wobble_LOGIC = 0.2375
+wobble_CHOOSE = 0.6000
+entropy = 0.2473
+
+[OBSERVE]
+distance = 0.1021
+level = mild
+complementary_balance = 0.7875
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1375
+intensity = 0.1375
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1375
+  COMPOSE(FLOW,FLOW): 0.1187
+  COMPOSE(FLOW,OBSERVE): 0.1125
+  COMPOSE(CHOOSE,FLOW): 0.0938
+  COMPOSE(CHOOSE,OBSERVE): 0.0875
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3000
+modifier_dominant = FLOW
+modifier_pct = 0.4062
+primary_FLOW = 0.3000
+primary_OBSERVE = 0.1500
+primary_LOGIC = 0.2750
+primary_CHOOSE = 0.2750
+modifier_FLOW = 0.4062
+modifier_OBSERVE = 0.3063
+modifier_LOGIC = 0.1000
+modifier_CHOOSE = 0.1875
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0216
+aa_top5 = [
+  Asp: 0.0938  # acidic
+  Leu: 0.0875  # aliphatic
+  Ile: 0.0688  # aliphatic
+  Asn: 0.0688  # amide
+  Ser: 0.0625  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 160
+stop_codon = none
+loss = 0.0216
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.low.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MICU3 | unknown
+# CDS: 297 bp (99 codons)
+
+[IDENTITY]
+gene = MICU3
+organism = unknown
+transcript = ENST00000517398.1
+cds_length = 297
+codons = 99
+protein_length = 98
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.960
+resistance = 0.040
+dominant = OBSERVE
+dominant_pct = 0.3502
+FLOW = 0.3131
+OBSERVE = 0.3502
+LOGIC = 0.1650
+CHOOSE = 0.1717
+state = flowing
+
+[CONNECT]
+depth = 0.9562
+type = membrane_embedded
+hydrophobic_ratio = 0.5510
+charge_positive = 0.1224
+charge_negative = 0.0918
+charge_neutral = 0.7857
+
+[DISSOLVE]
+rigidity = 0.9267
+potential = crystallized
+wobble_entropy = 0.0733
+complementary_disruption = 0.0438
+
+[ENCODE]
+type = AT_rich
+loss = 0.3281
+gc_content = 0.3367
+wobble_gc = 0.2929
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3939
+wobble_FLOW = 0.3131
+wobble_OBSERVE = 0.3939
+wobble_LOGIC = 0.1818
+wobble_CHOOSE = 0.1111
+entropy = 0.0733
+
+[OBSERVE]
+distance = 0.0370
+level = deep
+complementary_balance = 0.9562
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1313
+intensity = 0.1313
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1313
+  COMPOSE(OBSERVE,OBSERVE): 0.1212
+  COMPOSE(LOGIC,FLOW): 0.0909
+  COMPOSE(FLOW,CHOOSE): 0.0808
+  COMPOSE(OBSERVE,FLOW): 0.0808
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3535
+modifier_dominant = FLOW
+modifier_pct = 0.3333
+primary_FLOW = 0.2929
+primary_OBSERVE = 0.3535
+primary_LOGIC = 0.1919
+primary_CHOOSE = 0.1616
+modifier_FLOW = 0.3333
+modifier_OBSERVE = 0.3030
+modifier_LOGIC = 0.1212
+modifier_CHOOSE = 0.2424
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0326
+aa_top5 = [
+  Leu: 0.1327  # aliphatic
+  Lys: 0.1020  # basic
+  Ser: 0.0918  # hydroxyl
+  Thr: 0.0816  # hydroxyl
+  Tyr: 0.0816  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 98
+stop_codon = TGA
+loss = 0.0326
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.dominant.crystallized.membrane_embedded

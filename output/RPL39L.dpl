@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RPL39L | unknown
+# CDS: 177 bp (59 codons)
+
+[IDENTITY]
+gene = RPL39L
+organism = unknown
+transcript = ENST00000433055.1
+cds_length = 177
+codons = 59
+protein_length = 58
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = CHOOSE
+dominant_pct = 0.2881
+FLOW = 0.2429
+OBSERVE = 0.2486
+LOGIC = 0.2203
+CHOOSE = 0.2881
+state = flowing
+
+[CONNECT]
+depth = 0.9266
+type = ionic_interaction
+hydrophobic_ratio = 0.5345
+charge_positive = 0.1897
+charge_negative = 0.0690
+charge_neutral = 0.7414
+
+[DISSOLVE]
+rigidity = 0.9941
+potential = crystallized
+wobble_entropy = 0.0059
+complementary_disruption = 0.0734
+
+[ENCODE]
+type = moderate
+loss = 0.3906
+gc_content = 0.5085
+wobble_gc = 0.5254
+codon_diversity = 0.6094
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3051
+wobble_FLOW = 0.2373
+wobble_OBSERVE = 0.2373
+wobble_LOGIC = 0.2203
+wobble_CHOOSE = 0.3051
+entropy = 0.0059
+
+[OBSERVE]
+distance = 0.0395
+level = deep
+complementary_balance = 0.9266
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1356
+intensity = 0.1356
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1356
+  COMPOSE(OBSERVE,LOGIC): 0.1017
+  COMPOSE(CHOOSE,CHOOSE): 0.1017
+  COMPOSE(OBSERVE,CHOOSE): 0.0847
+  COMPOSE(CHOOSE,OBSERVE): 0.0847
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3220
+modifier_dominant = OBSERVE
+modifier_pct = 0.2881
+primary_FLOW = 0.3051
+primary_OBSERVE = 0.2203
+primary_LOGIC = 0.1525
+primary_CHOOSE = 0.3220
+modifier_FLOW = 0.1864
+modifier_OBSERVE = 0.2881
+modifier_LOGIC = 0.2881
+modifier_CHOOSE = 0.2373
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0381
+aa_top5 = [
+  Arg: 0.1379  # basic
+  Ile: 0.1034  # aliphatic
+  Ser: 0.1034  # hydroxyl
+  Leu: 0.1034  # aliphatic
+  Pro: 0.1034  # cyclic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 58
+stop_codon = TGA
+loss = 0.0381
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.ionic_interaction

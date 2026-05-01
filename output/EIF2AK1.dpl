@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EIF2AK1 | unknown
+# CDS: 492 bp (164 codons)
+
+[IDENTITY]
+gene = EIF2AK1
+organism = unknown
+transcript = ENST00000446699.1
+cds_length = 492
+codons = 164
+protein_length = 164
+stop_codon = none
+
+[FLOW]
+engagement = 1.000
+resistance = 0.000
+dominant = CHOOSE
+dominant_pct = 0.2561
+FLOW = 0.2520
+OBSERVE = 0.2459
+LOGIC = 0.2459
+CHOOSE = 0.2561
+state = flowing
+
+[CONNECT]
+depth = 0.9837
+type = ionic_interaction
+hydrophobic_ratio = 0.5000
+charge_positive = 0.1585
+charge_negative = 0.1402
+charge_neutral = 0.7012
+
+[DISSOLVE]
+rigidity = 0.9954
+potential = crystallized
+wobble_entropy = 0.0046
+complementary_disruption = 0.0163
+
+[ENCODE]
+type = moderate
+loss = 0.2031
+gc_content = 0.5020
+wobble_gc = 0.5122
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2805
+wobble_FLOW = 0.2073
+wobble_OBSERVE = 0.2805
+wobble_LOGIC = 0.2683
+wobble_CHOOSE = 0.2439
+entropy = 0.0046
+
+[OBSERVE]
+distance = 0.0041
+level = intense
+complementary_balance = 0.9837
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1402
+intensity = 0.1402
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1402
+  COMPOSE(CHOOSE,FLOW): 0.1098
+  COMPOSE(OBSERVE,OBSERVE): 0.0976
+  COMPOSE(CHOOSE,CHOOSE): 0.0854
+  COMPOSE(FLOW,FLOW): 0.0732
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3110
+modifier_dominant = FLOW
+modifier_pct = 0.3293
+primary_FLOW = 0.2195
+primary_OBSERVE = 0.1829
+primary_LOGIC = 0.3110
+primary_CHOOSE = 0.2866
+modifier_FLOW = 0.3293
+modifier_OBSERVE = 0.2744
+modifier_LOGIC = 0.1585
+modifier_CHOOSE = 0.2378
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0269
+aa_top5 = [
+  Leu: 0.0976  # aliphatic
+  Ser: 0.0854  # hydroxyl
+  Glu: 0.0854  # acidic
+  Pro: 0.0854  # cyclic
+  Arg: 0.0671  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 164
+stop_codon = none
+loss = 0.0269
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.intense.dominant.crystallized.ionic_interaction

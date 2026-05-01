@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EPS8L3 | unknown
+# CDS: 1431 bp (477 codons)
+
+[IDENTITY]
+gene = EPS8L3
+organism = unknown
+transcript = ENST00000472325.5
+cds_length = 1431
+codons = 477
+protein_length = 476
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = CHOOSE
+dominant_pct = 0.3124
+FLOW = 0.2418
+OBSERVE = 0.1635
+LOGIC = 0.2823
+CHOOSE = 0.3124
+state = flowing
+
+[CONNECT]
+depth = 0.8917
+type = balanced_interface
+hydrophobic_ratio = 0.5210
+charge_positive = 0.1261
+charge_negative = 0.1218
+charge_neutral = 0.7521
+
+[DISSOLVE]
+rigidity = 0.9339
+potential = crystallized
+wobble_entropy = 0.0661
+complementary_disruption = 0.1083
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.5947
+wobble_gc = 0.7065
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3690
+wobble_FLOW = 0.1677
+wobble_OBSERVE = 0.1258
+wobble_LOGIC = 0.3690
+wobble_CHOOSE = 0.3375
+entropy = 0.0661
+
+[OBSERVE]
+distance = 0.0300
+level = deep
+complementary_balance = 0.8917
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1216
+intensity = 0.1216
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1216
+  COMPOSE(CHOOSE,OBSERVE): 0.1174
+  COMPOSE(CHOOSE,CHOOSE): 0.1090
+  COMPOSE(CHOOSE,FLOW): 0.0901
+  COMPOSE(FLOW,FLOW): 0.0755
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3459
+modifier_dominant = FLOW
+modifier_pct = 0.3103
+primary_FLOW = 0.2474
+primary_OBSERVE = 0.1300
+primary_LOGIC = 0.2767
+primary_CHOOSE = 0.3459
+modifier_FLOW = 0.3103
+modifier_OBSERVE = 0.2348
+modifier_LOGIC = 0.2013
+modifier_CHOOSE = 0.2537
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0314
+aa_top5 = [
+  Leu: 0.1282  # aliphatic
+  Pro: 0.1092  # cyclic
+  Ser: 0.0819  # hydroxyl
+  Glu: 0.0798  # acidic
+  Gln: 0.0756  # amide
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 476
+stop_codon = TAA
+loss = 0.0314
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.dominant.crystallized.balanced_interface

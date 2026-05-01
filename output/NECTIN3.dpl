@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NECTIN3 | unknown
+# CDS: 81 bp (27 codons)
+
+[IDENTITY]
+gene = NECTIN3
+organism = unknown
+transcript = ENST00000485506.1
+cds_length = 81
+codons = 27
+protein_length = 26
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.919
+resistance = 0.081
+dominant = OBSERVE
+dominant_pct = 0.3951
+FLOW = 0.3333
+OBSERVE = 0.3951
+LOGIC = 0.1481
+CHOOSE = 0.1235
+state = flowing
+
+[CONNECT]
+depth = 0.9136
+type = membrane_embedded
+hydrophobic_ratio = 0.5769
+charge_positive = 0.0385
+charge_negative = 0.1538
+charge_neutral = 0.8077
+
+[DISSOLVE]
+rigidity = 0.9109
+potential = crystallized
+wobble_entropy = 0.0891
+complementary_disruption = 0.0864
+
+[ENCODE]
+type = AT_rich
+loss = 0.7031
+gc_content = 0.2716
+wobble_gc = 0.2593
+codon_diversity = 0.2969
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3704
+wobble_FLOW = 0.3704
+wobble_OBSERVE = 0.3704
+wobble_LOGIC = 0.1111
+wobble_CHOOSE = 0.1481
+entropy = 0.0891
+
+[OBSERVE]
+distance = 0.0617
+level = standard
+complementary_balance = 0.9136
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1852
+intensity = 0.1852
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1852
+  COMPOSE(FLOW,OBSERVE): 0.1481
+  COMPOSE(OBSERVE,FLOW): 0.1481
+  COMPOSE(LOGIC,FLOW): 0.1481
+  COMPOSE(OBSERVE,CHOOSE): 0.1111
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4815
+modifier_dominant = FLOW
+modifier_pct = 0.3333
+primary_FLOW = 0.2963
+primary_OBSERVE = 0.4815
+primary_LOGIC = 0.2222
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.3333
+modifier_OBSERVE = 0.3333
+modifier_LOGIC = 0.1111
+modifier_CHOOSE = 0.2222
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0585
+aa_top5 = [
+  Tyr: 0.1538  # aromatic
+  Phe: 0.1538  # aromatic
+  Ser: 0.1538  # hydroxyl
+  Glu: 0.1538  # acidic
+  Met: 0.0769  # sulfur
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 26
+stop_codon = TGA
+loss = 0.0585
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.standard.dominant.crystallized.membrane_embedded

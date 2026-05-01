@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMEM179B | unknown
+# CDS: 54 bp (18 codons)
+
+[IDENTITY]
+gene = TMEM179B
+organism = unknown
+transcript = ENST00000526546.1
+cds_length = 54
+codons = 18
+protein_length = 17
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.979
+resistance = 0.021
+dominant = CHOOSE
+dominant_pct = 0.3333
+FLOW = 0.2593
+OBSERVE = 0.2407
+LOGIC = 0.1667
+CHOOSE = 0.3333
+state = flowing
+
+[CONNECT]
+depth = 0.8148
+type = membrane_embedded
+hydrophobic_ratio = 0.5882
+charge_positive = 0.0000
+charge_negative = 0.0588
+charge_neutral = 0.9412
+
+[DISSOLVE]
+rigidity = 0.9206
+potential = crystallized
+wobble_entropy = 0.0794
+complementary_disruption = 0.1852
+
+[ENCODE]
+type = moderate
+loss = 0.7500
+gc_content = 0.5000
+wobble_gc = 0.5000
+codon_diversity = 0.2500
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3889
+wobble_FLOW = 0.3333
+wobble_OBSERVE = 0.1667
+wobble_LOGIC = 0.1111
+wobble_CHOOSE = 0.3889
+entropy = 0.0794
+
+[OBSERVE]
+distance = 0.0741
+level = standard
+complementary_balance = 0.8148
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.2222
+intensity = 0.2222
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.2222
+  COMPOSE(FLOW,CHOOSE): 0.1111
+  COMPOSE(CHOOSE,CHOOSE): 0.1111
+  COMPOSE(CHOOSE,FLOW): 0.1111
+  COMPOSE(FLOW,OBSERVE): 0.0556
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3333
+modifier_dominant = CHOOSE
+modifier_pct = 0.3333
+primary_FLOW = 0.2222
+primary_OBSERVE = 0.3333
+primary_LOGIC = 0.1667
+primary_CHOOSE = 0.2778
+modifier_FLOW = 0.2222
+modifier_OBSERVE = 0.2222
+modifier_LOGIC = 0.2222
+modifier_CHOOSE = 0.3333
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0466
+aa_top5 = [
+  Thr: 0.1176  # hydroxyl
+  Pro: 0.1176  # cyclic
+  Cys: 0.1176  # sulfur
+  Leu: 0.1176  # aliphatic
+  Gln: 0.1176  # amide
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 17
+stop_codon = TGA
+loss = 0.0466
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.membrane_embedded

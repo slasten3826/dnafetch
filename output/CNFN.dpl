@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CNFN | unknown
+# CDS: 378 bp (126 codons)
+
+[IDENTITY]
+gene = CNFN
+organism = unknown
+transcript = ENST00000597255.1
+cds_length = 378
+codons = 126
+protein_length = 125
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.974
+resistance = 0.026
+dominant = CHOOSE
+dominant_pct = 0.3519
+FLOW = 0.1799
+OBSERVE = 0.1958
+LOGIC = 0.2725
+CHOOSE = 0.3519
+state = flowing
+
+[CONNECT]
+depth = 0.9048
+type = membrane_embedded
+hydrophobic_ratio = 0.5920
+charge_positive = 0.1120
+charge_negative = 0.0960
+charge_neutral = 0.7920
+
+[DISSOLVE]
+rigidity = 0.8016
+potential = low
+wobble_entropy = 0.1984
+complementary_disruption = 0.0952
+
+[ENCODE]
+type = engineered
+loss = 0.3750
+gc_content = 0.6243
+wobble_gc = 0.8175
+codon_diversity = 0.6250
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5397
+wobble_FLOW = 0.0556
+wobble_OBSERVE = 0.1270
+wobble_LOGIC = 0.2778
+wobble_CHOOSE = 0.5397
+entropy = 0.1984
+
+[OBSERVE]
+distance = 0.0794
+level = standard
+complementary_balance = 0.9048
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1270
+intensity = 0.1270
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1270
+  COMPOSE(CHOOSE,FLOW): 0.0952
+  COMPOSE(LOGIC,FLOW): 0.0952
+  COMPOSE(CHOOSE,OBSERVE): 0.0873
+  COMPOSE(FLOW,OBSERVE): 0.0794
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2857
+modifier_dominant = FLOW
+modifier_pct = 0.2698
+primary_FLOW = 0.2143
+primary_OBSERVE = 0.2302
+primary_LOGIC = 0.2698
+primary_CHOOSE = 0.2857
+modifier_FLOW = 0.2698
+modifier_OBSERVE = 0.2302
+modifier_LOGIC = 0.2698
+modifier_CHOOSE = 0.2302
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0238
+aa_top5 = [
+  Cys: 0.1120  # sulfur
+  Leu: 0.0880  # aliphatic
+  Gly: 0.0720  # simple
+  Ala: 0.0720  # simple
+  Thr: 0.0720  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 125
+stop_codon = TAA
+loss = 0.0238
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.low.membrane_embedded

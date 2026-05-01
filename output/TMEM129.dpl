@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMEM129 | unknown
+# CDS: 177 bp (59 codons)
+
+[IDENTITY]
+gene = TMEM129
+organism = unknown
+transcript = ENST00000480360.1
+cds_length = 177
+codons = 59
+protein_length = 58
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.982
+resistance = 0.018
+dominant = OBSERVE
+dominant_pct = 0.3164
+FLOW = 0.1751
+OBSERVE = 0.3164
+LOGIC = 0.2203
+CHOOSE = 0.2881
+state = flowing
+
+[CONNECT]
+depth = 0.7910
+type = membrane_embedded
+hydrophobic_ratio = 0.6207
+charge_positive = 0.1034
+charge_negative = 0.0690
+charge_neutral = 0.8276
+
+[DISSOLVE]
+rigidity = 0.9379
+potential = crystallized
+wobble_entropy = 0.0621
+complementary_disruption = 0.2090
+
+[ENCODE]
+type = moderate
+loss = 0.4688
+gc_content = 0.5085
+wobble_gc = 0.5254
+codon_diversity = 0.5312
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3729
+wobble_FLOW = 0.1017
+wobble_OBSERVE = 0.3729
+wobble_LOGIC = 0.2881
+wobble_CHOOSE = 0.2373
+entropy = 0.0621
+
+[OBSERVE]
+distance = 0.0282
+level = deep
+complementary_balance = 0.7910
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1695
+intensity = 0.1695
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1695
+  COMPOSE(LOGIC,CHOOSE): 0.1186
+  COMPOSE(OBSERVE,OBSERVE): 0.1017
+  COMPOSE(CHOOSE,FLOW): 0.1017
+  COMPOSE(LOGIC,FLOW): 0.0678
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3390
+modifier_dominant = OBSERVE
+modifier_pct = 0.3390
+primary_FLOW = 0.1864
+primary_OBSERVE = 0.2373
+primary_LOGIC = 0.2373
+primary_CHOOSE = 0.3390
+modifier_FLOW = 0.2373
+modifier_OBSERVE = 0.3390
+modifier_LOGIC = 0.1356
+modifier_CHOOSE = 0.2881
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0502
+aa_top5 = [
+  Leu: 0.2241  # aliphatic
+  Ala: 0.1207  # simple
+  Ser: 0.1034  # hydroxyl
+  Asp: 0.0690  # acidic
+  Pro: 0.0690  # cyclic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 58
+stop_codon = TAG
+loss = 0.0502
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.dominant.crystallized.membrane_embedded

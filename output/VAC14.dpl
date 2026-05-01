@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: VAC14 | unknown
+# CDS: 543 bp (181 codons)
+
+[IDENTITY]
+gene = VAC14
+organism = unknown
+transcript = ENST00000563662.2
+cds_length = 543
+codons = 181
+protein_length = 181
+stop_codon = none
+
+[FLOW]
+engagement = 0.988
+resistance = 0.012
+dominant = CHOOSE
+dominant_pct = 0.3260
+FLOW = 0.2081
+OBSERVE = 0.2505
+LOGIC = 0.2155
+CHOOSE = 0.3260
+state = flowing
+
+[CONNECT]
+depth = 0.8471
+type = membrane_embedded
+hydrophobic_ratio = 0.5635
+charge_positive = 0.1105
+charge_negative = 0.1105
+charge_neutral = 0.7790
+
+[DISSOLVE]
+rigidity = 0.9507
+potential = crystallized
+wobble_entropy = 0.0493
+complementary_disruption = 0.1529
+
+[ENCODE]
+type = optimized
+loss = 0.1875
+gc_content = 0.5414
+wobble_gc = 0.6409
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4088
+wobble_FLOW = 0.1547
+wobble_OBSERVE = 0.2044
+wobble_LOGIC = 0.2320
+wobble_CHOOSE = 0.4088
+entropy = 0.0493
+
+[OBSERVE]
+distance = 0.0755
+level = standard
+complementary_balance = 0.8471
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1436
+intensity = 0.1436
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1436
+  COMPOSE(LOGIC,FLOW): 0.1105
+  COMPOSE(OBSERVE,OBSERVE): 0.1050
+  COMPOSE(CHOOSE,CHOOSE): 0.0829
+  COMPOSE(OBSERVE,CHOOSE): 0.0718
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2983
+modifier_dominant = OBSERVE
+modifier_pct = 0.3425
+primary_FLOW = 0.2431
+primary_OBSERVE = 0.2044
+primary_LOGIC = 0.2541
+primary_CHOOSE = 0.2983
+modifier_FLOW = 0.2265
+modifier_OBSERVE = 0.3425
+modifier_LOGIC = 0.1602
+modifier_CHOOSE = 0.2707
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0366
+aa_top5 = [
+  Leu: 0.1602  # aliphatic
+  Ser: 0.1050  # hydroxyl
+  Phe: 0.0884  # aromatic
+  Pro: 0.0829  # cyclic
+  Thr: 0.0608  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 181
+stop_codon = none
+loss = 0.0366
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.membrane_embedded

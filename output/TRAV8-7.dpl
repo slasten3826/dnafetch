@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TRAV8-7 | unknown
+# CDS: 339 bp (113 codons)
+
+[IDENTITY]
+gene = TRAV8-7
+organism = unknown
+transcript = ENST00000390456.3
+cds_length = 339
+codons = 113
+protein_length = 113
+stop_codon = none
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2684
+FLOW = 0.2507
+OBSERVE = 0.2684
+LOGIC = 0.2242
+CHOOSE = 0.2566
+state = flowing
+
+[CONNECT]
+depth = 0.9499
+type = balanced_interface
+hydrophobic_ratio = 0.5398
+charge_positive = 0.1150
+charge_negative = 0.0973
+charge_neutral = 0.7876
+
+[DISSOLVE]
+rigidity = 0.9826
+potential = crystallized
+wobble_entropy = 0.0174
+complementary_disruption = 0.0501
+
+[ENCODE]
+type = moderate
+loss = 0.2656
+gc_content = 0.4808
+wobble_gc = 0.5575
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3274
+wobble_FLOW = 0.1770
+wobble_OBSERVE = 0.2655
+wobble_LOGIC = 0.2301
+wobble_CHOOSE = 0.3274
+entropy = 0.0174
+
+[OBSERVE]
+distance = 0.0118
+level = strong
+complementary_balance = 0.9499
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1327
+intensity = 0.1327
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1327
+  COMPOSE(LOGIC,FLOW): 0.0973
+  COMPOSE(LOGIC,OBSERVE): 0.0796
+  COMPOSE(FLOW,LOGIC): 0.0796
+  COMPOSE(FLOW,FLOW): 0.0796
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2832
+modifier_dominant = OBSERVE
+modifier_pct = 0.3274
+primary_FLOW = 0.2743
+primary_OBSERVE = 0.2124
+primary_LOGIC = 0.2832
+primary_CHOOSE = 0.2301
+modifier_FLOW = 0.3009
+modifier_OBSERVE = 0.3274
+modifier_LOGIC = 0.1593
+modifier_CHOOSE = 0.2124
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0340
+aa_top5 = [
+  Leu: 0.1416  # aliphatic
+  Ser: 0.1150  # hydroxyl
+  Val: 0.0796  # aliphatic
+  Thr: 0.0708  # hydroxyl
+  Lys: 0.0708  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 113
+stop_codon = none
+loss = 0.0340
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.strong.dominant.crystallized.balanced_interface

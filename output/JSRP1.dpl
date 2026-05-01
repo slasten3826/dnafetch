@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: JSRP1 | unknown
+# CDS: 996 bp (332 codons)
+
+[IDENTITY]
+gene = JSRP1
+organism = unknown
+transcript = ENST00000300961.10
+cds_length = 996
+codons = 332
+protein_length = 331
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.919
+resistance = 0.081
+dominant = LOGIC
+dominant_pct = 0.3785
+FLOW = 0.1988
+OBSERVE = 0.0914
+LOGIC = 0.3785
+CHOOSE = 0.3313
+state = flowing
+
+[CONNECT]
+depth = 0.8454
+type = ionic_interaction
+hydrophobic_ratio = 0.4894
+charge_positive = 0.1994
+charge_negative = 0.1662
+charge_neutral = 0.6344
+
+[DISSOLVE]
+rigidity = 0.8322
+potential = low
+wobble_entropy = 0.1678
+complementary_disruption = 0.1546
+
+[ENCODE]
+type = engineered
+loss = 0.2812
+gc_content = 0.7098
+wobble_gc = 0.8102
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4910
+wobble_FLOW = 0.1205
+wobble_OBSERVE = 0.0693
+wobble_LOGIC = 0.4910
+wobble_CHOOSE = 0.3193
+entropy = 0.1678
+
+[OBSERVE]
+distance = 0.0472
+level = deep
+complementary_balance = 0.8454
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1657
+intensity = 0.1657
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1657
+  COMPOSE(CHOOSE,CHOOSE): 0.1446
+  COMPOSE(LOGIC,CHOOSE): 0.1265
+  COMPOSE(FLOW,LOGIC): 0.0783
+  COMPOSE(FLOW,FLOW): 0.0723
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3976
+modifier_dominant = CHOOSE
+modifier_pct = 0.3464
+primary_FLOW = 0.1928
+primary_OBSERVE = 0.0813
+primary_LOGIC = 0.3976
+primary_CHOOSE = 0.3283
+modifier_FLOW = 0.2831
+modifier_OBSERVE = 0.1235
+modifier_LOGIC = 0.2470
+modifier_CHOOSE = 0.3464
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0459
+aa_top5 = [
+  Pro: 0.1450  # cyclic
+  Ala: 0.1269  # simple
+  Arg: 0.1239  # basic
+  Glu: 0.1208  # acidic
+  Ser: 0.0725  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 331
+stop_codon = TGA
+loss = 0.0459
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.low.ionic_interaction

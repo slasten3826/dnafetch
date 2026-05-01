@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TRAV38-2DV8 | unknown
+# CDS: 348 bp (116 codons)
+
+[IDENTITY]
+gene = TRAV38-2DV8
+organism = unknown
+transcript = ENST00000390465.2
+cds_length = 348
+codons = 116
+protein_length = 116
+stop_codon = none
+
+[FLOW]
+engagement = 1.000
+resistance = 0.000
+dominant = FLOW
+dominant_pct = 0.2586
+FLOW = 0.2586
+OBSERVE = 0.2557
+LOGIC = 0.2385
+CHOOSE = 0.2471
+state = flowing
+
+[CONNECT]
+depth = 0.9885
+type = balanced_interface
+hydrophobic_ratio = 0.5172
+charge_positive = 0.0776
+charge_negative = 0.0948
+charge_neutral = 0.8276
+
+[DISSOLVE]
+rigidity = 0.9839
+potential = crystallized
+wobble_entropy = 0.0161
+complementary_disruption = 0.0115
+
+[ENCODE]
+type = moderate
+loss = 0.2656
+gc_content = 0.4856
+wobble_gc = 0.5690
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2931
+wobble_FLOW = 0.1638
+wobble_OBSERVE = 0.2672
+wobble_LOGIC = 0.2931
+wobble_CHOOSE = 0.2759
+entropy = 0.0161
+
+[OBSERVE]
+distance = 0.0029
+level = intense
+complementary_balance = 0.9885
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.0948
+intensity = 0.0948
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.0948
+  COMPOSE(LOGIC,FLOW): 0.0948
+  COMPOSE(CHOOSE,FLOW): 0.0948
+  COMPOSE(FLOW,OBSERVE): 0.0776
+  COMPOSE(FLOW,LOGIC): 0.0776
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2931
+modifier_dominant = FLOW
+modifier_pct = 0.3190
+primary_FLOW = 0.2931
+primary_OBSERVE = 0.2414
+primary_LOGIC = 0.2586
+primary_CHOOSE = 0.2069
+modifier_FLOW = 0.3190
+modifier_OBSERVE = 0.2586
+modifier_LOGIC = 0.1638
+modifier_CHOOSE = 0.2586
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0288
+aa_top5 = [
+  Ser: 0.1207  # hydroxyl
+  Ala: 0.0948  # simple
+  Gln: 0.0948  # amide
+  Leu: 0.0690  # aliphatic
+  Thr: 0.0690  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 116
+stop_codon = none
+loss = 0.0288
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.intense.strong.crystallized.balanced_interface

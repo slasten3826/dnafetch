@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NRDC | unknown
+# CDS: 3456 bp (1152 codons)
+
+[IDENTITY]
+gene = NRDC
+organism = unknown
+transcript = ENST00000352171.12
+cds_length = 3456
+codons = 1152
+protein_length = 1151
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = FLOW
+dominant_pct = 0.2980
+FLOW = 0.2980
+OBSERVE = 0.2613
+LOGIC = 0.2407
+CHOOSE = 0.1999
+state = flowing
+
+[CONNECT]
+depth = 0.9225
+type = ionic_interaction
+hydrophobic_ratio = 0.5065
+charge_positive = 0.1321
+charge_negative = 0.1659
+charge_neutral = 0.7020
+
+[DISSOLVE]
+rigidity = 0.9877
+potential = crystallized
+wobble_entropy = 0.0123
+complementary_disruption = 0.0775
+
+[ENCODE]
+type = natural
+loss = 0.0469
+gc_content = 0.4407
+wobble_gc = 0.4366
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3238
+wobble_FLOW = 0.2396
+wobble_OBSERVE = 0.3238
+wobble_LOGIC = 0.2422
+wobble_CHOOSE = 0.1944
+entropy = 0.0123
+
+[OBSERVE]
+distance = 0.0367
+level = deep
+complementary_balance = 0.9225
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1658
+intensity = 0.1658
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1658
+  COMPOSE(FLOW,FLOW): 0.1102
+  COMPOSE(CHOOSE,OBSERVE): 0.0816
+  COMPOSE(OBSERVE,OBSERVE): 0.0755
+  COMPOSE(FLOW,OBSERVE): 0.0660
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3377
+modifier_dominant = FLOW
+modifier_pct = 0.3785
+primary_FLOW = 0.2760
+primary_OBSERVE = 0.1797
+primary_LOGIC = 0.3377
+primary_CHOOSE = 0.2066
+modifier_FLOW = 0.3785
+modifier_OBSERVE = 0.2804
+modifier_LOGIC = 0.1424
+modifier_CHOOSE = 0.1988
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0235
+aa_top5 = [
+  Leu: 0.1060  # aliphatic
+  Glu: 0.1025  # acidic
+  Lys: 0.0652  # basic
+  Asp: 0.0634  # acidic
+  Ala: 0.0608  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1151
+stop_codon = TAA
+loss = 0.0235
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.dominant.crystallized.ionic_interaction

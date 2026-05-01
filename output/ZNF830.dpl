@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNF830 | unknown
+# CDS: 312 bp (104 codons)
+
+[IDENTITY]
+gene = ZNF830
+organism = unknown
+transcript = ENST00000578339.1
+cds_length = 312
+codons = 104
+protein_length = 103
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.954
+resistance = 0.046
+dominant = FLOW
+dominant_pct = 0.3590
+FLOW = 0.3590
+OBSERVE = 0.1795
+LOGIC = 0.3141
+CHOOSE = 0.1474
+state = flowing
+
+[CONNECT]
+depth = 0.6538
+type = ionic_interaction
+hydrophobic_ratio = 0.3689
+charge_positive = 0.1748
+charge_negative = 0.2913
+charge_neutral = 0.5340
+
+[DISSOLVE]
+rigidity = 0.9602
+potential = low
+wobble_entropy = 0.0398
+complementary_disruption = 0.3462
+
+[ENCODE]
+type = moderate
+loss = 0.3594
+gc_content = 0.4615
+wobble_gc = 0.5481
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3750
+wobble_FLOW = 0.2788
+wobble_OBSERVE = 0.1731
+wobble_LOGIC = 0.3750
+wobble_CHOOSE = 0.1731
+entropy = 0.0398
+
+[OBSERVE]
+distance = 0.0449
+level = deep
+complementary_balance = 0.6538
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2885
+intensity = 0.2885
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2885
+  COMPOSE(FLOW,FLOW): 0.1346
+  COMPOSE(FLOW,OBSERVE): 0.0962
+  COMPOSE(CHOOSE,FLOW): 0.0769
+  COMPOSE(OBSERVE,OBSERVE): 0.0577
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4135
+modifier_dominant = FLOW
+modifier_pct = 0.5192
+primary_FLOW = 0.2788
+primary_OBSERVE = 0.1250
+primary_LOGIC = 0.4135
+primary_CHOOSE = 0.1827
+modifier_FLOW = 0.5192
+modifier_OBSERVE = 0.2404
+modifier_LOGIC = 0.1538
+modifier_CHOOSE = 0.0865
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0456
+aa_top5 = [
+  Glu: 0.1845  # acidic
+  Asp: 0.1068  # acidic
+  Lys: 0.0971  # basic
+  Leu: 0.0971  # aliphatic
+  Gln: 0.0777  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 103
+stop_codon = TAG
+loss = 0.0456
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.deep.dominant.low.ionic_interaction

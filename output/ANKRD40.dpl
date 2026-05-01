@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ANKRD40 | unknown
+# CDS: 366 bp (122 codons)
+
+[IDENTITY]
+gene = ANKRD40
+organism = unknown
+transcript = ENST00000513072.1
+cds_length = 366
+codons = 122
+protein_length = 122
+stop_codon = none
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = CHOOSE
+dominant_pct = 0.3115
+FLOW = 0.2541
+OBSERVE = 0.2131
+LOGIC = 0.2213
+CHOOSE = 0.3115
+state = flowing
+
+[CONNECT]
+depth = 0.8689
+type = ionic_interaction
+hydrophobic_ratio = 0.5492
+charge_positive = 0.0738
+charge_negative = 0.1639
+charge_neutral = 0.7623
+
+[DISSOLVE]
+rigidity = 0.9987
+potential = crystallized
+wobble_entropy = 0.0013
+complementary_disruption = 0.1311
+
+[ENCODE]
+type = moderate
+loss = 0.3281
+gc_content = 0.5328
+wobble_gc = 0.5000
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2705
+wobble_FLOW = 0.2541
+wobble_OBSERVE = 0.2459
+wobble_LOGIC = 0.2295
+wobble_CHOOSE = 0.2705
+entropy = 0.0013
+
+[OBSERVE]
+distance = 0.0574
+level = standard
+complementary_balance = 0.8689
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1721
+intensity = 0.1721
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1721
+  COMPOSE(LOGIC,FLOW): 0.1639
+  COMPOSE(OBSERVE,OBSERVE): 0.0738
+  COMPOSE(OBSERVE,CHOOSE): 0.0738
+  COMPOSE(LOGIC,CHOOSE): 0.0738
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3361
+modifier_dominant = CHOOSE
+modifier_pct = 0.3770
+primary_FLOW = 0.2131
+primary_OBSERVE = 0.1639
+primary_LOGIC = 0.3361
+primary_CHOOSE = 0.2869
+modifier_FLOW = 0.2951
+modifier_OBSERVE = 0.2295
+modifier_LOGIC = 0.0984
+modifier_CHOOSE = 0.3770
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0395
+aa_top5 = [
+  Pro: 0.1721  # cyclic
+  Leu: 0.0984  # aliphatic
+  Asp: 0.0984  # acidic
+  Ser: 0.0738  # hydroxyl
+  Ala: 0.0738  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 122
+stop_codon = none
+loss = 0.0395
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.ionic_interaction

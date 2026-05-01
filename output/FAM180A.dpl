@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM180A | unknown
+# CDS: 522 bp (174 codons)
+
+[IDENTITY]
+gene = FAM180A
+organism = unknown
+transcript = ENST00000415751.1
+cds_length = 522
+codons = 174
+protein_length = 173
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.982
+resistance = 0.018
+dominant = CHOOSE
+dominant_pct = 0.3410
+FLOW = 0.2069
+OBSERVE = 0.1992
+LOGIC = 0.2529
+CHOOSE = 0.3410
+state = flowing
+
+[CONNECT]
+depth = 0.9042
+type = ionic_interaction
+hydrophobic_ratio = 0.5318
+charge_positive = 0.1561
+charge_negative = 0.1040
+charge_neutral = 0.7399
+
+[DISSOLVE]
+rigidity = 0.8513
+potential = crystallized
+wobble_entropy = 0.1487
+complementary_disruption = 0.0958
+
+[ENCODE]
+type = engineered
+loss = 0.2969
+gc_content = 0.5939
+wobble_gc = 0.8046
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4540
+wobble_FLOW = 0.1034
+wobble_OBSERVE = 0.0920
+wobble_LOGIC = 0.3506
+wobble_CHOOSE = 0.4540
+entropy = 0.1487
+
+[OBSERVE]
+distance = 0.0881
+level = mild
+complementary_balance = 0.9042
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1379
+intensity = 0.1379
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1379
+  COMPOSE(LOGIC,FLOW): 0.1034
+  COMPOSE(LOGIC,CHOOSE): 0.0805
+  COMPOSE(CHOOSE,FLOW): 0.0747
+  COMPOSE(OBSERVE,CHOOSE): 0.0747
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3161
+modifier_dominant = OBSERVE
+modifier_pct = 0.3103
+primary_FLOW = 0.2414
+primary_OBSERVE = 0.1954
+primary_LOGIC = 0.2471
+primary_CHOOSE = 0.3161
+modifier_FLOW = 0.2759
+modifier_OBSERVE = 0.3103
+modifier_LOGIC = 0.1609
+modifier_CHOOSE = 0.2529
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0364
+aa_top5 = [
+  Leu: 0.1676  # aliphatic
+  Ser: 0.1156  # hydroxyl
+  Ala: 0.0809  # simple
+  Arg: 0.0694  # basic
+  Glu: 0.0636  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 173
+stop_codon = TGA
+loss = 0.0364
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.ionic_interaction

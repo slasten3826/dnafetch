@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: R3HDML | unknown
+# CDS: 762 bp (254 codons)
+
+[IDENTITY]
+gene = R3HDML
+organism = unknown
+transcript = ENST00000217043.4
+cds_length = 762
+codons = 254
+protein_length = 253
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = CHOOSE
+dominant_pct = 0.3136
+FLOW = 0.2047
+OBSERVE = 0.2008
+LOGIC = 0.2808
+CHOOSE = 0.3136
+state = flowing
+
+[CONNECT]
+depth = 0.9633
+type = membrane_embedded
+hydrophobic_ratio = 0.5929
+charge_positive = 0.1383
+charge_negative = 0.0514
+charge_neutral = 0.8103
+
+[DISSOLVE]
+rigidity = 0.8794
+potential = crystallized
+wobble_entropy = 0.1206
+complementary_disruption = 0.0367
+
+[ENCODE]
+type = engineered
+loss = 0.1719
+gc_content = 0.5945
+wobble_gc = 0.7677
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4331
+wobble_FLOW = 0.0827
+wobble_OBSERVE = 0.1496
+wobble_LOGIC = 0.3346
+wobble_CHOOSE = 0.4331
+entropy = 0.1206
+
+[OBSERVE]
+distance = 0.0328
+level = deep
+complementary_balance = 0.9633
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.0984
+intensity = 0.0984
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.0984
+  COMPOSE(LOGIC,CHOOSE): 0.0945
+  COMPOSE(FLOW,FLOW): 0.0945
+  COMPOSE(FLOW,OBSERVE): 0.0787
+  COMPOSE(CHOOSE,CHOOSE): 0.0748
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2677
+modifier_dominant = FLOW
+modifier_pct = 0.2638
+primary_FLOW = 0.2677
+primary_OBSERVE = 0.2323
+primary_LOGIC = 0.2520
+primary_CHOOSE = 0.2480
+modifier_FLOW = 0.2638
+modifier_OBSERVE = 0.2205
+modifier_LOGIC = 0.2559
+modifier_CHOOSE = 0.2598
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0208
+aa_top5 = [
+  Ser: 0.0949  # hydroxyl
+  Ala: 0.0949  # simple
+  Pro: 0.0751  # cyclic
+  Leu: 0.0751  # aliphatic
+  Gly: 0.0593  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 253
+stop_codon = TGA
+loss = 0.0208
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.membrane_embedded

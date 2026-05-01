@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MAPKAPK2 | unknown
+# CDS: 1113 bp (371 codons)
+
+[IDENTITY]
+gene = MAPKAPK2
+organism = unknown
+transcript = ENST00000294981.8
+cds_length = 1113
+codons = 371
+protein_length = 370
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = CHOOSE
+dominant_pct = 0.3082
+FLOW = 0.2480
+OBSERVE = 0.1869
+LOGIC = 0.2570
+CHOOSE = 0.3082
+state = flowing
+
+[CONNECT]
+depth = 0.8877
+type = balanced_interface
+hydrophobic_ratio = 0.5378
+charge_positive = 0.1459
+charge_negative = 0.1054
+charge_neutral = 0.7486
+
+[DISSOLVE]
+rigidity = 0.9099
+potential = crystallized
+wobble_entropy = 0.0901
+complementary_disruption = 0.1123
+
+[ENCODE]
+type = optimized
+loss = 0.1250
+gc_content = 0.5651
+wobble_gc = 0.7439
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3827
+wobble_FLOW = 0.1213
+wobble_OBSERVE = 0.1348
+wobble_LOGIC = 0.3612
+wobble_CHOOSE = 0.3827
+entropy = 0.0901
+
+[OBSERVE]
+distance = 0.0512
+level = standard
+complementary_balance = 0.8877
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1051
+intensity = 0.1051
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1051
+  COMPOSE(LOGIC,FLOW): 0.1051
+  COMPOSE(CHOOSE,CHOOSE): 0.1024
+  COMPOSE(FLOW,OBSERVE): 0.0916
+  COMPOSE(CHOOSE,FLOW): 0.0863
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2938
+modifier_dominant = FLOW
+modifier_pct = 0.3315
+primary_FLOW = 0.2911
+primary_OBSERVE = 0.1617
+primary_LOGIC = 0.2534
+primary_CHOOSE = 0.2938
+modifier_FLOW = 0.3315
+modifier_OBSERVE = 0.2642
+modifier_LOGIC = 0.1563
+modifier_CHOOSE = 0.2480
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0207
+aa_top5 = [
+  Pro: 0.1027  # cyclic
+  Leu: 0.0892  # aliphatic
+  Lys: 0.0676  # basic
+  Glu: 0.0649  # acidic
+  Ser: 0.0595  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 370
+stop_codon = TGA
+loss = 0.0207
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.balanced_interface

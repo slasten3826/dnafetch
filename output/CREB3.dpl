@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CREB3 | unknown
+# CDS: 1116 bp (372 codons)
+
+[IDENTITY]
+gene = CREB3
+organism = unknown
+transcript = ENST00000353704.3
+cds_length = 1116
+codons = 372
+protein_length = 371
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = CHOOSE
+dominant_pct = 0.2733
+FLOW = 0.2419
+OBSERVE = 0.2133
+LOGIC = 0.2715
+CHOOSE = 0.2733
+state = flowing
+
+[CONNECT]
+depth = 0.9695
+type = balanced_interface
+hydrophobic_ratio = 0.5121
+charge_positive = 0.1132
+charge_negative = 0.1482
+charge_neutral = 0.7385
+
+[DISSOLVE]
+rigidity = 0.9765
+potential = crystallized
+wobble_entropy = 0.0235
+complementary_disruption = 0.0305
+
+[ENCODE]
+type = optimized
+loss = 0.0469
+gc_content = 0.5448
+wobble_gc = 0.6183
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3414
+wobble_FLOW = 0.1774
+wobble_OBSERVE = 0.2043
+wobble_LOGIC = 0.3414
+wobble_CHOOSE = 0.2769
+entropy = 0.0235
+
+[OBSERVE]
+distance = 0.0018
+level = intense
+complementary_balance = 0.9695
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1478
+intensity = 0.1478
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1478
+  COMPOSE(CHOOSE,OBSERVE): 0.1398
+  COMPOSE(FLOW,LOGIC): 0.0780
+  COMPOSE(CHOOSE,CHOOSE): 0.0780
+  COMPOSE(CHOOSE,FLOW): 0.0726
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3118
+modifier_dominant = FLOW
+modifier_pct = 0.3091
+primary_FLOW = 0.2392
+primary_OBSERVE = 0.1532
+primary_LOGIC = 0.2957
+primary_CHOOSE = 0.3118
+modifier_FLOW = 0.3091
+modifier_OBSERVE = 0.2823
+modifier_LOGIC = 0.1774
+modifier_CHOOSE = 0.2312
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0376
+aa_top5 = [
+  Leu: 0.1725  # aliphatic
+  Ser: 0.1024  # hydroxyl
+  Glu: 0.0943  # acidic
+  Pro: 0.0782  # cyclic
+  Asp: 0.0539  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 371
+stop_codon = TAG
+loss = 0.0376
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.intense.dominant.crystallized.balanced_interface

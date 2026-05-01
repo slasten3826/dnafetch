@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SPRR2D | unknown
+# CDS: 345 bp (115 codons)
+
+[IDENTITY]
+gene = SPRR2D
+organism = unknown
+transcript = ENST00000368756.1
+cds_length = 345
+codons = 115
+protein_length = 114
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = CHOOSE
+dominant_pct = 0.3101
+FLOW = 0.2696
+OBSERVE = 0.1971
+LOGIC = 0.2232
+CHOOSE = 0.3101
+state = flowing
+
+[CONNECT]
+depth = 0.8406
+type = ionic_interaction
+hydrophobic_ratio = 0.5175
+charge_positive = 0.1579
+charge_negative = 0.0526
+charge_neutral = 0.7895
+
+[DISSOLVE]
+rigidity = 0.9743
+potential = crystallized
+wobble_entropy = 0.0257
+complementary_disruption = 0.1594
+
+[ENCODE]
+type = moderate
+loss = 0.3125
+gc_content = 0.5333
+wobble_gc = 0.4957
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3391
+wobble_FLOW = 0.2348
+wobble_OBSERVE = 0.2696
+wobble_LOGIC = 0.1565
+wobble_CHOOSE = 0.3391
+entropy = 0.0257
+
+[OBSERVE]
+distance = 0.0406
+level = deep
+complementary_balance = 0.8406
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1913
+intensity = 0.1913
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1913
+  COMPOSE(CHOOSE,FLOW): 0.1478
+  COMPOSE(LOGIC,CHOOSE): 0.1043
+  COMPOSE(CHOOSE,OBSERVE): 0.0957
+  COMPOSE(CHOOSE,CHOOSE): 0.0957
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3565
+modifier_dominant = LOGIC
+modifier_pct = 0.3043
+primary_FLOW = 0.3304
+primary_OBSERVE = 0.1043
+primary_LOGIC = 0.2087
+primary_CHOOSE = 0.3565
+modifier_FLOW = 0.2435
+modifier_OBSERVE = 0.2174
+modifier_LOGIC = 0.3043
+modifier_CHOOSE = 0.2348
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0393
+aa_top5 = [
+  Ser: 0.1491  # hydroxyl
+  Leu: 0.1053  # aliphatic
+  Ala: 0.1053  # simple
+  Pro: 0.0965  # cyclic
+  Gln: 0.0789  # amide
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 114
+stop_codon = TGA
+loss = 0.0393
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: THY1 | unknown
+# CDS: 456 bp (152 codons)
+
+[IDENTITY]
+gene = THY1
+organism = unknown
+transcript = ENST00000524659.1
+cds_length = 456
+codons = 152
+protein_length = 152
+stop_codon = none
+
+[FLOW]
+engagement = 0.982
+resistance = 0.018
+dominant = CHOOSE
+dominant_pct = 0.3465
+FLOW = 0.2259
+OBSERVE = 0.1996
+LOGIC = 0.2281
+CHOOSE = 0.3465
+state = flowing
+
+[CONNECT]
+depth = 0.8553
+type = balanced_interface
+hydrophobic_ratio = 0.4868
+charge_positive = 0.1382
+charge_negative = 0.0658
+charge_neutral = 0.7961
+
+[DISSOLVE]
+rigidity = 0.8507
+potential = crystallized
+wobble_entropy = 0.1493
+complementary_disruption = 0.1447
+
+[ENCODE]
+type = engineered
+loss = 0.2656
+gc_content = 0.5746
+wobble_gc = 0.7895
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5000
+wobble_FLOW = 0.1053
+wobble_OBSERVE = 0.1053
+wobble_LOGIC = 0.2895
+wobble_CHOOSE = 0.5000
+entropy = 0.1493
+
+[OBSERVE]
+distance = 0.1184
+level = mild
+complementary_balance = 0.8553
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1579
+intensity = 0.1579
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1579
+  COMPOSE(FLOW,CHOOSE): 0.0987
+  COMPOSE(FLOW,FLOW): 0.0921
+  COMPOSE(CHOOSE,FLOW): 0.0789
+  COMPOSE(LOGIC,OBSERVE): 0.0724
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3026
+modifier_dominant = OBSERVE
+modifier_pct = 0.3158
+primary_FLOW = 0.3026
+primary_OBSERVE = 0.1776
+primary_LOGIC = 0.2171
+primary_CHOOSE = 0.3026
+modifier_FLOW = 0.2697
+modifier_OBSERVE = 0.3158
+modifier_LOGIC = 0.1776
+modifier_CHOOSE = 0.2368
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0393
+aa_top5 = [
+  Leu: 0.1711  # aliphatic
+  Ser: 0.1316  # hydroxyl
+  Thr: 0.0987  # hydroxyl
+  Val: 0.0724  # aliphatic
+  Lys: 0.0526  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 152
+stop_codon = none
+loss = 0.0393
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.balanced_interface

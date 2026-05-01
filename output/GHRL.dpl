@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GHRL | unknown
+# CDS: 186 bp (62 codons)
+
+[IDENTITY]
+gene = GHRL
+organism = unknown
+transcript = ENST00000425479.1
+cds_length = 186
+codons = 62
+protein_length = 61
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.974
+resistance = 0.026
+dominant = CHOOSE
+dominant_pct = 0.3387
+FLOW = 0.1559
+OBSERVE = 0.2312
+LOGIC = 0.2742
+CHOOSE = 0.3387
+state = flowing
+
+[CONNECT]
+depth = 0.8602
+type = membrane_embedded
+hydrophobic_ratio = 0.6230
+charge_positive = 0.0656
+charge_negative = 0.0164
+charge_neutral = 0.9180
+
+[DISSOLVE]
+rigidity = 0.9890
+potential = crystallized
+wobble_entropy = 0.0110
+complementary_disruption = 0.1398
+
+[ENCODE]
+type = moderate
+loss = 0.5000
+gc_content = 0.6129
+wobble_gc = 0.5806
+codon_diversity = 0.5000
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3065
+wobble_FLOW = 0.2258
+wobble_OBSERVE = 0.1935
+wobble_LOGIC = 0.3065
+wobble_CHOOSE = 0.2742
+entropy = 0.0110
+
+[OBSERVE]
+distance = 0.0645
+level = standard
+complementary_balance = 0.8602
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1613
+intensity = 0.1613
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1613
+  COMPOSE(OBSERVE,CHOOSE): 0.1613
+  COMPOSE(LOGIC,CHOOSE): 0.1613
+  COMPOSE(CHOOSE,CHOOSE): 0.1129
+  COMPOSE(CHOOSE,FLOW): 0.0806
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3710
+modifier_dominant = CHOOSE
+modifier_pct = 0.5000
+primary_FLOW = 0.1290
+primary_OBSERVE = 0.3710
+primary_LOGIC = 0.2581
+primary_CHOOSE = 0.2419
+modifier_FLOW = 0.1129
+modifier_OBSERVE = 0.1290
+modifier_LOGIC = 0.2581
+modifier_CHOOSE = 0.5000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0490
+aa_top5 = [
+  Ser: 0.1639  # hydroxyl
+  Ala: 0.1639  # simple
+  Pro: 0.1148  # cyclic
+  Trp: 0.0820  # aromatic
+  Thr: 0.0656  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 61
+stop_codon = TGA
+loss = 0.0490
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GLRA1 | unknown
+# CDS: 1101 bp (367 codons)
+
+[IDENTITY]
+gene = GLRA1
+organism = unknown
+transcript = ENST00000462581.6
+cds_length = 1101
+codons = 367
+protein_length = 366
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = CHOOSE
+dominant_pct = 0.2816
+FLOW = 0.2561
+OBSERVE = 0.2289
+LOGIC = 0.2334
+CHOOSE = 0.2816
+state = flowing
+
+[CONNECT]
+depth = 0.9246
+type = membrane_embedded
+hydrophobic_ratio = 0.5546
+charge_positive = 0.1421
+charge_negative = 0.1038
+charge_neutral = 0.7541
+
+[DISSOLVE]
+rigidity = 0.9367
+potential = crystallized
+wobble_entropy = 0.0633
+complementary_disruption = 0.0754
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.5150
+wobble_gc = 0.6894
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4114
+wobble_FLOW = 0.1417
+wobble_OBSERVE = 0.1689
+wobble_LOGIC = 0.2779
+wobble_CHOOSE = 0.4114
+entropy = 0.0633
+
+[OBSERVE]
+distance = 0.0254
+level = deep
+complementary_balance = 0.9246
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1172
+intensity = 0.1172
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1172
+  COMPOSE(FLOW,FLOW): 0.1090
+  COMPOSE(LOGIC,FLOW): 0.1035
+  COMPOSE(CHOOSE,OBSERVE): 0.0817
+  COMPOSE(OBSERVE,OBSERVE): 0.0736
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3106
+modifier_dominant = OBSERVE
+modifier_pct = 0.3188
+primary_FLOW = 0.3106
+primary_OBSERVE = 0.1989
+primary_LOGIC = 0.2616
+primary_CHOOSE = 0.2289
+modifier_FLOW = 0.3161
+modifier_OBSERVE = 0.3188
+modifier_LOGIC = 0.1608
+modifier_CHOOSE = 0.2044
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0182
+aa_top5 = [
+  Leu: 0.0956  # aliphatic
+  Ile: 0.0765  # aliphatic
+  Ala: 0.0656  # simple
+  Arg: 0.0628  # basic
+  Phe: 0.0601  # aromatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 366
+stop_codon = TGA
+loss = 0.0182
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.membrane_embedded

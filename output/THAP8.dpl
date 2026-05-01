@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: THAP8 | unknown
+# CDS: 543 bp (181 codons)
+
+[IDENTITY]
+gene = THAP8
+organism = unknown
+transcript = ENST00000607730.1
+cds_length = 543
+codons = 181
+protein_length = 181
+stop_codon = none
+
+[FLOW]
+engagement = 0.946
+resistance = 0.054
+dominant = CHOOSE
+dominant_pct = 0.3757
+FLOW = 0.1731
+OBSERVE = 0.1418
+LOGIC = 0.3094
+CHOOSE = 0.3757
+state = flowing
+
+[CONNECT]
+depth = 0.9024
+type = ionic_interaction
+hydrophobic_ratio = 0.5470
+charge_positive = 0.1657
+charge_negative = 0.0442
+charge_neutral = 0.7901
+
+[DISSOLVE]
+rigidity = 0.8913
+potential = crystallized
+wobble_entropy = 0.1087
+complementary_disruption = 0.0976
+
+[ENCODE]
+type = engineered
+loss = 0.2969
+gc_content = 0.6851
+wobble_gc = 0.7569
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4254
+wobble_FLOW = 0.1492
+wobble_OBSERVE = 0.0939
+wobble_LOGIC = 0.4254
+wobble_CHOOSE = 0.3315
+entropy = 0.1087
+
+[OBSERVE]
+distance = 0.0663
+level = standard
+complementary_balance = 0.9024
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1381
+intensity = 0.1381
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1381
+  COMPOSE(CHOOSE,CHOOSE): 0.1381
+  COMPOSE(CHOOSE,OBSERVE): 0.1105
+  COMPOSE(CHOOSE,LOGIC): 0.0994
+  COMPOSE(LOGIC,CHOOSE): 0.0773
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4862
+modifier_dominant = CHOOSE
+modifier_pct = 0.3094
+primary_FLOW = 0.1547
+primary_OBSERVE = 0.1105
+primary_LOGIC = 0.2486
+primary_CHOOSE = 0.4862
+modifier_FLOW = 0.2155
+modifier_OBSERVE = 0.2210
+modifier_LOGIC = 0.2541
+modifier_CHOOSE = 0.3094
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0410
+aa_top5 = [
+  Pro: 0.1381  # cyclic
+  Leu: 0.1160  # aliphatic
+  Arg: 0.1105  # basic
+  Gln: 0.1050  # amide
+  Ser: 0.0773  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 181
+stop_codon = none
+loss = 0.0410
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.crystallized.ionic_interaction

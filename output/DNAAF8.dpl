@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DNAAF8 | unknown
+# CDS: 303 bp (101 codons)
+
+[IDENTITY]
+gene = DNAAF8
+organism = unknown
+transcript = ENST00000619274.1
+cds_length = 303
+codons = 101
+protein_length = 100
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = CHOOSE
+dominant_pct = 0.3267
+FLOW = 0.2277
+OBSERVE = 0.1716
+LOGIC = 0.2739
+CHOOSE = 0.3267
+state = flowing
+
+[CONNECT]
+depth = 0.8911
+type = balanced_interface
+hydrophobic_ratio = 0.5400
+charge_positive = 0.1400
+charge_negative = 0.0900
+charge_neutral = 0.7700
+
+[DISSOLVE]
+rigidity = 0.9838
+potential = crystallized
+wobble_entropy = 0.0162
+complementary_disruption = 0.1089
+
+[ENCODE]
+type = optimized
+loss = 0.3438
+gc_content = 0.6007
+wobble_gc = 0.6040
+codon_diversity = 0.6562
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3168
+wobble_FLOW = 0.1980
+wobble_OBSERVE = 0.1980
+wobble_LOGIC = 0.3168
+wobble_CHOOSE = 0.2871
+entropy = 0.0162
+
+[OBSERVE]
+distance = 0.0528
+level = standard
+complementary_balance = 0.8911
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1683
+intensity = 0.1683
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1683
+  COMPOSE(CHOOSE,CHOOSE): 0.1188
+  COMPOSE(CHOOSE,OBSERVE): 0.1188
+  COMPOSE(LOGIC,FLOW): 0.0891
+  COMPOSE(LOGIC,LOGIC): 0.0891
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4257
+modifier_dominant = FLOW
+modifier_pct = 0.3267
+primary_FLOW = 0.1584
+primary_OBSERVE = 0.1089
+primary_LOGIC = 0.3069
+primary_CHOOSE = 0.4257
+modifier_FLOW = 0.3267
+modifier_OBSERVE = 0.2079
+modifier_LOGIC = 0.1980
+modifier_CHOOSE = 0.2673
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0389
+aa_top5 = [
+  Leu: 0.1400  # aliphatic
+  Pro: 0.1200  # cyclic
+  Gln: 0.1000  # amide
+  Gly: 0.0900  # simple
+  Ala: 0.0800  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 100
+stop_codon = TAA
+loss = 0.0389
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.crystallized.balanced_interface

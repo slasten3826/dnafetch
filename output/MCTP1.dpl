@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MCTP1 | unknown
+# CDS: 78 bp (26 codons)
+
+[IDENTITY]
+gene = MCTP1
+organism = unknown
+transcript = ENST00000505465.1
+cds_length = 78
+codons = 26
+protein_length = 25
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.961
+resistance = 0.039
+dominant = OBSERVE
+dominant_pct = 0.3718
+FLOW = 0.2821
+OBSERVE = 0.3718
+LOGIC = 0.1667
+CHOOSE = 0.1795
+state = flowing
+
+[CONNECT]
+depth = 0.8974
+type = membrane_embedded
+hydrophobic_ratio = 0.6800
+charge_positive = 0.0800
+charge_negative = 0.0400
+charge_neutral = 0.8800
+
+[DISSOLVE]
+rigidity = 0.9716
+potential = crystallized
+wobble_entropy = 0.0284
+complementary_disruption = 0.1026
+
+[ENCODE]
+type = natural
+loss = 0.6875
+gc_content = 0.3462
+wobble_gc = 0.3846
+codon_diversity = 0.3125
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3462
+wobble_FLOW = 0.2692
+wobble_OBSERVE = 0.3462
+wobble_LOGIC = 0.2308
+wobble_CHOOSE = 0.1538
+entropy = 0.0284
+
+[OBSERVE]
+distance = 0.0897
+level = mild
+complementary_balance = 0.8974
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1538
+intensity = 0.1538
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1538
+  COMPOSE(FLOW,OBSERVE): 0.1154
+  COMPOSE(CHOOSE,OBSERVE): 0.1154
+  COMPOSE(OBSERVE,FLOW): 0.1154
+  COMPOSE(LOGIC,CHOOSE): 0.1154
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3846
+modifier_dominant = OBSERVE
+modifier_pct = 0.3846
+primary_FLOW = 0.2308
+primary_OBSERVE = 0.3846
+primary_LOGIC = 0.1538
+primary_CHOOSE = 0.2308
+modifier_FLOW = 0.3462
+modifier_OBSERVE = 0.3846
+modifier_LOGIC = 0.1154
+modifier_CHOOSE = 0.1538
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0488
+aa_top5 = [
+  Leu: 0.1600  # aliphatic
+  Phe: 0.1200  # aromatic
+  Ala: 0.1200  # simple
+  Gln: 0.1200  # amide
+  Cys: 0.0800  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 25
+stop_codon = TAA
+loss = 0.0488
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.mild.dominant.crystallized.membrane_embedded

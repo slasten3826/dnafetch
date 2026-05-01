@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KCNE4 | unknown
+# CDS: 513 bp (171 codons)
+
+[IDENTITY]
+gene = KCNE4
+organism = unknown
+transcript = ENST00000281830.4
+cds_length = 513
+codons = 171
+protein_length = 170
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.978
+resistance = 0.022
+dominant = LOGIC
+dominant_pct = 0.3216
+FLOW = 0.2047
+OBSERVE = 0.1754
+LOGIC = 0.3216
+CHOOSE = 0.2982
+state = flowing
+
+[CONNECT]
+depth = 0.9474
+type = balanced_interface
+hydrophobic_ratio = 0.5118
+charge_positive = 0.0882
+charge_negative = 0.1412
+charge_neutral = 0.7706
+
+[DISSOLVE]
+rigidity = 0.7486
+potential = low
+wobble_entropy = 0.2514
+complementary_disruption = 0.0526
+
+[ENCODE]
+type = engineered
+loss = 0.3281
+gc_content = 0.6199
+wobble_gc = 0.8889
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4561
+wobble_FLOW = 0.0409
+wobble_OBSERVE = 0.0702
+wobble_LOGIC = 0.4561
+wobble_CHOOSE = 0.4327
+entropy = 0.2514
+
+[OBSERVE]
+distance = 0.0234
+level = deep
+complementary_balance = 0.9474
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1404
+intensity = 0.1404
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1404
+  COMPOSE(CHOOSE,OBSERVE): 0.1170
+  COMPOSE(OBSERVE,CHOOSE): 0.0994
+  COMPOSE(FLOW,OBSERVE): 0.0877
+  COMPOSE(FLOW,FLOW): 0.0819
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3216
+modifier_dominant = FLOW
+modifier_pct = 0.2982
+primary_FLOW = 0.2749
+primary_OBSERVE = 0.1754
+primary_LOGIC = 0.3216
+primary_CHOOSE = 0.2281
+modifier_FLOW = 0.2982
+modifier_OBSERVE = 0.2807
+modifier_LOGIC = 0.1871
+modifier_CHOOSE = 0.2339
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0389
+aa_top5 = [
+  Ser: 0.1588  # hydroxyl
+  Leu: 0.1235  # aliphatic
+  Glu: 0.1118  # acidic
+  Gly: 0.0824  # simple
+  Met: 0.0529  # sulfur
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 170
+stop_codon = TAG
+loss = 0.0389
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.low.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MIDN | unknown
+# CDS: 1407 bp (469 codons)
+
+[IDENTITY]
+gene = MIDN
+organism = unknown
+transcript = ENST00000591446.7
+cds_length = 1407
+codons = 469
+protein_length = 468
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.937
+resistance = 0.063
+dominant = CHOOSE
+dominant_pct = 0.3895
+FLOW = 0.1628
+OBSERVE = 0.1379
+LOGIC = 0.3099
+CHOOSE = 0.3895
+state = flowing
+
+[CONNECT]
+depth = 0.8955
+type = balanced_interface
+hydrophobic_ratio = 0.5278
+charge_positive = 0.1410
+charge_negative = 0.0812
+charge_neutral = 0.7778
+
+[DISSOLVE]
+rigidity = 0.8041
+potential = low
+wobble_entropy = 0.1959
+complementary_disruption = 0.1045
+
+[ENCODE]
+type = engineered
+loss = 0.1250
+gc_content = 0.6994
+wobble_gc = 0.8443
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4883
+wobble_FLOW = 0.0725
+wobble_OBSERVE = 0.0832
+wobble_LOGIC = 0.3561
+wobble_CHOOSE = 0.4883
+entropy = 0.1959
+
+[OBSERVE]
+distance = 0.0796
+level = standard
+complementary_balance = 0.8955
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1173
+intensity = 0.1173
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1173
+  COMPOSE(CHOOSE,CHOOSE): 0.1002
+  COMPOSE(CHOOSE,OBSERVE): 0.0832
+  COMPOSE(LOGIC,FLOW): 0.0810
+  COMPOSE(CHOOSE,FLOW): 0.0768
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3369
+modifier_dominant = CHOOSE
+modifier_pct = 0.3433
+primary_FLOW = 0.2068
+primary_OBSERVE = 0.1322
+primary_LOGIC = 0.3241
+primary_CHOOSE = 0.3369
+modifier_FLOW = 0.2090
+modifier_OBSERVE = 0.1983
+modifier_LOGIC = 0.2495
+modifier_CHOOSE = 0.3433
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0370
+aa_top5 = [
+  Ser: 0.1303  # hydroxyl
+  Ala: 0.1175  # simple
+  Pro: 0.1004  # cyclic
+  Leu: 0.0919  # aliphatic
+  Arg: 0.0833  # basic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 468
+stop_codon = TAG
+loss = 0.0370
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.low.balanced_interface

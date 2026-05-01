@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000271810 | unknown
+# CDS: 579 bp (193 codons)
+
+[IDENTITY]
+gene = ENSG00000271810
+organism = unknown
+transcript = ENST00000606954.1
+cds_length = 579
+codons = 193
+protein_length = 193
+stop_codon = none
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = LOGIC
+dominant_pct = 0.2832
+FLOW = 0.2159
+OBSERVE = 0.2245
+LOGIC = 0.2832
+CHOOSE = 0.2763
+state = flowing
+
+[CONNECT]
+depth = 0.9845
+type = membrane_embedded
+hydrophobic_ratio = 0.5648
+charge_positive = 0.0984
+charge_negative = 0.1658
+charge_neutral = 0.7358
+
+[DISSOLVE]
+rigidity = 0.9276
+potential = crystallized
+wobble_entropy = 0.0724
+complementary_disruption = 0.0155
+
+[ENCODE]
+type = optimized
+loss = 0.2031
+gc_content = 0.5596
+wobble_gc = 0.6891
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3886
+wobble_FLOW = 0.0984
+wobble_OBSERVE = 0.2124
+wobble_LOGIC = 0.3005
+wobble_CHOOSE = 0.3886
+entropy = 0.0724
+
+[OBSERVE]
+distance = 0.0069
+level = strong
+complementary_balance = 0.9845
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1658
+intensity = 0.1658
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1658
+  COMPOSE(LOGIC,OBSERVE): 0.1036
+  COMPOSE(CHOOSE,OBSERVE): 0.0881
+  COMPOSE(FLOW,CHOOSE): 0.0725
+  COMPOSE(FLOW,OBSERVE): 0.0674
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3731
+modifier_dominant = FLOW
+modifier_pct = 0.3057
+primary_FLOW = 0.2435
+primary_OBSERVE = 0.1606
+primary_LOGIC = 0.3731
+primary_CHOOSE = 0.2228
+modifier_FLOW = 0.3057
+modifier_OBSERVE = 0.3005
+modifier_LOGIC = 0.1762
+modifier_CHOOSE = 0.2176
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0272
+aa_top5 = [
+  Val: 0.1036  # aliphatic
+  Asp: 0.1036  # acidic
+  Leu: 0.0933  # aliphatic
+  Thr: 0.0725  # hydroxyl
+  Pro: 0.0674  # cyclic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 193
+stop_codon = none
+loss = 0.0272
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.strong.dominant.crystallized.membrane_embedded

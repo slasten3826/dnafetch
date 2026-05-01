@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CHRM1 | unknown
+# CDS: 402 bp (134 codons)
+
+[IDENTITY]
+gene = CHRM1
+organism = unknown
+transcript = ENST00000536524.1
+cds_length = 402
+codons = 134
+protein_length = 134
+stop_codon = none
+
+[FLOW]
+engagement = 0.983
+resistance = 0.017
+dominant = CHOOSE
+dominant_pct = 0.3433
+FLOW = 0.1915
+OBSERVE = 0.2338
+LOGIC = 0.2313
+CHOOSE = 0.3433
+state = flowing
+
+[CONNECT]
+depth = 0.8458
+type = membrane_embedded
+hydrophobic_ratio = 0.6567
+charge_positive = 0.0522
+charge_negative = 0.0373
+charge_neutral = 0.9104
+
+[DISSOLVE]
+rigidity = 0.8608
+potential = crystallized
+wobble_entropy = 0.1392
+complementary_disruption = 0.1542
+
+[ENCODE]
+type = engineered
+loss = 0.3125
+gc_content = 0.5746
+wobble_gc = 0.7687
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4925
+wobble_FLOW = 0.0821
+wobble_OBSERVE = 0.1493
+wobble_LOGIC = 0.2761
+wobble_CHOOSE = 0.4925
+entropy = 0.1392
+
+[OBSERVE]
+distance = 0.1095
+level = mild
+complementary_balance = 0.8458
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1791
+intensity = 0.1791
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1791
+  COMPOSE(FLOW,CHOOSE): 0.0970
+  COMPOSE(FLOW,FLOW): 0.0896
+  COMPOSE(LOGIC,CHOOSE): 0.0896
+  COMPOSE(FLOW,OBSERVE): 0.0821
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3060
+modifier_dominant = OBSERVE
+modifier_pct = 0.3806
+primary_FLOW = 0.3060
+primary_OBSERVE = 0.1716
+primary_LOGIC = 0.2612
+primary_CHOOSE = 0.2612
+modifier_FLOW = 0.1866
+modifier_OBSERVE = 0.3806
+modifier_LOGIC = 0.1567
+modifier_CHOOSE = 0.2761
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0402
+aa_top5 = [
+  Leu: 0.1791  # aliphatic
+  Thr: 0.0970  # hydroxyl
+  Ala: 0.0896  # simple
+  Ser: 0.0821  # hydroxyl
+  Val: 0.0746  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 134
+stop_codon = none
+loss = 0.0402
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.membrane_embedded

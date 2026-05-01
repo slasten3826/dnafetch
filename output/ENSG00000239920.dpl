@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000239920 | unknown
+# CDS: 150 bp (50 codons)
+
+[IDENTITY]
+gene = ENSG00000239920
+organism = unknown
+transcript = ENST00000380259.7
+cds_length = 150
+codons = 50
+protein_length = 49
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = LOGIC
+dominant_pct = 0.2867
+FLOW = 0.2400
+OBSERVE = 0.2133
+LOGIC = 0.2867
+CHOOSE = 0.2600
+state = flowing
+
+[CONNECT]
+depth = 0.9467
+type = membrane_embedded
+hydrophobic_ratio = 0.5714
+charge_positive = 0.1837
+charge_negative = 0.0612
+charge_neutral = 0.7551
+
+[DISSOLVE]
+rigidity = 0.9565
+potential = crystallized
+wobble_entropy = 0.0435
+complementary_disruption = 0.0533
+
+[ENCODE]
+type = moderate
+loss = 0.5625
+gc_content = 0.5467
+wobble_gc = 0.5600
+codon_diversity = 0.4375
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3800
+wobble_FLOW = 0.2800
+wobble_OBSERVE = 0.1600
+wobble_LOGIC = 0.3800
+wobble_CHOOSE = 0.1800
+entropy = 0.0435
+
+[OBSERVE]
+distance = 0.0267
+level = deep
+complementary_balance = 0.9467
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1400
+intensity = 0.1400
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1400
+  COMPOSE(CHOOSE,CHOOSE): 0.1200
+  COMPOSE(OBSERVE,CHOOSE): 0.1000
+  COMPOSE(FLOW,CHOOSE): 0.0800
+  COMPOSE(FLOW,LOGIC): 0.0800
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3000
+modifier_dominant = CHOOSE
+modifier_pct = 0.3800
+primary_FLOW = 0.2800
+primary_OBSERVE = 0.3000
+primary_LOGIC = 0.2000
+primary_CHOOSE = 0.2200
+modifier_FLOW = 0.1600
+modifier_OBSERVE = 0.1800
+modifier_LOGIC = 0.2800
+modifier_CHOOSE = 0.3800
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0421
+aa_top5 = [
+  Leu: 0.1224  # aliphatic
+  Pro: 0.1224  # cyclic
+  Ser: 0.1020  # hydroxyl
+  Trp: 0.0816  # aromatic
+  Thr: 0.0816  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 49
+stop_codon = TGA
+loss = 0.0421
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.crystallized.membrane_embedded

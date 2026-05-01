@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DHRS12 | unknown
+# CDS: 207 bp (69 codons)
+
+[IDENTITY]
+gene = DHRS12
+organism = unknown
+transcript = ENST00000461948.2
+cds_length = 207
+codons = 69
+protein_length = 68
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.985
+resistance = 0.015
+dominant = CHOOSE
+dominant_pct = 0.3092
+FLOW = 0.1836
+OBSERVE = 0.2850
+LOGIC = 0.2222
+CHOOSE = 0.3092
+state = flowing
+
+[CONNECT]
+depth = 0.8116
+type = membrane_embedded
+hydrophobic_ratio = 0.6176
+charge_positive = 0.1176
+charge_negative = 0.0441
+charge_neutral = 0.8382
+
+[DISSOLVE]
+rigidity = 0.9824
+potential = crystallized
+wobble_entropy = 0.0176
+complementary_disruption = 0.1884
+
+[ENCODE]
+type = moderate
+loss = 0.4062
+gc_content = 0.5314
+wobble_gc = 0.5652
+codon_diversity = 0.5938
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2899
+wobble_FLOW = 0.1594
+wobble_OBSERVE = 0.2754
+wobble_LOGIC = 0.2899
+wobble_CHOOSE = 0.2754
+entropy = 0.0176
+
+[OBSERVE]
+distance = 0.0242
+level = deep
+complementary_balance = 0.8116
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1159
+intensity = 0.1159
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1159
+  COMPOSE(CHOOSE,CHOOSE): 0.1159
+  COMPOSE(LOGIC,CHOOSE): 0.1014
+  COMPOSE(CHOOSE,OBSERVE): 0.0870
+  COMPOSE(OBSERVE,LOGIC): 0.0870
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.2754
+modifier_dominant = CHOOSE
+modifier_pct = 0.4058
+primary_FLOW = 0.2464
+primary_OBSERVE = 0.2754
+primary_LOGIC = 0.2319
+primary_CHOOSE = 0.2464
+modifier_FLOW = 0.1449
+modifier_OBSERVE = 0.3043
+modifier_LOGIC = 0.1449
+modifier_CHOOSE = 0.4058
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0432
+aa_top5 = [
+  Ser: 0.1471  # hydroxyl
+  Pro: 0.1176  # cyclic
+  Leu: 0.1176  # aliphatic
+  Ala: 0.1029  # simple
+  Val: 0.0882  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 68
+stop_codon = TGA
+loss = 0.0432
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.strong.crystallized.membrane_embedded

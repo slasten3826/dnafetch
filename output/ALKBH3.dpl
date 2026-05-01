@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ALKBH3 | unknown
+# CDS: 438 bp (146 codons)
+
+[IDENTITY]
+gene = ALKBH3
+organism = unknown
+transcript = ENST00000532129.1
+cds_length = 438
+codons = 146
+protein_length = 145
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = FLOW
+dominant_pct = 0.2991
+FLOW = 0.2991
+OBSERVE = 0.1963
+LOGIC = 0.2557
+CHOOSE = 0.2489
+state = flowing
+
+[CONNECT]
+depth = 0.8904
+type = ionic_interaction
+hydrophobic_ratio = 0.4897
+charge_positive = 0.1793
+charge_negative = 0.1379
+charge_neutral = 0.6828
+
+[DISSOLVE]
+rigidity = 0.9923
+potential = crystallized
+wobble_entropy = 0.0077
+complementary_disruption = 0.1096
+
+[ENCODE]
+type = moderate
+loss = 0.1250
+gc_content = 0.5046
+wobble_gc = 0.5205
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2877
+wobble_FLOW = 0.2877
+wobble_OBSERVE = 0.1918
+wobble_LOGIC = 0.2534
+wobble_CHOOSE = 0.2671
+entropy = 0.0077
+
+[OBSERVE]
+distance = 0.0434
+level = deep
+complementary_balance = 0.8904
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1370
+intensity = 0.1370
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1370
+  COMPOSE(FLOW,FLOW): 0.0959
+  COMPOSE(CHOOSE,CHOOSE): 0.0890
+  COMPOSE(FLOW,LOGIC): 0.0685
+  COMPOSE(FLOW,CHOOSE): 0.0685
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2877
+modifier_dominant = FLOW
+modifier_pct = 0.3219
+primary_FLOW = 0.2877
+primary_OBSERVE = 0.1781
+primary_LOGIC = 0.2877
+primary_CHOOSE = 0.2466
+modifier_FLOW = 0.3219
+modifier_OBSERVE = 0.2192
+modifier_LOGIC = 0.2260
+modifier_CHOOSE = 0.2329
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0239
+aa_top5 = [
+  Arg: 0.0966  # basic
+  Pro: 0.0897  # cyclic
+  Leu: 0.0828  # aliphatic
+  Glu: 0.0828  # acidic
+  Thr: 0.0690  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 145
+stop_codon = TGA
+loss = 0.0239
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.deep.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TIPIN | unknown
+# CDS: 348 bp (116 codons)
+
+[IDENTITY]
+gene = TIPIN
+organism = unknown
+transcript = ENST00000570251.1
+cds_length = 348
+codons = 116
+protein_length = 116
+stop_codon = none
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = FLOW
+dominant_pct = 0.3333
+FLOW = 0.3333
+OBSERVE = 0.2213
+LOGIC = 0.2414
+CHOOSE = 0.2040
+state = flowing
+
+[CONNECT]
+depth = 0.8506
+type = ionic_interaction
+hydrophobic_ratio = 0.5086
+charge_positive = 0.1983
+charge_negative = 0.1897
+charge_neutral = 0.6121
+
+[DISSOLVE]
+rigidity = 0.9289
+potential = crystallized
+wobble_entropy = 0.0711
+complementary_disruption = 0.1494
+
+[ENCODE]
+type = natural
+loss = 0.3281
+gc_content = 0.4454
+wobble_gc = 0.3017
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3793
+wobble_FLOW = 0.3793
+wobble_OBSERVE = 0.3190
+wobble_LOGIC = 0.1983
+wobble_CHOOSE = 0.1034
+entropy = 0.0711
+
+[OBSERVE]
+distance = 0.0920
+level = mild
+complementary_balance = 0.8506
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1897
+intensity = 0.1897
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1897
+  COMPOSE(CHOOSE,CHOOSE): 0.1293
+  COMPOSE(FLOW,FLOW): 0.0948
+  COMPOSE(CHOOSE,FLOW): 0.0776
+  COMPOSE(LOGIC,LOGIC): 0.0690
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3707
+modifier_dominant = FLOW
+modifier_pct = 0.3707
+primary_FLOW = 0.2500
+primary_OBSERVE = 0.1121
+primary_LOGIC = 0.3707
+primary_CHOOSE = 0.2672
+modifier_FLOW = 0.3707
+modifier_OBSERVE = 0.2328
+modifier_LOGIC = 0.1552
+modifier_CHOOSE = 0.2414
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0340
+aa_top5 = [
+  Pro: 0.1293  # cyclic
+  Glu: 0.1207  # acidic
+  Leu: 0.0776  # aliphatic
+  Arg: 0.0776  # basic
+  Gly: 0.0690  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 116
+stop_codon = none
+loss = 0.0340
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PCDHA2 | unknown
+# CDS: 2427 bp (809 codons)
+
+[IDENTITY]
+gene = PCDHA2
+organism = unknown
+transcript = ENST00000520672.2
+cds_length = 2427
+codons = 809
+protein_length = 808
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.991
+resistance = 0.009
+dominant = LOGIC
+dominant_pct = 0.3086
+FLOW = 0.2167
+OBSERVE = 0.2097
+LOGIC = 0.3086
+CHOOSE = 0.2649
+state = flowing
+
+[CONNECT]
+depth = 0.9493
+type = balanced_interface
+hydrophobic_ratio = 0.5421
+charge_positive = 0.0990
+charge_negative = 0.1275
+charge_neutral = 0.7735
+
+[DISSOLVE]
+rigidity = 0.9491
+potential = crystallized
+wobble_entropy = 0.0509
+complementary_disruption = 0.0507
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.5735
+wobble_gc = 0.6799
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3782
+wobble_FLOW = 0.1582
+wobble_OBSERVE = 0.1619
+wobble_LOGIC = 0.3782
+wobble_CHOOSE = 0.3016
+entropy = 0.0509
+
+[OBSERVE]
+distance = 0.0437
+level = deep
+complementary_balance = 0.9493
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1273
+intensity = 0.1273
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1273
+  COMPOSE(LOGIC,OBSERVE): 0.1026
+  COMPOSE(CHOOSE,OBSERVE): 0.0915
+  COMPOSE(LOGIC,CHOOSE): 0.0890
+  COMPOSE(OBSERVE,CHOOSE): 0.0766
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3832
+modifier_dominant = OBSERVE
+modifier_pct = 0.2917
+primary_FLOW = 0.2200
+primary_OBSERVE = 0.1755
+primary_LOGIC = 0.3832
+primary_CHOOSE = 0.2213
+modifier_FLOW = 0.2719
+modifier_OBSERVE = 0.2917
+modifier_LOGIC = 0.1644
+modifier_CHOOSE = 0.2719
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0321
+aa_top5 = [
+  Leu: 0.1151  # aliphatic
+  Ser: 0.1064  # hydroxyl
+  Val: 0.1027  # aliphatic
+  Ala: 0.0891  # simple
+  Glu: 0.0718  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 808
+stop_codon = TGA
+loss = 0.0321
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000214265 | unknown
+# CDS: 375 bp (125 codons)
+
+[IDENTITY]
+gene = ENSG00000214265
+organism = unknown
+transcript = ENST00000557230.1
+cds_length = 375
+codons = 125
+protein_length = 124
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = CHOOSE
+dominant_pct = 0.3067
+FLOW = 0.2187
+OBSERVE = 0.2213
+LOGIC = 0.2533
+CHOOSE = 0.3067
+state = flowing
+
+[CONNECT]
+depth = 0.9440
+type = membrane_embedded
+hydrophobic_ratio = 0.7823
+charge_positive = 0.0726
+charge_negative = 0.0323
+charge_neutral = 0.8952
+
+[DISSOLVE]
+rigidity = 0.9801
+potential = crystallized
+wobble_entropy = 0.0199
+complementary_disruption = 0.0560
+
+[ENCODE]
+type = natural
+loss = 0.3125
+gc_content = 0.5600
+wobble_gc = 0.3840
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3200
+wobble_FLOW = 0.2960
+wobble_OBSERVE = 0.3200
+wobble_LOGIC = 0.1920
+wobble_CHOOSE = 0.1920
+entropy = 0.0199
+
+[OBSERVE]
+distance = 0.0533
+level = standard
+complementary_balance = 0.9440
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.2320
+intensity = 0.2320
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.2320
+  COMPOSE(LOGIC,LOGIC): 0.1360
+  COMPOSE(LOGIC,CHOOSE): 0.1280
+  COMPOSE(FLOW,OBSERVE): 0.0960
+  COMPOSE(FLOW,CHOOSE): 0.0640
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3280
+modifier_dominant = CHOOSE
+modifier_pct = 0.4240
+primary_FLOW = 0.2400
+primary_OBSERVE = 0.1280
+primary_LOGIC = 0.3280
+primary_CHOOSE = 0.3040
+modifier_FLOW = 0.1200
+modifier_OBSERVE = 0.2160
+modifier_LOGIC = 0.2400
+modifier_CHOOSE = 0.4240
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0552
+aa_top5 = [
+  Pro: 0.2339  # cyclic
+  Gly: 0.1371  # simple
+  Ala: 0.1290  # simple
+  Thr: 0.0645  # hydroxyl
+  Met: 0.0565  # sulfur
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 124
+stop_codon = TAA
+loss = 0.0552
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.standard.dominant.crystallized.membrane_embedded

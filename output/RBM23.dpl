@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RBM23 | unknown
+# CDS: 33 bp (11 codons)
+
+[IDENTITY]
+gene = RBM23
+organism = unknown
+transcript = ENST00000555691.1
+cds_length = 33
+codons = 11
+protein_length = 10
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.844
+resistance = 0.156
+dominant = FLOW
+dominant_pct = 0.3939
+FLOW = 0.3939
+OBSERVE = 0.2121
+LOGIC = 0.3636
+CHOOSE = 0.0303
+state = flowing
+
+[CONNECT]
+depth = 0.4848
+type = membrane_embedded
+hydrophobic_ratio = 0.8000
+charge_positive = 0.2000
+charge_negative = 0.0000
+charge_neutral = 0.8000
+
+[DISSOLVE]
+rigidity = 0.7177
+potential = moderate
+wobble_entropy = 0.2823
+complementary_disruption = 0.5152
+
+[ENCODE]
+type = AT_rich
+loss = 0.8594
+gc_content = 0.3939
+wobble_gc = 0.1818
+codon_diversity = 0.1406
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.5455
+wobble_FLOW = 0.5455
+wobble_OBSERVE = 0.2727
+wobble_LOGIC = 0.1818
+wobble_CHOOSE = 0.0000
+entropy = 0.2823
+
+[OBSERVE]
+distance = 0.0303
+level = deep
+complementary_balance = 0.4848
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.3636
+intensity = 0.3636
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.3636
+  COMPOSE(FLOW,OBSERVE): 0.1818
+  COMPOSE(FLOW,FLOW): 0.1818
+  COMPOSE(OBSERVE,LOGIC): 0.0909
+  COMPOSE(LOGIC,CHOOSE): 0.0909
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4545
+modifier_dominant = LOGIC
+modifier_pct = 0.4545
+primary_FLOW = 0.3636
+primary_OBSERVE = 0.1818
+primary_LOGIC = 0.4545
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.2727
+modifier_OBSERVE = 0.1818
+modifier_LOGIC = 0.4545
+modifier_CHOOSE = 0.0909
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0975
+aa_top5 = [
+  Gly: 0.4000  # simple
+  Lys: 0.2000  # basic
+  Met: 0.1000  # sulfur
+  Cys: 0.1000  # sulfur
+  Ala: 0.1000  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 10
+stop_codon = TAA
+loss = 0.0975
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.deep.dominant.moderate.membrane_embedded

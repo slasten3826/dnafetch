@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SART1 | unknown
+# CDS: 2403 bp (801 codons)
+
+[IDENTITY]
+gene = SART1
+organism = unknown
+transcript = ENST00000312397.10
+cds_length = 2403
+codons = 801
+protein_length = 800
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.958
+resistance = 0.042
+dominant = LOGIC
+dominant_pct = 0.3666
+FLOW = 0.2451
+OBSERVE = 0.1311
+LOGIC = 0.3666
+CHOOSE = 0.2572
+state = flowing
+
+[CONNECT]
+depth = 0.7765
+type = ionic_interaction
+hydrophobic_ratio = 0.4138
+charge_positive = 0.1988
+charge_negative = 0.1988
+charge_neutral = 0.6025
+
+[DISSOLVE]
+rigidity = 0.8412
+potential = low
+wobble_entropy = 0.1588
+complementary_disruption = 0.2235
+
+[ENCODE]
+type = engineered
+loss = 0.0312
+gc_content = 0.6238
+wobble_gc = 0.8052
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4919
+wobble_FLOW = 0.0936
+wobble_OBSERVE = 0.1011
+wobble_LOGIC = 0.4919
+wobble_CHOOSE = 0.3134
+entropy = 0.1588
+
+[OBSERVE]
+distance = 0.1094
+level = mild
+complementary_balance = 0.7765
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1985
+intensity = 0.1985
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1985
+  COMPOSE(FLOW,FLOW): 0.1174
+  COMPOSE(CHOOSE,LOGIC): 0.0824
+  COMPOSE(CHOOSE,OBSERVE): 0.0824
+  COMPOSE(LOGIC,LOGIC): 0.0799
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3958
+modifier_dominant = FLOW
+modifier_pct = 0.3933
+primary_FLOW = 0.2484
+primary_OBSERVE = 0.0911
+primary_LOGIC = 0.3958
+primary_CHOOSE = 0.2647
+modifier_FLOW = 0.3933
+modifier_OBSERVE = 0.2010
+modifier_LOGIC = 0.2122
+modifier_CHOOSE = 0.1935
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0354
+aa_top5 = [
+  Glu: 0.1363  # acidic
+  Lys: 0.0950  # basic
+  Leu: 0.0925  # aliphatic
+  Arg: 0.0912  # basic
+  Gly: 0.0800  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 800
+stop_codon = TGA
+loss = 0.0354
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.dominant.low.ionic_interaction

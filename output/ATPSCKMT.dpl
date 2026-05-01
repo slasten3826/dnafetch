@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ATPSCKMT | unknown
+# CDS: 450 bp (150 codons)
+
+[IDENTITY]
+gene = ATPSCKMT
+organism = unknown
+transcript = ENST00000506108.2
+cds_length = 450
+codons = 150
+protein_length = 149
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = OBSERVE
+dominant_pct = 0.2800
+FLOW = 0.2444
+OBSERVE = 0.2800
+LOGIC = 0.2644
+CHOOSE = 0.2111
+state = flowing
+
+[CONNECT]
+depth = 0.9111
+type = membrane_embedded
+hydrophobic_ratio = 0.6242
+charge_positive = 0.1007
+charge_negative = 0.0604
+charge_neutral = 0.8389
+
+[DISSOLVE]
+rigidity = 0.9916
+potential = crystallized
+wobble_entropy = 0.0084
+complementary_disruption = 0.0889
+
+[ENCODE]
+type = natural
+loss = 0.1562
+gc_content = 0.4756
+wobble_gc = 0.4267
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2867
+wobble_FLOW = 0.2867
+wobble_OBSERVE = 0.2867
+wobble_LOGIC = 0.2267
+wobble_CHOOSE = 0.2000
+entropy = 0.0084
+
+[OBSERVE]
+distance = 0.0156
+level = strong
+complementary_balance = 0.9111
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1000
+intensity = 0.1000
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1000
+  COMPOSE(LOGIC,OBSERVE): 0.0933
+  COMPOSE(OBSERVE,OBSERVE): 0.0933
+  COMPOSE(FLOW,OBSERVE): 0.0667
+  COMPOSE(CHOOSE,OBSERVE): 0.0667
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3133
+modifier_dominant = OBSERVE
+modifier_pct = 0.3200
+primary_FLOW = 0.2600
+primary_OBSERVE = 0.2333
+primary_LOGIC = 0.3133
+primary_CHOOSE = 0.1933
+modifier_FLOW = 0.1867
+modifier_OBSERVE = 0.3200
+modifier_LOGIC = 0.2533
+modifier_CHOOSE = 0.2400
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0296
+aa_top5 = [
+  Gly: 0.1007  # simple
+  Leu: 0.1007  # aliphatic
+  Ser: 0.1007  # hydroxyl
+  Val: 0.0940  # aliphatic
+  Thr: 0.0671  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 149
+stop_codon = TGA
+loss = 0.0296
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.strong.strong.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FOXO3 | unknown
+# CDS: 1362 bp (454 codons)
+
+[IDENTITY]
+gene = FOXO3
+organism = unknown
+transcript = ENST00000540898.1
+cds_length = 1362
+codons = 454
+protein_length = 453
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.991
+resistance = 0.009
+dominant = CHOOSE
+dominant_pct = 0.3106
+FLOW = 0.2283
+OBSERVE = 0.2056
+LOGIC = 0.2555
+CHOOSE = 0.3106
+state = flowing
+
+[CONNECT]
+depth = 0.9222
+type = balanced_interface
+hydrophobic_ratio = 0.4437
+charge_positive = 0.0883
+charge_negative = 0.0949
+charge_neutral = 0.8168
+
+[DISSOLVE]
+rigidity = 0.9328
+potential = crystallized
+wobble_entropy = 0.0672
+complementary_disruption = 0.0778
+
+[ENCODE]
+type = optimized
+loss = 0.1094
+gc_content = 0.5661
+wobble_gc = 0.6894
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3855
+wobble_FLOW = 0.1079
+wobble_OBSERVE = 0.2026
+wobble_LOGIC = 0.3040
+wobble_CHOOSE = 0.3855
+entropy = 0.0672
+
+[OBSERVE]
+distance = 0.0551
+level = standard
+complementary_balance = 0.9222
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1101
+intensity = 0.1101
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1101
+  COMPOSE(FLOW,FLOW): 0.0947
+  COMPOSE(LOGIC,FLOW): 0.0947
+  COMPOSE(CHOOSE,FLOW): 0.0771
+  COMPOSE(FLOW,LOGIC): 0.0749
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2996
+modifier_dominant = CHOOSE
+modifier_pct = 0.2952
+primary_FLOW = 0.2996
+primary_OBSERVE = 0.1872
+primary_LOGIC = 0.2621
+primary_CHOOSE = 0.2511
+modifier_FLOW = 0.2775
+modifier_OBSERVE = 0.2269
+modifier_LOGIC = 0.2004
+modifier_CHOOSE = 0.2952
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0393
+aa_top5 = [
+  Ser: 0.1854  # hydroxyl
+  Leu: 0.0971  # aliphatic
+  Gly: 0.0684  # simple
+  Asp: 0.0662  # acidic
+  Thr: 0.0640  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 453
+stop_codon = TGA
+loss = 0.0393
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.balanced_interface

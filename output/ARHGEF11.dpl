@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ARHGEF11 | unknown
+# CDS: 4569 bp (1523 codons)
+
+[IDENTITY]
+gene = ARHGEF11
+organism = unknown
+transcript = ENST00000361409.2
+cds_length = 4569
+codons = 1523
+protein_length = 1522
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = CHOOSE
+dominant_pct = 0.2972
+FLOW = 0.2484
+OBSERVE = 0.1832
+LOGIC = 0.2712
+CHOOSE = 0.2972
+state = flowing
+
+[CONNECT]
+depth = 0.9087
+type = balanced_interface
+hydrophobic_ratio = 0.4862
+charge_positive = 0.1399
+charge_negative = 0.1485
+charge_neutral = 0.7116
+
+[DISSOLVE]
+rigidity = 0.9763
+potential = crystallized
+wobble_entropy = 0.0237
+complementary_disruption = 0.0913
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.5684
+wobble_gc = 0.6271
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3211
+wobble_FLOW = 0.1838
+wobble_OBSERVE = 0.1891
+wobble_LOGIC = 0.3060
+wobble_CHOOSE = 0.3211
+entropy = 0.0237
+
+[OBSERVE]
+distance = 0.0260
+level = deep
+complementary_balance = 0.9087
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1484
+intensity = 0.1484
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1484
+  COMPOSE(CHOOSE,OBSERVE): 0.0985
+  COMPOSE(CHOOSE,CHOOSE): 0.0893
+  COMPOSE(FLOW,FLOW): 0.0775
+  COMPOSE(CHOOSE,FLOW): 0.0768
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3224
+modifier_dominant = FLOW
+modifier_pct = 0.3171
+primary_FLOW = 0.2443
+primary_OBSERVE = 0.1254
+primary_LOGIC = 0.3224
+primary_CHOOSE = 0.3079
+modifier_FLOW = 0.3171
+modifier_OBSERVE = 0.2351
+modifier_LOGIC = 0.1852
+modifier_CHOOSE = 0.2626
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0296
+aa_top5 = [
+  Leu: 0.1097  # aliphatic
+  Ser: 0.0986  # hydroxyl
+  Pro: 0.0894  # cyclic
+  Glu: 0.0874  # acidic
+  Gly: 0.0664  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1522
+stop_codon = TAA
+loss = 0.0296
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CKB | unknown
+# CDS: 384 bp (128 codons)
+
+[IDENTITY]
+gene = CKB
+organism = unknown
+transcript = ENST00000557530.1
+cds_length = 384
+codons = 128
+protein_length = 128
+stop_codon = none
+
+[FLOW]
+engagement = 0.947
+resistance = 0.053
+dominant = CHOOSE
+dominant_pct = 0.3594
+FLOW = 0.1979
+OBSERVE = 0.1250
+LOGIC = 0.3177
+CHOOSE = 0.3594
+state = flowing
+
+[CONNECT]
+depth = 0.8854
+type = ionic_interaction
+hydrophobic_ratio = 0.5156
+charge_positive = 0.1484
+charge_negative = 0.1719
+charge_neutral = 0.6797
+
+[DISSOLVE]
+rigidity = 0.5932
+potential = low
+wobble_entropy = 0.4068
+complementary_disruption = 0.1146
+
+[ENCODE]
+type = engineered
+loss = 0.5000
+gc_content = 0.6771
+wobble_gc = 0.9609
+codon_diversity = 0.5000
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.6094
+wobble_FLOW = 0.0156
+wobble_OBSERVE = 0.0234
+wobble_LOGIC = 0.3516
+wobble_CHOOSE = 0.6094
+entropy = 0.4068
+
+[OBSERVE]
+distance = 0.0417
+level = deep
+complementary_balance = 0.8854
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1719
+intensity = 0.1719
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1719
+  COMPOSE(LOGIC,LOGIC): 0.0938
+  COMPOSE(CHOOSE,OBSERVE): 0.0859
+  COMPOSE(FLOW,FLOW): 0.0781
+  COMPOSE(CHOOSE,CHOOSE): 0.0781
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3672
+modifier_dominant = FLOW
+modifier_pct = 0.3359
+primary_FLOW = 0.2422
+primary_OBSERVE = 0.1094
+primary_LOGIC = 0.3672
+primary_CHOOSE = 0.2812
+modifier_FLOW = 0.3359
+modifier_OBSERVE = 0.2422
+modifier_LOGIC = 0.2344
+modifier_CHOOSE = 0.1875
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0271
+aa_top5 = [
+  Asp: 0.1016  # acidic
+  Gly: 0.0938  # simple
+  Leu: 0.0859  # aliphatic
+  Pro: 0.0781  # cyclic
+  Glu: 0.0703  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 128
+stop_codon = none
+loss = 0.0271
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.ionic_interaction

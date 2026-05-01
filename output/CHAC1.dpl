@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CHAC1 | unknown
+# CDS: 414 bp (138 codons)
+
+[IDENTITY]
+gene = CHAC1
+organism = unknown
+transcript = ENST00000487220.1
+cds_length = 414
+codons = 138
+protein_length = 137
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.972
+resistance = 0.028
+dominant = CHOOSE
+dominant_pct = 0.3309
+FLOW = 0.1618
+OBSERVE = 0.2053
+LOGIC = 0.3019
+CHOOSE = 0.3309
+state = flowing
+
+[CONNECT]
+depth = 0.9275
+type = membrane_embedded
+hydrophobic_ratio = 0.5985
+charge_positive = 0.1168
+charge_negative = 0.0365
+charge_neutral = 0.8467
+
+[DISSOLVE]
+rigidity = 0.9615
+potential = crystallized
+wobble_entropy = 0.0385
+complementary_disruption = 0.0725
+
+[ENCODE]
+type = optimized
+loss = 0.3125
+gc_content = 0.6329
+wobble_gc = 0.6594
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3478
+wobble_FLOW = 0.1594
+wobble_OBSERVE = 0.1812
+wobble_LOGIC = 0.3478
+wobble_CHOOSE = 0.3116
+entropy = 0.0385
+
+[OBSERVE]
+distance = 0.0290
+level = deep
+complementary_balance = 0.9275
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1667
+  COMPOSE(CHOOSE,CHOOSE): 0.1377
+  COMPOSE(FLOW,CHOOSE): 0.0942
+  COMPOSE(FLOW,LOGIC): 0.0797
+  COMPOSE(LOGIC,CHOOSE): 0.0797
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2971
+modifier_dominant = CHOOSE
+modifier_pct = 0.3841
+primary_FLOW = 0.2101
+primary_OBSERVE = 0.2754
+primary_LOGIC = 0.2174
+primary_CHOOSE = 0.2971
+modifier_FLOW = 0.1159
+modifier_OBSERVE = 0.1594
+modifier_LOGIC = 0.3406
+modifier_CHOOSE = 0.3841
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0402
+aa_top5 = [
+  Pro: 0.1387  # cyclic
+  Ser: 0.1095  # hydroxyl
+  Thr: 0.0949  # hydroxyl
+  Leu: 0.0876  # aliphatic
+  Trp: 0.0803  # aromatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 137
+stop_codon = TGA
+loss = 0.0402
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.dominant.crystallized.membrane_embedded

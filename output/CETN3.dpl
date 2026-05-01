@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CETN3 | unknown
+# CDS: 336 bp (112 codons)
+
+[IDENTITY]
+gene = CETN3
+organism = unknown
+transcript = ENST00000522842.1
+cds_length = 336
+codons = 112
+protein_length = 111
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.936
+resistance = 0.064
+dominant = FLOW
+dominant_pct = 0.3839
+FLOW = 0.3839
+OBSERVE = 0.2827
+LOGIC = 0.2292
+CHOOSE = 0.1042
+state = flowing
+
+[CONNECT]
+depth = 0.7738
+type = ionic_interaction
+hydrophobic_ratio = 0.4595
+charge_positive = 0.1802
+charge_negative = 0.1982
+charge_neutral = 0.6216
+
+[DISSOLVE]
+rigidity = 0.8972
+potential = low
+wobble_entropy = 0.1028
+complementary_disruption = 0.2262
+
+[ENCODE]
+type = AT_rich
+loss = 0.3906
+gc_content = 0.3333
+wobble_gc = 0.2679
+codon_diversity = 0.6094
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3750
+wobble_FLOW = 0.3571
+wobble_OBSERVE = 0.3750
+wobble_LOGIC = 0.1964
+wobble_CHOOSE = 0.0714
+entropy = 0.1028
+
+[OBSERVE]
+distance = 0.1012
+level = mild
+complementary_balance = 0.7738
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1964
+intensity = 0.1964
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1964
+  COMPOSE(FLOW,FLOW): 0.1607
+  COMPOSE(OBSERVE,OBSERVE): 0.0982
+  COMPOSE(FLOW,LOGIC): 0.0804
+  COMPOSE(CHOOSE,OBSERVE): 0.0804
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3571
+modifier_dominant = FLOW
+modifier_pct = 0.4375
+primary_FLOW = 0.3571
+primary_OBSERVE = 0.1607
+primary_LOGIC = 0.3571
+primary_CHOOSE = 0.1250
+modifier_FLOW = 0.4375
+modifier_OBSERVE = 0.3125
+modifier_LOGIC = 0.1339
+modifier_CHOOSE = 0.1161
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0348
+aa_top5 = [
+  Leu: 0.1171  # aliphatic
+  Lys: 0.1171  # basic
+  Glu: 0.0991  # acidic
+  Asp: 0.0991  # acidic
+  Ala: 0.0631  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 111
+stop_codon = TAA
+loss = 0.0348
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.mild.dominant.low.ionic_interaction

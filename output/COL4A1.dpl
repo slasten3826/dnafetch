@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: COL4A1 | unknown
+# CDS: 264 bp (88 codons)
+
+[IDENTITY]
+gene = COL4A1
+organism = unknown
+transcript = ENST00000648695.2
+cds_length = 264
+codons = 88
+protein_length = 87
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = OBSERVE
+dominant_pct = 0.3030
+FLOW = 0.2235
+OBSERVE = 0.3030
+LOGIC = 0.2235
+CHOOSE = 0.2500
+state = flowing
+
+[CONNECT]
+depth = 0.8939
+type = membrane_embedded
+hydrophobic_ratio = 0.6782
+charge_positive = 0.1149
+charge_negative = 0.0230
+charge_neutral = 0.8621
+
+[DISSOLVE]
+rigidity = 0.9957
+potential = crystallized
+wobble_entropy = 0.0043
+complementary_disruption = 0.1061
+
+[ENCODE]
+type = moderate
+loss = 0.3281
+gc_content = 0.4735
+wobble_gc = 0.5341
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2727
+wobble_FLOW = 0.2045
+wobble_OBSERVE = 0.2614
+wobble_LOGIC = 0.2727
+wobble_CHOOSE = 0.2614
+entropy = 0.0043
+
+[OBSERVE]
+distance = 0.0530
+level = standard
+complementary_balance = 0.8939
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1591
+intensity = 0.1591
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1591
+  COMPOSE(CHOOSE,OBSERVE): 0.1023
+  COMPOSE(OBSERVE,CHOOSE): 0.0909
+  COMPOSE(OBSERVE,LOGIC): 0.0795
+  COMPOSE(OBSERVE,OBSERVE): 0.0682
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3068
+modifier_dominant = OBSERVE
+modifier_pct = 0.3523
+primary_FLOW = 0.3068
+primary_OBSERVE = 0.2955
+primary_LOGIC = 0.1818
+primary_CHOOSE = 0.2159
+modifier_FLOW = 0.1591
+modifier_OBSERVE = 0.3523
+modifier_LOGIC = 0.2159
+modifier_CHOOSE = 0.2727
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0366
+aa_top5 = [
+  Leu: 0.1379  # aliphatic
+  Ile: 0.1264  # aliphatic
+  Ser: 0.1034  # hydroxyl
+  Gly: 0.0690  # simple
+  Ala: 0.0690  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 87
+stop_codon = TAG
+loss = 0.0366
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.standard.dominant.crystallized.membrane_embedded

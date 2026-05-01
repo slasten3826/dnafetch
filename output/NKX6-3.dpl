@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NKX6-3 | unknown
+# CDS: 408 bp (136 codons)
+
+[IDENTITY]
+gene = NKX6-3
+organism = unknown
+transcript = ENST00000524115.2
+cds_length = 408
+codons = 136
+protein_length = 135
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.945
+resistance = 0.055
+dominant = CHOOSE
+dominant_pct = 0.3480
+FLOW = 0.1691
+OBSERVE = 0.1397
+LOGIC = 0.3431
+CHOOSE = 0.3480
+state = flowing
+
+[CONNECT]
+depth = 0.9657
+type = balanced_interface
+hydrophobic_ratio = 0.5333
+charge_positive = 0.1259
+charge_negative = 0.1259
+charge_neutral = 0.7481
+
+[DISSOLVE]
+rigidity = 0.8594
+potential = crystallized
+wobble_entropy = 0.1406
+complementary_disruption = 0.0343
+
+[ENCODE]
+type = engineered
+loss = 0.3281
+gc_content = 0.6912
+wobble_gc = 0.8015
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4044
+wobble_FLOW = 0.1029
+wobble_OBSERVE = 0.0956
+wobble_LOGIC = 0.3971
+wobble_CHOOSE = 0.4044
+entropy = 0.1406
+
+[OBSERVE]
+distance = 0.0049
+level = intense
+complementary_balance = 0.9657
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1250
+intensity = 0.1250
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1250
+  COMPOSE(LOGIC,FLOW): 0.1250
+  COMPOSE(LOGIC,LOGIC): 0.1029
+  COMPOSE(CHOOSE,OBSERVE): 0.0956
+  COMPOSE(CHOOSE,CHOOSE): 0.0956
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3750
+modifier_dominant = CHOOSE
+modifier_pct = 0.3382
+primary_FLOW = 0.1471
+primary_OBSERVE = 0.1765
+primary_LOGIC = 0.3750
+primary_CHOOSE = 0.3015
+modifier_FLOW = 0.2574
+modifier_OBSERVE = 0.1471
+modifier_LOGIC = 0.2574
+modifier_CHOOSE = 0.3382
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0394
+aa_top5 = [
+  Ala: 0.1259  # simple
+  Ser: 0.1259  # hydroxyl
+  Gly: 0.1037  # simple
+  Leu: 0.0963  # aliphatic
+  Pro: 0.0963  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 135
+stop_codon = TGA
+loss = 0.0394
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.intense.dominant.crystallized.balanced_interface

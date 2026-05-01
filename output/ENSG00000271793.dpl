@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000271793 | unknown
+# CDS: 474 bp (158 codons)
+
+[IDENTITY]
+gene = ENSG00000271793
+organism = unknown
+transcript = ENST00000503906.1
+cds_length = 474
+codons = 158
+protein_length = 158
+stop_codon = none
+
+[FLOW]
+engagement = 0.976
+resistance = 0.024
+dominant = OBSERVE
+dominant_pct = 0.3186
+FLOW = 0.3080
+OBSERVE = 0.3186
+LOGIC = 0.1941
+CHOOSE = 0.1793
+state = flowing
+
+[CONNECT]
+depth = 0.9747
+type = membrane_embedded
+hydrophobic_ratio = 0.5759
+charge_positive = 0.1646
+charge_negative = 0.1013
+charge_neutral = 0.7342
+
+[DISSOLVE]
+rigidity = 0.9555
+potential = crystallized
+wobble_entropy = 0.0445
+complementary_disruption = 0.0253
+
+[ENCODE]
+type = natural
+loss = 0.2031
+gc_content = 0.3734
+wobble_gc = 0.3291
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3544
+wobble_FLOW = 0.3544
+wobble_OBSERVE = 0.3165
+wobble_LOGIC = 0.1772
+wobble_CHOOSE = 0.1519
+entropy = 0.0445
+
+[OBSERVE]
+distance = 0.0105
+level = strong
+complementary_balance = 0.9747
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1203
+intensity = 0.1203
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1203
+  COMPOSE(FLOW,FLOW): 0.1076
+  COMPOSE(LOGIC,FLOW): 0.1013
+  COMPOSE(LOGIC,OBSERVE): 0.0949
+  COMPOSE(FLOW,OBSERVE): 0.0886
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2722
+modifier_dominant = OBSERVE
+modifier_pct = 0.3734
+primary_FLOW = 0.2722
+primary_OBSERVE = 0.2658
+primary_LOGIC = 0.2722
+primary_CHOOSE = 0.1899
+modifier_FLOW = 0.2975
+modifier_OBSERVE = 0.3734
+modifier_LOGIC = 0.1329
+modifier_CHOOSE = 0.1962
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0290
+aa_top5 = [
+  Leu: 0.1266  # aliphatic
+  Val: 0.0949  # aliphatic
+  Lys: 0.0886  # basic
+  Ile: 0.0759  # aliphatic
+  Ser: 0.0759  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 158
+stop_codon = none
+loss = 0.0290
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.strong.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM246B | unknown
+# CDS: 699 bp (233 codons)
+
+[IDENTITY]
+gene = FAM246B
+organism = unknown
+transcript = ENST00000652395.1
+cds_length = 699
+codons = 233
+protein_length = 232
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.873
+resistance = 0.127
+dominant = LOGIC
+dominant_pct = 0.4092
+FLOW = 0.1230
+OBSERVE = 0.0916
+LOGIC = 0.4092
+CHOOSE = 0.3763
+state = flowing
+
+[CONNECT]
+depth = 0.9356
+type = membrane_embedded
+hydrophobic_ratio = 0.5948
+charge_positive = 0.1853
+charge_negative = 0.1078
+charge_neutral = 0.7069
+
+[DISSOLVE]
+rigidity = 0.7773
+potential = low
+wobble_entropy = 0.2227
+complementary_disruption = 0.0644
+
+[ENCODE]
+type = engineered
+loss = 0.2812
+gc_content = 0.7854
+wobble_gc = 0.8670
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4764
+wobble_FLOW = 0.0815
+wobble_OBSERVE = 0.0515
+wobble_LOGIC = 0.4764
+wobble_CHOOSE = 0.3906
+entropy = 0.2227
+
+[OBSERVE]
+distance = 0.0329
+level = deep
+complementary_balance = 0.9356
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1760
+intensity = 0.1760
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1760
+  COMPOSE(CHOOSE,LOGIC): 0.1330
+  COMPOSE(CHOOSE,CHOOSE): 0.1202
+  COMPOSE(LOGIC,LOGIC): 0.1073
+  COMPOSE(LOGIC,FLOW): 0.1073
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4464
+modifier_dominant = CHOOSE
+modifier_pct = 0.3562
+primary_FLOW = 0.1116
+primary_OBSERVE = 0.0601
+primary_LOGIC = 0.4464
+primary_CHOOSE = 0.3820
+modifier_FLOW = 0.1760
+modifier_OBSERVE = 0.1631
+modifier_LOGIC = 0.3047
+modifier_CHOOSE = 0.3562
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0527
+aa_top5 = [
+  Ala: 0.1767  # simple
+  Arg: 0.1552  # basic
+  Pro: 0.1207  # cyclic
+  Gly: 0.1078  # simple
+  Leu: 0.0948  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 232
+stop_codon = TGA
+loss = 0.0527
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.low.membrane_embedded

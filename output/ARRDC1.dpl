@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ARRDC1 | unknown
+# CDS: 813 bp (271 codons)
+
+[IDENTITY]
+gene = ARRDC1
+organism = unknown
+transcript = ENST00000419386.1
+cds_length = 813
+codons = 271
+protein_length = 271
+stop_codon = none
+
+[FLOW]
+engagement = 0.975
+resistance = 0.025
+dominant = CHOOSE
+dominant_pct = 0.3210
+FLOW = 0.1771
+OBSERVE = 0.1919
+LOGIC = 0.3100
+CHOOSE = 0.3210
+state = flowing
+
+[CONNECT]
+depth = 0.9742
+type = membrane_embedded
+hydrophobic_ratio = 0.6125
+charge_positive = 0.1255
+charge_negative = 0.0738
+charge_neutral = 0.8007
+
+[DISSOLVE]
+rigidity = 0.8583
+potential = crystallized
+wobble_entropy = 0.1417
+complementary_disruption = 0.0258
+
+[ENCODE]
+type = engineered
+loss = 0.1250
+gc_content = 0.6310
+wobble_gc = 0.7970
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4059
+wobble_FLOW = 0.0738
+wobble_OBSERVE = 0.1292
+wobble_LOGIC = 0.3911
+wobble_CHOOSE = 0.4059
+entropy = 0.1417
+
+[OBSERVE]
+distance = 0.0111
+level = strong
+complementary_balance = 0.9742
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,OBSERVE)
+top_compose_pct = 0.0959
+intensity = 0.0959
+compose_top5 = [
+  COMPOSE(LOGIC,OBSERVE): 0.0959
+  COMPOSE(LOGIC,CHOOSE): 0.0959
+  COMPOSE(CHOOSE,CHOOSE): 0.0923
+  COMPOSE(CHOOSE,OBSERVE): 0.0849
+  COMPOSE(LOGIC,LOGIC): 0.0738
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3395
+modifier_dominant = OBSERVE
+modifier_pct = 0.2989
+primary_FLOW = 0.2177
+primary_OBSERVE = 0.1476
+primary_LOGIC = 0.3395
+primary_CHOOSE = 0.2952
+modifier_FLOW = 0.2399
+modifier_OBSERVE = 0.2989
+modifier_LOGIC = 0.1993
+modifier_CHOOSE = 0.2620
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0297
+aa_top5 = [
+  Leu: 0.1033  # aliphatic
+  Val: 0.0959  # aliphatic
+  Ala: 0.0959  # simple
+  Pro: 0.0923  # cyclic
+  Ser: 0.0849  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 271
+stop_codon = none
+loss = 0.0297
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.membrane_embedded

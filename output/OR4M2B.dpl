@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: OR4M2B | unknown
+# CDS: 942 bp (314 codons)
+
+[IDENTITY]
+gene = OR4M2B
+organism = unknown
+transcript = ENST00000332663.3
+cds_length = 942
+codons = 314
+protein_length = 313
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = OBSERVE
+dominant_pct = 0.3333
+FLOW = 0.2261
+OBSERVE = 0.3333
+LOGIC = 0.1964
+CHOOSE = 0.2442
+state = flowing
+
+[CONNECT]
+depth = 0.8450
+type = membrane_embedded
+hydrophobic_ratio = 0.6550
+charge_positive = 0.0863
+charge_negative = 0.0703
+charge_neutral = 0.8435
+
+[DISSOLVE]
+rigidity = 0.9788
+potential = crystallized
+wobble_entropy = 0.0212
+complementary_disruption = 0.1550
+
+[ENCODE]
+type = moderate
+loss = 0.0938
+gc_content = 0.4406
+wobble_gc = 0.5350
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3121
+wobble_FLOW = 0.1656
+wobble_OBSERVE = 0.2994
+wobble_LOGIC = 0.2229
+wobble_CHOOSE = 0.3121
+entropy = 0.0212
+
+[OBSERVE]
+distance = 0.0892
+level = mild
+complementary_balance = 0.8450
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1338
+intensity = 0.1338
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1338
+  COMPOSE(OBSERVE,OBSERVE): 0.1242
+  COMPOSE(CHOOSE,OBSERVE): 0.0955
+  COMPOSE(LOGIC,OBSERVE): 0.0732
+  COMPOSE(LOGIC,FLOW): 0.0701
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2930
+modifier_dominant = OBSERVE
+modifier_pct = 0.4268
+primary_FLOW = 0.2930
+primary_OBSERVE = 0.2739
+primary_LOGIC = 0.2420
+primary_CHOOSE = 0.1911
+modifier_FLOW = 0.2197
+modifier_OBSERVE = 0.4268
+modifier_LOGIC = 0.1242
+modifier_CHOOSE = 0.2293
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0311
+aa_top5 = [
+  Leu: 0.1406  # aliphatic
+  Ile: 0.1022  # aliphatic
+  Phe: 0.0799  # aromatic
+  Val: 0.0735  # aliphatic
+  Ser: 0.0735  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 313
+stop_codon = TGA
+loss = 0.0311
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.mild.dominant.crystallized.membrane_embedded

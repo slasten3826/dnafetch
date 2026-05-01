@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TM9SF2 | unknown
+# CDS: 1992 bp (664 codons)
+
+[IDENTITY]
+gene = TM9SF2
+organism = unknown
+transcript = ENST00000376387.5
+cds_length = 1992
+codons = 664
+protein_length = 663
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = OBSERVE
+dominant_pct = 0.3158
+FLOW = 0.2580
+OBSERVE = 0.3158
+LOGIC = 0.2244
+CHOOSE = 0.2018
+state = flowing
+
+[CONNECT]
+depth = 0.9197
+type = membrane_embedded
+hydrophobic_ratio = 0.6275
+charge_positive = 0.1146
+charge_negative = 0.0875
+charge_neutral = 0.7979
+
+[DISSOLVE]
+rigidity = 0.9878
+potential = crystallized
+wobble_entropy = 0.0122
+complementary_disruption = 0.0803
+
+[ENCODE]
+type = natural
+loss = 0.0312
+gc_content = 0.4262
+wobble_gc = 0.4367
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3298
+wobble_FLOW = 0.2334
+wobble_OBSERVE = 0.3298
+wobble_LOGIC = 0.2304
+wobble_CHOOSE = 0.2063
+entropy = 0.0122
+
+[OBSERVE]
+distance = 0.0577
+level = standard
+complementary_balance = 0.9197
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1175
+intensity = 0.1175
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1175
+  COMPOSE(FLOW,OBSERVE): 0.1069
+  COMPOSE(LOGIC,FLOW): 0.0873
+  COMPOSE(FLOW,FLOW): 0.0798
+  COMPOSE(CHOOSE,OBSERVE): 0.0723
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2786
+modifier_dominant = OBSERVE
+modifier_pct = 0.3584
+primary_FLOW = 0.2786
+primary_OBSERVE = 0.2590
+primary_LOGIC = 0.2726
+primary_CHOOSE = 0.1898
+modifier_FLOW = 0.2620
+modifier_OBSERVE = 0.3584
+modifier_LOGIC = 0.1702
+modifier_CHOOSE = 0.2093
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0217
+aa_top5 = [
+  Leu: 0.1011  # aliphatic
+  Phe: 0.0890  # aromatic
+  Ile: 0.0769  # aliphatic
+  Ser: 0.0649  # hydroxyl
+  Gly: 0.0649  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 663
+stop_codon = TGA
+loss = 0.0217
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.strong.crystallized.membrane_embedded

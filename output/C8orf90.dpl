@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: C8orf90 | unknown
+# CDS: 579 bp (193 codons)
+
+[IDENTITY]
+gene = C8orf90
+organism = unknown
+transcript = ENST00000643770.2
+cds_length = 579
+codons = 193
+protein_length = 192
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.902
+resistance = 0.098
+dominant = CHOOSE
+dominant_pct = 0.4335
+FLOW = 0.1209
+OBSERVE = 0.1347
+LOGIC = 0.3109
+CHOOSE = 0.4335
+state = flowing
+
+[CONNECT]
+depth = 0.8636
+type = membrane_embedded
+hydrophobic_ratio = 0.6615
+charge_positive = 0.1250
+charge_negative = 0.0833
+charge_neutral = 0.7917
+
+[DISSOLVE]
+rigidity = 0.8112
+potential = low
+wobble_entropy = 0.1888
+complementary_disruption = 0.1364
+
+[ENCODE]
+type = engineered
+loss = 0.2812
+gc_content = 0.7444
+wobble_gc = 0.8394
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4819
+wobble_FLOW = 0.0829
+wobble_OBSERVE = 0.0777
+wobble_LOGIC = 0.3575
+wobble_CHOOSE = 0.4819
+entropy = 0.1888
+
+[OBSERVE]
+distance = 0.1226
+level = basic
+complementary_balance = 0.8636
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1969
+intensity = 0.1969
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1969
+  COMPOSE(LOGIC,CHOOSE): 0.1451
+  COMPOSE(CHOOSE,LOGIC): 0.0881
+  COMPOSE(LOGIC,LOGIC): 0.0829
+  COMPOSE(CHOOSE,OBSERVE): 0.0829
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3990
+modifier_dominant = CHOOSE
+modifier_pct = 0.4197
+primary_FLOW = 0.1192
+primary_OBSERVE = 0.1606
+primary_LOGIC = 0.3212
+primary_CHOOSE = 0.3990
+modifier_FLOW = 0.1606
+modifier_OBSERVE = 0.1658
+modifier_LOGIC = 0.2539
+modifier_CHOOSE = 0.4197
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0491
+aa_top5 = [
+  Pro: 0.1979  # cyclic
+  Ala: 0.1458  # simple
+  Arg: 0.0990  # basic
+  Gly: 0.0833  # simple
+  Leu: 0.0833  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 192
+stop_codon = TAA
+loss = 0.0491
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.low.membrane_embedded

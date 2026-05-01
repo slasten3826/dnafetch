@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMEM183A | unknown
+# CDS: 1131 bp (377 codons)
+
+[IDENTITY]
+gene = TMEM183A
+organism = unknown
+transcript = ENST00000367242.4
+cds_length = 1131
+codons = 377
+protein_length = 376
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = LOGIC
+dominant_pct = 0.2661
+FLOW = 0.2458
+OBSERVE = 0.2308
+LOGIC = 0.2661
+CHOOSE = 0.2573
+state = flowing
+
+[CONNECT]
+depth = 0.9761
+type = ionic_interaction
+hydrophobic_ratio = 0.5319
+charge_positive = 0.1755
+charge_negative = 0.1090
+charge_neutral = 0.7154
+
+[DISSOLVE]
+rigidity = 0.9870
+potential = crystallized
+wobble_entropy = 0.0130
+complementary_disruption = 0.0239
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.5234
+wobble_gc = 0.5809
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2944
+wobble_FLOW = 0.1777
+wobble_OBSERVE = 0.2414
+wobble_LOGIC = 0.2865
+wobble_CHOOSE = 0.2944
+entropy = 0.0130
+
+[OBSERVE]
+distance = 0.0088
+level = strong
+complementary_balance = 0.9761
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1088
+intensity = 0.1088
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1088
+  COMPOSE(FLOW,FLOW): 0.0902
+  COMPOSE(FLOW,OBSERVE): 0.0716
+  COMPOSE(LOGIC,OBSERVE): 0.0716
+  COMPOSE(LOGIC,CHOOSE): 0.0690
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2997
+modifier_dominant = FLOW
+modifier_pct = 0.2918
+primary_FLOW = 0.2679
+primary_OBSERVE = 0.1830
+primary_LOGIC = 0.2997
+primary_CHOOSE = 0.2493
+modifier_FLOW = 0.2918
+modifier_OBSERVE = 0.2679
+modifier_LOGIC = 0.2122
+modifier_CHOOSE = 0.2281
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0201
+aa_top5 = [
+  Arg: 0.0851  # basic
+  Leu: 0.0851  # aliphatic
+  Val: 0.0718  # aliphatic
+  Ser: 0.0718  # hydroxyl
+  Ala: 0.0691  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 376
+stop_codon = TAG
+loss = 0.0201
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.strong.strong.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HOMER2 | unknown
+# CDS: 90 bp (30 codons)
+
+[IDENTITY]
+gene = HOMER2
+organism = unknown
+transcript = ENST00000558817.1
+cds_length = 90
+codons = 30
+protein_length = 29
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.932
+resistance = 0.068
+dominant = FLOW
+dominant_pct = 0.4000
+FLOW = 0.4000
+OBSERVE = 0.1222
+LOGIC = 0.3000
+CHOOSE = 0.1778
+state = flowing
+
+[CONNECT]
+depth = 0.6000
+type = ionic_interaction
+hydrophobic_ratio = 0.3103
+charge_positive = 0.3103
+charge_negative = 0.0345
+charge_neutral = 0.6552
+
+[DISSOLVE]
+rigidity = 0.8487
+potential = low
+wobble_entropy = 0.1513
+complementary_disruption = 0.4000
+
+[ENCODE]
+type = moderate
+loss = 0.7031
+gc_content = 0.4778
+wobble_gc = 0.5333
+codon_diversity = 0.2969
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4333
+wobble_FLOW = 0.4333
+wobble_OBSERVE = 0.0333
+wobble_LOGIC = 0.3000
+wobble_CHOOSE = 0.2333
+entropy = 0.1513
+
+[OBSERVE]
+distance = 0.1000
+level = mild
+complementary_balance = 0.6000
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.3000
+intensity = 0.3000
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.3000
+  COMPOSE(FLOW,CHOOSE): 0.1333
+  COMPOSE(FLOW,OBSERVE): 0.1000
+  COMPOSE(FLOW,FLOW): 0.1000
+  COMPOSE(OBSERVE,CHOOSE): 0.0667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.6333
+modifier_dominant = LOGIC
+modifier_pct = 0.4333
+primary_FLOW = 0.6333
+primary_OBSERVE = 0.1667
+primary_LOGIC = 0.1667
+primary_CHOOSE = 0.0333
+modifier_FLOW = 0.1333
+modifier_OBSERVE = 0.1667
+modifier_LOGIC = 0.4333
+modifier_CHOOSE = 0.2667
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0676
+aa_top5 = [
+  Arg: 0.2759  # basic
+  Thr: 0.1379  # hydroxyl
+  Ser: 0.1379  # hydroxyl
+  Met: 0.1034  # sulfur
+  Ala: 0.0690  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 29
+stop_codon = TGA
+loss = 0.0676
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.low.ionic_interaction

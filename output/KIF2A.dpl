@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KIF2A | unknown
+# CDS: 69 bp (23 codons)
+
+[IDENTITY]
+gene = KIF2A
+organism = unknown
+transcript = ENST00000512006.2
+cds_length = 69
+codons = 23
+protein_length = 22
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.936
+resistance = 0.064
+dominant = LOGIC
+dominant_pct = 0.3478
+FLOW = 0.3333
+OBSERVE = 0.2174
+LOGIC = 0.3478
+CHOOSE = 0.1014
+state = flowing
+
+[CONNECT]
+depth = 0.6377
+type = ionic_interaction
+hydrophobic_ratio = 0.4545
+charge_positive = 0.2273
+charge_negative = 0.0909
+charge_neutral = 0.6818
+
+[DISSOLVE]
+rigidity = 0.8426
+potential = low
+wobble_entropy = 0.1574
+complementary_disruption = 0.3623
+
+[ENCODE]
+type = engineered
+loss = 0.7500
+gc_content = 0.4493
+wobble_gc = 0.7826
+codon_diversity = 0.2500
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5217
+wobble_FLOW = 0.1304
+wobble_OBSERVE = 0.0870
+wobble_LOGIC = 0.5217
+wobble_CHOOSE = 0.2609
+entropy = 0.1574
+
+[OBSERVE]
+distance = 0.0145
+level = strong
+complementary_balance = 0.6377
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2174
+intensity = 0.2174
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2174
+  COMPOSE(FLOW,LOGIC): 0.1739
+  COMPOSE(OBSERVE,LOGIC): 0.1304
+  COMPOSE(FLOW,OBSERVE): 0.0870
+  COMPOSE(LOGIC,FLOW): 0.0870
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4783
+modifier_dominant = FLOW
+modifier_pct = 0.3913
+primary_FLOW = 0.4783
+primary_OBSERVE = 0.3478
+primary_LOGIC = 0.1739
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.3913
+modifier_OBSERVE = 0.2174
+modifier_LOGIC = 0.3478
+modifier_CHOOSE = 0.0435
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0452
+aa_top5 = [
+  Asn: 0.1364  # amide
+  Arg: 0.1364  # basic
+  Met: 0.0909  # sulfur
+  Ser: 0.0909  # hydroxyl
+  Lys: 0.0909  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 22
+stop_codon = TGA
+loss = 0.0452
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.strong.dominant.low.ionic_interaction

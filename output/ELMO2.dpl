@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ELMO2 | unknown
+# CDS: 1014 bp (338 codons)
+
+[IDENTITY]
+gene = ELMO2
+organism = unknown
+transcript = ENST00000450812.5
+cds_length = 1014
+codons = 338
+protein_length = 338
+stop_codon = none
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = CHOOSE
+dominant_pct = 0.2682
+FLOW = 0.2604
+OBSERVE = 0.2249
+LOGIC = 0.2465
+CHOOSE = 0.2682
+state = flowing
+
+[CONNECT]
+depth = 0.9428
+type = balanced_interface
+hydrophobic_ratio = 0.5325
+charge_positive = 0.1095
+charge_negative = 0.1183
+charge_neutral = 0.7722
+
+[DISSOLVE]
+rigidity = 0.9682
+potential = crystallized
+wobble_entropy = 0.0318
+complementary_disruption = 0.0572
+
+[ENCODE]
+type = optimized
+loss = 0.1250
+gc_content = 0.5148
+wobble_gc = 0.6361
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3254
+wobble_FLOW = 0.1479
+wobble_OBSERVE = 0.2160
+wobble_LOGIC = 0.3254
+wobble_CHOOSE = 0.3107
+entropy = 0.0318
+
+[OBSERVE]
+distance = 0.0079
+level = strong
+complementary_balance = 0.9428
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1361
+intensity = 0.1361
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1361
+  COMPOSE(LOGIC,FLOW): 0.1183
+  COMPOSE(CHOOSE,OBSERVE): 0.1006
+  COMPOSE(LOGIC,CHOOSE): 0.0858
+  COMPOSE(FLOW,FLOW): 0.0828
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3225
+modifier_dominant = OBSERVE
+modifier_pct = 0.3284
+primary_FLOW = 0.3225
+primary_OBSERVE = 0.1302
+primary_LOGIC = 0.2899
+primary_CHOOSE = 0.2574
+modifier_FLOW = 0.3107
+modifier_OBSERVE = 0.3284
+modifier_LOGIC = 0.1243
+modifier_CHOOSE = 0.2367
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0269
+aa_top5 = [
+  Leu: 0.1124  # aliphatic
+  Ile: 0.0917  # aliphatic
+  Ala: 0.0858  # simple
+  Ser: 0.0769  # hydroxyl
+  Glu: 0.0651  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 338
+stop_codon = none
+loss = 0.0269
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.dominant.crystallized.balanced_interface

@@ -1,0 +1,104 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NAPEPLD | unknown
+# CDS: 15 bp (5 codons)
+
+[IDENTITY]
+gene = NAPEPLD
+organism = unknown
+transcript = ENST00000425379.1
+cds_length = 15
+codons = 5
+protein_length = 4
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = OBSERVE
+dominant_pct = 0.3333
+FLOW = 0.2667
+OBSERVE = 0.3333
+LOGIC = 0.2667
+CHOOSE = 0.1333
+state = flowing
+
+[CONNECT]
+depth = 0.8000
+type = membrane_embedded
+hydrophobic_ratio = 0.7500
+charge_positive = 0.0000
+charge_negative = 0.2500
+charge_neutral = 0.7500
+
+[DISSOLVE]
+rigidity = 0.7610
+potential = low
+wobble_entropy = 0.2390
+complementary_disruption = 0.2000
+
+[ENCODE]
+type = engineered
+loss = 0.9219
+gc_content = 0.4000
+wobble_gc = 0.8000
+codon_diversity = 0.0781
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4000
+wobble_FLOW = 0.0000
+wobble_OBSERVE = 0.2000
+wobble_LOGIC = 0.4000
+wobble_CHOOSE = 0.4000
+entropy = 0.2390
+
+[OBSERVE]
+distance = 0.0667
+level = standard
+complementary_balance = 0.8000
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.4000
+intensity = 0.4000
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.4000
+  COMPOSE(LOGIC,FLOW): 0.2000
+  COMPOSE(LOGIC,OBSERVE): 0.2000
+  COMPOSE(OBSERVE,FLOW): 0.2000
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4000
+modifier_dominant = OBSERVE
+modifier_pct = 0.6000
+primary_FLOW = 0.4000
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.4000
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.4000
+modifier_OBSERVE = 0.6000
+modifier_LOGIC = 0.0000
+modifier_CHOOSE = 0.0000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1000
+aa_top5 = [
+  Met: 0.2500  # sulfur
+  Asp: 0.2500  # acidic
+  Ile: 0.2500  # aliphatic
+  Val: 0.2500  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 4
+stop_codon = TAG
+loss = 0.1000
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.standard.dominant.low.membrane_embedded

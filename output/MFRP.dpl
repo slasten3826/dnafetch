@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MFRP | unknown
+# CDS: 306 bp (102 codons)
+
+[IDENTITY]
+gene = MFRP
+organism = unknown
+transcript = ENST00000634542.1
+cds_length = 306
+codons = 102
+protein_length = 101
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = CHOOSE
+dominant_pct = 0.3725
+FLOW = 0.1732
+OBSERVE = 0.1895
+LOGIC = 0.2647
+CHOOSE = 0.3725
+state = flowing
+
+[CONNECT]
+depth = 0.8758
+type = membrane_embedded
+hydrophobic_ratio = 0.6238
+charge_positive = 0.1089
+charge_negative = 0.0594
+charge_neutral = 0.8317
+
+[DISSOLVE]
+rigidity = 0.9244
+potential = crystallized
+wobble_entropy = 0.0756
+complementary_disruption = 0.1242
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.6373
+wobble_gc = 0.6863
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4216
+wobble_FLOW = 0.2059
+wobble_OBSERVE = 0.1078
+wobble_LOGIC = 0.2647
+wobble_CHOOSE = 0.4216
+entropy = 0.0756
+
+[OBSERVE]
+distance = 0.1078
+level = mild
+complementary_balance = 0.8758
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1667
+  COMPOSE(OBSERVE,CHOOSE): 0.1176
+  COMPOSE(OBSERVE,LOGIC): 0.1176
+  COMPOSE(CHOOSE,OBSERVE): 0.0784
+  COMPOSE(LOGIC,LOGIC): 0.0784
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3235
+modifier_dominant = CHOOSE
+modifier_pct = 0.3725
+primary_FLOW = 0.1569
+primary_OBSERVE = 0.2745
+primary_LOGIC = 0.2451
+primary_CHOOSE = 0.3235
+modifier_FLOW = 0.1569
+modifier_OBSERVE = 0.1863
+modifier_LOGIC = 0.2843
+modifier_CHOOSE = 0.3725
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0455
+aa_top5 = [
+  Pro: 0.1683  # cyclic
+  Ser: 0.1584  # hydroxyl
+  Leu: 0.0990  # aliphatic
+  Cys: 0.0792  # sulfur
+  Gly: 0.0792  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 101
+stop_codon = TGA
+loss = 0.0455
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.membrane_embedded

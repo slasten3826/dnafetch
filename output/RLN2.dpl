@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RLN2 | unknown
+# CDS: 303 bp (101 codons)
+
+[IDENTITY]
+gene = RLN2
+organism = unknown
+transcript = ENST00000416837.1
+cds_length = 303
+codons = 101
+protein_length = 100
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = FLOW
+dominant_pct = 0.3267
+FLOW = 0.3267
+OBSERVE = 0.2871
+LOGIC = 0.1881
+CHOOSE = 0.1980
+state = flowing
+
+[CONNECT]
+depth = 0.9505
+type = ionic_interaction
+hydrophobic_ratio = 0.4800
+charge_positive = 0.1800
+charge_negative = 0.1000
+charge_neutral = 0.7200
+
+[DISSOLVE]
+rigidity = 0.9379
+potential = crystallized
+wobble_entropy = 0.0621
+complementary_disruption = 0.0495
+
+[ENCODE]
+type = AT_rich
+loss = 0.3438
+gc_content = 0.3861
+wobble_gc = 0.2970
+codon_diversity = 0.6562
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3663
+wobble_FLOW = 0.3663
+wobble_OBSERVE = 0.3366
+wobble_LOGIC = 0.1584
+wobble_CHOOSE = 0.1386
+entropy = 0.0621
+
+[OBSERVE]
+distance = 0.0396
+level = deep
+complementary_balance = 0.9505
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1188
+intensity = 0.1188
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1188
+  COMPOSE(FLOW,FLOW): 0.1188
+  COMPOSE(LOGIC,FLOW): 0.0990
+  COMPOSE(CHOOSE,FLOW): 0.0990
+  COMPOSE(FLOW,LOGIC): 0.0891
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2772
+modifier_dominant = FLOW
+modifier_pct = 0.3366
+primary_FLOW = 0.2772
+primary_OBSERVE = 0.2475
+primary_LOGIC = 0.2277
+primary_CHOOSE = 0.2475
+modifier_FLOW = 0.3366
+modifier_OBSERVE = 0.2772
+modifier_LOGIC = 0.1782
+modifier_CHOOSE = 0.2079
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0366
+aa_top5 = [
+  Leu: 0.1600  # aliphatic
+  Ser: 0.1100  # hydroxyl
+  Lys: 0.0900  # basic
+  Glu: 0.0700  # acidic
+  Ala: 0.0700  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 100
+stop_codon = TGA
+loss = 0.0366
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.deep.strong.crystallized.ionic_interaction

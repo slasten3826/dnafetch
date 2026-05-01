@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NKAIN1 | unknown
+# CDS: 378 bp (126 codons)
+
+[IDENTITY]
+gene = NKAIN1
+organism = unknown
+transcript = ENST00000530145.1
+cds_length = 378
+codons = 126
+protein_length = 126
+stop_codon = none
+
+[FLOW]
+engagement = 0.982
+resistance = 0.018
+dominant = CHOOSE
+dominant_pct = 0.3122
+FLOW = 0.1640
+OBSERVE = 0.2593
+LOGIC = 0.2646
+CHOOSE = 0.3122
+state = flowing
+
+[CONNECT]
+depth = 0.8571
+type = membrane_embedded
+hydrophobic_ratio = 0.6905
+charge_positive = 0.0714
+charge_negative = 0.0635
+charge_neutral = 0.8651
+
+[DISSOLVE]
+rigidity = 0.8386
+potential = low
+wobble_entropy = 0.1614
+complementary_disruption = 0.1429
+
+[ENCODE]
+type = engineered
+loss = 0.3438
+gc_content = 0.5767
+wobble_gc = 0.8016
+codon_diversity = 0.6562
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5000
+wobble_FLOW = 0.0794
+wobble_OBSERVE = 0.1190
+wobble_LOGIC = 0.3016
+wobble_CHOOSE = 0.5000
+entropy = 0.1614
+
+[OBSERVE]
+distance = 0.0476
+level = deep
+complementary_balance = 0.8571
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1349
+intensity = 0.1349
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1349
+  COMPOSE(FLOW,OBSERVE): 0.0952
+  COMPOSE(LOGIC,OBSERVE): 0.0952
+  COMPOSE(OBSERVE,OBSERVE): 0.0794
+  COMPOSE(LOGIC,CHOOSE): 0.0714
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2937
+modifier_dominant = OBSERVE
+modifier_pct = 0.4048
+primary_FLOW = 0.1984
+primary_OBSERVE = 0.2540
+primary_LOGIC = 0.2937
+primary_CHOOSE = 0.2540
+modifier_FLOW = 0.2143
+modifier_OBSERVE = 0.4048
+modifier_LOGIC = 0.1984
+modifier_CHOOSE = 0.1825
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0304
+aa_top5 = [
+  Leu: 0.1429  # aliphatic
+  Val: 0.0952  # aliphatic
+  Ala: 0.0714  # simple
+  Ile: 0.0714  # aliphatic
+  Phe: 0.0714  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 126
+stop_codon = none
+loss = 0.0304
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.membrane_embedded

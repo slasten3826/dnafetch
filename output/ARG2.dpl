@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ARG2 | unknown
+# CDS: 1065 bp (355 codons)
+
+[IDENTITY]
+gene = ARG2
+organism = unknown
+transcript = ENST00000261783.4
+cds_length = 1065
+codons = 355
+protein_length = 354
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = FLOW
+dominant_pct = 0.2714
+FLOW = 0.2714
+OBSERVE = 0.2516
+LOGIC = 0.2376
+CHOOSE = 0.2394
+state = flowing
+
+[CONNECT]
+depth = 0.9784
+type = balanced_interface
+hydrophobic_ratio = 0.5452
+charge_positive = 0.1299
+charge_negative = 0.1130
+charge_neutral = 0.7571
+
+[DISSOLVE]
+rigidity = 0.9893
+potential = crystallized
+wobble_entropy = 0.0107
+complementary_disruption = 0.0216
+
+[ENCODE]
+type = natural
+loss = 0.0469
+gc_content = 0.4770
+wobble_gc = 0.4254
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3042
+wobble_FLOW = 0.2704
+wobble_OBSERVE = 0.3042
+wobble_LOGIC = 0.1887
+wobble_CHOOSE = 0.2366
+entropy = 0.0107
+
+[OBSERVE]
+distance = 0.0197
+level = strong
+complementary_balance = 0.9784
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1127
+intensity = 0.1127
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1127
+  COMPOSE(CHOOSE,OBSERVE): 0.0873
+  COMPOSE(FLOW,OBSERVE): 0.0789
+  COMPOSE(LOGIC,LOGIC): 0.0789
+  COMPOSE(LOGIC,OBSERVE): 0.0789
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3380
+modifier_dominant = OBSERVE
+modifier_pct = 0.2958
+primary_FLOW = 0.2620
+primary_OBSERVE = 0.1549
+primary_LOGIC = 0.3380
+primary_CHOOSE = 0.2451
+modifier_FLOW = 0.2817
+modifier_OBSERVE = 0.2958
+modifier_LOGIC = 0.1859
+modifier_CHOOSE = 0.2366
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0264
+aa_top5 = [
+  Leu: 0.1073  # aliphatic
+  Ser: 0.0904  # hydroxyl
+  Gly: 0.0791  # simple
+  Val: 0.0791  # aliphatic
+  Ala: 0.0678  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 354
+stop_codon = TAG
+loss = 0.0264
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.strong.crystallized.balanced_interface

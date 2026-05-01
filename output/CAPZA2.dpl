@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CAPZA2 | unknown
+# CDS: 525 bp (175 codons)
+
+[IDENTITY]
+gene = CAPZA2
+organism = unknown
+transcript = ENST00000426421.5
+cds_length = 525
+codons = 175
+protein_length = 174
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.977
+resistance = 0.023
+dominant = FLOW
+dominant_pct = 0.3352
+FLOW = 0.3352
+OBSERVE = 0.2724
+LOGIC = 0.2286
+CHOOSE = 0.1638
+state = flowing
+
+[CONNECT]
+depth = 0.8724
+type = ionic_interaction
+hydrophobic_ratio = 0.5230
+charge_positive = 0.1437
+charge_negative = 0.1609
+charge_neutral = 0.6954
+
+[DISSOLVE]
+rigidity = 0.9569
+potential = crystallized
+wobble_entropy = 0.0431
+complementary_disruption = 0.1276
+
+[ENCODE]
+type = natural
+loss = 0.1562
+gc_content = 0.3924
+wobble_gc = 0.3314
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3371
+wobble_FLOW = 0.3314
+wobble_OBSERVE = 0.3371
+wobble_LOGIC = 0.1829
+wobble_CHOOSE = 0.1486
+entropy = 0.0431
+
+[OBSERVE]
+distance = 0.0629
+level = standard
+complementary_balance = 0.8724
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1600
+intensity = 0.1600
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1600
+  COMPOSE(FLOW,FLOW): 0.1257
+  COMPOSE(OBSERVE,OBSERVE): 0.1086
+  COMPOSE(LOGIC,CHOOSE): 0.0800
+  COMPOSE(CHOOSE,FLOW): 0.0800
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3543
+modifier_dominant = FLOW
+modifier_pct = 0.4057
+primary_FLOW = 0.2686
+primary_OBSERVE = 0.2114
+primary_LOGIC = 0.3543
+primary_CHOOSE = 0.1657
+modifier_FLOW = 0.4057
+modifier_OBSERVE = 0.2686
+modifier_LOGIC = 0.1486
+modifier_CHOOSE = 0.1771
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0228
+aa_top5 = [
+  Glu: 0.0977  # acidic
+  Ala: 0.0805  # simple
+  Leu: 0.0747  # aliphatic
+  Phe: 0.0690  # aromatic
+  Asp: 0.0632  # acidic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 174
+stop_codon = TAA
+loss = 0.0228
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.ionic_interaction

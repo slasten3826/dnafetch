@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLCO2A1 | unknown
+# CDS: 1248 bp (416 codons)
+
+[IDENTITY]
+gene = SLCO2A1
+organism = unknown
+transcript = ENST00000481359.3
+cds_length = 1248
+codons = 416
+protein_length = 415
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.987
+resistance = 0.013
+dominant = CHOOSE
+dominant_pct = 0.3221
+FLOW = 0.1883
+OBSERVE = 0.2484
+LOGIC = 0.2412
+CHOOSE = 0.3221
+state = flowing
+
+[CONNECT]
+depth = 0.8590
+type = membrane_embedded
+hydrophobic_ratio = 0.6169
+charge_positive = 0.0892
+charge_negative = 0.0482
+charge_neutral = 0.8627
+
+[DISSOLVE]
+rigidity = 0.9227
+potential = crystallized
+wobble_entropy = 0.0773
+complementary_disruption = 0.1410
+
+[ENCODE]
+type = optimized
+loss = 0.0469
+gc_content = 0.5633
+wobble_gc = 0.6947
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4351
+wobble_FLOW = 0.1202
+wobble_OBSERVE = 0.1851
+wobble_LOGIC = 0.2596
+wobble_CHOOSE = 0.4351
+entropy = 0.0773
+
+[OBSERVE]
+distance = 0.0737
+level = standard
+complementary_balance = 0.8590
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1154
+intensity = 0.1154
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1154
+  COMPOSE(LOGIC,CHOOSE): 0.0938
+  COMPOSE(OBSERVE,OBSERVE): 0.0865
+  COMPOSE(FLOW,OBSERVE): 0.0817
+  COMPOSE(OBSERVE,CHOOSE): 0.0745
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2692
+modifier_dominant = OBSERVE
+modifier_pct = 0.3389
+primary_FLOW = 0.2548
+primary_OBSERVE = 0.2212
+primary_LOGIC = 0.2692
+primary_CHOOSE = 0.2548
+modifier_FLOW = 0.1899
+modifier_OBSERVE = 0.3389
+modifier_LOGIC = 0.1947
+modifier_CHOOSE = 0.2764
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0338
+aa_top5 = [
+  Leu: 0.1349  # aliphatic
+  Ser: 0.1205  # hydroxyl
+  Ala: 0.0940  # simple
+  Gly: 0.0723  # simple
+  Phe: 0.0675  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 415
+stop_codon = TGA
+loss = 0.0338
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.membrane_embedded

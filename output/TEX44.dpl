@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TEX44 | unknown
+# CDS: 1188 bp (396 codons)
+
+[IDENTITY]
+gene = TEX44
+organism = unknown
+transcript = ENST00000313965.4
+cds_length = 1188
+codons = 396
+protein_length = 395
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = CHOOSE
+dominant_pct = 0.3215
+FLOW = 0.2290
+OBSERVE = 0.1675
+LOGIC = 0.2820
+CHOOSE = 0.3215
+state = flowing
+
+[CONNECT]
+depth = 0.8990
+type = balanced_interface
+hydrophobic_ratio = 0.4962
+charge_positive = 0.0987
+charge_negative = 0.1165
+charge_neutral = 0.7848
+
+[DISSOLVE]
+rigidity = 0.9557
+potential = crystallized
+wobble_entropy = 0.0443
+complementary_disruption = 0.1010
+
+[ENCODE]
+type = optimized
+loss = 0.1406
+gc_content = 0.6035
+wobble_gc = 0.6692
+codon_diversity = 0.8594
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3662
+wobble_FLOW = 0.1692
+wobble_OBSERVE = 0.1616
+wobble_LOGIC = 0.3030
+wobble_CHOOSE = 0.3662
+entropy = 0.0443
+
+[OBSERVE]
+distance = 0.0396
+level = deep
+complementary_balance = 0.8990
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1162
+intensity = 0.1162
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1162
+  COMPOSE(LOGIC,CHOOSE): 0.1010
+  COMPOSE(FLOW,LOGIC): 0.1010
+  COMPOSE(CHOOSE,CHOOSE): 0.0934
+  COMPOSE(CHOOSE,FLOW): 0.0808
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3510
+modifier_dominant = CHOOSE
+modifier_pct = 0.3359
+primary_FLOW = 0.2601
+primary_OBSERVE = 0.1263
+primary_LOGIC = 0.3510
+primary_CHOOSE = 0.2626
+modifier_FLOW = 0.2576
+modifier_OBSERVE = 0.2146
+modifier_LOGIC = 0.1919
+modifier_CHOOSE = 0.3359
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0368
+aa_top5 = [
+  Ser: 0.1519  # hydroxyl
+  Ala: 0.1013  # simple
+  Pro: 0.0937  # cyclic
+  Leu: 0.0810  # aliphatic
+  Val: 0.0709  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 395
+stop_codon = TAG
+loss = 0.0368
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.balanced_interface

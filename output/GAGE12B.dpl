@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GAGE12B | unknown
+# CDS: 54 bp (18 codons)
+
+[IDENTITY]
+gene = GAGE12B
+organism = unknown
+transcript = ENST00000361446.5
+cds_length = 54
+codons = 18
+protein_length = 17
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = OBSERVE
+dominant_pct = 0.3519
+FLOW = 0.2963
+OBSERVE = 0.3519
+LOGIC = 0.1667
+CHOOSE = 0.1852
+state = flowing
+
+[CONNECT]
+depth = 0.9259
+type = membrane_embedded
+hydrophobic_ratio = 0.6471
+charge_positive = 0.0588
+charge_negative = 0.0588
+charge_neutral = 0.8824
+
+[DISSOLVE]
+rigidity = 0.9536
+potential = crystallized
+wobble_entropy = 0.0464
+complementary_disruption = 0.0741
+
+[ENCODE]
+type = natural
+loss = 0.7656
+gc_content = 0.3519
+wobble_gc = 0.3889
+codon_diversity = 0.2344
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3333
+wobble_FLOW = 0.3333
+wobble_OBSERVE = 0.2778
+wobble_LOGIC = 0.2778
+wobble_CHOOSE = 0.1111
+entropy = 0.0464
+
+[OBSERVE]
+distance = 0.0556
+level = standard
+complementary_balance = 0.9259
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.2222
+intensity = 0.2222
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.2222
+  COMPOSE(OBSERVE,OBSERVE): 0.1667
+  COMPOSE(CHOOSE,FLOW): 0.1111
+  COMPOSE(LOGIC,CHOOSE): 0.1111
+  COMPOSE(OBSERVE,CHOOSE): 0.1111
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3889
+modifier_dominant = OBSERVE
+modifier_pct = 0.3889
+primary_FLOW = 0.2778
+primary_OBSERVE = 0.3889
+primary_LOGIC = 0.1667
+primary_CHOOSE = 0.1667
+modifier_FLOW = 0.2778
+modifier_OBSERVE = 0.3889
+modifier_LOGIC = 0.0556
+modifier_CHOOSE = 0.2778
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0535
+aa_top5 = [
+  Met: 0.1765  # sulfur
+  Gln: 0.1176  # amide
+  Ala: 0.1176  # simple
+  Leu: 0.1176  # aliphatic
+  Ser: 0.1176  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 17
+stop_codon = TAA
+loss = 0.0535
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.standard.dominant.crystallized.membrane_embedded

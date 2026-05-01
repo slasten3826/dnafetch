@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FCAR | unknown
+# CDS: 762 bp (254 codons)
+
+[IDENTITY]
+gene = FCAR
+organism = unknown
+transcript = ENST00000391724.3
+cds_length = 762
+codons = 254
+protein_length = 253
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = CHOOSE
+dominant_pct = 0.2651
+FLOW = 0.2546
+OBSERVE = 0.2257
+LOGIC = 0.2546
+CHOOSE = 0.2651
+state = flowing
+
+[CONNECT]
+depth = 0.9606
+type = membrane_embedded
+hydrophobic_ratio = 0.5573
+charge_positive = 0.1225
+charge_negative = 0.0988
+charge_neutral = 0.7787
+
+[DISSOLVE]
+rigidity = 0.9808
+potential = crystallized
+wobble_entropy = 0.0192
+complementary_disruption = 0.0394
+
+[ENCODE]
+type = optimized
+loss = 0.0781
+gc_content = 0.5197
+wobble_gc = 0.6142
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3150
+wobble_FLOW = 0.1969
+wobble_OBSERVE = 0.1890
+wobble_LOGIC = 0.2992
+wobble_CHOOSE = 0.3150
+entropy = 0.0192
+
+[OBSERVE]
+distance = 0.0105
+level = strong
+complementary_balance = 0.9606
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.0984
+intensity = 0.0984
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.0984
+  COMPOSE(FLOW,OBSERVE): 0.0866
+  COMPOSE(CHOOSE,FLOW): 0.0827
+  COMPOSE(CHOOSE,OBSERVE): 0.0787
+  COMPOSE(FLOW,FLOW): 0.0748
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2835
+modifier_dominant = FLOW
+modifier_pct = 0.2992
+primary_FLOW = 0.2677
+primary_OBSERVE = 0.2008
+primary_LOGIC = 0.2835
+primary_CHOOSE = 0.2480
+modifier_FLOW = 0.2992
+modifier_OBSERVE = 0.2874
+modifier_LOGIC = 0.1811
+modifier_CHOOSE = 0.2323
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0205
+aa_top5 = [
+  Leu: 0.1067  # aliphatic
+  Ser: 0.0830  # hydroxyl
+  Ala: 0.0711  # simple
+  Pro: 0.0593  # cyclic
+  Gly: 0.0593  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 253
+stop_codon = TAA
+loss = 0.0205
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.membrane_embedded

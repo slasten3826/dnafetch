@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IGLV5-52 | unknown
+# CDS: 372 bp (124 codons)
+
+[IDENTITY]
+gene = IGLV5-52
+organism = unknown
+transcript = ENST00000390289.2
+cds_length = 372
+codons = 124
+protein_length = 124
+stop_codon = none
+
+[FLOW]
+engagement = 0.991
+resistance = 0.009
+dominant = CHOOSE
+dominant_pct = 0.3118
+FLOW = 0.2043
+OBSERVE = 0.2527
+LOGIC = 0.2312
+CHOOSE = 0.3118
+state = flowing
+
+[CONNECT]
+depth = 0.8710
+type = balanced_interface
+hydrophobic_ratio = 0.5323
+charge_positive = 0.0968
+charge_negative = 0.0565
+charge_neutral = 0.8468
+
+[DISSOLVE]
+rigidity = 0.9649
+potential = crystallized
+wobble_entropy = 0.0351
+complementary_disruption = 0.1290
+
+[ENCODE]
+type = moderate
+loss = 0.2344
+gc_content = 0.5430
+wobble_gc = 0.5726
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3629
+wobble_FLOW = 0.1532
+wobble_OBSERVE = 0.2742
+wobble_LOGIC = 0.2097
+wobble_CHOOSE = 0.3629
+entropy = 0.0351
+
+[OBSERVE]
+distance = 0.0591
+level = standard
+complementary_balance = 0.8710
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1371
+intensity = 0.1371
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1371
+  COMPOSE(CHOOSE,OBSERVE): 0.1129
+  COMPOSE(LOGIC,LOGIC): 0.0968
+  COMPOSE(CHOOSE,FLOW): 0.0806
+  COMPOSE(FLOW,FLOW): 0.0645
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2742
+modifier_dominant = CHOOSE
+modifier_pct = 0.2984
+primary_FLOW = 0.2097
+primary_OBSERVE = 0.2661
+primary_LOGIC = 0.2500
+primary_CHOOSE = 0.2742
+modifier_FLOW = 0.2500
+modifier_OBSERVE = 0.2177
+modifier_LOGIC = 0.2339
+modifier_CHOOSE = 0.2984
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0377
+aa_top5 = [
+  Ser: 0.1774  # hydroxyl
+  Leu: 0.1129  # aliphatic
+  Gly: 0.0968  # simple
+  Ala: 0.0565  # simple
+  Pro: 0.0565  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 124
+stop_codon = none
+loss = 0.0377
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.balanced_interface

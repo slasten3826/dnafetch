@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TRHR | unknown
+# CDS: 1197 bp (399 codons)
+
+[IDENTITY]
+gene = TRHR
+organism = unknown
+transcript = ENST00000311762.2
+cds_length = 1197
+codons = 399
+protein_length = 398
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = OBSERVE
+dominant_pct = 0.2932
+FLOW = 0.2673
+OBSERVE = 0.2932
+LOGIC = 0.1930
+CHOOSE = 0.2464
+state = flowing
+
+[CONNECT]
+depth = 0.9206
+type = membrane_embedded
+hydrophobic_ratio = 0.6005
+charge_positive = 0.0879
+charge_negative = 0.0603
+charge_neutral = 0.8518
+
+[DISSOLVE]
+rigidity = 0.9760
+potential = crystallized
+wobble_entropy = 0.0240
+complementary_disruption = 0.0794
+
+[ENCODE]
+type = moderate
+loss = 0.1250
+gc_content = 0.4394
+wobble_gc = 0.5414
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3509
+wobble_FLOW = 0.1930
+wobble_OBSERVE = 0.2657
+wobble_LOGIC = 0.1905
+wobble_CHOOSE = 0.3509
+entropy = 0.0240
+
+[OBSERVE]
+distance = 0.0259
+level = deep
+complementary_balance = 0.9206
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1103
+intensity = 0.1103
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1103
+  COMPOSE(FLOW,FLOW): 0.1078
+  COMPOSE(LOGIC,OBSERVE): 0.0952
+  COMPOSE(CHOOSE,OBSERVE): 0.0852
+  COMPOSE(OBSERVE,OBSERVE): 0.0777
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3459
+modifier_dominant = OBSERVE
+modifier_pct = 0.3684
+primary_FLOW = 0.3459
+primary_OBSERVE = 0.2456
+primary_LOGIC = 0.2431
+primary_CHOOSE = 0.1654
+modifier_FLOW = 0.2632
+modifier_OBSERVE = 0.3684
+modifier_LOGIC = 0.1454
+modifier_CHOOSE = 0.2231
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0268
+aa_top5 = [
+  Leu: 0.1080  # aliphatic
+  Val: 0.0955  # aliphatic
+  Ser: 0.0879  # hydroxyl
+  Ile: 0.0829  # aliphatic
+  Thr: 0.0704  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 398
+stop_codon = TGA
+loss = 0.0268
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.deep.strong.crystallized.membrane_embedded

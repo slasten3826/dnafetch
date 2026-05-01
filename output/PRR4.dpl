@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PRR4 | unknown
+# CDS: 237 bp (79 codons)
+
+[IDENTITY]
+gene = PRR4
+organism = unknown
+transcript = ENST00000540107.2
+cds_length = 237
+codons = 79
+protein_length = 78
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = CHOOSE
+dominant_pct = 0.3165
+FLOW = 0.2532
+OBSERVE = 0.2278
+LOGIC = 0.2025
+CHOOSE = 0.3165
+state = flowing
+
+[CONNECT]
+depth = 0.8608
+type = balanced_interface
+hydrophobic_ratio = 0.5385
+charge_positive = 0.0256
+charge_negative = 0.0641
+charge_neutral = 0.9103
+
+[DISSOLVE]
+rigidity = 0.9948
+potential = crystallized
+wobble_entropy = 0.0052
+complementary_disruption = 0.1392
+
+[ENCODE]
+type = moderate
+loss = 0.4062
+gc_content = 0.5190
+wobble_gc = 0.5570
+codon_diversity = 0.5938
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2911
+wobble_FLOW = 0.2278
+wobble_OBSERVE = 0.2152
+wobble_LOGIC = 0.2658
+wobble_CHOOSE = 0.2911
+entropy = 0.0052
+
+[OBSERVE]
+distance = 0.0633
+level = standard
+complementary_balance = 0.8608
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,CHOOSE)
+top_compose_pct = 0.1772
+intensity = 0.1772
+compose_top5 = [
+  COMPOSE(FLOW,CHOOSE): 0.1772
+  COMPOSE(CHOOSE,OBSERVE): 0.1266
+  COMPOSE(FLOW,OBSERVE): 0.0886
+  COMPOSE(CHOOSE,CHOOSE): 0.0886
+  COMPOSE(OBSERVE,CHOOSE): 0.0759
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3671
+modifier_dominant = CHOOSE
+modifier_pct = 0.4051
+primary_FLOW = 0.3671
+primary_OBSERVE = 0.1519
+primary_LOGIC = 0.2278
+primary_CHOOSE = 0.2532
+modifier_FLOW = 0.1646
+modifier_OBSERVE = 0.3165
+modifier_LOGIC = 0.1139
+modifier_CHOOSE = 0.4051
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0476
+aa_top5 = [
+  Thr: 0.1795  # hydroxyl
+  Leu: 0.1282  # aliphatic
+  Ser: 0.1282  # hydroxyl
+  Pro: 0.0897  # cyclic
+  Ile: 0.0769  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 78
+stop_codon = TAG
+loss = 0.0476
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.balanced_interface

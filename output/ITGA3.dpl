@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ITGA3 | unknown
+# CDS: 42 bp (14 codons)
+
+[IDENTITY]
+gene = ITGA3
+organism = unknown
+transcript = ENST00000504417.1
+cds_length = 42
+codons = 14
+protein_length = 13
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.926
+resistance = 0.074
+dominant = LOGIC
+dominant_pct = 0.4286
+FLOW = 0.1905
+OBSERVE = 0.2619
+LOGIC = 0.4286
+CHOOSE = 0.1190
+state = flowing
+
+[CONNECT]
+depth = 0.6190
+type = membrane_embedded
+hydrophobic_ratio = 0.6154
+charge_positive = 0.1538
+charge_negative = 0.1538
+charge_neutral = 0.6923
+
+[DISSOLVE]
+rigidity = 0.7872
+potential = low
+wobble_entropy = 0.2128
+complementary_disruption = 0.3810
+
+[ENCODE]
+type = moderate
+loss = 0.7812
+gc_content = 0.5476
+wobble_gc = 0.5714
+codon_diversity = 0.2188
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5000
+wobble_FLOW = 0.0714
+wobble_OBSERVE = 0.3571
+wobble_LOGIC = 0.5000
+wobble_CHOOSE = 0.0714
+entropy = 0.2128
+
+[OBSERVE]
+distance = 0.1667
+level = basic
+complementary_balance = 0.6190
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1429
+intensity = 0.1429
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1429
+  COMPOSE(OBSERVE,LOGIC): 0.1429
+  COMPOSE(LOGIC,LOGIC): 0.1429
+  COMPOSE(FLOW,OBSERVE): 0.0714
+  COMPOSE(FLOW,FLOW): 0.0714
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4286
+modifier_dominant = LOGIC
+modifier_pct = 0.3571
+primary_FLOW = 0.2143
+primary_OBSERVE = 0.2143
+primary_LOGIC = 0.4286
+primary_CHOOSE = 0.1429
+modifier_FLOW = 0.2857
+modifier_OBSERVE = 0.2143
+modifier_LOGIC = 0.3571
+modifier_CHOOSE = 0.1429
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0440
+aa_top5 = [
+  Gly: 0.1538  # simple
+  Met: 0.0769  # sulfur
+  Asn: 0.0769  # amide
+  Asp: 0.0769  # acidic
+  Ala: 0.0769  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 13
+stop_codon = TGA
+loss = 0.0440
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.low.membrane_embedded

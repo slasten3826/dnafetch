@@ -1,0 +1,102 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNF709 | unknown
+# CDS: 12 bp (4 codons)
+
+[IDENTITY]
+gene = ZNF709
+organism = unknown
+transcript = ENST00000455490.1
+cds_length = 12
+codons = 4
+protein_length = 3
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.892
+resistance = 0.108
+dominant = LOGIC
+dominant_pct = 0.4167
+FLOW = 0.1667
+OBSERVE = 0.3333
+LOGIC = 0.4167
+CHOOSE = 0.0833
+state = flowing
+
+[CONNECT]
+depth = 0.5000
+type = membrane_embedded
+hydrophobic_ratio = 1.0000
+charge_positive = 0.0000
+charge_negative = 0.0000
+charge_neutral = 1.0000
+
+[DISSOLVE]
+rigidity = 0.4056
+potential = high
+wobble_entropy = 0.5944
+complementary_disruption = 0.5000
+
+[ENCODE]
+type = optimized
+loss = 0.9375
+gc_content = 0.5000
+wobble_gc = 0.7500
+codon_diversity = 0.0625
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.7500
+wobble_FLOW = 0.2500
+wobble_OBSERVE = 0.0000
+wobble_LOGIC = 0.7500
+wobble_CHOOSE = 0.0000
+entropy = 0.5944
+
+[OBSERVE]
+distance = 0.0833
+level = mild
+complementary_balance = 0.5000
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.5000
+intensity = 0.5000
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.5000
+  COMPOSE(FLOW,OBSERVE): 0.2500
+  COMPOSE(CHOOSE,OBSERVE): 0.2500
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.5000
+modifier_dominant = OBSERVE
+modifier_pct = 0.5000
+primary_FLOW = 0.2500
+primary_OBSERVE = 0.5000
+primary_LOGIC = 0.0000
+primary_CHOOSE = 0.2500
+modifier_FLOW = 0.0000
+modifier_OBSERVE = 0.5000
+modifier_LOGIC = 0.5000
+modifier_CHOOSE = 0.0000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1190
+aa_top5 = [
+  Met: 0.3333  # sulfur
+  Trp: 0.3333  # aromatic
+  Leu: 0.3333  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 3
+stop_codon = TGA
+loss = 0.1190
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.dominant.high.membrane_embedded

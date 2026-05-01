@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: COX7C | unknown
+# CDS: 171 bp (57 codons)
+
+[IDENTITY]
+gene = COX7C
+organism = unknown
+transcript = ENST00000515763.1
+cds_length = 171
+codons = 57
+protein_length = 56
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = OBSERVE
+dominant_pct = 0.2924
+FLOW = 0.2339
+OBSERVE = 0.2924
+LOGIC = 0.2690
+CHOOSE = 0.2047
+state = flowing
+
+[CONNECT]
+depth = 0.8772
+type = membrane_embedded
+hydrophobic_ratio = 0.5893
+charge_positive = 0.1429
+charge_negative = 0.0536
+charge_neutral = 0.8036
+
+[DISSOLVE]
+rigidity = 0.9871
+potential = crystallized
+wobble_entropy = 0.0129
+complementary_disruption = 0.1228
+
+[ENCODE]
+type = moderate
+loss = 0.3594
+gc_content = 0.4737
+wobble_gc = 0.5614
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3333
+wobble_FLOW = 0.2105
+wobble_OBSERVE = 0.2281
+wobble_LOGIC = 0.3333
+wobble_CHOOSE = 0.2281
+entropy = 0.0129
+
+[OBSERVE]
+distance = 0.0234
+level = deep
+complementary_balance = 0.8772
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1579
+intensity = 0.1579
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1579
+  COMPOSE(FLOW,FLOW): 0.0877
+  COMPOSE(FLOW,OBSERVE): 0.0702
+  COMPOSE(LOGIC,LOGIC): 0.0702
+  COMPOSE(FLOW,LOGIC): 0.0702
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3158
+modifier_dominant = OBSERVE
+modifier_pct = 0.3333
+primary_FLOW = 0.2807
+primary_OBSERVE = 0.3158
+primary_LOGIC = 0.2456
+primary_CHOOSE = 0.1579
+modifier_FLOW = 0.2105
+modifier_OBSERVE = 0.3333
+modifier_LOGIC = 0.2281
+modifier_CHOOSE = 0.2281
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0291
+aa_top5 = [
+  Leu: 0.1071  # aliphatic
+  Ser: 0.1071  # hydroxyl
+  Phe: 0.0893  # aromatic
+  Gly: 0.0714  # simple
+  Arg: 0.0714  # basic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 56
+stop_codon = TGA
+loss = 0.0291
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.deep.dominant.crystallized.membrane_embedded

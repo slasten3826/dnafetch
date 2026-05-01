@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: AMN | unknown
+# CDS: 1362 bp (454 codons)
+
+[IDENTITY]
+gene = AMN
+organism = unknown
+transcript = ENST00000299155.10
+cds_length = 1362
+codons = 454
+protein_length = 453
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.926
+resistance = 0.074
+dominant = LOGIC
+dominant_pct = 0.3649
+FLOW = 0.1167
+OBSERVE = 0.1645
+LOGIC = 0.3649
+CHOOSE = 0.3539
+state = flowing
+
+[CONNECT]
+depth = 0.9413
+type = membrane_embedded
+hydrophobic_ratio = 0.6446
+charge_positive = 0.1126
+charge_negative = 0.1060
+charge_neutral = 0.7815
+
+[DISSOLVE]
+rigidity = 0.7759
+potential = low
+wobble_entropy = 0.2241
+complementary_disruption = 0.0587
+
+[ENCODE]
+type = engineered
+loss = 0.1562
+gc_content = 0.7188
+wobble_gc = 0.8700
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4670
+wobble_FLOW = 0.0551
+wobble_OBSERVE = 0.0749
+wobble_LOGIC = 0.4031
+wobble_CHOOSE = 0.4670
+entropy = 0.2241
+
+[OBSERVE]
+distance = 0.0110
+level = strong
+complementary_balance = 0.9413
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1410
+intensity = 0.1410
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1410
+  COMPOSE(CHOOSE,OBSERVE): 0.1233
+  COMPOSE(LOGIC,FLOW): 0.1057
+  COMPOSE(LOGIC,LOGIC): 0.1013
+  COMPOSE(LOGIC,OBSERVE): 0.0925
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4405
+modifier_dominant = CHOOSE
+modifier_pct = 0.2797
+primary_FLOW = 0.1035
+primary_OBSERVE = 0.1410
+primary_LOGIC = 0.4405
+primary_CHOOSE = 0.3150
+modifier_FLOW = 0.1916
+modifier_OBSERVE = 0.2775
+modifier_LOGIC = 0.2511
+modifier_CHOOSE = 0.2797
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0395
+aa_top5 = [
+  Ala: 0.1413  # simple
+  Leu: 0.1258  # aliphatic
+  Gly: 0.1015  # simple
+  Val: 0.0927  # aliphatic
+  Arg: 0.0773  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 453
+stop_codon = TGA
+loss = 0.0395
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.strong.dominant.low.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SPG11 | unknown
+# CDS: 435 bp (145 codons)
+
+[IDENTITY]
+gene = SPG11
+organism = unknown
+transcript = ENST00000557866.1
+cds_length = 435
+codons = 145
+protein_length = 145
+stop_codon = none
+
+[FLOW]
+engagement = 0.985
+resistance = 0.015
+dominant = OBSERVE
+dominant_pct = 0.3218
+FLOW = 0.2713
+OBSERVE = 0.3218
+LOGIC = 0.2161
+CHOOSE = 0.1908
+state = flowing
+
+[CONNECT]
+depth = 0.9241
+type = balanced_interface
+hydrophobic_ratio = 0.5172
+charge_positive = 0.1034
+charge_negative = 0.1034
+charge_neutral = 0.7931
+
+[DISSOLVE]
+rigidity = 0.9760
+potential = crystallized
+wobble_entropy = 0.0240
+complementary_disruption = 0.0759
+
+[ENCODE]
+type = natural
+loss = 0.1875
+gc_content = 0.4069
+wobble_gc = 0.4345
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3655
+wobble_FLOW = 0.2000
+wobble_OBSERVE = 0.3655
+wobble_LOGIC = 0.2207
+wobble_CHOOSE = 0.2138
+entropy = 0.0240
+
+[OBSERVE]
+distance = 0.0506
+level = standard
+complementary_balance = 0.9241
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1241
+intensity = 0.1241
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1241
+  COMPOSE(LOGIC,FLOW): 0.1034
+  COMPOSE(FLOW,FLOW): 0.0966
+  COMPOSE(FLOW,OBSERVE): 0.0828
+  COMPOSE(CHOOSE,FLOW): 0.0828
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3034
+modifier_dominant = OBSERVE
+modifier_pct = 0.3172
+primary_FLOW = 0.3034
+primary_OBSERVE = 0.2828
+primary_LOGIC = 0.2276
+primary_CHOOSE = 0.1862
+modifier_FLOW = 0.3103
+modifier_OBSERVE = 0.3172
+modifier_LOGIC = 0.2000
+modifier_CHOOSE = 0.1724
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0294
+aa_top5 = [
+  Leu: 0.1379  # aliphatic
+  Ser: 0.1103  # hydroxyl
+  Gly: 0.0690  # simple
+  Thr: 0.0621  # hydroxyl
+  Ile: 0.0621  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 145
+stop_codon = none
+loss = 0.0294
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.dominant.crystallized.balanced_interface

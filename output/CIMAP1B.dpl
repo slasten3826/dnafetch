@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CIMAP1B | unknown
+# CDS: 111 bp (37 codons)
+
+[IDENTITY]
+gene = CIMAP1B
+organism = unknown
+transcript = ENST00000437588.2
+cds_length = 111
+codons = 37
+protein_length = 36
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.935
+resistance = 0.065
+dominant = CHOOSE
+dominant_pct = 0.3964
+FLOW = 0.1441
+OBSERVE = 0.1532
+LOGIC = 0.3063
+CHOOSE = 0.3964
+state = flowing
+
+[CONNECT]
+depth = 0.9009
+type = membrane_embedded
+hydrophobic_ratio = 0.6667
+charge_positive = 0.1667
+charge_negative = 0.0278
+charge_neutral = 0.8056
+
+[DISSOLVE]
+rigidity = 0.8847
+potential = crystallized
+wobble_entropy = 0.1153
+complementary_disruption = 0.0991
+
+[ENCODE]
+type = engineered
+loss = 0.6250
+gc_content = 0.7027
+wobble_gc = 0.7568
+codon_diversity = 0.3750
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4324
+wobble_FLOW = 0.1622
+wobble_OBSERVE = 0.0811
+wobble_LOGIC = 0.4324
+wobble_CHOOSE = 0.3243
+entropy = 0.1153
+
+[OBSERVE]
+distance = 0.0901
+level = mild
+complementary_balance = 0.9009
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.2162
+intensity = 0.2162
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.2162
+  COMPOSE(LOGIC,CHOOSE): 0.1351
+  COMPOSE(CHOOSE,OBSERVE): 0.1081
+  COMPOSE(FLOW,LOGIC): 0.0811
+  COMPOSE(CHOOSE,LOGIC): 0.0811
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4324
+modifier_dominant = CHOOSE
+modifier_pct = 0.4324
+primary_FLOW = 0.1892
+primary_OBSERVE = 0.1351
+primary_LOGIC = 0.2432
+primary_CHOOSE = 0.4324
+modifier_FLOW = 0.0811
+modifier_OBSERVE = 0.2432
+modifier_LOGIC = 0.2432
+modifier_CHOOSE = 0.4324
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0606
+aa_top5 = [
+  Pro: 0.2222  # cyclic
+  Ala: 0.1389  # simple
+  Leu: 0.1389  # aliphatic
+  Arg: 0.1389  # basic
+  Ser: 0.0833  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 36
+stop_codon = TGA
+loss = 0.0606
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.mild.dominant.crystallized.membrane_embedded

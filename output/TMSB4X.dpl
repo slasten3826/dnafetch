@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMSB4X | unknown
+# CDS: 135 bp (45 codons)
+
+[IDENTITY]
+gene = TMSB4X
+organism = unknown
+transcript = ENST00000380633.1
+cds_length = 135
+codons = 45
+protein_length = 44
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.945
+resistance = 0.055
+dominant = FLOW
+dominant_pct = 0.4148
+FLOW = 0.4148
+OBSERVE = 0.1481
+LOGIC = 0.2444
+CHOOSE = 0.1926
+state = flowing
+
+[CONNECT]
+depth = 0.6815
+type = ionic_interaction
+hydrophobic_ratio = 0.2955
+charge_positive = 0.2045
+charge_negative = 0.2500
+charge_neutral = 0.5455
+
+[DISSOLVE]
+rigidity = 0.9290
+potential = low
+wobble_entropy = 0.0710
+complementary_disruption = 0.3185
+
+[ENCODE]
+type = moderate
+loss = 0.5938
+gc_content = 0.4370
+wobble_gc = 0.5333
+codon_diversity = 0.4062
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4000
+wobble_FLOW = 0.3111
+wobble_OBSERVE = 0.1556
+wobble_LOGIC = 0.4000
+wobble_CHOOSE = 0.1333
+entropy = 0.0710
+
+[OBSERVE]
+distance = 0.1704
+level = basic
+complementary_balance = 0.6815
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2444
+intensity = 0.2444
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2444
+  COMPOSE(FLOW,FLOW): 0.2222
+  COMPOSE(FLOW,OBSERVE): 0.0889
+  COMPOSE(OBSERVE,CHOOSE): 0.0889
+  COMPOSE(CHOOSE,CHOOSE): 0.0667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3778
+modifier_dominant = FLOW
+modifier_pct = 0.5556
+primary_FLOW = 0.3778
+primary_OBSERVE = 0.1333
+primary_LOGIC = 0.3111
+primary_CHOOSE = 0.1778
+modifier_FLOW = 0.5556
+modifier_OBSERVE = 0.1556
+modifier_LOGIC = 0.0222
+modifier_CHOOSE = 0.2667
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0555
+aa_top5 = [
+  Lys: 0.2045  # basic
+  Glu: 0.1818  # acidic
+  Ser: 0.0909  # hydroxyl
+  Asp: 0.0682  # acidic
+  Pro: 0.0682  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 44
+stop_codon = TAA
+loss = 0.0555
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.basic.dominant.low.ionic_interaction

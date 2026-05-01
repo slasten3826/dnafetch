@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GAD2 | unknown
+# CDS: 1416 bp (472 codons)
+
+[IDENTITY]
+gene = GAD2
+organism = unknown
+transcript = ENST00000648567.1
+cds_length = 1416
+codons = 472
+protein_length = 471
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = FLOW
+dominant_pct = 0.2959
+FLOW = 0.2959
+OBSERVE = 0.2599
+LOGIC = 0.2436
+CHOOSE = 0.2006
+state = flowing
+
+[CONNECT]
+depth = 0.9209
+type = membrane_embedded
+hydrophobic_ratio = 0.5711
+charge_positive = 0.1401
+charge_negative = 0.1125
+charge_neutral = 0.7473
+
+[DISSOLVE]
+rigidity = 0.9982
+potential = crystallized
+wobble_entropy = 0.0018
+complementary_disruption = 0.0791
+
+[ENCODE]
+type = moderate
+loss = 0.0625
+gc_content = 0.4442
+wobble_gc = 0.4725
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2712
+wobble_FLOW = 0.2564
+wobble_OBSERVE = 0.2712
+wobble_LOGIC = 0.2500
+wobble_CHOOSE = 0.2225
+entropy = 0.0018
+
+[OBSERVE]
+distance = 0.0360
+level = deep
+complementary_balance = 0.9209
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1123
+intensity = 0.1123
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1123
+  COMPOSE(FLOW,OBSERVE): 0.1059
+  COMPOSE(FLOW,FLOW): 0.1059
+  COMPOSE(OBSERVE,OBSERVE): 0.0847
+  COMPOSE(LOGIC,CHOOSE): 0.0720
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3136
+modifier_dominant = FLOW
+modifier_pct = 0.3263
+primary_FLOW = 0.3051
+primary_OBSERVE = 0.1992
+primary_LOGIC = 0.3136
+primary_CHOOSE = 0.1822
+modifier_FLOW = 0.3263
+modifier_OBSERVE = 0.3093
+modifier_LOGIC = 0.1674
+modifier_CHOOSE = 0.1970
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0186
+aa_top5 = [
+  Leu: 0.0998  # aliphatic
+  Ala: 0.0722  # simple
+  Gly: 0.0701  # simple
+  Lys: 0.0679  # basic
+  Glu: 0.0616  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 471
+stop_codon = TAA
+loss = 0.0186
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.strong.crystallized.membrane_embedded

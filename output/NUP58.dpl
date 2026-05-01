@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NUP58 | unknown
+# CDS: 120 bp (40 codons)
+
+[IDENTITY]
+gene = NUP58
+organism = unknown
+transcript = ENST00000695578.1
+cds_length = 120
+codons = 40
+protein_length = 39
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.926
+resistance = 0.074
+dominant = OBSERVE
+dominant_pct = 0.4417
+FLOW = 0.2417
+OBSERVE = 0.4417
+LOGIC = 0.1833
+CHOOSE = 0.1333
+state = flowing
+
+[CONNECT]
+depth = 0.7500
+type = membrane_embedded
+hydrophobic_ratio = 0.7179
+charge_positive = 0.0513
+charge_negative = 0.0256
+charge_neutral = 0.9231
+
+[DISSOLVE]
+rigidity = 0.9047
+potential = low
+wobble_entropy = 0.0953
+complementary_disruption = 0.2500
+
+[ENCODE]
+type = natural
+loss = 0.5938
+gc_content = 0.3167
+wobble_gc = 0.3500
+codon_diversity = 0.4062
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.4750
+wobble_FLOW = 0.1750
+wobble_OBSERVE = 0.4750
+wobble_LOGIC = 0.2250
+wobble_CHOOSE = 0.1250
+entropy = 0.0953
+
+[OBSERVE]
+distance = 0.2000
+level = basic
+complementary_balance = 0.7500
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1750
+intensity = 0.1750
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1750
+  COMPOSE(CHOOSE,OBSERVE): 0.1750
+  COMPOSE(FLOW,OBSERVE): 0.1500
+  COMPOSE(FLOW,FLOW): 0.1250
+  COMPOSE(LOGIC,OBSERVE): 0.1000
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3500
+modifier_dominant = OBSERVE
+modifier_pct = 0.6000
+primary_FLOW = 0.3500
+primary_OBSERVE = 0.2500
+primary_LOGIC = 0.2000
+primary_CHOOSE = 0.2000
+modifier_FLOW = 0.2000
+modifier_OBSERVE = 0.6000
+modifier_LOGIC = 0.1250
+modifier_CHOOSE = 0.0750
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0565
+aa_top5 = [
+  Leu: 0.2051  # aliphatic
+  Phe: 0.1538  # aromatic
+  Ile: 0.1282  # aliphatic
+  Asn: 0.1026  # amide
+  Val: 0.1026  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 39
+stop_codon = TAG
+loss = 0.0565
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.basic.dominant.low.membrane_embedded

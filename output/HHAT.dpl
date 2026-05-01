@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HHAT | unknown
+# CDS: 552 bp (184 codons)
+
+[IDENTITY]
+gene = HHAT
+organism = unknown
+transcript = ENST00000367009.2
+cds_length = 552
+codons = 184
+protein_length = 183
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = CHOOSE
+dominant_pct = 0.2862
+FLOW = 0.1775
+OBSERVE = 0.2572
+LOGIC = 0.2790
+CHOOSE = 0.2862
+state = flowing
+
+[CONNECT]
+depth = 0.9130
+type = membrane_embedded
+hydrophobic_ratio = 0.6612
+charge_positive = 0.0929
+charge_negative = 0.0437
+charge_neutral = 0.8634
+
+[DISSOLVE]
+rigidity = 0.9324
+potential = crystallized
+wobble_entropy = 0.0676
+complementary_disruption = 0.0870
+
+[ENCODE]
+type = optimized
+loss = 0.1562
+gc_content = 0.5652
+wobble_gc = 0.6957
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3913
+wobble_FLOW = 0.1141
+wobble_OBSERVE = 0.1902
+wobble_LOGIC = 0.3043
+wobble_CHOOSE = 0.3913
+entropy = 0.0676
+
+[OBSERVE]
+distance = 0.0072
+level = strong
+complementary_balance = 0.9130
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1087
+intensity = 0.1087
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1087
+  COMPOSE(LOGIC,LOGIC): 0.0924
+  COMPOSE(OBSERVE,LOGIC): 0.0761
+  COMPOSE(LOGIC,OBSERVE): 0.0761
+  COMPOSE(FLOW,CHOOSE): 0.0707
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2826
+modifier_dominant = OBSERVE
+modifier_pct = 0.3207
+primary_FLOW = 0.2174
+primary_OBSERVE = 0.2609
+primary_LOGIC = 0.2826
+primary_CHOOSE = 0.2391
+modifier_FLOW = 0.2011
+modifier_OBSERVE = 0.3207
+modifier_LOGIC = 0.2500
+modifier_CHOOSE = 0.2283
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0272
+aa_top5 = [
+  Leu: 0.1148  # aliphatic
+  Gly: 0.0929  # simple
+  Val: 0.0765  # aliphatic
+  Thr: 0.0710  # hydroxyl
+  Ala: 0.0710  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 183
+stop_codon = TAA
+loss = 0.0272
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.membrane_embedded

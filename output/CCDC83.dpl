@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CCDC83 | unknown
+# CDS: 942 bp (314 codons)
+
+[IDENTITY]
+gene = CCDC83
+organism = unknown
+transcript = ENST00000526729.1
+cds_length = 942
+codons = 314
+protein_length = 313
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.960
+resistance = 0.040
+dominant = FLOW
+dominant_pct = 0.3896
+FLOW = 0.3896
+OBSERVE = 0.2197
+LOGIC = 0.2325
+CHOOSE = 0.1582
+state = flowing
+
+[CONNECT]
+depth = 0.7558
+type = ionic_interaction
+hydrophobic_ratio = 0.4153
+charge_positive = 0.2013
+charge_negative = 0.2077
+charge_neutral = 0.5911
+
+[DISSOLVE]
+rigidity = 0.9739
+potential = crystallized
+wobble_entropy = 0.0261
+complementary_disruption = 0.2442
+
+[ENCODE]
+type = natural
+loss = 0.1250
+gc_content = 0.3907
+wobble_gc = 0.4236
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3408
+wobble_FLOW = 0.3408
+wobble_OBSERVE = 0.2357
+wobble_LOGIC = 0.2675
+wobble_CHOOSE = 0.1561
+entropy = 0.0261
+
+[OBSERVE]
+distance = 0.1571
+level = basic
+complementary_balance = 0.7558
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2070
+intensity = 0.2070
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2070
+  COMPOSE(FLOW,FLOW): 0.1561
+  COMPOSE(FLOW,OBSERVE): 0.0892
+  COMPOSE(CHOOSE,OBSERVE): 0.0764
+  COMPOSE(CHOOSE,FLOW): 0.0732
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3567
+modifier_dominant = FLOW
+modifier_pct = 0.4713
+primary_FLOW = 0.3567
+primary_OBSERVE = 0.1433
+primary_LOGIC = 0.3089
+primary_CHOOSE = 0.1911
+modifier_FLOW = 0.4713
+modifier_OBSERVE = 0.2803
+modifier_LOGIC = 0.1210
+modifier_CHOOSE = 0.1274
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0373
+aa_top5 = [
+  Glu: 0.1502  # acidic
+  Lys: 0.1214  # basic
+  Leu: 0.1214  # aliphatic
+  Ile: 0.0607  # aliphatic
+  Ser: 0.0607  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 313
+stop_codon = TAA
+loss = 0.0373
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.crystallized.ionic_interaction

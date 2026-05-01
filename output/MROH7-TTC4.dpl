@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MROH7-TTC4 | unknown
+# CDS: 4005 bp (1335 codons)
+
+[IDENTITY]
+gene = MROH7-TTC4
+organism = unknown
+transcript = ENST00000414150.6
+cds_length = 4005
+codons = 1335
+protein_length = 1334
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = CHOOSE
+dominant_pct = 0.2906
+FLOW = 0.2322
+OBSERVE = 0.2040
+LOGIC = 0.2732
+CHOOSE = 0.2906
+state = flowing
+
+[CONNECT]
+depth = 0.9543
+type = balanced_interface
+hydrophobic_ratio = 0.5300
+charge_positive = 0.1327
+charge_negative = 0.1019
+charge_neutral = 0.7654
+
+[DISSOLVE]
+rigidity = 0.9316
+potential = crystallized
+wobble_entropy = 0.0684
+complementary_disruption = 0.0457
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.5638
+wobble_gc = 0.7116
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3610
+wobble_FLOW = 0.1258
+wobble_OBSERVE = 0.1625
+wobble_LOGIC = 0.3610
+wobble_CHOOSE = 0.3506
+entropy = 0.0684
+
+[OBSERVE]
+distance = 0.0175
+level = strong
+complementary_balance = 0.9543
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1191
+intensity = 0.1191
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1191
+  COMPOSE(LOGIC,FLOW): 0.1019
+  COMPOSE(FLOW,FLOW): 0.0921
+  COMPOSE(FLOW,OBSERVE): 0.0816
+  COMPOSE(CHOOSE,FLOW): 0.0697
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2906
+modifier_dominant = OBSERVE
+modifier_pct = 0.3026
+primary_FLOW = 0.2906
+primary_OBSERVE = 0.1468
+primary_LOGIC = 0.2801
+primary_CHOOSE = 0.2824
+modifier_FLOW = 0.2801
+modifier_OBSERVE = 0.3026
+modifier_LOGIC = 0.1783
+modifier_CHOOSE = 0.2390
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0295
+aa_top5 = [
+  Leu: 0.1372  # aliphatic
+  Ser: 0.1057  # hydroxyl
+  Pro: 0.0660  # cyclic
+  Glu: 0.0660  # acidic
+  Ala: 0.0637  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 1334
+stop_codon = TAA
+loss = 0.0295
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.strong.crystallized.balanced_interface

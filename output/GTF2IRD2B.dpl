@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GTF2IRD2B | unknown
+# CDS: 2109 bp (703 codons)
+
+[IDENTITY]
+gene = GTF2IRD2B
+organism = unknown
+transcript = ENST00000418185.6
+cds_length = 2109
+codons = 703
+protein_length = 702
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = FLOW
+dominant_pct = 0.2959
+FLOW = 0.2959
+OBSERVE = 0.2295
+LOGIC = 0.2409
+CHOOSE = 0.2338
+state = flowing
+
+[CONNECT]
+depth = 0.9265
+type = balanced_interface
+hydrophobic_ratio = 0.4972
+charge_positive = 0.1439
+charge_negative = 0.1296
+charge_neutral = 0.7265
+
+[DISSOLVE]
+rigidity = 0.9865
+potential = crystallized
+wobble_entropy = 0.0135
+complementary_disruption = 0.0735
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4746
+wobble_gc = 0.5932
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3058
+wobble_FLOW = 0.2176
+wobble_OBSERVE = 0.1892
+wobble_LOGIC = 0.2873
+wobble_CHOOSE = 0.3058
+entropy = 0.0135
+
+[OBSERVE]
+distance = 0.0550
+level = standard
+complementary_balance = 0.9265
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1294
+intensity = 0.1294
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1294
+  COMPOSE(FLOW,FLOW): 0.1223
+  COMPOSE(FLOW,OBSERVE): 0.0882
+  COMPOSE(CHOOSE,OBSERVE): 0.0782
+  COMPOSE(LOGIC,OBSERVE): 0.0697
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3243
+modifier_dominant = FLOW
+modifier_pct = 0.3457
+primary_FLOW = 0.3243
+primary_OBSERVE = 0.1949
+primary_LOGIC = 0.2802
+primary_CHOOSE = 0.2006
+modifier_FLOW = 0.3457
+modifier_OBSERVE = 0.3044
+modifier_LOGIC = 0.1550
+modifier_CHOOSE = 0.1949
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0238
+aa_top5 = [
+  Leu: 0.1026  # aliphatic
+  Ser: 0.0926  # hydroxyl
+  Glu: 0.0826  # acidic
+  Lys: 0.0783  # basic
+  Val: 0.0698  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 702
+stop_codon = TGA
+loss = 0.0238
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.standard.dominant.crystallized.balanced_interface

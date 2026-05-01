@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNF417 | unknown
+# CDS: 123 bp (41 codons)
+
+[IDENTITY]
+gene = ZNF417
+organism = unknown
+transcript = ENST00000599251.1
+cds_length = 123
+codons = 41
+protein_length = 40
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.931
+resistance = 0.069
+dominant = LOGIC
+dominant_pct = 0.4228
+FLOW = 0.2683
+OBSERVE = 0.1301
+LOGIC = 0.4228
+CHOOSE = 0.1789
+state = flowing
+
+[CONNECT]
+depth = 0.6179
+type = balanced_interface
+hydrophobic_ratio = 0.5500
+charge_positive = 0.0750
+charge_negative = 0.1500
+charge_neutral = 0.7750
+
+[DISSOLVE]
+rigidity = 0.7737
+potential = low
+wobble_entropy = 0.2263
+complementary_disruption = 0.3821
+
+[ENCODE]
+type = optimized
+loss = 0.6094
+gc_content = 0.6016
+wobble_gc = 0.6341
+codon_diversity = 0.3906
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5366
+wobble_FLOW = 0.3171
+wobble_OBSERVE = 0.0488
+wobble_LOGIC = 0.5366
+wobble_CHOOSE = 0.0976
+entropy = 0.2263
+
+[OBSERVE]
+distance = 0.1545
+level = basic
+complementary_balance = 0.6179
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1463
+intensity = 0.1463
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1463
+  COMPOSE(LOGIC,FLOW): 0.1463
+  COMPOSE(OBSERVE,LOGIC): 0.1220
+  COMPOSE(CHOOSE,FLOW): 0.0976
+  COMPOSE(LOGIC,CHOOSE): 0.0976
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4146
+modifier_dominant = FLOW
+modifier_pct = 0.3171
+primary_FLOW = 0.1707
+primary_OBSERVE = 0.1951
+primary_LOGIC = 0.4146
+primary_CHOOSE = 0.2195
+modifier_FLOW = 0.3171
+modifier_OBSERVE = 0.1463
+modifier_LOGIC = 0.3171
+modifier_CHOOSE = 0.2195
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0468
+aa_top5 = [
+  Gly: 0.1500  # simple
+  Glu: 0.1500  # acidic
+  Trp: 0.1000  # aromatic
+  Gln: 0.1000  # amide
+  Ala: 0.1000  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 40
+stop_codon = TAA
+loss = 0.0468
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.low.balanced_interface

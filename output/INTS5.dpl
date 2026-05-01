@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: INTS5 | unknown
+# CDS: 3060 bp (1020 codons)
+
+[IDENTITY]
+gene = INTS5
+organism = unknown
+transcript = ENST00000330574.2
+cds_length = 3060
+codons = 1020
+protein_length = 1019
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = CHOOSE
+dominant_pct = 0.3111
+FLOW = 0.1637
+OBSERVE = 0.2346
+LOGIC = 0.2905
+CHOOSE = 0.3111
+state = flowing
+
+[CONNECT]
+depth = 0.9085
+type = membrane_embedded
+hydrophobic_ratio = 0.6212
+charge_positive = 0.1178
+charge_negative = 0.0834
+charge_neutral = 0.7988
+
+[DISSOLVE]
+rigidity = 0.9780
+potential = crystallized
+wobble_entropy = 0.0220
+complementary_disruption = 0.0915
+
+[ENCODE]
+type = moderate
+loss = 0.0469
+gc_content = 0.6016
+wobble_gc = 0.5951
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2990
+wobble_FLOW = 0.1529
+wobble_OBSERVE = 0.2520
+wobble_LOGIC = 0.2961
+wobble_CHOOSE = 0.2990
+entropy = 0.0220
+
+[OBSERVE]
+distance = 0.0206
+level = deep
+complementary_balance = 0.9085
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1265
+intensity = 0.1265
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1265
+  COMPOSE(LOGIC,CHOOSE): 0.1059
+  COMPOSE(LOGIC,LOGIC): 0.0971
+  COMPOSE(CHOOSE,FLOW): 0.0873
+  COMPOSE(CHOOSE,CHOOSE): 0.0843
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3559
+modifier_dominant = OBSERVE
+modifier_pct = 0.2922
+primary_FLOW = 0.1324
+primary_OBSERVE = 0.1598
+primary_LOGIC = 0.3559
+primary_CHOOSE = 0.3520
+modifier_FLOW = 0.2059
+modifier_OBSERVE = 0.2922
+modifier_LOGIC = 0.2196
+modifier_CHOOSE = 0.2824
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0381
+aa_top5 = [
+  Leu: 0.1551  # aliphatic
+  Ala: 0.1060  # simple
+  Gly: 0.0972  # simple
+  Ser: 0.0844  # hydroxyl
+  Pro: 0.0844  # cyclic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 1019
+stop_codon = TAG
+loss = 0.0381
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.membrane_embedded

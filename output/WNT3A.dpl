@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: WNT3A | unknown
+# CDS: 1059 bp (353 codons)
+
+[IDENTITY]
+gene = WNT3A
+organism = unknown
+transcript = ENST00000284523.2
+cds_length = 1059
+codons = 353
+protein_length = 352
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.964
+resistance = 0.036
+dominant = CHOOSE
+dominant_pct = 0.3343
+FLOW = 0.1785
+OBSERVE = 0.1653
+LOGIC = 0.3220
+CHOOSE = 0.3343
+state = flowing
+
+[CONNECT]
+depth = 0.9745
+type = membrane_embedded
+hydrophobic_ratio = 0.5511
+charge_positive = 0.1619
+charge_negative = 0.1023
+charge_neutral = 0.7358
+
+[DISSOLVE]
+rigidity = 0.7370
+potential = low
+wobble_entropy = 0.2630
+complementary_disruption = 0.0255
+
+[ENCODE]
+type = engineered
+loss = 0.2031
+gc_content = 0.6563
+wobble_gc = 0.8867
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5467
+wobble_FLOW = 0.0510
+wobble_OBSERVE = 0.0623
+wobble_LOGIC = 0.3399
+wobble_CHOOSE = 0.5467
+entropy = 0.2630
+
+[OBSERVE]
+distance = 0.0123
+level = strong
+complementary_balance = 0.9745
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1020
+intensity = 0.1020
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1020
+  COMPOSE(OBSERVE,LOGIC): 0.0963
+  COMPOSE(LOGIC,LOGIC): 0.0850
+  COMPOSE(LOGIC,CHOOSE): 0.0793
+  COMPOSE(CHOOSE,LOGIC): 0.0765
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3258
+modifier_dominant = LOGIC
+modifier_pct = 0.3003
+primary_FLOW = 0.2096
+primary_OBSERVE = 0.2210
+primary_LOGIC = 0.3258
+primary_CHOOSE = 0.2436
+modifier_FLOW = 0.2748
+modifier_OBSERVE = 0.2125
+modifier_LOGIC = 0.3003
+modifier_CHOOSE = 0.2125
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0208
+aa_top5 = [
+  Gly: 0.0852  # simple
+  Ser: 0.0852  # hydroxyl
+  Arg: 0.0824  # basic
+  Ala: 0.0795  # simple
+  Cys: 0.0710  # sulfur
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 352
+stop_codon = TAG
+loss = 0.0208
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.low.membrane_embedded

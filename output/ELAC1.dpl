@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ELAC1 | unknown
+# CDS: 672 bp (224 codons)
+
+[IDENTITY]
+gene = ELAC1
+organism = unknown
+transcript = ENST00000591429.1
+cds_length = 672
+codons = 224
+protein_length = 223
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2753
+FLOW = 0.2619
+OBSERVE = 0.2753
+LOGIC = 0.2292
+CHOOSE = 0.2336
+state = flowing
+
+[CONNECT]
+depth = 0.9821
+type = membrane_embedded
+hydrophobic_ratio = 0.5605
+charge_positive = 0.1435
+charge_negative = 0.1166
+charge_neutral = 0.7399
+
+[DISSOLVE]
+rigidity = 0.9902
+potential = crystallized
+wobble_entropy = 0.0098
+complementary_disruption = 0.0179
+
+[ENCODE]
+type = natural
+loss = 0.1094
+gc_content = 0.4628
+wobble_gc = 0.4241
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3080
+wobble_FLOW = 0.2679
+wobble_OBSERVE = 0.3080
+wobble_LOGIC = 0.2009
+wobble_CHOOSE = 0.2232
+entropy = 0.0098
+
+[OBSERVE]
+distance = 0.0134
+level = strong
+complementary_balance = 0.9821
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1161
+intensity = 0.1161
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1161
+  COMPOSE(CHOOSE,OBSERVE): 0.0982
+  COMPOSE(OBSERVE,OBSERVE): 0.0893
+  COMPOSE(CHOOSE,FLOW): 0.0848
+  COMPOSE(LOGIC,LOGIC): 0.0759
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3080
+modifier_dominant = OBSERVE
+modifier_pct = 0.3170
+primary_FLOW = 0.2232
+primary_OBSERVE = 0.2009
+primary_LOGIC = 0.3080
+primary_CHOOSE = 0.2679
+modifier_FLOW = 0.2946
+modifier_OBSERVE = 0.3170
+modifier_LOGIC = 0.1786
+modifier_CHOOSE = 0.2098
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0239
+aa_top5 = [
+  Leu: 0.1031  # aliphatic
+  Phe: 0.0852  # aromatic
+  Gly: 0.0762  # simple
+  Glu: 0.0717  # acidic
+  Ser: 0.0673  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 223
+stop_codon = TAG
+loss = 0.0239
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.strong.strong.crystallized.membrane_embedded

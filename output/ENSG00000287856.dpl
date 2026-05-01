@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000287856 | unknown
+# CDS: 420 bp (140 codons)
+
+[IDENTITY]
+gene = ENSG00000287856
+organism = unknown
+transcript = ENST00000662216.1
+cds_length = 420
+codons = 140
+protein_length = 139
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = FLOW
+dominant_pct = 0.3071
+FLOW = 0.3071
+OBSERVE = 0.2905
+LOGIC = 0.2381
+CHOOSE = 0.1643
+state = flowing
+
+[CONNECT]
+depth = 0.9095
+type = membrane_embedded
+hydrophobic_ratio = 0.5827
+charge_positive = 0.1583
+charge_negative = 0.1223
+charge_neutral = 0.7194
+
+[DISSOLVE]
+rigidity = 0.9145
+potential = crystallized
+wobble_entropy = 0.0855
+complementary_disruption = 0.0905
+
+[ENCODE]
+type = AT_rich
+loss = 0.1875
+gc_content = 0.4024
+wobble_gc = 0.2643
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.4000
+wobble_FLOW = 0.3357
+wobble_OBSERVE = 0.4000
+wobble_LOGIC = 0.1286
+wobble_CHOOSE = 0.1357
+entropy = 0.0855
+
+[OBSERVE]
+distance = 0.0167
+level = strong
+complementary_balance = 0.9095
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1214
+intensity = 0.1214
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1214
+  COMPOSE(FLOW,FLOW): 0.1143
+  COMPOSE(LOGIC,LOGIC): 0.0857
+  COMPOSE(LOGIC,OBSERVE): 0.0857
+  COMPOSE(OBSERVE,OBSERVE): 0.0786
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3714
+modifier_dominant = FLOW
+modifier_pct = 0.3357
+primary_FLOW = 0.2500
+primary_OBSERVE = 0.2071
+primary_LOGIC = 0.3714
+primary_CHOOSE = 0.1714
+modifier_FLOW = 0.3357
+modifier_OBSERVE = 0.2643
+modifier_LOGIC = 0.2143
+modifier_CHOOSE = 0.1857
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0237
+aa_top5 = [
+  Gly: 0.0863  # simple
+  Val: 0.0863  # aliphatic
+  Ala: 0.0791  # simple
+  Asp: 0.0791  # acidic
+  Leu: 0.0719  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 139
+stop_codon = TAG
+loss = 0.0237
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.dominant.crystallized.membrane_embedded

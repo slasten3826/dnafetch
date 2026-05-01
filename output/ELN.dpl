@@ -1,0 +1,99 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ELN | unknown
+# CDS: 6 bp (2 codons)
+
+[IDENTITY]
+gene = ELN
+organism = unknown
+transcript = ENST00000419398.1
+cds_length = 6
+codons = 2
+protein_length = 1
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.730
+resistance = 0.270
+dominant = FLOW
+dominant_pct = 0.5000
+FLOW = 0.5000
+OBSERVE = 0.3333
+LOGIC = 0.1667
+CHOOSE = 0.0000
+state = flowing
+
+[CONNECT]
+depth = 0.6667
+type = membrane_embedded
+hydrophobic_ratio = 1.0000
+charge_positive = 0.0000
+charge_negative = 0.0000
+charge_neutral = 1.0000
+
+[DISSOLVE]
+rigidity = 0.5000
+potential = moderate
+wobble_entropy = 0.5000
+complementary_disruption = 0.3333
+
+[ENCODE]
+type = moderate
+loss = 0.9688
+gc_content = 0.1667
+wobble_gc = 0.5000
+codon_diversity = 0.0312
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.5000
+wobble_FLOW = 0.5000
+wobble_OBSERVE = 0.0000
+wobble_LOGIC = 0.5000
+wobble_CHOOSE = 0.0000
+entropy = 0.5000
+
+[OBSERVE]
+distance = 0.1667
+level = basic
+complementary_balance = 0.6667
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.5000
+intensity = 0.5000
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.5000
+  COMPOSE(OBSERVE,FLOW): 0.5000
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = FLOW
+modifier_pct = 0.5000
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.5000
+primary_LOGIC = 0.0000
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.5000
+modifier_OBSERVE = 0.5000
+modifier_LOGIC = 0.0000
+modifier_CHOOSE = 0.0000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.2179
+aa_top5 = [
+  Met: 1.0000  # sulfur
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1
+stop_codon = TAA
+loss = 0.2179
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.moderate.membrane_embedded

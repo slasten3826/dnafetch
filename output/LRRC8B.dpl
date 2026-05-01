@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: LRRC8B | unknown
+# CDS: 2412 bp (804 codons)
+
+[IDENTITY]
+gene = LRRC8B
+organism = unknown
+transcript = ENST00000639264.1
+cds_length = 2412
+codons = 804
+protein_length = 803
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = OBSERVE
+dominant_pct = 0.2836
+FLOW = 0.2720
+OBSERVE = 0.2836
+LOGIC = 0.2069
+CHOOSE = 0.2376
+state = flowing
+
+[CONNECT]
+depth = 0.9577
+type = balanced_interface
+hydrophobic_ratio = 0.5455
+charge_positive = 0.1245
+charge_negative = 0.1034
+charge_neutral = 0.7721
+
+[DISSOLVE]
+rigidity = 0.9939
+potential = crystallized
+wobble_entropy = 0.0061
+complementary_disruption = 0.0423
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4444
+wobble_gc = 0.5323
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2724
+wobble_FLOW = 0.1953
+wobble_OBSERVE = 0.2724
+wobble_LOGIC = 0.2662
+wobble_CHOOSE = 0.2662
+entropy = 0.0061
+
+[OBSERVE]
+distance = 0.0116
+level = strong
+complementary_balance = 0.9577
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1318
+intensity = 0.1318
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1318
+  COMPOSE(FLOW,FLOW): 0.1231
+  COMPOSE(LOGIC,FLOW): 0.1032
+  COMPOSE(OBSERVE,OBSERVE): 0.0871
+  COMPOSE(FLOW,OBSERVE): 0.0746
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2799
+modifier_dominant = OBSERVE
+modifier_pct = 0.3545
+primary_FLOW = 0.2799
+primary_OBSERVE = 0.2239
+primary_LOGIC = 0.2289
+primary_CHOOSE = 0.2674
+modifier_FLOW = 0.3408
+modifier_OBSERVE = 0.3545
+modifier_LOGIC = 0.1256
+modifier_CHOOSE = 0.1791
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0344
+aa_top5 = [
+  Leu: 0.1781  # aliphatic
+  Ser: 0.0859  # hydroxyl
+  Lys: 0.0672  # basic
+  Glu: 0.0660  # acidic
+  Val: 0.0610  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 803
+stop_codon = TGA
+loss = 0.0344
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.strong.dominant.crystallized.balanced_interface

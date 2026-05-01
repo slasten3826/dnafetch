@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000249209 | unknown
+# CDS: 726 bp (242 codons)
+
+[IDENTITY]
+gene = ENSG00000249209
+organism = unknown
+transcript = ENST00000429238.2
+cds_length = 726
+codons = 242
+protein_length = 242
+stop_codon = none
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = OBSERVE
+dominant_pct = 0.2741
+FLOW = 0.2548
+OBSERVE = 0.2741
+LOGIC = 0.2163
+CHOOSE = 0.2548
+state = flowing
+
+[CONNECT]
+depth = 0.9421
+type = balanced_interface
+hydrophobic_ratio = 0.5083
+charge_positive = 0.1364
+charge_negative = 0.0785
+charge_neutral = 0.7851
+
+[DISSOLVE]
+rigidity = 0.9891
+potential = crystallized
+wobble_entropy = 0.0109
+complementary_disruption = 0.0579
+
+[ENCODE]
+type = natural
+loss = 0.1094
+gc_content = 0.4711
+wobble_gc = 0.4380
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3264
+wobble_FLOW = 0.2355
+wobble_OBSERVE = 0.3264
+wobble_LOGIC = 0.2190
+wobble_CHOOSE = 0.2190
+entropy = 0.0109
+
+[OBSERVE]
+distance = 0.0193
+level = strong
+complementary_balance = 0.9421
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,OBSERVE)
+top_compose_pct = 0.0909
+intensity = 0.0909
+compose_top5 = [
+  COMPOSE(LOGIC,OBSERVE): 0.0909
+  COMPOSE(OBSERVE,CHOOSE): 0.0909
+  COMPOSE(FLOW,FLOW): 0.0909
+  COMPOSE(LOGIC,CHOOSE): 0.0826
+  COMPOSE(LOGIC,FLOW): 0.0785
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2810
+modifier_dominant = CHOOSE
+modifier_pct = 0.3058
+primary_FLOW = 0.2645
+primary_OBSERVE = 0.2149
+primary_LOGIC = 0.2810
+primary_CHOOSE = 0.2397
+modifier_FLOW = 0.2645
+modifier_OBSERVE = 0.2810
+modifier_LOGIC = 0.1488
+modifier_CHOOSE = 0.3058
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0315
+aa_top5 = [
+  Ser: 0.1240  # hydroxyl
+  Leu: 0.1074  # aliphatic
+  Val: 0.0909  # aliphatic
+  Ala: 0.0826  # simple
+  Thr: 0.0702  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 242
+stop_codon = none
+loss = 0.0315
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.strong.strong.crystallized.balanced_interface

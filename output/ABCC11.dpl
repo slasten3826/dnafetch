@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ABCC11 | unknown
+# CDS: 477 bp (159 codons)
+
+[IDENTITY]
+gene = ABCC11
+organism = unknown
+transcript = ENST00000569991.1
+cds_length = 477
+codons = 159
+protein_length = 159
+stop_codon = none
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = CHOOSE
+dominant_pct = 0.2767
+FLOW = 0.2411
+OBSERVE = 0.2264
+LOGIC = 0.2558
+CHOOSE = 0.2767
+state = flowing
+
+[CONNECT]
+depth = 0.9644
+type = balanced_interface
+hydrophobic_ratio = 0.5472
+charge_positive = 0.1447
+charge_negative = 0.1006
+charge_neutral = 0.7547
+
+[DISSOLVE]
+rigidity = 0.9889
+potential = crystallized
+wobble_entropy = 0.0111
+complementary_disruption = 0.0356
+
+[ENCODE]
+type = moderate
+loss = 0.1562
+gc_content = 0.5325
+wobble_gc = 0.5723
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2956
+wobble_FLOW = 0.1824
+wobble_OBSERVE = 0.2453
+wobble_LOGIC = 0.2767
+wobble_CHOOSE = 0.2956
+entropy = 0.0111
+
+[OBSERVE]
+distance = 0.0210
+level = deep
+complementary_balance = 0.9644
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1006
+intensity = 0.1006
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1006
+  COMPOSE(CHOOSE,CHOOSE): 0.0943
+  COMPOSE(CHOOSE,OBSERVE): 0.0881
+  COMPOSE(FLOW,OBSERVE): 0.0755
+  COMPOSE(FLOW,LOGIC): 0.0755
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2830
+modifier_dominant = OBSERVE
+modifier_pct = 0.2704
+primary_FLOW = 0.2767
+primary_OBSERVE = 0.1635
+primary_LOGIC = 0.2830
+primary_CHOOSE = 0.2767
+modifier_FLOW = 0.2642
+modifier_OBSERVE = 0.2704
+modifier_LOGIC = 0.2075
+modifier_CHOOSE = 0.2579
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0266
+aa_top5 = [
+  Leu: 0.1069  # aliphatic
+  Arg: 0.0943  # basic
+  Pro: 0.0943  # cyclic
+  Ser: 0.0755  # hydroxyl
+  Val: 0.0629  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 159
+stop_codon = none
+loss = 0.0266
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.balanced_interface

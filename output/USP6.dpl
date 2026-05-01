@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: USP6 | unknown
+# CDS: 4221 bp (1407 codons)
+
+[IDENTITY]
+gene = USP6
+organism = unknown
+transcript = ENST00000250066.6
+cds_length = 4221
+codons = 1407
+protein_length = 1406
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = FLOW
+dominant_pct = 0.2803
+FLOW = 0.2803
+OBSERVE = 0.2227
+LOGIC = 0.2566
+CHOOSE = 0.2405
+state = flowing
+
+[CONNECT]
+depth = 0.9263
+type = balanced_interface
+hydrophobic_ratio = 0.5085
+charge_positive = 0.1494
+charge_negative = 0.1166
+charge_neutral = 0.7340
+
+[DISSOLVE]
+rigidity = 0.9980
+potential = crystallized
+wobble_entropy = 0.0020
+complementary_disruption = 0.0737
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4970
+wobble_gc = 0.5267
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2722
+wobble_FLOW = 0.2210
+wobble_OBSERVE = 0.2523
+wobble_LOGIC = 0.2722
+wobble_CHOOSE = 0.2544
+entropy = 0.0020
+
+[OBSERVE]
+distance = 0.0237
+level = deep
+complementary_balance = 0.9263
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1166
+intensity = 0.1166
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1166
+  COMPOSE(FLOW,FLOW): 0.1002
+  COMPOSE(CHOOSE,FLOW): 0.0817
+  COMPOSE(CHOOSE,OBSERVE): 0.0753
+  COMPOSE(FLOW,LOGIC): 0.0718
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2886
+modifier_dominant = FLOW
+modifier_pct = 0.3312
+primary_FLOW = 0.2886
+primary_OBSERVE = 0.1741
+primary_LOGIC = 0.2800
+primary_CHOOSE = 0.2573
+modifier_FLOW = 0.3312
+modifier_OBSERVE = 0.2416
+modifier_LOGIC = 0.2175
+modifier_CHOOSE = 0.2097
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0197
+aa_top5 = [
+  Leu: 0.0946  # aliphatic
+  Ser: 0.0882  # hydroxyl
+  Pro: 0.0683  # cyclic
+  Gly: 0.0676  # simple
+  Lys: 0.0612  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1406
+stop_codon = TAA
+loss = 0.0197
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.deep.strong.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CCDC18 | unknown
+# CDS: 804 bp (268 codons)
+
+[IDENTITY]
+gene = CCDC18
+organism = unknown
+transcript = ENST00000688770.1
+cds_length = 804
+codons = 268
+protein_length = 267
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.946
+resistance = 0.054
+dominant = FLOW
+dominant_pct = 0.4167
+FLOW = 0.4167
+OBSERVE = 0.2040
+LOGIC = 0.2301
+CHOOSE = 0.1493
+state = flowing
+
+[CONNECT]
+depth = 0.7065
+type = ionic_interaction
+hydrophobic_ratio = 0.3558
+charge_positive = 0.1835
+charge_negative = 0.2097
+charge_neutral = 0.6067
+
+[DISSOLVE]
+rigidity = 0.9020
+potential = low
+wobble_entropy = 0.0980
+complementary_disruption = 0.2935
+
+[ENCODE]
+type = natural
+loss = 0.2188
+gc_content = 0.3794
+wobble_gc = 0.3209
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4254
+wobble_FLOW = 0.4254
+wobble_OBSERVE = 0.2537
+wobble_LOGIC = 0.2463
+wobble_CHOOSE = 0.0746
+entropy = 0.0980
+
+[OBSERVE]
+distance = 0.1866
+level = basic
+complementary_balance = 0.7065
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2090
+intensity = 0.2090
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2090
+  COMPOSE(CHOOSE,FLOW): 0.1493
+  COMPOSE(FLOW,FLOW): 0.1418
+  COMPOSE(FLOW,OBSERVE): 0.0896
+  COMPOSE(LOGIC,CHOOSE): 0.0784
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3470
+modifier_dominant = FLOW
+modifier_pct = 0.5149
+primary_FLOW = 0.3097
+primary_OBSERVE = 0.1231
+primary_LOGIC = 0.3470
+primary_CHOOSE = 0.2201
+modifier_FLOW = 0.5149
+modifier_OBSERVE = 0.2351
+modifier_LOGIC = 0.0970
+modifier_CHOOSE = 0.1530
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0451
+aa_top5 = [
+  Glu: 0.1835  # acidic
+  Gln: 0.1124  # amide
+  Leu: 0.1049  # aliphatic
+  Lys: 0.0974  # basic
+  Ala: 0.0787  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 267
+stop_codon = TAA
+loss = 0.0451
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NFKBIE | unknown
+# CDS: 426 bp (142 codons)
+
+[IDENTITY]
+gene = NFKBIE
+organism = unknown
+transcript = ENST00000477930.2
+cds_length = 426
+codons = 142
+protein_length = 141
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.954
+resistance = 0.046
+dominant = CHOOSE
+dominant_pct = 0.3638
+FLOW = 0.1784
+OBSERVE = 0.1502
+LOGIC = 0.3075
+CHOOSE = 0.3638
+state = flowing
+
+[CONNECT]
+depth = 0.9155
+type = ionic_interaction
+hydrophobic_ratio = 0.4965
+charge_positive = 0.0922
+charge_negative = 0.1631
+charge_neutral = 0.7447
+
+[DISSOLVE]
+rigidity = 0.8506
+potential = crystallized
+wobble_entropy = 0.1494
+complementary_disruption = 0.0845
+
+[ENCODE]
+type = engineered
+loss = 0.3125
+gc_content = 0.6714
+wobble_gc = 0.8099
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4155
+wobble_FLOW = 0.0915
+wobble_OBSERVE = 0.0986
+wobble_LOGIC = 0.3944
+wobble_CHOOSE = 0.4155
+entropy = 0.1494
+
+[OBSERVE]
+distance = 0.0563
+level = standard
+complementary_balance = 0.9155
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1620
+intensity = 0.1620
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1620
+  COMPOSE(OBSERVE,CHOOSE): 0.1127
+  COMPOSE(CHOOSE,CHOOSE): 0.1127
+  COMPOSE(LOGIC,LOGIC): 0.0845
+  COMPOSE(CHOOSE,OBSERVE): 0.0845
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3380
+modifier_dominant = CHOOSE
+modifier_pct = 0.3592
+primary_FLOW = 0.1408
+primary_OBSERVE = 0.2042
+primary_LOGIC = 0.3380
+primary_CHOOSE = 0.3169
+modifier_FLOW = 0.3028
+modifier_OBSERVE = 0.1479
+modifier_LOGIC = 0.1901
+modifier_CHOOSE = 0.3592
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0378
+aa_top5 = [
+  Ser: 0.1348  # hydroxyl
+  Pro: 0.1135  # cyclic
+  Glu: 0.0993  # acidic
+  Leu: 0.0922  # aliphatic
+  Gly: 0.0851  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 141
+stop_codon = TGA
+loss = 0.0378
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: YIPF7 | unknown
+# CDS: 174 bp (58 codons)
+
+[IDENTITY]
+gene = YIPF7
+organism = unknown
+transcript = ENST00000508947.1
+cds_length = 174
+codons = 58
+protein_length = 57
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = OBSERVE
+dominant_pct = 0.3103
+FLOW = 0.2126
+OBSERVE = 0.3103
+LOGIC = 0.2069
+CHOOSE = 0.2701
+state = flowing
+
+[CONNECT]
+depth = 0.8391
+type = balanced_interface
+hydrophobic_ratio = 0.4561
+charge_positive = 0.0702
+charge_negative = 0.0877
+charge_neutral = 0.8421
+
+[DISSOLVE]
+rigidity = 0.9538
+potential = crystallized
+wobble_entropy = 0.0462
+complementary_disruption = 0.1609
+
+[ENCODE]
+type = natural
+loss = 0.4688
+gc_content = 0.4770
+wobble_gc = 0.4138
+codon_diversity = 0.5312
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3793
+wobble_FLOW = 0.2069
+wobble_OBSERVE = 0.3793
+wobble_LOGIC = 0.1379
+wobble_CHOOSE = 0.2759
+entropy = 0.0462
+
+[OBSERVE]
+distance = 0.0402
+level = deep
+complementary_balance = 0.8391
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1897
+intensity = 0.1897
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1897
+  COMPOSE(OBSERVE,LOGIC): 0.1379
+  COMPOSE(CHOOSE,OBSERVE): 0.1034
+  COMPOSE(LOGIC,FLOW): 0.0862
+  COMPOSE(FLOW,CHOOSE): 0.0690
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3448
+modifier_dominant = CHOOSE
+modifier_pct = 0.3276
+primary_FLOW = 0.2241
+primary_OBSERVE = 0.3448
+primary_LOGIC = 0.2241
+primary_CHOOSE = 0.2069
+modifier_FLOW = 0.2069
+modifier_OBSERVE = 0.2069
+modifier_LOGIC = 0.2586
+modifier_CHOOSE = 0.3276
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0512
+aa_top5 = [
+  Ser: 0.2456  # hydroxyl
+  Leu: 0.1053  # aliphatic
+  Thr: 0.0702  # hydroxyl
+  Cys: 0.0702  # sulfur
+  Asp: 0.0702  # acidic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 57
+stop_codon = TGA
+loss = 0.0512
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.dominant.crystallized.balanced_interface

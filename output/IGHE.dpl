@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IGHE | unknown
+# CDS: 1170 bp (390 codons)
+
+[IDENTITY]
+gene = IGHE
+organism = unknown
+transcript = ENST00000390541.2
+cds_length = 1170
+codons = 390
+protein_length = 389
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.971
+resistance = 0.029
+dominant = CHOOSE
+dominant_pct = 0.3462
+FLOW = 0.2120
+OBSERVE = 0.1598
+LOGIC = 0.2821
+CHOOSE = 0.3462
+state = flowing
+
+[CONNECT]
+depth = 0.8838
+type = balanced_interface
+hydrophobic_ratio = 0.4756
+charge_positive = 0.1285
+charge_negative = 0.0925
+charge_neutral = 0.7789
+
+[DISSOLVE]
+rigidity = 0.8127
+potential = low
+wobble_entropy = 0.1873
+complementary_disruption = 0.1162
+
+[ENCODE]
+type = engineered
+loss = 0.1094
+gc_content = 0.6282
+wobble_gc = 0.8385
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4795
+wobble_FLOW = 0.0821
+wobble_OBSERVE = 0.0795
+wobble_LOGIC = 0.3590
+wobble_CHOOSE = 0.4795
+entropy = 0.1873
+
+[OBSERVE]
+distance = 0.0641
+level = standard
+complementary_balance = 0.8838
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,CHOOSE)
+top_compose_pct = 0.1333
+intensity = 0.1333
+compose_top5 = [
+  COMPOSE(FLOW,CHOOSE): 0.1333
+  COMPOSE(LOGIC,FLOW): 0.0923
+  COMPOSE(CHOOSE,FLOW): 0.0744
+  COMPOSE(LOGIC,OBSERVE): 0.0692
+  COMPOSE(FLOW,FLOW): 0.0692
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3000
+modifier_dominant = CHOOSE
+modifier_pct = 0.3154
+primary_FLOW = 0.3000
+primary_OBSERVE = 0.1769
+primary_LOGIC = 0.2795
+primary_CHOOSE = 0.2436
+modifier_FLOW = 0.2538
+modifier_OBSERVE = 0.2231
+modifier_LOGIC = 0.2077
+modifier_CHOOSE = 0.3154
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0284
+aa_top5 = [
+  Thr: 0.1337  # hydroxyl
+  Ser: 0.0977  # hydroxyl
+  Leu: 0.0771  # aliphatic
+  Val: 0.0694  # aliphatic
+  Pro: 0.0643  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 389
+stop_codon = TGA
+loss = 0.0284
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.low.balanced_interface

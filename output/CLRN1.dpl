@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CLRN1 | unknown
+# CDS: 159 bp (53 codons)
+
+[IDENTITY]
+gene = CLRN1
+organism = unknown
+transcript = ENST00000645441.1
+cds_length = 159
+codons = 53
+protein_length = 52
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = CHOOSE
+dominant_pct = 0.2830
+FLOW = 0.2516
+OBSERVE = 0.1887
+LOGIC = 0.2767
+CHOOSE = 0.2830
+state = flowing
+
+[CONNECT]
+depth = 0.9308
+type = membrane_embedded
+hydrophobic_ratio = 0.5577
+charge_positive = 0.1731
+charge_negative = 0.0577
+charge_neutral = 0.7692
+
+[DISSOLVE]
+rigidity = 0.9863
+potential = crystallized
+wobble_entropy = 0.0137
+complementary_disruption = 0.0692
+
+[ENCODE]
+type = moderate
+loss = 0.5000
+gc_content = 0.5597
+wobble_gc = 0.4906
+codon_diversity = 0.5000
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3208
+wobble_FLOW = 0.3208
+wobble_OBSERVE = 0.1887
+wobble_LOGIC = 0.2264
+wobble_CHOOSE = 0.2642
+entropy = 0.0137
+
+[OBSERVE]
+distance = 0.0063
+level = strong
+complementary_balance = 0.9308
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1509
+intensity = 0.1509
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1509
+  COMPOSE(LOGIC,CHOOSE): 0.1132
+  COMPOSE(CHOOSE,CHOOSE): 0.0943
+  COMPOSE(LOGIC,LOGIC): 0.0755
+  COMPOSE(CHOOSE,OBSERVE): 0.0755
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3019
+modifier_dominant = CHOOSE
+modifier_pct = 0.3208
+primary_FLOW = 0.2642
+primary_OBSERVE = 0.1698
+primary_LOGIC = 0.3019
+primary_CHOOSE = 0.2642
+modifier_FLOW = 0.1698
+modifier_OBSERVE = 0.2075
+modifier_LOGIC = 0.3019
+modifier_CHOOSE = 0.3208
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0419
+aa_top5 = [
+  Leu: 0.1154  # aliphatic
+  Ser: 0.1154  # hydroxyl
+  Ala: 0.1154  # simple
+  Pro: 0.0962  # cyclic
+  Arg: 0.0962  # basic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 52
+stop_codon = TAA
+loss = 0.0419
+
+[SIGNATURE]
+fingerprint = CHOOSE.FLOW.strong.dominant.crystallized.membrane_embedded

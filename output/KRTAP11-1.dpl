@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KRTAP11-1 | unknown
+# CDS: 492 bp (164 codons)
+
+[IDENTITY]
+gene = KRTAP11-1
+organism = unknown
+transcript = ENST00000332378.6
+cds_length = 492
+codons = 164
+protein_length = 163
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = CHOOSE
+dominant_pct = 0.3333
+FLOW = 0.1870
+OBSERVE = 0.2439
+LOGIC = 0.2358
+CHOOSE = 0.3333
+state = flowing
+
+[CONNECT]
+depth = 0.8455
+type = balanced_interface
+hydrophobic_ratio = 0.5276
+charge_positive = 0.0675
+charge_negative = 0.0307
+charge_neutral = 0.9018
+
+[DISSOLVE]
+rigidity = 0.9316
+potential = crystallized
+wobble_entropy = 0.0684
+complementary_disruption = 0.1545
+
+[ENCODE]
+type = optimized
+loss = 0.2500
+gc_content = 0.5691
+wobble_gc = 0.6098
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4390
+wobble_FLOW = 0.1524
+wobble_OBSERVE = 0.2378
+wobble_LOGIC = 0.1707
+wobble_CHOOSE = 0.4390
+entropy = 0.0684
+
+[OBSERVE]
+distance = 0.0894
+level = mild
+complementary_balance = 0.8455
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1463
+intensity = 0.1463
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1463
+  COMPOSE(FLOW,CHOOSE): 0.1280
+  COMPOSE(OBSERVE,CHOOSE): 0.1159
+  COMPOSE(LOGIC,OBSERVE): 0.0854
+  COMPOSE(LOGIC,LOGIC): 0.0793
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3110
+modifier_dominant = CHOOSE
+modifier_pct = 0.3415
+primary_FLOW = 0.2500
+primary_OBSERVE = 0.3110
+primary_LOGIC = 0.2195
+primary_CHOOSE = 0.2195
+modifier_FLOW = 0.1585
+modifier_OBSERVE = 0.1829
+modifier_LOGIC = 0.3171
+modifier_CHOOSE = 0.3415
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0457
+aa_top5 = [
+  Ser: 0.1472  # hydroxyl
+  Cys: 0.1411  # sulfur
+  Thr: 0.1288  # hydroxyl
+  Val: 0.0859  # aliphatic
+  Gly: 0.0798  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 163
+stop_codon = TAA
+loss = 0.0457
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.balanced_interface

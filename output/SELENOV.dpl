@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SELENOV | unknown
+# CDS: 75 bp (25 codons)
+
+[IDENTITY]
+gene = SELENOV
+organism = unknown
+transcript = ENST00000600586.1
+cds_length = 75
+codons = 25
+protein_length = 24
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.913
+resistance = 0.087
+dominant = LOGIC
+dominant_pct = 0.4133
+FLOW = 0.3200
+OBSERVE = 0.1467
+LOGIC = 0.4133
+CHOOSE = 0.1200
+state = flowing
+
+[CONNECT]
+depth = 0.5333
+type = ionic_interaction
+hydrophobic_ratio = 0.2917
+charge_positive = 0.2500
+charge_negative = 0.2500
+charge_neutral = 0.5000
+
+[DISSOLVE]
+rigidity = 0.8496
+potential = low
+wobble_entropy = 0.1504
+complementary_disruption = 0.4667
+
+[ENCODE]
+type = moderate
+loss = 0.7031
+gc_content = 0.5333
+wobble_gc = 0.6000
+codon_diversity = 0.2969
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5200
+wobble_FLOW = 0.2400
+wobble_OBSERVE = 0.1600
+wobble_LOGIC = 0.5200
+wobble_CHOOSE = 0.0800
+entropy = 0.1504
+
+[OBSERVE]
+distance = 0.0933
+level = mild
+complementary_balance = 0.5333
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2400
+intensity = 0.2400
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2400
+  COMPOSE(FLOW,LOGIC): 0.1200
+  COMPOSE(FLOW,FLOW): 0.1200
+  COMPOSE(LOGIC,LOGIC): 0.1200
+  COMPOSE(OBSERVE,CHOOSE): 0.0800
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4000
+modifier_dominant = FLOW
+modifier_pct = 0.4400
+primary_FLOW = 0.2800
+primary_OBSERVE = 0.1200
+primary_LOGIC = 0.4000
+primary_CHOOSE = 0.2000
+modifier_FLOW = 0.4400
+modifier_OBSERVE = 0.1600
+modifier_LOGIC = 0.3200
+modifier_CHOOSE = 0.0800
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0568
+aa_top5 = [
+  Glu: 0.1667  # acidic
+  Arg: 0.1250  # basic
+  Lys: 0.1250  # basic
+  Ser: 0.1250  # hydroxyl
+  Gly: 0.1250  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 24
+stop_codon = TGA
+loss = 0.0568
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.dominant.low.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: XNDC1N-ZNF705EP-ALG1L9P | unknown
+# CDS: 438 bp (146 codons)
+
+[IDENTITY]
+gene = XNDC1N-ZNF705EP-ALG1L9P
+organism = unknown
+transcript = ENST00000696865.1
+cds_length = 438
+codons = 146
+protein_length = 145
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = FLOW
+dominant_pct = 0.3219
+FLOW = 0.3219
+OBSERVE = 0.2146
+LOGIC = 0.2489
+CHOOSE = 0.2146
+state = flowing
+
+[CONNECT]
+depth = 0.8584
+type = ionic_interaction
+hydrophobic_ratio = 0.5103
+charge_positive = 0.1379
+charge_negative = 0.1655
+charge_neutral = 0.6966
+
+[DISSOLVE]
+rigidity = 0.9862
+potential = crystallized
+wobble_entropy = 0.0138
+complementary_disruption = 0.1416
+
+[ENCODE]
+type = moderate
+loss = 0.2344
+gc_content = 0.4635
+wobble_gc = 0.4932
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3014
+wobble_FLOW = 0.2945
+wobble_OBSERVE = 0.2123
+wobble_LOGIC = 0.3014
+wobble_CHOOSE = 0.1918
+entropy = 0.0138
+
+[OBSERVE]
+distance = 0.0731
+level = standard
+complementary_balance = 0.8584
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1644
+intensity = 0.1644
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1644
+  COMPOSE(FLOW,OBSERVE): 0.1164
+  COMPOSE(CHOOSE,OBSERVE): 0.1164
+  COMPOSE(FLOW,FLOW): 0.0890
+  COMPOSE(CHOOSE,FLOW): 0.0753
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3219
+modifier_dominant = FLOW
+modifier_pct = 0.3493
+primary_FLOW = 0.3219
+primary_OBSERVE = 0.1370
+primary_LOGIC = 0.2945
+primary_CHOOSE = 0.2466
+modifier_FLOW = 0.3493
+modifier_OBSERVE = 0.2945
+modifier_LOGIC = 0.1507
+modifier_CHOOSE = 0.2055
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0294
+aa_top5 = [
+  Leu: 0.1310  # aliphatic
+  Glu: 0.1034  # acidic
+  Lys: 0.0759  # basic
+  Ser: 0.0690  # hydroxyl
+  Asp: 0.0621  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 145
+stop_codon = TGA
+loss = 0.0294
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.standard.dominant.crystallized.ionic_interaction

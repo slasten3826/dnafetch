@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: BIVM-ERCC5 | unknown
+# CDS: 252 bp (84 codons)
+
+[IDENTITY]
+gene = BIVM-ERCC5
+organism = unknown
+transcript = ENST00000638434.1
+cds_length = 252
+codons = 84
+protein_length = 83
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = FLOW
+dominant_pct = 0.3294
+FLOW = 0.3294
+OBSERVE = 0.2579
+LOGIC = 0.2302
+CHOOSE = 0.1825
+state = flowing
+
+[CONNECT]
+depth = 0.8810
+type = ionic_interaction
+hydrophobic_ratio = 0.5422
+charge_positive = 0.1566
+charge_negative = 0.1084
+charge_neutral = 0.7349
+
+[DISSOLVE]
+rigidity = 0.9342
+potential = crystallized
+wobble_entropy = 0.0658
+complementary_disruption = 0.1190
+
+[ENCODE]
+type = AT_rich
+loss = 0.3281
+gc_content = 0.4127
+wobble_gc = 0.2976
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3690
+wobble_FLOW = 0.3333
+wobble_OBSERVE = 0.3690
+wobble_LOGIC = 0.1786
+wobble_CHOOSE = 0.1190
+entropy = 0.0658
+
+[OBSERVE]
+distance = 0.0714
+level = standard
+complementary_balance = 0.8810
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1190
+intensity = 0.1190
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1190
+  COMPOSE(FLOW,FLOW): 0.1190
+  COMPOSE(LOGIC,FLOW): 0.1071
+  COMPOSE(CHOOSE,FLOW): 0.0952
+  COMPOSE(OBSERVE,OBSERVE): 0.0833
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3095
+modifier_dominant = FLOW
+modifier_pct = 0.3452
+primary_FLOW = 0.3095
+primary_OBSERVE = 0.1548
+primary_LOGIC = 0.3095
+primary_CHOOSE = 0.2262
+modifier_FLOW = 0.3452
+modifier_OBSERVE = 0.2500
+modifier_LOGIC = 0.2024
+modifier_CHOOSE = 0.2024
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0270
+aa_top5 = [
+  Gly: 0.1205  # simple
+  Glu: 0.0843  # acidic
+  Leu: 0.0723  # aliphatic
+  Pro: 0.0723  # cyclic
+  Thr: 0.0723  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 83
+stop_codon = TGA
+loss = 0.0270
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.strong.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: COL5A2 | unknown
+# CDS: 648 bp (216 codons)
+
+[IDENTITY]
+gene = COL5A2
+organism = unknown
+transcript = ENST00000649966.1
+cds_length = 648
+codons = 216
+protein_length = 216
+stop_codon = none
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = LOGIC
+dominant_pct = 0.3071
+FLOW = 0.2454
+OBSERVE = 0.2052
+LOGIC = 0.3071
+CHOOSE = 0.2423
+state = flowing
+
+[CONNECT]
+depth = 0.8951
+type = membrane_embedded
+hydrophobic_ratio = 0.6759
+charge_positive = 0.0972
+charge_negative = 0.0833
+charge_neutral = 0.8194
+
+[DISSOLVE]
+rigidity = 0.9347
+potential = crystallized
+wobble_entropy = 0.0653
+complementary_disruption = 0.1049
+
+[ENCODE]
+type = AT_rich
+loss = 0.1562
+gc_content = 0.5494
+wobble_gc = 0.2917
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3611
+wobble_FLOW = 0.3611
+wobble_OBSERVE = 0.3472
+wobble_LOGIC = 0.1574
+wobble_CHOOSE = 0.1343
+entropy = 0.0653
+
+[OBSERVE]
+distance = 0.0617
+level = standard
+complementary_balance = 0.8951
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.2407
+intensity = 0.2407
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.2407
+  COMPOSE(CHOOSE,CHOOSE): 0.1944
+  COMPOSE(LOGIC,FLOW): 0.0833
+  COMPOSE(CHOOSE,FLOW): 0.0694
+  COMPOSE(FLOW,OBSERVE): 0.0509
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4120
+modifier_dominant = LOGIC
+modifier_pct = 0.3519
+primary_FLOW = 0.1667
+primary_OBSERVE = 0.1157
+primary_LOGIC = 0.4120
+primary_CHOOSE = 0.3056
+modifier_FLOW = 0.2083
+modifier_OBSERVE = 0.1528
+modifier_LOGIC = 0.3519
+modifier_CHOOSE = 0.2870
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0586
+aa_top5 = [
+  Gly: 0.2407  # simple
+  Pro: 0.1944  # cyclic
+  Gln: 0.0602  # amide
+  Arg: 0.0556  # basic
+  Val: 0.0509  # aliphatic
+]
+
+[MANIFEST]
+format = structural
+protein_length = 216
+stop_codon = none
+loss = 0.0586
+
+[SIGNATURE]
+fingerprint = LOGIC.FLOW.standard.dominant.crystallized.membrane_embedded

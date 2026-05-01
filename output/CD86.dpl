@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CD86 | unknown
+# CDS: 828 bp (276 codons)
+
+[IDENTITY]
+gene = CD86
+organism = unknown
+transcript = ENST00000478741.1
+cds_length = 828
+codons = 276
+protein_length = 275
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = FLOW
+dominant_pct = 0.3188
+FLOW = 0.3188
+OBSERVE = 0.2754
+LOGIC = 0.1993
+CHOOSE = 0.2065
+state = flowing
+
+[CONNECT]
+depth = 0.9493
+type = balanced_interface
+hydrophobic_ratio = 0.4545
+charge_positive = 0.1273
+charge_negative = 0.1200
+charge_neutral = 0.7527
+
+[DISSOLVE]
+rigidity = 0.9908
+potential = crystallized
+wobble_entropy = 0.0092
+complementary_disruption = 0.0507
+
+[ENCODE]
+type = natural
+loss = 0.0938
+gc_content = 0.4058
+wobble_gc = 0.4384
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3188
+wobble_FLOW = 0.2428
+wobble_OBSERVE = 0.3188
+wobble_LOGIC = 0.2174
+wobble_CHOOSE = 0.2210
+entropy = 0.0092
+
+[OBSERVE]
+distance = 0.0435
+level = deep
+complementary_balance = 0.9493
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1268
+intensity = 0.1268
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1268
+  COMPOSE(LOGIC,FLOW): 0.1196
+  COMPOSE(FLOW,OBSERVE): 0.1014
+  COMPOSE(OBSERVE,CHOOSE): 0.0761
+  COMPOSE(CHOOSE,FLOW): 0.0761
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3587
+modifier_dominant = FLOW
+modifier_pct = 0.3551
+primary_FLOW = 0.3587
+primary_OBSERVE = 0.2101
+primary_LOGIC = 0.2391
+primary_CHOOSE = 0.1920
+modifier_FLOW = 0.3551
+modifier_OBSERVE = 0.2971
+modifier_LOGIC = 0.1413
+modifier_CHOOSE = 0.2065
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0262
+aa_top5 = [
+  Ser: 0.1236  # hydroxyl
+  Leu: 0.0909  # aliphatic
+  Ile: 0.0691  # aliphatic
+  Lys: 0.0691  # basic
+  Glu: 0.0691  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 275
+stop_codon = TAA
+loss = 0.0262
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.dominant.crystallized.balanced_interface

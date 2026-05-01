@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: BACE1 | unknown
+# CDS: 1431 bp (477 codons)
+
+[IDENTITY]
+gene = BACE1
+organism = unknown
+transcript = ENST00000513780.5
+cds_length = 1431
+codons = 477
+protein_length = 476
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = LOGIC
+dominant_pct = 0.2928
+FLOW = 0.2048
+OBSERVE = 0.2096
+LOGIC = 0.2928
+CHOOSE = 0.2928
+state = flowing
+
+[CONNECT]
+depth = 0.9951
+type = membrane_embedded
+hydrophobic_ratio = 0.5966
+charge_positive = 0.1050
+charge_negative = 0.1071
+charge_neutral = 0.7878
+
+[DISSOLVE]
+rigidity = 0.9088
+potential = crystallized
+wobble_entropy = 0.0912
+complementary_disruption = 0.0049
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.5856
+wobble_gc = 0.7338
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4130
+wobble_FLOW = 0.1027
+wobble_OBSERVE = 0.1635
+wobble_LOGIC = 0.3208
+wobble_CHOOSE = 0.4130
+entropy = 0.0912
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.9951
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1069
+intensity = 0.1069
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1069
+  COMPOSE(CHOOSE,OBSERVE): 0.0901
+  COMPOSE(LOGIC,LOGIC): 0.0901
+  COMPOSE(FLOW,OBSERVE): 0.0881
+  COMPOSE(LOGIC,OBSERVE): 0.0734
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3417
+modifier_dominant = OBSERVE
+modifier_pct = 0.2956
+primary_FLOW = 0.2411
+primary_OBSERVE = 0.1698
+primary_LOGIC = 0.3417
+primary_CHOOSE = 0.2474
+modifier_FLOW = 0.2704
+modifier_OBSERVE = 0.2956
+modifier_LOGIC = 0.2159
+modifier_CHOOSE = 0.2180
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0211
+aa_top5 = [
+  Leu: 0.0945  # aliphatic
+  Gly: 0.0903  # simple
+  Val: 0.0735  # aliphatic
+  Ala: 0.0714  # simple
+  Ser: 0.0630  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 476
+stop_codon = TGA
+loss = 0.0211
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.intense.strong.crystallized.membrane_embedded

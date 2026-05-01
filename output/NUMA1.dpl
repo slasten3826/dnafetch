@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NUMA1 | unknown
+# CDS: 30 bp (10 codons)
+
+[IDENTITY]
+gene = NUMA1
+organism = unknown
+transcript = ENST00000546131.1
+cds_length = 30
+codons = 10
+protein_length = 9
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.957
+resistance = 0.043
+dominant = FLOW
+dominant_pct = 0.3667
+FLOW = 0.3667
+OBSERVE = 0.1667
+LOGIC = 0.3000
+CHOOSE = 0.1667
+state = flowing
+
+[CONNECT]
+depth = 0.6667
+type = ionic_interaction
+hydrophobic_ratio = 0.3333
+charge_positive = 0.3333
+charge_negative = 0.1111
+charge_neutral = 0.5556
+
+[DISSOLVE]
+rigidity = 0.9232
+potential = low
+wobble_entropy = 0.0768
+complementary_disruption = 0.3333
+
+[ENCODE]
+type = moderate
+loss = 0.8438
+gc_content = 0.4667
+wobble_gc = 0.6000
+codon_diversity = 0.1562
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4000
+wobble_FLOW = 0.3000
+wobble_OBSERVE = 0.1000
+wobble_LOGIC = 0.4000
+wobble_CHOOSE = 0.2000
+entropy = 0.0768
+
+[OBSERVE]
+distance = 0.0667
+level = standard
+complementary_balance = 0.6667
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2000
+  COMPOSE(FLOW,LOGIC): 0.2000
+  COMPOSE(FLOW,OBSERVE): 0.1000
+  COMPOSE(LOGIC,CHOOSE): 0.1000
+  COMPOSE(CHOOSE,OBSERVE): 0.1000
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = FLOW
+modifier_pct = 0.3000
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.2000
+primary_CHOOSE = 0.1000
+modifier_FLOW = 0.3000
+modifier_OBSERVE = 0.2000
+modifier_LOGIC = 0.3000
+modifier_CHOOSE = 0.2000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0743
+aa_top5 = [
+  Lys: 0.2222  # basic
+  Ser: 0.2222  # hydroxyl
+  Met: 0.1111  # sulfur
+  Ala: 0.1111  # simple
+  Leu: 0.1111  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 9
+stop_codon = TGA
+loss = 0.0743
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.standard.dominant.low.ionic_interaction

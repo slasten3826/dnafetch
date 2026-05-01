@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TNFSF11 | unknown
+# CDS: 954 bp (318 codons)
+
+[IDENTITY]
+gene = TNFSF11
+organism = unknown
+transcript = ENST00000398795.7
+cds_length = 954
+codons = 318
+protein_length = 317
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = FLOW
+dominant_pct = 0.2673
+FLOW = 0.2673
+OBSERVE = 0.2453
+LOGIC = 0.2379
+CHOOSE = 0.2495
+state = flowing
+
+[CONNECT]
+depth = 0.9665
+type = balanced_interface
+hydrophobic_ratio = 0.5300
+charge_positive = 0.1483
+charge_negative = 0.1041
+charge_neutral = 0.7476
+
+[DISSOLVE]
+rigidity = 0.9948
+potential = crystallized
+wobble_entropy = 0.0052
+complementary_disruption = 0.0335
+
+[ENCODE]
+type = moderate
+loss = 0.0625
+gc_content = 0.4874
+wobble_gc = 0.5063
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2830
+wobble_FLOW = 0.2170
+wobble_OBSERVE = 0.2767
+wobble_LOGIC = 0.2233
+wobble_CHOOSE = 0.2830
+entropy = 0.0052
+
+[OBSERVE]
+distance = 0.0178
+level = strong
+complementary_balance = 0.9665
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1038
+intensity = 0.1038
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1038
+  COMPOSE(CHOOSE,FLOW): 0.0881
+  COMPOSE(FLOW,OBSERVE): 0.0818
+  COMPOSE(FLOW,FLOW): 0.0818
+  COMPOSE(LOGIC,LOGIC): 0.0786
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2987
+modifier_dominant = FLOW
+modifier_pct = 0.3145
+primary_FLOW = 0.2704
+primary_OBSERVE = 0.2013
+primary_LOGIC = 0.2987
+primary_CHOOSE = 0.2296
+modifier_FLOW = 0.3145
+modifier_OBSERVE = 0.2579
+modifier_LOGIC = 0.1918
+modifier_CHOOSE = 0.2358
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0205
+aa_top5 = [
+  Ser: 0.0946  # hydroxyl
+  Leu: 0.0820  # aliphatic
+  Gly: 0.0789  # simple
+  Ala: 0.0726  # simple
+  Asp: 0.0568  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 317
+stop_codon = TGA
+loss = 0.0205
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.strong.strong.crystallized.balanced_interface

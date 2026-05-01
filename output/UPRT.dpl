@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: UPRT | unknown
+# CDS: 522 bp (174 codons)
+
+[IDENTITY]
+gene = UPRT
+organism = unknown
+transcript = ENST00000530743.1
+cds_length = 522
+codons = 174
+protein_length = 173
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.988
+resistance = 0.012
+dominant = FLOW
+dominant_pct = 0.3161
+FLOW = 0.3161
+OBSERVE = 0.2663
+LOGIC = 0.2261
+CHOOSE = 0.1916
+state = flowing
+
+[CONNECT]
+depth = 0.9157
+type = membrane_embedded
+hydrophobic_ratio = 0.5665
+charge_positive = 0.1387
+charge_negative = 0.1098
+charge_neutral = 0.7514
+
+[DISSOLVE]
+rigidity = 0.9744
+potential = crystallized
+wobble_entropy = 0.0256
+complementary_disruption = 0.0843
+
+[ENCODE]
+type = natural
+loss = 0.1719
+gc_content = 0.4176
+wobble_gc = 0.3678
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3161
+wobble_FLOW = 0.3161
+wobble_OBSERVE = 0.3161
+wobble_LOGIC = 0.1897
+wobble_CHOOSE = 0.1782
+entropy = 0.0256
+
+[OBSERVE]
+distance = 0.0498
+level = deep
+complementary_balance = 0.9157
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1207
+intensity = 0.1207
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1207
+  COMPOSE(LOGIC,FLOW): 0.1092
+  COMPOSE(LOGIC,OBSERVE): 0.0805
+  COMPOSE(FLOW,FLOW): 0.0805
+  COMPOSE(LOGIC,LOGIC): 0.0747
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3276
+modifier_dominant = OBSERVE
+modifier_pct = 0.3218
+primary_FLOW = 0.3276
+primary_OBSERVE = 0.1609
+primary_LOGIC = 0.3046
+primary_CHOOSE = 0.2069
+modifier_FLOW = 0.3046
+modifier_OBSERVE = 0.3218
+modifier_LOGIC = 0.1839
+modifier_CHOOSE = 0.1897
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0247
+aa_top5 = [
+  Ile: 0.0925  # aliphatic
+  Leu: 0.0809  # aliphatic
+  Val: 0.0809  # aliphatic
+  Glu: 0.0809  # acidic
+  Gly: 0.0751  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 173
+stop_codon = TAA
+loss = 0.0247
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.deep.dominant.crystallized.membrane_embedded

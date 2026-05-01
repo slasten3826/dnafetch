@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SERPINI2 | unknown
+# CDS: 357 bp (119 codons)
+
+[IDENTITY]
+gene = SERPINI2
+organism = unknown
+transcript = ENST00000476257.6
+cds_length = 357
+codons = 119
+protein_length = 119
+stop_codon = none
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = FLOW
+dominant_pct = 0.3221
+FLOW = 0.3221
+OBSERVE = 0.2941
+LOGIC = 0.1849
+CHOOSE = 0.1989
+state = flowing
+
+[CONNECT]
+depth = 0.9580
+type = balanced_interface
+hydrophobic_ratio = 0.5210
+charge_positive = 0.0924
+charge_negative = 0.1008
+charge_neutral = 0.8067
+
+[DISSOLVE]
+rigidity = 0.9589
+potential = crystallized
+wobble_entropy = 0.0411
+complementary_disruption = 0.0420
+
+[ENCODE]
+type = natural
+loss = 0.3125
+gc_content = 0.3838
+wobble_gc = 0.3445
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3782
+wobble_FLOW = 0.3782
+wobble_OBSERVE = 0.2773
+wobble_LOGIC = 0.1765
+wobble_CHOOSE = 0.1681
+entropy = 0.0411
+
+[OBSERVE]
+distance = 0.0280
+level = deep
+complementary_balance = 0.9580
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1429
+intensity = 0.1429
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1429
+  COMPOSE(CHOOSE,FLOW): 0.1092
+  COMPOSE(LOGIC,FLOW): 0.1008
+  COMPOSE(FLOW,FLOW): 0.1008
+  COMPOSE(CHOOSE,OBSERVE): 0.0924
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2773
+modifier_dominant = OBSERVE
+modifier_pct = 0.3529
+primary_FLOW = 0.2605
+primary_OBSERVE = 0.2521
+primary_LOGIC = 0.2773
+primary_CHOOSE = 0.2101
+modifier_FLOW = 0.3277
+modifier_OBSERVE = 0.3529
+modifier_LOGIC = 0.1008
+modifier_CHOOSE = 0.2185
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0367
+aa_top5 = [
+  Leu: 0.1345  # aliphatic
+  Phe: 0.1008  # aromatic
+  Gln: 0.1008  # amide
+  Ser: 0.0924  # hydroxyl
+  Ala: 0.0756  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 119
+stop_codon = none
+loss = 0.0367
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.deep.dominant.crystallized.balanced_interface

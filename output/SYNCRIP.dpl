@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SYNCRIP | unknown
+# CDS: 1473 bp (491 codons)
+
+[IDENTITY]
+gene = SYNCRIP
+organism = unknown
+transcript = ENST00000678589.1
+cds_length = 1473
+codons = 491
+protein_length = 490
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = FLOW
+dominant_pct = 0.3164
+FLOW = 0.3164
+OBSERVE = 0.2410
+LOGIC = 0.2641
+CHOOSE = 0.1785
+state = flowing
+
+[CONNECT]
+depth = 0.8391
+type = ionic_interaction
+hydrophobic_ratio = 0.5224
+charge_positive = 0.1776
+charge_negative = 0.1245
+charge_neutral = 0.6980
+
+[DISSOLVE]
+rigidity = 0.9449
+potential = crystallized
+wobble_entropy = 0.0551
+complementary_disruption = 0.1609
+
+[ENCODE]
+type = natural
+loss = 0.0625
+gc_content = 0.4426
+wobble_gc = 0.3157
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3829
+wobble_FLOW = 0.3014
+wobble_OBSERVE = 0.3829
+wobble_LOGIC = 0.1752
+wobble_CHOOSE = 0.1405
+entropy = 0.0551
+
+[OBSERVE]
+distance = 0.0523
+level = standard
+complementary_balance = 0.8391
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1365
+intensity = 0.1365
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1365
+  COMPOSE(LOGIC,FLOW): 0.1242
+  COMPOSE(FLOW,FLOW): 0.1161
+  COMPOSE(CHOOSE,FLOW): 0.0774
+  COMPOSE(OBSERVE,FLOW): 0.0733
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3768
+modifier_dominant = FLOW
+modifier_pct = 0.3910
+primary_FLOW = 0.2566
+primary_OBSERVE = 0.1629
+primary_LOGIC = 0.3768
+primary_CHOOSE = 0.2037
+modifier_FLOW = 0.3910
+modifier_OBSERVE = 0.1772
+modifier_LOGIC = 0.2403
+modifier_CHOOSE = 0.1914
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0299
+aa_top5 = [
+  Gly: 0.1367  # simple
+  Arg: 0.0837  # basic
+  Lys: 0.0776  # basic
+  Tyr: 0.0714  # aromatic
+  Ala: 0.0673  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 490
+stop_codon = TAG
+loss = 0.0299
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: P4HA2 | unknown
+# CDS: 30 bp (10 codons)
+
+[IDENTITY]
+gene = P4HA2
+organism = unknown
+transcript = ENST00000428841.1
+cds_length = 30
+codons = 10
+protein_length = 9
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.972
+resistance = 0.028
+dominant = LOGIC
+dominant_pct = 0.3333
+FLOW = 0.3000
+OBSERVE = 0.2000
+LOGIC = 0.3333
+CHOOSE = 0.1667
+state = flowing
+
+[CONNECT]
+depth = 0.7333
+type = ionic_interaction
+hydrophobic_ratio = 0.4444
+charge_positive = 0.2222
+charge_negative = 0.0000
+charge_neutral = 0.7778
+
+[DISSOLVE]
+rigidity = 0.9232
+potential = low
+wobble_entropy = 0.0768
+complementary_disruption = 0.2667
+
+[ENCODE]
+type = optimized
+loss = 0.8438
+gc_content = 0.5000
+wobble_gc = 0.7000
+codon_diversity = 0.1562
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4000
+wobble_FLOW = 0.2000
+wobble_OBSERVE = 0.1000
+wobble_LOGIC = 0.4000
+wobble_CHOOSE = 0.3000
+entropy = 0.0768
+
+[OBSERVE]
+distance = 0.0333
+level = deep
+complementary_balance = 0.7333
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.3000
+intensity = 0.3000
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.3000
+  COMPOSE(OBSERVE,LOGIC): 0.3000
+  COMPOSE(FLOW,OBSERVE): 0.1000
+  COMPOSE(CHOOSE,FLOW): 0.1000
+  COMPOSE(FLOW,FLOW): 0.1000
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = LOGIC
+modifier_pct = 0.6000
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.3000
+primary_LOGIC = 0.0000
+primary_CHOOSE = 0.2000
+modifier_FLOW = 0.2000
+modifier_OBSERVE = 0.2000
+modifier_LOGIC = 0.6000
+modifier_CHOOSE = 0.0000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0655
+aa_top5 = [
+  Ser: 0.2222  # hydroxyl
+  Met: 0.1111  # sulfur
+  Gln: 0.1111  # amide
+  Arg: 0.1111  # basic
+  Lys: 0.1111  # basic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 9
+stop_codon = TGA
+loss = 0.0655
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.low.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000272162 | unknown
+# CDS: 867 bp (289 codons)
+
+[IDENTITY]
+gene = ENSG00000272162
+organism = unknown
+transcript = ENST00000480294.1
+cds_length = 867
+codons = 289
+protein_length = 288
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = FLOW
+dominant_pct = 0.3333
+FLOW = 0.3333
+OBSERVE = 0.2722
+LOGIC = 0.2191
+CHOOSE = 0.1753
+state = flowing
+
+[CONNECT]
+depth = 0.8950
+type = ionic_interaction
+hydrophobic_ratio = 0.4653
+charge_positive = 0.1597
+charge_negative = 0.1701
+charge_neutral = 0.6701
+
+[DISSOLVE]
+rigidity = 0.9862
+potential = crystallized
+wobble_entropy = 0.0138
+complementary_disruption = 0.1050
+
+[ENCODE]
+type = natural
+loss = 0.1250
+gc_content = 0.3945
+wobble_gc = 0.4118
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3010
+wobble_FLOW = 0.2872
+wobble_OBSERVE = 0.3010
+wobble_LOGIC = 0.2318
+wobble_CHOOSE = 0.1799
+entropy = 0.0138
+
+[OBSERVE]
+distance = 0.0611
+level = standard
+complementary_balance = 0.8950
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1696
+intensity = 0.1696
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1696
+  COMPOSE(FLOW,FLOW): 0.1211
+  COMPOSE(OBSERVE,OBSERVE): 0.1038
+  COMPOSE(FLOW,OBSERVE): 0.0969
+  COMPOSE(CHOOSE,OBSERVE): 0.0727
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3391
+modifier_dominant = FLOW
+modifier_pct = 0.3737
+primary_FLOW = 0.3391
+primary_OBSERVE = 0.1938
+primary_LOGIC = 0.2907
+primary_CHOOSE = 0.1765
+modifier_FLOW = 0.3737
+modifier_OBSERVE = 0.3218
+modifier_LOGIC = 0.1349
+modifier_CHOOSE = 0.1696
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0284
+aa_top5 = [
+  Leu: 0.1146  # aliphatic
+  Glu: 0.1007  # acidic
+  Lys: 0.0868  # basic
+  Ser: 0.0764  # hydroxyl
+  Asp: 0.0694  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 288
+stop_codon = TGA
+loss = 0.0284
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.ionic_interaction

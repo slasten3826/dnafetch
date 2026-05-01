@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMEM245 | unknown
+# CDS: 762 bp (254 codons)
+
+[IDENTITY]
+gene = TMEM245
+organism = unknown
+transcript = ENST00000491854.1
+cds_length = 762
+codons = 254
+protein_length = 253
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2717
+FLOW = 0.2677
+OBSERVE = 0.2717
+LOGIC = 0.2362
+CHOOSE = 0.2244
+state = flowing
+
+[CONNECT]
+depth = 0.9843
+type = membrane_embedded
+hydrophobic_ratio = 0.5889
+charge_positive = 0.1107
+charge_negative = 0.0870
+charge_neutral = 0.8024
+
+[DISSOLVE]
+rigidity = 0.9978
+potential = crystallized
+wobble_entropy = 0.0022
+complementary_disruption = 0.0157
+
+[ENCODE]
+type = moderate
+loss = 0.0938
+gc_content = 0.4606
+wobble_gc = 0.4961
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2756
+wobble_FLOW = 0.2520
+wobble_OBSERVE = 0.2520
+wobble_LOGIC = 0.2756
+wobble_CHOOSE = 0.2205
+entropy = 0.0022
+
+[OBSERVE]
+distance = 0.0039
+level = intense
+complementary_balance = 0.9843
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1181
+intensity = 0.1181
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1181
+  COMPOSE(LOGIC,FLOW): 0.0866
+  COMPOSE(FLOW,FLOW): 0.0866
+  COMPOSE(OBSERVE,OBSERVE): 0.0827
+  COMPOSE(LOGIC,OBSERVE): 0.0787
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3071
+modifier_dominant = OBSERVE
+modifier_pct = 0.3543
+primary_FLOW = 0.3071
+primary_OBSERVE = 0.2087
+primary_LOGIC = 0.2835
+primary_CHOOSE = 0.2008
+modifier_FLOW = 0.2441
+modifier_OBSERVE = 0.3543
+modifier_LOGIC = 0.1496
+modifier_CHOOSE = 0.2520
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0318
+aa_top5 = [
+  Leu: 0.1265  # aliphatic
+  Ser: 0.1028  # hydroxyl
+  Ile: 0.0949  # aliphatic
+  Val: 0.0791  # aliphatic
+  Glu: 0.0632  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 253
+stop_codon = TAA
+loss = 0.0318
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.intense.strong.crystallized.membrane_embedded

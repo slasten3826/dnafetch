@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: BPY2C | unknown
+# CDS: 162 bp (54 codons)
+
+[IDENTITY]
+gene = BPY2C
+organism = unknown
+transcript = ENST00000602680.1
+cds_length = 162
+codons = 54
+protein_length = 53
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = OBSERVE
+dominant_pct = 0.2963
+FLOW = 0.2099
+OBSERVE = 0.2963
+LOGIC = 0.2346
+CHOOSE = 0.2593
+state = flowing
+
+[CONNECT]
+depth = 0.8889
+type = membrane_embedded
+hydrophobic_ratio = 0.6604
+charge_positive = 0.0755
+charge_negative = 0.0377
+charge_neutral = 0.8868
+
+[DISSOLVE]
+rigidity = 0.9734
+potential = crystallized
+wobble_entropy = 0.0266
+complementary_disruption = 0.1111
+
+[ENCODE]
+type = optimized
+loss = 0.5312
+gc_content = 0.4938
+wobble_gc = 0.6296
+codon_diversity = 0.4688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3333
+wobble_FLOW = 0.1667
+wobble_OBSERVE = 0.2037
+wobble_LOGIC = 0.2963
+wobble_CHOOSE = 0.3333
+entropy = 0.0266
+
+[OBSERVE]
+distance = 0.0370
+level = deep
+complementary_balance = 0.8889
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1296
+intensity = 0.1296
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1296
+  COMPOSE(CHOOSE,OBSERVE): 0.1296
+  COMPOSE(OBSERVE,OBSERVE): 0.1111
+  COMPOSE(FLOW,CHOOSE): 0.0926
+  COMPOSE(FLOW,OBSERVE): 0.0741
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3148
+modifier_dominant = OBSERVE
+modifier_pct = 0.3704
+primary_FLOW = 0.2593
+primary_OBSERVE = 0.3148
+primary_LOGIC = 0.1852
+primary_CHOOSE = 0.2407
+modifier_FLOW = 0.2037
+modifier_OBSERVE = 0.3704
+modifier_LOGIC = 0.2222
+modifier_CHOOSE = 0.2037
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0455
+aa_top5 = [
+  Leu: 0.2075  # aliphatic
+  Thr: 0.0943  # hydroxyl
+  Trp: 0.0755  # aromatic
+  His: 0.0755  # aromatic
+  Ser: 0.0755  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 53
+stop_codon = TAA
+loss = 0.0455
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.deep.dominant.crystallized.membrane_embedded

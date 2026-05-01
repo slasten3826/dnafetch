@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DLGAP5 | unknown
+# CDS: 384 bp (128 codons)
+
+[IDENTITY]
+gene = DLGAP5
+organism = unknown
+transcript = ENST00000554067.1
+cds_length = 384
+codons = 128
+protein_length = 128
+stop_codon = none
+
+[FLOW]
+engagement = 0.950
+resistance = 0.050
+dominant = FLOW
+dominant_pct = 0.4089
+FLOW = 0.4089
+OBSERVE = 0.2318
+LOGIC = 0.2057
+CHOOSE = 0.1536
+state = flowing
+
+[CONNECT]
+depth = 0.7708
+type = ionic_interaction
+hydrophobic_ratio = 0.3750
+charge_positive = 0.2891
+charge_negative = 0.1328
+charge_neutral = 0.5781
+
+[DISSOLVE]
+rigidity = 0.8936
+potential = low
+wobble_entropy = 0.1064
+complementary_disruption = 0.2292
+
+[ENCODE]
+type = AT_rich
+loss = 0.3125
+gc_content = 0.3594
+wobble_gc = 0.2656
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3984
+wobble_FLOW = 0.3984
+wobble_OBSERVE = 0.3359
+wobble_LOGIC = 0.1953
+wobble_CHOOSE = 0.0703
+entropy = 0.1064
+
+[OBSERVE]
+distance = 0.1771
+level = basic
+complementary_balance = 0.7708
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1719
+intensity = 0.1719
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1719
+  COMPOSE(LOGIC,FLOW): 0.1328
+  COMPOSE(CHOOSE,FLOW): 0.1016
+  COMPOSE(FLOW,OBSERVE): 0.0938
+  COMPOSE(FLOW,LOGIC): 0.0859
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3984
+modifier_dominant = FLOW
+modifier_pct = 0.4297
+primary_FLOW = 0.3984
+primary_OBSERVE = 0.1250
+primary_LOGIC = 0.2500
+primary_CHOOSE = 0.2266
+modifier_FLOW = 0.4297
+modifier_OBSERVE = 0.2344
+modifier_LOGIC = 0.1719
+modifier_CHOOSE = 0.1641
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0335
+aa_top5 = [
+  Lys: 0.1406  # basic
+  Arg: 0.1094  # basic
+  Glu: 0.0938  # acidic
+  Leu: 0.0781  # aliphatic
+  Ser: 0.0625  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 128
+stop_codon = none
+loss = 0.0335
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

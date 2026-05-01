@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HADH | unknown
+# CDS: 264 bp (88 codons)
+
+[IDENTITY]
+gene = HADH
+organism = unknown
+transcript = ENST00000640048.1
+cds_length = 264
+codons = 88
+protein_length = 87
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = FLOW
+dominant_pct = 0.3258
+FLOW = 0.3258
+OBSERVE = 0.2159
+LOGIC = 0.2614
+CHOOSE = 0.1970
+state = flowing
+
+[CONNECT]
+depth = 0.8258
+type = membrane_embedded
+hydrophobic_ratio = 0.5517
+charge_positive = 0.1494
+charge_negative = 0.1724
+charge_neutral = 0.6782
+
+[DISSOLVE]
+rigidity = 0.9952
+potential = crystallized
+wobble_entropy = 0.0048
+complementary_disruption = 0.1742
+
+[ENCODE]
+type = moderate
+loss = 0.3594
+gc_content = 0.4583
+wobble_gc = 0.4886
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2955
+wobble_FLOW = 0.2955
+wobble_OBSERVE = 0.2159
+wobble_LOGIC = 0.2500
+wobble_CHOOSE = 0.2386
+entropy = 0.0048
+
+[OBSERVE]
+distance = 0.0644
+level = standard
+complementary_balance = 0.8258
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1705
+intensity = 0.1705
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1705
+  COMPOSE(FLOW,FLOW): 0.1364
+  COMPOSE(LOGIC,LOGIC): 0.1023
+  COMPOSE(FLOW,OBSERVE): 0.0795
+  COMPOSE(OBSERVE,OBSERVE): 0.0795
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3750
+modifier_dominant = FLOW
+modifier_pct = 0.3977
+primary_FLOW = 0.2841
+primary_OBSERVE = 0.1818
+primary_LOGIC = 0.3750
+primary_CHOOSE = 0.1591
+modifier_FLOW = 0.3977
+modifier_OBSERVE = 0.2500
+modifier_LOGIC = 0.1591
+modifier_CHOOSE = 0.1932
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0305
+aa_top5 = [
+  Gly: 0.1034  # simple
+  Lys: 0.1034  # basic
+  Glu: 0.0920  # acidic
+  Leu: 0.0920  # aliphatic
+  Asp: 0.0805  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 87
+stop_codon = TGA
+loss = 0.0305
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.standard.dominant.crystallized.membrane_embedded

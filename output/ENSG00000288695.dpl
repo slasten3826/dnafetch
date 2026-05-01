@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000288695 | unknown
+# CDS: 711 bp (237 codons)
+
+[IDENTITY]
+gene = ENSG00000288695
+organism = unknown
+transcript = ENST00000680700.1
+cds_length = 711
+codons = 237
+protein_length = 236
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.988
+resistance = 0.012
+dominant = CHOOSE
+dominant_pct = 0.2940
+FLOW = 0.1772
+OBSERVE = 0.2630
+LOGIC = 0.2658
+CHOOSE = 0.2940
+state = flowing
+
+[CONNECT]
+depth = 0.8861
+type = membrane_embedded
+hydrophobic_ratio = 0.6864
+charge_positive = 0.0932
+charge_negative = 0.0508
+charge_neutral = 0.8559
+
+[DISSOLVE]
+rigidity = 0.9486
+potential = crystallized
+wobble_entropy = 0.0514
+complementary_disruption = 0.1139
+
+[ENCODE]
+type = optimized
+loss = 0.0781
+gc_content = 0.5598
+wobble_gc = 0.6835
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3418
+wobble_FLOW = 0.1392
+wobble_OBSERVE = 0.1772
+wobble_LOGIC = 0.3418
+wobble_CHOOSE = 0.3418
+entropy = 0.0514
+
+[OBSERVE]
+distance = 0.0281
+level = deep
+complementary_balance = 0.8861
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1646
+intensity = 0.1646
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1646
+  COMPOSE(LOGIC,CHOOSE): 0.0844
+  COMPOSE(OBSERVE,OBSERVE): 0.0844
+  COMPOSE(LOGIC,OBSERVE): 0.0717
+  COMPOSE(CHOOSE,FLOW): 0.0675
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3165
+modifier_dominant = OBSERVE
+modifier_pct = 0.3797
+primary_FLOW = 0.1814
+primary_OBSERVE = 0.2321
+primary_LOGIC = 0.2700
+primary_CHOOSE = 0.3165
+modifier_FLOW = 0.2110
+modifier_OBSERVE = 0.3797
+modifier_LOGIC = 0.1857
+modifier_CHOOSE = 0.2236
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0364
+aa_top5 = [
+  Leu: 0.1864  # aliphatic
+  Ala: 0.0847  # simple
+  Val: 0.0720  # aliphatic
+  Ser: 0.0678  # hydroxyl
+  Phe: 0.0636  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 236
+stop_codon = TAG
+loss = 0.0364
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.dominant.crystallized.membrane_embedded

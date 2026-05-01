@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PNN | unknown
+# CDS: 2154 bp (718 codons)
+
+[IDENTITY]
+gene = PNN
+organism = unknown
+transcript = ENST00000216832.9
+cds_length = 2154
+codons = 718
+protein_length = 717
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.965
+resistance = 0.035
+dominant = FLOW
+dominant_pct = 0.3630
+FLOW = 0.3630
+OBSERVE = 0.1829
+LOGIC = 0.2818
+CHOOSE = 0.1722
+state = flowing
+
+[CONNECT]
+depth = 0.7103
+type = ionic_interaction
+hydrophobic_ratio = 0.3138
+charge_positive = 0.2064
+charge_negative = 0.1939
+charge_neutral = 0.5997
+
+[DISSOLVE]
+rigidity = 0.9637
+potential = crystallized
+wobble_entropy = 0.0363
+complementary_disruption = 0.2897
+
+[ENCODE]
+type = natural
+loss = 0.0938
+gc_content = 0.4540
+wobble_gc = 0.3844
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3357
+wobble_FLOW = 0.3357
+wobble_OBSERVE = 0.2799
+wobble_LOGIC = 0.2549
+wobble_CHOOSE = 0.1295
+entropy = 0.0363
+
+[OBSERVE]
+distance = 0.0812
+level = mild
+complementary_balance = 0.7103
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1936
+intensity = 0.1936
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1936
+  COMPOSE(FLOW,LOGIC): 0.1602
+  COMPOSE(FLOW,FLOW): 0.1114
+  COMPOSE(CHOOSE,FLOW): 0.0891
+  COMPOSE(LOGIC,OBSERVE): 0.0543
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3552
+modifier_dominant = FLOW
+modifier_pct = 0.3983
+primary_FLOW = 0.3552
+primary_OBSERVE = 0.0975
+primary_LOGIC = 0.3370
+primary_CHOOSE = 0.2103
+modifier_FLOW = 0.3983
+modifier_OBSERVE = 0.1713
+modifier_LOGIC = 0.2535
+modifier_CHOOSE = 0.1769
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0424
+aa_top5 = [
+  Glu: 0.1506  # acidic
+  Ser: 0.1450  # hydroxyl
+  Arg: 0.1074  # basic
+  Lys: 0.0837  # basic
+  Gln: 0.0739  # amide
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 717
+stop_codon = TAA
+loss = 0.0424
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.crystallized.ionic_interaction

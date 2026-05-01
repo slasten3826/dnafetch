@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TNFAIP8L1 | unknown
+# CDS: 561 bp (187 codons)
+
+[IDENTITY]
+gene = TNFAIP8L1
+organism = unknown
+transcript = ENST00000536716.1
+cds_length = 561
+codons = 187
+protein_length = 186
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.953
+resistance = 0.047
+dominant = LOGIC
+dominant_pct = 0.3405
+FLOW = 0.1658
+OBSERVE = 0.1551
+LOGIC = 0.3405
+CHOOSE = 0.3387
+state = flowing
+
+[CONNECT]
+depth = 0.9875
+type = ionic_interaction
+hydrophobic_ratio = 0.5430
+charge_positive = 0.1989
+charge_negative = 0.1129
+charge_neutral = 0.6882
+
+[DISSOLVE]
+rigidity = 0.6775
+potential = low
+wobble_entropy = 0.3225
+complementary_disruption = 0.0125
+
+[ENCODE]
+type = engineered
+loss = 0.4375
+gc_content = 0.6791
+wobble_gc = 0.9305
+codon_diversity = 0.5625
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4866
+wobble_FLOW = 0.0214
+wobble_OBSERVE = 0.0481
+wobble_LOGIC = 0.4439
+wobble_CHOOSE = 0.4866
+entropy = 0.3225
+
+[OBSERVE]
+distance = 0.0018
+level = intense
+complementary_balance = 0.9875
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1711
+intensity = 0.1711
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1711
+  COMPOSE(LOGIC,FLOW): 0.1123
+  COMPOSE(LOGIC,CHOOSE): 0.1070
+  COMPOSE(CHOOSE,LOGIC): 0.0856
+  COMPOSE(CHOOSE,FLOW): 0.0749
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3476
+modifier_dominant = OBSERVE
+modifier_pct = 0.3155
+primary_FLOW = 0.2032
+primary_OBSERVE = 0.1016
+primary_LOGIC = 0.3476
+primary_CHOOSE = 0.3476
+modifier_FLOW = 0.2727
+modifier_OBSERVE = 0.3155
+modifier_LOGIC = 0.2299
+modifier_CHOOSE = 0.1818
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0392
+aa_top5 = [
+  Leu: 0.1720  # aliphatic
+  Ala: 0.1075  # simple
+  Arg: 0.0968  # basic
+  Val: 0.0645  # aliphatic
+  Gly: 0.0645  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 186
+stop_codon = TGA
+loss = 0.0392
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.intense.dominant.low.ionic_interaction

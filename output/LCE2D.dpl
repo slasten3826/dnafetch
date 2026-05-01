@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: LCE2D | unknown
+# CDS: 333 bp (111 codons)
+
+[IDENTITY]
+gene = LCE2D
+organism = unknown
+transcript = ENST00000368784.2
+cds_length = 333
+codons = 111
+protein_length = 110
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.965
+resistance = 0.035
+dominant = CHOOSE
+dominant_pct = 0.3664
+FLOW = 0.1562
+OBSERVE = 0.2072
+LOGIC = 0.2703
+CHOOSE = 0.3664
+state = flowing
+
+[CONNECT]
+depth = 0.8529
+type = membrane_embedded
+hydrophobic_ratio = 0.5818
+charge_positive = 0.1364
+charge_negative = 0.0273
+charge_neutral = 0.8364
+
+[DISSOLVE]
+rigidity = 0.9173
+potential = crystallized
+wobble_entropy = 0.0827
+complementary_disruption = 0.1471
+
+[ENCODE]
+type = optimized
+loss = 0.4531
+gc_content = 0.6366
+wobble_gc = 0.6216
+codon_diversity = 0.5469
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4414
+wobble_FLOW = 0.1171
+wobble_OBSERVE = 0.2613
+wobble_LOGIC = 0.1802
+wobble_CHOOSE = 0.4414
+entropy = 0.0827
+
+[OBSERVE]
+distance = 0.0961
+level = mild
+complementary_balance = 0.8529
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.2162
+intensity = 0.2162
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.2162
+  COMPOSE(CHOOSE,CHOOSE): 0.1802
+  COMPOSE(CHOOSE,FLOW): 0.1171
+  COMPOSE(LOGIC,LOGIC): 0.1171
+  COMPOSE(OBSERVE,CHOOSE): 0.0901
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3514
+modifier_dominant = LOGIC
+modifier_pct = 0.4505
+primary_FLOW = 0.1532
+primary_OBSERVE = 0.3153
+primary_LOGIC = 0.1802
+primary_CHOOSE = 0.3514
+modifier_FLOW = 0.1982
+modifier_OBSERVE = 0.0450
+modifier_LOGIC = 0.4505
+modifier_CHOOSE = 0.3063
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0636
+aa_top5 = [
+  Cys: 0.2091  # sulfur
+  Pro: 0.1818  # cyclic
+  Ser: 0.1636  # hydroxyl
+  Gly: 0.1182  # simple
+  Gln: 0.0727  # amide
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 110
+stop_codon = TGA
+loss = 0.0636
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.membrane_embedded

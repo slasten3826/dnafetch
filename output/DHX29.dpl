@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DHX29 | unknown
+# CDS: 42 bp (14 codons)
+
+[IDENTITY]
+gene = DHX29
+organism = unknown
+transcript = ENST00000508346.1
+cds_length = 42
+codons = 14
+protein_length = 13
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.962
+resistance = 0.038
+dominant = OBSERVE
+dominant_pct = 0.3810
+FLOW = 0.1667
+OBSERVE = 0.3810
+LOGIC = 0.2619
+CHOOSE = 0.1905
+state = flowing
+
+[CONNECT]
+depth = 0.7143
+type = membrane_embedded
+hydrophobic_ratio = 0.7692
+charge_positive = 0.0000
+charge_negative = 0.0769
+charge_neutral = 0.9231
+
+[DISSOLVE]
+rigidity = 0.9046
+potential = low
+wobble_entropy = 0.0954
+complementary_disruption = 0.2857
+
+[ENCODE]
+type = moderate
+loss = 0.7969
+gc_content = 0.4524
+wobble_gc = 0.5714
+codon_diversity = 0.2031
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3571
+wobble_FLOW = 0.0714
+wobble_OBSERVE = 0.3571
+wobble_LOGIC = 0.3571
+wobble_CHOOSE = 0.2143
+entropy = 0.0954
+
+[OBSERVE]
+distance = 0.1190
+level = mild
+complementary_balance = 0.7143
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.2143
+intensity = 0.2143
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.2143
+  COMPOSE(LOGIC,OBSERVE): 0.1429
+  COMPOSE(LOGIC,FLOW): 0.0714
+  COMPOSE(FLOW,CHOOSE): 0.0714
+  COMPOSE(OBSERVE,OBSERVE): 0.0714
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2857
+modifier_dominant = OBSERVE
+modifier_pct = 0.5000
+primary_FLOW = 0.2857
+primary_OBSERVE = 0.2857
+primary_LOGIC = 0.2857
+primary_CHOOSE = 0.1429
+modifier_FLOW = 0.1429
+modifier_OBSERVE = 0.5000
+modifier_LOGIC = 0.1429
+modifier_CHOOSE = 0.2143
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0503
+aa_top5 = [
+  Val: 0.1538  # aliphatic
+  Ile: 0.1538  # aliphatic
+  Met: 0.0769  # sulfur
+  Glu: 0.0769  # acidic
+  Thr: 0.0769  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 13
+stop_codon = TAA
+loss = 0.0503
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.mild.dominant.low.membrane_embedded

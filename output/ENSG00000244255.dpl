@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000244255 | unknown
+# CDS: 3348 bp (1116 codons)
+
+[IDENTITY]
+gene = ENSG00000244255
+organism = unknown
+transcript = ENST00000477310.1
+cds_length = 3348
+codons = 1116
+protein_length = 1115
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = LOGIC
+dominant_pct = 0.2727
+FLOW = 0.2608
+OBSERVE = 0.2127
+LOGIC = 0.2727
+CHOOSE = 0.2539
+state = flowing
+
+[CONNECT]
+depth = 0.9331
+type = balanced_interface
+hydrophobic_ratio = 0.5256
+charge_positive = 0.1354
+charge_negative = 0.1184
+charge_neutral = 0.7462
+
+[DISSOLVE]
+rigidity = 0.9744
+potential = crystallized
+wobble_entropy = 0.0256
+complementary_disruption = 0.0669
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.5266
+wobble_gc = 0.6183
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3378
+wobble_FLOW = 0.1613
+wobble_OBSERVE = 0.2204
+wobble_LOGIC = 0.2805
+wobble_CHOOSE = 0.3378
+entropy = 0.0256
+
+[OBSERVE]
+distance = 0.0119
+level = strong
+complementary_balance = 0.9331
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1183
+intensity = 0.1183
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1183
+  COMPOSE(FLOW,FLOW): 0.1138
+  COMPOSE(LOGIC,LOGIC): 0.0833
+  COMPOSE(LOGIC,OBSERVE): 0.0717
+  COMPOSE(FLOW,OBSERVE): 0.0699
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3262
+modifier_dominant = FLOW
+modifier_pct = 0.3360
+primary_FLOW = 0.2849
+primary_OBSERVE = 0.1694
+primary_LOGIC = 0.3262
+primary_CHOOSE = 0.2195
+modifier_FLOW = 0.3360
+modifier_OBSERVE = 0.2482
+modifier_LOGIC = 0.2115
+modifier_CHOOSE = 0.2043
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0184
+aa_top5 = [
+  Gly: 0.0834  # simple
+  Leu: 0.0780  # aliphatic
+  Ser: 0.0726  # hydroxyl
+  Val: 0.0717  # aliphatic
+  Lys: 0.0637  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1115
+stop_codon = TAA
+loss = 0.0184
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.strong.strong.crystallized.balanced_interface

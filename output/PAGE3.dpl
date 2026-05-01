@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PAGE3 | unknown
+# CDS: 342 bp (114 codons)
+
+[IDENTITY]
+gene = PAGE3
+organism = unknown
+transcript = ENST00000519203.1
+cds_length = 342
+codons = 114
+protein_length = 113
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = FLOW
+dominant_pct = 0.3216
+FLOW = 0.3216
+OBSERVE = 0.1930
+LOGIC = 0.2807
+CHOOSE = 0.2047
+state = flowing
+
+[CONNECT]
+depth = 0.7953
+type = ionic_interaction
+hydrophobic_ratio = 0.4602
+charge_positive = 0.1239
+charge_negative = 0.1858
+charge_neutral = 0.6903
+
+[DISSOLVE]
+rigidity = 0.9365
+potential = crystallized
+wobble_entropy = 0.0635
+complementary_disruption = 0.2047
+
+[ENCODE]
+type = natural
+loss = 0.2812
+gc_content = 0.4854
+wobble_gc = 0.3246
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3772
+wobble_FLOW = 0.3772
+wobble_OBSERVE = 0.2982
+wobble_LOGIC = 0.2193
+wobble_CHOOSE = 0.1053
+entropy = 0.0635
+
+[OBSERVE]
+distance = 0.0409
+level = deep
+complementary_balance = 0.7953
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1842
+intensity = 0.1842
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1842
+  COMPOSE(LOGIC,LOGIC): 0.1053
+  COMPOSE(CHOOSE,FLOW): 0.1053
+  COMPOSE(FLOW,LOGIC): 0.0877
+  COMPOSE(CHOOSE,CHOOSE): 0.0877
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4035
+modifier_dominant = FLOW
+modifier_pct = 0.3772
+primary_FLOW = 0.2105
+primary_OBSERVE = 0.0965
+primary_LOGIC = 0.4035
+primary_CHOOSE = 0.2895
+modifier_FLOW = 0.3772
+modifier_OBSERVE = 0.1842
+modifier_LOGIC = 0.2193
+modifier_CHOOSE = 0.2193
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0348
+aa_top5 = [
+  Glu: 0.1150  # acidic
+  Gly: 0.1062  # simple
+  Gln: 0.0885  # amide
+  Pro: 0.0885  # cyclic
+  Arg: 0.0796  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 113
+stop_codon = TAA
+loss = 0.0348
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.deep.dominant.crystallized.ionic_interaction

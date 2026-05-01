@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CPLANE1 | unknown
+# CDS: 3669 bp (1223 codons)
+
+[IDENTITY]
+gene = CPLANE1
+organism = unknown
+transcript = ENST00000425232.7
+cds_length = 3669
+codons = 1223
+protein_length = 1223
+stop_codon = none
+
+[FLOW]
+engagement = 0.982
+resistance = 0.018
+dominant = FLOW
+dominant_pct = 0.3276
+FLOW = 0.3276
+OBSERVE = 0.2769
+LOGIC = 0.2039
+CHOOSE = 0.1916
+state = flowing
+
+[CONNECT]
+depth = 0.9370
+type = balanced_interface
+hydrophobic_ratio = 0.4881
+charge_positive = 0.1349
+charge_negative = 0.1300
+charge_neutral = 0.7351
+
+[DISSOLVE]
+rigidity = 0.9379
+potential = crystallized
+wobble_entropy = 0.0621
+complementary_disruption = 0.0630
+
+[ENCODE]
+type = natural
+loss = 0.0625
+gc_content = 0.3955
+wobble_gc = 0.3017
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3590
+wobble_FLOW = 0.3393
+wobble_OBSERVE = 0.3590
+wobble_LOGIC = 0.1783
+wobble_CHOOSE = 0.1235
+entropy = 0.0621
+
+[OBSERVE]
+distance = 0.0507
+level = standard
+complementary_balance = 0.9370
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1300
+intensity = 0.1300
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1300
+  COMPOSE(FLOW,FLOW): 0.1071
+  COMPOSE(CHOOSE,FLOW): 0.0867
+  COMPOSE(FLOW,OBSERVE): 0.0834
+  COMPOSE(OBSERVE,OBSERVE): 0.0785
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2984
+modifier_dominant = FLOW
+modifier_pct = 0.3451
+primary_FLOW = 0.2984
+primary_OBSERVE = 0.1995
+primary_LOGIC = 0.2796
+primary_CHOOSE = 0.2224
+modifier_FLOW = 0.3451
+modifier_OBSERVE = 0.2723
+modifier_LOGIC = 0.1537
+modifier_CHOOSE = 0.2289
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0231
+aa_top5 = [
+  Leu: 0.0948  # aliphatic
+  Ser: 0.0948  # hydroxyl
+  Glu: 0.0842  # acidic
+  Pro: 0.0654  # cyclic
+  Gln: 0.0638  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1223
+stop_codon = none
+loss = 0.0231
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.standard.dominant.crystallized.balanced_interface

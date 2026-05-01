@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SOX4 | unknown
+# CDS: 1425 bp (475 codons)
+
+[IDENTITY]
+gene = SOX4
+organism = unknown
+transcript = ENST00000244745.4
+cds_length = 1425
+codons = 475
+protein_length = 474
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.935
+resistance = 0.065
+dominant = CHOOSE
+dominant_pct = 0.3705
+FLOW = 0.1663
+OBSERVE = 0.1291
+LOGIC = 0.3340
+CHOOSE = 0.3705
+state = flowing
+
+[CONNECT]
+depth = 0.9263
+type = balanced_interface
+hydrophobic_ratio = 0.5359
+charge_positive = 0.1224
+charge_negative = 0.0992
+charge_neutral = 0.7785
+
+[DISSOLVE]
+rigidity = 0.7071
+potential = low
+wobble_entropy = 0.2929
+complementary_disruption = 0.0737
+
+[ENCODE]
+type = engineered
+loss = 0.2188
+gc_content = 0.7046
+wobble_gc = 0.9053
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5600
+wobble_FLOW = 0.0526
+wobble_OBSERVE = 0.0421
+wobble_LOGIC = 0.3453
+wobble_CHOOSE = 0.5600
+entropy = 0.2929
+
+[OBSERVE]
+distance = 0.0365
+level = deep
+complementary_balance = 0.9263
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1432
+intensity = 0.1432
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1432
+  COMPOSE(LOGIC,LOGIC): 0.1411
+  COMPOSE(OBSERVE,CHOOSE): 0.1284
+  COMPOSE(LOGIC,FLOW): 0.0989
+  COMPOSE(FLOW,FLOW): 0.0884
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4084
+modifier_dominant = CHOOSE
+modifier_pct = 0.3537
+primary_FLOW = 0.2021
+primary_OBSERVE = 0.1916
+primary_LOGIC = 0.4084
+primary_CHOOSE = 0.1979
+modifier_FLOW = 0.2442
+modifier_OBSERVE = 0.1537
+modifier_LOGIC = 0.2484
+modifier_CHOOSE = 0.3537
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0479
+aa_top5 = [
+  Ser: 0.1814  # hydroxyl
+  Ala: 0.1435  # simple
+  Gly: 0.1414  # simple
+  Leu: 0.0654  # aliphatic
+  Pro: 0.0612  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 474
+stop_codon = TGA
+loss = 0.0479
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.balanced_interface

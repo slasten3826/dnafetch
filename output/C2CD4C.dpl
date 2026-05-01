@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: C2CD4C | unknown
+# CDS: 1266 bp (422 codons)
+
+[IDENTITY]
+gene = C2CD4C
+organism = unknown
+transcript = ENST00000332235.8
+cds_length = 1266
+codons = 422
+protein_length = 421
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.936
+resistance = 0.064
+dominant = CHOOSE
+dominant_pct = 0.3618
+FLOW = 0.1596
+OBSERVE = 0.1343
+LOGIC = 0.3444
+CHOOSE = 0.3618
+state = flowing
+
+[CONNECT]
+depth = 0.9573
+type = ionic_interaction
+hydrophobic_ratio = 0.5344
+charge_positive = 0.1568
+charge_negative = 0.1021
+charge_neutral = 0.7411
+
+[DISSOLVE]
+rigidity = 0.7347
+potential = low
+wobble_entropy = 0.2653
+complementary_disruption = 0.0427
+
+[ENCODE]
+type = engineered
+loss = 0.2188
+gc_content = 0.7062
+wobble_gc = 0.8957
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4882
+wobble_FLOW = 0.0355
+wobble_OBSERVE = 0.0687
+wobble_LOGIC = 0.4076
+wobble_CHOOSE = 0.4882
+entropy = 0.2653
+
+[OBSERVE]
+distance = 0.0174
+level = strong
+complementary_balance = 0.9573
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1114
+intensity = 0.1114
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1114
+  COMPOSE(LOGIC,LOGIC): 0.1066
+  COMPOSE(LOGIC,FLOW): 0.1019
+  COMPOSE(CHOOSE,OBSERVE): 0.1019
+  COMPOSE(CHOOSE,CHOOSE): 0.0782
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3649
+modifier_dominant = CHOOSE
+modifier_pct = 0.2844
+primary_FLOW = 0.1991
+primary_OBSERVE = 0.1232
+primary_LOGIC = 0.3649
+primary_CHOOSE = 0.3128
+modifier_FLOW = 0.2441
+modifier_OBSERVE = 0.2109
+modifier_LOGIC = 0.2607
+modifier_CHOOSE = 0.2844
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0366
+aa_top5 = [
+  Ser: 0.1140  # hydroxyl
+  Ala: 0.1116  # simple
+  Leu: 0.1069  # aliphatic
+  Gly: 0.1069  # simple
+  Arg: 0.0855  # basic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 421
+stop_codon = TAG
+loss = 0.0366
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.low.ionic_interaction

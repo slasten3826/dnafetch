@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: YY1 | unknown
+# CDS: 483 bp (161 codons)
+
+[IDENTITY]
+gene = YY1
+organism = unknown
+transcript = ENST00000704485.1
+cds_length = 483
+codons = 161
+protein_length = 160
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = FLOW
+dominant_pct = 0.3251
+FLOW = 0.3251
+OBSERVE = 0.2195
+LOGIC = 0.2153
+CHOOSE = 0.2402
+state = flowing
+
+[CONNECT]
+depth = 0.8696
+type = ionic_interaction
+hydrophobic_ratio = 0.4813
+charge_positive = 0.2562
+charge_negative = 0.0875
+charge_neutral = 0.6562
+
+[DISSOLVE]
+rigidity = 0.9883
+potential = crystallized
+wobble_entropy = 0.0117
+complementary_disruption = 0.1304
+
+[ENCODE]
+type = natural
+loss = 0.1719
+gc_content = 0.4555
+wobble_gc = 0.4286
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2981
+wobble_FLOW = 0.2981
+wobble_OBSERVE = 0.2733
+wobble_LOGIC = 0.1801
+wobble_CHOOSE = 0.2484
+entropy = 0.0117
+
+[OBSERVE]
+distance = 0.0849
+level = mild
+complementary_balance = 0.8696
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1553
+intensity = 0.1553
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1553
+  COMPOSE(CHOOSE,FLOW): 0.0994
+  COMPOSE(LOGIC,FLOW): 0.0870
+  COMPOSE(LOGIC,LOGIC): 0.0745
+  COMPOSE(CHOOSE,CHOOSE): 0.0683
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3292
+modifier_dominant = FLOW
+modifier_pct = 0.3478
+primary_FLOW = 0.3292
+primary_OBSERVE = 0.1677
+primary_LOGIC = 0.2609
+primary_CHOOSE = 0.2422
+modifier_FLOW = 0.3478
+modifier_OBSERVE = 0.2174
+modifier_LOGIC = 0.2050
+modifier_CHOOSE = 0.2298
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0255
+aa_top5 = [
+  Lys: 0.1187  # basic
+  Gly: 0.0750  # simple
+  Pro: 0.0688  # cyclic
+  Arg: 0.0688  # basic
+  His: 0.0688  # aromatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 160
+stop_codon = TGA
+loss = 0.0255
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CIROP | unknown
+# CDS: 2193 bp (731 codons)
+
+[IDENTITY]
+gene = CIROP
+organism = unknown
+transcript = ENST00000644000.1
+cds_length = 2193
+codons = 731
+protein_length = 730
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = CHOOSE
+dominant_pct = 0.2950
+FLOW = 0.2248
+OBSERVE = 0.2225
+LOGIC = 0.2576
+CHOOSE = 0.2950
+state = flowing
+
+[CONNECT]
+depth = 0.9603
+type = membrane_embedded
+hydrophobic_ratio = 0.5726
+charge_positive = 0.1247
+charge_negative = 0.0849
+charge_neutral = 0.7904
+
+[DISSOLVE]
+rigidity = 0.9916
+potential = crystallized
+wobble_entropy = 0.0084
+complementary_disruption = 0.0397
+
+[ENCODE]
+type = moderate
+loss = 0.0469
+gc_content = 0.5527
+wobble_gc = 0.5622
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3133
+wobble_FLOW = 0.2134
+wobble_OBSERVE = 0.2244
+wobble_LOGIC = 0.2490
+wobble_CHOOSE = 0.3133
+entropy = 0.0084
+
+[OBSERVE]
+distance = 0.0374
+level = deep
+complementary_balance = 0.9603
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1176
+intensity = 0.1176
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1176
+  COMPOSE(LOGIC,LOGIC): 0.0917
+  COMPOSE(CHOOSE,FLOW): 0.0903
+  COMPOSE(LOGIC,FLOW): 0.0848
+  COMPOSE(CHOOSE,CHOOSE): 0.0793
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3105
+modifier_dominant = CHOOSE
+modifier_pct = 0.2613
+primary_FLOW = 0.2066
+primary_OBSERVE = 0.1860
+primary_LOGIC = 0.2969
+primary_CHOOSE = 0.3105
+modifier_FLOW = 0.2544
+modifier_OBSERVE = 0.2572
+modifier_LOGIC = 0.2271
+modifier_CHOOSE = 0.2613
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0310
+aa_top5 = [
+  Leu: 0.1411  # aliphatic
+  Ser: 0.0932  # hydroxyl
+  Gly: 0.0918  # simple
+  Pro: 0.0795  # cyclic
+  Ala: 0.0658  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 730
+stop_codon = TGA
+loss = 0.0310
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.membrane_embedded

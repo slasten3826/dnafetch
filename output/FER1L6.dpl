@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FER1L6 | unknown
+# CDS: 5574 bp (1858 codons)
+
+[IDENTITY]
+gene = FER1L6
+organism = unknown
+transcript = ENST00000522917.5
+cds_length = 5574
+codons = 1858
+protein_length = 1857
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = FLOW
+dominant_pct = 0.2840
+FLOW = 0.2840
+OBSERVE = 0.2217
+LOGIC = 0.2512
+CHOOSE = 0.2431
+state = flowing
+
+[CONNECT]
+depth = 0.9297
+type = balanced_interface
+hydrophobic_ratio = 0.5175
+charge_positive = 0.1497
+charge_negative = 0.1411
+charge_neutral = 0.7092
+
+[DISSOLVE]
+rigidity = 0.9902
+potential = crystallized
+wobble_entropy = 0.0098
+complementary_disruption = 0.0703
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4943
+wobble_gc = 0.5791
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2982
+wobble_FLOW = 0.1981
+wobble_OBSERVE = 0.2228
+wobble_LOGIC = 0.2809
+wobble_CHOOSE = 0.2982
+entropy = 0.0098
+
+[OBSERVE]
+distance = 0.0328
+level = deep
+complementary_balance = 0.9297
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1410
+intensity = 0.1410
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1410
+  COMPOSE(FLOW,FLOW): 0.1259
+  COMPOSE(FLOW,OBSERVE): 0.0818
+  COMPOSE(CHOOSE,CHOOSE): 0.0694
+  COMPOSE(CHOOSE,OBSERVE): 0.0657
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3235
+modifier_dominant = FLOW
+modifier_pct = 0.3590
+primary_FLOW = 0.2949
+primary_OBSERVE = 0.1663
+primary_LOGIC = 0.3235
+primary_CHOOSE = 0.2153
+modifier_FLOW = 0.3590
+modifier_OBSERVE = 0.2761
+modifier_LOGIC = 0.1491
+modifier_CHOOSE = 0.2158
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0227
+aa_top5 = [
+  Lys: 0.0889  # basic
+  Leu: 0.0835  # aliphatic
+  Glu: 0.0759  # acidic
+  Ser: 0.0700  # hydroxyl
+  Pro: 0.0695  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1857
+stop_codon = TAG
+loss = 0.0227
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.deep.dominant.crystallized.balanced_interface

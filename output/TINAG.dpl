@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TINAG | unknown
+# CDS: 612 bp (204 codons)
+
+[IDENTITY]
+gene = TINAG
+organism = unknown
+transcript = ENST00000370864.3
+cds_length = 612
+codons = 204
+protein_length = 203
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = FLOW
+dominant_pct = 0.2990
+FLOW = 0.2990
+OBSERVE = 0.2810
+LOGIC = 0.2337
+CHOOSE = 0.1863
+state = flowing
+
+[CONNECT]
+depth = 0.9346
+type = balanced_interface
+hydrophobic_ratio = 0.5074
+charge_positive = 0.1232
+charge_negative = 0.1429
+charge_neutral = 0.7340
+
+[DISSOLVE]
+rigidity = 0.9787
+potential = crystallized
+wobble_entropy = 0.0213
+complementary_disruption = 0.0654
+
+[ENCODE]
+type = natural
+loss = 0.1250
+gc_content = 0.4199
+wobble_gc = 0.3873
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3333
+wobble_FLOW = 0.2794
+wobble_OBSERVE = 0.3333
+wobble_LOGIC = 0.1765
+wobble_CHOOSE = 0.2108
+entropy = 0.0213
+
+[OBSERVE]
+distance = 0.0180
+level = strong
+complementary_balance = 0.9346
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1422
+intensity = 0.1422
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1422
+  COMPOSE(OBSERVE,LOGIC): 0.1078
+  COMPOSE(FLOW,FLOW): 0.0931
+  COMPOSE(OBSERVE,OBSERVE): 0.0882
+  COMPOSE(CHOOSE,FLOW): 0.0833
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3039
+modifier_dominant = FLOW
+modifier_pct = 0.3775
+primary_FLOW = 0.2402
+primary_OBSERVE = 0.3039
+primary_LOGIC = 0.2794
+primary_CHOOSE = 0.1765
+modifier_FLOW = 0.3775
+modifier_OBSERVE = 0.2059
+modifier_LOGIC = 0.2451
+modifier_CHOOSE = 0.1716
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0184
+aa_top5 = [
+  Glu: 0.0837  # acidic
+  Cys: 0.0837  # sulfur
+  Ser: 0.0690  # hydroxyl
+  Gln: 0.0640  # amide
+  Gly: 0.0640  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 203
+stop_codon = TAA
+loss = 0.0184
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.dominant.crystallized.balanced_interface

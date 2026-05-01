@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MRPL48 | unknown
+# CDS: 447 bp (149 codons)
+
+[IDENTITY]
+gene = MRPL48
+organism = unknown
+transcript = ENST00000314282.7
+cds_length = 447
+codons = 149
+protein_length = 148
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.987
+resistance = 0.013
+dominant = OBSERVE
+dominant_pct = 0.3177
+FLOW = 0.2327
+OBSERVE = 0.3177
+LOGIC = 0.1879
+CHOOSE = 0.2617
+state = flowing
+
+[CONNECT]
+depth = 0.8412
+type = membrane_embedded
+hydrophobic_ratio = 0.6014
+charge_positive = 0.1351
+charge_negative = 0.0541
+charge_neutral = 0.8108
+
+[DISSOLVE]
+rigidity = 0.9909
+potential = crystallized
+wobble_entropy = 0.0091
+complementary_disruption = 0.1588
+
+[ENCODE]
+type = moderate
+loss = 0.1562
+gc_content = 0.4497
+wobble_gc = 0.4564
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3154
+wobble_FLOW = 0.2282
+wobble_OBSERVE = 0.3154
+wobble_LOGIC = 0.2081
+wobble_CHOOSE = 0.2483
+entropy = 0.0091
+
+[OBSERVE]
+distance = 0.0559
+level = standard
+complementary_balance = 0.8412
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1141
+intensity = 0.1141
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1141
+  COMPOSE(FLOW,OBSERVE): 0.1007
+  COMPOSE(CHOOSE,FLOW): 0.1007
+  COMPOSE(CHOOSE,CHOOSE): 0.1007
+  COMPOSE(LOGIC,OBSERVE): 0.0738
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3020
+modifier_dominant = OBSERVE
+modifier_pct = 0.3490
+primary_FLOW = 0.2349
+primary_OBSERVE = 0.2886
+primary_LOGIC = 0.1745
+primary_CHOOSE = 0.3020
+modifier_FLOW = 0.2349
+modifier_OBSERVE = 0.3490
+modifier_LOGIC = 0.1812
+modifier_CHOOSE = 0.2349
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0298
+aa_top5 = [
+  Ser: 0.1081  # hydroxyl
+  Leu: 0.1014  # aliphatic
+  Pro: 0.1014  # cyclic
+  Ile: 0.0811  # aliphatic
+  Val: 0.0743  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 148
+stop_codon = TGA
+loss = 0.0298
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.strong.crystallized.membrane_embedded

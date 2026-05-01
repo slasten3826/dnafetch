@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NRBP1 | unknown
+# CDS: 63 bp (21 codons)
+
+[IDENTITY]
+gene = NRBP1
+organism = unknown
+transcript = ENST00000356442.4
+cds_length = 63
+codons = 21
+protein_length = 20
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.943
+resistance = 0.057
+dominant = LOGIC
+dominant_pct = 0.4127
+FLOW = 0.2540
+OBSERVE = 0.1905
+LOGIC = 0.4127
+CHOOSE = 0.1429
+state = flowing
+
+[CONNECT]
+depth = 0.6667
+type = ionic_interaction
+hydrophobic_ratio = 0.5000
+charge_positive = 0.3500
+charge_negative = 0.0500
+charge_neutral = 0.6000
+
+[DISSOLVE]
+rigidity = 0.9674
+potential = low
+wobble_entropy = 0.0326
+complementary_disruption = 0.3333
+
+[ENCODE]
+type = moderate
+loss = 0.7656
+gc_content = 0.5556
+wobble_gc = 0.5714
+codon_diversity = 0.2344
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3810
+wobble_FLOW = 0.1905
+wobble_OBSERVE = 0.2381
+wobble_LOGIC = 0.3810
+wobble_CHOOSE = 0.1905
+entropy = 0.0326
+
+[OBSERVE]
+distance = 0.1587
+level = basic
+complementary_balance = 0.6667
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.2857
+intensity = 0.2857
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.2857
+  COMPOSE(LOGIC,LOGIC): 0.1429
+  COMPOSE(OBSERVE,LOGIC): 0.0952
+  COMPOSE(FLOW,FLOW): 0.0952
+  COMPOSE(FLOW,OBSERVE): 0.0476
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4286
+modifier_dominant = LOGIC
+modifier_pct = 0.5714
+primary_FLOW = 0.4286
+primary_OBSERVE = 0.1429
+primary_LOGIC = 0.2857
+primary_CHOOSE = 0.1429
+modifier_FLOW = 0.1429
+modifier_OBSERVE = 0.1905
+modifier_LOGIC = 0.5714
+modifier_CHOOSE = 0.0952
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0612
+aa_top5 = [
+  Arg: 0.2500  # basic
+  Gly: 0.1500  # simple
+  Ser: 0.1000  # hydroxyl
+  Lys: 0.1000  # basic
+  Met: 0.0500  # sulfur
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 20
+stop_codon = TGA
+loss = 0.0612
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.low.ionic_interaction

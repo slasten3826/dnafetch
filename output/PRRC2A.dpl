@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PRRC2A | unknown
+# CDS: 6474 bp (2158 codons)
+
+[IDENTITY]
+gene = PRRC2A
+organism = unknown
+transcript = ENST00000376007.8
+cds_length = 6474
+codons = 2158
+protein_length = 2157
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.976
+resistance = 0.024
+dominant = CHOOSE
+dominant_pct = 0.3349
+FLOW = 0.2146
+OBSERVE = 0.1685
+LOGIC = 0.2821
+CHOOSE = 0.3349
+state = flowing
+
+[CONNECT]
+depth = 0.9011
+type = balanced_interface
+hydrophobic_ratio = 0.5466
+charge_positive = 0.1414
+charge_negative = 0.1103
+charge_neutral = 0.7483
+
+[DISSOLVE]
+rigidity = 0.9972
+potential = crystallized
+wobble_entropy = 0.0028
+complementary_disruption = 0.0989
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.6169
+wobble_gc = 0.5389
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2725
+wobble_FLOW = 0.2164
+wobble_OBSERVE = 0.2447
+wobble_LOGIC = 0.2725
+wobble_CHOOSE = 0.2665
+entropy = 0.0028
+
+[OBSERVE]
+distance = 0.0528
+level = standard
+complementary_balance = 0.9011
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1928
+intensity = 0.1928
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1928
+  COMPOSE(LOGIC,FLOW): 0.1103
+  COMPOSE(LOGIC,LOGIC): 0.1098
+  COMPOSE(LOGIC,CHOOSE): 0.0737
+  COMPOSE(CHOOSE,LOGIC): 0.0672
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3716
+modifier_dominant = CHOOSE
+modifier_pct = 0.3665
+primary_FLOW = 0.1807
+primary_OBSERVE = 0.1200
+primary_LOGIC = 0.3276
+primary_CHOOSE = 0.3716
+modifier_FLOW = 0.2465
+modifier_OBSERVE = 0.1409
+modifier_LOGIC = 0.2461
+modifier_CHOOSE = 0.3665
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0449
+aa_top5 = [
+  Pro: 0.1929  # cyclic
+  Gly: 0.1099  # simple
+  Ser: 0.0974  # hydroxyl
+  Arg: 0.0830  # basic
+  Ala: 0.0737  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 2157
+stop_codon = TGA
+loss = 0.0449
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.crystallized.balanced_interface

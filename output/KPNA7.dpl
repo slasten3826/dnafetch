@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KPNA7 | unknown
+# CDS: 1551 bp (517 codons)
+
+[IDENTITY]
+gene = KPNA7
+organism = unknown
+transcript = ENST00000681060.1
+cds_length = 1551
+codons = 517
+protein_length = 516
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = CHOOSE
+dominant_pct = 0.2682
+FLOW = 0.2566
+OBSERVE = 0.2153
+LOGIC = 0.2598
+CHOOSE = 0.2682
+state = flowing
+
+[CONNECT]
+depth = 0.9504
+type = balanced_interface
+hydrophobic_ratio = 0.5446
+charge_positive = 0.1143
+charge_negative = 0.1124
+charge_neutral = 0.7733
+
+[DISSOLVE]
+rigidity = 0.9757
+potential = crystallized
+wobble_entropy = 0.0243
+complementary_disruption = 0.0496
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.5280
+wobble_gc = 0.6286
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3191
+wobble_FLOW = 0.1799
+wobble_OBSERVE = 0.1915
+wobble_LOGIC = 0.3191
+wobble_CHOOSE = 0.3095
+entropy = 0.0243
+
+[OBSERVE]
+distance = 0.0084
+level = strong
+complementary_balance = 0.9504
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1122
+intensity = 0.1122
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1122
+  COMPOSE(CHOOSE,OBSERVE): 0.1122
+  COMPOSE(FLOW,FLOW): 0.1025
+  COMPOSE(FLOW,OBSERVE): 0.0832
+  COMPOSE(LOGIC,CHOOSE): 0.0832
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3172
+modifier_dominant = OBSERVE
+modifier_pct = 0.3153
+primary_FLOW = 0.2824
+primary_OBSERVE = 0.1393
+primary_LOGIC = 0.3172
+primary_CHOOSE = 0.2611
+modifier_FLOW = 0.3075
+modifier_OBSERVE = 0.3153
+modifier_LOGIC = 0.1431
+modifier_CHOOSE = 0.2340
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0292
+aa_top5 = [
+  Leu: 0.1376  # aliphatic
+  Ala: 0.0833  # simple
+  Val: 0.0736  # aliphatic
+  Glu: 0.0698  # acidic
+  Ile: 0.0659  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 516
+stop_codon = TAG
+loss = 0.0292
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.strong.crystallized.balanced_interface

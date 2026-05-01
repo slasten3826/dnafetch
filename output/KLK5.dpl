@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KLK5 | unknown
+# CDS: 615 bp (205 codons)
+
+[IDENTITY]
+gene = KLK5
+organism = unknown
+transcript = ENST00000594846.1
+cds_length = 615
+codons = 205
+protein_length = 205
+stop_codon = none
+
+[FLOW]
+engagement = 0.987
+resistance = 0.013
+dominant = CHOOSE
+dominant_pct = 0.3252
+FLOW = 0.2114
+OBSERVE = 0.2049
+LOGIC = 0.2585
+CHOOSE = 0.3252
+state = flowing
+
+[CONNECT]
+depth = 0.9268
+type = membrane_embedded
+hydrophobic_ratio = 0.5512
+charge_positive = 0.1463
+charge_negative = 0.0634
+charge_neutral = 0.7902
+
+[DISSOLVE]
+rigidity = 0.9216
+potential = crystallized
+wobble_entropy = 0.0784
+complementary_disruption = 0.0732
+
+[ENCODE]
+type = optimized
+loss = 0.1562
+gc_content = 0.5837
+wobble_gc = 0.7073
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4244
+wobble_FLOW = 0.1171
+wobble_OBSERVE = 0.1756
+wobble_LOGIC = 0.2829
+wobble_CHOOSE = 0.4244
+entropy = 0.0784
+
+[OBSERVE]
+distance = 0.0667
+level = standard
+complementary_balance = 0.9268
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1024
+intensity = 0.1024
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1024
+  COMPOSE(CHOOSE,OBSERVE): 0.0829
+  COMPOSE(FLOW,FLOW): 0.0829
+  COMPOSE(CHOOSE,CHOOSE): 0.0780
+  COMPOSE(LOGIC,OBSERVE): 0.0780
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2829
+modifier_dominant = FLOW
+modifier_pct = 0.2683
+primary_FLOW = 0.2488
+primary_OBSERVE = 0.1854
+primary_LOGIC = 0.2829
+primary_CHOOSE = 0.2829
+modifier_FLOW = 0.2683
+modifier_OBSERVE = 0.2537
+modifier_LOGIC = 0.2098
+modifier_CHOOSE = 0.2683
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0254
+aa_top5 = [
+  Leu: 0.1024  # aliphatic
+  Ser: 0.0976  # hydroxyl
+  Pro: 0.0780  # cyclic
+  Val: 0.0780  # aliphatic
+  Gly: 0.0732  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 205
+stop_codon = none
+loss = 0.0254
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.membrane_embedded

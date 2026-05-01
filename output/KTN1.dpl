@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KTN1 | unknown
+# CDS: 57 bp (19 codons)
+
+[IDENTITY]
+gene = KTN1
+organism = unknown
+transcript = ENST00000553710.1
+cds_length = 57
+codons = 19
+protein_length = 18
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = OBSERVE
+dominant_pct = 0.3333
+FLOW = 0.3158
+OBSERVE = 0.3333
+LOGIC = 0.1930
+CHOOSE = 0.1579
+state = flowing
+
+[CONNECT]
+depth = 0.9474
+type = membrane_embedded
+hydrophobic_ratio = 0.6667
+charge_positive = 0.1111
+charge_negative = 0.0556
+charge_neutral = 0.8333
+
+[DISSOLVE]
+rigidity = 0.9892
+potential = crystallized
+wobble_entropy = 0.0108
+complementary_disruption = 0.0526
+
+[ENCODE]
+type = moderate
+loss = 0.7812
+gc_content = 0.3509
+wobble_gc = 0.4737
+codon_diversity = 0.2188
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3158
+wobble_FLOW = 0.3158
+wobble_OBSERVE = 0.2105
+wobble_LOGIC = 0.2632
+wobble_CHOOSE = 0.2105
+entropy = 0.0108
+
+[OBSERVE]
+distance = 0.0175
+level = strong
+complementary_balance = 0.9474
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.2632
+intensity = 0.2632
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.2632
+  COMPOSE(CHOOSE,OBSERVE): 0.1579
+  COMPOSE(OBSERVE,OBSERVE): 0.1053
+  COMPOSE(FLOW,FLOW): 0.1053
+  COMPOSE(OBSERVE,CHOOSE): 0.0526
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4211
+modifier_dominant = OBSERVE
+modifier_pct = 0.5789
+primary_FLOW = 0.4211
+primary_OBSERVE = 0.2105
+primary_LOGIC = 0.1579
+primary_CHOOSE = 0.2105
+modifier_FLOW = 0.2105
+modifier_OBSERVE = 0.5789
+modifier_LOGIC = 0.1579
+modifier_CHOOSE = 0.0526
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0580
+aa_top5 = [
+  Leu: 0.1667  # aliphatic
+  Ile: 0.1667  # aliphatic
+  Met: 0.1111  # sulfur
+  Ser: 0.1111  # hydroxyl
+  Phe: 0.1111  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 18
+stop_codon = TGA
+loss = 0.0580
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.strong.dominant.crystallized.membrane_embedded

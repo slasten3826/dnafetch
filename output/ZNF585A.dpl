@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNF585A | unknown
+# CDS: 129 bp (43 codons)
+
+[IDENTITY]
+gene = ZNF585A
+organism = unknown
+transcript = ENST00000588354.1
+cds_length = 129
+codons = 43
+protein_length = 42
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.900
+resistance = 0.100
+dominant = FLOW
+dominant_pct = 0.4651
+FLOW = 0.4651
+OBSERVE = 0.2558
+LOGIC = 0.1085
+CHOOSE = 0.1705
+state = flowing
+
+[CONNECT]
+depth = 0.7287
+type = ionic_interaction
+hydrophobic_ratio = 0.5000
+charge_positive = 0.2381
+charge_negative = 0.0238
+charge_neutral = 0.7381
+
+[DISSOLVE]
+rigidity = 0.8785
+potential = low
+wobble_entropy = 0.1215
+complementary_disruption = 0.2713
+
+[ENCODE]
+type = AT_rich
+loss = 0.6094
+gc_content = 0.2791
+wobble_gc = 0.2791
+codon_diversity = 0.3906
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4651
+wobble_FLOW = 0.4651
+wobble_OBSERVE = 0.2558
+wobble_LOGIC = 0.0698
+wobble_CHOOSE = 0.2093
+entropy = 0.1215
+
+[OBSERVE]
+distance = 0.2093
+level = basic
+complementary_balance = 0.7287
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2791
+intensity = 0.2791
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2791
+  COMPOSE(FLOW,OBSERVE): 0.1395
+  COMPOSE(LOGIC,OBSERVE): 0.0930
+  COMPOSE(OBSERVE,FLOW): 0.0930
+  COMPOSE(OBSERVE,CHOOSE): 0.0698
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5116
+modifier_dominant = FLOW
+modifier_pct = 0.4186
+primary_FLOW = 0.5116
+primary_OBSERVE = 0.1860
+primary_LOGIC = 0.2093
+primary_CHOOSE = 0.0930
+modifier_FLOW = 0.4186
+modifier_OBSERVE = 0.3256
+modifier_LOGIC = 0.0465
+modifier_CHOOSE = 0.2093
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0532
+aa_top5 = [
+  Lys: 0.2143  # basic
+  Ile: 0.1190  # aliphatic
+  Ser: 0.0952  # hydroxyl
+  Val: 0.0952  # aliphatic
+  Ala: 0.0714  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 42
+stop_codon = TAG
+loss = 0.0532
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM120B | unknown
+# CDS: 2733 bp (911 codons)
+
+[IDENTITY]
+gene = FAM120B
+organism = unknown
+transcript = ENST00000476287.4
+cds_length = 2733
+codons = 911
+protein_length = 910
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = FLOW
+dominant_pct = 0.2839
+FLOW = 0.2839
+OBSERVE = 0.2375
+LOGIC = 0.2386
+CHOOSE = 0.2400
+state = flowing
+
+[CONNECT]
+depth = 0.9521
+type = balanced_interface
+hydrophobic_ratio = 0.5242
+charge_positive = 0.1286
+charge_negative = 0.1319
+charge_neutral = 0.7396
+
+[DISSOLVE]
+rigidity = 0.9977
+potential = crystallized
+wobble_entropy = 0.0023
+complementary_disruption = 0.0479
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4786
+wobble_gc = 0.4962
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2711
+wobble_FLOW = 0.2678
+wobble_OBSERVE = 0.2360
+wobble_LOGIC = 0.2250
+wobble_CHOOSE = 0.2711
+entropy = 0.0023
+
+[OBSERVE]
+distance = 0.0439
+level = deep
+complementary_balance = 0.9521
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1317
+intensity = 0.1317
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1317
+  COMPOSE(CHOOSE,FLOW): 0.0801
+  COMPOSE(FLOW,FLOW): 0.0724
+  COMPOSE(FLOW,OBSERVE): 0.0692
+  COMPOSE(CHOOSE,CHOOSE): 0.0681
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2964
+modifier_dominant = FLOW
+modifier_pct = 0.3238
+primary_FLOW = 0.2602
+primary_OBSERVE = 0.2119
+primary_LOGIC = 0.2964
+primary_CHOOSE = 0.2316
+modifier_FLOW = 0.3238
+modifier_OBSERVE = 0.2645
+modifier_LOGIC = 0.1943
+modifier_CHOOSE = 0.2173
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0206
+aa_top5 = [
+  Leu: 0.0934  # aliphatic
+  Glu: 0.0868  # acidic
+  Ser: 0.0758  # hydroxyl
+  Pro: 0.0681  # cyclic
+  Val: 0.0659  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 910
+stop_codon = TAG
+loss = 0.0206
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.deep.dominant.crystallized.balanced_interface

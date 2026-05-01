@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: LRRC26 | unknown
+# CDS: 1005 bp (335 codons)
+
+[IDENTITY]
+gene = LRRC26
+organism = unknown
+transcript = ENST00000371542.3
+cds_length = 1005
+codons = 335
+protein_length = 334
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.893
+resistance = 0.107
+dominant = CHOOSE
+dominant_pct = 0.4119
+FLOW = 0.0896
+OBSERVE = 0.1562
+LOGIC = 0.3423
+CHOOSE = 0.4119
+state = flowing
+
+[CONNECT]
+depth = 0.8637
+type = membrane_embedded
+hydrophobic_ratio = 0.6826
+charge_positive = 0.1108
+charge_negative = 0.0569
+charge_neutral = 0.8323
+
+[DISSOLVE]
+rigidity = 0.7723
+potential = low
+wobble_entropy = 0.2277
+complementary_disruption = 0.1363
+
+[ENCODE]
+type = engineered
+loss = 0.2344
+gc_content = 0.7542
+wobble_gc = 0.8746
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4418
+wobble_FLOW = 0.0627
+wobble_OBSERVE = 0.0627
+wobble_LOGIC = 0.4418
+wobble_CHOOSE = 0.4328
+entropy = 0.2277
+
+[OBSERVE]
+distance = 0.0697
+level = standard
+complementary_balance = 0.8637
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.2000
+  COMPOSE(LOGIC,CHOOSE): 0.1612
+  COMPOSE(CHOOSE,CHOOSE): 0.1164
+  COMPOSE(CHOOSE,LOGIC): 0.0866
+  COMPOSE(LOGIC,LOGIC): 0.0776
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4448
+modifier_dominant = CHOOSE
+modifier_pct = 0.3582
+primary_FLOW = 0.0806
+primary_OBSERVE = 0.1403
+primary_LOGIC = 0.3343
+primary_CHOOSE = 0.4448
+modifier_FLOW = 0.1254
+modifier_OBSERVE = 0.2657
+modifier_LOGIC = 0.2507
+modifier_CHOOSE = 0.3582
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0548
+aa_top5 = [
+  Leu: 0.2066  # aliphatic
+  Ala: 0.1617  # simple
+  Pro: 0.1168  # cyclic
+  Arg: 0.0898  # basic
+  Gly: 0.0778  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 334
+stop_codon = TGA
+loss = 0.0548
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.low.membrane_embedded

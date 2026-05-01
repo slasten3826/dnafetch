@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000293565 | unknown
+# CDS: 51 bp (17 codons)
+
+[IDENTITY]
+gene = ENSG00000293565
+organism = unknown
+transcript = ENST00000713865.1
+cds_length = 51
+codons = 17
+protein_length = 16
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = FLOW
+dominant_pct = 0.3333
+FLOW = 0.3333
+OBSERVE = 0.2353
+LOGIC = 0.2941
+CHOOSE = 0.1373
+state = flowing
+
+[CONNECT]
+depth = 0.7451
+type = ionic_interaction
+hydrophobic_ratio = 0.5000
+charge_positive = 0.2500
+charge_negative = 0.0625
+charge_neutral = 0.6875
+
+[DISSOLVE]
+rigidity = 0.8697
+potential = low
+wobble_entropy = 0.1303
+complementary_disruption = 0.2549
+
+[ENCODE]
+type = moderate
+loss = 0.7969
+gc_content = 0.4314
+wobble_gc = 0.5294
+codon_diversity = 0.2031
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4118
+wobble_FLOW = 0.4118
+wobble_OBSERVE = 0.0588
+wobble_LOGIC = 0.3529
+wobble_CHOOSE = 0.1765
+entropy = 0.1303
+
+[OBSERVE]
+distance = 0.0392
+level = deep
+complementary_balance = 0.7451
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.2941
+intensity = 0.2941
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.2941
+  COMPOSE(FLOW,OBSERVE): 0.1176
+  COMPOSE(OBSERVE,LOGIC): 0.1176
+  COMPOSE(OBSERVE,OBSERVE): 0.1176
+  COMPOSE(LOGIC,OBSERVE): 0.0588
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4118
+modifier_dominant = LOGIC
+modifier_pct = 0.4118
+primary_FLOW = 0.4118
+primary_OBSERVE = 0.3529
+primary_LOGIC = 0.1176
+primary_CHOOSE = 0.1176
+modifier_FLOW = 0.1765
+modifier_OBSERVE = 0.2941
+modifier_LOGIC = 0.4118
+modifier_CHOOSE = 0.1176
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0643
+aa_top5 = [
+  Arg: 0.2500  # basic
+  Met: 0.1250  # sulfur
+  Ser: 0.1250  # hydroxyl
+  Leu: 0.1250  # aliphatic
+  Val: 0.0625  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 16
+stop_codon = TAA
+loss = 0.0643
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.deep.dominant.low.ionic_interaction

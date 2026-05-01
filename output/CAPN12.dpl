@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CAPN12 | unknown
+# CDS: 303 bp (101 codons)
+
+[IDENTITY]
+gene = CAPN12
+organism = unknown
+transcript = ENST00000597740.1
+cds_length = 303
+codons = 101
+protein_length = 101
+stop_codon = none
+
+[FLOW]
+engagement = 0.979
+resistance = 0.021
+dominant = CHOOSE
+dominant_pct = 0.3366
+FLOW = 0.1716
+OBSERVE = 0.2244
+LOGIC = 0.2673
+CHOOSE = 0.3366
+state = flowing
+
+[CONNECT]
+depth = 0.8779
+type = membrane_embedded
+hydrophobic_ratio = 0.6040
+charge_positive = 0.1287
+charge_negative = 0.0693
+charge_neutral = 0.8020
+
+[DISSOLVE]
+rigidity = 0.9349
+potential = crystallized
+wobble_entropy = 0.0651
+complementary_disruption = 0.1221
+
+[ENCODE]
+type = optimized
+loss = 0.2812
+gc_content = 0.6040
+wobble_gc = 0.6832
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3861
+wobble_FLOW = 0.1089
+wobble_OBSERVE = 0.2079
+wobble_LOGIC = 0.2970
+wobble_CHOOSE = 0.3861
+entropy = 0.0651
+
+[OBSERVE]
+distance = 0.0693
+level = standard
+complementary_balance = 0.8779
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1485
+intensity = 0.1485
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1485
+  COMPOSE(CHOOSE,CHOOSE): 0.0990
+  COMPOSE(CHOOSE,OBSERVE): 0.0891
+  COMPOSE(LOGIC,LOGIC): 0.0792
+  COMPOSE(LOGIC,FLOW): 0.0693
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3861
+modifier_dominant = OBSERVE
+modifier_pct = 0.2772
+primary_FLOW = 0.1386
+primary_OBSERVE = 0.1881
+primary_LOGIC = 0.2871
+primary_CHOOSE = 0.3861
+modifier_FLOW = 0.2673
+modifier_OBSERVE = 0.2772
+modifier_LOGIC = 0.2178
+modifier_CHOOSE = 0.2376
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0268
+aa_top5 = [
+  Pro: 0.0990  # cyclic
+  Leu: 0.0891  # aliphatic
+  Gln: 0.0891  # amide
+  Gly: 0.0792  # simple
+  Ala: 0.0693  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 101
+stop_codon = none
+loss = 0.0268
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.membrane_embedded

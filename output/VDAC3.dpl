@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: VDAC3 | unknown
+# CDS: 303 bp (101 codons)
+
+[IDENTITY]
+gene = VDAC3
+organism = unknown
+transcript = ENST00000522010.1
+cds_length = 303
+codons = 101
+protein_length = 100
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = FLOW
+dominant_pct = 0.3498
+FLOW = 0.3498
+OBSERVE = 0.2310
+LOGIC = 0.2310
+CHOOSE = 0.1881
+state = flowing
+
+[CONNECT]
+depth = 0.8383
+type = balanced_interface
+hydrophobic_ratio = 0.4800
+charge_positive = 0.1300
+charge_negative = 0.1300
+charge_neutral = 0.7400
+
+[DISSOLVE]
+rigidity = 0.9910
+potential = crystallized
+wobble_entropy = 0.0090
+complementary_disruption = 0.1617
+
+[ENCODE]
+type = natural
+loss = 0.3594
+gc_content = 0.4191
+wobble_gc = 0.4356
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2871
+wobble_FLOW = 0.2871
+wobble_OBSERVE = 0.2772
+wobble_LOGIC = 0.1881
+wobble_CHOOSE = 0.2475
+entropy = 0.0090
+
+[OBSERVE]
+distance = 0.1188
+level = mild
+complementary_balance = 0.8383
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1881
+intensity = 0.1881
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1881
+  COMPOSE(LOGIC,FLOW): 0.1287
+  COMPOSE(FLOW,CHOOSE): 0.1188
+  COMPOSE(LOGIC,LOGIC): 0.1089
+  COMPOSE(OBSERVE,LOGIC): 0.0693
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3663
+modifier_dominant = FLOW
+modifier_pct = 0.3960
+primary_FLOW = 0.3663
+primary_OBSERVE = 0.2178
+primary_LOGIC = 0.3168
+primary_CHOOSE = 0.0990
+modifier_FLOW = 0.3960
+modifier_OBSERVE = 0.1980
+modifier_LOGIC = 0.1881
+modifier_CHOOSE = 0.2178
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0351
+aa_top5 = [
+  Thr: 0.1200  # hydroxyl
+  Lys: 0.1200  # basic
+  Gly: 0.1100  # simple
+  Glu: 0.0800  # acidic
+  Asn: 0.0700  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 100
+stop_codon = TAA
+loss = 0.0351
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.crystallized.balanced_interface

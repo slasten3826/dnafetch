@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLC9A6 | unknown
+# CDS: 27 bp (9 codons)
+
+[IDENTITY]
+gene = SLC9A6
+organism = unknown
+transcript = ENST00000638078.1
+cds_length = 27
+codons = 9
+protein_length = 8
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.931
+resistance = 0.069
+dominant = OBSERVE
+dominant_pct = 0.3704
+FLOW = 0.1852
+OBSERVE = 0.3704
+LOGIC = 0.3333
+CHOOSE = 0.1111
+state = flowing
+
+[CONNECT]
+depth = 0.5926
+type = membrane_embedded
+hydrophobic_ratio = 0.8750
+charge_positive = 0.0000
+charge_negative = 0.0000
+charge_neutral = 1.0000
+
+[DISSOLVE]
+rigidity = 0.7652
+potential = moderate
+wobble_entropy = 0.2348
+complementary_disruption = 0.4074
+
+[ENCODE]
+type = natural
+loss = 0.8594
+gc_content = 0.4444
+wobble_gc = 0.3333
+codon_diversity = 0.1406
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.4444
+wobble_FLOW = 0.2222
+wobble_OBSERVE = 0.4444
+wobble_LOGIC = 0.3333
+wobble_CHOOSE = 0.0000
+entropy = 0.2348
+
+[OBSERVE]
+distance = 0.0370
+level = deep
+complementary_balance = 0.5926
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.3333
+intensity = 0.3333
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.3333
+  COMPOSE(FLOW,OBSERVE): 0.1111
+  COMPOSE(CHOOSE,OBSERVE): 0.1111
+  COMPOSE(LOGIC,CHOOSE): 0.1111
+  COMPOSE(OBSERVE,FLOW): 0.1111
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4444
+modifier_dominant = LOGIC
+modifier_pct = 0.4444
+primary_FLOW = 0.1111
+primary_OBSERVE = 0.4444
+primary_LOGIC = 0.2222
+primary_CHOOSE = 0.2222
+modifier_FLOW = 0.2222
+modifier_OBSERVE = 0.2222
+modifier_LOGIC = 0.4444
+modifier_CHOOSE = 0.1111
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0612
+aa_top5 = [
+  Met: 0.1250  # sulfur
+  Leu: 0.1250  # aliphatic
+  Ala: 0.1250  # simple
+  Tyr: 0.1250  # aromatic
+  Gln: 0.1250  # amide
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 8
+stop_codon = TGA
+loss = 0.0612
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.dominant.moderate.membrane_embedded

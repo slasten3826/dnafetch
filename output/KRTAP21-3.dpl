@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KRTAP21-3 | unknown
+# CDS: 177 bp (59 codons)
+
+[IDENTITY]
+gene = KRTAP21-3
+organism = unknown
+transcript = ENST00000444335.1
+cds_length = 177
+codons = 59
+protein_length = 58
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.951
+resistance = 0.049
+dominant = OBSERVE
+dominant_pct = 0.3785
+FLOW = 0.2542
+OBSERVE = 0.3785
+LOGIC = 0.2429
+CHOOSE = 0.1243
+state = flowing
+
+[CONNECT]
+depth = 0.7571
+type = membrane_embedded
+hydrophobic_ratio = 0.6552
+charge_positive = 0.1207
+charge_negative = 0.0517
+charge_neutral = 0.8276
+
+[DISSOLVE]
+rigidity = 0.8589
+potential = low
+wobble_entropy = 0.1411
+complementary_disruption = 0.2429
+
+[ENCODE]
+type = natural
+loss = 0.5469
+gc_content = 0.3672
+wobble_gc = 0.3220
+codon_diversity = 0.4531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.5254
+wobble_FLOW = 0.1525
+wobble_OBSERVE = 0.5254
+wobble_LOGIC = 0.1017
+wobble_CHOOSE = 0.2203
+entropy = 0.1411
+
+[OBSERVE]
+distance = 0.1243
+level = basic
+complementary_balance = 0.7571
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1695
+intensity = 0.1695
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1695
+  COMPOSE(LOGIC,LOGIC): 0.1525
+  COMPOSE(OBSERVE,FLOW): 0.1356
+  COMPOSE(FLOW,FLOW): 0.1186
+  COMPOSE(FLOW,OBSERVE): 0.0678
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4237
+modifier_dominant = LOGIC
+modifier_pct = 0.3729
+primary_FLOW = 0.2542
+primary_OBSERVE = 0.4237
+primary_LOGIC = 0.2542
+primary_CHOOSE = 0.0678
+modifier_FLOW = 0.3559
+modifier_OBSERVE = 0.1864
+modifier_LOGIC = 0.3729
+modifier_CHOOSE = 0.0847
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0496
+aa_top5 = [
+  Cys: 0.1552  # sulfur
+  Gly: 0.1552  # simple
+  Tyr: 0.1379  # aromatic
+  Ser: 0.1034  # hydroxyl
+  Phe: 0.0690  # aromatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 58
+stop_codon = TGA
+loss = 0.0496
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.basic.dominant.low.membrane_embedded

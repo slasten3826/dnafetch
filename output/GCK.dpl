@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GCK | unknown
+# CDS: 1347 bp (449 codons)
+
+[IDENTITY]
+gene = GCK
+organism = unknown
+transcript = ENST00000437084.1
+cds_length = 1347
+codons = 449
+protein_length = 448
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.973
+resistance = 0.027
+dominant = LOGIC
+dominant_pct = 0.3526
+FLOW = 0.2168
+OBSERVE = 0.1663
+LOGIC = 0.3526
+CHOOSE = 0.2643
+state = flowing
+
+[CONNECT]
+depth = 0.8612
+type = ionic_interaction
+hydrophobic_ratio = 0.5179
+charge_positive = 0.1451
+charge_negative = 0.1629
+charge_neutral = 0.6920
+
+[DISSOLVE]
+rigidity = 0.8034
+potential = low
+wobble_entropy = 0.1966
+complementary_disruption = 0.1388
+
+[ENCODE]
+type = engineered
+loss = 0.1562
+gc_content = 0.6169
+wobble_gc = 0.8508
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4410
+wobble_FLOW = 0.0713
+wobble_OBSERVE = 0.0780
+wobble_LOGIC = 0.4410
+wobble_CHOOSE = 0.4098
+entropy = 0.1966
+
+[OBSERVE]
+distance = 0.0883
+level = mild
+complementary_balance = 0.8612
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1626
+intensity = 0.1626
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1626
+  COMPOSE(CHOOSE,OBSERVE): 0.0891
+  COMPOSE(LOGIC,LOGIC): 0.0891
+  COMPOSE(FLOW,OBSERVE): 0.0846
+  COMPOSE(LOGIC,OBSERVE): 0.0824
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3964
+modifier_dominant = FLOW
+modifier_pct = 0.3163
+primary_FLOW = 0.2628
+primary_OBSERVE = 0.1292
+primary_LOGIC = 0.3964
+primary_CHOOSE = 0.2116
+modifier_FLOW = 0.3163
+modifier_OBSERVE = 0.2918
+modifier_LOGIC = 0.2205
+modifier_CHOOSE = 0.1715
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0269
+aa_top5 = [
+  Glu: 0.1049  # acidic
+  Leu: 0.0893  # aliphatic
+  Gly: 0.0893  # simple
+  Val: 0.0826  # aliphatic
+  Arg: 0.0714  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 448
+stop_codon = TGA
+loss = 0.0269
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.dominant.low.ionic_interaction

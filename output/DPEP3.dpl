@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DPEP3 | unknown
+# CDS: 1542 bp (514 codons)
+
+[IDENTITY]
+gene = DPEP3
+organism = unknown
+transcript = ENST00000672962.1
+cds_length = 1542
+codons = 514
+protein_length = 513
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = CHOOSE
+dominant_pct = 0.3139
+FLOW = 0.1958
+OBSERVE = 0.2108
+LOGIC = 0.2795
+CHOOSE = 0.3139
+state = flowing
+
+[CONNECT]
+depth = 0.9507
+type = balanced_interface
+hydrophobic_ratio = 0.5380
+charge_positive = 0.1248
+charge_negative = 0.0838
+charge_neutral = 0.7914
+
+[DISSOLVE]
+rigidity = 0.9350
+potential = crystallized
+wobble_entropy = 0.0650
+complementary_disruption = 0.0493
+
+[ENCODE]
+type = optimized
+loss = 0.0469
+gc_content = 0.5934
+wobble_gc = 0.7004
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3755
+wobble_FLOW = 0.1206
+wobble_OBSERVE = 0.1790
+wobble_LOGIC = 0.3249
+wobble_CHOOSE = 0.3755
+entropy = 0.0650
+
+[OBSERVE]
+distance = 0.0344
+level = deep
+complementary_balance = 0.9507
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1304
+intensity = 0.1304
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1304
+  COMPOSE(LOGIC,FLOW): 0.0837
+  COMPOSE(LOGIC,OBSERVE): 0.0778
+  COMPOSE(CHOOSE,FLOW): 0.0759
+  COMPOSE(LOGIC,LOGIC): 0.0720
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3171
+modifier_dominant = OBSERVE
+modifier_pct = 0.2996
+primary_FLOW = 0.2335
+primary_OBSERVE = 0.1537
+primary_LOGIC = 0.2957
+primary_CHOOSE = 0.3171
+modifier_FLOW = 0.2335
+modifier_OBSERVE = 0.2996
+modifier_LOGIC = 0.2179
+modifier_CHOOSE = 0.2490
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0332
+aa_top5 = [
+  Leu: 0.1462  # aliphatic
+  Ser: 0.0994  # hydroxyl
+  Arg: 0.0799  # basic
+  Val: 0.0780  # aliphatic
+  Gly: 0.0721  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 513
+stop_codon = TGA
+loss = 0.0332
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.balanced_interface

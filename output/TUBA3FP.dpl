@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TUBA3FP | unknown
+# CDS: 360 bp (120 codons)
+
+[IDENTITY]
+gene = TUBA3FP
+organism = unknown
+transcript = ENST00000292748.7
+cds_length = 360
+codons = 120
+protein_length = 119
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = CHOOSE
+dominant_pct = 0.3222
+FLOW = 0.2083
+OBSERVE = 0.2194
+LOGIC = 0.2500
+CHOOSE = 0.3222
+state = flowing
+
+[CONNECT]
+depth = 0.9167
+type = balanced_interface
+hydrophobic_ratio = 0.5462
+charge_positive = 0.1092
+charge_negative = 0.0672
+charge_neutral = 0.8235
+
+[DISSOLVE]
+rigidity = 0.9004
+potential = crystallized
+wobble_entropy = 0.0996
+complementary_disruption = 0.0833
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.5722
+wobble_gc = 0.7500
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4250
+wobble_FLOW = 0.1167
+wobble_OBSERVE = 0.1333
+wobble_LOGIC = 0.3250
+wobble_CHOOSE = 0.4250
+entropy = 0.0996
+
+[OBSERVE]
+distance = 0.0722
+level = standard
+complementary_balance = 0.9167
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1167
+intensity = 0.1167
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1167
+  COMPOSE(FLOW,OBSERVE): 0.1000
+  COMPOSE(CHOOSE,FLOW): 0.1000
+  COMPOSE(CHOOSE,OBSERVE): 0.0833
+  COMPOSE(LOGIC,LOGIC): 0.0833
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2750
+modifier_dominant = CHOOSE
+modifier_pct = 0.3000
+primary_FLOW = 0.2500
+primary_OBSERVE = 0.2333
+primary_LOGIC = 0.2750
+primary_CHOOSE = 0.2417
+modifier_FLOW = 0.2583
+modifier_OBSERVE = 0.2917
+modifier_LOGIC = 0.1500
+modifier_CHOOSE = 0.3000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0296
+aa_top5 = [
+  Ser: 0.1345  # hydroxyl
+  Leu: 0.0840  # aliphatic
+  Gly: 0.0840  # simple
+  Thr: 0.0756  # hydroxyl
+  Ala: 0.0672  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 119
+stop_codon = TGA
+loss = 0.0296
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.balanced_interface

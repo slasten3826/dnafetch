@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: APOH | unknown
+# CDS: 543 bp (181 codons)
+
+[IDENTITY]
+gene = APOH
+organism = unknown
+transcript = ENST00000577982.1
+cds_length = 543
+codons = 181
+protein_length = 181
+stop_codon = none
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = OBSERVE
+dominant_pct = 0.2910
+FLOW = 0.2431
+OBSERVE = 0.2910
+LOGIC = 0.2136
+CHOOSE = 0.2523
+state = flowing
+
+[CONNECT]
+depth = 0.9134
+type = membrane_embedded
+hydrophobic_ratio = 0.6354
+charge_positive = 0.0939
+charge_negative = 0.0718
+charge_neutral = 0.8343
+
+[DISSOLVE]
+rigidity = 0.9857
+potential = crystallized
+wobble_entropy = 0.0143
+complementary_disruption = 0.0866
+
+[ENCODE]
+type = natural
+loss = 0.1406
+gc_content = 0.4659
+wobble_gc = 0.4254
+codon_diversity = 0.8594
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3315
+wobble_FLOW = 0.2431
+wobble_OBSERVE = 0.3315
+wobble_LOGIC = 0.1934
+wobble_CHOOSE = 0.2320
+entropy = 0.0143
+
+[OBSERVE]
+distance = 0.0387
+level = deep
+complementary_balance = 0.9134
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1160
+intensity = 0.1160
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1160
+  COMPOSE(OBSERVE,OBSERVE): 0.0939
+  COMPOSE(FLOW,CHOOSE): 0.0829
+  COMPOSE(FLOW,FLOW): 0.0829
+  COMPOSE(FLOW,OBSERVE): 0.0773
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2707
+modifier_dominant = CHOOSE
+modifier_pct = 0.3149
+primary_FLOW = 0.2707
+primary_OBSERVE = 0.2652
+primary_LOGIC = 0.2541
+primary_CHOOSE = 0.2099
+modifier_FLOW = 0.2155
+modifier_OBSERVE = 0.2762
+modifier_LOGIC = 0.1934
+modifier_CHOOSE = 0.3149
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0272
+aa_top5 = [
+  Pro: 0.1160  # cyclic
+  Thr: 0.0829  # hydroxyl
+  Leu: 0.0773  # aliphatic
+  Ser: 0.0718  # hydroxyl
+  Phe: 0.0663  # aromatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 181
+stop_codon = none
+loss = 0.0272
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.strong.crystallized.membrane_embedded

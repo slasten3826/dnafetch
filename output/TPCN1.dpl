@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TPCN1 | unknown
+# CDS: 126 bp (42 codons)
+
+[IDENTITY]
+gene = TPCN1
+organism = unknown
+transcript = ENST00000547955.5
+cds_length = 126
+codons = 42
+protein_length = 41
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = CHOOSE
+dominant_pct = 0.2937
+FLOW = 0.1746
+OBSERVE = 0.2460
+LOGIC = 0.2857
+CHOOSE = 0.2937
+state = flowing
+
+[CONNECT]
+depth = 0.9206
+type = membrane_embedded
+hydrophobic_ratio = 0.6341
+charge_positive = 0.1951
+charge_negative = 0.0976
+charge_neutral = 0.7073
+
+[DISSOLVE]
+rigidity = 0.6772
+potential = low
+wobble_entropy = 0.3228
+complementary_disruption = 0.0794
+
+[ENCODE]
+type = engineered
+loss = 0.6406
+gc_content = 0.5794
+wobble_gc = 0.9286
+codon_diversity = 0.3594
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5238
+wobble_FLOW = 0.0238
+wobble_OBSERVE = 0.0476
+wobble_LOGIC = 0.5238
+wobble_CHOOSE = 0.4048
+entropy = 0.3228
+
+[OBSERVE]
+distance = 0.0079
+level = strong
+complementary_balance = 0.9206
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1667
+  COMPOSE(OBSERVE,OBSERVE): 0.1429
+  COMPOSE(FLOW,OBSERVE): 0.0952
+  COMPOSE(LOGIC,FLOW): 0.0952
+  COMPOSE(CHOOSE,LOGIC): 0.0952
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3571
+modifier_dominant = OBSERVE
+modifier_pct = 0.4762
+primary_FLOW = 0.2381
+primary_OBSERVE = 0.2143
+primary_LOGIC = 0.1905
+primary_CHOOSE = 0.3571
+modifier_FLOW = 0.2619
+modifier_OBSERVE = 0.4762
+modifier_LOGIC = 0.1429
+modifier_CHOOSE = 0.1190
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0543
+aa_top5 = [
+  Leu: 0.2195  # aliphatic
+  Arg: 0.1463  # basic
+  Phe: 0.0976  # aromatic
+  Met: 0.0732  # sulfur
+  Glu: 0.0732  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 41
+stop_codon = TAA
+loss = 0.0543
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.dominant.low.membrane_embedded

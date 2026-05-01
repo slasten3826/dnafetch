@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CATSPER3 | unknown
+# CDS: 1197 bp (399 codons)
+
+[IDENTITY]
+gene = CATSPER3
+organism = unknown
+transcript = ENST00000282611.8
+cds_length = 1197
+codons = 399
+protein_length = 398
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = OBSERVE
+dominant_pct = 0.2707
+FLOW = 0.2389
+OBSERVE = 0.2707
+LOGIC = 0.2439
+CHOOSE = 0.2464
+state = flowing
+
+[CONNECT]
+depth = 0.9657
+type = membrane_embedded
+hydrophobic_ratio = 0.5553
+charge_positive = 0.1181
+charge_negative = 0.1106
+charge_neutral = 0.7714
+
+[DISSOLVE]
+rigidity = 0.9277
+potential = crystallized
+wobble_entropy = 0.0723
+complementary_disruption = 0.0343
+
+[ENCODE]
+type = optimized
+loss = 0.0781
+gc_content = 0.4904
+wobble_gc = 0.7043
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3634
+wobble_FLOW = 0.1028
+wobble_OBSERVE = 0.1930
+wobble_LOGIC = 0.3409
+wobble_CHOOSE = 0.3634
+entropy = 0.0723
+
+[OBSERVE]
+distance = 0.0242
+level = deep
+complementary_balance = 0.9657
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1253
+intensity = 0.1253
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1253
+  COMPOSE(OBSERVE,OBSERVE): 0.1203
+  COMPOSE(LOGIC,FLOW): 0.1103
+  COMPOSE(CHOOSE,OBSERVE): 0.0852
+  COMPOSE(FLOW,FLOW): 0.0777
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3133
+modifier_dominant = OBSERVE
+modifier_pct = 0.3935
+primary_FLOW = 0.3133
+primary_OBSERVE = 0.2256
+primary_LOGIC = 0.2506
+primary_CHOOSE = 0.2105
+modifier_FLOW = 0.3008
+modifier_OBSERVE = 0.3935
+modifier_LOGIC = 0.1404
+modifier_CHOOSE = 0.1654
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0261
+aa_top5 = [
+  Leu: 0.1231  # aliphatic
+  Phe: 0.0829  # aromatic
+  Ile: 0.0804  # aliphatic
+  Ser: 0.0754  # hydroxyl
+  Val: 0.0628  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 398
+stop_codon = TAG
+loss = 0.0261
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.deep.dominant.crystallized.membrane_embedded

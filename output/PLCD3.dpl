@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PLCD3 | unknown
+# CDS: 381 bp (127 codons)
+
+[IDENTITY]
+gene = PLCD3
+organism = unknown
+transcript = ENST00000538093.1
+cds_length = 381
+codons = 127
+protein_length = 127
+stop_codon = none
+
+[FLOW]
+engagement = 0.937
+resistance = 0.063
+dominant = CHOOSE
+dominant_pct = 0.3596
+FLOW = 0.1496
+OBSERVE = 0.1444
+LOGIC = 0.3465
+CHOOSE = 0.3596
+state = flowing
+
+[CONNECT]
+depth = 0.9816
+type = ionic_interaction
+hydrophobic_ratio = 0.4961
+charge_positive = 0.2598
+charge_negative = 0.0945
+charge_neutral = 0.6457
+
+[DISSOLVE]
+rigidity = 0.6843
+potential = low
+wobble_entropy = 0.3157
+complementary_disruption = 0.0184
+
+[ENCODE]
+type = engineered
+loss = 0.4375
+gc_content = 0.7060
+wobble_gc = 0.9291
+codon_diversity = 0.5625
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4646
+wobble_FLOW = 0.0315
+wobble_OBSERVE = 0.0394
+wobble_LOGIC = 0.4646
+wobble_CHOOSE = 0.4646
+entropy = 0.3157
+
+[OBSERVE]
+distance = 0.0131
+level = strong
+complementary_balance = 0.9816
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,LOGIC)
+top_compose_pct = 0.1732
+intensity = 0.1732
+compose_top5 = [
+  COMPOSE(CHOOSE,LOGIC): 0.1732
+  COMPOSE(CHOOSE,OBSERVE): 0.1102
+  COMPOSE(CHOOSE,FLOW): 0.1024
+  COMPOSE(LOGIC,FLOW): 0.0945
+  COMPOSE(LOGIC,CHOOSE): 0.0945
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4173
+modifier_dominant = LOGIC
+modifier_pct = 0.2913
+primary_FLOW = 0.1575
+primary_OBSERVE = 0.1417
+primary_LOGIC = 0.2835
+primary_CHOOSE = 0.4173
+modifier_FLOW = 0.2598
+modifier_OBSERVE = 0.2520
+modifier_LOGIC = 0.2913
+modifier_CHOOSE = 0.1969
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0380
+aa_top5 = [
+  Arg: 0.1732  # basic
+  Leu: 0.1102  # aliphatic
+  Ala: 0.0945  # simple
+  Gly: 0.0630  # simple
+  Glu: 0.0630  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 127
+stop_codon = none
+loss = 0.0380
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.dominant.low.ionic_interaction

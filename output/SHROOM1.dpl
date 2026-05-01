@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SHROOM1 | unknown
+# CDS: 972 bp (324 codons)
+
+[IDENTITY]
+gene = SHROOM1
+organism = unknown
+transcript = ENST00000440118.1
+cds_length = 972
+codons = 324
+protein_length = 324
+stop_codon = none
+
+[FLOW]
+engagement = 0.924
+resistance = 0.076
+dominant = CHOOSE
+dominant_pct = 0.3735
+FLOW = 0.1348
+OBSERVE = 0.1409
+LOGIC = 0.3508
+CHOOSE = 0.3735
+state = flowing
+
+[CONNECT]
+depth = 0.9712
+type = membrane_embedded
+hydrophobic_ratio = 0.5864
+charge_positive = 0.1235
+charge_negative = 0.0926
+charge_neutral = 0.7840
+
+[DISSOLVE]
+rigidity = 0.8660
+potential = crystallized
+wobble_entropy = 0.1340
+complementary_disruption = 0.0288
+
+[ENCODE]
+type = engineered
+loss = 0.1719
+gc_content = 0.7243
+wobble_gc = 0.7932
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4105
+wobble_FLOW = 0.0895
+wobble_OBSERVE = 0.1173
+wobble_LOGIC = 0.4105
+wobble_CHOOSE = 0.3827
+entropy = 0.1340
+
+[OBSERVE]
+distance = 0.0226
+level = deep
+complementary_balance = 0.9712
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1358
+intensity = 0.1358
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1358
+  COMPOSE(LOGIC,CHOOSE): 0.1327
+  COMPOSE(LOGIC,LOGIC): 0.1142
+  COMPOSE(LOGIC,FLOW): 0.0926
+  COMPOSE(CHOOSE,LOGIC): 0.0833
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3704
+modifier_dominant = CHOOSE
+modifier_pct = 0.3827
+primary_FLOW = 0.1265
+primary_OBSERVE = 0.1481
+primary_LOGIC = 0.3704
+primary_CHOOSE = 0.3549
+modifier_FLOW = 0.1883
+modifier_OBSERVE = 0.1574
+modifier_LOGIC = 0.2716
+modifier_CHOOSE = 0.3827
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0436
+aa_top5 = [
+  Pro: 0.1358  # cyclic
+  Ala: 0.1327  # simple
+  Gly: 0.1142  # simple
+  Ser: 0.1080  # hydroxyl
+  Arg: 0.0926  # basic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 324
+stop_codon = none
+loss = 0.0436
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.dominant.crystallized.membrane_embedded

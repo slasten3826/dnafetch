@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: INSR | unknown
+# CDS: 321 bp (107 codons)
+
+[IDENTITY]
+gene = INSR
+organism = unknown
+transcript = ENST00000600492.1
+cds_length = 321
+codons = 107
+protein_length = 106
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = CHOOSE
+dominant_pct = 0.2960
+FLOW = 0.2368
+OBSERVE = 0.2274
+LOGIC = 0.2399
+CHOOSE = 0.2960
+state = flowing
+
+[CONNECT]
+depth = 0.9346
+type = balanced_interface
+hydrophobic_ratio = 0.5094
+charge_positive = 0.1132
+charge_negative = 0.1132
+charge_neutral = 0.7736
+
+[DISSOLVE]
+rigidity = 0.9505
+potential = crystallized
+wobble_entropy = 0.0495
+complementary_disruption = 0.0654
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.5358
+wobble_gc = 0.6729
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3551
+wobble_FLOW = 0.1308
+wobble_OBSERVE = 0.1963
+wobble_LOGIC = 0.3178
+wobble_CHOOSE = 0.3551
+entropy = 0.0495
+
+[OBSERVE]
+distance = 0.0561
+level = standard
+complementary_balance = 0.9346
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1121
+intensity = 0.1121
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1121
+  COMPOSE(FLOW,FLOW): 0.0935
+  COMPOSE(OBSERVE,CHOOSE): 0.0935
+  COMPOSE(CHOOSE,OBSERVE): 0.0841
+  COMPOSE(FLOW,OBSERVE): 0.0748
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2617
+modifier_dominant = FLOW
+modifier_pct = 0.3178
+primary_FLOW = 0.2617
+primary_OBSERVE = 0.2243
+primary_LOGIC = 0.2617
+primary_CHOOSE = 0.2523
+modifier_FLOW = 0.3178
+modifier_OBSERVE = 0.2617
+modifier_LOGIC = 0.1402
+modifier_CHOOSE = 0.2804
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0253
+aa_top5 = [
+  Ser: 0.1132  # hydroxyl
+  Leu: 0.0849  # aliphatic
+  Pro: 0.0755  # cyclic
+  Thr: 0.0660  # hydroxyl
+  Ile: 0.0660  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 106
+stop_codon = TAA
+loss = 0.0253
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.balanced_interface

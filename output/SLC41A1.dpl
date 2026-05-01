@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLC41A1 | unknown
+# CDS: 1542 bp (514 codons)
+
+[IDENTITY]
+gene = SLC41A1
+organism = unknown
+transcript = ENST00000367137.4
+cds_length = 1542
+codons = 514
+protein_length = 513
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.987
+resistance = 0.013
+dominant = CHOOSE
+dominant_pct = 0.3009
+FLOW = 0.1822
+OBSERVE = 0.2289
+LOGIC = 0.2879
+CHOOSE = 0.3009
+state = flowing
+
+[CONNECT]
+depth = 0.9403
+type = membrane_embedded
+hydrophobic_ratio = 0.6550
+charge_positive = 0.0741
+charge_negative = 0.0819
+charge_neutral = 0.8441
+
+[DISSOLVE]
+rigidity = 0.9185
+potential = crystallized
+wobble_entropy = 0.0815
+complementary_disruption = 0.0597
+
+[ENCODE]
+type = optimized
+loss = 0.0469
+gc_content = 0.5888
+wobble_gc = 0.7218
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4047
+wobble_FLOW = 0.1109
+wobble_OBSERVE = 0.1673
+wobble_LOGIC = 0.3171
+wobble_CHOOSE = 0.4047
+entropy = 0.0815
+
+[OBSERVE]
+distance = 0.0130
+level = strong
+complementary_balance = 0.9403
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1128
+intensity = 0.1128
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1128
+  COMPOSE(FLOW,OBSERVE): 0.0992
+  COMPOSE(LOGIC,LOGIC): 0.0934
+  COMPOSE(LOGIC,OBSERVE): 0.0895
+  COMPOSE(LOGIC,CHOOSE): 0.0875
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3521
+modifier_dominant = OBSERVE
+modifier_pct = 0.3619
+primary_FLOW = 0.2432
+primary_OBSERVE = 0.1576
+primary_LOGIC = 0.3521
+primary_CHOOSE = 0.2471
+modifier_FLOW = 0.1926
+modifier_OBSERVE = 0.3619
+modifier_LOGIC = 0.1946
+modifier_CHOOSE = 0.2510
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0309
+aa_top5 = [
+  Leu: 0.1248  # aliphatic
+  Gly: 0.0936  # simple
+  Val: 0.0897  # aliphatic
+  Ala: 0.0877  # simple
+  Ser: 0.0799  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 513
+stop_codon = TAG
+loss = 0.0309
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.membrane_embedded

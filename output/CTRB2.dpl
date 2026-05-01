@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CTRB2 | unknown
+# CDS: 324 bp (108 codons)
+
+[IDENTITY]
+gene = CTRB2
+organism = unknown
+transcript = ENST00000562387.1
+cds_length = 324
+codons = 108
+protein_length = 108
+stop_codon = none
+
+[FLOW]
+engagement = 0.972
+resistance = 0.028
+dominant = CHOOSE
+dominant_pct = 0.3333
+FLOW = 0.1667
+OBSERVE = 0.1975
+LOGIC = 0.3025
+CHOOSE = 0.3333
+state = flowing
+
+[CONNECT]
+depth = 0.9383
+type = membrane_embedded
+hydrophobic_ratio = 0.6574
+charge_positive = 0.1296
+charge_negative = 0.0833
+charge_neutral = 0.7870
+
+[DISSOLVE]
+rigidity = 0.9889
+potential = crystallized
+wobble_entropy = 0.0111
+complementary_disruption = 0.0617
+
+[ENCODE]
+type = moderate
+loss = 0.2500
+gc_content = 0.6358
+wobble_gc = 0.5741
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3148
+wobble_FLOW = 0.1944
+wobble_OBSERVE = 0.2315
+wobble_LOGIC = 0.3148
+wobble_CHOOSE = 0.2593
+entropy = 0.0111
+
+[OBSERVE]
+distance = 0.0309
+level = deep
+complementary_balance = 0.9383
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1667
+  COMPOSE(LOGIC,CHOOSE): 0.1389
+  COMPOSE(OBSERVE,LOGIC): 0.1019
+  COMPOSE(LOGIC,FLOW): 0.0833
+  COMPOSE(CHOOSE,OBSERVE): 0.0833
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3519
+modifier_dominant = CHOOSE
+modifier_pct = 0.3889
+primary_FLOW = 0.1481
+primary_OBSERVE = 0.1852
+primary_LOGIC = 0.3148
+primary_CHOOSE = 0.3519
+modifier_FLOW = 0.1574
+modifier_OBSERVE = 0.1759
+modifier_LOGIC = 0.2778
+modifier_CHOOSE = 0.3889
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0450
+aa_top5 = [
+  Pro: 0.1667  # cyclic
+  Ala: 0.1389  # simple
+  Leu: 0.1111  # aliphatic
+  Arg: 0.1019  # basic
+  Gly: 0.0648  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 108
+stop_codon = none
+loss = 0.0450
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.dominant.crystallized.membrane_embedded

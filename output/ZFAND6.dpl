@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZFAND6 | unknown
+# CDS: 522 bp (174 codons)
+
+[IDENTITY]
+gene = ZFAND6
+organism = unknown
+transcript = ENST00000558724.1
+cds_length = 522
+codons = 174
+protein_length = 174
+stop_codon = none
+
+[FLOW]
+engagement = 0.988
+resistance = 0.012
+dominant = FLOW
+dominant_pct = 0.3276
+FLOW = 0.3276
+OBSERVE = 0.2471
+LOGIC = 0.2069
+CHOOSE = 0.2184
+state = flowing
+
+[CONNECT]
+depth = 0.9080
+type = balanced_interface
+hydrophobic_ratio = 0.4195
+charge_positive = 0.1092
+charge_negative = 0.0977
+charge_neutral = 0.7931
+
+[DISSOLVE]
+rigidity = 0.9437
+potential = crystallized
+wobble_entropy = 0.0563
+complementary_disruption = 0.0920
+
+[ENCODE]
+type = natural
+loss = 0.2188
+gc_content = 0.4253
+wobble_gc = 0.3103
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3736
+wobble_FLOW = 0.3736
+wobble_OBSERVE = 0.3161
+wobble_LOGIC = 0.1724
+wobble_CHOOSE = 0.1379
+entropy = 0.0563
+
+[OBSERVE]
+distance = 0.0805
+level = mild
+complementary_balance = 0.9080
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1207
+intensity = 0.1207
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1207
+  COMPOSE(FLOW,FLOW): 0.1092
+  COMPOSE(LOGIC,FLOW): 0.0977
+  COMPOSE(CHOOSE,FLOW): 0.0977
+  COMPOSE(FLOW,LOGIC): 0.0862
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2931
+modifier_dominant = FLOW
+modifier_pct = 0.3161
+primary_FLOW = 0.2931
+primary_OBSERVE = 0.2184
+primary_LOGIC = 0.2644
+primary_CHOOSE = 0.2241
+modifier_FLOW = 0.3161
+modifier_OBSERVE = 0.2069
+modifier_LOGIC = 0.1839
+modifier_CHOOSE = 0.2931
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0383
+aa_top5 = [
+  Ser: 0.1782  # hydroxyl
+  Gln: 0.0862  # amide
+  Leu: 0.0805  # aliphatic
+  Val: 0.0747  # aliphatic
+  Pro: 0.0690  # cyclic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 174
+stop_codon = none
+loss = 0.0383
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.crystallized.balanced_interface

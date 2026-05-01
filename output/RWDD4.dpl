@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RWDD4 | unknown
+# CDS: 30 bp (10 codons)
+
+[IDENTITY]
+gene = RWDD4
+organism = unknown
+transcript = ENST00000506467.1
+cds_length = 30
+codons = 10
+protein_length = 9
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.900
+resistance = 0.100
+dominant = FLOW
+dominant_pct = 0.4000
+FLOW = 0.4000
+OBSERVE = 0.2333
+LOGIC = 0.3000
+CHOOSE = 0.0667
+state = flowing
+
+[CONNECT]
+depth = 0.6000
+type = ionic_interaction
+hydrophobic_ratio = 0.4444
+charge_positive = 0.2222
+charge_negative = 0.1111
+charge_neutral = 0.6667
+
+[DISSOLVE]
+rigidity = 0.8805
+potential = low
+wobble_entropy = 0.1195
+complementary_disruption = 0.4000
+
+[ENCODE]
+type = moderate
+loss = 0.8594
+gc_content = 0.3667
+wobble_gc = 0.6000
+codon_diversity = 0.1406
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5000
+wobble_FLOW = 0.2000
+wobble_OBSERVE = 0.2000
+wobble_LOGIC = 0.5000
+wobble_CHOOSE = 0.1000
+entropy = 0.1195
+
+[OBSERVE]
+distance = 0.1000
+level = mild
+complementary_balance = 0.6000
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.3000
+intensity = 0.3000
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.3000
+  COMPOSE(FLOW,OBSERVE): 0.2000
+  COMPOSE(LOGIC,FLOW): 0.1000
+  COMPOSE(LOGIC,OBSERVE): 0.1000
+  COMPOSE(OBSERVE,CHOOSE): 0.1000
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = FLOW
+modifier_pct = 0.5000
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.3000
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.5000
+modifier_OBSERVE = 0.3000
+modifier_LOGIC = 0.1000
+modifier_CHOOSE = 0.1000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0743
+aa_top5 = [
+  Met: 0.2222  # sulfur
+  Lys: 0.2222  # basic
+  Glu: 0.1111  # acidic
+  Val: 0.1111  # aliphatic
+  Ser: 0.1111  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 9
+stop_codon = TAA
+loss = 0.0743
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.mild.dominant.low.ionic_interaction

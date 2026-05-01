@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: BRI3 | unknown
+# CDS: 231 bp (77 codons)
+
+[IDENTITY]
+gene = BRI3
+organism = unknown
+transcript = ENST00000491463.4
+cds_length = 231
+codons = 77
+protein_length = 76
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = CHOOSE
+dominant_pct = 0.2727
+FLOW = 0.2035
+OBSERVE = 0.2684
+LOGIC = 0.2554
+CHOOSE = 0.2727
+state = flowing
+
+[CONNECT]
+depth = 0.9177
+type = membrane_embedded
+hydrophobic_ratio = 0.5658
+charge_positive = 0.1316
+charge_negative = 0.0395
+charge_neutral = 0.8289
+
+[DISSOLVE]
+rigidity = 0.9950
+potential = crystallized
+wobble_entropy = 0.0050
+complementary_disruption = 0.0823
+
+[ENCODE]
+type = moderate
+loss = 0.3125
+gc_content = 0.5281
+wobble_gc = 0.4935
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2857
+wobble_FLOW = 0.2208
+wobble_OBSERVE = 0.2857
+wobble_LOGIC = 0.2208
+wobble_CHOOSE = 0.2727
+entropy = 0.0050
+
+[OBSERVE]
+distance = 0.0043
+level = intense
+complementary_balance = 0.9177
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1299
+intensity = 0.1299
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1299
+  COMPOSE(FLOW,LOGIC): 0.1169
+  COMPOSE(CHOOSE,OBSERVE): 0.0909
+  COMPOSE(OBSERVE,CHOOSE): 0.0909
+  COMPOSE(CHOOSE,CHOOSE): 0.0779
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.2857
+modifier_dominant = LOGIC
+modifier_pct = 0.3506
+primary_FLOW = 0.2597
+primary_OBSERVE = 0.2857
+primary_LOGIC = 0.1948
+primary_CHOOSE = 0.2597
+modifier_FLOW = 0.1299
+modifier_OBSERVE = 0.2338
+modifier_LOGIC = 0.3506
+modifier_CHOOSE = 0.2857
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0383
+aa_top5 = [
+  Ser: 0.1447  # hydroxyl
+  Leu: 0.1184  # aliphatic
+  Arg: 0.1184  # basic
+  Pro: 0.0789  # cyclic
+  Cys: 0.0658  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 76
+stop_codon = TGA
+loss = 0.0383
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.intense.dominant.crystallized.membrane_embedded

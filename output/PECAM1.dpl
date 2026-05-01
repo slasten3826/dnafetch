@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PECAM1 | unknown
+# CDS: 402 bp (134 codons)
+
+[IDENTITY]
+gene = PECAM1
+organism = unknown
+transcript = ENST00000569967.1
+cds_length = 402
+codons = 134
+protein_length = 134
+stop_codon = none
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = FLOW
+dominant_pct = 0.2662
+FLOW = 0.2662
+OBSERVE = 0.2264
+LOGIC = 0.2637
+CHOOSE = 0.2438
+state = flowing
+
+[CONNECT]
+depth = 0.9403
+type = balanced_interface
+hydrophobic_ratio = 0.5075
+charge_positive = 0.0970
+charge_negative = 0.0970
+charge_neutral = 0.8060
+
+[DISSOLVE]
+rigidity = 0.9485
+potential = crystallized
+wobble_entropy = 0.0515
+complementary_disruption = 0.0597
+
+[ENCODE]
+type = optimized
+loss = 0.2500
+gc_content = 0.5075
+wobble_gc = 0.6716
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3657
+wobble_FLOW = 0.1269
+wobble_OBSERVE = 0.2015
+wobble_LOGIC = 0.3657
+wobble_CHOOSE = 0.3060
+entropy = 0.0515
+
+[OBSERVE]
+distance = 0.0025
+level = intense
+complementary_balance = 0.9403
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1119
+intensity = 0.1119
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1119
+  COMPOSE(LOGIC,FLOW): 0.0970
+  COMPOSE(FLOW,CHOOSE): 0.0896
+  COMPOSE(CHOOSE,OBSERVE): 0.0896
+  COMPOSE(LOGIC,OBSERVE): 0.0896
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3433
+modifier_dominant = FLOW
+modifier_pct = 0.3284
+primary_FLOW = 0.3433
+primary_OBSERVE = 0.1791
+primary_LOGIC = 0.2612
+primary_CHOOSE = 0.2164
+modifier_FLOW = 0.3284
+modifier_OBSERVE = 0.2985
+modifier_LOGIC = 0.1642
+modifier_CHOOSE = 0.2090
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0248
+aa_top5 = [
+  Leu: 0.0970  # aliphatic
+  Ser: 0.0970  # hydroxyl
+  Thr: 0.0896  # hydroxyl
+  Val: 0.0896  # aliphatic
+  Gln: 0.0597  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 134
+stop_codon = none
+loss = 0.0248
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.intense.strong.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RAN | unknown
+# CDS: 702 bp (234 codons)
+
+[IDENTITY]
+gene = RAN
+organism = unknown
+transcript = ENST00000392367.4
+cds_length = 702
+codons = 234
+protein_length = 233
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = FLOW
+dominant_pct = 0.2721
+FLOW = 0.2721
+OBSERVE = 0.2536
+LOGIC = 0.2578
+CHOOSE = 0.2165
+state = flowing
+
+[CONNECT]
+depth = 0.9402
+type = membrane_embedded
+hydrophobic_ratio = 0.5665
+charge_positive = 0.1545
+charge_negative = 0.1245
+charge_neutral = 0.7210
+
+[DISSOLVE]
+rigidity = 0.9905
+potential = crystallized
+wobble_entropy = 0.0095
+complementary_disruption = 0.0598
+
+[ENCODE]
+type = moderate
+loss = 0.0781
+gc_content = 0.4744
+wobble_gc = 0.5128
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2991
+wobble_FLOW = 0.1880
+wobble_OBSERVE = 0.2991
+wobble_LOGIC = 0.2564
+wobble_CHOOSE = 0.2564
+entropy = 0.0095
+
+[OBSERVE]
+distance = 0.0142
+level = strong
+complementary_balance = 0.9402
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1239
+intensity = 0.1239
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1239
+  COMPOSE(FLOW,FLOW): 0.1197
+  COMPOSE(LOGIC,OBSERVE): 0.0983
+  COMPOSE(LOGIC,CHOOSE): 0.0812
+  COMPOSE(CHOOSE,FLOW): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3718
+modifier_dominant = FLOW
+modifier_pct = 0.3547
+primary_FLOW = 0.2735
+primary_OBSERVE = 0.1581
+primary_LOGIC = 0.3718
+primary_CHOOSE = 0.1966
+modifier_FLOW = 0.3547
+modifier_OBSERVE = 0.3034
+modifier_LOGIC = 0.1453
+modifier_CHOOSE = 0.1966
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0231
+aa_top5 = [
+  Val: 0.0987  # aliphatic
+  Leu: 0.0858  # aliphatic
+  Ala: 0.0815  # simple
+  Lys: 0.0773  # basic
+  Gly: 0.0687  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 233
+stop_codon = TGA
+loss = 0.0231
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: LILRB3 | unknown
+# CDS: 1899 bp (633 codons)
+
+[IDENTITY]
+gene = LILRB3
+organism = unknown
+transcript = ENST00000245620.13
+cds_length = 1899
+codons = 633
+protein_length = 632
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = CHOOSE
+dominant_pct = 0.3360
+FLOW = 0.2127
+OBSERVE = 0.1811
+LOGIC = 0.2701
+CHOOSE = 0.3360
+state = flowing
+
+[CONNECT]
+depth = 0.9026
+type = balanced_interface
+hydrophobic_ratio = 0.5364
+charge_positive = 0.1203
+charge_negative = 0.0997
+charge_neutral = 0.7801
+
+[DISSOLVE]
+rigidity = 0.9326
+potential = crystallized
+wobble_entropy = 0.0674
+complementary_disruption = 0.0974
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.6061
+wobble_gc = 0.7077
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3934
+wobble_FLOW = 0.1438
+wobble_OBSERVE = 0.1485
+wobble_LOGIC = 0.3144
+wobble_CHOOSE = 0.3934
+entropy = 0.0674
+
+[OBSERVE]
+distance = 0.0658
+level = standard
+complementary_balance = 0.9026
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1074
+intensity = 0.1074
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1074
+  COMPOSE(LOGIC,FLOW): 0.0995
+  COMPOSE(CHOOSE,CHOOSE): 0.0979
+  COMPOSE(CHOOSE,FLOW): 0.0900
+  COMPOSE(LOGIC,LOGIC): 0.0774
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3175
+modifier_dominant = CHOOSE
+modifier_pct = 0.2970
+primary_FLOW = 0.2164
+primary_OBSERVE = 0.1738
+primary_LOGIC = 0.2923
+primary_CHOOSE = 0.3175
+modifier_FLOW = 0.2780
+modifier_OBSERVE = 0.2212
+modifier_LOGIC = 0.2038
+modifier_CHOOSE = 0.2970
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0300
+aa_top5 = [
+  Leu: 0.1108  # aliphatic
+  Ser: 0.1092  # hydroxyl
+  Pro: 0.0981  # cyclic
+  Gly: 0.0775  # simple
+  Ala: 0.0696  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 632
+stop_codon = TAG
+loss = 0.0300
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.balanced_interface

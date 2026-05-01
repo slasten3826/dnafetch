@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZMYND8 | unknown
+# CDS: 18 bp (6 codons)
+
+[IDENTITY]
+gene = ZMYND8
+organism = unknown
+transcript = ENST00000441977.1
+cds_length = 18
+codons = 6
+protein_length = 5
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.901
+resistance = 0.099
+dominant = FLOW
+dominant_pct = 0.3333
+FLOW = 0.3333
+OBSERVE = 0.3333
+LOGIC = 0.2778
+CHOOSE = 0.0556
+state = flowing
+
+[CONNECT]
+depth = 0.7778
+type = membrane_embedded
+hydrophobic_ratio = 0.6000
+charge_positive = 0.2000
+charge_negative = 0.2000
+charge_neutral = 0.6000
+
+[DISSOLVE]
+rigidity = 0.7925
+potential = low
+wobble_entropy = 0.2075
+complementary_disruption = 0.2222
+
+[ENCODE]
+type = natural
+loss = 0.9062
+gc_content = 0.3333
+wobble_gc = 0.3333
+codon_diversity = 0.0938
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3333
+wobble_FLOW = 0.3333
+wobble_OBSERVE = 0.3333
+wobble_LOGIC = 0.3333
+wobble_CHOOSE = 0.0000
+entropy = 0.2075
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.7778
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1667
+  COMPOSE(FLOW,LOGIC): 0.1667
+  COMPOSE(LOGIC,FLOW): 0.1667
+  COMPOSE(OBSERVE,LOGIC): 0.1667
+  COMPOSE(CHOOSE,OBSERVE): 0.1667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3333
+modifier_dominant = FLOW
+modifier_pct = 0.3333
+primary_FLOW = 0.3333
+primary_OBSERVE = 0.3333
+primary_LOGIC = 0.1667
+primary_CHOOSE = 0.1667
+modifier_FLOW = 0.3333
+modifier_OBSERVE = 0.3333
+modifier_LOGIC = 0.3333
+modifier_CHOOSE = 0.0000
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0866
+aa_top5 = [
+  Met: 0.2000  # sulfur
+  Arg: 0.2000  # basic
+  Glu: 0.2000  # acidic
+  Cys: 0.2000  # sulfur
+  Leu: 0.2000  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 5
+stop_codon = TAA
+loss = 0.0866
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.intense.dominant.low.membrane_embedded

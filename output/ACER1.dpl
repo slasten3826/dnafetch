@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ACER1 | unknown
+# CDS: 795 bp (265 codons)
+
+[IDENTITY]
+gene = ACER1
+organism = unknown
+transcript = ENST00000301452.5
+cds_length = 795
+codons = 265
+protein_length = 264
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = CHOOSE
+dominant_pct = 0.3031
+FLOW = 0.1836
+OBSERVE = 0.2604
+LOGIC = 0.2528
+CHOOSE = 0.3031
+state = flowing
+
+[CONNECT]
+depth = 0.8730
+type = membrane_embedded
+hydrophobic_ratio = 0.6439
+charge_positive = 0.0947
+charge_negative = 0.0720
+charge_neutral = 0.8333
+
+[DISSOLVE]
+rigidity = 0.7998
+potential = low
+wobble_entropy = 0.2002
+complementary_disruption = 0.1270
+
+[ENCODE]
+type = engineered
+loss = 0.2188
+gc_content = 0.5560
+wobble_gc = 0.8189
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4981
+wobble_FLOW = 0.0340
+wobble_OBSERVE = 0.1472
+wobble_LOGIC = 0.3208
+wobble_CHOOSE = 0.4981
+entropy = 0.2002
+
+[OBSERVE]
+distance = 0.0428
+level = deep
+complementary_balance = 0.8730
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1208
+intensity = 0.1208
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1208
+  COMPOSE(CHOOSE,OBSERVE): 0.1132
+  COMPOSE(OBSERVE,OBSERVE): 0.0830
+  COMPOSE(LOGIC,OBSERVE): 0.0755
+  COMPOSE(LOGIC,FLOW): 0.0717
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2792
+modifier_dominant = OBSERVE
+modifier_pct = 0.3925
+primary_FLOW = 0.2792
+primary_OBSERVE = 0.2415
+primary_LOGIC = 0.2302
+primary_CHOOSE = 0.2491
+modifier_FLOW = 0.2377
+modifier_OBSERVE = 0.3925
+modifier_LOGIC = 0.2075
+modifier_CHOOSE = 0.1623
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0260
+aa_top5 = [
+  Leu: 0.1212  # aliphatic
+  Ser: 0.0909  # hydroxyl
+  Ile: 0.0795  # aliphatic
+  Phe: 0.0758  # aromatic
+  Val: 0.0758  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 264
+stop_codon = TGA
+loss = 0.0260
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.membrane_embedded

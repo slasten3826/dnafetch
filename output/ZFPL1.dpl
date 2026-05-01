@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZFPL1 | unknown
+# CDS: 33 bp (11 codons)
+
+[IDENTITY]
+gene = ZFPL1
+organism = unknown
+transcript = ENST00000530744.5
+cds_length = 33
+codons = 11
+protein_length = 10
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.960
+resistance = 0.040
+dominant = LOGIC
+dominant_pct = 0.3333
+FLOW = 0.2727
+OBSERVE = 0.1212
+LOGIC = 0.3333
+CHOOSE = 0.2727
+state = flowing
+
+[CONNECT]
+depth = 0.7879
+type = membrane_embedded
+hydrophobic_ratio = 0.6000
+charge_positive = 0.2000
+charge_negative = 0.1000
+charge_neutral = 0.7000
+
+[DISSOLVE]
+rigidity = 0.7177
+potential = low
+wobble_entropy = 0.2823
+complementary_disruption = 0.2121
+
+[ENCODE]
+type = optimized
+loss = 0.8438
+gc_content = 0.6061
+wobble_gc = 0.7273
+codon_diversity = 0.1562
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5455
+wobble_FLOW = 0.2727
+wobble_OBSERVE = 0.0000
+wobble_LOGIC = 0.5455
+wobble_CHOOSE = 0.1818
+entropy = 0.2823
+
+[OBSERVE]
+distance = 0.0606
+level = standard
+complementary_balance = 0.7879
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1818
+intensity = 0.1818
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1818
+  COMPOSE(FLOW,LOGIC): 0.1818
+  COMPOSE(FLOW,OBSERVE): 0.0909
+  COMPOSE(LOGIC,CHOOSE): 0.0909
+  COMPOSE(LOGIC,OBSERVE): 0.0909
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3636
+modifier_dominant = FLOW
+modifier_pct = 0.2727
+primary_FLOW = 0.2727
+primary_OBSERVE = 0.0909
+primary_LOGIC = 0.2727
+primary_CHOOSE = 0.3636
+modifier_FLOW = 0.2727
+modifier_OBSERVE = 0.2727
+modifier_LOGIC = 0.1818
+modifier_CHOOSE = 0.2727
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0671
+aa_top5 = [
+  Pro: 0.2000  # cyclic
+  Arg: 0.2000  # basic
+  Met: 0.1000  # sulfur
+  Ala: 0.1000  # simple
+  Val: 0.1000  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 10
+stop_codon = TAG
+loss = 0.0671
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.dominant.low.membrane_embedded

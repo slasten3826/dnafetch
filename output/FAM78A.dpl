@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM78A | unknown
+# CDS: 381 bp (127 codons)
+
+[IDENTITY]
+gene = FAM78A
+organism = unknown
+transcript = ENST00000464831.1
+cds_length = 381
+codons = 127
+protein_length = 126
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.958
+resistance = 0.042
+dominant = CHOOSE
+dominant_pct = 0.3727
+FLOW = 0.2257
+OBSERVE = 0.1365
+LOGIC = 0.2651
+CHOOSE = 0.3727
+state = flowing
+
+[CONNECT]
+depth = 0.8031
+type = balanced_interface
+hydrophobic_ratio = 0.5238
+charge_positive = 0.1270
+charge_negative = 0.0714
+charge_neutral = 0.8016
+
+[DISSOLVE]
+rigidity = 0.6739
+potential = low
+wobble_entropy = 0.3261
+complementary_disruption = 0.1969
+
+[ENCODE]
+type = engineered
+loss = 0.5000
+gc_content = 0.6378
+wobble_gc = 0.9291
+codon_diversity = 0.5000
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5354
+wobble_FLOW = 0.0236
+wobble_OBSERVE = 0.0472
+wobble_LOGIC = 0.3937
+wobble_CHOOSE = 0.5354
+entropy = 0.3261
+
+[OBSERVE]
+distance = 0.1076
+level = mild
+complementary_balance = 0.8031
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1339
+intensity = 0.1339
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1339
+  COMPOSE(CHOOSE,CHOOSE): 0.1102
+  COMPOSE(FLOW,OBSERVE): 0.0945
+  COMPOSE(CHOOSE,OBSERVE): 0.0866
+  COMPOSE(LOGIC,OBSERVE): 0.0787
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3465
+modifier_dominant = FLOW
+modifier_pct = 0.3071
+primary_FLOW = 0.3465
+primary_OBSERVE = 0.0866
+primary_LOGIC = 0.2283
+primary_CHOOSE = 0.3386
+modifier_FLOW = 0.3071
+modifier_OBSERVE = 0.2756
+modifier_LOGIC = 0.1732
+modifier_CHOOSE = 0.2441
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0285
+aa_top5 = [
+  Pro: 0.1111  # cyclic
+  Asn: 0.0873  # amide
+  Leu: 0.0873  # aliphatic
+  Val: 0.0794  # aliphatic
+  Ser: 0.0635  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 126
+stop_codon = TGA
+loss = 0.0285
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.low.balanced_interface

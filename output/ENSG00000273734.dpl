@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000273734 | unknown
+# CDS: 876 bp (292 codons)
+
+[IDENTITY]
+gene = ENSG00000273734
+organism = unknown
+transcript = ENST00000621615.1
+cds_length = 876
+codons = 292
+protein_length = 291
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.974
+resistance = 0.026
+dominant = LOGIC
+dominant_pct = 0.3174
+FLOW = 0.1747
+OBSERVE = 0.1929
+LOGIC = 0.3174
+CHOOSE = 0.3151
+state = flowing
+
+[CONNECT]
+depth = 0.9795
+type = membrane_embedded
+hydrophobic_ratio = 0.6495
+charge_positive = 0.1271
+charge_negative = 0.0790
+charge_neutral = 0.7938
+
+[DISSOLVE]
+rigidity = 0.7399
+potential = low
+wobble_entropy = 0.2601
+complementary_disruption = 0.0205
+
+[ENCODE]
+type = engineered
+loss = 0.2500
+gc_content = 0.6324
+wobble_gc = 0.8904
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4932
+wobble_FLOW = 0.0342
+wobble_OBSERVE = 0.0753
+wobble_LOGIC = 0.3973
+wobble_CHOOSE = 0.4932
+entropy = 0.2601
+
+[OBSERVE]
+distance = 0.0023
+level = intense
+complementary_balance = 0.9795
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1096
+intensity = 0.1096
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1096
+  COMPOSE(LOGIC,OBSERVE): 0.1027
+  COMPOSE(LOGIC,CHOOSE): 0.0822
+  COMPOSE(LOGIC,FLOW): 0.0788
+  COMPOSE(FLOW,OBSERVE): 0.0753
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3356
+modifier_dominant = OBSERVE
+modifier_pct = 0.3322
+primary_FLOW = 0.2329
+primary_OBSERVE = 0.1712
+primary_LOGIC = 0.3356
+primary_CHOOSE = 0.2603
+modifier_FLOW = 0.2568
+modifier_OBSERVE = 0.3322
+modifier_LOGIC = 0.2192
+modifier_CHOOSE = 0.1918
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0252
+aa_top5 = [
+  Leu: 0.1100  # aliphatic
+  Val: 0.1031  # aliphatic
+  Ala: 0.0825  # simple
+  Gly: 0.0722  # simple
+  Arg: 0.0653  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 291
+stop_codon = TAA
+loss = 0.0252
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.intense.strong.low.membrane_embedded

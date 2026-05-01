@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ACAA1 | unknown
+# CDS: 342 bp (114 codons)
+
+[IDENTITY]
+gene = ACAA1
+organism = unknown
+transcript = ENST00000418880.1
+cds_length = 342
+codons = 114
+protein_length = 113
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.954
+resistance = 0.046
+dominant = LOGIC
+dominant_pct = 0.3655
+FLOW = 0.1550
+OBSERVE = 0.1725
+LOGIC = 0.3655
+CHOOSE = 0.3070
+state = flowing
+
+[CONNECT]
+depth = 0.9240
+type = membrane_embedded
+hydrophobic_ratio = 0.6106
+charge_positive = 0.1416
+charge_negative = 0.0796
+charge_neutral = 0.7788
+
+[DISSOLVE]
+rigidity = 0.8573
+potential = crystallized
+wobble_entropy = 0.1427
+complementary_disruption = 0.0760
+
+[ENCODE]
+type = engineered
+loss = 0.2656
+gc_content = 0.6725
+wobble_gc = 0.7982
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4474
+wobble_FLOW = 0.0877
+wobble_OBSERVE = 0.1140
+wobble_LOGIC = 0.4474
+wobble_CHOOSE = 0.3509
+entropy = 0.1427
+
+[OBSERVE]
+distance = 0.0585
+level = standard
+complementary_balance = 0.9240
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1053
+intensity = 0.1053
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1053
+  COMPOSE(LOGIC,OBSERVE): 0.1053
+  COMPOSE(LOGIC,CHOOSE): 0.1053
+  COMPOSE(LOGIC,LOGIC): 0.0877
+  COMPOSE(LOGIC,FLOW): 0.0789
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3772
+modifier_dominant = OBSERVE
+modifier_pct = 0.2719
+primary_FLOW = 0.1842
+primary_OBSERVE = 0.1316
+primary_LOGIC = 0.3772
+primary_CHOOSE = 0.3070
+modifier_FLOW = 0.1930
+modifier_OBSERVE = 0.2719
+modifier_LOGIC = 0.2719
+modifier_CHOOSE = 0.2632
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0355
+aa_top5 = [
+  Arg: 0.1062  # basic
+  Leu: 0.1062  # aliphatic
+  Val: 0.1062  # aliphatic
+  Ala: 0.1062  # simple
+  Gly: 0.0885  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 113
+stop_codon = TAG
+loss = 0.0355
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.strong.crystallized.membrane_embedded

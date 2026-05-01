@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HYAL4 | unknown
+# CDS: 1050 bp (350 codons)
+
+[IDENTITY]
+gene = HYAL4
+organism = unknown
+transcript = ENST00000483878.1
+cds_length = 1050
+codons = 350
+protein_length = 349
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.987
+resistance = 0.013
+dominant = FLOW
+dominant_pct = 0.3000
+FLOW = 0.3000
+OBSERVE = 0.2943
+LOGIC = 0.2095
+CHOOSE = 0.1962
+state = flowing
+
+[CONNECT]
+depth = 0.9810
+type = membrane_embedded
+hydrophobic_ratio = 0.5788
+charge_positive = 0.1261
+charge_negative = 0.0860
+charge_neutral = 0.7880
+
+[DISSOLVE]
+rigidity = 0.9739
+potential = crystallized
+wobble_entropy = 0.0261
+complementary_disruption = 0.0190
+
+[ENCODE]
+type = natural
+loss = 0.0938
+gc_content = 0.4057
+wobble_gc = 0.3714
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3400
+wobble_FLOW = 0.2886
+wobble_OBSERVE = 0.3400
+wobble_LOGIC = 0.1743
+wobble_CHOOSE = 0.1971
+entropy = 0.0261
+
+[OBSERVE]
+distance = 0.0057
+level = strong
+complementary_balance = 0.9810
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1200
+intensity = 0.1200
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1200
+  COMPOSE(FLOW,OBSERVE): 0.0857
+  COMPOSE(LOGIC,FLOW): 0.0857
+  COMPOSE(OBSERVE,OBSERVE): 0.0829
+  COMPOSE(LOGIC,CHOOSE): 0.0657
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2971
+modifier_dominant = FLOW
+modifier_pct = 0.3143
+primary_FLOW = 0.2971
+primary_OBSERVE = 0.2514
+primary_LOGIC = 0.2714
+primary_CHOOSE = 0.1800
+modifier_FLOW = 0.3143
+modifier_OBSERVE = 0.2914
+modifier_LOGIC = 0.1829
+modifier_CHOOSE = 0.2114
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0224
+aa_top5 = [
+  Leu: 0.1060  # aliphatic
+  Ser: 0.0860  # hydroxyl
+  Lys: 0.0659  # basic
+  Ile: 0.0659  # aliphatic
+  Ala: 0.0659  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 349
+stop_codon = TGA
+loss = 0.0224
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.strong.crystallized.membrane_embedded

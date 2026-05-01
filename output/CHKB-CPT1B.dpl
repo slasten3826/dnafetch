@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CHKB-CPT1B | unknown
+# CDS: 1704 bp (568 codons)
+
+[IDENTITY]
+gene = CHKB-CPT1B
+organism = unknown
+transcript = ENST00000453634.5
+cds_length = 1704
+codons = 568
+protein_length = 567
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = CHOOSE
+dominant_pct = 0.2917
+FLOW = 0.2265
+OBSERVE = 0.2077
+LOGIC = 0.2741
+CHOOSE = 0.2917
+state = flowing
+
+[CONNECT]
+depth = 0.9636
+type = membrane_embedded
+hydrophobic_ratio = 0.5573
+charge_positive = 0.1429
+charge_negative = 0.1111
+charge_neutral = 0.7460
+
+[DISSOLVE]
+rigidity = 0.9174
+potential = crystallized
+wobble_entropy = 0.0826
+complementary_disruption = 0.0364
+
+[ENCODE]
+type = optimized
+loss = 0.0469
+gc_content = 0.5657
+wobble_gc = 0.7271
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4014
+wobble_FLOW = 0.1144
+wobble_OBSERVE = 0.1585
+wobble_LOGIC = 0.3257
+wobble_CHOOSE = 0.4014
+entropy = 0.0826
+
+[OBSERVE]
+distance = 0.0176
+level = strong
+complementary_balance = 0.9636
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1109
+intensity = 0.1109
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1109
+  COMPOSE(CHOOSE,OBSERVE): 0.0915
+  COMPOSE(LOGIC,CHOOSE): 0.0915
+  COMPOSE(FLOW,FLOW): 0.0863
+  COMPOSE(CHOOSE,FLOW): 0.0775
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3116
+modifier_dominant = FLOW
+modifier_pct = 0.3169
+primary_FLOW = 0.2482
+primary_OBSERVE = 0.1849
+primary_LOGIC = 0.3116
+primary_CHOOSE = 0.2553
+modifier_FLOW = 0.3169
+modifier_OBSERVE = 0.2799
+modifier_LOGIC = 0.1849
+modifier_CHOOSE = 0.2183
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0210
+aa_top5 = [
+  Leu: 0.1023  # aliphatic
+  Ala: 0.0917  # simple
+  Ser: 0.0705  # hydroxyl
+  Gly: 0.0635  # simple
+  Glu: 0.0582  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 567
+stop_codon = TGA
+loss = 0.0210
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: APELA | unknown
+# CDS: 165 bp (55 codons)
+
+[IDENTITY]
+gene = APELA
+organism = unknown
+transcript = ENST00000510062.5
+cds_length = 165
+codons = 55
+protein_length = 54
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.979
+resistance = 0.021
+dominant = OBSERVE
+dominant_pct = 0.3333
+FLOW = 0.2727
+OBSERVE = 0.3333
+LOGIC = 0.1697
+CHOOSE = 0.2242
+state = flowing
+
+[CONNECT]
+depth = 0.8848
+type = membrane_embedded
+hydrophobic_ratio = 0.5926
+charge_positive = 0.2222
+charge_negative = 0.0000
+charge_neutral = 0.7778
+
+[DISSOLVE]
+rigidity = 0.9763
+potential = crystallized
+wobble_entropy = 0.0237
+complementary_disruption = 0.1152
+
+[ENCODE]
+type = natural
+loss = 0.4844
+gc_content = 0.3939
+wobble_gc = 0.3818
+codon_diversity = 0.5156
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3455
+wobble_FLOW = 0.2727
+wobble_OBSERVE = 0.3455
+wobble_LOGIC = 0.1818
+wobble_CHOOSE = 0.2000
+entropy = 0.0237
+
+[OBSERVE]
+distance = 0.0606
+level = standard
+complementary_balance = 0.8848
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1455
+intensity = 0.1455
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1455
+  COMPOSE(OBSERVE,OBSERVE): 0.1455
+  COMPOSE(FLOW,OBSERVE): 0.1273
+  COMPOSE(CHOOSE,OBSERVE): 0.1273
+  COMPOSE(CHOOSE,FLOW): 0.1091
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3636
+modifier_dominant = OBSERVE
+modifier_pct = 0.4364
+primary_FLOW = 0.3636
+primary_OBSERVE = 0.2182
+primary_LOGIC = 0.0727
+primary_CHOOSE = 0.3455
+modifier_FLOW = 0.1818
+modifier_OBSERVE = 0.4364
+modifier_LOGIC = 0.2545
+modifier_CHOOSE = 0.1273
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0454
+aa_top5 = [
+  Arg: 0.1481  # basic
+  Leu: 0.1481  # aliphatic
+  Phe: 0.1296  # aromatic
+  Met: 0.0741  # sulfur
+  Gln: 0.0741  # amide
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 54
+stop_codon = TGA
+loss = 0.0454
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.dominant.crystallized.membrane_embedded

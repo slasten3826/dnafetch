@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CIZ1 | unknown
+# CDS: 504 bp (168 codons)
+
+[IDENTITY]
+gene = CIZ1
+organism = unknown
+transcript = ENST00000420484.2
+cds_length = 504
+codons = 168
+protein_length = 168
+stop_codon = none
+
+[FLOW]
+engagement = 0.964
+resistance = 0.036
+dominant = CHOOSE
+dominant_pct = 0.3869
+FLOW = 0.2143
+OBSERVE = 0.1687
+LOGIC = 0.2302
+CHOOSE = 0.3869
+state = flowing
+
+[CONNECT]
+depth = 0.7976
+type = balanced_interface
+hydrophobic_ratio = 0.5476
+charge_positive = 0.0238
+charge_negative = 0.0119
+charge_neutral = 0.9643
+
+[DISSOLVE]
+rigidity = 0.9187
+potential = crystallized
+wobble_entropy = 0.0813
+complementary_disruption = 0.2024
+
+[ENCODE]
+type = optimized
+loss = 0.4062
+gc_content = 0.6171
+wobble_gc = 0.7202
+codon_diversity = 0.5938
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4107
+wobble_FLOW = 0.1667
+wobble_OBSERVE = 0.1131
+wobble_LOGIC = 0.4107
+wobble_CHOOSE = 0.3095
+entropy = 0.0813
+
+[OBSERVE]
+distance = 0.1567
+level = basic
+complementary_balance = 0.7976
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.2798
+intensity = 0.2798
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.2798
+  COMPOSE(CHOOSE,OBSERVE): 0.1369
+  COMPOSE(CHOOSE,CHOOSE): 0.1250
+  COMPOSE(OBSERVE,OBSERVE): 0.0774
+  COMPOSE(LOGIC,CHOOSE): 0.0774
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.5595
+modifier_dominant = FLOW
+modifier_pct = 0.3333
+primary_FLOW = 0.1429
+primary_OBSERVE = 0.1250
+primary_LOGIC = 0.1726
+primary_CHOOSE = 0.5595
+modifier_FLOW = 0.3333
+modifier_OBSERVE = 0.2679
+modifier_LOGIC = 0.1071
+modifier_CHOOSE = 0.2917
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0707
+aa_top5 = [
+  Gln: 0.2798  # amide
+  Leu: 0.1905  # aliphatic
+  Pro: 0.1250  # cyclic
+  Ala: 0.0774  # simple
+  Gly: 0.0655  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 168
+stop_codon = none
+loss = 0.0707
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.basic.dominant.crystallized.balanced_interface

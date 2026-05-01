@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DNM1 | unknown
+# CDS: 54 bp (18 codons)
+
+[IDENTITY]
+gene = DNM1
+organism = unknown
+transcript = ENST00000625457.1
+cds_length = 54
+codons = 18
+protein_length = 17
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.923
+resistance = 0.077
+dominant = CHOOSE
+dominant_pct = 0.4074
+FLOW = 0.2407
+OBSERVE = 0.0926
+LOGIC = 0.2593
+CHOOSE = 0.4074
+state = flowing
+
+[CONNECT]
+depth = 0.7037
+type = balanced_interface
+hydrophobic_ratio = 0.4706
+charge_positive = 0.0000
+charge_negative = 0.1176
+charge_neutral = 0.8824
+
+[DISSOLVE]
+rigidity = 0.6499
+potential = moderate
+wobble_entropy = 0.3501
+complementary_disruption = 0.2963
+
+[ENCODE]
+type = engineered
+loss = 0.7969
+gc_content = 0.6667
+wobble_gc = 0.8889
+codon_diversity = 0.2031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.6111
+wobble_FLOW = 0.1111
+wobble_OBSERVE = 0.0000
+wobble_LOGIC = 0.2778
+wobble_CHOOSE = 0.6111
+entropy = 0.3501
+
+[OBSERVE]
+distance = 0.1481
+level = basic
+complementary_balance = 0.7037
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1667
+  COMPOSE(FLOW,LOGIC): 0.1667
+  COMPOSE(FLOW,CHOOSE): 0.1667
+  COMPOSE(LOGIC,FLOW): 0.1111
+  COMPOSE(OBSERVE,LOGIC): 0.1111
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3889
+modifier_dominant = LOGIC
+modifier_pct = 0.3333
+primary_FLOW = 0.3889
+primary_OBSERVE = 0.1667
+primary_LOGIC = 0.1667
+primary_CHOOSE = 0.2778
+modifier_FLOW = 0.2222
+modifier_OBSERVE = 0.1111
+modifier_LOGIC = 0.3333
+modifier_CHOOSE = 0.3333
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0625
+aa_top5 = [
+  Pro: 0.1765  # cyclic
+  Ser: 0.1765  # hydroxyl
+  Thr: 0.1765  # hydroxyl
+  Glu: 0.1176  # acidic
+  Met: 0.0588  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 17
+stop_codon = TGA
+loss = 0.0625
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.moderate.balanced_interface

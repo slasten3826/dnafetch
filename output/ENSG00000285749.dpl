@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000285749 | unknown
+# CDS: 465 bp (155 codons)
+
+[IDENTITY]
+gene = ENSG00000285749
+organism = unknown
+transcript = ENST00000456080.5
+cds_length = 465
+codons = 155
+protein_length = 154
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = LOGIC
+dominant_pct = 0.3075
+FLOW = 0.2280
+OBSERVE = 0.2151
+LOGIC = 0.3075
+CHOOSE = 0.2495
+state = flowing
+
+[CONNECT]
+depth = 0.9290
+type = membrane_embedded
+hydrophobic_ratio = 0.5519
+charge_positive = 0.1883
+charge_negative = 0.0584
+charge_neutral = 0.7532
+
+[DISSOLVE]
+rigidity = 0.9496
+potential = crystallized
+wobble_entropy = 0.0504
+complementary_disruption = 0.0710
+
+[ENCODE]
+type = optimized
+loss = 0.1875
+gc_content = 0.5570
+wobble_gc = 0.6710
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3935
+wobble_FLOW = 0.1677
+wobble_OBSERVE = 0.1613
+wobble_LOGIC = 0.3935
+wobble_CHOOSE = 0.2774
+entropy = 0.0504
+
+[OBSERVE]
+distance = 0.0581
+level = standard
+complementary_balance = 0.9290
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1484
+intensity = 0.1484
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1484
+  COMPOSE(OBSERVE,LOGIC): 0.0968
+  COMPOSE(FLOW,OBSERVE): 0.0839
+  COMPOSE(LOGIC,CHOOSE): 0.0839
+  COMPOSE(FLOW,LOGIC): 0.0774
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3161
+modifier_dominant = OBSERVE
+modifier_pct = 0.2903
+primary_FLOW = 0.2387
+primary_OBSERVE = 0.1935
+primary_LOGIC = 0.2516
+primary_CHOOSE = 0.3161
+modifier_FLOW = 0.2774
+modifier_OBSERVE = 0.2903
+modifier_LOGIC = 0.2774
+modifier_CHOOSE = 0.1548
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0351
+aa_top5 = [
+  Gln: 0.1299  # amide
+  Arg: 0.1234  # basic
+  Leu: 0.1104  # aliphatic
+  Ala: 0.0844  # simple
+  Val: 0.0714  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 154
+stop_codon = TGA
+loss = 0.0351
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.dominant.crystallized.membrane_embedded

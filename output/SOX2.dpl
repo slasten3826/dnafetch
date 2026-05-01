@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SOX2 | unknown
+# CDS: 954 bp (318 codons)
+
+[IDENTITY]
+gene = SOX2
+organism = unknown
+transcript = ENST00000325404.3
+cds_length = 954
+codons = 318
+protein_length = 317
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.956
+resistance = 0.044
+dominant = CHOOSE
+dominant_pct = 0.3407
+FLOW = 0.2107
+OBSERVE = 0.1310
+LOGIC = 0.3176
+CHOOSE = 0.3407
+state = flowing
+
+[CONNECT]
+depth = 0.8973
+type = balanced_interface
+hydrophobic_ratio = 0.5300
+charge_positive = 0.1420
+charge_negative = 0.0662
+charge_neutral = 0.7918
+
+[DISSOLVE]
+rigidity = 0.7324
+potential = low
+wobble_entropy = 0.2676
+complementary_disruption = 0.1027
+
+[ENCODE]
+type = engineered
+loss = 0.1875
+gc_content = 0.6583
+wobble_gc = 0.8994
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4717
+wobble_FLOW = 0.0377
+wobble_OBSERVE = 0.0629
+wobble_LOGIC = 0.4277
+wobble_CHOOSE = 0.4717
+entropy = 0.2676
+
+[OBSERVE]
+distance = 0.0231
+level = deep
+complementary_balance = 0.8973
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1101
+intensity = 0.1101
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1101
+  COMPOSE(FLOW,FLOW): 0.1006
+  COMPOSE(FLOW,OBSERVE): 0.0912
+  COMPOSE(CHOOSE,FLOW): 0.0912
+  COMPOSE(CHOOSE,CHOOSE): 0.0818
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2956
+modifier_dominant = FLOW
+modifier_pct = 0.3019
+primary_FLOW = 0.2925
+primary_OBSERVE = 0.1321
+primary_LOGIC = 0.2956
+primary_CHOOSE = 0.2799
+modifier_FLOW = 0.3019
+modifier_OBSERVE = 0.1981
+modifier_LOGIC = 0.2296
+modifier_CHOOSE = 0.2704
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0308
+aa_top5 = [
+  Ser: 0.1136  # hydroxyl
+  Gly: 0.1104  # simple
+  Pro: 0.0820  # cyclic
+  Ala: 0.0820  # simple
+  Met: 0.0789  # sulfur
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 317
+stop_codon = TGA
+loss = 0.0308
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.low.balanced_interface

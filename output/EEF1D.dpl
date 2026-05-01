@@ -1,0 +1,105 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EEF1D | unknown
+# CDS: 18 bp (6 codons)
+
+[IDENTITY]
+gene = EEF1D
+organism = unknown
+transcript = ENST00000528303.5
+cds_length = 18
+codons = 6
+protein_length = 5
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.838
+resistance = 0.162
+dominant = LOGIC
+dominant_pct = 0.5000
+FLOW = 0.2778
+OBSERVE = 0.1667
+LOGIC = 0.5000
+CHOOSE = 0.0556
+state = flowing
+
+[CONNECT]
+depth = 0.4444
+type = membrane_embedded
+hydrophobic_ratio = 0.6000
+charge_positive = 0.0000
+charge_negative = 0.2000
+charge_neutral = 0.8000
+
+[DISSOLVE]
+rigidity = 0.3250
+potential = high
+wobble_entropy = 0.6750
+complementary_disruption = 0.5556
+
+[ENCODE]
+type = engineered
+loss = 0.9219
+gc_content = 0.5556
+wobble_gc = 0.8333
+codon_diversity = 0.0781
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.8333
+wobble_FLOW = 0.1667
+wobble_OBSERVE = 0.0000
+wobble_LOGIC = 0.8333
+wobble_CHOOSE = 0.0000
+entropy = 0.6750
+
+[OBSERVE]
+distance = 0.2222
+level = basic
+complementary_balance = 0.4444
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.3333
+intensity = 0.3333
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.3333
+  COMPOSE(LOGIC,LOGIC): 0.1667
+  COMPOSE(FLOW,CHOOSE): 0.1667
+  COMPOSE(LOGIC,FLOW): 0.1667
+  COMPOSE(OBSERVE,LOGIC): 0.1667
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = OBSERVE
+modifier_pct = 0.3333
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.1667
+primary_LOGIC = 0.3333
+primary_CHOOSE = 0.0000
+modifier_FLOW = 0.1667
+modifier_OBSERVE = 0.3333
+modifier_LOGIC = 0.3333
+modifier_CHOOSE = 0.1667
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.1072
+aa_top5 = [
+  Met: 0.4000  # sulfur
+  Gly: 0.2000  # simple
+  Thr: 0.2000  # hydroxyl
+  Glu: 0.2000  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 5
+stop_codon = TGA
+loss = 0.1072
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.high.membrane_embedded

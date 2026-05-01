@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: POU2AF3 | unknown
+# CDS: 465 bp (155 codons)
+
+[IDENTITY]
+gene = POU2AF3
+organism = unknown
+transcript = ENST00000526216.1
+cds_length = 465
+codons = 155
+protein_length = 154
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = CHOOSE
+dominant_pct = 0.3462
+FLOW = 0.2323
+OBSERVE = 0.2387
+LOGIC = 0.1828
+CHOOSE = 0.3462
+state = flowing
+
+[CONNECT]
+depth = 0.8301
+type = balanced_interface
+hydrophobic_ratio = 0.5130
+charge_positive = 0.0584
+charge_negative = 0.1104
+charge_neutral = 0.8312
+
+[DISSOLVE]
+rigidity = 0.9331
+potential = crystallized
+wobble_entropy = 0.0669
+complementary_disruption = 0.1699
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.5290
+wobble_gc = 0.6129
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4452
+wobble_FLOW = 0.1742
+wobble_OBSERVE = 0.2129
+wobble_LOGIC = 0.1677
+wobble_CHOOSE = 0.4452
+entropy = 0.0669
+
+[OBSERVE]
+distance = 0.1075
+level = mild
+complementary_balance = 0.8301
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1226
+intensity = 0.1226
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1226
+  COMPOSE(LOGIC,FLOW): 0.1097
+  COMPOSE(CHOOSE,CHOOSE): 0.0968
+  COMPOSE(LOGIC,CHOOSE): 0.0968
+  COMPOSE(CHOOSE,FLOW): 0.0839
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3419
+modifier_dominant = CHOOSE
+modifier_pct = 0.3742
+primary_FLOW = 0.2000
+primary_OBSERVE = 0.3419
+primary_LOGIC = 0.2387
+primary_CHOOSE = 0.2194
+modifier_FLOW = 0.3226
+modifier_OBSERVE = 0.1613
+modifier_LOGIC = 0.1419
+modifier_CHOOSE = 0.3742
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0402
+aa_top5 = [
+  Ser: 0.1753  # hydroxyl
+  Pro: 0.0974  # cyclic
+  Ala: 0.0974  # simple
+  Tyr: 0.0779  # aromatic
+  Leu: 0.0649  # aliphatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 154
+stop_codon = TAA
+loss = 0.0402
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.balanced_interface

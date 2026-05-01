@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMEM262 | unknown
+# CDS: 318 bp (106 codons)
+
+[IDENTITY]
+gene = TMEM262
+organism = unknown
+transcript = ENST00000524603.1
+cds_length = 318
+codons = 106
+protein_length = 106
+stop_codon = none
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = CHOOSE
+dominant_pct = 0.3145
+FLOW = 0.2075
+OBSERVE = 0.2642
+LOGIC = 0.2138
+CHOOSE = 0.3145
+state = flowing
+
+[CONNECT]
+depth = 0.8428
+type = membrane_embedded
+hydrophobic_ratio = 0.6698
+charge_positive = 0.0943
+charge_negative = 0.0566
+charge_neutral = 0.8491
+
+[DISSOLVE]
+rigidity = 0.7751
+potential = low
+wobble_entropy = 0.2249
+complementary_disruption = 0.1572
+
+[ENCODE]
+type = engineered
+loss = 0.4062
+gc_content = 0.5283
+wobble_gc = 0.8491
+codon_diversity = 0.5938
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5566
+wobble_FLOW = 0.0849
+wobble_OBSERVE = 0.0660
+wobble_LOGIC = 0.2925
+wobble_CHOOSE = 0.5566
+entropy = 0.2249
+
+[OBSERVE]
+distance = 0.0503
+level = standard
+complementary_balance = 0.8428
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1604
+intensity = 0.1604
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1604
+  COMPOSE(OBSERVE,OBSERVE): 0.1415
+  COMPOSE(CHOOSE,OBSERVE): 0.1038
+  COMPOSE(LOGIC,CHOOSE): 0.0755
+  COMPOSE(CHOOSE,FLOW): 0.0660
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3113
+modifier_dominant = OBSERVE
+modifier_pct = 0.4528
+primary_FLOW = 0.3113
+primary_OBSERVE = 0.2736
+primary_LOGIC = 0.2170
+primary_CHOOSE = 0.1981
+modifier_FLOW = 0.2264
+modifier_OBSERVE = 0.4528
+modifier_LOGIC = 0.1321
+modifier_CHOOSE = 0.1887
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0320
+aa_top5 = [
+  Leu: 0.1226  # aliphatic
+  Phe: 0.1226  # aromatic
+  Met: 0.0943  # sulfur
+  Ala: 0.0755  # simple
+  Ile: 0.0660  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 106
+stop_codon = none
+loss = 0.0320
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.low.membrane_embedded

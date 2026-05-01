@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: AQP2 | unknown
+# CDS: 732 bp (244 codons)
+
+[IDENTITY]
+gene = AQP2
+organism = unknown
+transcript = ENST00000550862.1
+cds_length = 732
+codons = 244
+protein_length = 244
+stop_codon = none
+
+[FLOW]
+engagement = 0.976
+resistance = 0.024
+dominant = CHOOSE
+dominant_pct = 0.3429
+FLOW = 0.1762
+OBSERVE = 0.2063
+LOGIC = 0.2746
+CHOOSE = 0.3429
+state = flowing
+
+[CONNECT]
+depth = 0.9016
+type = membrane_embedded
+hydrophobic_ratio = 0.6230
+charge_positive = 0.1148
+charge_negative = 0.0738
+charge_neutral = 0.8115
+
+[DISSOLVE]
+rigidity = 0.9056
+potential = crystallized
+wobble_entropy = 0.0944
+complementary_disruption = 0.0984
+
+[ENCODE]
+type = optimized
+loss = 0.1719
+gc_content = 0.6175
+wobble_gc = 0.7172
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4631
+wobble_FLOW = 0.1230
+wobble_OBSERVE = 0.1598
+wobble_LOGIC = 0.2541
+wobble_CHOOSE = 0.4631
+entropy = 0.0944
+
+[OBSERVE]
+distance = 0.0683
+level = standard
+complementary_balance = 0.9016
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1270
+intensity = 0.1270
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1270
+  COMPOSE(CHOOSE,OBSERVE): 0.1189
+  COMPOSE(LOGIC,LOGIC): 0.0943
+  COMPOSE(LOGIC,OBSERVE): 0.0779
+  COMPOSE(CHOOSE,FLOW): 0.0779
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3730
+modifier_dominant = OBSERVE
+modifier_pct = 0.3074
+primary_FLOW = 0.2049
+primary_OBSERVE = 0.1516
+primary_LOGIC = 0.3730
+primary_CHOOSE = 0.2705
+modifier_FLOW = 0.2008
+modifier_OBSERVE = 0.3074
+modifier_LOGIC = 0.1967
+modifier_CHOOSE = 0.2951
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0338
+aa_top5 = [
+  Ala: 0.1270  # simple
+  Leu: 0.1230  # aliphatic
+  Gly: 0.0943  # simple
+  Val: 0.0779  # aliphatic
+  Thr: 0.0697  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 244
+stop_codon = none
+loss = 0.0338
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.membrane_embedded

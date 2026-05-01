@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GFI1B | unknown
+# CDS: 1089 bp (363 codons)
+
+[IDENTITY]
+gene = GFI1B
+organism = unknown
+transcript = ENST00000636263.1
+cds_length = 1089
+codons = 363
+protein_length = 362
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.967
+resistance = 0.033
+dominant = CHOOSE
+dominant_pct = 0.3728
+FLOW = 0.2066
+OBSERVE = 0.1671
+LOGIC = 0.2534
+CHOOSE = 0.3728
+state = flowing
+
+[CONNECT]
+depth = 0.8411
+type = ionic_interaction
+hydrophobic_ratio = 0.4890
+charge_positive = 0.1851
+charge_negative = 0.0884
+charge_neutral = 0.7265
+
+[DISSOLVE]
+rigidity = 0.8342
+potential = low
+wobble_entropy = 0.1658
+complementary_disruption = 0.1589
+
+[ENCODE]
+type = engineered
+loss = 0.1094
+gc_content = 0.6263
+wobble_gc = 0.8099
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4959
+wobble_FLOW = 0.0799
+wobble_OBSERVE = 0.1102
+wobble_LOGIC = 0.3140
+wobble_CHOOSE = 0.4959
+entropy = 0.1658
+
+[OBSERVE]
+distance = 0.1194
+level = mild
+complementary_balance = 0.8411
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1157
+intensity = 0.1157
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1157
+  COMPOSE(CHOOSE,CHOOSE): 0.1102
+  COMPOSE(LOGIC,FLOW): 0.0882
+  COMPOSE(FLOW,FLOW): 0.0799
+  COMPOSE(CHOOSE,OBSERVE): 0.0661
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3471
+modifier_dominant = FLOW
+modifier_pct = 0.3085
+primary_FLOW = 0.2314
+primary_OBSERVE = 0.1873
+primary_LOGIC = 0.2342
+primary_CHOOSE = 0.3471
+modifier_FLOW = 0.3085
+modifier_OBSERVE = 0.2039
+modifier_LOGIC = 0.2121
+modifier_CHOOSE = 0.2755
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0262
+aa_top5 = [
+  Pro: 0.1105  # cyclic
+  Ser: 0.1077  # hydroxyl
+  Leu: 0.0746  # aliphatic
+  His: 0.0635  # aromatic
+  Arg: 0.0608  # basic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 362
+stop_codon = TGA
+loss = 0.0262
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.strong.low.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TSPAN7 | unknown
+# CDS: 801 bp (267 codons)
+
+[IDENTITY]
+gene = TSPAN7
+organism = unknown
+transcript = ENST00000286824.6
+cds_length = 801
+codons = 267
+protein_length = 266
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = OBSERVE
+dominant_pct = 0.2672
+FLOW = 0.2222
+OBSERVE = 0.2672
+LOGIC = 0.2622
+CHOOSE = 0.2484
+state = flowing
+
+[CONNECT]
+depth = 0.9413
+type = membrane_embedded
+hydrophobic_ratio = 0.6241
+charge_positive = 0.0865
+charge_negative = 0.0677
+charge_neutral = 0.8459
+
+[DISSOLVE]
+rigidity = 0.9554
+potential = crystallized
+wobble_entropy = 0.0446
+complementary_disruption = 0.0587
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.5106
+wobble_gc = 0.6217
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3408
+wobble_FLOW = 0.1161
+wobble_OBSERVE = 0.2622
+wobble_LOGIC = 0.2809
+wobble_CHOOSE = 0.3408
+entropy = 0.0446
+
+[OBSERVE]
+distance = 0.0050
+level = intense
+complementary_balance = 0.9413
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1049
+intensity = 0.1049
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1049
+  COMPOSE(CHOOSE,OBSERVE): 0.0936
+  COMPOSE(FLOW,CHOOSE): 0.0861
+  COMPOSE(LOGIC,CHOOSE): 0.0787
+  COMPOSE(FLOW,FLOW): 0.0787
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3184
+modifier_dominant = OBSERVE
+modifier_pct = 0.3408
+primary_FLOW = 0.3184
+primary_OBSERVE = 0.1985
+primary_LOGIC = 0.2996
+primary_CHOOSE = 0.1835
+modifier_FLOW = 0.2322
+modifier_OBSERVE = 0.3408
+modifier_LOGIC = 0.2060
+modifier_CHOOSE = 0.2210
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0238
+aa_top5 = [
+  Leu: 0.1015  # aliphatic
+  Thr: 0.0865  # hydroxyl
+  Ala: 0.0789  # simple
+  Gly: 0.0789  # simple
+  Val: 0.0752  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 266
+stop_codon = TAA
+loss = 0.0238
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.intense.strong.crystallized.membrane_embedded

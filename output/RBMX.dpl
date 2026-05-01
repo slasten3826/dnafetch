@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RBMX | unknown
+# CDS: 114 bp (38 codons)
+
+[IDENTITY]
+gene = RBMX
+organism = unknown
+transcript = ENST00000563370.1
+cds_length = 114
+codons = 38
+protein_length = 37
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = FLOW
+dominant_pct = 0.3421
+FLOW = 0.3421
+OBSERVE = 0.2281
+LOGIC = 0.2895
+CHOOSE = 0.1404
+state = flowing
+
+[CONNECT]
+depth = 0.7368
+type = membrane_embedded
+hydrophobic_ratio = 0.5946
+charge_positive = 0.1351
+charge_negative = 0.1622
+charge_neutral = 0.7027
+
+[DISSOLVE]
+rigidity = 0.9173
+potential = low
+wobble_entropy = 0.0827
+complementary_disruption = 0.2632
+
+[ENCODE]
+type = AT_rich
+loss = 0.5469
+gc_content = 0.4298
+wobble_gc = 0.2895
+codon_diversity = 0.4531
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4211
+wobble_FLOW = 0.4211
+wobble_OBSERVE = 0.2895
+wobble_LOGIC = 0.1842
+wobble_CHOOSE = 0.1053
+entropy = 0.0827
+
+[OBSERVE]
+distance = 0.0526
+level = standard
+complementary_balance = 0.7368
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1579
+intensity = 0.1579
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1579
+  COMPOSE(LOGIC,LOGIC): 0.1579
+  COMPOSE(FLOW,FLOW): 0.1316
+  COMPOSE(FLOW,OBSERVE): 0.0789
+  COMPOSE(LOGIC,OBSERVE): 0.0789
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4737
+modifier_dominant = FLOW
+modifier_pct = 0.3421
+primary_FLOW = 0.2632
+primary_OBSERVE = 0.1053
+primary_LOGIC = 0.4737
+primary_CHOOSE = 0.1579
+modifier_FLOW = 0.3421
+modifier_OBSERVE = 0.2895
+modifier_LOGIC = 0.2105
+modifier_CHOOSE = 0.1579
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0438
+aa_top5 = [
+  Gly: 0.1622  # simple
+  Glu: 0.1351  # acidic
+  Val: 0.0811  # aliphatic
+  Ala: 0.0811  # simple
+  Lys: 0.0811  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 37
+stop_codon = TAA
+loss = 0.0438
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.standard.dominant.low.membrane_embedded

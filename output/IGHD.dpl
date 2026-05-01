@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IGHD | unknown
+# CDS: 1164 bp (388 codons)
+
+[IDENTITY]
+gene = IGHD
+organism = unknown
+transcript = ENST00000390556.6
+cds_length = 1164
+codons = 388
+protein_length = 387
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.973
+resistance = 0.027
+dominant = CHOOSE
+dominant_pct = 0.3393
+FLOW = 0.2277
+OBSERVE = 0.1546
+LOGIC = 0.2784
+CHOOSE = 0.3393
+state = flowing
+
+[CONNECT]
+depth = 0.8660
+type = balanced_interface
+hydrophobic_ratio = 0.4961
+charge_positive = 0.1189
+charge_negative = 0.1034
+charge_neutral = 0.7778
+
+[DISSOLVE]
+rigidity = 0.8853
+potential = crystallized
+wobble_entropy = 0.1147
+complementary_disruption = 0.1340
+
+[ENCODE]
+type = engineered
+loss = 0.1406
+gc_content = 0.6177
+wobble_gc = 0.7706
+codon_diversity = 0.8594
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4201
+wobble_FLOW = 0.1263
+wobble_OBSERVE = 0.1031
+wobble_LOGIC = 0.3505
+wobble_CHOOSE = 0.4201
+entropy = 0.1147
+
+[OBSERVE]
+distance = 0.0610
+level = standard
+complementary_balance = 0.8660
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1031
+intensity = 0.1031
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1031
+  COMPOSE(CHOOSE,OBSERVE): 0.0979
+  COMPOSE(FLOW,CHOOSE): 0.0954
+  COMPOSE(CHOOSE,CHOOSE): 0.0902
+  COMPOSE(FLOW,LOGIC): 0.0825
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2964
+modifier_dominant = CHOOSE
+modifier_pct = 0.3015
+primary_FLOW = 0.2809
+primary_OBSERVE = 0.1392
+primary_LOGIC = 0.2835
+primary_CHOOSE = 0.2964
+modifier_FLOW = 0.2758
+modifier_OBSERVE = 0.2216
+modifier_LOGIC = 0.2010
+modifier_CHOOSE = 0.3015
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0301
+aa_top5 = [
+  Ser: 0.1034  # hydroxyl
+  Leu: 0.1034  # aliphatic
+  Thr: 0.0956  # hydroxyl
+  Pro: 0.0904  # cyclic
+  Ala: 0.0749  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 387
+stop_codon = TAG
+loss = 0.0301
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLC35A1 | unknown
+# CDS: 1014 bp (338 codons)
+
+[IDENTITY]
+gene = SLC35A1
+organism = unknown
+transcript = ENST00000369552.9
+cds_length = 1014
+codons = 338
+protein_length = 337
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = OBSERVE
+dominant_pct = 0.3126
+FLOW = 0.2771
+OBSERVE = 0.3126
+LOGIC = 0.2239
+CHOOSE = 0.1864
+state = flowing
+
+[CONNECT]
+depth = 0.9270
+type = membrane_embedded
+hydrophobic_ratio = 0.6499
+charge_positive = 0.0801
+charge_negative = 0.0534
+charge_neutral = 0.8665
+
+[DISSOLVE]
+rigidity = 0.9803
+potential = crystallized
+wobble_entropy = 0.0197
+complementary_disruption = 0.0730
+
+[ENCODE]
+type = natural
+loss = 0.1250
+gc_content = 0.4103
+wobble_gc = 0.3846
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3195
+wobble_FLOW = 0.3195
+wobble_OBSERVE = 0.2959
+wobble_LOGIC = 0.1953
+wobble_CHOOSE = 0.1893
+entropy = 0.0197
+
+[OBSERVE]
+distance = 0.0355
+level = deep
+complementary_balance = 0.9270
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1213
+intensity = 0.1213
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1213
+  COMPOSE(LOGIC,OBSERVE): 0.1124
+  COMPOSE(LOGIC,CHOOSE): 0.0947
+  COMPOSE(FLOW,OBSERVE): 0.0828
+  COMPOSE(FLOW,FLOW): 0.0799
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3254
+modifier_dominant = OBSERVE
+modifier_pct = 0.3817
+primary_FLOW = 0.2899
+primary_OBSERVE = 0.2604
+primary_LOGIC = 0.3254
+primary_CHOOSE = 0.1243
+modifier_FLOW = 0.2219
+modifier_OBSERVE = 0.3817
+modifier_LOGIC = 0.1509
+modifier_CHOOSE = 0.2456
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0353
+aa_top5 = [
+  Leu: 0.1424  # aliphatic
+  Val: 0.1128  # aliphatic
+  Ala: 0.0950  # simple
+  Thr: 0.0801  # hydroxyl
+  Ser: 0.0742  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 337
+stop_codon = TGA
+loss = 0.0353
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.deep.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KCNG3 | unknown
+# CDS: 1278 bp (426 codons)
+
+[IDENTITY]
+gene = KCNG3
+organism = unknown
+transcript = ENST00000394973.4
+cds_length = 1278
+codons = 426
+protein_length = 425
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = LOGIC
+dominant_pct = 0.2942
+FLOW = 0.1854
+OBSERVE = 0.2473
+LOGIC = 0.2942
+CHOOSE = 0.2731
+state = flowing
+
+[CONNECT]
+depth = 0.9171
+type = membrane_embedded
+hydrophobic_ratio = 0.5953
+charge_positive = 0.1365
+charge_negative = 0.1035
+charge_neutral = 0.7600
+
+[DISSOLVE]
+rigidity = 0.9061
+potential = crystallized
+wobble_entropy = 0.0939
+complementary_disruption = 0.0829
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.5673
+wobble_gc = 0.7300
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3967
+wobble_FLOW = 0.0869
+wobble_OBSERVE = 0.1831
+wobble_LOGIC = 0.3333
+wobble_CHOOSE = 0.3967
+entropy = 0.0939
+
+[OBSERVE]
+distance = 0.0211
+level = deep
+complementary_balance = 0.9171
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1033
+intensity = 0.1033
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1033
+  COMPOSE(FLOW,OBSERVE): 0.0962
+  COMPOSE(CHOOSE,OBSERVE): 0.0915
+  COMPOSE(LOGIC,OBSERVE): 0.0798
+  COMPOSE(OBSERVE,OBSERVE): 0.0751
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3146
+modifier_dominant = OBSERVE
+modifier_pct = 0.3427
+primary_FLOW = 0.2441
+primary_OBSERVE = 0.2160
+primary_LOGIC = 0.3146
+primary_CHOOSE = 0.2254
+modifier_FLOW = 0.2254
+modifier_OBSERVE = 0.3427
+modifier_LOGIC = 0.2347
+modifier_CHOOSE = 0.1972
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0266
+aa_top5 = [
+  Leu: 0.1106  # aliphatic
+  Arg: 0.0965  # basic
+  Val: 0.0800  # aliphatic
+  Ser: 0.0776  # hydroxyl
+  Ala: 0.0706  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 425
+stop_codon = TAA
+loss = 0.0266
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.deep.strong.crystallized.membrane_embedded

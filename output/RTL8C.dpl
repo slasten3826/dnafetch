@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RTL8C | unknown
+# CDS: 630 bp (210 codons)
+
+[IDENTITY]
+gene = RTL8C
+organism = unknown
+transcript = ENST00000257013.9
+cds_length = 630
+codons = 210
+protein_length = 209
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.950
+resistance = 0.050
+dominant = CHOOSE
+dominant_pct = 0.4016
+FLOW = 0.1492
+OBSERVE = 0.1937
+LOGIC = 0.2556
+CHOOSE = 0.4016
+state = flowing
+
+[CONNECT]
+depth = 0.8095
+type = membrane_embedded
+hydrophobic_ratio = 0.6459
+charge_positive = 0.1100
+charge_negative = 0.0526
+charge_neutral = 0.8373
+
+[DISSOLVE]
+rigidity = 0.9610
+potential = crystallized
+wobble_entropy = 0.0390
+complementary_disruption = 0.1905
+
+[ENCODE]
+type = optimized
+loss = 0.2188
+gc_content = 0.6571
+wobble_gc = 0.6429
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3810
+wobble_FLOW = 0.1619
+wobble_OBSERVE = 0.1952
+wobble_LOGIC = 0.2619
+wobble_CHOOSE = 0.3810
+entropy = 0.0390
+
+[OBSERVE]
+distance = 0.1460
+level = basic
+complementary_balance = 0.8095
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.2000
+  COMPOSE(CHOOSE,OBSERVE): 0.1238
+  COMPOSE(OBSERVE,LOGIC): 0.0952
+  COMPOSE(OBSERVE,CHOOSE): 0.0857
+  COMPOSE(LOGIC,LOGIC): 0.0810
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4190
+modifier_dominant = CHOOSE
+modifier_pct = 0.4048
+primary_FLOW = 0.1619
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.2190
+primary_CHOOSE = 0.4190
+modifier_FLOW = 0.1238
+modifier_OBSERVE = 0.1857
+modifier_LOGIC = 0.2857
+modifier_CHOOSE = 0.4048
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0499
+aa_top5 = [
+  Pro: 0.2010  # cyclic
+  Leu: 0.1244  # aliphatic
+  Ser: 0.1244  # hydroxyl
+  Gly: 0.0813  # simple
+  Arg: 0.0718  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 209
+stop_codon = TAG
+loss = 0.0499
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.crystallized.membrane_embedded

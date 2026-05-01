@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: UBQLN3 | unknown
+# CDS: 663 bp (221 codons)
+
+[IDENTITY]
+gene = UBQLN3
+organism = unknown
+transcript = ENST00000445998.1
+cds_length = 663
+codons = 221
+protein_length = 221
+stop_codon = none
+
+[FLOW]
+engagement = 0.991
+resistance = 0.009
+dominant = CHOOSE
+dominant_pct = 0.3167
+FLOW = 0.2308
+OBSERVE = 0.2097
+LOGIC = 0.2428
+CHOOSE = 0.3167
+state = flowing
+
+[CONNECT]
+depth = 0.9050
+type = membrane_embedded
+hydrophobic_ratio = 0.5566
+charge_positive = 0.1222
+charge_negative = 0.0950
+charge_neutral = 0.7828
+
+[DISSOLVE]
+rigidity = 0.9758
+potential = crystallized
+wobble_entropy = 0.0242
+complementary_disruption = 0.0950
+
+[ENCODE]
+type = optimized
+loss = 0.1250
+gc_content = 0.5596
+wobble_gc = 0.6109
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3303
+wobble_FLOW = 0.1584
+wobble_OBSERVE = 0.2308
+wobble_LOGIC = 0.2805
+wobble_CHOOSE = 0.3303
+entropy = 0.0242
+
+[OBSERVE]
+distance = 0.0739
+level = standard
+complementary_balance = 0.9050
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1176
+intensity = 0.1176
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1176
+  COMPOSE(CHOOSE,OBSERVE): 0.1086
+  COMPOSE(CHOOSE,CHOOSE): 0.1086
+  COMPOSE(LOGIC,FLOW): 0.0950
+  COMPOSE(FLOW,OBSERVE): 0.0814
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3665
+modifier_dominant = FLOW
+modifier_pct = 0.2941
+primary_FLOW = 0.2398
+primary_OBSERVE = 0.1041
+primary_LOGIC = 0.2896
+primary_CHOOSE = 0.3665
+modifier_FLOW = 0.2941
+modifier_OBSERVE = 0.2941
+modifier_LOGIC = 0.1584
+modifier_CHOOSE = 0.2534
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0300
+aa_top5 = [
+  Leu: 0.1176  # aliphatic
+  Pro: 0.1086  # cyclic
+  Gln: 0.0814  # amide
+  Gly: 0.0769  # simple
+  Ser: 0.0679  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 221
+stop_codon = none
+loss = 0.0300
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.membrane_embedded

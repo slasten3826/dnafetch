@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IL27RA | unknown
+# CDS: 1911 bp (637 codons)
+
+[IDENTITY]
+gene = IL27RA
+organism = unknown
+transcript = ENST00000263379.4
+cds_length = 1911
+codons = 637
+protein_length = 636
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.982
+resistance = 0.018
+dominant = CHOOSE
+dominant_pct = 0.3114
+FLOW = 0.1858
+OBSERVE = 0.2025
+LOGIC = 0.3004
+CHOOSE = 0.3114
+state = flowing
+
+[CONNECT]
+depth = 0.9723
+type = membrane_embedded
+hydrophobic_ratio = 0.6226
+charge_positive = 0.0928
+charge_negative = 0.0943
+charge_neutral = 0.8129
+
+[DISSOLVE]
+rigidity = 0.9527
+potential = crystallized
+wobble_entropy = 0.0473
+complementary_disruption = 0.0277
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.6117
+wobble_gc = 0.6782
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3407
+wobble_FLOW = 0.1507
+wobble_OBSERVE = 0.1711
+wobble_LOGIC = 0.3407
+wobble_CHOOSE = 0.3375
+entropy = 0.0473
+
+[OBSERVE]
+distance = 0.0110
+level = strong
+complementary_balance = 0.9723
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1177
+intensity = 0.1177
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1177
+  COMPOSE(CHOOSE,OBSERVE): 0.1036
+  COMPOSE(LOGIC,FLOW): 0.0942
+  COMPOSE(LOGIC,LOGIC): 0.0863
+  COMPOSE(OBSERVE,LOGIC): 0.0738
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3250
+modifier_dominant = CHOOSE
+modifier_pct = 0.2841
+primary_FLOW = 0.1852
+primary_OBSERVE = 0.1774
+primary_LOGIC = 0.3250
+primary_CHOOSE = 0.3124
+modifier_FLOW = 0.2214
+modifier_OBSERVE = 0.2590
+modifier_LOGIC = 0.2355
+modifier_CHOOSE = 0.2841
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0331
+aa_top5 = [
+  Leu: 0.1321  # aliphatic
+  Pro: 0.1179  # cyclic
+  Gly: 0.0865  # simple
+  Val: 0.0739  # aliphatic
+  Ser: 0.0723  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 636
+stop_codon = TGA
+loss = 0.0331
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.strong.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FHIP1B | unknown
+# CDS: 2517 bp (839 codons)
+
+[IDENTITY]
+gene = FHIP1B
+organism = unknown
+transcript = ENST00000524416.1
+cds_length = 2517
+codons = 839
+protein_length = 838
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = CHOOSE
+dominant_pct = 0.3023
+FLOW = 0.1704
+OBSERVE = 0.2420
+LOGIC = 0.2853
+CHOOSE = 0.3023
+state = flowing
+
+[CONNECT]
+depth = 0.9114
+type = membrane_embedded
+hydrophobic_ratio = 0.6062
+charge_positive = 0.1193
+charge_negative = 0.1062
+charge_neutral = 0.7745
+
+[DISSOLVE]
+rigidity = 0.9723
+potential = crystallized
+wobble_entropy = 0.0277
+complementary_disruption = 0.0886
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.5876
+wobble_gc = 0.5959
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3063
+wobble_FLOW = 0.1395
+wobble_OBSERVE = 0.2646
+wobble_LOGIC = 0.3063
+wobble_CHOOSE = 0.2896
+entropy = 0.0277
+
+[OBSERVE]
+distance = 0.0171
+level = strong
+complementary_balance = 0.9114
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1311
+intensity = 0.1311
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1311
+  COMPOSE(LOGIC,FLOW): 0.1061
+  COMPOSE(CHOOSE,CHOOSE): 0.1013
+  COMPOSE(LOGIC,CHOOSE): 0.0751
+  COMPOSE(LOGIC,LOGIC): 0.0751
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3588
+modifier_dominant = OBSERVE
+modifier_pct = 0.2908
+primary_FLOW = 0.1502
+primary_OBSERVE = 0.1704
+primary_LOGIC = 0.3206
+primary_CHOOSE = 0.3588
+modifier_FLOW = 0.2217
+modifier_OBSERVE = 0.2908
+modifier_LOGIC = 0.2288
+modifier_CHOOSE = 0.2586
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0358
+aa_top5 = [
+  Leu: 0.1551  # aliphatic
+  Pro: 0.1014  # cyclic
+  Ser: 0.0835  # hydroxyl
+  Ala: 0.0752  # simple
+  Gly: 0.0752  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 838
+stop_codon = TAG
+loss = 0.0358
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.dominant.crystallized.membrane_embedded

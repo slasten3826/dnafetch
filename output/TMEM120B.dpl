@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMEM120B | unknown
+# CDS: 279 bp (93 codons)
+
+[IDENTITY]
+gene = TMEM120B
+organism = unknown
+transcript = ENST00000540377.1
+cds_length = 279
+codons = 93
+protein_length = 92
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.975
+resistance = 0.025
+dominant = CHOOSE
+dominant_pct = 0.3369
+FLOW = 0.1900
+OBSERVE = 0.1828
+LOGIC = 0.2903
+CHOOSE = 0.3369
+state = flowing
+
+[CONNECT]
+depth = 0.9462
+type = membrane_embedded
+hydrophobic_ratio = 0.5652
+charge_positive = 0.1630
+charge_negative = 0.0435
+charge_neutral = 0.7935
+
+[DISSOLVE]
+rigidity = 0.9945
+potential = crystallized
+wobble_entropy = 0.0055
+complementary_disruption = 0.0538
+
+[ENCODE]
+type = moderate
+loss = 0.4375
+gc_content = 0.6272
+wobble_gc = 0.5054
+codon_diversity = 0.5625
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2903
+wobble_FLOW = 0.2043
+wobble_OBSERVE = 0.2903
+wobble_LOGIC = 0.2473
+wobble_CHOOSE = 0.2581
+entropy = 0.0055
+
+[OBSERVE]
+distance = 0.0466
+level = deep
+complementary_balance = 0.9462
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1505
+intensity = 0.1505
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1505
+  COMPOSE(CHOOSE,CHOOSE): 0.1398
+  COMPOSE(LOGIC,LOGIC): 0.1183
+  COMPOSE(LOGIC,CHOOSE): 0.1075
+  COMPOSE(FLOW,LOGIC): 0.0860
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4301
+modifier_dominant = LOGIC
+modifier_pct = 0.3226
+primary_FLOW = 0.1613
+primary_OBSERVE = 0.1075
+primary_LOGIC = 0.3011
+primary_CHOOSE = 0.4301
+modifier_FLOW = 0.2043
+modifier_OBSERVE = 0.1505
+modifier_LOGIC = 0.3226
+modifier_CHOOSE = 0.3226
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0468
+aa_top5 = [
+  Pro: 0.1413  # cyclic
+  Gln: 0.1196  # amide
+  Arg: 0.1196  # basic
+  Gly: 0.1196  # simple
+  Ala: 0.1087  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 92
+stop_codon = TGA
+loss = 0.0468
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.deep.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SPATA31A1 | unknown
+# CDS: 4086 bp (1362 codons)
+
+[IDENTITY]
+gene = SPATA31A1
+organism = unknown
+transcript = ENST00000377647.6
+cds_length = 4086
+codons = 1362
+protein_length = 1361
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = CHOOSE
+dominant_pct = 0.2922
+FLOW = 0.2575
+OBSERVE = 0.2137
+LOGIC = 0.2367
+CHOOSE = 0.2922
+state = flowing
+
+[CONNECT]
+depth = 0.9006
+type = balanced_interface
+hydrophobic_ratio = 0.4982
+charge_positive = 0.1455
+charge_negative = 0.0889
+charge_neutral = 0.7656
+
+[DISSOLVE]
+rigidity = 0.9975
+potential = crystallized
+wobble_entropy = 0.0025
+complementary_disruption = 0.0994
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.5289
+wobble_gc = 0.5419
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2731
+wobble_FLOW = 0.2276
+wobble_OBSERVE = 0.2305
+wobble_LOGIC = 0.2687
+wobble_CHOOSE = 0.2731
+entropy = 0.0025
+
+[OBSERVE]
+distance = 0.0348
+level = deep
+complementary_balance = 0.9006
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1079
+intensity = 0.1079
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1079
+  COMPOSE(CHOOSE,CHOOSE): 0.1072
+  COMPOSE(LOGIC,FLOW): 0.0888
+  COMPOSE(FLOW,FLOW): 0.0881
+  COMPOSE(OBSERVE,CHOOSE): 0.0793
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3069
+modifier_dominant = CHOOSE
+modifier_pct = 0.2966
+primary_FLOW = 0.2533
+primary_OBSERVE = 0.1828
+primary_LOGIC = 0.2570
+primary_CHOOSE = 0.3069
+modifier_FLOW = 0.2915
+modifier_OBSERVE = 0.2276
+modifier_LOGIC = 0.1843
+modifier_CHOOSE = 0.2966
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0301
+aa_top5 = [
+  Ser: 0.1161  # hydroxyl
+  Pro: 0.1073  # cyclic
+  Leu: 0.1051  # aliphatic
+  Gln: 0.0698  # amide
+  Ala: 0.0647  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 1361
+stop_codon = TGA
+loss = 0.0301
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FHIP1A | unknown
+# CDS: 3123 bp (1041 codons)
+
+[IDENTITY]
+gene = FHIP1A
+organism = unknown
+transcript = ENST00000505231.1
+cds_length = 3123
+codons = 1041
+protein_length = 1040
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = CHOOSE
+dominant_pct = 0.2706
+FLOW = 0.2450
+OBSERVE = 0.2331
+LOGIC = 0.2514
+CHOOSE = 0.2706
+state = flowing
+
+[CONNECT]
+depth = 0.9689
+type = balanced_interface
+hydrophobic_ratio = 0.5375
+charge_positive = 0.1077
+charge_negative = 0.1452
+charge_neutral = 0.7471
+
+[DISSOLVE]
+rigidity = 0.9762
+potential = crystallized
+wobble_entropy = 0.0238
+complementary_disruption = 0.0311
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.5219
+wobble_gc = 0.6177
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3122
+wobble_FLOW = 0.1604
+wobble_OBSERVE = 0.2219
+wobble_LOGIC = 0.3122
+wobble_CHOOSE = 0.3055
+entropy = 0.0238
+
+[OBSERVE]
+distance = 0.0192
+level = strong
+complementary_balance = 0.9689
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1451
+intensity = 0.1451
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1451
+  COMPOSE(CHOOSE,OBSERVE): 0.1047
+  COMPOSE(FLOW,FLOW): 0.0807
+  COMPOSE(FLOW,OBSERVE): 0.0749
+  COMPOSE(CHOOSE,FLOW): 0.0740
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3122
+modifier_dominant = FLOW
+modifier_pct = 0.3247
+primary_FLOW = 0.2498
+primary_OBSERVE = 0.1739
+primary_LOGIC = 0.3122
+primary_CHOOSE = 0.2642
+modifier_FLOW = 0.3247
+modifier_OBSERVE = 0.3036
+modifier_LOGIC = 0.1297
+modifier_CHOOSE = 0.2421
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0275
+aa_top5 = [
+  Leu: 0.1288  # aliphatic
+  Glu: 0.0942  # acidic
+  Ser: 0.0827  # hydroxyl
+  Pro: 0.0721  # cyclic
+  Ala: 0.0692  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 1040
+stop_codon = TAG
+loss = 0.0275
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.dominant.crystallized.balanced_interface

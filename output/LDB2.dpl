@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: LDB2 | unknown
+# CDS: 492 bp (164 codons)
+
+[IDENTITY]
+gene = LDB2
+organism = unknown
+transcript = ENST00000506732.1
+cds_length = 492
+codons = 164
+protein_length = 164
+stop_codon = none
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = FLOW
+dominant_pct = 0.2846
+FLOW = 0.2846
+OBSERVE = 0.2358
+LOGIC = 0.2256
+CHOOSE = 0.2541
+state = flowing
+
+[CONNECT]
+depth = 0.9228
+type = balanced_interface
+hydrophobic_ratio = 0.4878
+charge_positive = 0.1402
+charge_negative = 0.1463
+charge_neutral = 0.7134
+
+[DISSOLVE]
+rigidity = 0.9824
+potential = crystallized
+wobble_entropy = 0.0176
+complementary_disruption = 0.0772
+
+[ENCODE]
+type = moderate
+loss = 0.1562
+gc_content = 0.4797
+wobble_gc = 0.5915
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3415
+wobble_FLOW = 0.2134
+wobble_OBSERVE = 0.1951
+wobble_LOGIC = 0.2500
+wobble_CHOOSE = 0.3415
+entropy = 0.0176
+
+[OBSERVE]
+distance = 0.0305
+level = deep
+complementary_balance = 0.9228
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1463
+intensity = 0.1463
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1463
+  COMPOSE(FLOW,CHOOSE): 0.0976
+  COMPOSE(FLOW,OBSERVE): 0.0915
+  COMPOSE(OBSERVE,OBSERVE): 0.0854
+  COMPOSE(CHOOSE,FLOW): 0.0793
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3049
+modifier_dominant = FLOW
+modifier_pct = 0.3354
+primary_FLOW = 0.3049
+primary_OBSERVE = 0.2195
+primary_LOGIC = 0.2622
+primary_CHOOSE = 0.2134
+modifier_FLOW = 0.3354
+modifier_OBSERVE = 0.2927
+modifier_LOGIC = 0.1646
+modifier_CHOOSE = 0.2073
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0220
+aa_top5 = [
+  Thr: 0.0976  # hydroxyl
+  Leu: 0.0915  # aliphatic
+  Asp: 0.0793  # acidic
+  Glu: 0.0671  # acidic
+  Arg: 0.0671  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 164
+stop_codon = none
+loss = 0.0220
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.deep.dominant.crystallized.balanced_interface

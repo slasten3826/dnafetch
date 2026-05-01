@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CXCR6 | unknown
+# CDS: 1029 bp (343 codons)
+
+[IDENTITY]
+gene = CXCR6
+organism = unknown
+transcript = ENST00000457814.1
+cds_length = 1029
+codons = 343
+protein_length = 342
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = OBSERVE
+dominant_pct = 0.2789
+FLOW = 0.2225
+OBSERVE = 0.2789
+LOGIC = 0.2313
+CHOOSE = 0.2672
+state = flowing
+
+[CONNECT]
+depth = 0.9077
+type = membrane_embedded
+hydrophobic_ratio = 0.6228
+charge_positive = 0.1053
+charge_negative = 0.0614
+charge_neutral = 0.8333
+
+[DISSOLVE]
+rigidity = 0.9176
+potential = crystallized
+wobble_entropy = 0.0824
+complementary_disruption = 0.0923
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.4985
+wobble_gc = 0.7085
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4052
+wobble_FLOW = 0.0962
+wobble_OBSERVE = 0.1953
+wobble_LOGIC = 0.3032
+wobble_CHOOSE = 0.4052
+entropy = 0.0824
+
+[OBSERVE]
+distance = 0.0117
+level = strong
+complementary_balance = 0.9077
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1137
+intensity = 0.1137
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1137
+  COMPOSE(FLOW,OBSERVE): 0.1050
+  COMPOSE(LOGIC,OBSERVE): 0.0962
+  COMPOSE(OBSERVE,OBSERVE): 0.0933
+  COMPOSE(FLOW,FLOW): 0.0875
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2974
+modifier_dominant = OBSERVE
+modifier_pct = 0.4082
+primary_FLOW = 0.2974
+primary_OBSERVE = 0.2332
+primary_LOGIC = 0.2507
+primary_CHOOSE = 0.2187
+modifier_FLOW = 0.2741
+modifier_OBSERVE = 0.4082
+modifier_LOGIC = 0.1399
+modifier_CHOOSE = 0.1778
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0274
+aa_top5 = [
+  Leu: 0.1287  # aliphatic
+  Val: 0.0965  # aliphatic
+  Phe: 0.0789  # aromatic
+  Ser: 0.0760  # hydroxyl
+  Ile: 0.0673  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 342
+stop_codon = TAG
+loss = 0.0274
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.strong.strong.crystallized.membrane_embedded

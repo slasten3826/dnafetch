@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNF616 | unknown
+# CDS: 243 bp (81 codons)
+
+[IDENTITY]
+gene = ZNF616
+organism = unknown
+transcript = ENST00000600282.1
+cds_length = 243
+codons = 81
+protein_length = 80
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.901
+resistance = 0.099
+dominant = FLOW
+dominant_pct = 0.4033
+FLOW = 0.4033
+OBSERVE = 0.1358
+LOGIC = 0.3498
+CHOOSE = 0.1111
+state = flowing
+
+[CONNECT]
+depth = 0.4938
+type = ionic_interaction
+hydrophobic_ratio = 0.4625
+charge_positive = 0.2125
+charge_negative = 0.1750
+charge_neutral = 0.6125
+
+[DISSOLVE]
+rigidity = 0.9204
+potential = low
+wobble_entropy = 0.0796
+complementary_disruption = 0.5062
+
+[ENCODE]
+type = moderate
+loss = 0.4844
+gc_content = 0.4609
+wobble_gc = 0.5309
+codon_diversity = 0.5156
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3704
+wobble_FLOW = 0.3704
+wobble_OBSERVE = 0.0988
+wobble_LOGIC = 0.3457
+wobble_CHOOSE = 0.1852
+entropy = 0.0796
+
+[OBSERVE]
+distance = 0.0535
+level = standard
+complementary_balance = 0.4938
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1852
+intensity = 0.1852
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1852
+  COMPOSE(LOGIC,FLOW): 0.1728
+  COMPOSE(LOGIC,LOGIC): 0.1358
+  COMPOSE(FLOW,OBSERVE): 0.0988
+  COMPOSE(FLOW,LOGIC): 0.0988
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4321
+modifier_dominant = FLOW
+modifier_pct = 0.4321
+primary_FLOW = 0.4074
+primary_OBSERVE = 0.0988
+primary_LOGIC = 0.4321
+primary_CHOOSE = 0.0617
+modifier_FLOW = 0.4321
+modifier_OBSERVE = 0.2099
+modifier_LOGIC = 0.2716
+modifier_CHOOSE = 0.0864
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0395
+aa_top5 = [
+  Gly: 0.1375  # simple
+  Lys: 0.1375  # basic
+  Glu: 0.1250  # acidic
+  Val: 0.0750  # aliphatic
+  Arg: 0.0625  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 80
+stop_codon = TAA
+loss = 0.0395
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.standard.dominant.low.ionic_interaction

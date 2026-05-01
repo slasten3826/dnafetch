@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MUC5AC | unknown
+# CDS: 16965 bp (5655 codons)
+
+[IDENTITY]
+gene = MUC5AC
+organism = unknown
+transcript = ENST00000621226.2
+cds_length = 16965
+codons = 5655
+protein_length = 5654
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.968
+resistance = 0.032
+dominant = CHOOSE
+dominant_pct = 0.3751
+FLOW = 0.2291
+OBSERVE = 0.1683
+LOGIC = 0.2275
+CHOOSE = 0.3751
+state = flowing
+
+[CONNECT]
+depth = 0.7915
+type = balanced_interface
+hydrophobic_ratio = 0.4528
+charge_positive = 0.0792
+charge_negative = 0.0623
+charge_neutral = 0.8585
+
+[DISSOLVE]
+rigidity = 0.9162
+potential = crystallized
+wobble_entropy = 0.0838
+complementary_disruption = 0.2085
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.6026
+wobble_gc = 0.6750
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4661
+wobble_FLOW = 0.1393
+wobble_OBSERVE = 0.1857
+wobble_LOGIC = 0.2088
+wobble_CHOOSE = 0.4661
+entropy = 0.0838
+
+[OBSERVE]
+distance = 0.1460
+level = basic
+complementary_balance = 0.7915
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,CHOOSE)
+top_compose_pct = 0.2048
+intensity = 0.2048
+compose_top5 = [
+  COMPOSE(FLOW,CHOOSE): 0.2048
+  COMPOSE(CHOOSE,CHOOSE): 0.1036
+  COMPOSE(FLOW,LOGIC): 0.0888
+  COMPOSE(OBSERVE,CHOOSE): 0.0734
+  COMPOSE(LOGIC,CHOOSE): 0.0635
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3724
+modifier_dominant = CHOOSE
+modifier_pct = 0.4453
+primary_FLOW = 0.3724
+primary_OBSERVE = 0.1717
+primary_LOGIC = 0.2419
+primary_CHOOSE = 0.2140
+modifier_FLOW = 0.1756
+modifier_OBSERVE = 0.1475
+modifier_LOGIC = 0.2317
+modifier_CHOOSE = 0.4453
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0482
+aa_top5 = [
+  Thr: 0.2048  # hydroxyl
+  Ser: 0.1468  # hydroxyl
+  Pro: 0.1036  # cyclic
+  Ala: 0.0635  # simple
+  Gly: 0.0610  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 5654
+stop_codon = TGA
+loss = 0.0482
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.crystallized.balanced_interface

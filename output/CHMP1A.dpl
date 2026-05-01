@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CHMP1A | unknown
+# CDS: 615 bp (205 codons)
+
+[IDENTITY]
+gene = CHMP1A
+organism = unknown
+transcript = ENST00000675942.1
+cds_length = 615
+codons = 205
+protein_length = 204
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.893
+resistance = 0.107
+dominant = CHOOSE
+dominant_pct = 0.4813
+FLOW = 0.1350
+OBSERVE = 0.1350
+LOGIC = 0.2488
+CHOOSE = 0.4813
+state = flowing
+
+[CONNECT]
+depth = 0.7675
+type = membrane_embedded
+hydrophobic_ratio = 0.5588
+charge_positive = 0.1422
+charge_negative = 0.0980
+charge_neutral = 0.7598
+
+[DISSOLVE]
+rigidity = 0.8866
+potential = low
+wobble_entropy = 0.1134
+complementary_disruption = 0.2325
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.7301
+wobble_gc = 0.7415
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4829
+wobble_FLOW = 0.1171
+wobble_OBSERVE = 0.1415
+wobble_LOGIC = 0.2585
+wobble_CHOOSE = 0.4829
+entropy = 0.1134
+
+[OBSERVE]
+distance = 0.2325
+level = basic
+complementary_balance = 0.7675
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.2829
+intensity = 0.2829
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.2829
+  COMPOSE(LOGIC,LOGIC): 0.1122
+  COMPOSE(CHOOSE,LOGIC): 0.1024
+  COMPOSE(LOGIC,FLOW): 0.0976
+  COMPOSE(OBSERVE,CHOOSE): 0.0976
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.5073
+modifier_dominant = CHOOSE
+modifier_pct = 0.4537
+primary_FLOW = 0.1024
+primary_OBSERVE = 0.1512
+primary_LOGIC = 0.2390
+primary_CHOOSE = 0.5073
+modifier_FLOW = 0.1854
+modifier_OBSERVE = 0.1122
+modifier_LOGIC = 0.2488
+modifier_CHOOSE = 0.4537
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0644
+aa_top5 = [
+  Pro: 0.2843  # cyclic
+  Gly: 0.1127  # simple
+  Arg: 0.1127  # basic
+  Ser: 0.1029  # hydroxyl
+  Asp: 0.0735  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 204
+stop_codon = TGA
+loss = 0.0644
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.low.membrane_embedded

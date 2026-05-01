@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CTDNEP1 | unknown
+# CDS: 375 bp (125 codons)
+
+[IDENTITY]
+gene = CTDNEP1
+organism = unknown
+transcript = ENST00000571409.1
+cds_length = 375
+codons = 125
+protein_length = 125
+stop_codon = none
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = CHOOSE
+dominant_pct = 0.2747
+FLOW = 0.1973
+OBSERVE = 0.2613
+LOGIC = 0.2667
+CHOOSE = 0.2747
+state = flowing
+
+[CONNECT]
+depth = 0.9280
+type = membrane_embedded
+hydrophobic_ratio = 0.5760
+charge_positive = 0.2000
+charge_negative = 0.0720
+charge_neutral = 0.7280
+
+[DISSOLVE]
+rigidity = 0.9291
+potential = crystallized
+wobble_entropy = 0.0709
+complementary_disruption = 0.0720
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.5413
+wobble_gc = 0.6800
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3840
+wobble_FLOW = 0.0960
+wobble_OBSERVE = 0.2240
+wobble_LOGIC = 0.3840
+wobble_CHOOSE = 0.2960
+entropy = 0.0709
+
+[OBSERVE]
+distance = 0.0080
+level = strong
+complementary_balance = 0.9280
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1200
+intensity = 0.1200
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1200
+  COMPOSE(LOGIC,OBSERVE): 0.1200
+  COMPOSE(CHOOSE,FLOW): 0.0960
+  COMPOSE(FLOW,OBSERVE): 0.0800
+  COMPOSE(OBSERVE,OBSERVE): 0.0800
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3520
+modifier_dominant = OBSERVE
+modifier_pct = 0.4000
+primary_FLOW = 0.2400
+primary_OBSERVE = 0.1600
+primary_LOGIC = 0.2480
+primary_CHOOSE = 0.3520
+modifier_FLOW = 0.2560
+modifier_OBSERVE = 0.4000
+modifier_LOGIC = 0.1680
+modifier_CHOOSE = 0.1760
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0341
+aa_top5 = [
+  Leu: 0.1280  # aliphatic
+  Val: 0.1200  # aliphatic
+  Arg: 0.1040  # basic
+  Phe: 0.0720  # aromatic
+  Ile: 0.0640  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 125
+stop_codon = none
+loss = 0.0341
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.strong.crystallized.membrane_embedded

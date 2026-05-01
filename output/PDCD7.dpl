@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PDCD7 | unknown
+# CDS: 21 bp (7 codons)
+
+[IDENTITY]
+gene = PDCD7
+organism = unknown
+transcript = ENST00000560313.2
+cds_length = 21
+codons = 7
+protein_length = 6
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.975
+resistance = 0.025
+dominant = FLOW
+dominant_pct = 0.2857
+FLOW = 0.2857
+OBSERVE = 0.2857
+LOGIC = 0.2857
+CHOOSE = 0.1429
+state = flowing
+
+[CONNECT]
+depth = 0.8571
+type = membrane_embedded
+hydrophobic_ratio = 0.8333
+charge_positive = 0.1667
+charge_negative = 0.0000
+charge_neutral = 0.8333
+
+[DISSOLVE]
+rigidity = 0.8322
+potential = low
+wobble_entropy = 0.1678
+complementary_disruption = 0.1429
+
+[ENCODE]
+type = optimized
+loss = 0.8906
+gc_content = 0.4286
+wobble_gc = 0.7143
+codon_diversity = 0.1094
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5714
+wobble_FLOW = 0.1429
+wobble_OBSERVE = 0.1429
+wobble_LOGIC = 0.5714
+wobble_CHOOSE = 0.1429
+entropy = 0.1678
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.8571
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,FLOW)
+top_compose_pct = 0.2857
+intensity = 0.2857
+compose_top5 = [
+  COMPOSE(OBSERVE,FLOW): 0.2857
+  COMPOSE(FLOW,OBSERVE): 0.1429
+  COMPOSE(LOGIC,CHOOSE): 0.1429
+  COMPOSE(CHOOSE,OBSERVE): 0.1429
+  COMPOSE(FLOW,FLOW): 0.1429
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.4286
+modifier_dominant = FLOW
+modifier_pct = 0.4286
+primary_FLOW = 0.2857
+primary_OBSERVE = 0.4286
+primary_LOGIC = 0.1429
+primary_CHOOSE = 0.1429
+modifier_FLOW = 0.4286
+modifier_OBSERVE = 0.2857
+modifier_LOGIC = 0.1429
+modifier_CHOOSE = 0.1429
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0928
+aa_top5 = [
+  Tyr: 0.3333  # aromatic
+  Met: 0.1667  # sulfur
+  Ala: 0.1667  # simple
+  Leu: 0.1667  # aliphatic
+  Lys: 0.1667  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 6
+stop_codon = TGA
+loss = 0.0928
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.intense.dominant.low.membrane_embedded

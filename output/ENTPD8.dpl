@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENTPD8 | unknown
+# CDS: 324 bp (108 codons)
+
+[IDENTITY]
+gene = ENTPD8
+organism = unknown
+transcript = ENST00000493135.1
+cds_length = 324
+codons = 108
+protein_length = 108
+stop_codon = none
+
+[FLOW]
+engagement = 0.977
+resistance = 0.023
+dominant = LOGIC
+dominant_pct = 0.3179
+FLOW = 0.1636
+OBSERVE = 0.2191
+LOGIC = 0.3179
+CHOOSE = 0.2994
+state = flowing
+
+[CONNECT]
+depth = 0.9259
+type = membrane_embedded
+hydrophobic_ratio = 0.6296
+charge_positive = 0.2130
+charge_negative = 0.0556
+charge_neutral = 0.7315
+
+[DISSOLVE]
+rigidity = 0.9983
+potential = crystallized
+wobble_entropy = 0.0017
+complementary_disruption = 0.0741
+
+[ENCODE]
+type = moderate
+loss = 0.3594
+gc_content = 0.6173
+wobble_gc = 0.4907
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2778
+wobble_FLOW = 0.2315
+wobble_OBSERVE = 0.2778
+wobble_LOGIC = 0.2500
+wobble_CHOOSE = 0.2407
+entropy = 0.0017
+
+[OBSERVE]
+distance = 0.0185
+level = strong
+complementary_balance = 0.9259
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1667
+intensity = 0.1667
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1667
+  COMPOSE(CHOOSE,OBSERVE): 0.1389
+  COMPOSE(CHOOSE,FLOW): 0.1296
+  COMPOSE(CHOOSE,CHOOSE): 0.1019
+  COMPOSE(CHOOSE,LOGIC): 0.0926
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4630
+modifier_dominant = LOGIC
+modifier_pct = 0.3889
+primary_FLOW = 0.0741
+primary_OBSERVE = 0.1481
+primary_LOGIC = 0.3148
+primary_CHOOSE = 0.4630
+modifier_FLOW = 0.1852
+modifier_OBSERVE = 0.2315
+modifier_LOGIC = 0.3889
+modifier_CHOOSE = 0.1944
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0523
+aa_top5 = [
+  Leu: 0.1667  # aliphatic
+  Gly: 0.1667  # simple
+  Arg: 0.1296  # basic
+  Pro: 0.1019  # cyclic
+  His: 0.0833  # aromatic
+]
+
+[MANIFEST]
+format = structural
+protein_length = 108
+stop_codon = none
+loss = 0.0523
+
+[SIGNATURE]
+fingerprint = LOGIC.OBSERVE.strong.dominant.crystallized.membrane_embedded

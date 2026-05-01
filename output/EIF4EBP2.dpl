@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EIF4EBP2 | unknown
+# CDS: 426 bp (142 codons)
+
+[IDENTITY]
+gene = EIF4EBP2
+organism = unknown
+transcript = ENST00000373218.5
+cds_length = 426
+codons = 142
+protein_length = 141
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = OBSERVE
+dominant_pct = 0.3310
+FLOW = 0.1761
+OBSERVE = 0.3310
+LOGIC = 0.2254
+CHOOSE = 0.2676
+state = flowing
+
+[CONNECT]
+depth = 0.8028
+type = membrane_embedded
+hydrophobic_ratio = 0.6879
+charge_positive = 0.0780
+charge_negative = 0.0355
+charge_neutral = 0.8865
+
+[DISSOLVE]
+rigidity = 0.9727
+potential = crystallized
+wobble_entropy = 0.0273
+complementary_disruption = 0.1972
+
+[ENCODE]
+type = moderate
+loss = 0.2344
+gc_content = 0.4930
+wobble_gc = 0.4648
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3592
+wobble_FLOW = 0.1761
+wobble_OBSERVE = 0.3592
+wobble_LOGIC = 0.2042
+wobble_CHOOSE = 0.2606
+entropy = 0.0273
+
+[OBSERVE]
+distance = 0.0634
+level = standard
+complementary_balance = 0.8028
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1197
+intensity = 0.1197
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1197
+  COMPOSE(OBSERVE,OBSERVE): 0.1056
+  COMPOSE(CHOOSE,OBSERVE): 0.1056
+  COMPOSE(FLOW,OBSERVE): 0.0986
+  COMPOSE(CHOOSE,FLOW): 0.0775
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2746
+modifier_dominant = OBSERVE
+modifier_pct = 0.3662
+primary_FLOW = 0.1972
+primary_OBSERVE = 0.2676
+primary_LOGIC = 0.2746
+primary_CHOOSE = 0.2606
+modifier_FLOW = 0.1549
+modifier_OBSERVE = 0.3662
+modifier_LOGIC = 0.1972
+modifier_CHOOSE = 0.2817
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0379
+aa_top5 = [
+  Leu: 0.1348  # aliphatic
+  Ser: 0.1277  # hydroxyl
+  Ala: 0.1206  # simple
+  Phe: 0.0780  # aromatic
+  Gly: 0.0638  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 141
+stop_codon = TGA
+loss = 0.0379
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.strong.crystallized.membrane_embedded

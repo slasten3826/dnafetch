@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: APOBEC3F | unknown
+# CDS: 1122 bp (374 codons)
+
+[IDENTITY]
+gene = APOBEC3F
+organism = unknown
+transcript = ENST00000308521.10
+cds_length = 1122
+codons = 374
+protein_length = 373
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = CHOOSE
+dominant_pct = 0.2656
+FLOW = 0.2531
+OBSERVE = 0.2362
+LOGIC = 0.2451
+CHOOSE = 0.2656
+state = flowing
+
+[CONNECT]
+depth = 0.9626
+type = ionic_interaction
+hydrophobic_ratio = 0.5496
+charge_positive = 0.1501
+charge_negative = 0.1206
+charge_neutral = 0.7292
+
+[DISSOLVE]
+rigidity = 0.9575
+potential = crystallized
+wobble_entropy = 0.0425
+complementary_disruption = 0.0374
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.5107
+wobble_gc = 0.6551
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3824
+wobble_FLOW = 0.1604
+wobble_OBSERVE = 0.1845
+wobble_LOGIC = 0.2727
+wobble_CHOOSE = 0.3824
+entropy = 0.0425
+
+[OBSERVE]
+distance = 0.0125
+level = strong
+complementary_balance = 0.9626
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1203
+intensity = 0.1203
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1203
+  COMPOSE(FLOW,FLOW): 0.1016
+  COMPOSE(OBSERVE,LOGIC): 0.0829
+  COMPOSE(OBSERVE,OBSERVE): 0.0802
+  COMPOSE(CHOOSE,OBSERVE): 0.0722
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.2674
+modifier_dominant = FLOW
+modifier_pct = 0.3503
+primary_FLOW = 0.2487
+primary_OBSERVE = 0.2674
+primary_LOGIC = 0.2594
+primary_CHOOSE = 0.2246
+modifier_FLOW = 0.3503
+modifier_OBSERVE = 0.2567
+modifier_LOGIC = 0.2032
+modifier_CHOOSE = 0.1898
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0163
+aa_top5 = [
+  Phe: 0.0777  # aromatic
+  Glu: 0.0751  # acidic
+  Leu: 0.0751  # aliphatic
+  Tyr: 0.0697  # aromatic
+  Arg: 0.0670  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 373
+stop_codon = TGA
+loss = 0.0163
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.dominant.crystallized.ionic_interaction

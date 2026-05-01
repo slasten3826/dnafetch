@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: OSMR | unknown
+# CDS: 57 bp (19 codons)
+
+[IDENTITY]
+gene = OSMR
+organism = unknown
+transcript = ENST00000508882.1
+cds_length = 57
+codons = 19
+protein_length = 18
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.866
+resistance = 0.134
+dominant = FLOW
+dominant_pct = 0.4912
+FLOW = 0.4912
+OBSERVE = 0.2807
+LOGIC = 0.1228
+CHOOSE = 0.1053
+state = flowing
+
+[CONNECT]
+depth = 0.7719
+type = membrane_embedded
+hydrophobic_ratio = 0.5556
+charge_positive = 0.2222
+charge_negative = 0.1111
+charge_neutral = 0.6667
+
+[DISSOLVE]
+rigidity = 0.7165
+potential = low
+wobble_entropy = 0.2835
+complementary_disruption = 0.2281
+
+[ENCODE]
+type = AT_rich
+loss = 0.7812
+gc_content = 0.2281
+wobble_gc = 0.1579
+codon_diversity = 0.2188
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.5263
+wobble_FLOW = 0.5263
+wobble_OBSERVE = 0.3158
+wobble_LOGIC = 0.1579
+wobble_CHOOSE = 0.0000
+entropy = 0.2835
+
+[OBSERVE]
+distance = 0.2105
+level = basic
+complementary_balance = 0.7719
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.2632
+intensity = 0.2632
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.2632
+  COMPOSE(FLOW,FLOW): 0.2105
+  COMPOSE(LOGIC,FLOW): 0.1053
+  COMPOSE(OBSERVE,FLOW): 0.1053
+  COMPOSE(CHOOSE,OBSERVE): 0.1053
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5263
+modifier_dominant = FLOW
+modifier_pct = 0.4211
+primary_FLOW = 0.5263
+primary_OBSERVE = 0.1579
+primary_LOGIC = 0.1579
+primary_CHOOSE = 0.1579
+modifier_FLOW = 0.4211
+modifier_OBSERVE = 0.3684
+modifier_LOGIC = 0.0526
+modifier_CHOOSE = 0.1579
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0701
+aa_top5 = [
+  Lys: 0.2222  # basic
+  Ile: 0.2222  # aliphatic
+  Glu: 0.1111  # acidic
+  Leu: 0.1111  # aliphatic
+  Ser: 0.1111  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 18
+stop_codon = TAA
+loss = 0.0701
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.membrane_embedded

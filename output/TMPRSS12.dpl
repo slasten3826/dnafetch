@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMPRSS12 | unknown
+# CDS: 1047 bp (349 codons)
+
+[IDENTITY]
+gene = TMPRSS12
+organism = unknown
+transcript = ENST00000398458.4
+cds_length = 1047
+codons = 349
+protein_length = 348
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = FLOW
+dominant_pct = 0.2713
+FLOW = 0.2713
+OBSERVE = 0.2693
+LOGIC = 0.2607
+CHOOSE = 0.1987
+state = flowing
+
+[CONNECT]
+depth = 0.9360
+type = membrane_embedded
+hydrophobic_ratio = 0.5891
+charge_positive = 0.1466
+charge_negative = 0.0833
+charge_neutral = 0.7701
+
+[DISSOLVE]
+rigidity = 0.9852
+potential = crystallized
+wobble_entropy = 0.0148
+complementary_disruption = 0.0640
+
+[ENCODE]
+type = natural
+loss = 0.0469
+gc_content = 0.4594
+wobble_gc = 0.4126
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3266
+wobble_FLOW = 0.2607
+wobble_OBSERVE = 0.3266
+wobble_LOGIC = 0.2235
+wobble_CHOOSE = 0.1891
+entropy = 0.0148
+
+[OBSERVE]
+distance = 0.0019
+level = intense
+complementary_balance = 0.9360
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1032
+intensity = 0.1032
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1032
+  COMPOSE(FLOW,OBSERVE): 0.0946
+  COMPOSE(LOGIC,FLOW): 0.0831
+  COMPOSE(OBSERVE,OBSERVE): 0.0774
+  COMPOSE(LOGIC,CHOOSE): 0.0716
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3123
+modifier_dominant = OBSERVE
+modifier_pct = 0.2779
+primary_FLOW = 0.2837
+primary_OBSERVE = 0.2034
+primary_LOGIC = 0.3123
+primary_CHOOSE = 0.2006
+modifier_FLOW = 0.2693
+modifier_OBSERVE = 0.2779
+modifier_LOGIC = 0.2464
+modifier_CHOOSE = 0.2063
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0222
+aa_top5 = [
+  Gly: 0.1034  # simple
+  Leu: 0.0862  # aliphatic
+  Ile: 0.0805  # aliphatic
+  Ala: 0.0718  # simple
+  Arg: 0.0661  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 348
+stop_codon = TAA
+loss = 0.0222
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.intense.strong.crystallized.membrane_embedded

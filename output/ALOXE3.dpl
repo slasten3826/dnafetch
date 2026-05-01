@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ALOXE3 | unknown
+# CDS: 2532 bp (844 codons)
+
+[IDENTITY]
+gene = ALOXE3
+organism = unknown
+transcript = ENST00000318227.4
+cds_length = 2532
+codons = 844
+protein_length = 843
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.985
+resistance = 0.015
+dominant = CHOOSE
+dominant_pct = 0.3242
+FLOW = 0.2125
+OBSERVE = 0.1935
+LOGIC = 0.2697
+CHOOSE = 0.3242
+state = flowing
+
+[CONNECT]
+depth = 0.9265
+type = membrane_embedded
+hydrophobic_ratio = 0.5682
+charge_positive = 0.1257
+charge_negative = 0.0949
+charge_neutral = 0.7794
+
+[DISSOLVE]
+rigidity = 0.9048
+potential = crystallized
+wobble_entropy = 0.0952
+complementary_disruption = 0.0735
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.5940
+wobble_gc = 0.7453
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4159
+wobble_FLOW = 0.1149
+wobble_OBSERVE = 0.1398
+wobble_LOGIC = 0.3294
+wobble_CHOOSE = 0.4159
+entropy = 0.0952
+
+[OBSERVE]
+distance = 0.0545
+level = standard
+complementary_balance = 0.9265
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1031
+intensity = 0.1031
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1031
+  COMPOSE(LOGIC,FLOW): 0.0948
+  COMPOSE(CHOOSE,CHOOSE): 0.0829
+  COMPOSE(CHOOSE,FLOW): 0.0758
+  COMPOSE(LOGIC,CHOOSE): 0.0711
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3045
+modifier_dominant = FLOW
+modifier_pct = 0.2725
+primary_FLOW = 0.2500
+primary_OBSERVE = 0.1777
+primary_LOGIC = 0.2678
+primary_CHOOSE = 0.3045
+modifier_FLOW = 0.2725
+modifier_OBSERVE = 0.2630
+modifier_LOGIC = 0.2121
+modifier_CHOOSE = 0.2524
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0228
+aa_top5 = [
+  Leu: 0.1163  # aliphatic
+  Pro: 0.0830  # cyclic
+  Ala: 0.0712  # simple
+  Arg: 0.0676  # basic
+  Thr: 0.0676  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 843
+stop_codon = TAA
+loss = 0.0228
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.membrane_embedded

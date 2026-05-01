@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CETN1 | unknown
+# CDS: 519 bp (173 codons)
+
+[IDENTITY]
+gene = CETN1
+organism = unknown
+transcript = ENST00000327228.5
+cds_length = 519
+codons = 173
+protein_length = 172
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.974
+resistance = 0.026
+dominant = LOGIC
+dominant_pct = 0.3295
+FLOW = 0.2909
+OBSERVE = 0.1580
+LOGIC = 0.3295
+CHOOSE = 0.2216
+state = flowing
+
+[CONNECT]
+depth = 0.7592
+type = ionic_interaction
+hydrophobic_ratio = 0.4302
+charge_positive = 0.1744
+charge_negative = 0.2326
+charge_neutral = 0.5930
+
+[DISSOLVE]
+rigidity = 0.8809
+potential = low
+wobble_entropy = 0.1191
+complementary_disruption = 0.2408
+
+[ENCODE]
+type = engineered
+loss = 0.3594
+gc_content = 0.5511
+wobble_gc = 0.7746
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4335
+wobble_FLOW = 0.1156
+wobble_OBSERVE = 0.1098
+wobble_LOGIC = 0.4335
+wobble_CHOOSE = 0.3410
+entropy = 0.1191
+
+[OBSERVE]
+distance = 0.0385
+level = deep
+complementary_balance = 0.7592
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2312
+intensity = 0.2312
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2312
+  COMPOSE(FLOW,FLOW): 0.1503
+  COMPOSE(FLOW,OBSERVE): 0.0867
+  COMPOSE(CHOOSE,OBSERVE): 0.0751
+  COMPOSE(LOGIC,CHOOSE): 0.0694
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4104
+modifier_dominant = FLOW
+modifier_pct = 0.4162
+primary_FLOW = 0.3410
+primary_OBSERVE = 0.0983
+primary_LOGIC = 0.4104
+primary_CHOOSE = 0.1503
+modifier_FLOW = 0.4162
+modifier_OBSERVE = 0.2659
+modifier_LOGIC = 0.1445
+modifier_CHOOSE = 0.1734
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0371
+aa_top5 = [
+  Glu: 0.1395  # acidic
+  Lys: 0.1221  # basic
+  Asp: 0.0930  # acidic
+  Leu: 0.0756  # aliphatic
+  Ala: 0.0698  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 172
+stop_codon = TGA
+loss = 0.0371
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.low.ionic_interaction

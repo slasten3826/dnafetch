@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CEACAM20 | unknown
+# CDS: 1791 bp (597 codons)
+
+[IDENTITY]
+gene = CEACAM20
+organism = unknown
+transcript = ENST00000614924.5
+cds_length = 1791
+codons = 597
+protein_length = 596
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = CHOOSE
+dominant_pct = 0.3049
+FLOW = 0.2345
+OBSERVE = 0.2116
+LOGIC = 0.2490
+CHOOSE = 0.3049
+state = flowing
+
+[CONNECT]
+depth = 0.9213
+type = balanced_interface
+hydrophobic_ratio = 0.5134
+charge_positive = 0.1091
+charge_negative = 0.1091
+charge_neutral = 0.7819
+
+[DISSOLVE]
+rigidity = 0.9591
+potential = crystallized
+wobble_entropy = 0.0409
+complementary_disruption = 0.0787
+
+[ENCODE]
+type = optimized
+loss = 0.0312
+gc_content = 0.5539
+wobble_gc = 0.6482
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3668
+wobble_FLOW = 0.1424
+wobble_OBSERVE = 0.2094
+wobble_LOGIC = 0.2814
+wobble_CHOOSE = 0.3668
+entropy = 0.0409
+
+[OBSERVE]
+distance = 0.0558
+level = standard
+complementary_balance = 0.9213
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1089
+intensity = 0.1089
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1089
+  COMPOSE(CHOOSE,OBSERVE): 0.0972
+  COMPOSE(FLOW,OBSERVE): 0.0771
+  COMPOSE(CHOOSE,CHOOSE): 0.0754
+  COMPOSE(FLOW,CHOOSE): 0.0754
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2881
+modifier_dominant = CHOOSE
+modifier_pct = 0.2831
+primary_FLOW = 0.2881
+primary_OBSERVE = 0.1591
+primary_LOGIC = 0.2881
+primary_CHOOSE = 0.2647
+modifier_FLOW = 0.2730
+modifier_OBSERVE = 0.2663
+modifier_LOGIC = 0.1776
+modifier_CHOOSE = 0.2831
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0279
+aa_top5 = [
+  Ser: 0.1124  # hydroxyl
+  Leu: 0.1040  # aliphatic
+  Glu: 0.0772  # acidic
+  Pro: 0.0755  # cyclic
+  Thr: 0.0755  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 596
+stop_codon = TAA
+loss = 0.0279
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.balanced_interface

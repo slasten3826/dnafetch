@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMEM181 | unknown
+# CDS: 510 bp (170 codons)
+
+[IDENTITY]
+gene = TMEM181
+organism = unknown
+transcript = ENST00000714122.1
+cds_length = 510
+codons = 170
+protein_length = 169
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = OBSERVE
+dominant_pct = 0.3039
+FLOW = 0.2373
+OBSERVE = 0.3039
+LOGIC = 0.2412
+CHOOSE = 0.2176
+state = flowing
+
+[CONNECT]
+depth = 0.9098
+type = membrane_embedded
+hydrophobic_ratio = 0.6036
+charge_positive = 0.0828
+charge_negative = 0.1124
+charge_neutral = 0.8047
+
+[DISSOLVE]
+rigidity = 0.9771
+potential = crystallized
+wobble_entropy = 0.0229
+complementary_disruption = 0.0902
+
+[ENCODE]
+type = moderate
+loss = 0.1719
+gc_content = 0.4588
+wobble_gc = 0.5941
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3176
+wobble_FLOW = 0.1529
+wobble_OBSERVE = 0.2529
+wobble_LOGIC = 0.3176
+wobble_CHOOSE = 0.2765
+entropy = 0.0229
+
+[OBSERVE]
+distance = 0.0627
+level = standard
+complementary_balance = 0.9098
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1294
+intensity = 0.1294
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1294
+  COMPOSE(LOGIC,FLOW): 0.1118
+  COMPOSE(OBSERVE,FLOW): 0.0882
+  COMPOSE(LOGIC,OBSERVE): 0.0824
+  COMPOSE(FLOW,FLOW): 0.0824
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3059
+modifier_dominant = OBSERVE
+modifier_pct = 0.3706
+primary_FLOW = 0.2176
+primary_OBSERVE = 0.2882
+primary_LOGIC = 0.3059
+primary_CHOOSE = 0.1882
+modifier_FLOW = 0.3412
+modifier_OBSERVE = 0.3706
+modifier_LOGIC = 0.1000
+modifier_CHOOSE = 0.1882
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0319
+aa_top5 = [
+  Leu: 0.1361  # aliphatic
+  Tyr: 0.0888  # aromatic
+  Val: 0.0828  # aliphatic
+  Phe: 0.0769  # aromatic
+  Ala: 0.0769  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 169
+stop_codon = TGA
+loss = 0.0319
+
+[SIGNATURE]
+fingerprint = OBSERVE.LOGIC.standard.dominant.crystallized.membrane_embedded

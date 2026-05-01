@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NAIP | unknown
+# CDS: 597 bp (199 codons)
+
+[IDENTITY]
+gene = NAIP
+organism = unknown
+transcript = ENST00000519014.1
+cds_length = 597
+codons = 199
+protein_length = 198
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = FLOW
+dominant_pct = 0.2764
+FLOW = 0.2764
+OBSERVE = 0.2379
+LOGIC = 0.2747
+CHOOSE = 0.2111
+state = flowing
+
+[CONNECT]
+depth = 0.8978
+type = ionic_interaction
+hydrophobic_ratio = 0.5354
+charge_positive = 0.1515
+charge_negative = 0.1263
+charge_neutral = 0.7222
+
+[DISSOLVE]
+rigidity = 0.9901
+potential = crystallized
+wobble_entropy = 0.0099
+complementary_disruption = 0.1022
+
+[ENCODE]
+type = moderate
+loss = 0.0781
+gc_content = 0.4858
+wobble_gc = 0.5578
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3216
+wobble_FLOW = 0.2111
+wobble_OBSERVE = 0.2312
+wobble_LOGIC = 0.3216
+wobble_CHOOSE = 0.2362
+entropy = 0.0099
+
+[OBSERVE]
+distance = 0.0017
+level = intense
+complementary_balance = 0.8978
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1256
+intensity = 0.1256
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1256
+  COMPOSE(FLOW,FLOW): 0.1005
+  COMPOSE(LOGIC,CHOOSE): 0.0854
+  COMPOSE(OBSERVE,OBSERVE): 0.0854
+  COMPOSE(CHOOSE,OBSERVE): 0.0804
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3166
+modifier_dominant = FLOW
+modifier_pct = 0.3417
+primary_FLOW = 0.2764
+primary_OBSERVE = 0.2060
+primary_LOGIC = 0.3166
+primary_CHOOSE = 0.2010
+modifier_FLOW = 0.3417
+modifier_OBSERVE = 0.2764
+modifier_LOGIC = 0.1859
+modifier_CHOOSE = 0.1960
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0250
+aa_top5 = [
+  Leu: 0.1010  # aliphatic
+  Glu: 0.0909  # acidic
+  Ala: 0.0859  # simple
+  Lys: 0.0707  # basic
+  Ser: 0.0657  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 198
+stop_codon = TAA
+loss = 0.0250
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.intense.dominant.crystallized.ionic_interaction

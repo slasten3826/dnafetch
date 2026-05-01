@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PRDM4 | unknown
+# CDS: 111 bp (37 codons)
+
+[IDENTITY]
+gene = PRDM4
+organism = unknown
+transcript = ENST00000547188.1
+cds_length = 111
+codons = 37
+protein_length = 36
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.961
+resistance = 0.039
+dominant = CHOOSE
+dominant_pct = 0.3964
+FLOW = 0.1802
+OBSERVE = 0.2072
+LOGIC = 0.2162
+CHOOSE = 0.3964
+state = flowing
+
+[CONNECT]
+depth = 0.7928
+type = membrane_embedded
+hydrophobic_ratio = 0.5833
+charge_positive = 0.0278
+charge_negative = 0.0556
+charge_neutral = 0.9167
+
+[DISSOLVE]
+rigidity = 0.9509
+potential = crystallized
+wobble_entropy = 0.0491
+complementary_disruption = 0.2072
+
+[ENCODE]
+type = optimized
+loss = 0.6562
+gc_content = 0.6126
+wobble_gc = 0.6757
+codon_diversity = 0.3438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3514
+wobble_FLOW = 0.1892
+wobble_OBSERVE = 0.1351
+wobble_LOGIC = 0.3243
+wobble_CHOOSE = 0.3514
+entropy = 0.0491
+
+[OBSERVE]
+distance = 0.1802
+level = basic
+complementary_balance = 0.7928
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1892
+intensity = 0.1892
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1892
+  COMPOSE(CHOOSE,FLOW): 0.1892
+  COMPOSE(OBSERVE,LOGIC): 0.1622
+  COMPOSE(OBSERVE,CHOOSE): 0.0811
+  COMPOSE(LOGIC,OBSERVE): 0.0811
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.4595
+modifier_dominant = CHOOSE
+modifier_pct = 0.3784
+primary_FLOW = 0.1081
+primary_OBSERVE = 0.2703
+primary_LOGIC = 0.1622
+primary_CHOOSE = 0.4595
+modifier_FLOW = 0.2432
+modifier_OBSERVE = 0.2162
+modifier_LOGIC = 0.1622
+modifier_CHOOSE = 0.3784
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0553
+aa_top5 = [
+  Pro: 0.1944  # cyclic
+  Gln: 0.1667  # amide
+  Trp: 0.1111  # aromatic
+  Ser: 0.0833  # hydroxyl
+  Val: 0.0833  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 36
+stop_codon = TGA
+loss = 0.0553
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.dominant.crystallized.membrane_embedded

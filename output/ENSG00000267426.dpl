@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000267426 | unknown
+# CDS: 339 bp (113 codons)
+
+[IDENTITY]
+gene = ENSG00000267426
+organism = unknown
+transcript = ENST00000587556.1
+cds_length = 339
+codons = 113
+protein_length = 112
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = CHOOSE
+dominant_pct = 0.3127
+FLOW = 0.2360
+OBSERVE = 0.1947
+LOGIC = 0.2566
+CHOOSE = 0.3127
+state = flowing
+
+[CONNECT]
+depth = 0.9027
+type = membrane_embedded
+hydrophobic_ratio = 0.5714
+charge_positive = 0.1429
+charge_negative = 0.0714
+charge_neutral = 0.7857
+
+[DISSOLVE]
+rigidity = 0.9755
+potential = crystallized
+wobble_entropy = 0.0245
+complementary_disruption = 0.0973
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.5693
+wobble_gc = 0.6018
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3186
+wobble_FLOW = 0.1504
+wobble_OBSERVE = 0.2478
+wobble_LOGIC = 0.3186
+wobble_CHOOSE = 0.2832
+entropy = 0.0245
+
+[OBSERVE]
+distance = 0.0560
+level = standard
+complementary_balance = 0.9027
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1327
+intensity = 0.1327
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1327
+  COMPOSE(CHOOSE,FLOW): 0.1062
+  COMPOSE(LOGIC,CHOOSE): 0.0973
+  COMPOSE(CHOOSE,OBSERVE): 0.0885
+  COMPOSE(FLOW,OBSERVE): 0.0796
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3363
+modifier_dominant = CHOOSE
+modifier_pct = 0.3186
+primary_FLOW = 0.2920
+primary_OBSERVE = 0.1239
+primary_LOGIC = 0.2478
+primary_CHOOSE = 0.3363
+modifier_FLOW = 0.2655
+modifier_OBSERVE = 0.2124
+modifier_LOGIC = 0.2035
+modifier_CHOOSE = 0.3186
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0317
+aa_top5 = [
+  Pro: 0.1339  # cyclic
+  Ala: 0.0982  # simple
+  Leu: 0.0982  # aliphatic
+  Ser: 0.0714  # hydroxyl
+  Gln: 0.0714  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 112
+stop_codon = TAA
+loss = 0.0317
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.crystallized.membrane_embedded

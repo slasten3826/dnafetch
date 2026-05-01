@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NAA16 | unknown
+# CDS: 1551 bp (517 codons)
+
+[IDENTITY]
+gene = NAA16
+organism = unknown
+transcript = ENST00000464857.5
+cds_length = 1551
+codons = 517
+protein_length = 516
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.973
+resistance = 0.027
+dominant = FLOW
+dominant_pct = 0.3482
+FLOW = 0.3482
+OBSERVE = 0.2714
+LOGIC = 0.2147
+CHOOSE = 0.1657
+state = flowing
+
+[CONNECT]
+depth = 0.8743
+type = ionic_interaction
+hydrophobic_ratio = 0.5136
+charge_positive = 0.1628
+charge_negative = 0.1395
+charge_neutral = 0.6977
+
+[DISSOLVE]
+rigidity = 0.9674
+potential = crystallized
+wobble_entropy = 0.0326
+complementary_disruption = 0.1257
+
+[ENCODE]
+type = natural
+loss = 0.0781
+gc_content = 0.3804
+wobble_gc = 0.3694
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3250
+wobble_FLOW = 0.3250
+wobble_OBSERVE = 0.3056
+wobble_LOGIC = 0.2282
+wobble_CHOOSE = 0.1412
+entropy = 0.0326
+
+[OBSERVE]
+distance = 0.0767
+level = standard
+complementary_balance = 0.8743
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1393
+intensity = 0.1393
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1393
+  COMPOSE(FLOW,FLOW): 0.1373
+  COMPOSE(OBSERVE,OBSERVE): 0.0967
+  COMPOSE(FLOW,OBSERVE): 0.0851
+  COMPOSE(CHOOSE,OBSERVE): 0.0716
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3133
+modifier_dominant = FLOW
+modifier_pct = 0.4062
+primary_FLOW = 0.3133
+primary_OBSERVE = 0.2244
+primary_LOGIC = 0.2669
+primary_CHOOSE = 0.1954
+modifier_FLOW = 0.4062
+modifier_OBSERVE = 0.2843
+modifier_LOGIC = 0.1489
+modifier_CHOOSE = 0.1605
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0283
+aa_top5 = [
+  Leu: 0.1337  # aliphatic
+  Glu: 0.0988  # acidic
+  Lys: 0.0930  # basic
+  Ala: 0.0601  # simple
+  Tyr: 0.0581  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 516
+stop_codon = TAG
+loss = 0.0283
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.standard.dominant.crystallized.ionic_interaction

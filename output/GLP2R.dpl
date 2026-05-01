@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GLP2R | unknown
+# CDS: 354 bp (118 codons)
+
+[IDENTITY]
+gene = GLP2R
+organism = unknown
+transcript = ENST00000304773.5
+cds_length = 354
+codons = 118
+protein_length = 118
+stop_codon = none
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = CHOOSE
+dominant_pct = 0.3079
+FLOW = 0.1864
+OBSERVE = 0.2938
+LOGIC = 0.2119
+CHOOSE = 0.3079
+state = flowing
+
+[CONNECT]
+depth = 0.7966
+type = membrane_embedded
+hydrophobic_ratio = 0.6102
+charge_positive = 0.1186
+charge_negative = 0.0593
+charge_neutral = 0.8220
+
+[DISSOLVE]
+rigidity = 0.8930
+potential = crystallized
+wobble_entropy = 0.1070
+complementary_disruption = 0.2034
+
+[ENCODE]
+type = optimized
+loss = 0.2969
+gc_content = 0.5198
+wobble_gc = 0.7373
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4407
+wobble_FLOW = 0.0847
+wobble_OBSERVE = 0.1780
+wobble_LOGIC = 0.2966
+wobble_CHOOSE = 0.4407
+entropy = 0.1070
+
+[OBSERVE]
+distance = 0.0141
+level = strong
+complementary_balance = 0.7966
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1695
+intensity = 0.1695
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1695
+  COMPOSE(OBSERVE,CHOOSE): 0.0932
+  COMPOSE(OBSERVE,OBSERVE): 0.0932
+  COMPOSE(LOGIC,OBSERVE): 0.0847
+  COMPOSE(OBSERVE,FLOW): 0.0763
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.2966
+modifier_dominant = OBSERVE
+modifier_pct = 0.4068
+primary_FLOW = 0.2203
+primary_OBSERVE = 0.2966
+primary_LOGIC = 0.2119
+primary_CHOOSE = 0.2712
+modifier_FLOW = 0.2542
+modifier_OBSERVE = 0.4068
+modifier_LOGIC = 0.1271
+modifier_CHOOSE = 0.2119
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0421
+aa_top5 = [
+  Leu: 0.2034  # aliphatic
+  Ser: 0.0932  # hydroxyl
+  Val: 0.0847  # aliphatic
+  Tyr: 0.0763  # aromatic
+  Thr: 0.0593  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 118
+stop_codon = none
+loss = 0.0421
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.dominant.crystallized.membrane_embedded

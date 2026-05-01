@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CLN3 | unknown
+# CDS: 168 bp (56 codons)
+
+[IDENTITY]
+gene = CLN3
+organism = unknown
+transcript = ENST00000567804.1
+cds_length = 168
+codons = 56
+protein_length = 55
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.961
+resistance = 0.039
+dominant = LOGIC
+dominant_pct = 0.3690
+FLOW = 0.1429
+OBSERVE = 0.2202
+LOGIC = 0.3690
+CHOOSE = 0.2679
+state = flowing
+
+[CONNECT]
+depth = 0.8214
+type = membrane_embedded
+hydrophobic_ratio = 0.6000
+charge_positive = 0.2000
+charge_negative = 0.0182
+charge_neutral = 0.7818
+
+[DISSOLVE]
+rigidity = 0.9519
+potential = crystallized
+wobble_entropy = 0.0481
+complementary_disruption = 0.1786
+
+[ENCODE]
+type = optimized
+loss = 0.4688
+gc_content = 0.6369
+wobble_gc = 0.6429
+codon_diversity = 0.5312
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3750
+wobble_FLOW = 0.1250
+wobble_OBSERVE = 0.2321
+wobble_LOGIC = 0.3750
+wobble_CHOOSE = 0.2679
+entropy = 0.0481
+
+[OBSERVE]
+distance = 0.1012
+level = mild
+complementary_balance = 0.8214
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1429
+intensity = 0.1429
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1429
+  COMPOSE(LOGIC,CHOOSE): 0.1250
+  COMPOSE(CHOOSE,LOGIC): 0.1071
+  COMPOSE(LOGIC,LOGIC): 0.1071
+  COMPOSE(FLOW,LOGIC): 0.1071
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2679
+modifier_dominant = LOGIC
+modifier_pct = 0.4643
+primary_FLOW = 0.2679
+primary_OBSERVE = 0.2500
+primary_LOGIC = 0.2679
+primary_CHOOSE = 0.2143
+modifier_FLOW = 0.0357
+modifier_OBSERVE = 0.1786
+modifier_LOGIC = 0.4643
+modifier_CHOOSE = 0.3214
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0511
+aa_top5 = [
+  Arg: 0.2000  # basic
+  Ala: 0.1273  # simple
+  Gly: 0.1091  # simple
+  Trp: 0.0909  # aromatic
+  Ser: 0.0909  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 55
+stop_codon = TGA
+loss = 0.0511
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.mild.dominant.crystallized.membrane_embedded

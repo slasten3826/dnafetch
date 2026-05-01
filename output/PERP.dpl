@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PERP | unknown
+# CDS: 582 bp (194 codons)
+
+[IDENTITY]
+gene = PERP
+organism = unknown
+transcript = ENST00000421351.4
+cds_length = 582
+codons = 194
+protein_length = 193
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.978
+resistance = 0.022
+dominant = CHOOSE
+dominant_pct = 0.3247
+FLOW = 0.1581
+OBSERVE = 0.2543
+LOGIC = 0.2629
+CHOOSE = 0.3247
+state = flowing
+
+[CONNECT]
+depth = 0.8419
+type = membrane_embedded
+hydrophobic_ratio = 0.7306
+charge_positive = 0.0622
+charge_negative = 0.0518
+charge_neutral = 0.8860
+
+[DISSOLVE]
+rigidity = 0.8240
+potential = low
+wobble_entropy = 0.1760
+complementary_disruption = 0.1581
+
+[ENCODE]
+type = engineered
+loss = 0.1875
+gc_content = 0.5876
+wobble_gc = 0.7887
+codon_diversity = 0.8125
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5361
+wobble_FLOW = 0.0670
+wobble_OBSERVE = 0.1443
+wobble_LOGIC = 0.2526
+wobble_CHOOSE = 0.5361
+entropy = 0.1760
+
+[OBSERVE]
+distance = 0.0619
+level = standard
+complementary_balance = 0.8419
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1186
+intensity = 0.1186
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1186
+  COMPOSE(LOGIC,CHOOSE): 0.1134
+  COMPOSE(FLOW,OBSERVE): 0.1082
+  COMPOSE(OBSERVE,LOGIC): 0.0928
+  COMPOSE(LOGIC,LOGIC): 0.0928
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2938
+modifier_dominant = OBSERVE
+modifier_pct = 0.3454
+primary_FLOW = 0.2165
+primary_OBSERVE = 0.2732
+primary_LOGIC = 0.2938
+primary_CHOOSE = 0.2165
+modifier_FLOW = 0.1907
+modifier_OBSERVE = 0.3454
+modifier_LOGIC = 0.2423
+modifier_CHOOSE = 0.2216
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0327
+aa_top5 = [
+  Leu: 0.1295  # aliphatic
+  Ala: 0.1140  # simple
+  Gly: 0.0933  # simple
+  Ile: 0.0881  # aliphatic
+  Phe: 0.0725  # aromatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 193
+stop_codon = TAA
+loss = 0.0327
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.low.membrane_embedded

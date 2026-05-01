@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SREBF2 | unknown
+# CDS: 624 bp (208 codons)
+
+[IDENTITY]
+gene = SREBF2
+organism = unknown
+transcript = ENST00000435061.1
+cds_length = 624
+codons = 208
+protein_length = 208
+stop_codon = none
+
+[FLOW]
+engagement = 0.972
+resistance = 0.028
+dominant = CHOOSE
+dominant_pct = 0.3446
+FLOW = 0.1875
+OBSERVE = 0.1795
+LOGIC = 0.2885
+CHOOSE = 0.3446
+state = flowing
+
+[CONNECT]
+depth = 0.9359
+type = ionic_interaction
+hydrophobic_ratio = 0.5144
+charge_positive = 0.1731
+charge_negative = 0.0529
+charge_neutral = 0.7740
+
+[DISSOLVE]
+rigidity = 0.9028
+potential = crystallized
+wobble_entropy = 0.0972
+complementary_disruption = 0.0641
+
+[ENCODE]
+type = optimized
+loss = 0.2188
+gc_content = 0.6330
+wobble_gc = 0.7404
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4423
+wobble_FLOW = 0.1346
+wobble_OBSERVE = 0.1250
+wobble_LOGIC = 0.2981
+wobble_CHOOSE = 0.4423
+entropy = 0.0972
+
+[OBSERVE]
+distance = 0.0561
+level = standard
+complementary_balance = 0.9359
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1250
+intensity = 0.1250
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1250
+  COMPOSE(CHOOSE,FLOW): 0.1106
+  COMPOSE(LOGIC,CHOOSE): 0.1106
+  COMPOSE(FLOW,LOGIC): 0.1058
+  COMPOSE(LOGIC,LOGIC): 0.0673
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3221
+modifier_dominant = LOGIC
+modifier_pct = 0.2885
+primary_FLOW = 0.2163
+primary_OBSERVE = 0.1827
+primary_LOGIC = 0.2788
+primary_CHOOSE = 0.3221
+modifier_FLOW = 0.2115
+modifier_OBSERVE = 0.2308
+modifier_LOGIC = 0.2885
+modifier_CHOOSE = 0.2692
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0385
+aa_top5 = [
+  Leu: 0.1346  # aliphatic
+  Ser: 0.1298  # hydroxyl
+  Ala: 0.1106  # simple
+  Arg: 0.0913  # basic
+  Gly: 0.0673  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 208
+stop_codon = none
+loss = 0.0385
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.ionic_interaction

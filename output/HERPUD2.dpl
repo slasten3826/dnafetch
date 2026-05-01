@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HERPUD2 | unknown
+# CDS: 327 bp (109 codons)
+
+[IDENTITY]
+gene = HERPUD2
+organism = unknown
+transcript = ENST00000603731.2
+cds_length = 327
+codons = 109
+protein_length = 108
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.983
+resistance = 0.017
+dominant = CHOOSE
+dominant_pct = 0.3303
+FLOW = 0.2141
+OBSERVE = 0.1865
+LOGIC = 0.2691
+CHOOSE = 0.3303
+state = flowing
+
+[CONNECT]
+depth = 0.9113
+type = balanced_interface
+hydrophobic_ratio = 0.5370
+charge_positive = 0.1389
+charge_negative = 0.0741
+charge_neutral = 0.7870
+
+[DISSOLVE]
+rigidity = 0.9941
+potential = crystallized
+wobble_entropy = 0.0059
+complementary_disruption = 0.0887
+
+[ENCODE]
+type = moderate
+loss = 0.2656
+gc_content = 0.5994
+wobble_gc = 0.5596
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2936
+wobble_FLOW = 0.2110
+wobble_OBSERVE = 0.2294
+wobble_LOGIC = 0.2936
+wobble_CHOOSE = 0.2661
+entropy = 0.0059
+
+[OBSERVE]
+distance = 0.0612
+level = standard
+complementary_balance = 0.9113
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1376
+intensity = 0.1376
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1376
+  COMPOSE(LOGIC,LOGIC): 0.1193
+  COMPOSE(FLOW,CHOOSE): 0.1009
+  COMPOSE(CHOOSE,OBSERVE): 0.0917
+  COMPOSE(CHOOSE,FLOW): 0.0826
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3761
+modifier_dominant = CHOOSE
+modifier_pct = 0.3486
+primary_FLOW = 0.2202
+primary_OBSERVE = 0.1468
+primary_LOGIC = 0.2569
+primary_CHOOSE = 0.3761
+modifier_FLOW = 0.2110
+modifier_OBSERVE = 0.1835
+modifier_LOGIC = 0.2569
+modifier_CHOOSE = 0.3486
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0381
+aa_top5 = [
+  Pro: 0.1389  # cyclic
+  Gly: 0.1204  # simple
+  Thr: 0.1019  # hydroxyl
+  Leu: 0.0926  # aliphatic
+  Arg: 0.0833  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 108
+stop_codon = TGA
+loss = 0.0381
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.crystallized.balanced_interface

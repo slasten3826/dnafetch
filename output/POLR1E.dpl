@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: POLR1E | unknown
+# CDS: 1446 bp (482 codons)
+
+[IDENTITY]
+gene = POLR1E
+organism = unknown
+transcript = ENST00000377792.3
+cds_length = 1446
+codons = 482
+protein_length = 481
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = FLOW
+dominant_pct = 0.2649
+FLOW = 0.2649
+OBSERVE = 0.2414
+LOGIC = 0.2324
+CHOOSE = 0.2614
+state = flowing
+
+[CONNECT]
+depth = 0.9474
+type = balanced_interface
+hydrophobic_ratio = 0.5114
+charge_positive = 0.1476
+charge_negative = 0.1102
+charge_neutral = 0.7422
+
+[DISSOLVE]
+rigidity = 0.9876
+potential = crystallized
+wobble_entropy = 0.0124
+complementary_disruption = 0.0526
+
+[ENCODE]
+type = moderate
+loss = 0.0312
+gc_content = 0.4938
+wobble_gc = 0.5705
+codon_diversity = 0.9688
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3029
+wobble_FLOW = 0.1784
+wobble_OBSERVE = 0.2510
+wobble_LOGIC = 0.2676
+wobble_CHOOSE = 0.3029
+entropy = 0.0124
+
+[OBSERVE]
+distance = 0.0035
+level = intense
+complementary_balance = 0.9474
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1100
+intensity = 0.1100
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1100
+  COMPOSE(FLOW,FLOW): 0.1058
+  COMPOSE(CHOOSE,OBSERVE): 0.0851
+  COMPOSE(FLOW,OBSERVE): 0.0809
+  COMPOSE(LOGIC,CHOOSE): 0.0747
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3133
+modifier_dominant = FLOW
+modifier_pct = 0.3029
+primary_FLOW = 0.3133
+primary_OBSERVE = 0.1846
+primary_LOGIC = 0.2739
+primary_CHOOSE = 0.2282
+modifier_FLOW = 0.3029
+modifier_OBSERVE = 0.2884
+modifier_LOGIC = 0.1556
+modifier_CHOOSE = 0.2531
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0256
+aa_top5 = [
+  Leu: 0.1185  # aliphatic
+  Ser: 0.0915  # hydroxyl
+  Ala: 0.0748  # simple
+  Arg: 0.0624  # basic
+  Lys: 0.0624  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 481
+stop_codon = TAG
+loss = 0.0256
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.intense.strong.crystallized.balanced_interface

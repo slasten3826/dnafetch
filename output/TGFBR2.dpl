@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TGFBR2 | unknown
+# CDS: 1779 bp (593 codons)
+
+[IDENTITY]
+gene = TGFBR2
+organism = unknown
+transcript = ENST00000359013.4
+cds_length = 1779
+codons = 593
+protein_length = 592
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = LOGIC
+dominant_pct = 0.2642
+FLOW = 0.2636
+OBSERVE = 0.2142
+LOGIC = 0.2642
+CHOOSE = 0.2580
+state = flowing
+
+[CONNECT]
+depth = 0.9444
+type = balanced_interface
+hydrophobic_ratio = 0.4916
+charge_positive = 0.1453
+charge_negative = 0.1436
+charge_neutral = 0.7111
+
+[DISSOLVE]
+rigidity = 0.9528
+potential = crystallized
+wobble_entropy = 0.0472
+complementary_disruption = 0.0556
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.5222
+wobble_gc = 0.6712
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3524
+wobble_FLOW = 0.1366
+wobble_OBSERVE = 0.1922
+wobble_LOGIC = 0.3187
+wobble_CHOOSE = 0.3524
+entropy = 0.0472
+
+[OBSERVE]
+distance = 0.0006
+level = intense
+complementary_balance = 0.9444
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1433
+intensity = 0.1433
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1433
+  COMPOSE(FLOW,FLOW): 0.1147
+  COMPOSE(FLOW,OBSERVE): 0.0860
+  COMPOSE(CHOOSE,OBSERVE): 0.0843
+  COMPOSE(OBSERVE,LOGIC): 0.0624
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3120
+modifier_dominant = FLOW
+modifier_pct = 0.3423
+primary_FLOW = 0.3120
+primary_OBSERVE = 0.1754
+primary_LOGIC = 0.2884
+primary_CHOOSE = 0.2243
+modifier_FLOW = 0.3423
+modifier_OBSERVE = 0.2749
+modifier_LOGIC = 0.1855
+modifier_CHOOSE = 0.1973
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0203
+aa_top5 = [
+  Leu: 0.0946  # aliphatic
+  Glu: 0.0845  # acidic
+  Ser: 0.0777  # hydroxyl
+  Ile: 0.0625  # aliphatic
+  Lys: 0.0625  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 592
+stop_codon = TAG
+loss = 0.0203
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.intense.dominant.crystallized.balanced_interface

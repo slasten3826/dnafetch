@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ESRRA | unknown
+# CDS: 501 bp (167 codons)
+
+[IDENTITY]
+gene = ESRRA
+organism = unknown
+transcript = ENST00000545035.1
+cds_length = 501
+codons = 167
+protein_length = 166
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.963
+resistance = 0.037
+dominant = LOGIC
+dominant_pct = 0.3812
+FLOW = 0.1737
+OBSERVE = 0.1856
+LOGIC = 0.3812
+CHOOSE = 0.2595
+state = flowing
+
+[CONNECT]
+depth = 0.8663
+type = membrane_embedded
+hydrophobic_ratio = 0.6205
+charge_positive = 0.1325
+charge_negative = 0.1566
+charge_neutral = 0.7108
+
+[DISSOLVE]
+rigidity = 0.8754
+potential = crystallized
+wobble_entropy = 0.1246
+complementary_disruption = 0.1337
+
+[ENCODE]
+type = optimized
+loss = 0.2656
+gc_content = 0.6407
+wobble_gc = 0.7365
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.5090
+wobble_FLOW = 0.1437
+wobble_OBSERVE = 0.1198
+wobble_LOGIC = 0.5090
+wobble_CHOOSE = 0.2275
+entropy = 0.1246
+
+[OBSERVE]
+distance = 0.1218
+level = basic
+complementary_balance = 0.8663
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1916
+intensity = 0.1916
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1916
+  COMPOSE(LOGIC,FLOW): 0.1557
+  COMPOSE(LOGIC,CHOOSE): 0.1377
+  COMPOSE(LOGIC,LOGIC): 0.0838
+  COMPOSE(LOGIC,OBSERVE): 0.0778
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4551
+modifier_dominant = OBSERVE
+modifier_pct = 0.3473
+primary_FLOW = 0.1018
+primary_OBSERVE = 0.0898
+primary_LOGIC = 0.4551
+primary_CHOOSE = 0.3533
+modifier_FLOW = 0.2754
+modifier_OBSERVE = 0.3473
+modifier_LOGIC = 0.1796
+modifier_CHOOSE = 0.1976
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0528
+aa_top5 = [
+  Leu: 0.2108  # aliphatic
+  Ala: 0.1386  # simple
+  Glu: 0.1205  # acidic
+  Gly: 0.0843  # simple
+  Val: 0.0783  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 166
+stop_codon = TGA
+loss = 0.0528
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.basic.dominant.crystallized.membrane_embedded

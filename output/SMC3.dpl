@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SMC3 | unknown
+# CDS: 3654 bp (1218 codons)
+
+[IDENTITY]
+gene = SMC3
+organism = unknown
+transcript = ENST00000361804.5
+cds_length = 3654
+codons = 1218
+protein_length = 1217
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = FLOW
+dominant_pct = 0.3722
+FLOW = 0.3722
+OBSERVE = 0.2378
+LOGIC = 0.2345
+CHOOSE = 0.1554
+state = flowing
+
+[CONNECT]
+depth = 0.7865
+type = ionic_interaction
+hydrophobic_ratio = 0.4133
+charge_positive = 0.1890
+charge_negative = 0.1758
+charge_neutral = 0.6352
+
+[DISSOLVE]
+rigidity = 0.9564
+potential = crystallized
+wobble_entropy = 0.0436
+complementary_disruption = 0.2135
+
+[ENCODE]
+type = natural
+loss = 0.0625
+gc_content = 0.3900
+wobble_gc = 0.3522
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3350
+wobble_FLOW = 0.3350
+wobble_OBSERVE = 0.3128
+wobble_LOGIC = 0.2282
+wobble_CHOOSE = 0.1240
+entropy = 0.0436
+
+[OBSERVE]
+distance = 0.1344
+level = basic
+complementary_balance = 0.7865
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1757
+intensity = 0.1757
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1757
+  COMPOSE(FLOW,FLOW): 0.1502
+  COMPOSE(CHOOSE,FLOW): 0.0846
+  COMPOSE(FLOW,OBSERVE): 0.0796
+  COMPOSE(OBSERVE,OBSERVE): 0.0747
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3456
+modifier_dominant = FLOW
+modifier_pct = 0.4360
+primary_FLOW = 0.3456
+primary_OBSERVE = 0.1404
+primary_LOGIC = 0.3243
+primary_CHOOSE = 0.1897
+modifier_FLOW = 0.4360
+modifier_OBSERVE = 0.2603
+modifier_LOGIC = 0.1511
+modifier_CHOOSE = 0.1527
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0308
+aa_top5 = [
+  Glu: 0.1183  # acidic
+  Lys: 0.1035  # basic
+  Leu: 0.1011  # aliphatic
+  Arg: 0.0698  # basic
+  Gln: 0.0690  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 1217
+stop_codon = TAA
+loss = 0.0308
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.crystallized.ionic_interaction

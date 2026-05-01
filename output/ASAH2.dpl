@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ASAH2 | unknown
+# CDS: 132 bp (44 codons)
+
+[IDENTITY]
+gene = ASAH2
+organism = unknown
+transcript = ENST00000474434.2
+cds_length = 132
+codons = 44
+protein_length = 43
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = OBSERVE
+dominant_pct = 0.3182
+FLOW = 0.2576
+OBSERVE = 0.3182
+LOGIC = 0.1970
+CHOOSE = 0.2273
+state = flowing
+
+[CONNECT]
+depth = 0.9091
+type = ionic_interaction
+hydrophobic_ratio = 0.5116
+charge_positive = 0.1628
+charge_negative = 0.0465
+charge_neutral = 0.7907
+
+[DISSOLVE]
+rigidity = 0.9880
+potential = crystallized
+wobble_entropy = 0.0120
+complementary_disruption = 0.0909
+
+[ENCODE]
+type = natural
+loss = 0.5000
+gc_content = 0.4242
+wobble_gc = 0.4091
+codon_diversity = 0.5000
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2955
+wobble_FLOW = 0.2955
+wobble_OBSERVE = 0.2955
+wobble_LOGIC = 0.2045
+wobble_CHOOSE = 0.2045
+entropy = 0.0120
+
+[OBSERVE]
+distance = 0.0606
+level = standard
+complementary_balance = 0.9091
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1591
+intensity = 0.1591
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1591
+  COMPOSE(CHOOSE,OBSERVE): 0.1364
+  COMPOSE(FLOW,LOGIC): 0.0909
+  COMPOSE(CHOOSE,FLOW): 0.0909
+  COMPOSE(FLOW,CHOOSE): 0.0909
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3182
+modifier_dominant = OBSERVE
+modifier_pct = 0.3409
+primary_FLOW = 0.2727
+primary_OBSERVE = 0.3182
+primary_LOGIC = 0.0909
+primary_CHOOSE = 0.3182
+modifier_FLOW = 0.2045
+modifier_OBSERVE = 0.3409
+modifier_LOGIC = 0.2955
+modifier_CHOOSE = 0.1591
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0506
+aa_top5 = [
+  Leu: 0.2093  # aliphatic
+  Arg: 0.1163  # basic
+  Phe: 0.0930  # aromatic
+  Thr: 0.0930  # hydroxyl
+  Ser: 0.0930  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 43
+stop_codon = TGA
+loss = 0.0506
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.standard.dominant.crystallized.ionic_interaction

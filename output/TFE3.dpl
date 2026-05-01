@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TFE3 | unknown
+# CDS: 1413 bp (471 codons)
+
+[IDENTITY]
+gene = TFE3
+organism = unknown
+transcript = ENST00000493583.5
+cds_length = 1413
+codons = 471
+protein_length = 470
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.976
+resistance = 0.024
+dominant = CHOOSE
+dominant_pct = 0.3312
+FLOW = 0.2109
+OBSERVE = 0.1684
+LOGIC = 0.2895
+CHOOSE = 0.3312
+state = flowing
+
+[CONNECT]
+depth = 0.9158
+type = balanced_interface
+hydrophobic_ratio = 0.4957
+charge_positive = 0.1255
+charge_negative = 0.1191
+charge_neutral = 0.7553
+
+[DISSOLVE]
+rigidity = 0.9271
+potential = crystallized
+wobble_entropy = 0.0729
+complementary_disruption = 0.0842
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.6207
+wobble_gc = 0.7155
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3715
+wobble_FLOW = 0.1168
+wobble_OBSERVE = 0.1677
+wobble_LOGIC = 0.3715
+wobble_CHOOSE = 0.3439
+entropy = 0.0729
+
+[OBSERVE]
+distance = 0.0418
+level = deep
+complementary_balance = 0.9158
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1189
+intensity = 0.1189
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1189
+  COMPOSE(CHOOSE,OBSERVE): 0.1083
+  COMPOSE(CHOOSE,CHOOSE): 0.0977
+  COMPOSE(CHOOSE,FLOW): 0.0892
+  COMPOSE(LOGIC,CHOOSE): 0.0892
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3461
+modifier_dominant = CHOOSE
+modifier_pct = 0.3036
+primary_FLOW = 0.2293
+primary_OBSERVE = 0.1104
+primary_LOGIC = 0.3142
+primary_CHOOSE = 0.3461
+modifier_FLOW = 0.2866
+modifier_OBSERVE = 0.2272
+modifier_LOGIC = 0.1826
+modifier_CHOOSE = 0.3036
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0352
+aa_top5 = [
+  Ser: 0.1191  # hydroxyl
+  Leu: 0.1170  # aliphatic
+  Pro: 0.0979  # cyclic
+  Ala: 0.0894  # simple
+  Glu: 0.0787  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 470
+stop_codon = TGA
+loss = 0.0352
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.strong.crystallized.balanced_interface

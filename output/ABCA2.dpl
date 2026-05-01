@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ABCA2 | unknown
+# CDS: 456 bp (152 codons)
+
+[IDENTITY]
+gene = ABCA2
+organism = unknown
+transcript = ENST00000470535.2
+cds_length = 456
+codons = 152
+protein_length = 152
+stop_codon = none
+
+[FLOW]
+engagement = 0.979
+resistance = 0.021
+dominant = CHOOSE
+dominant_pct = 0.3268
+FLOW = 0.1974
+OBSERVE = 0.1864
+LOGIC = 0.2895
+CHOOSE = 0.3268
+state = flowing
+
+[CONNECT]
+depth = 0.9518
+type = membrane_embedded
+hydrophobic_ratio = 0.5592
+charge_positive = 0.1053
+charge_negative = 0.0987
+charge_neutral = 0.7961
+
+[DISSOLVE]
+rigidity = 0.7759
+potential = low
+wobble_entropy = 0.2241
+complementary_disruption = 0.0482
+
+[ENCODE]
+type = engineered
+loss = 0.3125
+gc_content = 0.6162
+wobble_gc = 0.8684
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4539
+wobble_FLOW = 0.0461
+wobble_OBSERVE = 0.0855
+wobble_LOGIC = 0.4145
+wobble_CHOOSE = 0.4539
+entropy = 0.2241
+
+[OBSERVE]
+distance = 0.0373
+level = deep
+complementary_balance = 0.9518
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1513
+intensity = 0.1513
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1513
+  COMPOSE(LOGIC,FLOW): 0.0987
+  COMPOSE(CHOOSE,FLOW): 0.0987
+  COMPOSE(FLOW,FLOW): 0.0855
+  COMPOSE(LOGIC,CHOOSE): 0.0789
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3289
+modifier_dominant = OBSERVE
+modifier_pct = 0.3355
+primary_FLOW = 0.2434
+primary_OBSERVE = 0.1382
+primary_LOGIC = 0.2895
+primary_CHOOSE = 0.3289
+modifier_FLOW = 0.3026
+modifier_OBSERVE = 0.3355
+modifier_LOGIC = 0.1645
+modifier_CHOOSE = 0.1974
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0300
+aa_top5 = [
+  Leu: 0.1513  # aliphatic
+  Ser: 0.0789  # hydroxyl
+  Ala: 0.0789  # simple
+  Gln: 0.0724  # amide
+  Val: 0.0592  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 152
+stop_codon = none
+loss = 0.0300
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.membrane_embedded

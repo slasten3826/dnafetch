@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CYBRD1 | unknown
+# CDS: 522 bp (174 codons)
+
+[IDENTITY]
+gene = CYBRD1
+organism = unknown
+transcript = ENST00000445146.1
+cds_length = 522
+codons = 174
+protein_length = 174
+stop_codon = none
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = OBSERVE
+dominant_pct = 0.3008
+FLOW = 0.2280
+OBSERVE = 0.3008
+LOGIC = 0.2414
+CHOOSE = 0.2299
+state = flowing
+
+[CONNECT]
+depth = 0.9157
+type = membrane_embedded
+hydrophobic_ratio = 0.6897
+charge_positive = 0.0977
+charge_negative = 0.0345
+charge_neutral = 0.8678
+
+[DISSOLVE]
+rigidity = 0.9979
+potential = crystallized
+wobble_entropy = 0.0021
+complementary_disruption = 0.0843
+
+[ENCODE]
+type = moderate
+loss = 0.1719
+gc_content = 0.4713
+wobble_gc = 0.5000
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2759
+wobble_FLOW = 0.2241
+wobble_OBSERVE = 0.2759
+wobble_LOGIC = 0.2586
+wobble_CHOOSE = 0.2414
+entropy = 0.0021
+
+[OBSERVE]
+distance = 0.0594
+level = standard
+complementary_balance = 0.9157
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1207
+intensity = 0.1207
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1207
+  COMPOSE(FLOW,OBSERVE): 0.1149
+  COMPOSE(LOGIC,OBSERVE): 0.0977
+  COMPOSE(LOGIC,CHOOSE): 0.0920
+  COMPOSE(OBSERVE,OBSERVE): 0.0862
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2874
+modifier_dominant = OBSERVE
+modifier_pct = 0.4195
+primary_FLOW = 0.2874
+primary_OBSERVE = 0.2069
+primary_LOGIC = 0.2874
+primary_CHOOSE = 0.2184
+modifier_FLOW = 0.1724
+modifier_OBSERVE = 0.4195
+modifier_LOGIC = 0.1782
+modifier_CHOOSE = 0.2299
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0347
+aa_top5 = [
+  Leu: 0.1494  # aliphatic
+  Val: 0.0977  # aliphatic
+  Ala: 0.0920  # simple
+  Ile: 0.0862  # aliphatic
+  Ser: 0.0805  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 174
+stop_codon = none
+loss = 0.0347
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.standard.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: LILRA6 | unknown
+# CDS: 1395 bp (465 codons)
+
+[IDENTITY]
+gene = LILRA6
+organism = unknown
+transcript = ENST00000245621.6
+cds_length = 1395
+codons = 465
+protein_length = 464
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = CHOOSE
+dominant_pct = 0.3362
+FLOW = 0.2072
+OBSERVE = 0.1842
+LOGIC = 0.2724
+CHOOSE = 0.3362
+state = flowing
+
+[CONNECT]
+depth = 0.9133
+type = membrane_embedded
+hydrophobic_ratio = 0.5754
+charge_positive = 0.1099
+charge_negative = 0.0754
+charge_neutral = 0.8147
+
+[DISSOLVE]
+rigidity = 0.9118
+potential = crystallized
+wobble_entropy = 0.0882
+complementary_disruption = 0.0867
+
+[ENCODE]
+type = optimized
+loss = 0.0625
+gc_content = 0.6086
+wobble_gc = 0.7355
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4172
+wobble_FLOW = 0.1376
+wobble_OBSERVE = 0.1269
+wobble_LOGIC = 0.3183
+wobble_CHOOSE = 0.4172
+entropy = 0.0882
+
+[OBSERVE]
+distance = 0.0638
+level = standard
+complementary_balance = 0.9133
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1075
+intensity = 0.1075
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1075
+  COMPOSE(CHOOSE,CHOOSE): 0.0946
+  COMPOSE(CHOOSE,FLOW): 0.0946
+  COMPOSE(LOGIC,LOGIC): 0.0882
+  COMPOSE(LOGIC,FLOW): 0.0753
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3140
+modifier_dominant = CHOOSE
+modifier_pct = 0.2774
+primary_FLOW = 0.2151
+primary_OBSERVE = 0.1892
+primary_LOGIC = 0.2817
+primary_CHOOSE = 0.3140
+modifier_FLOW = 0.2688
+modifier_OBSERVE = 0.2366
+modifier_LOGIC = 0.2172
+modifier_CHOOSE = 0.2774
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0285
+aa_top5 = [
+  Leu: 0.1121  # aliphatic
+  Ser: 0.1056  # hydroxyl
+  Pro: 0.0948  # cyclic
+  Gly: 0.0884  # simple
+  Ala: 0.0690  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 464
+stop_codon = TGA
+loss = 0.0285
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.membrane_embedded

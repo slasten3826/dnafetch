@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FNDC11 | unknown
+# CDS: 957 bp (319 codons)
+
+[IDENTITY]
+gene = FNDC11
+organism = unknown
+transcript = ENST00000370097.2
+cds_length = 957
+codons = 319
+protein_length = 318
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.969
+resistance = 0.031
+dominant = CHOOSE
+dominant_pct = 0.3417
+FLOW = 0.1860
+OBSERVE = 0.1703
+LOGIC = 0.3020
+CHOOSE = 0.3417
+state = flowing
+
+[CONNECT]
+depth = 0.9446
+type = ionic_interaction
+hydrophobic_ratio = 0.5314
+charge_positive = 0.1667
+charge_negative = 0.1164
+charge_neutral = 0.7170
+
+[DISSOLVE]
+rigidity = 0.7702
+potential = low
+wobble_entropy = 0.2298
+complementary_disruption = 0.0554
+
+[ENCODE]
+type = engineered
+loss = 0.2344
+gc_content = 0.6437
+wobble_gc = 0.8746
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4514
+wobble_FLOW = 0.0502
+wobble_OBSERVE = 0.0752
+wobble_LOGIC = 0.4514
+wobble_CHOOSE = 0.4232
+entropy = 0.2298
+
+[OBSERVE]
+distance = 0.0397
+level = deep
+complementary_balance = 0.9446
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1442
+intensity = 0.1442
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1442
+  COMPOSE(LOGIC,FLOW): 0.1160
+  COMPOSE(CHOOSE,FLOW): 0.0909
+  COMPOSE(LOGIC,CHOOSE): 0.0784
+  COMPOSE(FLOW,FLOW): 0.0690
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3668
+modifier_dominant = OBSERVE
+modifier_pct = 0.3009
+primary_FLOW = 0.2132
+primary_OBSERVE = 0.1348
+primary_LOGIC = 0.2853
+primary_CHOOSE = 0.3668
+modifier_FLOW = 0.2947
+modifier_OBSERVE = 0.3009
+modifier_LOGIC = 0.1693
+modifier_CHOOSE = 0.2351
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0309
+aa_top5 = [
+  Leu: 0.1541  # aliphatic
+  Ala: 0.0786  # simple
+  Arg: 0.0755  # basic
+  Pro: 0.0660  # cyclic
+  Asp: 0.0629  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 318
+stop_codon = TGA
+loss = 0.0309
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.deep.dominant.low.ionic_interaction

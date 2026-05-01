@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ALDH3A2 | unknown
+# CDS: 69 bp (23 codons)
+
+[IDENTITY]
+gene = ALDH3A2
+organism = unknown
+transcript = ENST00000573565.1
+cds_length = 69
+codons = 23
+protein_length = 22
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.949
+resistance = 0.051
+dominant = OBSERVE
+dominant_pct = 0.3623
+FLOW = 0.2899
+OBSERVE = 0.3623
+LOGIC = 0.1159
+CHOOSE = 0.2319
+state = flowing
+
+[CONNECT]
+depth = 0.8116
+type = membrane_embedded
+hydrophobic_ratio = 0.6818
+charge_positive = 0.0455
+charge_negative = 0.0000
+charge_neutral = 0.9545
+
+[DISSOLVE]
+rigidity = 0.9979
+potential = crystallized
+wobble_entropy = 0.0021
+complementary_disruption = 0.1884
+
+[ENCODE]
+type = moderate
+loss = 0.7031
+gc_content = 0.3478
+wobble_gc = 0.5217
+codon_diversity = 0.2969
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.2609
+wobble_FLOW = 0.2609
+wobble_OBSERVE = 0.2174
+wobble_LOGIC = 0.2609
+wobble_CHOOSE = 0.2609
+entropy = 0.0021
+
+[OBSERVE]
+distance = 0.0725
+level = standard
+complementary_balance = 0.8116
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.2174
+intensity = 0.2174
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.2174
+  COMPOSE(FLOW,FLOW): 0.1739
+  COMPOSE(FLOW,OBSERVE): 0.1304
+  COMPOSE(OBSERVE,OBSERVE): 0.1304
+  COMPOSE(OBSERVE,FLOW): 0.0870
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3478
+modifier_dominant = OBSERVE
+modifier_pct = 0.5217
+primary_FLOW = 0.3043
+primary_OBSERVE = 0.3478
+primary_LOGIC = 0.0435
+primary_CHOOSE = 0.3043
+modifier_FLOW = 0.3043
+modifier_OBSERVE = 0.5217
+modifier_LOGIC = 0.0435
+modifier_CHOOSE = 0.1304
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0641
+aa_top5 = [
+  Leu: 0.2727  # aliphatic
+  Asn: 0.1364  # amide
+  Met: 0.0909  # sulfur
+  Phe: 0.0909  # aromatic
+  Ser: 0.0909  # hydroxyl
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 22
+stop_codon = TAA
+loss = 0.0641
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.standard.dominant.crystallized.membrane_embedded

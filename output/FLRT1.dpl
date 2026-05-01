@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FLRT1 | unknown
+# CDS: 2025 bp (675 codons)
+
+[IDENTITY]
+gene = FLRT1
+organism = unknown
+transcript = ENST00000246841.3
+cds_length = 2025
+codons = 675
+protein_length = 674
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.968
+resistance = 0.032
+dominant = CHOOSE
+dominant_pct = 0.3575
+FLOW = 0.2094
+OBSERVE = 0.1590
+LOGIC = 0.2741
+CHOOSE = 0.3575
+state = flowing
+
+[CONNECT]
+depth = 0.8662
+type = balanced_interface
+hydrophobic_ratio = 0.5401
+charge_positive = 0.1142
+charge_negative = 0.1053
+charge_neutral = 0.7804
+
+[DISSOLVE]
+rigidity = 0.7521
+potential = low
+wobble_entropy = 0.2479
+complementary_disruption = 0.1338
+
+[ENCODE]
+type = engineered
+loss = 0.1094
+gc_content = 0.6316
+wobble_gc = 0.8770
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5304
+wobble_FLOW = 0.0459
+wobble_OBSERVE = 0.0770
+wobble_LOGIC = 0.3467
+wobble_CHOOSE = 0.5304
+entropy = 0.2479
+
+[OBSERVE]
+distance = 0.0835
+level = mild
+complementary_balance = 0.8662
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1289
+intensity = 0.1289
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1289
+  COMPOSE(LOGIC,FLOW): 0.1052
+  COMPOSE(FLOW,FLOW): 0.0978
+  COMPOSE(FLOW,CHOOSE): 0.0889
+  COMPOSE(LOGIC,CHOOSE): 0.0874
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3007
+modifier_dominant = FLOW
+modifier_pct = 0.2830
+primary_FLOW = 0.2993
+primary_OBSERVE = 0.1215
+primary_LOGIC = 0.3007
+primary_CHOOSE = 0.2785
+modifier_FLOW = 0.2830
+modifier_OBSERVE = 0.2785
+modifier_LOGIC = 0.1748
+modifier_CHOOSE = 0.2637
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0282
+aa_top5 = [
+  Leu: 0.1306  # aliphatic
+  Thr: 0.0890  # hydroxyl
+  Ala: 0.0875  # simple
+  Ser: 0.0638  # hydroxyl
+  Asp: 0.0623  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 674
+stop_codon = TGA
+loss = 0.0282
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.low.balanced_interface

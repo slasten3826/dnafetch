@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM131A | unknown
+# CDS: 1008 bp (336 codons)
+
+[IDENTITY]
+gene = FAM131A
+organism = unknown
+transcript = ENST00000310585.4
+cds_length = 1008
+codons = 336
+protein_length = 335
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.976
+resistance = 0.024
+dominant = CHOOSE
+dominant_pct = 0.3403
+FLOW = 0.1716
+OBSERVE = 0.2113
+LOGIC = 0.2768
+CHOOSE = 0.3403
+state = flowing
+
+[CONNECT]
+depth = 0.8968
+type = balanced_interface
+hydrophobic_ratio = 0.5343
+charge_positive = 0.0896
+charge_negative = 0.1433
+charge_neutral = 0.7672
+
+[DISSOLVE]
+rigidity = 0.9305
+potential = crystallized
+wobble_entropy = 0.0695
+complementary_disruption = 0.1032
+
+[ENCODE]
+type = optimized
+loss = 0.1094
+gc_content = 0.6171
+wobble_gc = 0.7054
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3839
+wobble_FLOW = 0.1161
+wobble_OBSERVE = 0.1786
+wobble_LOGIC = 0.3214
+wobble_CHOOSE = 0.3839
+entropy = 0.0695
+
+[OBSERVE]
+distance = 0.0635
+level = standard
+complementary_balance = 0.8968
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1429
+intensity = 0.1429
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1429
+  COMPOSE(CHOOSE,OBSERVE): 0.1161
+  COMPOSE(OBSERVE,CHOOSE): 0.1071
+  COMPOSE(LOGIC,CHOOSE): 0.0893
+  COMPOSE(CHOOSE,CHOOSE): 0.0893
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3333
+modifier_dominant = CHOOSE
+modifier_pct = 0.3244
+primary_FLOW = 0.1339
+primary_OBSERVE = 0.2202
+primary_LOGIC = 0.3333
+primary_CHOOSE = 0.3125
+modifier_FLOW = 0.2649
+modifier_OBSERVE = 0.2351
+modifier_LOGIC = 0.1756
+modifier_CHOOSE = 0.3244
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0370
+aa_top5 = [
+  Ser: 0.1403  # hydroxyl
+  Leu: 0.1284  # aliphatic
+  Ala: 0.0896  # simple
+  Pro: 0.0896  # cyclic
+  Glu: 0.0776  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 335
+stop_codon = TGA
+loss = 0.0370
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.balanced_interface

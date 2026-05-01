@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PACSIN2 | unknown
+# CDS: 75 bp (25 codons)
+
+[IDENTITY]
+gene = PACSIN2
+organism = unknown
+transcript = ENST00000453079.1
+cds_length = 75
+codons = 25
+protein_length = 24
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.967
+resistance = 0.033
+dominant = OBSERVE
+dominant_pct = 0.3200
+FLOW = 0.2533
+OBSERVE = 0.3200
+LOGIC = 0.2933
+CHOOSE = 0.1333
+state = flowing
+
+[CONNECT]
+depth = 0.7733
+type = balanced_interface
+hydrophobic_ratio = 0.5417
+charge_positive = 0.1250
+charge_negative = 0.0833
+charge_neutral = 0.7917
+
+[DISSOLVE]
+rigidity = 0.9530
+potential = crystallized
+wobble_entropy = 0.0470
+complementary_disruption = 0.2267
+
+[ENCODE]
+type = natural
+loss = 0.6406
+gc_content = 0.4267
+wobble_gc = 0.3600
+codon_diversity = 0.3594
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3600
+wobble_FLOW = 0.2800
+wobble_OBSERVE = 0.3600
+wobble_LOGIC = 0.2400
+wobble_CHOOSE = 0.1200
+entropy = 0.0470
+
+[OBSERVE]
+distance = 0.0267
+level = deep
+complementary_balance = 0.7733
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1600
+intensity = 0.1600
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1600
+  COMPOSE(LOGIC,OBSERVE): 0.1600
+  COMPOSE(FLOW,OBSERVE): 0.0800
+  COMPOSE(CHOOSE,FLOW): 0.0800
+  COMPOSE(OBSERVE,OBSERVE): 0.0800
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3200
+modifier_dominant = OBSERVE
+modifier_pct = 0.4000
+primary_FLOW = 0.2800
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.3200
+primary_CHOOSE = 0.2000
+modifier_FLOW = 0.2000
+modifier_OBSERVE = 0.4000
+modifier_LOGIC = 0.3200
+modifier_CHOOSE = 0.0800
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0537
+aa_top5 = [
+  Leu: 0.1667  # aliphatic
+  Val: 0.1667  # aliphatic
+  Ser: 0.1250  # hydroxyl
+  Arg: 0.1250  # basic
+  Gln: 0.0833  # amide
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 24
+stop_codon = TGA
+loss = 0.0537
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.dominant.crystallized.balanced_interface

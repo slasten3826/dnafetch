@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PER1 | unknown
+# CDS: 336 bp (112 codons)
+
+[IDENTITY]
+gene = PER1
+organism = unknown
+transcript = ENST00000584202.1
+cds_length = 336
+codons = 112
+protein_length = 112
+stop_codon = none
+
+[FLOW]
+engagement = 0.970
+resistance = 0.030
+dominant = CHOOSE
+dominant_pct = 0.3423
+FLOW = 0.2202
+OBSERVE = 0.1518
+LOGIC = 0.2857
+CHOOSE = 0.3423
+state = flowing
+
+[CONNECT]
+depth = 0.8750
+type = balanced_interface
+hydrophobic_ratio = 0.4464
+charge_positive = 0.0804
+charge_negative = 0.1071
+charge_neutral = 0.8125
+
+[DISSOLVE]
+rigidity = 0.9410
+potential = crystallized
+wobble_entropy = 0.0590
+complementary_disruption = 0.1250
+
+[ENCODE]
+type = optimized
+loss = 0.3594
+gc_content = 0.6280
+wobble_gc = 0.6429
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4286
+wobble_FLOW = 0.1518
+wobble_OBSERVE = 0.2054
+wobble_LOGIC = 0.2143
+wobble_CHOOSE = 0.4286
+entropy = 0.0590
+
+[OBSERVE]
+distance = 0.0565
+level = standard
+complementary_balance = 0.8750
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,LOGIC)
+top_compose_pct = 0.1429
+intensity = 0.1429
+compose_top5 = [
+  COMPOSE(FLOW,LOGIC): 0.1429
+  COMPOSE(LOGIC,LOGIC): 0.1429
+  COMPOSE(CHOOSE,CHOOSE): 0.1250
+  COMPOSE(OBSERVE,CHOOSE): 0.1250
+  COMPOSE(LOGIC,FLOW): 0.1071
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3214
+modifier_dominant = CHOOSE
+modifier_pct = 0.3482
+primary_FLOW = 0.2679
+primary_OBSERVE = 0.1607
+primary_LOGIC = 0.3214
+primary_CHOOSE = 0.2500
+modifier_FLOW = 0.2411
+modifier_OBSERVE = 0.0893
+modifier_LOGIC = 0.3214
+modifier_CHOOSE = 0.3482
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0587
+aa_top5 = [
+  Ser: 0.2500  # hydroxyl
+  Gly: 0.1429  # simple
+  Pro: 0.1250  # cyclic
+  Ala: 0.0625  # simple
+  Leu: 0.0536  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 112
+stop_codon = none
+loss = 0.0587
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.balanced_interface

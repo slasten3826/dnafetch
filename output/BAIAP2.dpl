@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: BAIAP2 | unknown
+# CDS: 507 bp (169 codons)
+
+[IDENTITY]
+gene = BAIAP2
+organism = unknown
+transcript = ENST00000572498.1
+cds_length = 507
+codons = 169
+protein_length = 168
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.967
+resistance = 0.033
+dominant = CHOOSE
+dominant_pct = 0.3412
+FLOW = 0.1953
+OBSERVE = 0.1598
+LOGIC = 0.3037
+CHOOSE = 0.3412
+state = flowing
+
+[CONNECT]
+depth = 0.9270
+type = balanced_interface
+hydrophobic_ratio = 0.5238
+charge_positive = 0.1429
+charge_negative = 0.1071
+charge_neutral = 0.7500
+
+[DISSOLVE]
+rigidity = 0.7830
+potential = low
+wobble_entropy = 0.2170
+complementary_disruption = 0.0730
+
+[ENCODE]
+type = engineered
+loss = 0.2812
+gc_content = 0.6450
+wobble_gc = 0.8462
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5148
+wobble_FLOW = 0.0414
+wobble_OBSERVE = 0.1124
+wobble_LOGIC = 0.3314
+wobble_CHOOSE = 0.5148
+entropy = 0.2170
+
+[OBSERVE]
+distance = 0.0375
+level = deep
+complementary_balance = 0.9270
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1065
+intensity = 0.1065
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1065
+  COMPOSE(LOGIC,CHOOSE): 0.1006
+  COMPOSE(FLOW,LOGIC): 0.1006
+  COMPOSE(CHOOSE,OBSERVE): 0.0888
+  COMPOSE(LOGIC,LOGIC): 0.0828
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3314
+modifier_dominant = FLOW
+modifier_pct = 0.2722
+primary_FLOW = 0.2722
+primary_OBSERVE = 0.1361
+primary_LOGIC = 0.3314
+primary_CHOOSE = 0.2604
+modifier_FLOW = 0.2722
+modifier_OBSERVE = 0.2308
+modifier_LOGIC = 0.2485
+modifier_CHOOSE = 0.2485
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0307
+aa_top5 = [
+  Ser: 0.1131  # hydroxyl
+  Ala: 0.1012  # simple
+  Leu: 0.0952  # aliphatic
+  Gly: 0.0833  # simple
+  Asp: 0.0774  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 168
+stop_codon = TGA
+loss = 0.0307
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.strong.low.balanced_interface

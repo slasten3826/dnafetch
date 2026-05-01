@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FOXG1 | unknown
+# CDS: 1470 bp (490 codons)
+
+[IDENTITY]
+gene = FOXG1
+organism = unknown
+transcript = ENST00000313071.7
+cds_length = 1470
+codons = 490
+protein_length = 489
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.946
+resistance = 0.054
+dominant = CHOOSE
+dominant_pct = 0.3871
+FLOW = 0.1952
+OBSERVE = 0.1327
+LOGIC = 0.2850
+CHOOSE = 0.3871
+state = flowing
+
+[CONNECT]
+depth = 0.8354
+type = balanced_interface
+hydrophobic_ratio = 0.5276
+charge_positive = 0.1493
+charge_negative = 0.0736
+charge_neutral = 0.7771
+
+[DISSOLVE]
+rigidity = 0.7287
+potential = low
+wobble_entropy = 0.2713
+complementary_disruption = 0.1646
+
+[ENCODE]
+type = engineered
+loss = 0.1406
+gc_content = 0.6721
+wobble_gc = 0.9000
+codon_diversity = 0.8594
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5061
+wobble_FLOW = 0.0429
+wobble_OBSERVE = 0.0571
+wobble_LOGIC = 0.3939
+wobble_CHOOSE = 0.5061
+entropy = 0.2713
+
+[OBSERVE]
+distance = 0.1020
+level = mild
+complementary_balance = 0.8354
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1286
+intensity = 0.1286
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1286
+  COMPOSE(CHOOSE,FLOW): 0.1020
+  COMPOSE(LOGIC,LOGIC): 0.0980
+  COMPOSE(FLOW,FLOW): 0.0980
+  COMPOSE(LOGIC,FLOW): 0.0735
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3286
+modifier_dominant = CHOOSE
+modifier_pct = 0.3265
+primary_FLOW = 0.2367
+primary_OBSERVE = 0.1612
+primary_LOGIC = 0.2735
+primary_CHOOSE = 0.3286
+modifier_FLOW = 0.3061
+modifier_OBSERVE = 0.1796
+modifier_LOGIC = 0.1878
+modifier_CHOOSE = 0.3265
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0321
+aa_top5 = [
+  Pro: 0.1288  # cyclic
+  Ser: 0.1104  # hydroxyl
+  Gly: 0.0982  # simple
+  Leu: 0.0777  # aliphatic
+  Ala: 0.0736  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 489
+stop_codon = TAA
+loss = 0.0321
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.low.balanced_interface

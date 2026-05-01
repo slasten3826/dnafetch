@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000272297 | unknown
+# CDS: 99 bp (33 codons)
+
+[IDENTITY]
+gene = ENSG00000272297
+organism = unknown
+transcript = ENST00000509111.2
+cds_length = 99
+codons = 33
+protein_length = 32
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.957
+resistance = 0.043
+dominant = OBSERVE
+dominant_pct = 0.3636
+FLOW = 0.2929
+OBSERVE = 0.3636
+LOGIC = 0.1414
+CHOOSE = 0.2020
+state = flowing
+
+[CONNECT]
+depth = 0.8687
+type = ionic_interaction
+hydrophobic_ratio = 0.5312
+charge_positive = 0.1562
+charge_negative = 0.0938
+charge_neutral = 0.7500
+
+[DISSOLVE]
+rigidity = 0.9645
+potential = crystallized
+wobble_entropy = 0.0355
+complementary_disruption = 0.1313
+
+[ENCODE]
+type = natural
+loss = 0.6406
+gc_content = 0.3434
+wobble_gc = 0.3636
+codon_diversity = 0.3594
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3636
+wobble_FLOW = 0.3636
+wobble_OBSERVE = 0.2727
+wobble_LOGIC = 0.1515
+wobble_CHOOSE = 0.2121
+entropy = 0.0355
+
+[OBSERVE]
+distance = 0.0707
+level = standard
+complementary_balance = 0.8687
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.2424
+intensity = 0.2424
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.2424
+  COMPOSE(FLOW,OBSERVE): 0.1212
+  COMPOSE(FLOW,CHOOSE): 0.1212
+  COMPOSE(OBSERVE,CHOOSE): 0.0909
+  COMPOSE(LOGIC,FLOW): 0.0909
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3939
+modifier_dominant = OBSERVE
+modifier_pct = 0.4242
+primary_FLOW = 0.3030
+primary_OBSERVE = 0.3939
+primary_LOGIC = 0.1818
+primary_CHOOSE = 0.1212
+modifier_FLOW = 0.2121
+modifier_OBSERVE = 0.4242
+modifier_LOGIC = 0.0909
+modifier_CHOOSE = 0.2727
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0435
+aa_top5 = [
+  Leu: 0.1562  # aliphatic
+  Thr: 0.1250  # hydroxyl
+  Ser: 0.0938  # hydroxyl
+  Phe: 0.0938  # aromatic
+  Ile: 0.0938  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 32
+stop_codon = TGA
+loss = 0.0435
+
+[SIGNATURE]
+fingerprint = OBSERVE.FLOW.standard.dominant.crystallized.ionic_interaction

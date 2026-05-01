@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: OR8B4 | unknown
+# CDS: 930 bp (310 codons)
+
+[IDENTITY]
+gene = OR8B4
+organism = unknown
+transcript = ENST00000356130.7
+cds_length = 930
+codons = 310
+protein_length = 309
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = OBSERVE
+dominant_pct = 0.3355
+FLOW = 0.2075
+OBSERVE = 0.3355
+LOGIC = 0.2011
+CHOOSE = 0.2559
+state = flowing
+
+[CONNECT]
+depth = 0.8172
+type = membrane_embedded
+hydrophobic_ratio = 0.6570
+charge_positive = 0.0647
+charge_negative = 0.0485
+charge_neutral = 0.8867
+
+[DISSOLVE]
+rigidity = 0.9603
+potential = crystallized
+wobble_entropy = 0.0397
+complementary_disruption = 0.1828
+
+[ENCODE]
+type = moderate
+loss = 0.1250
+gc_content = 0.4570
+wobble_gc = 0.5774
+codon_diversity = 0.8750
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3677
+wobble_FLOW = 0.1452
+wobble_OBSERVE = 0.2774
+wobble_LOGIC = 0.2097
+wobble_CHOOSE = 0.3677
+entropy = 0.0397
+
+[OBSERVE]
+distance = 0.0796
+level = standard
+complementary_balance = 0.8172
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1290
+intensity = 0.1290
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1290
+  COMPOSE(FLOW,OBSERVE): 0.1097
+  COMPOSE(CHOOSE,OBSERVE): 0.1032
+  COMPOSE(LOGIC,OBSERVE): 0.0935
+  COMPOSE(OBSERVE,CHOOSE): 0.0774
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.2935
+modifier_dominant = OBSERVE
+modifier_pct = 0.4355
+primary_FLOW = 0.2871
+primary_OBSERVE = 0.2935
+primary_LOGIC = 0.2387
+primary_CHOOSE = 0.1806
+modifier_FLOW = 0.1903
+modifier_OBSERVE = 0.4355
+modifier_LOGIC = 0.1548
+modifier_CHOOSE = 0.2194
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0346
+aa_top5 = [
+  Leu: 0.1392  # aliphatic
+  Ser: 0.1100  # hydroxyl
+  Val: 0.0939  # aliphatic
+  Phe: 0.0939  # aromatic
+  Ile: 0.0680  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 309
+stop_codon = TAA
+loss = 0.0346
+
+[SIGNATURE]
+fingerprint = OBSERVE.CHOOSE.standard.dominant.crystallized.membrane_embedded

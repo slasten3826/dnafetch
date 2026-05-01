@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ATP5ME | unknown
+# CDS: 210 bp (70 codons)
+
+[IDENTITY]
+gene = ATP5ME
+organism = unknown
+transcript = ENST00000304312.5
+cds_length = 210
+codons = 70
+protein_length = 69
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.983
+resistance = 0.017
+dominant = FLOW
+dominant_pct = 0.2952
+FLOW = 0.2952
+OBSERVE = 0.1667
+LOGIC = 0.2952
+CHOOSE = 0.2429
+state = flowing
+
+[CONNECT]
+depth = 0.8190
+type = ionic_interaction
+hydrophobic_ratio = 0.5362
+charge_positive = 0.2029
+charge_negative = 0.1594
+charge_neutral = 0.6377
+
+[DISSOLVE]
+rigidity = 0.9444
+potential = crystallized
+wobble_entropy = 0.0556
+complementary_disruption = 0.1810
+
+[ENCODE]
+type = optimized
+loss = 0.4062
+gc_content = 0.5381
+wobble_gc = 0.6286
+codon_diversity = 0.5938
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3429
+wobble_FLOW = 0.2714
+wobble_OBSERVE = 0.1000
+wobble_LOGIC = 0.3429
+wobble_CHOOSE = 0.2857
+entropy = 0.0556
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.8190
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1571
+intensity = 0.1571
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1571
+  COMPOSE(FLOW,FLOW): 0.1143
+  COMPOSE(LOGIC,CHOOSE): 0.1143
+  COMPOSE(CHOOSE,OBSERVE): 0.0857
+  COMPOSE(FLOW,OBSERVE): 0.0714
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3714
+modifier_dominant = FLOW
+modifier_pct = 0.3571
+primary_FLOW = 0.2571
+primary_OBSERVE = 0.1429
+primary_LOGIC = 0.3714
+primary_CHOOSE = 0.2286
+modifier_FLOW = 0.3571
+modifier_OBSERVE = 0.2571
+modifier_LOGIC = 0.1714
+modifier_CHOOSE = 0.2143
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0398
+aa_top5 = [
+  Leu: 0.1159  # aliphatic
+  Ala: 0.1159  # simple
+  Glu: 0.1159  # acidic
+  Lys: 0.1014  # basic
+  Arg: 0.1014  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 69
+stop_codon = TGA
+loss = 0.0398
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.intense.dominant.crystallized.ionic_interaction

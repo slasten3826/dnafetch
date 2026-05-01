@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ADRB2 | unknown
+# CDS: 1242 bp (414 codons)
+
+[IDENTITY]
+gene = ADRB2
+organism = unknown
+transcript = ENST00000305988.6
+cds_length = 1242
+codons = 414
+protein_length = 413
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = CHOOSE
+dominant_pct = 0.2657
+FLOW = 0.2214
+OBSERVE = 0.2496
+LOGIC = 0.2633
+CHOOSE = 0.2657
+state = flowing
+
+[CONNECT]
+depth = 0.9694
+type = membrane_embedded
+hydrophobic_ratio = 0.5835
+charge_positive = 0.1065
+charge_negative = 0.0847
+charge_neutral = 0.8087
+
+[DISSOLVE]
+rigidity = 0.9175
+potential = crystallized
+wobble_entropy = 0.0825
+complementary_disruption = 0.0306
+
+[ENCODE]
+type = optimized
+loss = 0.0781
+gc_content = 0.5290
+wobble_gc = 0.7053
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3986
+wobble_FLOW = 0.0918
+wobble_OBSERVE = 0.2029
+wobble_LOGIC = 0.3068
+wobble_CHOOSE = 0.3986
+entropy = 0.0825
+
+[OBSERVE]
+distance = 0.0024
+level = intense
+complementary_balance = 0.9694
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.0990
+intensity = 0.0990
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.0990
+  COMPOSE(FLOW,FLOW): 0.0918
+  COMPOSE(LOGIC,OBSERVE): 0.0870
+  COMPOSE(LOGIC,FLOW): 0.0845
+  COMPOSE(CHOOSE,OBSERVE): 0.0821
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2995
+modifier_dominant = OBSERVE
+modifier_pct = 0.3406
+primary_FLOW = 0.2874
+primary_OBSERVE = 0.2053
+primary_LOGIC = 0.2995
+primary_CHOOSE = 0.2077
+modifier_FLOW = 0.2850
+modifier_OBSERVE = 0.3406
+modifier_LOGIC = 0.1836
+modifier_CHOOSE = 0.1908
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0206
+aa_top5 = [
+  Leu: 0.0944  # aliphatic
+  Val: 0.0872  # aliphatic
+  Ile: 0.0751  # aliphatic
+  Ser: 0.0702  # hydroxyl
+  Gly: 0.0678  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 413
+stop_codon = TAA
+loss = 0.0206
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.intense.strong.crystallized.membrane_embedded

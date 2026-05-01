@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NFE2 | unknown
+# CDS: 1029 bp (343 codons)
+
+[IDENTITY]
+gene = NFE2
+organism = unknown
+transcript = ENST00000553198.1
+cds_length = 1029
+codons = 343
+protein_length = 343
+stop_codon = none
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = CHOOSE
+dominant_pct = 0.3197
+FLOW = 0.2332
+OBSERVE = 0.1846
+LOGIC = 0.2624
+CHOOSE = 0.3197
+state = flowing
+
+[CONNECT]
+depth = 0.8941
+type = balanced_interface
+hydrophobic_ratio = 0.5306
+charge_positive = 0.1166
+charge_negative = 0.1429
+charge_neutral = 0.7405
+
+[DISSOLVE]
+rigidity = 0.9739
+potential = crystallized
+wobble_entropy = 0.0261
+complementary_disruption = 0.1059
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.5821
+wobble_gc = 0.6297
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3236
+wobble_FLOW = 0.2041
+wobble_OBSERVE = 0.1662
+wobble_LOGIC = 0.3236
+wobble_CHOOSE = 0.3061
+entropy = 0.0261
+
+[OBSERVE]
+distance = 0.0573
+level = standard
+complementary_balance = 0.8941
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1429
+intensity = 0.1429
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1429
+  COMPOSE(CHOOSE,CHOOSE): 0.1283
+  COMPOSE(CHOOSE,OBSERVE): 0.0991
+  COMPOSE(LOGIC,CHOOSE): 0.0700
+  COMPOSE(OBSERVE,CHOOSE): 0.0641
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3440
+modifier_dominant = CHOOSE
+modifier_pct = 0.3090
+primary_FLOW = 0.2012
+primary_OBSERVE = 0.1574
+primary_LOGIC = 0.2974
+primary_CHOOSE = 0.3440
+modifier_FLOW = 0.2945
+modifier_OBSERVE = 0.2303
+modifier_LOGIC = 0.1662
+modifier_CHOOSE = 0.3090
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0358
+aa_top5 = [
+  Pro: 0.1283  # cyclic
+  Leu: 0.1254  # aliphatic
+  Glu: 0.0991  # acidic
+  Ser: 0.0875  # hydroxyl
+  Arg: 0.0787  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 343
+stop_codon = none
+loss = 0.0358
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.standard.dominant.crystallized.balanced_interface

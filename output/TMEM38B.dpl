@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TMEM38B | unknown
+# CDS: 234 bp (78 codons)
+
+[IDENTITY]
+gene = TMEM38B
+organism = unknown
+transcript = ENST00000451560.1
+cds_length = 234
+codons = 78
+protein_length = 77
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = FLOW
+dominant_pct = 0.2906
+FLOW = 0.2906
+OBSERVE = 0.2692
+LOGIC = 0.2436
+CHOOSE = 0.1966
+state = flowing
+
+[CONNECT]
+depth = 0.9316
+type = membrane_embedded
+hydrophobic_ratio = 0.6104
+charge_positive = 0.1429
+charge_negative = 0.0649
+charge_neutral = 0.7922
+
+[DISSOLVE]
+rigidity = 0.9887
+potential = crystallized
+wobble_entropy = 0.0113
+complementary_disruption = 0.0684
+
+[ENCODE]
+type = moderate
+loss = 0.3906
+gc_content = 0.4402
+wobble_gc = 0.4744
+codon_diversity = 0.6094
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2949
+wobble_FLOW = 0.2564
+wobble_OBSERVE = 0.2692
+wobble_LOGIC = 0.2949
+wobble_CHOOSE = 0.1795
+entropy = 0.0113
+
+[OBSERVE]
+distance = 0.0214
+level = deep
+complementary_balance = 0.9316
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1410
+intensity = 0.1410
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1410
+  COMPOSE(FLOW,FLOW): 0.1026
+  COMPOSE(LOGIC,LOGIC): 0.0897
+  COMPOSE(FLOW,CHOOSE): 0.0897
+  COMPOSE(LOGIC,CHOOSE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3462
+modifier_dominant = OBSERVE
+modifier_pct = 0.3462
+primary_FLOW = 0.3462
+primary_OBSERVE = 0.1923
+primary_LOGIC = 0.2821
+primary_CHOOSE = 0.1795
+modifier_FLOW = 0.2692
+modifier_OBSERVE = 0.3462
+modifier_LOGIC = 0.1538
+modifier_CHOOSE = 0.2308
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0285
+aa_top5 = [
+  Ile: 0.1039  # aliphatic
+  Gly: 0.0909  # simple
+  Thr: 0.0909  # hydroxyl
+  Leu: 0.0909  # aliphatic
+  Ala: 0.0779  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 77
+stop_codon = TAG
+loss = 0.0285
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.deep.dominant.crystallized.membrane_embedded

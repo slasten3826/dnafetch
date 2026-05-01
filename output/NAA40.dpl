@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NAA40 | unknown
+# CDS: 651 bp (217 codons)
+
+[IDENTITY]
+gene = NAA40
+organism = unknown
+transcript = ENST00000542163.1
+cds_length = 651
+codons = 217
+protein_length = 216
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = LOGIC
+dominant_pct = 0.2995
+FLOW = 0.2488
+OBSERVE = 0.2243
+LOGIC = 0.2995
+CHOOSE = 0.2273
+state = flowing
+
+[CONNECT]
+depth = 0.9032
+type = ionic_interaction
+hydrophobic_ratio = 0.5139
+charge_positive = 0.1574
+charge_negative = 0.1481
+charge_neutral = 0.6944
+
+[DISSOLVE]
+rigidity = 0.9623
+potential = crystallized
+wobble_entropy = 0.0377
+complementary_disruption = 0.0968
+
+[ENCODE]
+type = optimized
+loss = 0.1719
+gc_content = 0.5269
+wobble_gc = 0.6544
+codon_diversity = 0.8281
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3318
+wobble_FLOW = 0.1475
+wobble_OBSERVE = 0.1982
+wobble_LOGIC = 0.3226
+wobble_CHOOSE = 0.3318
+entropy = 0.0377
+
+[OBSERVE]
+distance = 0.0507
+level = standard
+complementary_balance = 0.9032
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1475
+intensity = 0.1475
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1475
+  COMPOSE(FLOW,FLOW): 0.0968
+  COMPOSE(OBSERVE,LOGIC): 0.0737
+  COMPOSE(OBSERVE,OBSERVE): 0.0737
+  COMPOSE(CHOOSE,FLOW): 0.0737
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3456
+modifier_dominant = FLOW
+modifier_pct = 0.3502
+primary_FLOW = 0.2488
+primary_OBSERVE = 0.2212
+primary_LOGIC = 0.3456
+primary_CHOOSE = 0.1843
+modifier_FLOW = 0.3502
+modifier_OBSERVE = 0.2535
+modifier_LOGIC = 0.2304
+modifier_CHOOSE = 0.1659
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0180
+aa_top5 = [
+  Glu: 0.0787  # acidic
+  Ser: 0.0741  # hydroxyl
+  Asp: 0.0694  # acidic
+  Leu: 0.0694  # aliphatic
+  Gly: 0.0694  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 216
+stop_codon = TGA
+loss = 0.0180
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.standard.dominant.crystallized.ionic_interaction

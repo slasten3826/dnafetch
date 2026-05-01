@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: IVL | unknown
+# CDS: 1758 bp (586 codons)
+
+[IDENTITY]
+gene = IVL
+organism = unknown
+transcript = ENST00000368764.4
+cds_length = 1758
+codons = 586
+protein_length = 585
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.940
+resistance = 0.060
+dominant = LOGIC
+dominant_pct = 0.3544
+FLOW = 0.2958
+OBSERVE = 0.0990
+LOGIC = 0.3544
+CHOOSE = 0.2509
+state = flowing
+
+[CONNECT]
+depth = 0.6997
+type = ionic_interaction
+hydrophobic_ratio = 0.3692
+charge_positive = 0.1316
+charge_negative = 0.2120
+charge_neutral = 0.6564
+
+[DISSOLVE]
+rigidity = 0.7199
+potential = low
+wobble_entropy = 0.2801
+complementary_disruption = 0.3003
+
+[ENCODE]
+type = engineered
+loss = 0.2188
+gc_content = 0.6052
+wobble_gc = 0.7730
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.6553
+wobble_FLOW = 0.1655
+wobble_OBSERVE = 0.0614
+wobble_LOGIC = 0.6553
+wobble_CHOOSE = 0.1177
+entropy = 0.2801
+
+[OBSERVE]
+distance = 0.0586
+level = standard
+complementary_balance = 0.6997
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.3055
+intensity = 0.3055
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.3055
+  COMPOSE(LOGIC,FLOW): 0.2116
+  COMPOSE(CHOOSE,OBSERVE): 0.1451
+  COMPOSE(FLOW,FLOW): 0.0836
+  COMPOSE(CHOOSE,CHOOSE): 0.0751
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.5256
+modifier_dominant = FLOW
+modifier_pct = 0.6058
+primary_FLOW = 0.1160
+primary_OBSERVE = 0.0290
+primary_LOGIC = 0.3294
+primary_CHOOSE = 0.5256
+modifier_FLOW = 0.6058
+modifier_OBSERVE = 0.2065
+modifier_LOGIC = 0.0785
+modifier_CHOOSE = 0.1092
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0704
+aa_top5 = [
+  Gln: 0.2564  # amide
+  Glu: 0.1983  # acidic
+  Leu: 0.1521  # aliphatic
+  Lys: 0.0769  # basic
+  Pro: 0.0752  # cyclic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 585
+stop_codon = TAA
+loss = 0.0704
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.standard.dominant.low.ionic_interaction

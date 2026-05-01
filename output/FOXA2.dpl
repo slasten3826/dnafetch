@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FOXA2 | unknown
+# CDS: 1374 bp (458 codons)
+
+[IDENTITY]
+gene = FOXA2
+organism = unknown
+transcript = ENST00000377115.4
+cds_length = 1374
+codons = 458
+protein_length = 457
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.946
+resistance = 0.054
+dominant = CHOOSE
+dominant_pct = 0.3697
+FLOW = 0.1900
+OBSERVE = 0.1295
+LOGIC = 0.3108
+CHOOSE = 0.3697
+state = flowing
+
+[CONNECT]
+depth = 0.8806
+type = membrane_embedded
+hydrophobic_ratio = 0.5799
+charge_positive = 0.1204
+charge_negative = 0.0591
+charge_neutral = 0.8206
+
+[DISSOLVE]
+rigidity = 0.6871
+potential = low
+wobble_entropy = 0.3129
+complementary_disruption = 0.1194
+
+[ENCODE]
+type = engineered
+loss = 0.2188
+gc_content = 0.6805
+wobble_gc = 0.9258
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5109
+wobble_FLOW = 0.0393
+wobble_OBSERVE = 0.0349
+wobble_LOGIC = 0.4148
+wobble_CHOOSE = 0.5109
+entropy = 0.3129
+
+[OBSERVE]
+distance = 0.0590
+level = standard
+complementary_balance = 0.8806
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1201
+intensity = 0.1201
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1201
+  COMPOSE(LOGIC,LOGIC): 0.1157
+  COMPOSE(CHOOSE,FLOW): 0.1026
+  COMPOSE(CHOOSE,CHOOSE): 0.0917
+  COMPOSE(FLOW,OBSERVE): 0.0830
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3122
+modifier_dominant = CHOOSE
+modifier_pct = 0.3144
+primary_FLOW = 0.2380
+primary_OBSERVE = 0.1659
+primary_LOGIC = 0.3122
+primary_CHOOSE = 0.2838
+modifier_FLOW = 0.2926
+modifier_OBSERVE = 0.1878
+modifier_LOGIC = 0.2052
+modifier_CHOOSE = 0.3144
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0355
+aa_top5 = [
+  Ala: 0.1204  # simple
+  Ser: 0.1204  # hydroxyl
+  Gly: 0.1160  # simple
+  Pro: 0.0919  # cyclic
+  Leu: 0.0678  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 457
+stop_codon = TAA
+loss = 0.0355
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.low.membrane_embedded

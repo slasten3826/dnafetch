@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NLRC5 | unknown
+# CDS: 378 bp (126 codons)
+
+[IDENTITY]
+gene = NLRC5
+organism = unknown
+transcript = ENST00000545349.1
+cds_length = 378
+codons = 126
+protein_length = 126
+stop_codon = none
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = CHOOSE
+dominant_pct = 0.3069
+FLOW = 0.2063
+OBSERVE = 0.2249
+LOGIC = 0.2619
+CHOOSE = 0.3069
+state = flowing
+
+[CONNECT]
+depth = 0.9365
+type = balanced_interface
+hydrophobic_ratio = 0.5397
+charge_positive = 0.1111
+charge_negative = 0.1190
+charge_neutral = 0.7698
+
+[DISSOLVE]
+rigidity = 0.9696
+potential = crystallized
+wobble_entropy = 0.0304
+complementary_disruption = 0.0635
+
+[ENCODE]
+type = moderate
+loss = 0.2969
+gc_content = 0.5688
+wobble_gc = 0.5635
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3016
+wobble_FLOW = 0.1349
+wobble_OBSERVE = 0.3016
+wobble_LOGIC = 0.2619
+wobble_CHOOSE = 0.3016
+entropy = 0.0304
+
+[OBSERVE]
+distance = 0.0450
+level = deep
+complementary_balance = 0.9365
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1270
+intensity = 0.1270
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1270
+  COMPOSE(LOGIC,FLOW): 0.1190
+  COMPOSE(CHOOSE,FLOW): 0.1190
+  COMPOSE(LOGIC,CHOOSE): 0.0952
+  COMPOSE(CHOOSE,CHOOSE): 0.0873
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3492
+modifier_dominant = FLOW
+modifier_pct = 0.3016
+primary_FLOW = 0.1825
+primary_OBSERVE = 0.1508
+primary_LOGIC = 0.3175
+primary_CHOOSE = 0.3492
+modifier_FLOW = 0.3016
+modifier_OBSERVE = 0.2222
+modifier_LOGIC = 0.2063
+modifier_CHOOSE = 0.2698
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0349
+aa_top5 = [
+  Leu: 0.1429  # aliphatic
+  Ser: 0.1032  # hydroxyl
+  Ala: 0.0952  # simple
+  Pro: 0.0873  # cyclic
+  Gly: 0.0714  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 126
+stop_codon = none
+loss = 0.0349
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.deep.dominant.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ORC6 | unknown
+# CDS: 612 bp (204 codons)
+
+[IDENTITY]
+gene = ORC6
+organism = unknown
+transcript = ENST00000566860.1
+cds_length = 612
+codons = 204
+protein_length = 203
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = FLOW
+dominant_pct = 0.3431
+FLOW = 0.3431
+OBSERVE = 0.2353
+LOGIC = 0.2386
+CHOOSE = 0.1830
+state = flowing
+
+[CONNECT]
+depth = 0.8366
+type = ionic_interaction
+hydrophobic_ratio = 0.5025
+charge_positive = 0.1675
+charge_negative = 0.1379
+charge_neutral = 0.6946
+
+[DISSOLVE]
+rigidity = 0.9617
+potential = crystallized
+wobble_entropy = 0.0383
+complementary_disruption = 0.1634
+
+[ENCODE]
+type = natural
+loss = 0.2188
+gc_content = 0.4216
+wobble_gc = 0.3873
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3431
+wobble_FLOW = 0.3431
+wobble_OBSERVE = 0.2696
+wobble_LOGIC = 0.2598
+wobble_CHOOSE = 0.1275
+entropy = 0.0383
+
+[OBSERVE]
+distance = 0.1046
+level = mild
+complementary_balance = 0.8366
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1520
+intensity = 0.1520
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1520
+  COMPOSE(LOGIC,FLOW): 0.1373
+  COMPOSE(LOGIC,CHOOSE): 0.0931
+  COMPOSE(CHOOSE,OBSERVE): 0.0882
+  COMPOSE(FLOW,OBSERVE): 0.0784
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3186
+modifier_dominant = FLOW
+modifier_pct = 0.3676
+primary_FLOW = 0.3186
+primary_OBSERVE = 0.1667
+primary_LOGIC = 0.3137
+primary_CHOOSE = 0.2010
+modifier_FLOW = 0.3676
+modifier_OBSERVE = 0.2696
+modifier_LOGIC = 0.1422
+modifier_CHOOSE = 0.2206
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0322
+aa_top5 = [
+  Lys: 0.1232  # basic
+  Leu: 0.1182  # aliphatic
+  Ala: 0.0936  # simple
+  Glu: 0.0788  # acidic
+  Ser: 0.0739  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 203
+stop_codon = TGA
+loss = 0.0322
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.mild.dominant.crystallized.ionic_interaction

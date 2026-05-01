@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MINDY1 | unknown
+# CDS: 210 bp (70 codons)
+
+[IDENTITY]
+gene = MINDY1
+organism = unknown
+transcript = ENST00000497067.1
+cds_length = 210
+codons = 70
+protein_length = 69
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.935
+resistance = 0.065
+dominant = CHOOSE
+dominant_pct = 0.3905
+FLOW = 0.1095
+OBSERVE = 0.2905
+LOGIC = 0.2095
+CHOOSE = 0.3905
+state = flowing
+
+[CONNECT]
+depth = 0.6381
+type = membrane_embedded
+hydrophobic_ratio = 0.6232
+charge_positive = 0.1014
+charge_negative = 0.0000
+charge_neutral = 0.8986
+
+[DISSOLVE]
+rigidity = 0.8650
+potential = low
+wobble_entropy = 0.1350
+complementary_disruption = 0.3619
+
+[ENCODE]
+type = optimized
+loss = 0.4844
+gc_content = 0.6000
+wobble_gc = 0.7143
+codon_diversity = 0.5156
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4714
+wobble_FLOW = 0.0571
+wobble_OBSERVE = 0.2286
+wobble_LOGIC = 0.2429
+wobble_CHOOSE = 0.4714
+entropy = 0.1350
+
+[OBSERVE]
+distance = 0.1000
+level = mild
+complementary_balance = 0.6381
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1714
+intensity = 0.1714
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1714
+  COMPOSE(OBSERVE,CHOOSE): 0.1429
+  COMPOSE(OBSERVE,LOGIC): 0.1000
+  COMPOSE(CHOOSE,CHOOSE): 0.1000
+  COMPOSE(LOGIC,OBSERVE): 0.0857
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3857
+modifier_dominant = OBSERVE
+modifier_pct = 0.3286
+primary_FLOW = 0.1429
+primary_OBSERVE = 0.3143
+primary_LOGIC = 0.1571
+primary_CHOOSE = 0.3857
+modifier_FLOW = 0.1286
+modifier_OBSERVE = 0.3286
+modifier_LOGIC = 0.2286
+modifier_CHOOSE = 0.3143
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0480
+aa_top5 = [
+  Leu: 0.1739  # aliphatic
+  Ser: 0.1594  # hydroxyl
+  Pro: 0.1014  # cyclic
+  Val: 0.0870  # aliphatic
+  Cys: 0.0725  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 69
+stop_codon = TGA
+loss = 0.0480
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.low.membrane_embedded

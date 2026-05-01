@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SP6 | unknown
+# CDS: 1131 bp (377 codons)
+
+[IDENTITY]
+gene = SP6
+organism = unknown
+transcript = ENST00000342234.3
+cds_length = 1131
+codons = 377
+protein_length = 376
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.946
+resistance = 0.054
+dominant = CHOOSE
+dominant_pct = 0.3625
+FLOW = 0.1733
+OBSERVE = 0.1397
+LOGIC = 0.3245
+CHOOSE = 0.3625
+state = flowing
+
+[CONNECT]
+depth = 0.9284
+type = membrane_embedded
+hydrophobic_ratio = 0.5559
+charge_positive = 0.1622
+charge_negative = 0.1011
+charge_neutral = 0.7367
+
+[DISSOLVE]
+rigidity = 0.8402
+potential = crystallized
+wobble_entropy = 0.1598
+complementary_disruption = 0.0716
+
+[ENCODE]
+type = engineered
+loss = 0.1562
+gc_content = 0.6870
+wobble_gc = 0.8170
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4456
+wobble_FLOW = 0.0822
+wobble_OBSERVE = 0.1008
+wobble_LOGIC = 0.3714
+wobble_CHOOSE = 0.4456
+entropy = 0.1598
+
+[OBSERVE]
+distance = 0.0380
+level = deep
+complementary_balance = 0.9284
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,LOGIC)
+top_compose_pct = 0.1220
+intensity = 0.1220
+compose_top5 = [
+  COMPOSE(LOGIC,LOGIC): 0.1220
+  COMPOSE(CHOOSE,FLOW): 0.1114
+  COMPOSE(CHOOSE,CHOOSE): 0.1061
+  COMPOSE(LOGIC,FLOW): 0.1008
+  COMPOSE(LOGIC,CHOOSE): 0.0955
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3501
+modifier_dominant = CHOOSE
+modifier_pct = 0.2971
+primary_FLOW = 0.1512
+primary_OBSERVE = 0.1538
+primary_LOGIC = 0.3501
+primary_CHOOSE = 0.3448
+modifier_FLOW = 0.2865
+modifier_OBSERVE = 0.1645
+modifier_LOGIC = 0.2520
+modifier_CHOOSE = 0.2971
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0341
+aa_top5 = [
+  Gly: 0.1223  # simple
+  Pro: 0.1064  # cyclic
+  Leu: 0.0957  # aliphatic
+  Ala: 0.0957  # simple
+  Ser: 0.0851  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 376
+stop_codon = TGA
+loss = 0.0341
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.crystallized.membrane_embedded

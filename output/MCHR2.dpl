@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MCHR2 | unknown
+# CDS: 1023 bp (341 codons)
+
+[IDENTITY]
+gene = MCHR2
+organism = unknown
+transcript = ENST00000369212.2
+cds_length = 1023
+codons = 341
+protein_length = 340
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = OBSERVE
+dominant_pct = 0.3001
+FLOW = 0.2590
+OBSERVE = 0.3001
+LOGIC = 0.2160
+CHOOSE = 0.2248
+state = flowing
+
+[CONNECT]
+depth = 0.9501
+type = membrane_embedded
+hydrophobic_ratio = 0.6265
+charge_positive = 0.1000
+charge_negative = 0.0529
+charge_neutral = 0.8471
+
+[DISSOLVE]
+rigidity = 0.9925
+potential = crystallized
+wobble_entropy = 0.0075
+complementary_disruption = 0.0499
+
+[ENCODE]
+type = moderate
+loss = 0.0625
+gc_content = 0.4409
+wobble_gc = 0.5132
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2903
+wobble_FLOW = 0.1965
+wobble_OBSERVE = 0.2903
+wobble_LOGIC = 0.2405
+wobble_CHOOSE = 0.2727
+entropy = 0.0075
+
+[OBSERVE]
+distance = 0.0411
+level = deep
+complementary_balance = 0.9501
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1173
+intensity = 0.1173
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1173
+  COMPOSE(FLOW,FLOW): 0.0909
+  COMPOSE(OBSERVE,OBSERVE): 0.0909
+  COMPOSE(LOGIC,OBSERVE): 0.0850
+  COMPOSE(CHOOSE,OBSERVE): 0.0792
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3343
+modifier_dominant = OBSERVE
+modifier_pct = 0.3724
+primary_FLOW = 0.3343
+primary_OBSERVE = 0.2375
+primary_LOGIC = 0.2346
+primary_CHOOSE = 0.1935
+modifier_FLOW = 0.2463
+modifier_OBSERVE = 0.3724
+modifier_LOGIC = 0.1730
+modifier_CHOOSE = 0.2082
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0241
+aa_top5 = [
+  Leu: 0.1147  # aliphatic
+  Ile: 0.0882  # aliphatic
+  Val: 0.0853  # aliphatic
+  Ser: 0.0676  # hydroxyl
+  Thr: 0.0676  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 340
+stop_codon = TAG
+loss = 0.0241
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.strong.crystallized.membrane_embedded

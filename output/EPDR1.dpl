@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EPDR1 | unknown
+# CDS: 492 bp (164 codons)
+
+[IDENTITY]
+gene = EPDR1
+organism = unknown
+transcript = ENST00000425345.1
+cds_length = 492
+codons = 164
+protein_length = 163
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = LOGIC
+dominant_pct = 0.2724
+FLOW = 0.2500
+OBSERVE = 0.2236
+LOGIC = 0.2724
+CHOOSE = 0.2541
+state = flowing
+
+[CONNECT]
+depth = 0.9553
+type = balanced_interface
+hydrophobic_ratio = 0.5092
+charge_positive = 0.1043
+charge_negative = 0.1227
+charge_neutral = 0.7730
+
+[DISSOLVE]
+rigidity = 0.9682
+potential = crystallized
+wobble_entropy = 0.0318
+complementary_disruption = 0.0447
+
+[ENCODE]
+type = optimized
+loss = 0.2344
+gc_content = 0.5264
+wobble_gc = 0.6402
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3232
+wobble_FLOW = 0.1524
+wobble_OBSERVE = 0.2073
+wobble_LOGIC = 0.3171
+wobble_CHOOSE = 0.3232
+entropy = 0.0318
+
+[OBSERVE]
+distance = 0.0183
+level = strong
+complementary_balance = 0.9553
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1220
+intensity = 0.1220
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1220
+  COMPOSE(FLOW,OBSERVE): 0.0976
+  COMPOSE(CHOOSE,FLOW): 0.0915
+  COMPOSE(LOGIC,LOGIC): 0.0793
+  COMPOSE(FLOW,CHOOSE): 0.0793
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2805
+modifier_dominant = FLOW
+modifier_pct = 0.3171
+primary_FLOW = 0.2805
+primary_OBSERVE = 0.2256
+primary_LOGIC = 0.2744
+primary_CHOOSE = 0.2195
+modifier_FLOW = 0.3171
+modifier_OBSERVE = 0.2378
+modifier_LOGIC = 0.2256
+modifier_CHOOSE = 0.2195
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0215
+aa_top5 = [
+  Gln: 0.0859  # amide
+  Gly: 0.0798  # simple
+  Ser: 0.0798  # hydroxyl
+  Thr: 0.0798  # hydroxyl
+  Asp: 0.0675  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 163
+stop_codon = TGA
+loss = 0.0215
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.strong.dominant.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KCNT1 | unknown
+# CDS: 561 bp (187 codons)
+
+[IDENTITY]
+gene = KCNT1
+organism = unknown
+transcript = ENST00000631193.1
+cds_length = 561
+codons = 187
+protein_length = 187
+stop_codon = none
+
+[FLOW]
+engagement = 0.983
+resistance = 0.017
+dominant = CHOOSE
+dominant_pct = 0.3333
+FLOW = 0.2086
+OBSERVE = 0.1943
+LOGIC = 0.2638
+CHOOSE = 0.3333
+state = flowing
+
+[CONNECT]
+depth = 0.9162
+type = membrane_embedded
+hydrophobic_ratio = 0.5615
+charge_positive = 0.1016
+charge_negative = 0.1123
+charge_neutral = 0.7861
+
+[DISSOLVE]
+rigidity = 0.6877
+potential = low
+wobble_entropy = 0.3123
+complementary_disruption = 0.0838
+
+[ENCODE]
+type = engineered
+loss = 0.3125
+gc_content = 0.5971
+wobble_gc = 0.9144
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5722
+wobble_FLOW = 0.0321
+wobble_OBSERVE = 0.0535
+wobble_LOGIC = 0.3422
+wobble_CHOOSE = 0.5722
+entropy = 0.3123
+
+[OBSERVE]
+distance = 0.0695
+level = standard
+complementary_balance = 0.9162
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1230
+intensity = 0.1230
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1230
+  COMPOSE(CHOOSE,OBSERVE): 0.1176
+  COMPOSE(LOGIC,FLOW): 0.1123
+  COMPOSE(FLOW,FLOW): 0.0749
+  COMPOSE(FLOW,CHOOSE): 0.0695
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3209
+modifier_dominant = OBSERVE
+modifier_pct = 0.3476
+primary_FLOW = 0.3209
+primary_OBSERVE = 0.1818
+primary_LOGIC = 0.2727
+primary_CHOOSE = 0.2246
+modifier_FLOW = 0.2727
+modifier_OBSERVE = 0.3476
+modifier_LOGIC = 0.1765
+modifier_CHOOSE = 0.2032
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0273
+aa_top5 = [
+  Leu: 0.1230  # aliphatic
+  Ser: 0.0963  # hydroxyl
+  Thr: 0.0695  # hydroxyl
+  Ile: 0.0642  # aliphatic
+  Met: 0.0588  # sulfur
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 187
+stop_codon = none
+loss = 0.0273
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.low.membrane_embedded

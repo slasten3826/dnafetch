@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FANCI | unknown
+# CDS: 3252 bp (1084 codons)
+
+[IDENTITY]
+gene = FANCI
+organism = unknown
+transcript = ENST00000561894.1
+cds_length = 3252
+codons = 1084
+protein_length = 1084
+stop_codon = none
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = FLOW
+dominant_pct = 0.2906
+FLOW = 0.2906
+OBSERVE = 0.2761
+LOGIC = 0.2257
+CHOOSE = 0.2076
+state = flowing
+
+[CONNECT]
+depth = 0.9674
+type = balanced_interface
+hydrophobic_ratio = 0.5065
+charge_positive = 0.1301
+charge_negative = 0.1199
+charge_neutral = 0.7500
+
+[DISSOLVE]
+rigidity = 0.9948
+potential = crystallized
+wobble_entropy = 0.0052
+complementary_disruption = 0.0326
+
+[ENCODE]
+type = moderate
+loss = 0.0781
+gc_content = 0.4333
+wobble_gc = 0.4723
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2952
+wobble_FLOW = 0.2325
+wobble_OBSERVE = 0.2952
+wobble_LOGIC = 0.2574
+wobble_CHOOSE = 0.2149
+entropy = 0.0052
+
+[OBSERVE]
+distance = 0.0145
+level = strong
+complementary_balance = 0.9674
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1199
+intensity = 0.1199
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1199
+  COMPOSE(FLOW,FLOW): 0.1125
+  COMPOSE(CHOOSE,OBSERVE): 0.1052
+  COMPOSE(OBSERVE,OBSERVE): 0.0867
+  COMPOSE(CHOOSE,FLOW): 0.0803
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3035
+modifier_dominant = OBSERVE
+modifier_pct = 0.3432
+primary_FLOW = 0.3035
+primary_OBSERVE = 0.1900
+primary_LOGIC = 0.2795
+primary_CHOOSE = 0.2269
+modifier_FLOW = 0.3358
+modifier_OBSERVE = 0.3432
+modifier_LOGIC = 0.1402
+modifier_CHOOSE = 0.1808
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0321
+aa_top5 = [
+  Leu: 0.1485  # aliphatic
+  Ser: 0.1024  # hydroxyl
+  Lys: 0.0756  # basic
+  Val: 0.0747  # aliphatic
+  Glu: 0.0738  # acidic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 1084
+stop_codon = none
+loss = 0.0321
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.strong.crystallized.balanced_interface

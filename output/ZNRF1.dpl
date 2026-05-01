@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNRF1 | unknown
+# CDS: 216 bp (72 codons)
+
+[IDENTITY]
+gene = ZNRF1
+organism = unknown
+transcript = ENST00000568351.1
+cds_length = 216
+codons = 72
+protein_length = 71
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.961
+resistance = 0.039
+dominant = CHOOSE
+dominant_pct = 0.3333
+FLOW = 0.1481
+OBSERVE = 0.3241
+LOGIC = 0.1944
+CHOOSE = 0.3333
+state = flowing
+
+[CONNECT]
+depth = 0.6852
+type = membrane_embedded
+hydrophobic_ratio = 0.6620
+charge_positive = 0.0986
+charge_negative = 0.0282
+charge_neutral = 0.8732
+
+[DISSOLVE]
+rigidity = 0.9579
+potential = low
+wobble_entropy = 0.0421
+complementary_disruption = 0.3148
+
+[ENCODE]
+type = moderate
+loss = 0.4219
+gc_content = 0.5278
+wobble_gc = 0.4722
+codon_diversity = 0.5781
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3472
+wobble_FLOW = 0.1806
+wobble_OBSERVE = 0.3472
+wobble_LOGIC = 0.1528
+wobble_CHOOSE = 0.3194
+entropy = 0.0421
+
+[OBSERVE]
+distance = 0.0093
+level = strong
+complementary_balance = 0.6852
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1528
+intensity = 0.1528
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1528
+  COMPOSE(OBSERVE,OBSERVE): 0.1250
+  COMPOSE(OBSERVE,LOGIC): 0.1250
+  COMPOSE(CHOOSE,OBSERVE): 0.1111
+  COMPOSE(OBSERVE,CHOOSE): 0.0833
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3611
+modifier_dominant = CHOOSE
+modifier_pct = 0.3194
+primary_FLOW = 0.1389
+primary_OBSERVE = 0.3472
+primary_LOGIC = 0.1528
+primary_CHOOSE = 0.3611
+modifier_FLOW = 0.1250
+modifier_OBSERVE = 0.2778
+modifier_LOGIC = 0.2778
+modifier_CHOOSE = 0.3194
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0442
+aa_top5 = [
+  Pro: 0.1549  # cyclic
+  Leu: 0.1408  # aliphatic
+  Ser: 0.1127  # hydroxyl
+  Phe: 0.0986  # aromatic
+  Cys: 0.0704  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 71
+stop_codon = TGA
+loss = 0.0442
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.strong.dominant.low.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000288634 | unknown
+# CDS: 159 bp (53 codons)
+
+[IDENTITY]
+gene = ENSG00000288634
+organism = unknown
+transcript = ENST00000675268.1
+cds_length = 159
+codons = 53
+protein_length = 52
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.972
+resistance = 0.028
+dominant = CHOOSE
+dominant_pct = 0.3711
+FLOW = 0.1824
+OBSERVE = 0.2264
+LOGIC = 0.2201
+CHOOSE = 0.3711
+state = flowing
+
+[CONNECT]
+depth = 0.8050
+type = ionic_interaction
+hydrophobic_ratio = 0.4808
+charge_positive = 0.2115
+charge_negative = 0.0385
+charge_neutral = 0.7500
+
+[DISSOLVE]
+rigidity = 0.9212
+potential = crystallized
+wobble_entropy = 0.0788
+complementary_disruption = 0.1950
+
+[ENCODE]
+type = optimized
+loss = 0.3906
+gc_content = 0.5912
+wobble_gc = 0.6792
+codon_diversity = 0.6094
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4528
+wobble_FLOW = 0.1321
+wobble_OBSERVE = 0.1887
+wobble_LOGIC = 0.2264
+wobble_CHOOSE = 0.4528
+entropy = 0.0788
+
+[OBSERVE]
+distance = 0.1447
+level = basic
+complementary_balance = 0.8050
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,LOGIC)
+top_compose_pct = 0.1132
+intensity = 0.1132
+compose_top5 = [
+  COMPOSE(CHOOSE,LOGIC): 0.1132
+  COMPOSE(OBSERVE,CHOOSE): 0.1132
+  COMPOSE(OBSERVE,OBSERVE): 0.0943
+  COMPOSE(LOGIC,CHOOSE): 0.0943
+  COMPOSE(FLOW,CHOOSE): 0.0755
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3019
+modifier_dominant = CHOOSE
+modifier_pct = 0.3585
+primary_FLOW = 0.2453
+primary_OBSERVE = 0.2830
+primary_LOGIC = 0.1698
+primary_CHOOSE = 0.3019
+modifier_FLOW = 0.1698
+modifier_OBSERVE = 0.2075
+modifier_LOGIC = 0.2642
+modifier_CHOOSE = 0.3585
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0453
+aa_top5 = [
+  Ser: 0.1731  # hydroxyl
+  Arg: 0.1346  # basic
+  Leu: 0.0962  # aliphatic
+  Ala: 0.0962  # simple
+  Thr: 0.0769  # hydroxyl
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 52
+stop_codon = TGA
+loss = 0.0453
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.basic.strong.crystallized.ionic_interaction

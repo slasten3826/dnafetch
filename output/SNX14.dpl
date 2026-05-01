@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SNX14 | unknown
+# CDS: 546 bp (182 codons)
+
+[IDENTITY]
+gene = SNX14
+organism = unknown
+transcript = ENST00000514419.6
+cds_length = 546
+codons = 182
+protein_length = 181
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = OBSERVE
+dominant_pct = 0.3150
+FLOW = 0.3022
+OBSERVE = 0.3150
+LOGIC = 0.2015
+CHOOSE = 0.1813
+state = flowing
+
+[CONNECT]
+depth = 0.9670
+type = membrane_embedded
+hydrophobic_ratio = 0.5525
+charge_positive = 0.1657
+charge_negative = 0.1271
+charge_neutral = 0.7072
+
+[DISSOLVE]
+rigidity = 0.9354
+potential = crystallized
+wobble_entropy = 0.0646
+complementary_disruption = 0.0330
+
+[ENCODE]
+type = natural
+loss = 0.2500
+gc_content = 0.3828
+wobble_gc = 0.3242
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3571
+wobble_FLOW = 0.3187
+wobble_OBSERVE = 0.3571
+wobble_LOGIC = 0.2253
+wobble_CHOOSE = 0.0989
+entropy = 0.0646
+
+[OBSERVE]
+distance = 0.0128
+level = strong
+complementary_balance = 0.9670
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,OBSERVE)
+top_compose_pct = 0.1538
+intensity = 0.1538
+compose_top5 = [
+  COMPOSE(OBSERVE,OBSERVE): 0.1538
+  COMPOSE(LOGIC,FLOW): 0.1264
+  COMPOSE(FLOW,FLOW): 0.0989
+  COMPOSE(CHOOSE,FLOW): 0.0769
+  COMPOSE(CHOOSE,OBSERVE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2692
+modifier_dominant = OBSERVE
+modifier_pct = 0.3571
+primary_FLOW = 0.2582
+primary_OBSERVE = 0.2308
+primary_LOGIC = 0.2692
+primary_CHOOSE = 0.2418
+modifier_FLOW = 0.3297
+modifier_OBSERVE = 0.3571
+modifier_LOGIC = 0.1099
+modifier_CHOOSE = 0.2033
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0358
+aa_top5 = [
+  Leu: 0.1713  # aliphatic
+  Glu: 0.0829  # acidic
+  Lys: 0.0773  # basic
+  Pro: 0.0718  # cyclic
+  Val: 0.0608  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 181
+stop_codon = TAA
+loss = 0.0358
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.strong.dominant.crystallized.membrane_embedded

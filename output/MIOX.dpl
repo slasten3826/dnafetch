@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: MIOX | unknown
+# CDS: 675 bp (225 codons)
+
+[IDENTITY]
+gene = MIOX
+organism = unknown
+transcript = ENST00000451761.1
+cds_length = 675
+codons = 225
+protein_length = 224
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = CHOOSE
+dominant_pct = 0.3185
+FLOW = 0.2015
+OBSERVE = 0.1970
+LOGIC = 0.2830
+CHOOSE = 0.3185
+state = flowing
+
+[CONNECT]
+depth = 0.9600
+type = membrane_embedded
+hydrophobic_ratio = 0.5580
+charge_positive = 0.1384
+charge_negative = 0.1384
+charge_neutral = 0.7232
+
+[DISSOLVE]
+rigidity = 0.7694
+potential = low
+wobble_entropy = 0.2306
+complementary_disruption = 0.0400
+
+[ENCODE]
+type = engineered
+loss = 0.2812
+gc_content = 0.6015
+wobble_gc = 0.8711
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4800
+wobble_FLOW = 0.0444
+wobble_OBSERVE = 0.0844
+wobble_LOGIC = 0.3911
+wobble_CHOOSE = 0.4800
+entropy = 0.2306
+
+[OBSERVE]
+distance = 0.0356
+level = deep
+complementary_balance = 0.9600
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1378
+intensity = 0.1378
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1378
+  COMPOSE(CHOOSE,FLOW): 0.1067
+  COMPOSE(CHOOSE,OBSERVE): 0.0978
+  COMPOSE(OBSERVE,OBSERVE): 0.0756
+  COMPOSE(FLOW,FLOW): 0.0711
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2978
+modifier_dominant = FLOW
+modifier_pct = 0.3689
+primary_FLOW = 0.1911
+primary_OBSERVE = 0.2133
+primary_LOGIC = 0.2978
+primary_CHOOSE = 0.2978
+modifier_FLOW = 0.3689
+modifier_OBSERVE = 0.2933
+modifier_LOGIC = 0.1600
+modifier_CHOOSE = 0.1778
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0232
+aa_top5 = [
+  Asp: 0.1027  # acidic
+  Leu: 0.0982  # aliphatic
+  Phe: 0.0759  # aromatic
+  Pro: 0.0670  # cyclic
+  Val: 0.0625  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 224
+stop_codon = TGA
+loss = 0.0232
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.membrane_embedded

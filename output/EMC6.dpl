@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: EMC6 | unknown
+# CDS: 333 bp (111 codons)
+
+[IDENTITY]
+gene = EMC6
+organism = unknown
+transcript = ENST00000397133.2
+cds_length = 333
+codons = 111
+protein_length = 110
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.970
+resistance = 0.030
+dominant = CHOOSE
+dominant_pct = 0.3333
+FLOW = 0.1502
+OBSERVE = 0.2192
+LOGIC = 0.2973
+CHOOSE = 0.3333
+state = flowing
+
+[CONNECT]
+depth = 0.8949
+type = membrane_embedded
+hydrophobic_ratio = 0.7273
+charge_positive = 0.1091
+charge_negative = 0.0273
+charge_neutral = 0.8636
+
+[DISSOLVE]
+rigidity = 0.7790
+potential = low
+wobble_entropy = 0.2210
+complementary_disruption = 0.1051
+
+[ENCODE]
+type = engineered
+loss = 0.4062
+gc_content = 0.6306
+wobble_gc = 0.8559
+codon_diversity = 0.5938
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5225
+wobble_FLOW = 0.0901
+wobble_OBSERVE = 0.0541
+wobble_LOGIC = 0.3333
+wobble_CHOOSE = 0.5225
+entropy = 0.2210
+
+[OBSERVE]
+distance = 0.0360
+level = deep
+complementary_balance = 0.8949
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1622
+intensity = 0.1622
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1622
+  COMPOSE(LOGIC,LOGIC): 0.1171
+  COMPOSE(LOGIC,CHOOSE): 0.1081
+  COMPOSE(LOGIC,OBSERVE): 0.0811
+  COMPOSE(OBSERVE,OBSERVE): 0.0721
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3333
+modifier_dominant = OBSERVE
+modifier_pct = 0.3784
+primary_FLOW = 0.2072
+primary_OBSERVE = 0.2252
+primary_LOGIC = 0.3333
+primary_CHOOSE = 0.2342
+modifier_FLOW = 0.1532
+modifier_OBSERVE = 0.3784
+modifier_LOGIC = 0.2252
+modifier_CHOOSE = 0.2432
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0421
+aa_top5 = [
+  Leu: 0.1636  # aliphatic
+  Gly: 0.1182  # simple
+  Ala: 0.1091  # simple
+  Val: 0.0818  # aliphatic
+  Phe: 0.0727  # aromatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 110
+stop_codon = TGA
+loss = 0.0421
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.membrane_embedded

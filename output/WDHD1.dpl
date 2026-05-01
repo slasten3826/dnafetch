@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: WDHD1 | unknown
+# CDS: 504 bp (168 codons)
+
+[IDENTITY]
+gene = WDHD1
+organism = unknown
+transcript = ENST00000455555.1
+cds_length = 504
+codons = 168
+protein_length = 168
+stop_codon = none
+
+[FLOW]
+engagement = 0.981
+resistance = 0.019
+dominant = OBSERVE
+dominant_pct = 0.3075
+FLOW = 0.2758
+OBSERVE = 0.3075
+LOGIC = 0.2560
+CHOOSE = 0.1607
+state = flowing
+
+[CONNECT]
+depth = 0.8730
+type = balanced_interface
+hydrophobic_ratio = 0.5060
+charge_positive = 0.1190
+charge_negative = 0.1429
+charge_neutral = 0.7381
+
+[DISSOLVE]
+rigidity = 0.9062
+potential = crystallized
+wobble_entropy = 0.0938
+complementary_disruption = 0.1270
+
+[ENCODE]
+type = natural
+loss = 0.2188
+gc_content = 0.4167
+wobble_gc = 0.3036
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.4702
+wobble_FLOW = 0.2262
+wobble_OBSERVE = 0.4702
+wobble_LOGIC = 0.1845
+wobble_CHOOSE = 0.1190
+entropy = 0.0938
+
+[OBSERVE]
+distance = 0.0317
+level = deep
+complementary_balance = 0.8730
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1429
+intensity = 0.1429
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1429
+  COMPOSE(LOGIC,OBSERVE): 0.0952
+  COMPOSE(FLOW,FLOW): 0.0893
+  COMPOSE(LOGIC,LOGIC): 0.0833
+  COMPOSE(OBSERVE,OBSERVE): 0.0833
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3810
+modifier_dominant = FLOW
+modifier_pct = 0.3036
+primary_FLOW = 0.2976
+primary_OBSERVE = 0.1786
+primary_LOGIC = 0.3810
+primary_CHOOSE = 0.1429
+modifier_FLOW = 0.3036
+modifier_OBSERVE = 0.2738
+modifier_LOGIC = 0.2024
+modifier_CHOOSE = 0.2202
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0284
+aa_top5 = [
+  Asp: 0.1131  # acidic
+  Val: 0.0952  # aliphatic
+  Ser: 0.0952  # hydroxyl
+  Gly: 0.0833  # simple
+  Thr: 0.0714  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 168
+stop_codon = none
+loss = 0.0284
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.dominant.crystallized.balanced_interface

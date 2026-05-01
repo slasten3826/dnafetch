@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HSPG2 | unknown
+# CDS: 618 bp (206 codons)
+
+[IDENTITY]
+gene = HSPG2
+organism = unknown
+transcript = ENST00000374673.4
+cds_length = 618
+codons = 206
+protein_length = 206
+stop_codon = none
+
+[FLOW]
+engagement = 0.968
+resistance = 0.032
+dominant = CHOOSE
+dominant_pct = 0.3560
+FLOW = 0.1780
+OBSERVE = 0.1812
+LOGIC = 0.2848
+CHOOSE = 0.3560
+state = flowing
+
+[CONNECT]
+depth = 0.9256
+type = membrane_embedded
+hydrophobic_ratio = 0.5874
+charge_positive = 0.0922
+charge_negative = 0.1456
+charge_neutral = 0.7621
+
+[DISSOLVE]
+rigidity = 0.9110
+potential = crystallized
+wobble_entropy = 0.0890
+complementary_disruption = 0.0744
+
+[ENCODE]
+type = optimized
+loss = 0.2500
+gc_content = 0.6408
+wobble_gc = 0.7233
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4417
+wobble_FLOW = 0.1214
+wobble_OBSERVE = 0.1553
+wobble_LOGIC = 0.2816
+wobble_CHOOSE = 0.4417
+entropy = 0.0890
+
+[OBSERVE]
+distance = 0.0712
+level = standard
+complementary_balance = 0.9256
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1456
+intensity = 0.1456
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1456
+  COMPOSE(LOGIC,FLOW): 0.1456
+  COMPOSE(OBSERVE,LOGIC): 0.0874
+  COMPOSE(CHOOSE,OBSERVE): 0.0728
+  COMPOSE(LOGIC,CHOOSE): 0.0680
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3350
+modifier_dominant = CHOOSE
+modifier_pct = 0.3058
+primary_FLOW = 0.1602
+primary_OBSERVE = 0.1845
+primary_LOGIC = 0.3350
+primary_CHOOSE = 0.3204
+modifier_FLOW = 0.2524
+modifier_OBSERVE = 0.2039
+modifier_LOGIC = 0.2379
+modifier_CHOOSE = 0.3058
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0333
+aa_top5 = [
+  Pro: 0.1456  # cyclic
+  Cys: 0.0825  # sulfur
+  Leu: 0.0777  # aliphatic
+  Glu: 0.0777  # acidic
+  Arg: 0.0680  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 206
+stop_codon = none
+loss = 0.0333
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.dominant.crystallized.membrane_embedded

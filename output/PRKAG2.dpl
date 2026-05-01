@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PRKAG2 | unknown
+# CDS: 831 bp (277 codons)
+
+[IDENTITY]
+gene = PRKAG2
+organism = unknown
+transcript = ENST00000652707.1
+cds_length = 831
+codons = 277
+protein_length = 276
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = CHOOSE
+dominant_pct = 0.3381
+FLOW = 0.2166
+OBSERVE = 0.2190
+LOGIC = 0.2262
+CHOOSE = 0.3381
+state = flowing
+
+[CONNECT]
+depth = 0.8857
+type = balanced_interface
+hydrophobic_ratio = 0.5072
+charge_positive = 0.1377
+charge_negative = 0.0833
+charge_neutral = 0.7790
+
+[DISSOLVE]
+rigidity = 0.9636
+potential = crystallized
+wobble_entropy = 0.0364
+complementary_disruption = 0.1143
+
+[ENCODE]
+type = optimized
+loss = 0.0938
+gc_content = 0.5644
+wobble_gc = 0.6354
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3827
+wobble_FLOW = 0.1805
+wobble_OBSERVE = 0.1841
+wobble_LOGIC = 0.2527
+wobble_CHOOSE = 0.3827
+entropy = 0.0364
+
+[OBSERVE]
+distance = 0.1119
+level = mild
+complementary_balance = 0.8857
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1300
+intensity = 0.1300
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1300
+  COMPOSE(CHOOSE,CHOOSE): 0.1264
+  COMPOSE(LOGIC,FLOW): 0.0830
+  COMPOSE(OBSERVE,OBSERVE): 0.0830
+  COMPOSE(FLOW,FLOW): 0.0686
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.2563
+modifier_dominant = CHOOSE
+modifier_pct = 0.3755
+primary_FLOW = 0.2383
+primary_OBSERVE = 0.2563
+primary_LOGIC = 0.2491
+primary_CHOOSE = 0.2563
+modifier_FLOW = 0.2310
+modifier_OBSERVE = 0.2166
+modifier_LOGIC = 0.1769
+modifier_CHOOSE = 0.3755
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0386
+aa_top5 = [
+  Ser: 0.1703  # hydroxyl
+  Pro: 0.1268  # cyclic
+  Phe: 0.0688  # aromatic
+  Gly: 0.0616  # simple
+  Arg: 0.0616  # basic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 276
+stop_codon = TGA
+loss = 0.0386
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.balanced_interface

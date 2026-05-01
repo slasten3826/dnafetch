@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TAS2R4 | unknown
+# CDS: 900 bp (300 codons)
+
+[IDENTITY]
+gene = TAS2R4
+organism = unknown
+transcript = ENST00000247881.4
+cds_length = 900
+codons = 300
+protein_length = 299
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.980
+resistance = 0.020
+dominant = OBSERVE
+dominant_pct = 0.3478
+FLOW = 0.2367
+OBSERVE = 0.3478
+LOGIC = 0.1856
+CHOOSE = 0.2300
+state = flowing
+
+[CONNECT]
+depth = 0.8444
+type = membrane_embedded
+hydrophobic_ratio = 0.6154
+charge_positive = 0.1070
+charge_negative = 0.0234
+charge_neutral = 0.8696
+
+[DISSOLVE]
+rigidity = 0.9763
+potential = crystallized
+wobble_entropy = 0.0237
+complementary_disruption = 0.1556
+
+[ENCODE]
+type = moderate
+loss = 0.1094
+gc_content = 0.4156
+wobble_gc = 0.5200
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3267
+wobble_FLOW = 0.1533
+wobble_OBSERVE = 0.3267
+wobble_LOGIC = 0.2567
+wobble_CHOOSE = 0.2633
+entropy = 0.0237
+
+[OBSERVE]
+distance = 0.1111
+level = mild
+complementary_balance = 0.8444
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1300
+intensity = 0.1300
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1300
+  COMPOSE(OBSERVE,OBSERVE): 0.1200
+  COMPOSE(CHOOSE,OBSERVE): 0.1067
+  COMPOSE(FLOW,FLOW): 0.0967
+  COMPOSE(OBSERVE,CHOOSE): 0.0867
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3500
+modifier_dominant = OBSERVE
+modifier_pct = 0.4367
+primary_FLOW = 0.3500
+primary_OBSERVE = 0.2800
+primary_LOGIC = 0.1800
+primary_CHOOSE = 0.1900
+modifier_FLOW = 0.2067
+modifier_OBSERVE = 0.4367
+modifier_LOGIC = 0.1200
+modifier_CHOOSE = 0.2367
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0363
+aa_top5 = [
+  Leu: 0.1472  # aliphatic
+  Ser: 0.1104  # hydroxyl
+  Ile: 0.1003  # aliphatic
+  Phe: 0.0803  # aromatic
+  Val: 0.0803  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 299
+stop_codon = TAG
+loss = 0.0363
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.mild.dominant.crystallized.membrane_embedded

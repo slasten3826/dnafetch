@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ADRA1B | unknown
+# CDS: 1563 bp (521 codons)
+
+[IDENTITY]
+gene = ADRA1B
+organism = unknown
+transcript = ENST00000306675.5
+cds_length = 1563
+codons = 521
+protein_length = 520
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.970
+resistance = 0.030
+dominant = CHOOSE
+dominant_pct = 0.3532
+FLOW = 0.1740
+OBSERVE = 0.1913
+LOGIC = 0.2815
+CHOOSE = 0.3532
+state = flowing
+
+[CONNECT]
+depth = 0.9111
+type = membrane_embedded
+hydrophobic_ratio = 0.6077
+charge_positive = 0.1269
+charge_negative = 0.0692
+charge_neutral = 0.8038
+
+[DISSOLVE]
+rigidity = 0.7742
+potential = low
+wobble_entropy = 0.2258
+complementary_disruption = 0.0889
+
+[ENCODE]
+type = engineered
+loss = 0.0938
+gc_content = 0.6347
+wobble_gc = 0.8580
+codon_diversity = 0.9062
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5374
+wobble_FLOW = 0.0633
+wobble_OBSERVE = 0.0787
+wobble_LOGIC = 0.3205
+wobble_CHOOSE = 0.5374
+entropy = 0.2258
+
+[OBSERVE]
+distance = 0.0717
+level = standard
+complementary_balance = 0.9111
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1036
+intensity = 0.1036
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1036
+  COMPOSE(FLOW,FLOW): 0.0845
+  COMPOSE(LOGIC,LOGIC): 0.0825
+  COMPOSE(LOGIC,CHOOSE): 0.0806
+  COMPOSE(CHOOSE,CHOOSE): 0.0729
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2917
+modifier_dominant = OBSERVE
+modifier_pct = 0.2956
+primary_FLOW = 0.2476
+primary_OBSERVE = 0.1996
+primary_LOGIC = 0.2917
+primary_CHOOSE = 0.2610
+modifier_FLOW = 0.2111
+modifier_OBSERVE = 0.2956
+modifier_LOGIC = 0.2322
+modifier_CHOOSE = 0.2610
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0281
+aa_top5 = [
+  Leu: 0.1192  # aliphatic
+  Ser: 0.0904  # hydroxyl
+  Gly: 0.0827  # simple
+  Ala: 0.0808  # simple
+  Pro: 0.0731  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 520
+stop_codon = TAG
+loss = 0.0281
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.low.membrane_embedded

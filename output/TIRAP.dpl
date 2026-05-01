@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TIRAP | unknown
+# CDS: 189 bp (63 codons)
+
+[IDENTITY]
+gene = TIRAP
+organism = unknown
+transcript = ENST00000700495.1
+cds_length = 189
+codons = 63
+protein_length = 62
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.965
+resistance = 0.035
+dominant = OBSERVE
+dominant_pct = 0.3333
+FLOW = 0.2487
+OBSERVE = 0.3333
+LOGIC = 0.1323
+CHOOSE = 0.2857
+state = flowing
+
+[CONNECT]
+depth = 0.7619
+type = membrane_embedded
+hydrophobic_ratio = 0.6452
+charge_positive = 0.0806
+charge_negative = 0.0484
+charge_neutral = 0.8710
+
+[DISSOLVE]
+rigidity = 0.9808
+potential = crystallized
+wobble_entropy = 0.0192
+complementary_disruption = 0.2381
+
+[ENCODE]
+type = natural
+loss = 0.4844
+gc_content = 0.4180
+wobble_gc = 0.4444
+codon_diversity = 0.5156
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3016
+wobble_FLOW = 0.2540
+wobble_OBSERVE = 0.3016
+wobble_LOGIC = 0.1587
+wobble_CHOOSE = 0.2857
+entropy = 0.0192
+
+[OBSERVE]
+distance = 0.0476
+level = deep
+complementary_balance = 0.7619
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1270
+intensity = 0.1270
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1270
+  COMPOSE(OBSERVE,OBSERVE): 0.1270
+  COMPOSE(FLOW,OBSERVE): 0.1111
+  COMPOSE(CHOOSE,OBSERVE): 0.1111
+  COMPOSE(FLOW,LOGIC): 0.0794
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3175
+modifier_dominant = OBSERVE
+modifier_pct = 0.3968
+primary_FLOW = 0.2698
+primary_OBSERVE = 0.3016
+primary_LOGIC = 0.1111
+primary_CHOOSE = 0.3175
+modifier_FLOW = 0.2222
+modifier_OBSERVE = 0.3968
+modifier_LOGIC = 0.1270
+modifier_CHOOSE = 0.2540
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0484
+aa_top5 = [
+  Leu: 0.1935  # aliphatic
+  Pro: 0.1290  # cyclic
+  Ser: 0.1290  # hydroxyl
+  Ile: 0.0806  # aliphatic
+  Cys: 0.0484  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 62
+stop_codon = TAG
+loss = 0.0484
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.deep.dominant.crystallized.membrane_embedded

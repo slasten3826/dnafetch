@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: KCNMA1 | unknown
+# CDS: 387 bp (129 codons)
+
+[IDENTITY]
+gene = KCNMA1
+organism = unknown
+transcript = ENST00000481070.1
+cds_length = 387
+codons = 129
+protein_length = 128
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.968
+resistance = 0.032
+dominant = CHOOSE
+dominant_pct = 0.3333
+FLOW = 0.1447
+OBSERVE = 0.2248
+LOGIC = 0.2972
+CHOOSE = 0.3333
+state = flowing
+
+[CONNECT]
+depth = 0.8837
+type = balanced_interface
+hydrophobic_ratio = 0.5469
+charge_positive = 0.0938
+charge_negative = 0.0391
+charge_neutral = 0.8672
+
+[DISSOLVE]
+rigidity = 0.7766
+potential = low
+wobble_entropy = 0.2234
+complementary_disruption = 0.1163
+
+[ENCODE]
+type = engineered
+loss = 0.3125
+gc_content = 0.6305
+wobble_gc = 0.8372
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5426
+wobble_FLOW = 0.0388
+wobble_OBSERVE = 0.1240
+wobble_LOGIC = 0.2946
+wobble_CHOOSE = 0.5426
+entropy = 0.2234
+
+[OBSERVE]
+distance = 0.0362
+level = deep
+complementary_balance = 0.8837
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(OBSERVE,CHOOSE)
+top_compose_pct = 0.1860
+intensity = 0.1860
+compose_top5 = [
+  COMPOSE(OBSERVE,CHOOSE): 0.1860
+  COMPOSE(LOGIC,LOGIC): 0.1550
+  COMPOSE(FLOW,OBSERVE): 0.0853
+  COMPOSE(CHOOSE,OBSERVE): 0.0775
+  COMPOSE(FLOW,LOGIC): 0.0698
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3023
+modifier_dominant = LOGIC
+modifier_pct = 0.3101
+primary_FLOW = 0.2481
+primary_OBSERVE = 0.3023
+primary_LOGIC = 0.2868
+primary_CHOOSE = 0.1628
+modifier_FLOW = 0.1473
+modifier_OBSERVE = 0.2481
+modifier_LOGIC = 0.3101
+modifier_CHOOSE = 0.2946
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0556
+aa_top5 = [
+  Ser: 0.2500  # hydroxyl
+  Gly: 0.1562  # simple
+  Leu: 0.0859  # aliphatic
+  Met: 0.0469  # sulfur
+  Ala: 0.0469  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 128
+stop_codon = TAG
+loss = 0.0556
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.deep.dominant.low.balanced_interface

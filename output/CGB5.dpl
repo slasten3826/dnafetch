@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CGB5 | unknown
+# CDS: 498 bp (166 codons)
+
+[IDENTITY]
+gene = CGB5
+organism = unknown
+transcript = ENST00000301408.7
+cds_length = 498
+codons = 166
+protein_length = 165
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.954
+resistance = 0.046
+dominant = CHOOSE
+dominant_pct = 0.3855
+FLOW = 0.1526
+OBSERVE = 0.1847
+LOGIC = 0.2771
+CHOOSE = 0.3855
+state = flowing
+
+[CONNECT]
+depth = 0.8594
+type = membrane_embedded
+hydrophobic_ratio = 0.6121
+charge_positive = 0.1030
+charge_negative = 0.0727
+charge_neutral = 0.8242
+
+[DISSOLVE]
+rigidity = 0.8237
+potential = low
+wobble_entropy = 0.1763
+complementary_disruption = 0.1406
+
+[ENCODE]
+type = engineered
+loss = 0.2969
+gc_content = 0.6627
+wobble_gc = 0.8193
+codon_diversity = 0.7031
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.5000
+wobble_FLOW = 0.0723
+wobble_OBSERVE = 0.1084
+wobble_LOGIC = 0.3193
+wobble_CHOOSE = 0.5000
+entropy = 0.1763
+
+[OBSERVE]
+distance = 0.1084
+level = mild
+complementary_balance = 0.8594
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1325
+intensity = 0.1325
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1325
+  COMPOSE(CHOOSE,OBSERVE): 0.1024
+  COMPOSE(OBSERVE,LOGIC): 0.0783
+  COMPOSE(LOGIC,FLOW): 0.0723
+  COMPOSE(CHOOSE,LOGIC): 0.0723
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3494
+modifier_dominant = CHOOSE
+modifier_pct = 0.3072
+primary_FLOW = 0.1988
+primary_OBSERVE = 0.1867
+primary_LOGIC = 0.2651
+primary_CHOOSE = 0.3494
+modifier_FLOW = 0.1867
+modifier_OBSERVE = 0.2590
+modifier_LOGIC = 0.2470
+modifier_CHOOSE = 0.3072
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0342
+aa_top5 = [
+  Pro: 0.1333  # cyclic
+  Leu: 0.1152  # aliphatic
+  Ser: 0.0848  # hydroxyl
+  Arg: 0.0727  # basic
+  Cys: 0.0727  # sulfur
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 165
+stop_codon = TAA
+loss = 0.0342
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.low.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FUT5 | unknown
+# CDS: 1125 bp (375 codons)
+
+[IDENTITY]
+gene = FUT5
+organism = unknown
+transcript = ENST00000588525.1
+cds_length = 1125
+codons = 375
+protein_length = 374
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.969
+resistance = 0.031
+dominant = CHOOSE
+dominant_pct = 0.3511
+FLOW = 0.1787
+OBSERVE = 0.1796
+LOGIC = 0.2907
+CHOOSE = 0.3511
+state = flowing
+
+[CONNECT]
+depth = 0.9387
+type = membrane_embedded
+hydrophobic_ratio = 0.5829
+charge_positive = 0.1283
+charge_negative = 0.0909
+charge_neutral = 0.7807
+
+[DISSOLVE]
+rigidity = 0.7900
+potential = low
+wobble_entropy = 0.2100
+complementary_disruption = 0.0613
+
+[ENCODE]
+type = engineered
+loss = 0.1406
+gc_content = 0.6418
+wobble_gc = 0.8587
+codon_diversity = 0.8594
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4667
+wobble_FLOW = 0.0587
+wobble_OBSERVE = 0.0827
+wobble_LOGIC = 0.3920
+wobble_CHOOSE = 0.4667
+entropy = 0.2100
+
+[OBSERVE]
+distance = 0.0604
+level = standard
+complementary_balance = 0.9387
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1013
+intensity = 0.1013
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1013
+  COMPOSE(CHOOSE,CHOOSE): 0.0933
+  COMPOSE(LOGIC,FLOW): 0.0907
+  COMPOSE(LOGIC,CHOOSE): 0.0907
+  COMPOSE(OBSERVE,LOGIC): 0.0693
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3093
+modifier_dominant = CHOOSE
+modifier_pct = 0.2773
+primary_FLOW = 0.2107
+primary_OBSERVE = 0.2080
+primary_LOGIC = 0.2720
+primary_CHOOSE = 0.3093
+modifier_FLOW = 0.2667
+modifier_OBSERVE = 0.2480
+modifier_LOGIC = 0.2080
+modifier_CHOOSE = 0.2773
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0242
+aa_top5 = [
+  Leu: 0.1043  # aliphatic
+  Pro: 0.0936  # cyclic
+  Ala: 0.0909  # simple
+  Ser: 0.0829  # hydroxyl
+  Arg: 0.0668  # basic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 374
+stop_codon = TGA
+loss = 0.0242
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.low.membrane_embedded

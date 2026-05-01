@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ING4 | unknown
+# CDS: 126 bp (42 codons)
+
+[IDENTITY]
+gene = ING4
+organism = unknown
+transcript = ENST00000493873.1
+cds_length = 126
+codons = 42
+protein_length = 41
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.949
+resistance = 0.051
+dominant = FLOW
+dominant_pct = 0.3889
+FLOW = 0.3889
+OBSERVE = 0.1270
+LOGIC = 0.2540
+CHOOSE = 0.2302
+state = flowing
+
+[CONNECT]
+depth = 0.7143
+type = ionic_interaction
+hydrophobic_ratio = 0.5122
+charge_positive = 0.4146
+charge_negative = 0.0000
+charge_neutral = 0.5854
+
+[DISSOLVE]
+rigidity = 0.9071
+potential = low
+wobble_entropy = 0.0929
+complementary_disruption = 0.2857
+
+[ENCODE]
+type = moderate
+loss = 0.6719
+gc_content = 0.4841
+wobble_gc = 0.4524
+codon_diversity = 0.3281
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4286
+wobble_FLOW = 0.4286
+wobble_OBSERVE = 0.1190
+wobble_LOGIC = 0.3095
+wobble_CHOOSE = 0.1429
+entropy = 0.0929
+
+[OBSERVE]
+distance = 0.1349
+level = basic
+complementary_balance = 0.7143
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2143
+intensity = 0.2143
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2143
+  COMPOSE(FLOW,LOGIC): 0.1905
+  COMPOSE(CHOOSE,OBSERVE): 0.1429
+  COMPOSE(CHOOSE,CHOOSE): 0.1190
+  COMPOSE(LOGIC,CHOOSE): 0.0952
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.5000
+modifier_dominant = LOGIC
+modifier_pct = 0.2619
+primary_FLOW = 0.5000
+primary_OBSERVE = 0.0238
+primary_LOGIC = 0.1905
+primary_CHOOSE = 0.2857
+modifier_FLOW = 0.2381
+modifier_OBSERVE = 0.2381
+modifier_LOGIC = 0.2619
+modifier_CHOOSE = 0.2619
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0679
+aa_top5 = [
+  Lys: 0.2195  # basic
+  Arg: 0.1951  # basic
+  Leu: 0.1463  # aliphatic
+  Pro: 0.1220  # cyclic
+  Ala: 0.0976  # simple
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 41
+stop_codon = TAA
+loss = 0.0679
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

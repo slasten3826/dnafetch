@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PNPLA1 | unknown
+# CDS: 1602 bp (534 codons)
+
+[IDENTITY]
+gene = PNPLA1
+organism = unknown
+transcript = ENST00000457797.5
+cds_length = 1602
+codons = 534
+protein_length = 533
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.990
+resistance = 0.010
+dominant = CHOOSE
+dominant_pct = 0.3146
+FLOW = 0.2203
+OBSERVE = 0.2085
+LOGIC = 0.2566
+CHOOSE = 0.3146
+state = flowing
+
+[CONNECT]
+depth = 0.9301
+type = membrane_embedded
+hydrophobic_ratio = 0.5610
+charge_positive = 0.1163
+charge_negative = 0.0863
+charge_neutral = 0.7974
+
+[DISSOLVE]
+rigidity = 0.9718
+potential = crystallized
+wobble_entropy = 0.0282
+complementary_disruption = 0.0699
+
+[ENCODE]
+type = optimized
+loss = 0.0469
+gc_content = 0.5712
+wobble_gc = 0.6348
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3408
+wobble_FLOW = 0.1929
+wobble_OBSERVE = 0.1723
+wobble_LOGIC = 0.2940
+wobble_CHOOSE = 0.3408
+entropy = 0.0282
+
+[OBSERVE]
+distance = 0.0581
+level = standard
+complementary_balance = 0.9301
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1105
+intensity = 0.1105
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1105
+  COMPOSE(LOGIC,FLOW): 0.0861
+  COMPOSE(OBSERVE,CHOOSE): 0.0824
+  COMPOSE(LOGIC,OBSERVE): 0.0805
+  COMPOSE(CHOOSE,FLOW): 0.0749
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3015
+modifier_dominant = CHOOSE
+modifier_pct = 0.3146
+primary_FLOW = 0.2135
+primary_OBSERVE = 0.1966
+primary_LOGIC = 0.3015
+primary_CHOOSE = 0.2884
+modifier_FLOW = 0.2547
+modifier_OBSERVE = 0.2566
+modifier_LOGIC = 0.1742
+modifier_CHOOSE = 0.3146
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0294
+aa_top5 = [
+  Ser: 0.1144  # hydroxyl
+  Pro: 0.1107  # cyclic
+  Leu: 0.0844  # aliphatic
+  Val: 0.0807  # aliphatic
+  Ala: 0.0713  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 533
+stop_codon = TGA
+loss = 0.0294
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.membrane_embedded

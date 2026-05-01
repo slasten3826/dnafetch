@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FABP6 | unknown
+# CDS: 387 bp (129 codons)
+
+[IDENTITY]
+gene = FABP6
+organism = unknown
+transcript = ENST00000402432.4
+cds_length = 387
+codons = 129
+protein_length = 128
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.988
+resistance = 0.012
+dominant = LOGIC
+dominant_pct = 0.3075
+FLOW = 0.2713
+OBSERVE = 0.1860
+LOGIC = 0.3075
+CHOOSE = 0.2351
+state = flowing
+
+[CONNECT]
+depth = 0.8424
+type = balanced_interface
+hydrophobic_ratio = 0.4688
+charge_positive = 0.1406
+charge_negative = 0.1250
+charge_neutral = 0.7344
+
+[DISSOLVE]
+rigidity = 0.8490
+potential = low
+wobble_entropy = 0.1510
+complementary_disruption = 0.1576
+
+[ENCODE]
+type = engineered
+loss = 0.3594
+gc_content = 0.5426
+wobble_gc = 0.8062
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4109
+wobble_FLOW = 0.0698
+wobble_OBSERVE = 0.1240
+wobble_LOGIC = 0.4109
+wobble_CHOOSE = 0.3953
+entropy = 0.1510
+
+[OBSERVE]
+distance = 0.0362
+level = deep
+complementary_balance = 0.8424
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1395
+intensity = 0.1395
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1395
+  COMPOSE(LOGIC,FLOW): 0.1240
+  COMPOSE(LOGIC,LOGIC): 0.1008
+  COMPOSE(FLOW,OBSERVE): 0.0930
+  COMPOSE(FLOW,CHOOSE): 0.0930
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3643
+modifier_dominant = FLOW
+modifier_pct = 0.3798
+primary_FLOW = 0.3643
+primary_OBSERVE = 0.1473
+primary_LOGIC = 0.3488
+primary_CHOOSE = 0.1395
+modifier_FLOW = 0.3798
+modifier_OBSERVE = 0.2868
+modifier_LOGIC = 0.1628
+modifier_CHOOSE = 0.1705
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0306
+aa_top5 = [
+  Gly: 0.1016  # simple
+  Thr: 0.0938  # hydroxyl
+  Lys: 0.0938  # basic
+  Val: 0.0938  # aliphatic
+  Glu: 0.0859  # acidic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 128
+stop_codon = TAA
+loss = 0.0306
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.deep.dominant.low.balanced_interface

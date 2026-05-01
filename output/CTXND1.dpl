@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CTXND1 | unknown
+# CDS: 267 bp (89 codons)
+
+[IDENTITY]
+gene = CTXND1
+organism = unknown
+transcript = ENST00000560778.3
+cds_length = 267
+codons = 89
+protein_length = 88
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.998
+resistance = 0.002
+dominant = CHOOSE
+dominant_pct = 0.2809
+FLOW = 0.2509
+OBSERVE = 0.2247
+LOGIC = 0.2434
+CHOOSE = 0.2809
+state = flowing
+
+[CONNECT]
+depth = 0.9363
+type = ionic_interaction
+hydrophobic_ratio = 0.5000
+charge_positive = 0.1591
+charge_negative = 0.0568
+charge_neutral = 0.7841
+
+[DISSOLVE]
+rigidity = 0.9972
+potential = crystallized
+wobble_entropy = 0.0028
+complementary_disruption = 0.0637
+
+[ENCODE]
+type = moderate
+loss = 0.3438
+gc_content = 0.5243
+wobble_gc = 0.5169
+codon_diversity = 0.6562
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2697
+wobble_FLOW = 0.2135
+wobble_OBSERVE = 0.2697
+wobble_LOGIC = 0.2584
+wobble_CHOOSE = 0.2584
+entropy = 0.0028
+
+[OBSERVE]
+distance = 0.0300
+level = deep
+complementary_balance = 0.9363
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,CHOOSE)
+top_compose_pct = 0.1236
+intensity = 0.1236
+compose_top5 = [
+  COMPOSE(FLOW,CHOOSE): 0.1236
+  COMPOSE(CHOOSE,FLOW): 0.1124
+  COMPOSE(CHOOSE,OBSERVE): 0.1124
+  COMPOSE(LOGIC,LOGIC): 0.0899
+  COMPOSE(OBSERVE,LOGIC): 0.0787
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3034
+modifier_dominant = CHOOSE
+modifier_pct = 0.3034
+primary_FLOW = 0.3034
+primary_OBSERVE = 0.1910
+primary_LOGIC = 0.2247
+primary_CHOOSE = 0.2809
+modifier_FLOW = 0.2360
+modifier_OBSERVE = 0.2135
+modifier_LOGIC = 0.2472
+modifier_CHOOSE = 0.3034
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0340
+aa_top5 = [
+  Thr: 0.1250  # hydroxyl
+  Leu: 0.1250  # aliphatic
+  Ser: 0.0909  # hydroxyl
+  Gly: 0.0909  # simple
+  His: 0.0682  # aromatic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 88
+stop_codon = TGA
+loss = 0.0340
+
+[SIGNATURE]
+fingerprint = CHOOSE.OBSERVE.deep.dominant.crystallized.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000255835 | unknown
+# CDS: 1080 bp (360 codons)
+
+[IDENTITY]
+gene = ENSG00000255835
+organism = unknown
+transcript = ENST00000432920.2
+cds_length = 1080
+codons = 360
+protein_length = 359
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.965
+resistance = 0.035
+dominant = LOGIC
+dominant_pct = 0.3361
+FLOW = 0.1685
+OBSERVE = 0.1787
+LOGIC = 0.3361
+CHOOSE = 0.3167
+state = flowing
+
+[CONNECT]
+depth = 0.9704
+type = membrane_embedded
+hydrophobic_ratio = 0.6518
+charge_positive = 0.1532
+charge_negative = 0.0585
+charge_neutral = 0.7883
+
+[DISSOLVE]
+rigidity = 0.9834
+potential = crystallized
+wobble_entropy = 0.0166
+complementary_disruption = 0.0296
+
+[ENCODE]
+type = optimized
+loss = 0.1094
+gc_content = 0.6528
+wobble_gc = 0.6028
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3056
+wobble_FLOW = 0.1806
+wobble_OBSERVE = 0.2167
+wobble_LOGIC = 0.2972
+wobble_CHOOSE = 0.3056
+entropy = 0.0166
+
+[OBSERVE]
+distance = 0.0194
+level = strong
+complementary_balance = 0.9704
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1889
+intensity = 0.1889
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1889
+  COMPOSE(LOGIC,LOGIC): 0.1306
+  COMPOSE(CHOOSE,OBSERVE): 0.0889
+  COMPOSE(CHOOSE,LOGIC): 0.0889
+  COMPOSE(CHOOSE,FLOW): 0.0778
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.4389
+modifier_dominant = CHOOSE
+modifier_pct = 0.3167
+primary_FLOW = 0.1472
+primary_OBSERVE = 0.0861
+primary_LOGIC = 0.4389
+primary_CHOOSE = 0.3278
+modifier_FLOW = 0.1778
+modifier_OBSERVE = 0.2333
+modifier_LOGIC = 0.2722
+modifier_CHOOSE = 0.3167
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0459
+aa_top5 = [
+  Ala: 0.1894  # simple
+  Gly: 0.1309  # simple
+  Leu: 0.0975  # aliphatic
+  Arg: 0.0947  # basic
+  Pro: 0.0724  # cyclic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 359
+stop_codon = TGA
+loss = 0.0459
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.strong.dominant.crystallized.membrane_embedded

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ERICH1 | unknown
+# CDS: 318 bp (106 codons)
+
+[IDENTITY]
+gene = ERICH1
+organism = unknown
+transcript = ENST00000522893.1
+cds_length = 318
+codons = 106
+protein_length = 105
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = CHOOSE
+dominant_pct = 0.2642
+FLOW = 0.2579
+OBSERVE = 0.2484
+LOGIC = 0.2296
+CHOOSE = 0.2642
+state = flowing
+
+[CONNECT]
+depth = 0.9560
+type = ionic_interaction
+hydrophobic_ratio = 0.5429
+charge_positive = 0.1810
+charge_negative = 0.1143
+charge_neutral = 0.7048
+
+[DISSOLVE]
+rigidity = 0.9983
+potential = crystallized
+wobble_entropy = 0.0017
+complementary_disruption = 0.0440
+
+[ENCODE]
+type = moderate
+loss = 0.2344
+gc_content = 0.4937
+wobble_gc = 0.5283
+codon_diversity = 0.7656
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2736
+wobble_FLOW = 0.2264
+wobble_OBSERVE = 0.2453
+wobble_LOGIC = 0.2736
+wobble_CHOOSE = 0.2547
+entropy = 0.0017
+
+[OBSERVE]
+distance = 0.0063
+level = strong
+complementary_balance = 0.9560
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1132
+intensity = 0.1132
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1132
+  COMPOSE(CHOOSE,OBSERVE): 0.1132
+  COMPOSE(LOGIC,CHOOSE): 0.1038
+  COMPOSE(FLOW,OBSERVE): 0.0849
+  COMPOSE(OBSERVE,CHOOSE): 0.0755
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2642
+modifier_dominant = FLOW
+modifier_pct = 0.2925
+primary_FLOW = 0.2547
+primary_OBSERVE = 0.2264
+primary_LOGIC = 0.2642
+primary_CHOOSE = 0.2547
+modifier_FLOW = 0.2925
+modifier_OBSERVE = 0.2736
+modifier_LOGIC = 0.1509
+modifier_CHOOSE = 0.2830
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0360
+aa_top5 = [
+  Leu: 0.1524  # aliphatic
+  Ala: 0.1048  # simple
+  Ser: 0.0952  # hydroxyl
+  Asp: 0.0667  # acidic
+  Arg: 0.0667  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 105
+stop_codon = TGA
+loss = 0.0360
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.strong.strong.crystallized.ionic_interaction

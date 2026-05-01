@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DENND4A | unknown
+# CDS: 3003 bp (1001 codons)
+
+[IDENTITY]
+gene = DENND4A
+organism = unknown
+transcript = ENST00000564674.5
+cds_length = 3003
+codons = 1001
+protein_length = 1001
+stop_codon = none
+
+[FLOW]
+engagement = 0.984
+resistance = 0.016
+dominant = FLOW
+dominant_pct = 0.3094
+FLOW = 0.3094
+OBSERVE = 0.2937
+LOGIC = 0.1981
+CHOOSE = 0.1988
+state = flowing
+
+[CONNECT]
+depth = 0.9837
+type = balanced_interface
+hydrophobic_ratio = 0.5255
+charge_positive = 0.1369
+charge_negative = 0.1079
+charge_neutral = 0.7552
+
+[DISSOLVE]
+rigidity = 0.9444
+potential = crystallized
+wobble_entropy = 0.0556
+complementary_disruption = 0.0163
+
+[ENCODE]
+type = natural
+loss = 0.0625
+gc_content = 0.3969
+wobble_gc = 0.3117
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3806
+wobble_FLOW = 0.3077
+wobble_OBSERVE = 0.3806
+wobble_LOGIC = 0.1648
+wobble_CHOOSE = 0.1469
+entropy = 0.0556
+
+[OBSERVE]
+distance = 0.0157
+level = strong
+complementary_balance = 0.9837
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1089
+intensity = 0.1089
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1089
+  COMPOSE(LOGIC,FLOW): 0.1079
+  COMPOSE(OBSERVE,OBSERVE): 0.0799
+  COMPOSE(FLOW,OBSERVE): 0.0759
+  COMPOSE(CHOOSE,CHOOSE): 0.0709
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3037
+modifier_dominant = FLOW
+modifier_pct = 0.3167
+primary_FLOW = 0.3037
+primary_OBSERVE = 0.2208
+primary_LOGIC = 0.2647
+primary_CHOOSE = 0.2108
+modifier_FLOW = 0.3167
+modifier_OBSERVE = 0.2797
+modifier_LOGIC = 0.1648
+modifier_CHOOSE = 0.2388
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0229
+aa_top5 = [
+  Leu: 0.1019  # aliphatic
+  Ser: 0.1009  # hydroxyl
+  Pro: 0.0709  # cyclic
+  Lys: 0.0699  # basic
+  Val: 0.0589  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 1001
+stop_codon = none
+loss = 0.0229
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.strong.crystallized.balanced_interface

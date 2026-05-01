@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: FAM24B | unknown
+# CDS: 285 bp (95 codons)
+
+[IDENTITY]
+gene = FAM24B
+organism = unknown
+transcript = ENST00000368896.1
+cds_length = 285
+codons = 95
+protein_length = 94
+stop_codon = TGA
+
+[FLOW]
+engagement = 1.000
+resistance = 0.000
+dominant = LOGIC
+dominant_pct = 0.2561
+FLOW = 0.2421
+OBSERVE = 0.2491
+LOGIC = 0.2561
+CHOOSE = 0.2526
+state = flowing
+
+[CONNECT]
+depth = 0.9895
+type = membrane_embedded
+hydrophobic_ratio = 0.6702
+charge_positive = 0.1064
+charge_negative = 0.0851
+charge_neutral = 0.8085
+
+[DISSOLVE]
+rigidity = 0.9898
+potential = crystallized
+wobble_entropy = 0.0102
+complementary_disruption = 0.0105
+
+[ENCODE]
+type = moderate
+loss = 0.2656
+gc_content = 0.5088
+wobble_gc = 0.5474
+codon_diversity = 0.7344
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.3053
+wobble_FLOW = 0.1895
+wobble_OBSERVE = 0.2632
+wobble_LOGIC = 0.2421
+wobble_CHOOSE = 0.3053
+entropy = 0.0102
+
+[OBSERVE]
+distance = 0.0035
+level = intense
+complementary_balance = 0.9895
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,CHOOSE)
+top_compose_pct = 0.1368
+intensity = 0.1368
+compose_top5 = [
+  COMPOSE(LOGIC,CHOOSE): 0.1368
+  COMPOSE(FLOW,FLOW): 0.1263
+  COMPOSE(OBSERVE,LOGIC): 0.1158
+  COMPOSE(CHOOSE,OBSERVE): 0.1053
+  COMPOSE(FLOW,OBSERVE): 0.0842
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3368
+modifier_dominant = OBSERVE
+modifier_pct = 0.2947
+primary_FLOW = 0.2632
+primary_OBSERVE = 0.1895
+primary_LOGIC = 0.3368
+primary_CHOOSE = 0.2105
+modifier_FLOW = 0.2737
+modifier_OBSERVE = 0.2947
+modifier_LOGIC = 0.1895
+modifier_CHOOSE = 0.2421
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0338
+aa_top5 = [
+  Ala: 0.1383  # simple
+  Leu: 0.1170  # aliphatic
+  Cys: 0.0851  # sulfur
+  Val: 0.0745  # aliphatic
+  Lys: 0.0745  # basic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 94
+stop_codon = TGA
+loss = 0.0338
+
+[SIGNATURE]
+fingerprint = LOGIC.CHOOSE.intense.dominant.crystallized.membrane_embedded

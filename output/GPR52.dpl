@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: GPR52 | unknown
+# CDS: 1086 bp (362 codons)
+
+[IDENTITY]
+gene = GPR52
+organism = unknown
+transcript = ENST00000367685.5
+cds_length = 1086
+codons = 362
+protein_length = 361
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.986
+resistance = 0.014
+dominant = OBSERVE
+dominant_pct = 0.3361
+FLOW = 0.2228
+OBSERVE = 0.3361
+LOGIC = 0.2081
+CHOOSE = 0.2330
+state = flowing
+
+[CONNECT]
+depth = 0.8619
+type = membrane_embedded
+hydrophobic_ratio = 0.6122
+charge_positive = 0.1108
+charge_negative = 0.0609
+charge_neutral = 0.8283
+
+[DISSOLVE]
+rigidity = 0.9632
+potential = crystallized
+wobble_entropy = 0.0368
+complementary_disruption = 0.1381
+
+[ENCODE]
+type = moderate
+loss = 0.0781
+gc_content = 0.4411
+wobble_gc = 0.4696
+codon_diversity = 0.9219
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3619
+wobble_FLOW = 0.1685
+wobble_OBSERVE = 0.3619
+wobble_LOGIC = 0.1796
+wobble_CHOOSE = 0.2901
+entropy = 0.0368
+
+[OBSERVE]
+distance = 0.1031
+level = mild
+complementary_balance = 0.8619
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1022
+intensity = 0.1022
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1022
+  COMPOSE(OBSERVE,OBSERVE): 0.0994
+  COMPOSE(OBSERVE,LOGIC): 0.0801
+  COMPOSE(LOGIC,OBSERVE): 0.0801
+  COMPOSE(CHOOSE,OBSERVE): 0.0773
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2873
+modifier_dominant = OBSERVE
+modifier_pct = 0.3591
+primary_FLOW = 0.2873
+primary_OBSERVE = 0.2873
+primary_LOGIC = 0.2265
+primary_CHOOSE = 0.1989
+modifier_FLOW = 0.2127
+modifier_OBSERVE = 0.3591
+modifier_LOGIC = 0.2182
+modifier_CHOOSE = 0.2099
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0263
+aa_top5 = [
+  Leu: 0.1080  # aliphatic
+  Ser: 0.1025  # hydroxyl
+  Ile: 0.0803  # aliphatic
+  Val: 0.0803  # aliphatic
+  Phe: 0.0693  # aromatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 361
+stop_codon = TGA
+loss = 0.0263
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.mild.strong.crystallized.membrane_embedded

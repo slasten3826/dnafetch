@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PYGO1 | unknown
+# CDS: 1260 bp (420 codons)
+
+[IDENTITY]
+gene = PYGO1
+organism = unknown
+transcript = ENST00000645724.1
+cds_length = 1260
+codons = 420
+protein_length = 419
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.989
+resistance = 0.011
+dominant = FLOW
+dominant_pct = 0.3079
+FLOW = 0.3079
+OBSERVE = 0.2611
+LOGIC = 0.1881
+CHOOSE = 0.2429
+state = flowing
+
+[CONNECT]
+depth = 0.8984
+type = balanced_interface
+hydrophobic_ratio = 0.4845
+charge_positive = 0.1074
+charge_negative = 0.0835
+charge_neutral = 0.8091
+
+[DISSOLVE]
+rigidity = 0.9255
+potential = crystallized
+wobble_entropy = 0.0745
+complementary_disruption = 0.1016
+
+[ENCODE]
+type = AT_rich
+loss = 0.0625
+gc_content = 0.4310
+wobble_gc = 0.2952
+codon_diversity = 0.9375
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.4262
+wobble_FLOW = 0.2786
+wobble_OBSERVE = 0.4262
+wobble_LOGIC = 0.1333
+wobble_CHOOSE = 0.1619
+entropy = 0.0745
+
+[OBSERVE]
+distance = 0.0468
+level = deep
+complementary_balance = 0.8984
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.1548
+intensity = 0.1548
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.1548
+  COMPOSE(CHOOSE,CHOOSE): 0.1214
+  COMPOSE(LOGIC,FLOW): 0.0833
+  COMPOSE(CHOOSE,FLOW): 0.0833
+  COMPOSE(LOGIC,LOGIC): 0.0738
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2952
+modifier_dominant = FLOW
+modifier_pct = 0.3500
+primary_FLOW = 0.2952
+primary_OBSERVE = 0.1905
+primary_LOGIC = 0.2619
+primary_CHOOSE = 0.2524
+modifier_FLOW = 0.3500
+modifier_OBSERVE = 0.1667
+modifier_LOGIC = 0.1690
+modifier_CHOOSE = 0.3143
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0314
+aa_top5 = [
+  Pro: 0.1217  # cyclic
+  Asn: 0.1169  # amide
+  Ser: 0.1026  # hydroxyl
+  Gly: 0.0740  # simple
+  Ala: 0.0692  # simple
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 419
+stop_codon = TAA
+loss = 0.0314
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.deep.dominant.crystallized.balanced_interface

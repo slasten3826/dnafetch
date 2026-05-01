@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: CPNE9 | unknown
+# CDS: 567 bp (189 codons)
+
+[IDENTITY]
+gene = CPNE9
+organism = unknown
+transcript = ENST00000273027.6
+cds_length = 567
+codons = 189
+protein_length = 189
+stop_codon = none
+
+[FLOW]
+engagement = 0.995
+resistance = 0.005
+dominant = CHOOSE
+dominant_pct = 0.2981
+FLOW = 0.2399
+OBSERVE = 0.2205
+LOGIC = 0.2416
+CHOOSE = 0.2981
+state = flowing
+
+[CONNECT]
+depth = 0.9242
+type = membrane_embedded
+hydrophobic_ratio = 0.5820
+charge_positive = 0.0794
+charge_negative = 0.0847
+charge_neutral = 0.8360
+
+[DISSOLVE]
+rigidity = 0.9382
+potential = crystallized
+wobble_entropy = 0.0618
+complementary_disruption = 0.0758
+
+[ENCODE]
+type = optimized
+loss = 0.2188
+gc_content = 0.5397
+wobble_gc = 0.6772
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4074
+wobble_FLOW = 0.1270
+wobble_OBSERVE = 0.1958
+wobble_LOGIC = 0.2698
+wobble_CHOOSE = 0.4074
+entropy = 0.0618
+
+[OBSERVE]
+distance = 0.0564
+level = standard
+complementary_balance = 0.9242
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(FLOW,OBSERVE)
+top_compose_pct = 0.1058
+intensity = 0.1058
+compose_top5 = [
+  COMPOSE(FLOW,OBSERVE): 0.1058
+  COMPOSE(LOGIC,CHOOSE): 0.0899
+  COMPOSE(LOGIC,FLOW): 0.0847
+  COMPOSE(CHOOSE,OBSERVE): 0.0794
+  COMPOSE(FLOW,FLOW): 0.0794
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3069
+modifier_dominant = OBSERVE
+modifier_pct = 0.3016
+primary_FLOW = 0.3069
+primary_OBSERVE = 0.1640
+primary_LOGIC = 0.3069
+primary_CHOOSE = 0.2222
+modifier_FLOW = 0.2857
+modifier_OBSERVE = 0.3016
+modifier_LOGIC = 0.1481
+modifier_CHOOSE = 0.2646
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0256
+aa_top5 = [
+  Leu: 0.0899  # aliphatic
+  Ala: 0.0899  # simple
+  Ser: 0.0847  # hydroxyl
+  Ile: 0.0741  # aliphatic
+  Gly: 0.0688  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 189
+stop_codon = none
+loss = 0.0256
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.membrane_embedded

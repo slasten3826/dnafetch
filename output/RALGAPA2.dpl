@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: RALGAPA2 | unknown
+# CDS: 675 bp (225 codons)
+
+[IDENTITY]
+gene = RALGAPA2
+organism = unknown
+transcript = ENST00000495793.2
+cds_length = 675
+codons = 225
+protein_length = 225
+stop_codon = none
+
+[FLOW]
+engagement = 0.999
+resistance = 0.001
+dominant = CHOOSE
+dominant_pct = 0.2652
+FLOW = 0.2519
+OBSERVE = 0.2267
+LOGIC = 0.2563
+CHOOSE = 0.2652
+state = flowing
+
+[CONNECT]
+depth = 0.9659
+type = balanced_interface
+hydrophobic_ratio = 0.4844
+charge_positive = 0.1244
+charge_negative = 0.1067
+charge_neutral = 0.7689
+
+[DISSOLVE]
+rigidity = 0.9985
+potential = crystallized
+wobble_entropy = 0.0015
+complementary_disruption = 0.0341
+
+[ENCODE]
+type = moderate
+loss = 0.1094
+gc_content = 0.5215
+wobble_gc = 0.5244
+codon_diversity = 0.8906
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2711
+wobble_FLOW = 0.2267
+wobble_OBSERVE = 0.2489
+wobble_LOGIC = 0.2533
+wobble_CHOOSE = 0.2711
+entropy = 0.0015
+
+[OBSERVE]
+distance = 0.0089
+level = strong
+complementary_balance = 0.9659
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1067
+intensity = 0.1067
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1067
+  COMPOSE(CHOOSE,OBSERVE): 0.0933
+  COMPOSE(OBSERVE,CHOOSE): 0.0889
+  COMPOSE(LOGIC,OBSERVE): 0.0756
+  COMPOSE(FLOW,FLOW): 0.0756
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3067
+modifier_dominant = FLOW
+modifier_pct = 0.2711
+primary_FLOW = 0.2578
+primary_OBSERVE = 0.1822
+primary_LOGIC = 0.3067
+primary_CHOOSE = 0.2533
+modifier_FLOW = 0.2711
+modifier_OBSERVE = 0.2489
+modifier_LOGIC = 0.2089
+modifier_CHOOSE = 0.2711
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0316
+aa_top5 = [
+  Ser: 0.1378  # hydroxyl
+  Leu: 0.1111  # aliphatic
+  Val: 0.0756  # aliphatic
+  Ala: 0.0711  # simple
+  Glu: 0.0711  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 225
+stop_codon = none
+loss = 0.0316
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.strong.strong.crystallized.balanced_interface

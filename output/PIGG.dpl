@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PIGG | unknown
+# CDS: 144 bp (48 codons)
+
+[IDENTITY]
+gene = PIGG
+organism = unknown
+transcript = ENST00000510235.1
+cds_length = 144
+codons = 48
+protein_length = 47
+stop_codon = TAG
+
+[FLOW]
+engagement = 0.966
+resistance = 0.034
+dominant = CHOOSE
+dominant_pct = 0.3472
+FLOW = 0.1389
+OBSERVE = 0.2639
+LOGIC = 0.2500
+CHOOSE = 0.3472
+state = flowing
+
+[CONNECT]
+depth = 0.7778
+type = membrane_embedded
+hydrophobic_ratio = 0.5957
+charge_positive = 0.0851
+charge_negative = 0.0213
+charge_neutral = 0.8936
+
+[DISSOLVE]
+rigidity = 0.9277
+potential = crystallized
+wobble_entropy = 0.0723
+complementary_disruption = 0.2222
+
+[ENCODE]
+type = optimized
+loss = 0.5000
+gc_content = 0.5972
+wobble_gc = 0.6667
+codon_diversity = 0.5000
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3333
+wobble_FLOW = 0.0833
+wobble_OBSERVE = 0.2500
+wobble_LOGIC = 0.3333
+wobble_CHOOSE = 0.3333
+entropy = 0.0723
+
+[OBSERVE]
+distance = 0.0833
+level = mild
+complementary_balance = 0.7778
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1458
+intensity = 0.1458
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1458
+  COMPOSE(OBSERVE,CHOOSE): 0.1458
+  COMPOSE(CHOOSE,OBSERVE): 0.1042
+  COMPOSE(LOGIC,LOGIC): 0.0833
+  COMPOSE(OBSERVE,LOGIC): 0.0833
+]
+
+[LOGIC]
+primary_dominant = OBSERVE
+primary_pct = 0.3125
+modifier_dominant = CHOOSE
+modifier_pct = 0.4167
+primary_FLOW = 0.2292
+primary_OBSERVE = 0.3125
+primary_LOGIC = 0.1667
+primary_CHOOSE = 0.2917
+modifier_FLOW = 0.1042
+modifier_OBSERVE = 0.2292
+modifier_LOGIC = 0.2500
+modifier_CHOOSE = 0.4167
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0514
+aa_top5 = [
+  Ser: 0.1915  # hydroxyl
+  Pro: 0.1489  # cyclic
+  Leu: 0.1277  # aliphatic
+  Gly: 0.0851  # simple
+  Thr: 0.0851  # hydroxyl
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 47
+stop_codon = TAG
+loss = 0.0514
+
+[SIGNATURE]
+fingerprint = CHOOSE.LOGIC.mild.dominant.crystallized.membrane_embedded

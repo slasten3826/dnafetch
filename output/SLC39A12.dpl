@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SLC39A12 | unknown
+# CDS: 2076 bp (692 codons)
+
+[IDENTITY]
+gene = SLC39A12
+organism = unknown
+transcript = ENST00000377369.7
+cds_length = 2076
+codons = 692
+protein_length = 691
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = FLOW
+dominant_pct = 0.2765
+FLOW = 0.2765
+OBSERVE = 0.2712
+LOGIC = 0.2134
+CHOOSE = 0.2389
+state = flowing
+
+[CONNECT]
+depth = 0.9692
+type = balanced_interface
+hydrophobic_ratio = 0.5326
+charge_positive = 0.1085
+charge_negative = 0.0970
+charge_neutral = 0.7945
+
+[DISSOLVE]
+rigidity = 0.9977
+potential = crystallized
+wobble_entropy = 0.0023
+complementary_disruption = 0.0308
+
+[ENCODE]
+type = moderate
+loss = 0.0469
+gc_content = 0.4523
+wobble_gc = 0.4754
+codon_diversity = 0.9531
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.2717
+wobble_FLOW = 0.2529
+wobble_OBSERVE = 0.2717
+wobble_LOGIC = 0.2182
+wobble_CHOOSE = 0.2572
+entropy = 0.0023
+
+[OBSERVE]
+distance = 0.0053
+level = strong
+complementary_balance = 0.9692
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1084
+intensity = 0.1084
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1084
+  COMPOSE(LOGIC,FLOW): 0.0968
+  COMPOSE(CHOOSE,FLOW): 0.0925
+  COMPOSE(FLOW,OBSERVE): 0.0910
+  COMPOSE(OBSERVE,OBSERVE): 0.0867
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.2847
+modifier_dominant = OBSERVE
+modifier_pct = 0.3266
+primary_FLOW = 0.2847
+primary_OBSERVE = 0.2153
+primary_LOGIC = 0.2543
+primary_CHOOSE = 0.2457
+modifier_FLOW = 0.2919
+modifier_OBSERVE = 0.3266
+modifier_LOGIC = 0.1676
+modifier_CHOOSE = 0.2139
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0308
+aa_top5 = [
+  Leu: 0.1491  # aliphatic
+  Ser: 0.1114  # hydroxyl
+  Gly: 0.0666  # simple
+  Ile: 0.0608  # aliphatic
+  Gln: 0.0593  # amide
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 691
+stop_codon = TAA
+loss = 0.0308
+
+[SIGNATURE]
+fingerprint = FLOW.OBSERVE.strong.strong.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SFMBT1 | unknown
+# CDS: 297 bp (99 codons)
+
+[IDENTITY]
+gene = SFMBT1
+organism = unknown
+transcript = ENST00000497586.5
+cds_length = 297
+codons = 99
+protein_length = 98
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.978
+resistance = 0.022
+dominant = CHOOSE
+dominant_pct = 0.3468
+FLOW = 0.1818
+OBSERVE = 0.2088
+LOGIC = 0.2626
+CHOOSE = 0.3468
+state = flowing
+
+[CONNECT]
+depth = 0.8889
+type = membrane_embedded
+hydrophobic_ratio = 0.5714
+charge_positive = 0.1531
+charge_negative = 0.0714
+charge_neutral = 0.7755
+
+[DISSOLVE]
+rigidity = 0.9487
+potential = crystallized
+wobble_entropy = 0.0513
+complementary_disruption = 0.1111
+
+[ENCODE]
+type = optimized
+loss = 0.3125
+gc_content = 0.6094
+wobble_gc = 0.6465
+codon_diversity = 0.6875
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4040
+wobble_FLOW = 0.1414
+wobble_OBSERVE = 0.2121
+wobble_LOGIC = 0.2424
+wobble_CHOOSE = 0.4040
+entropy = 0.0513
+
+[OBSERVE]
+distance = 0.0842
+level = mild
+complementary_balance = 0.8889
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,CHOOSE)
+top_compose_pct = 0.1212
+intensity = 0.1212
+compose_top5 = [
+  COMPOSE(CHOOSE,CHOOSE): 0.1212
+  COMPOSE(OBSERVE,LOGIC): 0.1212
+  COMPOSE(CHOOSE,OBSERVE): 0.1111
+  COMPOSE(FLOW,LOGIC): 0.0808
+  COMPOSE(OBSERVE,CHOOSE): 0.0707
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3535
+modifier_dominant = LOGIC
+modifier_pct = 0.3232
+primary_FLOW = 0.1818
+primary_OBSERVE = 0.2424
+primary_LOGIC = 0.2222
+primary_CHOOSE = 0.3535
+modifier_FLOW = 0.2222
+modifier_OBSERVE = 0.1717
+modifier_LOGIC = 0.3232
+modifier_CHOOSE = 0.2828
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0353
+aa_top5 = [
+  Pro: 0.1224  # cyclic
+  Ser: 0.1224  # hydroxyl
+  Leu: 0.1122  # aliphatic
+  Arg: 0.0918  # basic
+  Ala: 0.0714  # simple
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 98
+stop_codon = TGA
+loss = 0.0353
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.mild.dominant.crystallized.membrane_embedded

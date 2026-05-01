@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NSMAF | unknown
+# CDS: 165 bp (55 codons)
+
+[IDENTITY]
+gene = NSMAF
+organism = unknown
+transcript = ENST00000518159.5
+cds_length = 165
+codons = 55
+protein_length = 54
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.996
+resistance = 0.004
+dominant = FLOW
+dominant_pct = 0.2970
+FLOW = 0.2970
+OBSERVE = 0.2364
+LOGIC = 0.2424
+CHOOSE = 0.2242
+state = flowing
+
+[CONNECT]
+depth = 0.9212
+type = ionic_interaction
+hydrophobic_ratio = 0.4259
+charge_positive = 0.2407
+charge_negative = 0.1111
+charge_neutral = 0.6481
+
+[DISSOLVE]
+rigidity = 0.9378
+potential = crystallized
+wobble_entropy = 0.0622
+complementary_disruption = 0.0788
+
+[ENCODE]
+type = optimized
+loss = 0.5469
+gc_content = 0.4667
+wobble_gc = 0.6545
+codon_diversity = 0.4531
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.4182
+wobble_FLOW = 0.1273
+wobble_OBSERVE = 0.2182
+wobble_LOGIC = 0.4182
+wobble_CHOOSE = 0.2364
+entropy = 0.0622
+
+[OBSERVE]
+distance = 0.0545
+level = standard
+complementary_balance = 0.9212
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.2000
+  COMPOSE(OBSERVE,OBSERVE): 0.1091
+  COMPOSE(FLOW,FLOW): 0.1091
+  COMPOSE(LOGIC,FLOW): 0.1091
+  COMPOSE(CHOOSE,OBSERVE): 0.0909
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3273
+modifier_dominant = FLOW
+modifier_pct = 0.5091
+primary_FLOW = 0.2545
+primary_OBSERVE = 0.2364
+primary_LOGIC = 0.1818
+primary_CHOOSE = 0.3273
+modifier_FLOW = 0.5091
+modifier_OBSERVE = 0.2545
+modifier_LOGIC = 0.1273
+modifier_CHOOSE = 0.1091
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0415
+aa_top5 = [
+  Leu: 0.1481  # aliphatic
+  Gln: 0.1111  # amide
+  Glu: 0.1111  # acidic
+  His: 0.0926  # aromatic
+  Arg: 0.0741  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 54
+stop_codon = TAA
+loss = 0.0415
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.standard.dominant.crystallized.ionic_interaction

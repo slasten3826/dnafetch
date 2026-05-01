@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ZNF551 | unknown
+# CDS: 225 bp (75 codons)
+
+[IDENTITY]
+gene = ZNF551
+organism = unknown
+transcript = ENST00000596085.1
+cds_length = 225
+codons = 75
+protein_length = 74
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.992
+resistance = 0.008
+dominant = LOGIC
+dominant_pct = 0.2844
+FLOW = 0.2000
+OBSERVE = 0.2311
+LOGIC = 0.2844
+CHOOSE = 0.2844
+state = flowing
+
+[CONNECT]
+depth = 0.9689
+type = balanced_interface
+hydrophobic_ratio = 0.5405
+charge_positive = 0.0811
+charge_negative = 0.1486
+charge_neutral = 0.7703
+
+[DISSOLVE]
+rigidity = 0.9579
+potential = crystallized
+wobble_entropy = 0.0421
+complementary_disruption = 0.0311
+
+[ENCODE]
+type = optimized
+loss = 0.2812
+gc_content = 0.5689
+wobble_gc = 0.6533
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3467
+wobble_FLOW = 0.1333
+wobble_OBSERVE = 0.2133
+wobble_LOGIC = 0.3467
+wobble_CHOOSE = 0.3067
+entropy = 0.0421
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.9689
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1467
+intensity = 0.1467
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1467
+  COMPOSE(LOGIC,CHOOSE): 0.1067
+  COMPOSE(FLOW,OBSERVE): 0.0800
+  COMPOSE(OBSERVE,CHOOSE): 0.0800
+  COMPOSE(CHOOSE,OBSERVE): 0.0800
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3467
+modifier_dominant = CHOOSE
+modifier_pct = 0.2933
+primary_FLOW = 0.2000
+primary_OBSERVE = 0.2000
+primary_LOGIC = 0.3467
+primary_CHOOSE = 0.2533
+modifier_FLOW = 0.2667
+modifier_OBSERVE = 0.2800
+modifier_LOGIC = 0.1600
+modifier_CHOOSE = 0.2933
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0305
+aa_top5 = [
+  Ala: 0.1081  # simple
+  Ser: 0.1081  # hydroxyl
+  Leu: 0.0811  # aliphatic
+  Glu: 0.0811  # acidic
+  Pro: 0.0676  # cyclic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 74
+stop_codon = TGA
+loss = 0.0305
+
+[SIGNATURE]
+fingerprint = LOGIC.LOGIC.intense.dominant.crystallized.balanced_interface

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TSC22D2 | unknown
+# CDS: 264 bp (88 codons)
+
+[IDENTITY]
+gene = TSC22D2
+organism = unknown
+transcript = ENST00000485421.1
+cds_length = 264
+codons = 88
+protein_length = 87
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.975
+resistance = 0.025
+dominant = FLOW
+dominant_pct = 0.3636
+FLOW = 0.3636
+OBSERVE = 0.2159
+LOGIC = 0.1856
+CHOOSE = 0.2348
+state = flowing
+
+[CONNECT]
+depth = 0.8030
+type = balanced_interface
+hydrophobic_ratio = 0.4368
+charge_positive = 0.0920
+charge_negative = 0.1149
+charge_neutral = 0.7931
+
+[DISSOLVE]
+rigidity = 0.9138
+potential = crystallized
+wobble_entropy = 0.0862
+complementary_disruption = 0.1970
+
+[ENCODE]
+type = natural
+loss = 0.4219
+gc_content = 0.4205
+wobble_gc = 0.3182
+codon_diversity = 0.5781
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4545
+wobble_FLOW = 0.4545
+wobble_OBSERVE = 0.2273
+wobble_LOGIC = 0.2045
+wobble_CHOOSE = 0.1136
+entropy = 0.0862
+
+[OBSERVE]
+distance = 0.1288
+level = basic
+complementary_balance = 0.8030
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,FLOW)
+top_compose_pct = 0.1591
+intensity = 0.1591
+compose_top5 = [
+  COMPOSE(CHOOSE,FLOW): 0.1591
+  COMPOSE(LOGIC,FLOW): 0.1136
+  COMPOSE(FLOW,FLOW): 0.1023
+  COMPOSE(CHOOSE,CHOOSE): 0.0909
+  COMPOSE(LOGIC,OBSERVE): 0.0795
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3182
+modifier_dominant = FLOW
+modifier_pct = 0.3977
+primary_FLOW = 0.2386
+primary_OBSERVE = 0.1705
+primary_LOGIC = 0.2727
+primary_CHOOSE = 0.3182
+modifier_FLOW = 0.3977
+modifier_OBSERVE = 0.2500
+modifier_LOGIC = 0.0795
+modifier_CHOOSE = 0.2727
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0444
+aa_top5 = [
+  Gln: 0.1494  # amide
+  Leu: 0.1264  # aliphatic
+  Ser: 0.1149  # hydroxyl
+  Glu: 0.0920  # acidic
+  Pro: 0.0920  # cyclic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 87
+stop_codon = TAA
+loss = 0.0444
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.crystallized.balanced_interface

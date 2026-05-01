@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SPATA31F3 | unknown
+# CDS: 387 bp (129 codons)
+
+[IDENTITY]
+gene = SPATA31F3
+organism = unknown
+transcript = ENST00000603592.1
+cds_length = 387
+codons = 129
+protein_length = 128
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.993
+resistance = 0.007
+dominant = FLOW
+dominant_pct = 0.2868
+FLOW = 0.2868
+OBSERVE = 0.2558
+LOGIC = 0.2610
+CHOOSE = 0.1964
+state = flowing
+
+[CONNECT]
+depth = 0.9044
+type = membrane_embedded
+hydrophobic_ratio = 0.5547
+charge_positive = 0.1719
+charge_negative = 0.0625
+charge_neutral = 0.7656
+
+[DISSOLVE]
+rigidity = 0.9934
+potential = crystallized
+wobble_entropy = 0.0066
+complementary_disruption = 0.0956
+
+[ENCODE]
+type = moderate
+loss = 0.2188
+gc_content = 0.4574
+wobble_gc = 0.5116
+codon_diversity = 0.7812
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.2946
+wobble_FLOW = 0.2713
+wobble_OBSERVE = 0.2171
+wobble_LOGIC = 0.2946
+wobble_CHOOSE = 0.2171
+entropy = 0.0066
+
+[OBSERVE]
+distance = 0.0258
+level = deep
+complementary_balance = 0.9044
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(OBSERVE,LOGIC)
+top_compose_pct = 0.1163
+intensity = 0.1163
+compose_top5 = [
+  COMPOSE(OBSERVE,LOGIC): 0.1163
+  COMPOSE(FLOW,LOGIC): 0.1008
+  COMPOSE(FLOW,OBSERVE): 0.0930
+  COMPOSE(FLOW,FLOW): 0.0930
+  COMPOSE(OBSERVE,OBSERVE): 0.0853
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3256
+modifier_dominant = OBSERVE
+modifier_pct = 0.2946
+primary_FLOW = 0.3256
+primary_OBSERVE = 0.2558
+primary_LOGIC = 0.2016
+primary_CHOOSE = 0.2171
+modifier_FLOW = 0.2636
+modifier_OBSERVE = 0.2946
+modifier_LOGIC = 0.2868
+modifier_CHOOSE = 0.1550
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0302
+aa_top5 = [
+  Leu: 0.1328  # aliphatic
+  Arg: 0.0859  # basic
+  Ser: 0.0781  # hydroxyl
+  Gln: 0.0781  # amide
+  Lys: 0.0781  # basic
+]
+
+[MANIFEST]
+format = signaling_peptide
+protein_length = 128
+stop_codon = TGA
+loss = 0.0302
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.deep.strong.crystallized.membrane_embedded

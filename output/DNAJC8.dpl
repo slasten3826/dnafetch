@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: DNAJC8 | unknown
+# CDS: 264 bp (88 codons)
+
+[IDENTITY]
+gene = DNAJC8
+organism = unknown
+transcript = ENST00000489277.6
+cds_length = 264
+codons = 88
+protein_length = 87
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.913
+resistance = 0.087
+dominant = FLOW
+dominant_pct = 0.4318
+FLOW = 0.4318
+OBSERVE = 0.1288
+LOGIC = 0.2955
+CHOOSE = 0.1439
+state = flowing
+
+[CONNECT]
+depth = 0.5455
+type = ionic_interaction
+hydrophobic_ratio = 0.2874
+charge_positive = 0.3333
+charge_negative = 0.2299
+charge_neutral = 0.4368
+
+[DISSOLVE]
+rigidity = 0.9197
+potential = low
+wobble_entropy = 0.0803
+complementary_disruption = 0.4545
+
+[ENCODE]
+type = moderate
+loss = 0.4219
+gc_content = 0.4394
+wobble_gc = 0.4545
+codon_diversity = 0.5781
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3977
+wobble_FLOW = 0.3977
+wobble_OBSERVE = 0.1477
+wobble_LOGIC = 0.3295
+wobble_CHOOSE = 0.1250
+entropy = 0.0803
+
+[OBSERVE]
+distance = 0.1364
+level = basic
+complementary_balance = 0.5455
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.2273
+intensity = 0.2273
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.2273
+  COMPOSE(FLOW,FLOW): 0.2159
+  COMPOSE(FLOW,LOGIC): 0.0909
+  COMPOSE(CHOOSE,LOGIC): 0.0795
+  COMPOSE(CHOOSE,FLOW): 0.0682
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3864
+modifier_dominant = FLOW
+modifier_pct = 0.5114
+primary_FLOW = 0.3864
+primary_OBSERVE = 0.0795
+primary_LOGIC = 0.3295
+primary_CHOOSE = 0.2045
+modifier_FLOW = 0.5114
+modifier_OBSERVE = 0.1591
+modifier_LOGIC = 0.2273
+modifier_CHOOSE = 0.1023
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0559
+aa_top5 = [
+  Glu: 0.2069  # acidic
+  Lys: 0.1724  # basic
+  Arg: 0.1494  # basic
+  Ala: 0.0575  # simple
+  Gln: 0.0575  # amide
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 87
+stop_codon = TGA
+loss = 0.0559
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

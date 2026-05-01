@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: TNFRSF17 | unknown
+# CDS: 207 bp (69 codons)
+
+[IDENTITY]
+gene = TNFRSF17
+organism = unknown
+transcript = ENST00000562385.1
+cds_length = 207
+codons = 69
+protein_length = 68
+stop_codon = TAA
+
+[FLOW]
+engagement = 1.000
+resistance = 0.000
+dominant = FLOW
+dominant_pct = 0.2560
+FLOW = 0.2560
+OBSERVE = 0.2560
+LOGIC = 0.2464
+CHOOSE = 0.2415
+state = flowing
+
+[CONNECT]
+depth = 0.9952
+type = ionic_interaction
+hydrophobic_ratio = 0.4853
+charge_positive = 0.1618
+charge_negative = 0.1029
+charge_neutral = 0.7353
+
+[DISSOLVE]
+rigidity = 0.9815
+potential = crystallized
+wobble_entropy = 0.0185
+complementary_disruption = 0.0048
+
+[ENCODE]
+type = moderate
+loss = 0.3594
+gc_content = 0.4879
+wobble_gc = 0.5797
+codon_diversity = 0.6406
+
+[CHOOSE]
+method = collapse
+dominant = LOGIC
+dominant_pct = 0.3333
+wobble_FLOW = 0.1739
+wobble_OBSERVE = 0.2464
+wobble_LOGIC = 0.3333
+wobble_CHOOSE = 0.2464
+entropy = 0.0185
+
+[OBSERVE]
+distance = 0.0000
+level = intense
+complementary_balance = 0.9952
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1159
+intensity = 0.1159
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1159
+  COMPOSE(FLOW,FLOW): 0.1159
+  COMPOSE(LOGIC,FLOW): 0.1014
+  COMPOSE(OBSERVE,OBSERVE): 0.0870
+  COMPOSE(OBSERVE,CHOOSE): 0.0870
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.2899
+modifier_dominant = FLOW
+modifier_pct = 0.3333
+primary_FLOW = 0.2609
+primary_OBSERVE = 0.2319
+primary_LOGIC = 0.2174
+primary_CHOOSE = 0.2899
+modifier_FLOW = 0.3333
+modifier_OBSERVE = 0.2899
+modifier_LOGIC = 0.1884
+modifier_CHOOSE = 0.1884
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0337
+aa_top5 = [
+  Leu: 0.1471  # aliphatic
+  Ser: 0.1176  # hydroxyl
+  Arg: 0.0735  # basic
+  Phe: 0.0588  # aromatic
+  Lys: 0.0588  # basic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 68
+stop_codon = TAA
+loss = 0.0337
+
+[SIGNATURE]
+fingerprint = FLOW.LOGIC.intense.strong.crystallized.ionic_interaction

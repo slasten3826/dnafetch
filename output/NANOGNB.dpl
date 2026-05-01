@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: NANOGNB | unknown
+# CDS: 510 bp (170 codons)
+
+[IDENTITY]
+gene = NANOGNB
+organism = unknown
+transcript = ENST00000640040.1
+cds_length = 510
+codons = 170
+protein_length = 169
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.941
+resistance = 0.059
+dominant = FLOW
+dominant_pct = 0.4294
+FLOW = 0.4294
+OBSERVE = 0.1784
+LOGIC = 0.2275
+CHOOSE = 0.1647
+state = flowing
+
+[CONNECT]
+depth = 0.6863
+type = ionic_interaction
+hydrophobic_ratio = 0.3432
+charge_positive = 0.2663
+charge_negative = 0.1538
+charge_neutral = 0.5799
+
+[DISSOLVE]
+rigidity = 0.9409
+potential = low
+wobble_entropy = 0.0591
+complementary_disruption = 0.3137
+
+[ENCODE]
+type = natural
+loss = 0.2500
+gc_content = 0.3922
+wobble_gc = 0.3941
+codon_diversity = 0.7500
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4059
+wobble_FLOW = 0.4059
+wobble_OBSERVE = 0.2000
+wobble_LOGIC = 0.2647
+wobble_CHOOSE = 0.1294
+entropy = 0.0591
+
+[OBSERVE]
+distance = 0.2020
+level = basic
+complementary_balance = 0.6863
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2000
+intensity = 0.2000
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2000
+  COMPOSE(LOGIC,FLOW): 0.1529
+  COMPOSE(CHOOSE,FLOW): 0.1118
+  COMPOSE(FLOW,LOGIC): 0.0941
+  COMPOSE(FLOW,OBSERVE): 0.0706
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.4000
+modifier_dominant = FLOW
+modifier_pct = 0.4824
+primary_FLOW = 0.4000
+primary_OBSERVE = 0.1706
+primary_LOGIC = 0.2118
+primary_CHOOSE = 0.2176
+modifier_FLOW = 0.4824
+modifier_OBSERVE = 0.1647
+modifier_LOGIC = 0.2059
+modifier_CHOOSE = 0.1471
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0376
+aa_top5 = [
+  Lys: 0.1598  # basic
+  Glu: 0.1243  # acidic
+  Gln: 0.0888  # amide
+  Arg: 0.0828  # basic
+  Ser: 0.0710  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 169
+stop_codon = TGA
+loss = 0.0376
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

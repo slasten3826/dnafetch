@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: HMGN3 | unknown
+# CDS: 294 bp (98 codons)
+
+[IDENTITY]
+gene = HMGN3
+organism = unknown
+transcript = ENST00000706660.1
+cds_length = 294
+codons = 98
+protein_length = 97
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.961
+resistance = 0.039
+dominant = FLOW
+dominant_pct = 0.3878
+FLOW = 0.3878
+OBSERVE = 0.1667
+LOGIC = 0.2449
+CHOOSE = 0.2007
+state = flowing
+
+[CONNECT]
+depth = 0.7347
+type = ionic_interaction
+hydrophobic_ratio = 0.4021
+charge_positive = 0.2577
+charge_negative = 0.1443
+charge_neutral = 0.5979
+
+[DISSOLVE]
+rigidity = 0.9228
+potential = low
+wobble_entropy = 0.0772
+complementary_disruption = 0.2653
+
+[ENCODE]
+type = natural
+loss = 0.3750
+gc_content = 0.4456
+wobble_gc = 0.3163
+codon_diversity = 0.6250
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.3980
+wobble_FLOW = 0.3980
+wobble_OBSERVE = 0.2857
+wobble_LOGIC = 0.2245
+wobble_CHOOSE = 0.0918
+entropy = 0.0772
+
+[OBSERVE]
+distance = 0.1429
+level = basic
+complementary_balance = 0.7347
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(FLOW,FLOW)
+top_compose_pct = 0.2143
+intensity = 0.2143
+compose_top5 = [
+  COMPOSE(FLOW,FLOW): 0.2143
+  COMPOSE(LOGIC,FLOW): 0.1429
+  COMPOSE(CHOOSE,CHOOSE): 0.1122
+  COMPOSE(LOGIC,CHOOSE): 0.0918
+  COMPOSE(LOGIC,LOGIC): 0.0816
+]
+
+[LOGIC]
+primary_dominant = FLOW
+primary_pct = 0.3571
+modifier_dominant = FLOW
+modifier_pct = 0.4082
+primary_FLOW = 0.3571
+primary_OBSERVE = 0.1224
+primary_LOGIC = 0.3469
+primary_CHOOSE = 0.1735
+modifier_FLOW = 0.4082
+modifier_OBSERVE = 0.0918
+modifier_LOGIC = 0.1633
+modifier_CHOOSE = 0.3367
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0496
+aa_top5 = [
+  Lys: 0.1856  # basic
+  Glu: 0.1340  # acidic
+  Pro: 0.1134  # cyclic
+  Ala: 0.0928  # simple
+  Ser: 0.0825  # hydroxyl
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 97
+stop_codon = TAA
+loss = 0.0496
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.low.ionic_interaction

@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: ENSG00000266997 | unknown
+# CDS: 486 bp (162 codons)
+
+[IDENTITY]
+gene = ENSG00000266997
+organism = unknown
+transcript = ENST00000590532.2
+cds_length = 486
+codons = 162
+protein_length = 161
+stop_codon = TGA
+
+[FLOW]
+engagement = 0.994
+resistance = 0.006
+dominant = FLOW
+dominant_pct = 0.2901
+FLOW = 0.2901
+OBSERVE = 0.2387
+LOGIC = 0.2058
+CHOOSE = 0.2654
+state = flowing
+
+[CONNECT]
+depth = 0.8889
+type = balanced_interface
+hydrophobic_ratio = 0.5155
+charge_positive = 0.0994
+charge_negative = 0.0994
+charge_neutral = 0.8012
+
+[DISSOLVE]
+rigidity = 0.9970
+potential = crystallized
+wobble_entropy = 0.0030
+complementary_disruption = 0.1111
+
+[ENCODE]
+type = moderate
+loss = 0.1562
+gc_content = 0.4712
+wobble_gc = 0.5370
+codon_diversity = 0.8438
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.2778
+wobble_FLOW = 0.2469
+wobble_OBSERVE = 0.2160
+wobble_LOGIC = 0.2593
+wobble_CHOOSE = 0.2778
+entropy = 0.0030
+
+[OBSERVE]
+distance = 0.0247
+level = deep
+complementary_balance = 0.8889
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(CHOOSE,OBSERVE)
+top_compose_pct = 0.1296
+intensity = 0.1296
+compose_top5 = [
+  COMPOSE(CHOOSE,OBSERVE): 0.1296
+  COMPOSE(CHOOSE,FLOW): 0.1111
+  COMPOSE(FLOW,FLOW): 0.1049
+  COMPOSE(LOGIC,FLOW): 0.0988
+  COMPOSE(FLOW,OBSERVE): 0.0926
+]
+
+[LOGIC]
+primary_dominant = CHOOSE
+primary_pct = 0.3148
+modifier_dominant = OBSERVE
+modifier_pct = 0.3395
+primary_FLOW = 0.2963
+primary_OBSERVE = 0.1605
+primary_LOGIC = 0.2284
+primary_CHOOSE = 0.3148
+modifier_FLOW = 0.3272
+modifier_OBSERVE = 0.3395
+modifier_LOGIC = 0.1296
+modifier_CHOOSE = 0.2037
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0332
+aa_top5 = [
+  Leu: 0.1615  # aliphatic
+  Gln: 0.0932  # amide
+  Asn: 0.0683  # amide
+  Glu: 0.0683  # acidic
+  Ile: 0.0621  # aliphatic
+]
+
+[MANIFEST]
+format = transmembrane
+protein_length = 161
+stop_codon = TGA
+loss = 0.0332
+
+[SIGNATURE]
+fingerprint = FLOW.CHOOSE.deep.dominant.crystallized.balanced_interface

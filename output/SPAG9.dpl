@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SPAG9 | unknown
+# CDS: 468 bp (156 codons)
+
+[IDENTITY]
+gene = SPAG9
+organism = unknown
+transcript = ENST00000510855.1
+cds_length = 468
+codons = 156
+protein_length = 156
+stop_codon = none
+
+[FLOW]
+engagement = 0.997
+resistance = 0.003
+dominant = OBSERVE
+dominant_pct = 0.2756
+FLOW = 0.2671
+OBSERVE = 0.2756
+LOGIC = 0.2308
+CHOOSE = 0.2265
+state = flowing
+
+[CONNECT]
+depth = 0.9872
+type = balanced_interface
+hydrophobic_ratio = 0.5385
+charge_positive = 0.0833
+charge_negative = 0.1090
+charge_neutral = 0.8077
+
+[DISSOLVE]
+rigidity = 0.9560
+potential = crystallized
+wobble_entropy = 0.0440
+complementary_disruption = 0.0128
+
+[ENCODE]
+type = natural
+loss = 0.2031
+gc_content = 0.4573
+wobble_gc = 0.3397
+codon_diversity = 0.7969
+
+[CHOOSE]
+method = collapse
+dominant = OBSERVE
+dominant_pct = 0.3654
+wobble_FLOW = 0.2949
+wobble_OBSERVE = 0.3654
+wobble_LOGIC = 0.1987
+wobble_CHOOSE = 0.1410
+entropy = 0.0440
+
+[OBSERVE]
+distance = 0.0085
+level = strong
+complementary_balance = 0.9872
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1090
+intensity = 0.1090
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1090
+  COMPOSE(CHOOSE,CHOOSE): 0.0897
+  COMPOSE(LOGIC,LOGIC): 0.0833
+  COMPOSE(OBSERVE,OBSERVE): 0.0833
+  COMPOSE(LOGIC,OBSERVE): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3333
+modifier_dominant = CHOOSE
+modifier_pct = 0.3013
+primary_FLOW = 0.2564
+primary_OBSERVE = 0.1731
+primary_LOGIC = 0.3333
+primary_CHOOSE = 0.2372
+modifier_FLOW = 0.2500
+modifier_OBSERVE = 0.2885
+modifier_LOGIC = 0.1603
+modifier_CHOOSE = 0.3013
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0341
+aa_top5 = [
+  Ser: 0.1154  # hydroxyl
+  Leu: 0.1154  # aliphatic
+  Pro: 0.0897  # cyclic
+  Gly: 0.0833  # simple
+  Val: 0.0769  # aliphatic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 156
+stop_codon = none
+loss = 0.0341
+
+[SIGNATURE]
+fingerprint = OBSERVE.OBSERVE.strong.strong.crystallized.balanced_interface

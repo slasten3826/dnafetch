@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SVIP | unknown
+# CDS: 234 bp (78 codons)
+
+[IDENTITY]
+gene = SVIP
+organism = unknown
+transcript = ENST00000354193.5
+cds_length = 234
+codons = 78
+protein_length = 77
+stop_codon = TAA
+
+[FLOW]
+engagement = 0.977
+resistance = 0.023
+dominant = FLOW
+dominant_pct = 0.3376
+FLOW = 0.3376
+OBSERVE = 0.1795
+LOGIC = 0.2821
+CHOOSE = 0.2009
+state = flowing
+
+[CONNECT]
+depth = 0.7607
+type = ionic_interaction
+hydrophobic_ratio = 0.4935
+charge_positive = 0.1948
+charge_negative = 0.1558
+charge_neutral = 0.6494
+
+[DISSOLVE]
+rigidity = 0.9076
+potential = low
+wobble_entropy = 0.0924
+complementary_disruption = 0.2393
+
+[ENCODE]
+type = natural
+loss = 0.4219
+gc_content = 0.4829
+wobble_gc = 0.3590
+codon_diversity = 0.5781
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4103
+wobble_FLOW = 0.4103
+wobble_OBSERVE = 0.2308
+wobble_LOGIC = 0.2821
+wobble_CHOOSE = 0.0769
+entropy = 0.0924
+
+[OBSERVE]
+distance = 0.0556
+level = standard
+complementary_balance = 0.7607
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1538
+intensity = 0.1538
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1538
+  COMPOSE(FLOW,FLOW): 0.1154
+  COMPOSE(CHOOSE,CHOOSE): 0.1026
+  COMPOSE(LOGIC,CHOOSE): 0.1026
+  COMPOSE(LOGIC,LOGIC): 0.0769
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3718
+modifier_dominant = FLOW
+modifier_pct = 0.3333
+primary_FLOW = 0.2692
+primary_OBSERVE = 0.1410
+primary_LOGIC = 0.3718
+primary_CHOOSE = 0.2179
+modifier_FLOW = 0.3333
+modifier_OBSERVE = 0.1667
+modifier_LOGIC = 0.1923
+modifier_CHOOSE = 0.3077
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0399
+aa_top5 = [
+  Glu: 0.1299  # acidic
+  Lys: 0.1169  # basic
+  Pro: 0.1039  # cyclic
+  Ala: 0.1039  # simple
+  Gly: 0.0779  # simple
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 77
+stop_codon = TAA
+loss = 0.0399
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.standard.dominant.low.ionic_interaction

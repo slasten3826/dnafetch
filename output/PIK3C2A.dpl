@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: PIK3C2A | unknown
+# CDS: 390 bp (130 codons)
+
+[IDENTITY]
+gene = PIK3C2A
+organism = unknown
+transcript = ENST00000532035.1
+cds_length = 390
+codons = 130
+protein_length = 130
+stop_codon = none
+
+[FLOW]
+engagement = 0.974
+resistance = 0.026
+dominant = FLOW
+dominant_pct = 0.3692
+FLOW = 0.3692
+OBSERVE = 0.2256
+LOGIC = 0.2077
+CHOOSE = 0.1974
+state = flowing
+
+[CONNECT]
+depth = 0.8462
+type = ionic_interaction
+hydrophobic_ratio = 0.4154
+charge_positive = 0.1462
+charge_negative = 0.1769
+charge_neutral = 0.6769
+
+[DISSOLVE]
+rigidity = 0.9454
+potential = crystallized
+wobble_entropy = 0.0546
+complementary_disruption = 0.1538
+
+[ENCODE]
+type = natural
+loss = 0.3281
+gc_content = 0.4051
+wobble_gc = 0.3308
+codon_diversity = 0.6719
+
+[CHOOSE]
+method = collapse
+dominant = FLOW
+dominant_pct = 0.4000
+wobble_FLOW = 0.4000
+wobble_OBSERVE = 0.2692
+wobble_LOGIC = 0.1923
+wobble_CHOOSE = 0.1385
+entropy = 0.0546
+
+[OBSERVE]
+distance = 0.1436
+level = basic
+complementary_balance = 0.8462
+
+[CYCLE]
+stability = dominant
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.1769
+intensity = 0.1769
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.1769
+  COMPOSE(FLOW,FLOW): 0.1231
+  COMPOSE(CHOOSE,FLOW): 0.0846
+  COMPOSE(FLOW,LOGIC): 0.0846
+  COMPOSE(OBSERVE,OBSERVE): 0.0846
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.3231
+modifier_dominant = FLOW
+modifier_pct = 0.4000
+primary_FLOW = 0.3077
+primary_OBSERVE = 0.1692
+primary_LOGIC = 0.3231
+primary_CHOOSE = 0.2000
+modifier_FLOW = 0.4000
+modifier_OBSERVE = 0.2385
+modifier_LOGIC = 0.1077
+modifier_CHOOSE = 0.2538
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0345
+aa_top5 = [
+  Ser: 0.1077  # hydroxyl
+  Lys: 0.1000  # basic
+  Leu: 0.1000  # aliphatic
+  Glu: 0.0923  # acidic
+  Asp: 0.0846  # acidic
+]
+
+[MANIFEST]
+format = regulatory
+protein_length = 130
+stop_codon = none
+loss = 0.0345
+
+[SIGNATURE]
+fingerprint = FLOW.FLOW.basic.dominant.crystallized.ionic_interaction

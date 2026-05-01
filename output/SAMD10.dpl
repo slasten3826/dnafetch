@@ -1,0 +1,106 @@
+# DNAfetch v3 — DNA ProcessLang (.dpl)
+# Gene: SAMD10 | unknown
+# CDS: 318 bp (106 codons)
+
+[IDENTITY]
+gene = SAMD10
+organism = unknown
+transcript = ENST00000450107.1
+cds_length = 318
+codons = 106
+protein_length = 106
+stop_codon = none
+
+[FLOW]
+engagement = 0.974
+resistance = 0.026
+dominant = CHOOSE
+dominant_pct = 0.3491
+FLOW = 0.1792
+OBSERVE = 0.1950
+LOGIC = 0.2767
+CHOOSE = 0.3491
+state = flowing
+
+[CONNECT]
+depth = 0.9119
+type = ionic_interaction
+hydrophobic_ratio = 0.5283
+charge_positive = 0.1604
+charge_negative = 0.0943
+charge_neutral = 0.7453
+
+[DISSOLVE]
+rigidity = 0.8750
+potential = crystallized
+wobble_entropy = 0.1250
+complementary_disruption = 0.0881
+
+[ENCODE]
+type = engineered
+loss = 0.2812
+gc_content = 0.6258
+wobble_gc = 0.7642
+codon_diversity = 0.7188
+
+[CHOOSE]
+method = collapse
+dominant = CHOOSE
+dominant_pct = 0.4623
+wobble_FLOW = 0.0849
+wobble_OBSERVE = 0.1509
+wobble_LOGIC = 0.3019
+wobble_CHOOSE = 0.4623
+entropy = 0.1250
+
+[OBSERVE]
+distance = 0.0723
+level = standard
+complementary_balance = 0.9119
+
+[CYCLE]
+stability = strong
+top_compose = COMPOSE(LOGIC,FLOW)
+top_compose_pct = 0.0943
+intensity = 0.0943
+compose_top5 = [
+  COMPOSE(LOGIC,FLOW): 0.0943
+  COMPOSE(FLOW,CHOOSE): 0.0849
+  COMPOSE(CHOOSE,CHOOSE): 0.0849
+  COMPOSE(OBSERVE,OBSERVE): 0.0755
+  COMPOSE(LOGIC,CHOOSE): 0.0755
+]
+
+[LOGIC]
+primary_dominant = LOGIC
+primary_pct = 0.2830
+modifier_dominant = CHOOSE
+modifier_pct = 0.3019
+primary_FLOW = 0.2358
+primary_OBSERVE = 0.1981
+primary_LOGIC = 0.2830
+primary_CHOOSE = 0.2830
+modifier_FLOW = 0.2170
+modifier_OBSERVE = 0.2358
+modifier_LOGIC = 0.2453
+modifier_CHOOSE = 0.3019
+
+[RUNTIME]
+pattern = amino_acid_basis
+aa_std = 0.0270
+aa_top5 = [
+  Ser: 0.0943  # hydroxyl
+  Thr: 0.0849  # hydroxyl
+  Arg: 0.0849  # basic
+  Pro: 0.0849  # cyclic
+  Leu: 0.0755  # aliphatic
+]
+
+[MANIFEST]
+format = enzymatic
+protein_length = 106
+stop_codon = none
+loss = 0.0270
+
+[SIGNATURE]
+fingerprint = CHOOSE.CHOOSE.standard.strong.crystallized.ionic_interaction
